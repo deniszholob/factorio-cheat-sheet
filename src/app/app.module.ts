@@ -1,26 +1,28 @@
 // Angular Imports
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 // === Project Imports === //
 // Components
 import { AppComponent } from './app.component';
+import * as appViews from './views';
 
-// === Project Imports === //
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { CheatSheetComponent } from './cheat-sheet/cheat-sheet.component';
-import { NavComponent } from './nav/nav.component';
+// ===  Other Imports === //
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
+        HttpModule,
         NgbModule.forRoot(),
     ],
     declarations: [
         AppComponent,
-    CheatSheetComponent,
-    NavComponent
-],
+        appViews.MainComponent
+    ],
     providers: [],
     bootstrap: [AppComponent]
 })
