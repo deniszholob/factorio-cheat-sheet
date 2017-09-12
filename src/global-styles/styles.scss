@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'variables';
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+html, body {
+    background-color: $c-pallete-nuetral-dark;
+    color: $c-pallete-nuetral-light;
+}
+
+footer, .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #f5f5f5;
+}
+
+a {
+    color: $c-pallete-accent;
+    &:hover {
+        color: $c-pallete-accent-dark;
+        text-decoration: none;
+    }
+}
+
+hr {
+    border-color: $c-pallete-accent;
+}
+
+h1 {
+    color: $c-pallete-accent;
+    font-family: 'Play',Verdana, sans-serif;
+    small {
+        color: $c-pallete-nuetral;
+        font-size: 65%;
+    }
+}
+
+section, .section{
+    .container {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+}
