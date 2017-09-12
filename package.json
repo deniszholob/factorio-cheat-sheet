@@ -5,7 +5,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 9009",
-    "build": "ng build --prod --aot --base-href ./",
+    "build": "npm run lint && npm run build:prod",
+    "build:dev": "ng build --dev --base-href ./",
+    "build:prod": "ng build --prod --aot --base-href ./",
     "test": "echo 'No tests yet...'",
     "lint": "ng lint"
   },
@@ -29,6 +31,8 @@
     "@angular/cli": "1.4.0",
     "@angular/compiler-cli": "^4.2.4",
     "@angular/language-service": "^4.2.4",
+    "codelyzer": "^3.2.0",
+    "tslint": "^5.7.0",
     "typescript": "~2.3.3"
   }
 }
