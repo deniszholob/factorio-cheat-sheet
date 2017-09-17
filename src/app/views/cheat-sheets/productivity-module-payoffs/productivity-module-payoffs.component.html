@@ -1,0 +1,29 @@
+<app-cheat-sheet [cheatSheet]="cheatSheet">
+    <p class="card-text">
+        Based on
+        <a href="https://goo.gl/cc1Y2k">
+                MadZuri's Efficiency numbers
+            </a>.<br>
+        What are the best things to put efficiency modules in?
+    </p>
+
+    <table class="table table-sm table-hover fixed-width text-center">
+        <caption>Ordered by best Payoff Time with beacons</caption>
+        <thead>
+            <tr>
+                <th class="text-center">Priority</th>
+                <th class="text-center">Product</th>
+                <th class="text-center">Payoff Time <br> (no Beacons)</th>
+                <th class="text-center">Payoff Time <br> (8x8 Beacons)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of tableData; let idx=index">
+                <td>{{idx}}</td>
+                <td><app-factorio-icon [icon]="dataService.getFactorioIcon(data.iconId)"></app-factorio-icon></td>
+                <td>{{data.payoffNoBeacons}}</td>
+                <td>{{data.payoffBeaconed}}</td>
+            </tr>
+        </tbody>
+    </table>
+</app-cheat-sheet>
