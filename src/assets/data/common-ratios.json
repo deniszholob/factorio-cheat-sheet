@@ -1,0 +1,348 @@
+{
+    "content": {
+        "cheatSheet": {
+            "title": "Common Ratios",
+            "icon": "Repair_pack"
+        },
+        "data": [
+            [
+                {
+                    "name": "Gray Assembler",
+                    "iconId": "Assembling_machine_1",
+                    "count": "2/s"
+                },
+                {
+                    "name": "Gear",
+                    "iconId": "Iron_gear_wheel",
+                    "count": 2
+                },
+                {
+                    "name": "Iron Plate",
+                    "iconId": "Iron_plate",
+                    "count": "4/s"
+                },
+                {
+                    "name": "Stone Furnace",
+                    "iconId": "Stone_furnace",
+                    "count": 14
+                },
+                {
+                    "name": "Electric Furnace",
+                    "iconId": "Electric_furnace",
+                    "count": 7
+                }
+            ],
+            [
+                {
+                    "name": "Blue Assembler",
+                    "iconId": "Assembling_machine_2",
+                    "count": "6/s"
+                },
+                {
+                    "name": "Gear",
+                    "iconId": "Iron_gear_wheel",
+                    "count": 4
+                },
+                {
+                    "name": "Iron Plate",
+                    "iconId": "Iron_plate",
+                    "count": "12/s"
+                },
+                {
+                    "name": "Stone Furnace",
+                    "iconId": "Stone_furnace",
+                    "count": 42
+                },
+                {
+                    "name": "Electric Furnace",
+                    "iconId": "Electric_furnace",
+                    "count": 21
+                }
+            ],
+            [
+                {
+                    "name": "Yellow Assembler",
+                    "iconId": "Assembling_machine_3",
+                    "count": "10/s"
+                },
+                {
+                    "name": "Gear",
+                    "iconId": "Iron_gear_wheel",
+                    "count": 4
+                },
+                {
+                    "name": "Iron Plate",
+                    "iconId": "Iron_plate",
+                    "count": "20/s"
+                },
+                {
+                    "name": "Stone Furnace",
+                    "iconId": "Stone_furnace",
+                    "count": 70
+                },
+                {
+                    "name": "Electric Furnace",
+                    "iconId": "Electric_furnace",
+                    "count": 35
+                }
+            ],
+            [
+                {
+                    "name": "Yellow Assembler",
+                    "iconId": "Assembling_machine_3",
+                    "count": "5/s"
+                },
+                {
+                    "name": "Green Circuit",
+                    "iconId": "Electronic_circuit",
+                    "count": 2
+                },
+                {
+                    "name": "Copper Wire",
+                    "iconId": "Copper_cable",
+                    "count": 3
+                }
+            ],
+            [
+                {
+                    "name": "Yellow Assembler",
+                    "iconId": "Assembling_machine_3",
+                    "count": "1.25/s"
+                },
+                {
+                    "name": "Red Circuit",
+                    "iconId": "Advanced_circuit",
+                    "count": 6
+                },
+                {
+                    "name": "Green Circuit",
+                    "iconId": "Electronic_circuit",
+                    "count": 1
+                },
+                {
+                    "name": "Copper Wire",
+                    "iconId": "Copper_cable",
+                    "count": 1
+                },
+                {
+                    "name": "Plastic",
+                    "iconId": "Plastic_bar",
+                    "count": 1
+                }
+            ],
+            [
+                {
+                    "name": "Yellow Assembler",
+                    "iconId": "Assembling_machine_3",
+                    "count": ".625/s"
+                },
+                {
+                    "name": "Blue Circuit",
+                    "iconId": "Processing_unit",
+                    "count": 5
+                },
+                {
+                    "name": "Green Circuit",
+                    "iconId": "Electronic_circuit",
+                    "count": 5
+                },
+                {
+                    "name": "Red Circuit",
+                    "iconId": "Advanced_circuit",
+                    "count": 6
+                }
+            ],
+            [
+                {
+                    "name": "Yellow Assembler",
+                    "iconId": "Assembling_machine_3",
+                    "count": "1.25/s"
+                },
+                {
+                    "name": "Green Ammo",
+                    "iconId": "Uranium_rounds_magazine",
+                    "count": 10
+                },
+                {
+                    "name": "Red Ammo",
+                    "iconId": "Piercing_rounds_magazine",
+                    "count": 3
+                },
+                {
+                    "name": "Yellow Ammo",
+                    "iconId": "Firearm_magazine",
+                    "count": 1
+                }
+            ],
+            [
+                {
+                    "name": "Yellow Assembler",
+                    "iconId": "Assembling_machine_3",
+                    "count": "10/s"
+                },
+                {
+                    "name": "Rails",
+                    "iconId": "Straight_rail",
+                    "count": 2
+                },
+                {
+                    "name": "Iron Stick",
+                    "iconId": "Iron_stick",
+                    "count": 1
+                }
+            ],
+            [
+                {
+                    "name": "Chemical Plant",
+                    "iconId": "Chemical_plant",
+                    "count": "6.25/s"
+                },
+                {
+                    "name": "Sulfuric Acid",
+                    "iconId": "Sulfuric_acid",
+                    "count": 2
+                },
+                {
+                    "name": "Sulfur",
+                    "iconId": "Sulfur",
+                    "count": 5
+                },
+                {
+                    "name": "Batteries",
+                    "iconId": "Battery",
+                    "count": 25
+                }
+            ],
+            [
+                {
+                    "name": "Yellow Assembler",
+                    "iconId": "Assembling_machine_3",
+                    "count": "1.25/s"
+                },
+                {
+                    "name": "Robot Frame",
+                    "iconId": "Flying_robot_frame",
+                    "count": 20
+                },
+                {
+                    "name": "Electric Engine",
+                    "iconId": "Electric_engine_unit",
+                    "count": 10
+                },
+                {
+                    "name": "Engine",
+                    "iconId": "Engine_unit",
+                    "count": 10
+                },
+                {
+                    "name": "Battries",
+                    "iconId": "Battery",
+                    "count": 10
+                },
+                {
+                    "name": "Pipe",
+                    "iconId": "Pipe",
+                    "count": 1
+                },
+                {
+                    "name": "Gear",
+                    "iconId": "Iron_gear_wheel",
+                    "count": 0.5
+                }
+            ],
+            [
+                {
+                    "name": "Yellow Assembler",
+                    "iconId": "Assembling_machine_3",
+                    "count": "1/s"
+                },
+                {
+                    "name": "LD Structure",
+                    "iconId": "Low_density_structure",
+                    "count": 24
+                },
+                {
+                    "name": "RC Unit",
+                    "iconId": "Rocket_control_unit",
+                    "count": 24
+                },
+                {
+                    "name": "Rocket Fuel",
+                    "iconId": "Rocket_fuel",
+                    "count": 24
+                },
+                {
+                    "name": "Solid Fuel",
+                    "iconId": "Solid_fuel",
+                    "count": 24
+                }
+            ],
+            [
+                {
+                    "name": "Yellow Assembler",
+                    "iconId": "Assembling_machine_3",
+                    "count": ".042/s"
+                },
+                {
+                    "name": "Speed 3",
+                    "iconId": "Speed_module_3",
+                    "count": 2
+                },
+                {
+                    "name": "Speed 2",
+                    "iconId": "Speed_module_2",
+                    "count": 5
+                },
+                {
+                    "name": "Speed 1",
+                    "iconId": "Speed_module",
+                    "count": 10
+                }
+            ],
+            [
+                {
+                    "name": "Yellow Assembler",
+                    "iconId": "Assembling_machine_3",
+                    "count": ".042/s"
+                },
+                {
+                    "name": "Prod 3",
+                    "iconId": "Productivity_module_3",
+                    "count": 2
+                },
+                {
+                    "name": "Prod 2",
+                    "iconId": "Productivity_module_2",
+                    "count": 5
+                },
+                {
+                    "name": "Prod 1",
+                    "iconId": "Productivity_module",
+                    "count": 10
+                }
+            ],
+            [
+                {
+                    "name": "Yellow Assembler",
+                    "iconId": "Assembling_machine_3",
+                    "count": ".042/s"
+                },
+                {
+                    "name": "Efficiency 3",
+                    "iconId": "Efficiency_module_3",
+                    "count": 2
+                },
+                {
+                    "name": "Efficiency 2",
+                    "iconId": "Efficiency_module_2",
+                    "count": 5
+                },
+                {
+                    "name": "Efficiency 1",
+                    "iconId": "Efficiency_module",
+                    "count": 10
+                }
+            ]
+        ]
+    }
+}

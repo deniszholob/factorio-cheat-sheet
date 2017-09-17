@@ -44,9 +44,9 @@ export class DataService {
         });
     }
 
-    getFactorioIcon(iconId, text = null): FactorioIcon {
+    getFactorioIcon(iconId, text = null, name = null): FactorioIcon {
         const src = this.getFactorioIconSrc(iconId);
-        const name = this.toTitleCase(iconId.replace('_', ' '));
+        name = name || this.toTitleCase(iconId.replace('_', ' '));
         return new FactorioIcon(src, text, name);
     }
 
