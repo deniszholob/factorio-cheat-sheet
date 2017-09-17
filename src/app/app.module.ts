@@ -29,6 +29,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     declarations: [
         AppComponent,
         appViews.IntroComponent,
+        appViews.OverviewComponent,
         appViews.MainComponent,
         appViews.CreditsComponent,
         appViews.FooterComponent,

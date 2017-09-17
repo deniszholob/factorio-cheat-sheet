@@ -6,7 +6,9 @@ export const APP_SETTINGS = {
         lastUpdate: '2017/09',
     },
     links: {
-        localImagesBase: './assets/images/',
+        getLocalImagePath: function (imageName) {
+            return './assets/images/' + imageName;
+        },
         wikiImagesBase: 'https://wiki.factorio.com/images/'
     },
     reference: [

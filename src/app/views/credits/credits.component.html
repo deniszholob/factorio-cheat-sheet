@@ -1,19 +1,21 @@
 <div class="container">
+    <h2>Credits</h2>
+    <hr>
     <div class="row">
         <div class="col">
             <h3>Reference/Inspiration</h3>
-            <div class="list-group">
-                <a *ngFor="let ref of APP_SETTINGS.reference" href="{{ref.website}}">{{ref.name}}</a>
-            </div>
+            <ul class="list-unstyled">
+                <li *ngFor="let ref of APP_SETTINGS.reference"><a href="{{ref.website}}">{{ref.name}}</a></li>
+            </ul>
         </div>
         <div class="col" *ngIf="APP_SETTINGS.contributors.length > 1">
             <h3>Contributors</h3>
-            <div class="list-group">
-                <div *ngFor="let contributor of APP_SETTINGS.contributors">
+            <ul class="list-unstyled">
+                <li *ngFor="let contributor of APP_SETTINGS.contributors">
                     <a *ngIf="contributor.website" href="{{contributor.website}}">{{contributor.name}}</a>
                     <span *ngIf="!contributor.website">{{contributor.name}}</span>
-                </div>
-            </div>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
