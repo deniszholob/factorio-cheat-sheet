@@ -1,0 +1,74 @@
+<app-cheat-sheet [cheatSheet]="cheatSheet">
+    <p class="card-text">
+        <strong>Description:</strong>
+        <span>The Vanilla game has all reasearch balanced in number of different science packs required,
+            so optimally all science should be produce at the same rate.</span><br>
+        <span>However the different science pack themselves have various crafting times and outputs,
+            thus you'll need a different number of assemblers making each science to prevent bottlenecks.</span><br>
+    </p>
+
+    <div class="text-center">
+        <strong>Ratio Of Science Assemblers</strong><br>
+        <span class="text-muted">Number of assemblers needed to produce science equally</span>
+        <div>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(tableData?.space2?.iconId, tableData?.space2?.speed)"></app-factorio-icon>
+            <i class="fa fa-arrows-h txt-muted" aria-hidden="true"></i>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(tableData?.assembler2?.iconId, tableData?.assembler2?.speed)"></app-factorio-icon>
+            <i class="fa fa-arrows-h txt-muted" aria-hidden="true"></i>
+            <app-factorio-icon *ngFor="let pack of tableData?.packs" [icon]="dataService.getFactorioIcon(pack?.iconId, pack?.count)"></app-factorio-icon>
+            <i class="fa fa-arrows-h txt-muted" aria-hidden="true"></i>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(tableData?.assembler3?.iconId, tableData?.assembler3?.speed)"></app-factorio-icon>
+            <i class="fa fa-arrows-h txt-muted" aria-hidden="true"></i>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(tableData?.space3?.iconId, tableData?.space3?.speed)"></app-factorio-icon>
+        </div>
+    </div>
+    <br>
+        <p class="card-text">
+            <strong>Blueprint:</strong>
+            Here is a 2x ratio science pack <a href="http://deniszholob.com/factorio/blueprints/#bpbScience">blueprint book</a>
+            that will produce 90 of each per minute using blue assemblers.
+            <br>
+            Check your
+            <a href="http://doomeer.com/factorio/#s1132bbbbbbbbbbbbbbrgrgrrrrgrrrgrgrrrrrrrrrrrrrrrA5rA6rA12rA5rA7rA7rrrrgrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr">
+                Resource requirements
+            </a> to keep production steady
+        </p>
+
+    <hr>
+
+    <div class="row align-items-center">
+        <div class="col-12 col-lg-6">
+            <p class="card-text text-center">
+                <strong>Space Science</strong>
+            </p>
+            <p class="card-text">
+                For 1 space science pack per second you need to launch a rocket with satellite every 16.67 minutes.<br>
+                <samp> Rockets launch interval (in minutes) = (1000 science / (assembler speed * ratio multiplier)) * (1min/60sec)</samp>
+            </p>
+        </div>
+        <div class="col-12 col-lg-6">
+            <div class="merged-input-group">
+                <div class="input-group">
+                    <span class="input-group-addon">Rocket launch every</span>
+                    <input type="text" class="form-control" [value]="rocketCalcData.rocketRate | number:'1.0-0'" readonly>
+                    <span class="input-group-addon">Minutes</span>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">Science Per Launch</span>
+                    <input type="number" class="form-control" [(ngModel)]="rocketCalcData.sciencePerLaunch" (keyup)="onCalcRocketRate()">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">Assembler Speed</span>
+                    <input type="number" class="form-control" [(ngModel)]="rocketCalcData.assemblerSpeed" (keyup)="onCalcRocketRate()">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">Ratio Multiplier</span>
+                    <input type="number" class="form-control" [(ngModel)]="rocketCalcData.ratioMultiplier" (keyup)="onCalcRocketRate()">
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <br>
+
+</app-cheat-sheet>
