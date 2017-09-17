@@ -1,0 +1,196 @@
+{
+    "content": {
+        "cheatSheet": {
+            "title": "Productivity Module Payoffs",
+            "icon": "Productivity_module_3"
+        },
+        "data": [
+            {
+                "product": "Rocket Part (Space Sience)",
+                "iconId": "Rocket_part",
+                "payoffNoBeacons": "2m 4s",
+                "payoffBeaconed": "17s"
+            },
+            {
+                "product": "Late Science (esp Mining Prod)",
+                "iconId": "Lab",
+                "payoffNoBeacons": "24m 5s",
+                "payoffBeaconed": "7m 17s"
+            },
+            {
+                "product": "High Tech Science (Yellow)",
+                "iconId": "High_tech_science_pack",
+                "payoffNoBeacons": "55m 32s",
+                "payoffBeaconed": "7m 39s"
+            },
+            {
+                "product": "Prod Science (Purple)",
+                "iconId": "Production_science_pack",
+                "payoffNoBeacons": "01h 40m 17s",
+                "payoffBeaconed": "13m 49s"
+            },
+            {
+                "product": "Military Science (Gray)",
+                "iconId": "Military_science_pack",
+                "payoffNoBeacons": "02h 26m 53s",
+                "payoffBeaconed": "20m 14s"
+            },
+            {
+                "product": "Sulfuric Acid",
+                "iconId": "Sulfuric_acid",
+                "payoffNoBeacons": "01h 39m 17s",
+                "payoffBeaconed": "20m 14s"
+            },
+            {
+                "product": "Blue Circuit",
+                "iconId": "Processing_unit",
+                "payoffNoBeacons": "02h 45m 46s",
+                "payoffBeaconed": "22m 50s"
+            },
+            {
+                "product": "Green Circuit",
+                "iconId": "Electronic_circuit",
+                "payoffNoBeacons": "03h 52m 04s",
+                "payoffBeaconed": "31m 58s"
+            },
+            {
+                "product": "Rocket Control Unit",
+                "iconId": "Rocket_control_unit",
+                "payoffNoBeacons": "04h 21m 44s",
+                "payoffBeaconed": "36m 03s"
+            },
+            {
+                "product": "Gear",
+                "iconId": "Iron_gear_wheel",
+                "payoffNoBeacons": "04h 50m 05s",
+                "payoffBeaconed": "39m 57s"
+            },
+            {
+                "product": "Science 3 (Blue)",
+                "iconId": "Science_pack_3",
+                "payoffNoBeacons": "4h 59m 26s",
+                "payoffBeaconed": "41m 14s"
+            },
+            {
+                "product": "Plastic",
+                "iconId": "Plastic_bar",
+                "payoffNoBeacons": "4h 41m 18s",
+                "payoffBeaconed": "57m 21s"
+            },
+            {
+                "product": "Sulfur",
+                "iconId": "Sulfur",
+                "payoffNoBeacons": "4h 41m 18s",
+                "payoffBeaconed": "57m 21s"
+            },
+            {
+                "product": "Copper Cable",
+                "iconId": "Copper_cable",
+                "payoffNoBeacons": "9h 40m 10s",
+                "payoffBeaconed": "1h 19m 54s"
+            },
+            {
+                "product": "Iron Stick",
+                "iconId": "Iron_stick",
+                "payoffNoBeacons": "9h 40m 10s",
+                "payoffBeaconed": "1h 19m 54s"
+            },
+            {
+                "product": "Wood",
+                "iconId": "Raw_wood",
+                "payoffNoBeacons": "9h 40m 10s",
+                "payoffBeaconed": "1h 19m 54s"
+            },
+            {
+                "product": "Low Density Structure",
+                "iconId": "Low_density_structure",
+                "payoffNoBeacons": "10h 05m 23s",
+                "payoffBeaconed": "1h 23m 23s"
+            },
+            {
+                "product": "Robo Frame",
+                "iconId": "Flying_robot_frame",
+                "payoffNoBeacons": "10h 44m 38s",
+                "payoffBeaconed": "1h 28m 47s"
+            },
+            {
+                "product": "Red Circuit",
+                "iconId": "Advanced_circuit",
+                "payoffNoBeacons": "11h 36m 12s",
+                "payoffBeaconed": "1h 35m 53s"
+            },
+            {
+                "product": "Electric Engine",
+                "iconId": "Electric_engine_unit",
+                "payoffNoBeacons": "12h 28m 36s",
+                "payoffBeaconed": "1h 43m 06s"
+            },
+            {
+                "product": "Science 2 (Green)",
+                "iconId": "Science_pack_2",
+                "payoffNoBeacons": "16h 34m 34s",
+                "payoffBeaconed": "2h 16m 59s"
+            },
+            {
+                "product": "Engine",
+                "iconId": "Engine_unit",
+                "payoffNoBeacons": "21h 29m 16s",
+                "payoffBeaconed": "2h 57m 34s"
+            },
+            {
+                "product": "Battery",
+                "iconId": "Battery",
+                "payoffNoBeacons": "17h 34m 51s",
+                "payoffBeaconed": "3h 35m 04s"
+            },
+            {
+                "product": "Stone Brick",
+                "iconId": "Stone_brick",
+                "payoffNoBeacons": "12h 05m 13s",
+                "payoffBeaconed": "3h 39m 16s"
+            },
+            {
+                "product": "Rocket Fuel",
+                "iconId": "Rocket_fuel",
+                "payoffNoBeacons": "29h 00m 30s",
+                "payoffBeaconed": "3h 59m 43s"
+            },
+            {
+                "product": "Science 1 (Red)",
+                "iconId": "Science_pack_1",
+                "payoffNoBeacons": "32h 13m 53s",
+                "payoffBeaconed": "4h 26m 21s"
+            },
+            {
+                "product": "Uranium Processing",
+                "iconId": "Uranium_processing",
+                "payoffNoBeacons": "18h 25m 05s",
+                "payoffBeaconed": "5h 34m 07s"
+            },
+            {
+                "product": "Explosives",
+                "iconId": "Explosives",
+                "payoffNoBeacons": "28h 07m 45s",
+                "payoffBeaconed": "5h 44m 06s"
+            },
+            {
+                "product": "Copper Plate",
+                "iconId": "Copper_plate",
+                "payoffNoBeacons": "24h 10m 25s",
+                "payoffBeaconed": "7h 18m 31s"
+            },
+            {
+                "product": "Iron PLate",
+                "iconId": "Iron_plate",
+                "payoffNoBeacons": "24h 10m 25s",
+                "payoffBeaconed": "7h 18m 31s"
+            },
+            {
+                "product": "Steel Plate",
+                "iconId": "Steel_plate",
+                "payoffNoBeacons": "24h 10m 25s",
+                "payoffBeaconed": "7h 18m 31s"
+            }
+        ]
+    }
+}
