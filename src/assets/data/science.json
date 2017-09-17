@@ -1,0 +1,52 @@
+{
+    "content": {
+        "cheatSheet": {
+            "title": "Science",
+            "icon": "Lab"
+        },
+        "data": {
+            "packs": [
+                {
+                    "iconId": "Science_pack_1",
+                    "count": 5
+                },
+                {
+                    "iconId": "Science_pack_2",
+                    "count": 6
+                },
+                {
+                    "iconId": "Science_pack_3",
+                    "count": 12
+                },
+                {
+                    "iconId": "Military_science_pack",
+                    "count": 5
+                },
+                {
+                    "iconId": "Production_science_pack",
+                    "count": 7
+                },
+                {
+                    "iconId": "High_tech_science_pack",
+                    "count": 7
+                }
+            ],
+            "assembler2": {
+                "iconId": "Assembling_machine_2",
+                "speed": "45/m"
+            },
+            "assembler3": {
+                "iconId": "Assembling_machine_3",
+                "speed": "75/m"
+            },
+            "space2": {
+                "iconId": "Space_science_pack",
+                "speed": "1R/22m"
+            },
+            "space3": {
+                "iconId": "Space_science_pack",
+                "speed": "1R/13m"
+            }
+        }
+    }
+}

@@ -45,9 +45,12 @@ export class DataService {
     }
 
     getFactorioIcon(iconId, text = null, name = null): FactorioIcon {
-        const src = this.getFactorioIconSrc(iconId);
-        name = name || this.toTitleCase(iconId.replace('_', ' '));
-        return new FactorioIcon(src, text, name);
+        if (iconId) { // Avoid errors during runtime due to data not being loaded yet.
+            const src = this.getFactorioIconSrc(iconId);
+            name = name || this.toTitleCase(iconId.replace('_', ' ')); // If custom name is passed use it, otherwise generate from id
+            return new FactorioIcon(src, text, name);
+        }
+        return null;
     }
 
     private getCheatSheet(cheatSheet): CheatSheet {

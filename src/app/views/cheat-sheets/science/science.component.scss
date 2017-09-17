@@ -1,0 +1,11 @@
+.merged-input-group {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.input-group-addon {
+    &:first-child {
+        width: 165px;
+    }
+}
