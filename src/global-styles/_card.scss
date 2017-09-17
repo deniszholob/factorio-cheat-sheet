@@ -1,0 +1,38 @@
+.card {
+    background-color: $c-pallete-nuetral-dark;
+    border: none;
+    box-shadow: 2px 2px 5px 2px $c-pallete-transp-light;
+    margin-bottom: 40px;
+}
+
+.card-header {
+    background-color: $c-pallete-transp-light;
+    border-color: $c-pallete-transp-medium;
+    position: relative;
+
+    .card-title {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+    }
+
+    .card-collapse {
+        float: right;
+        // font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        // margin: -.75rem -1.25rem;
+        padding: 0px 20px;
+        top: 0;
+        bottom: 0;
+        right:0;
+        position: absolute;
+        background-color: transparent;
+        border: none;
+        color: $c-pallete-accent;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

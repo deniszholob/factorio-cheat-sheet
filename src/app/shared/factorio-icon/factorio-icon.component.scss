@@ -1,0 +1,28 @@
+@import './src/global-styles/variables';
+
+.factorio-icon, :host {
+    display: inline-block;
+    position: relative;
+    padding: 3px;
+    border-radius: 5px;
+
+    &.icon-space {
+        margin: 5px;
+    }
+
+    & > img {
+        vertical-align: middle;
+        width: 32px;
+        filter: drop-shadow(2px 2px 2px $c-pallete-transp-light);
+    }
+
+    & > .factorio-icon-text {
+        position: absolute;
+        bottom: 0;
+        right: 3px;
+        color: #fff;
+        font-weight: bold;
+        font-size: .85em;
+        text-shadow: 0px 1px 1px #000, 0px -1px 1px #000, 1px 0px 1px #000, -1px 0px 1px #000;
+    }
+}

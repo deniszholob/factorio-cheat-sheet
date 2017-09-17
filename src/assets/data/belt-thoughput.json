@@ -1,0 +1,40 @@
+{
+    "content": {
+        "cheatSheet": {
+            "title": "Belt Throughput",
+            "icon": "Transport_belt"
+        },
+        "data": [
+            {
+                "tier": "yellow",
+                "icons": [
+                    "Transport_belt",
+                    "Underground_belt",
+                    "Splitter"
+                ],
+                "thoughput": 13.33333,
+                "multiplier": 1
+            },
+            {
+                "tier": "red",
+                "icons": [
+                    "Fast_transport_belt",
+                    "Fast_underground_belt",
+                    "Fast_splitter"
+                ],
+                "thoughput": 26.6666,
+                "multiplier": 2
+            },
+            {
+                "tier": "blue",
+                "icons": [
+                    "Express_transport_belt",
+                    "Express_underground_belt",
+                    "Express_splitter"
+                ],
+                "thoughput": 40,
+                "multiplier": 3
+            }
+        ]
+    }
+}

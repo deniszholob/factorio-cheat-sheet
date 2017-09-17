@@ -1,0 +1,44 @@
+<app-cheat-sheet [cheatSheet]="cheatSheet">
+    <div class="row align-items-center">
+        <div class="col-12 col-lg-6">
+            <p class="card-text">
+                <strong>Belt Density:</strong> Maximum Items fit in one tile
+            </p>
+            <p>
+                <strong>Belt Throughput:</strong> Items per second (<kbd>i/s</kbd>) passed over one belt tile
+            </p>
+            <p>
+                <strong>Note:</strong>
+                <kbd class="txt-factorio-red">Red belt</kbd> is exactly twice as fast as a
+                <kbd class="txt-factorio-yellow">Yellow belt</kbd>, and a
+                <kbd class="txt-factorio-blue">Blue belt</kbd> is exactly three times as fast a
+                <kbd class="txt-factorio-yellow">Yellow belt</kbd>.
+            </p>
+        </div>
+        <div class="col-12 col-lg-6">
+
+            <table class="table table-sm table-hover fixed-width">
+                <caption class="text-center">All belts can hold up to <strong>7.11 items</strong> on each tile</caption>
+                <thead>
+                    <tr>
+                        <th class="text-center">Tier</th>
+                        <th class="text-center">Throughput <br> (single side)</th>
+                        <th class="text-center">Throughput <br> (both sides)</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr *ngFor="let item of tableData">
+                        <td>
+                            <app-factorio-icon *ngFor="let iconId of item.icons" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
+                        </td>
+                        <td>{{item.thoughput / 2 | number:'1.3-3'}} i/s</td>
+                        <td>{{item.thoughput | number:'1.3-3'}} i/s</td>
+                        <th>{{item.multiplier}}x</th>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</app-cheat-sheet>

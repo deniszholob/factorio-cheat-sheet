@@ -1,0 +1,19 @@
+language: node_js # Building with node js
+node_js:
+    - stable # Download the stable node version
+
+# Blocklist
+branches:
+    except:
+      - gh-pages # Will be deployed to, no need to build it
+
+script:
+    - npm run build # Generates the dist folder with built angular app
+
+deploy:
+    provider: pages
+    skip_cleanup: true # Prevent travis from cleaning out the branch before the deploy occurs
+    github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+    on:
+        branch: master # Build only from master
+    local_dir: dist # Only copy the dist conents
