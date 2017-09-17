@@ -62,6 +62,11 @@ section, .section {
     }
 }
 
+.list-group-item  {
+    background-color: $c-pallete-transp-light;
+    border-color: $c-pallete-nuetral;
+}
+
 caption {
     color: $c-pallete-text-muted;
 }
@@ -72,4 +77,9 @@ kbd {
 
 pre {
     color: inherit;
+}
+
+.fixed-width {
+    max-width: 500px;
+    margin: auto;
 }

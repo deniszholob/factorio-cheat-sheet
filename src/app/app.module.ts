@@ -35,6 +35,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         appShared.CheatSheetComponent,
         appShared.FactorioIconComponent,
         sheetComponents.BeltThroughputComponent,
+        sheetComponents.CommonRatiosComponent,
         sheetComponents.ProductivityModulePayoffsComponent,
     ],
     providers: [

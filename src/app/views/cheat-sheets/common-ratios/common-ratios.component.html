@@ -1,0 +1,24 @@
+<app-cheat-sheet [cheatSheet]="cheatSheet">
+
+    <p class="card-text">
+        <strong>Description: </strong>
+        First Item represents the type of machine thats expected to assemble the following components.<br> Following items
+        represent the amount of machines needed making them. If there is no machine mixing (assemblers/chemical plants/furnaces)
+        then ratios stay the same b/w assembly tiers.<br>
+    </p>
+    <p class="card-text">
+        <strong>For example:</strong>
+        To make rails, the right ratio is 1 iron stick assembler feeding 2 rail assemblers.<br>
+        Using the level 3 assemblers you can produce 10 rails every second.
+    </p>
+
+    <div class="list-group fixed-width">
+        <div *ngFor="let data of tableData" class="list-group-item">
+            <span *ngFor="let item of data; let idx=index">
+                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count, icon?.name)"></app-factorio-icon>
+                <span *ngIf="idx == 0"> <i class="fa fa-arrows-h txt-muted" aria-hidden="true"></i> </span>
+            </span>
+        </div>
+    </div>
+
+</app-cheat-sheet>
