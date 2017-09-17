@@ -1,0 +1,18 @@
+.btn-primary {
+    background-color: $c-pallete-accent;
+    border-color: $c-pallete-accent;
+    color: $c-pallete-nuetral-dark;
+    font-weight: bold;
+    &:hover {
+        background-color: $c-pallete-accent-dark;
+        border-color: $c-pallete-accent-dark;
+        color: $c-pallete-nuetral-dark;
+    }
+    &.focus, &:focus {
+        box-shadow: 0 0 0 3px rgba(255, 120, 0, 0.5);
+    }
+    &:active, &.active {
+        background-color: $c-pallete-accent-dark;
+        border-color: $c-pallete-accent-dark;
+    }
+}

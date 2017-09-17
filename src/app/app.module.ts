@@ -5,9 +5,16 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
 // === Project Imports === //
+// Shared
+import * as appShared from 'app/shared';
+
+// Services
+import * as appServices from 'app/services';
+
 // Components
-import { AppComponent } from './app.component';
-import * as appViews from './views';
+import { AppComponent } from 'app/app.component';
+import * as appViews from 'app/views';
+import * as sheetComponents from 'app/views/cheat-sheets';
 
 // ===  Other Imports === //
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -21,9 +28,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ],
     declarations: [
         AppComponent,
-        appViews.MainComponent
+        appViews.IntroComponent,
+        appViews.MainComponent,
+        appViews.CreditsComponent,
+        appViews.FooterComponent,
+        appShared.CheatSheetComponent,
+        appShared.FactorioIconComponent,
+        sheetComponents.BeltThroughputComponent,
     ],
-    providers: [],
+    providers: [
+        appServices.DataService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
