@@ -1,0 +1,82 @@
+{
+    "content": {
+        "cheatSheet": {
+            "title": "Material Processing",
+            "icon": "Item-group_intermediate_products"
+        },
+        "data": {
+            "coalConsumption": [
+                {
+                    "belt": "Transport_belt",
+                    "furnacesSupplied": 592
+                },
+                {
+                    "belt": "Fast_transport_belt",
+                    "furnacesSupplied": 1185
+                },
+                {
+                    "belt": "Express_transport_belt",
+                    "furnacesSupplied": 1777
+                }
+            ],
+            "beltDrainFill": [
+                {
+                    "processor": ["Stone_furnace"],
+                    "material": ["Copper_ore", "Iron_ore"],
+                    "product": ["Copper_plate", "Iron_plate"],
+                    "beltYellow": { "toEmpty": 47, "toFill": 47 },
+                    "beltRed": { "toEmpty": 94, "toFill": 94 },
+                    "beltBlue": { "toEmpty": 140, "toFill": 140 }
+                },
+                {
+                    "processor": ["Steel_furnace", "Electric_furnace"],
+                    "material": ["Copper_ore", "Iron_ore"],
+                    "product": ["Copper_plate", "Iron_plate"],
+                    "beltYellow": { "toEmpty": 24, "toFill": 24 },
+                    "beltRed": { "toEmpty": 47, "toFill": 47 },
+                    "beltBlue": { "toEmpty": 70, "toFill": 70 }
+                },
+                {
+                    "processor": ["Stone_furnace"],
+                    "material": ["Stone"],
+                    "product": ["Stone_brick"],
+                    "beltYellow": { "toEmpty": 24, "toFill": 47 },
+                    "beltRed": { "toEmpty": 47, "toFill": 94 },
+                    "beltBlue": { "toEmpty": 70, "toFill": 140 }
+                },
+                {
+                    "processor": ["Steel_furnace", "Electric_furnace"],
+                    "material": ["Stone"],
+                    "product": ["Stone_brick"],
+                    "beltYellow": { "toEmpty": 12, "toFill": 24 },
+                    "beltRed": { "toEmpty": 24, "toFill": 47 },
+                    "beltBlue": { "toEmpty": 35, "toFill": 70 }
+                },
+                {
+                    "processor": ["Stone_furnace"],
+                    "material": ["Iron_plate"],
+                    "product": ["Steel_plate"],
+                    "beltYellow": { "toEmpty": 47, "toFill": 234 },
+                    "beltRed": { "toEmpty": 94, "toFill": 467 },
+                    "beltBlue": { "toEmpty": 140, "toFill": 700 }
+                },
+                {
+                    "processor": ["Steel_furnace", "Electric_furnace"],
+                    "material": ["Iron_plate"],
+                    "product": ["Steel_plate"],
+                    "beltYellow": { "toEmpty": 24, "toFill": 117 },
+                    "beltRed": { "toEmpty": 47, "toFill": 234 },
+                    "beltBlue": { "toEmpty": 70, "toFill": 350 }
+                },
+                {
+                    "processor": ["Centrifuge"],
+                    "material": ["Uranium_ore"],
+                    "product": ["Uranium-235", "Uranium-238"],
+                    "beltYellow": { "toEmpty": 18, "toFill": "?" },
+                    "beltRed": { "toEmpty": 36, "toFill": "?" },
+                    "beltBlue": { "toEmpty": 54, "toFill": "?" }
+                }
+            ]
+        }
+    }
+}

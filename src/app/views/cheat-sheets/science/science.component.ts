@@ -18,7 +18,7 @@ const dataFile = 'science';
 })
 export class ScienceComponent implements OnInit {
     cheatSheet: CheatSheet;
-    tableData: any;
+    sheetData: any;
 
     rocketCalcData: RocketCalcData = {
         rocketRate: 0,          // This is calculated
@@ -36,7 +36,7 @@ export class ScienceComponent implements OnInit {
         this.dataService.getCheatSheetData(dataFile).subscribe(
             (result: Data) => {
                 this.cheatSheet = result.cheatSheet;
-                this.tableData = result.data;
+                this.sheetData = result.data;
             },
             error => {
                 console.log(error);

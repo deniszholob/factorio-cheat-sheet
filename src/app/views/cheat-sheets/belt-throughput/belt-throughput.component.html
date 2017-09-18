@@ -28,7 +28,7 @@
                     </tr>
                 </thead>
                 <tbody class="text-center">
-                    <tr *ngFor="let item of tableData">
+                    <tr *ngFor="let item of sheetData">
                         <td>
                             <app-factorio-icon *ngFor="let iconId of item.icons" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
                         </td>

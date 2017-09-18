@@ -40,6 +40,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         appShared.FactorioIconComponent,
         sheetComponents.BeltThroughputComponent,
         sheetComponents.CommonRatiosComponent,
+        sheetComponents.OreProcessingComponent,
         sheetComponents.ProductivityModulePayoffsComponent,
         sheetComponents.ScienceComponent,
     ],

@@ -18,7 +18,7 @@ const dataFile = 'common-ratios';
 })
 export class CommonRatiosComponent implements OnInit {
     cheatSheet: CheatSheet;
-    tableData: any;
+    sheetData: any;
 
     constructor(
         public dataService: DataService
@@ -28,7 +28,7 @@ export class CommonRatiosComponent implements OnInit {
         this.dataService.getCheatSheetData(dataFile).subscribe(
             (result: Data) => {
                 this.cheatSheet = result.cheatSheet;
-                this.tableData = result.data;
+                this.sheetData = result.data;
             },
             error => {
                 console.log(error);

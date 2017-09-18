@@ -3,6 +3,10 @@ table {
         caption-side: top;
         text-align: center;
     }
+
+    thead.text-center > tr > th {
+        text-align: center;
+    }
 }
 
 
@@ -24,7 +28,7 @@ table {
 .table > tfoot > tr > th,
 .table > thead > tr > td,
 .table > thead > tr > th {
-    border-color: $c-pallete-nuetral-light;
+    border-color: $c-pallete-nuetral2;
 }
 .table-bordered,
 .table-bordered > tbody > tr > td,
@@ -33,9 +37,15 @@ table {
 .table-bordered > tfoot > tr > th,
 .table-bordered > thead > tr > td,
 .table-bordered > thead > tr > th {
-    border-color: $c-pallete-nuetral-light;
+    border-color: $c-pallete-nuetral2;
 }
 
 .table-hover > tbody > tr:hover {
-    background-color: $c-pallete-transp-light;
+    background-color: inherit;
+}
+
+.table-hover {
+    tr:hover td:not([rowspan]) {
+        background-color: $c-pallete-transp-light;
+    }
 }
