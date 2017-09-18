@@ -14,7 +14,7 @@ export class CheatSheet {
     ) {
         this.icon = icon;
         this.title = title || '';
-        this.name = this.title.replace(' ', '-').toLocaleLowerCase();
+        this.name = this.title.replace(/ /g, '-').toLocaleLowerCase();
         this.isCollapsed = false;
     }
 }

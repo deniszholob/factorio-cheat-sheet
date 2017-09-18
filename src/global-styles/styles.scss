@@ -3,6 +3,7 @@
 @import 'variables';
 @import 'colors';
 @import 'intro';
+@import 'side-nav';
 @import 'button';
 @import 'card';
 @import 'table';
@@ -35,6 +36,7 @@ footer, .footer {
 
 a {
     color: $c-pallete-accent;
+    transition: 0.2s;
     &:hover {
         color: $c-pallete-accent-dark;
         text-decoration: none;
