@@ -1,0 +1,109 @@
+<app-cheat-sheet [cheatSheet]="cheatSheet">
+
+    <table class="table table-sm table-hover  table-bordered">
+        <caption class="text-center">Refineries needed to...</caption>
+        <thead class="text-center">
+            <tr>
+                <th>Refinery/Smelter</th>
+                <th>Input</th>
+                <th colspan="3">Empty Input Belt</th>
+                <th colspan="3">Fill Output Belt</th>
+                <th>Output</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt')"></app-factorio-icon>
+                </th>
+                <th>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_transport_belt')"></app-factorio-icon>
+                </th>
+                <th>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon>
+                </th>
+                <th>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt')"></app-factorio-icon>
+                </th>
+                <th>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_transport_belt')"></app-factorio-icon>
+                </th>
+                <th>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr *ngFor="let item of sheetData?.beltDrainFill; let idx=index">
+                <td>
+                    <app-factorio-icon *ngFor="let iconId of item?.processor" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
+                </td>
+                <td *ngIf="idx%2 == 0" rowspan="2">
+                    <app-factorio-icon *ngFor="let iconId of item?.material" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
+                </td>
+                <td class="bg-input">{{item?.beltYellow?.toEmpty}}</td>
+                <td class="bg-input">{{item?.beltRed?.toEmpty}}</td>
+                <td class="bg-input">{{item?.beltBlue?.toEmpty}}</td>
+                <td class="bg-output">{{item?.beltYellow?.toFill}}</td>
+                <td class="bg-output">{{item?.beltRed?.toFill}}</td>
+                <td class="bg-output">{{item?.beltBlue?.toFill}}</td>
+                <td *ngIf="idx%2 == 0" rowspan="2">
+                    <app-factorio-icon *ngFor="let iconId of item?.product" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <div class="row align-items-center">
+        <div class="col-12 col-lg-7">
+
+            <ul>
+                <li>Smelting iron, copper, and stone each take a base 3.5 seconds to finish. Smelting steel takes base 17.5 seconds.</li>
+                <li><a href="https://wiki.factorio.com/Stone_furnace">Stone Furnaces</a> have a crafting speed of 1. Both steel
+                    and electric furnaces have a crafting speed of 2.</li>
+                <li>One furnace turning iron ore to plate can support one furnace turning iron plate to steel.</li>
+                <li>Stone and Steel Furnaces consume 0.0225 coal/second.</li>
+                <li><a href="https://wiki.factorio.com/Uranium_processing">Uranium processing</a> has a 99.3% chance to produce
+                    1 uranium-238 and a 0.7% chance to produce 1 uranium-235.</li>
+            </ul>
+
+        </div>
+
+        <div class="col-12 col-lg-5">
+
+            <table class="table table-sm table-hover fixed-width">
+                <caption class="text-center"># Furnaces can be suplied by coal belt</caption>
+                <thead class="text-center">
+                    <tr>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Coal')"></app-factorio-icon>
+                        </th>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt')"></app-factorio-icon>
+                        </th>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_transport_belt')"></app-factorio-icon>
+                        </th>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr>
+                        <td>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Stone_furnace')"></app-factorio-icon>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Steel_furnace')"></app-factorio-icon>
+                        </td>
+                        <td *ngFor="let item of sheetData?.coalConsumption">{{item?.furnacesSupplied}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</app-cheat-sheet>

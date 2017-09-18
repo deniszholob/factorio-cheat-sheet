@@ -4,6 +4,9 @@ import { Component, OnInit } from '@angular/core';
 // Services
 import { DataService } from 'app/services/data.service';
 
+// Constants
+const dataFile = 'nav';
+
 @Component({
     selector: 'app-nav',
     templateUrl: './nav.component.html',
@@ -11,20 +14,22 @@ import { DataService } from 'app/services/data.service';
 })
 export class NavComponent implements OnInit {
     isNavOpen: boolean;
-
-    sheetIds = [
-        'belt-throughput',
-        'common-ratios',
-        'productivity-module-payoffs',
-        'science',
-    ];
+    sheetIds: string[];
 
     constructor(
         public dataService: DataService
     ) { }
 
-
+    /** Get Nav Data: sheet id's to anchor link to */
     ngOnInit() {
+        this.dataService.GET<string[]>(dataFile).subscribe(
+            (result: string[]) => {
+                this.sheetIds = result;
+            },
+            error => {
+                console.log(error);
+            }
+        );
         this.closeNav();
     }
 
@@ -34,7 +39,7 @@ export class NavComponent implements OnInit {
 
     toggleNav() { this.isNavOpen = !this.isNavOpen; }
 
-    sheetName(id){
+    sheetName(id) {
         return this.dataService.toTitleCase(id.replace(/-/g, ' '));
     }
 }

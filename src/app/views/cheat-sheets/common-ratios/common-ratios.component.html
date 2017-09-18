@@ -13,7 +13,7 @@
     </p>
 
     <div class="list-group fixed-width">
-        <div *ngFor="let data of tableData" class="list-group-item">
+        <div *ngFor="let data of sheetData" class="list-group-item">
             <span *ngFor="let item of data; let idx=index">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count, icon?.name)"></app-factorio-icon>
                 <span *ngIf="idx == 0"> <i class="fa fa-arrows-h txt-muted" aria-hidden="true"></i> </span>

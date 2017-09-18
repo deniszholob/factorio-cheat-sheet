@@ -18,7 +18,7 @@ const dataFile = 'productivity-module-payoffs';
 })
 export class ProductivityModulePayoffsComponent implements OnInit {
     cheatSheet: CheatSheet;
-    tableData: any;
+    sheetData: any;
 
     constructor(
         public dataService: DataService
@@ -28,7 +28,7 @@ export class ProductivityModulePayoffsComponent implements OnInit {
         this.dataService.getCheatSheetData(dataFile).subscribe(
             (result: Data) => {
                 this.cheatSheet = result.cheatSheet;
-                this.tableData = result.data;
+                this.sheetData = result.data;
             },
             error => {
                 console.log(error);

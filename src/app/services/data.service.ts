@@ -46,6 +46,9 @@ export class DataService {
 
     getFactorioIcon(iconId, text = null, name = null): FactorioIcon {
         if (iconId) { // Avoid errors during runtime due to data not being loaded yet.
+            if (typeof iconId !== 'string') {
+                throw new Error('Icon ID: "' + iconId + '" is not a string.');
+            }
             const src = this.getFactorioIconSrc(iconId);
             name = name || this.toTitleCase(iconId.replace(/_/g, ' ')); // If custom name is passed use it, otherwise generate from id
             return new FactorioIcon(src, text, name);

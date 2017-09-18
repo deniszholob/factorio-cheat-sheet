@@ -9,14 +9,14 @@ import { Data } from 'app/services/data';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 
 // Constants
-const dataFile = 'belt-thoughput';
+const dataFile = 'material-processing';
 
 @Component({
-    selector: 'app-belt-throughput',
-    templateUrl: './belt-throughput.component.html',
-    // styleUrls: ['./belt-throughput.component.scss'] // Enable as needed
+    selector: 'app-material-processing',
+    templateUrl: './material-processing.component.html',
+    styleUrls: ['./material-processing.component.scss'] // Enable as needed
 })
-export class BeltThroughputComponent implements OnInit {
+export class OreProcessingComponent implements OnInit {
     cheatSheet: CheatSheet;
     sheetData: any;
 
@@ -24,6 +24,7 @@ export class BeltThroughputComponent implements OnInit {
         public dataService: DataService
     ) { }
 
+    /** Get Data for the Cheat Sheet from the DataService */
     ngOnInit() {
         this.dataService.getCheatSheetData(dataFile).subscribe(
             (result: Data) => {
