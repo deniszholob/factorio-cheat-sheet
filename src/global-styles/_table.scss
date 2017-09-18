@@ -45,7 +45,10 @@ table {
 }
 
 .table-hover {
-    tr:hover td:not([rowspan]) {
-        background-color: $c-pallete-transp-light;
+    tr:hover td {
+        transition: 0.2s;
+        &:not([rowspan]) {
+            background-color: $c-pallete-transp-light;
+        }
     }
 }

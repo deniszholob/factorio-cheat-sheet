@@ -66,8 +66,12 @@ section, .section {
 }
 
 .list-group-item  {
+    transition: 0.2s;
     background-color: $c-pallete-transp-light;
     border-color: $c-pallete-nuetral;
+    &:hover {
+        background-color: $c-pallete-transp-medium;
+    }
 }
 
 caption {
