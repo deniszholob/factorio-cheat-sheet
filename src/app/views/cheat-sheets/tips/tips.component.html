@@ -1,0 +1,30 @@
+<app-cheat-sheet [cheatSheet]="cheatSheet">
+
+    <ul>
+        <li>The <kbd>Alt</kbd> key will reveal detailed information on entities.</li>
+        <li>Trains snap into position when placed at train stations.</li>
+        <li>You can rotate entities with <kbd>R</kbd>, even when already placed, <kbd>Shift+R</kbd> for the opposite.</li>
+        <li>Inserters will always place items on the furthest side of the belt, and prioritise taking items from the closest.</li>
+        <li>Hold <kbd>Shift</kbd> while building to place a ghost of the item (single entity blueprint).</li>
+        <li>
+            <kbd>Shift-RightClick</kbd> will copy entity configurations, <kbd>Shift-LeftClick</kbd> will paste them.
+            <ul>
+                <li>This works for: filter inserters, assemblers, requester chests, combinators, ...</li>
+                <li>You can paste across multiple entities by dragging.</li>
+                <li>You can copy from assemblers into requester chests (requests 2x the required amount to craft the item).</li>
+            </ul>
+        </li>
+        <li>Hover over an entity and press <kbd>Q</kbd> to quick-select it from your inventory.</li>
+        <li>Press <kbd>Q</kbd> on ores to select miners.</li>
+        <li>Any item with a “fuel value” in its description can be used as fuel (including wooden chests & wooden power poles).</li>
+        <li>You can move potions between labs with inserters.</li>
+        <li>Fluids can move through boilers, tanks, and electric mining drills (only when mining uranium).</li>
+        <li>Blueprints can be used from map view when zoomed in on a revealed area of the map (near the player or by radar).</li>
+        <li><kbd>Numpad+</kbd> / <kbd>Numpad-</kbd> can be used to increase / decrease the size of any placed tile (such as landfill or concrete).</li>
+        <li>
+            Underground belts can be sideloaded, this will drain only 1 lane of a belt. <br>
+            <img src="{{APP_SETTINGS.links.getLocalImagePath('underground-belt-sideload.jpg')}}" style="max-width: 400px;">
+        </li>
+    </ul>
+
+</app-cheat-sheet>
