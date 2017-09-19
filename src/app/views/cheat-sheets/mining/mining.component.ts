@@ -9,14 +9,14 @@ import { Data } from 'app/services/data';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 
 // Constants
-const dataFile = 'material-processing';
+const dataFile = 'mining';
 
 @Component({
-    selector: 'app-material-processing',
-    templateUrl: './material-processing.component.html',
-    styleUrls: ['./material-processing.component.scss'] // Enable as needed
+    selector: 'app-mining',
+    templateUrl: './mining.component.html',
+    styleUrls: ['./mining.component.scss'] // Enable as needed
 })
-export class MaterialProcessingComponent implements OnInit {
+export class MiningComponent implements OnInit {
     cheatSheet: CheatSheet;
     sheetData: any;
 

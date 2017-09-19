@@ -1,0 +1,74 @@
+{
+    "content": {
+        "cheatSheet": {
+            "title": "Mining",
+            "icon": "Electric_mining_drill"
+        },
+        "data": [
+            {
+                "materials": [
+                    "Copper_ore",
+                    "Iron_ore",
+                    "Coal"
+                ],
+                "miningRate": {
+                    "miner": "Burner_mining_drill",
+                    "rate": 0.28
+                },
+                "beltYellow": 48,
+                "beltRed": 96,
+                "beltBlue": 143
+            },
+            {
+                "materials": [
+                    "Copper_ore",
+                    "Iron_ore",
+                    "Coal"
+                ],
+                "miningRate": {
+                    "miner": "Electric_mining_drill",
+                    "rate": 0.525
+                },
+                "beltYellow": 26,
+                "beltRed": 51,
+                "beltBlue": 77
+            },
+            {
+                "materials": [
+                    "Stone"
+                ],
+                "miningRate": {
+                    "miner": "Burner_mining_drill",
+                    "rate": 0.3675
+                },
+                "beltYellow": 37,
+                "beltRed": 73,
+                "beltBlue": 109
+            },
+            {
+                "materials": [
+                    "Stone"
+                ],
+                "miningRate": {
+                    "miner": "Electric_mining_drill",
+                    "rate": 0.65
+                },
+                "beltYellow": 21,
+                "beltRed": 42,
+                "beltBlue": 62
+            },
+            {
+                "materials": [
+                    "Uranium_ore"
+                ],
+                "miningRate": {
+                    "miner": "Electric_mining_drill",
+                    "rate": 0.2625
+                },
+                "beltYellow": 51,
+                "beltRed": 102,
+                "beltBlue": 153
+            }
+        ]
+    }
+}
