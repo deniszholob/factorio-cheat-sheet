@@ -41,7 +41,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         sheetComponents.BeltThroughputComponent,
         sheetComponents.CommonRatiosComponent,
         sheetComponents.LinksComponent,
-        sheetComponents.OreProcessingComponent,
+        sheetComponents.MaterialProcessingComponent,
+        sheetComponents.MiningComponent,
         sheetComponents.ProductivityModulePayoffsComponent,
         sheetComponents.ScienceComponent,
         sheetComponents.TipsComponent

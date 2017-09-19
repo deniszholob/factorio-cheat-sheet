@@ -1,0 +1,68 @@
+<app-cheat-sheet [cheatSheet]="cheatSheet">
+    <div class="row align-items-center">
+        <div class="col-12 col-lg-6">
+            <p>
+                <a href="https://wiki.factorio.com/Mining">Mining speed</a> relies on more variables than most other machinery. <br>
+                Ores have <i>mining hardness</i> and <i>mining time</i>, and miners have <i>mining power</i> and <i>mining speed</i>. <br>
+                Luckily, many of ores’ values are the same, so things aren’t as complicated as they could be.
+            </p>
+
+            <p>
+                In order to <a href="https://wiki.factorio.com/Uranium_ore">mine uranium ore</a>, sulfuric acid must be fed into the electric mining drill.
+            </p>
+
+            <p class="text-center text-muted">
+                    Per 10 uranium ore mined, 10 sulfuric acid are consumed.<br>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium_ore', 10)"></app-factorio-icon>
+                    <i class="fa fa-arrows-h txt-muted" aria-hidden="true"></i>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Sulfuric_acid', 10)"></app-factorio-icon>
+                </p>
+        </div>
+        <div class="col-12 col-lg-6">
+
+            <table class="table table-sm table-hover fixed-width">
+                <caption class="text-center">Miners needed to fill a belt</caption>
+                <thead class="text-center">
+                    <tr>
+                        <th>Ore</th>
+                        <th>Miner</th>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt')"></app-factorio-icon>
+                        </th>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_transport_belt')"></app-factorio-icon>
+                        </th>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon>
+                        </th>
+                        <th class="text-right">Mine Rate</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr *ngFor="let item of sheetData; let idx=index">
+                        <td *ngIf="idx%2 == 0" rowspan="2">
+                            <app-factorio-icon *ngFor="let iconId of item.materials" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
+                        </td>
+                        <td>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.miningRate?.miner)"></app-factorio-icon>
+                        </td>
+                        <td>{{item?.beltYellow}}</td>
+                        <td>{{item?.beltRed}}</td>
+                        <td>{{item?.beltBlue}}</td>
+                        <td class="text-right">{{item?.miningRate?.rate | number:'1.2-2'}} i/s</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row align-items-center">
+        <div class="col text-center">
+                <img src="https://wiki.factorio.com/images/Burner_drill_to_chest.png" class="col img-fluid rounded">
+                <img src="https://wiki.factorio.com/images/Burner_drill_to_furnace.png" class="col img-fluid rounded"><br>
+            <strong>Tip:</strong> Mining drills will output resources directly without the need of inserters.
+        </div>
+    </div>
+</app-cheat-sheet>

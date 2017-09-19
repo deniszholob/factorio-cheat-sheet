@@ -8,15 +8,15 @@
             "coalConsumption": [
                 {
                     "belt": "Transport_belt",
-                    "furnacesSupplied": 592
+                    "furnacesSupplied": 593
                 },
                 {
                     "belt": "Fast_transport_belt",
-                    "furnacesSupplied": 1185
+                    "furnacesSupplied": 1186
                 },
                 {
                     "belt": "Express_transport_belt",
-                    "furnacesSupplied": 1777
+                    "furnacesSupplied": 1778
                 }
             ],
             "beltDrainFill": [
