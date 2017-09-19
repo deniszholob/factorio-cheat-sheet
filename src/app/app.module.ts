@@ -44,6 +44,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         sheetComponents.OreProcessingComponent,
         sheetComponents.ProductivityModulePayoffsComponent,
         sheetComponents.ScienceComponent,
+        sheetComponents.TipsComponent
     ],
     providers: [
         appServices.DataService

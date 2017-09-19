@@ -4,3 +4,4 @@ export * from './links/links.component';
 export * from './material-processing/material-processing.component';
 export * from './productivity-module-payoffs/productivity-module-payoffs.component';
 export * from './science/science.component';
+export * from './tips/tips.component';
