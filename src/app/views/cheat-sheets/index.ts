@@ -1,3 +1,4 @@
+export * from './basic-power/basic-power.component';
 export * from './belt-throughput/belt-throughput.component';
 export * from './common-ratios/common-ratios.component';
 export * from './links/links.component';

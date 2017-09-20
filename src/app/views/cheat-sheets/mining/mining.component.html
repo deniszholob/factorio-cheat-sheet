@@ -1,22 +1,22 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
     <div class="row align-items-center">
         <div class="col-12 col-lg-6">
-            <p>
-                <a href="https://wiki.factorio.com/Mining">Mining speed</a> relies on more variables than most other machinery. <br>
-                Ores have <i>mining hardness</i> and <i>mining time</i>, and miners have <i>mining power</i> and <i>mining speed</i>. <br>
-                Luckily, many of ores’ values are the same, so things aren’t as complicated as they could be.
-            </p>
+            <ul>
+                <li><a href="https://wiki.factorio.com/Mining">Mining speed</a> relies on more variables than most other machinery.</li>
+                <li>Ores have <i>mining hardness</i> and <i>mining time</i>, and miners have <i>mining power</i> and <i>mining speed</i>.</li>
+                <li>Luckily, many of ores’ values are the same, so things aren’t as complicated as they could be.</li>
+            </ul>
 
             <p>
                 In order to <a href="https://wiki.factorio.com/Uranium_ore">mine uranium ore</a>, sulfuric acid must be fed into the electric mining drill.
             </p>
 
             <p class="text-center text-muted">
-                    Per 10 uranium ore mined, 10 sulfuric acid are consumed.<br>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium_ore', 10)"></app-factorio-icon>
-                    <i class="fa fa-arrows-h txt-muted" aria-hidden="true"></i>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Sulfuric_acid', 10)"></app-factorio-icon>
-                </p>
+                Per 10 uranium ore mined, 10 sulfuric acid are consumed.<br>
+                <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium_ore', 10)"></app-factorio-icon>
+                <i class="fa fa-arrows-h txt-muted" aria-hidden="true"></i>
+                <app-factorio-icon [icon]="dataService.getFactorioIcon('Sulfuric_acid', 10)"></app-factorio-icon>
+            </p>
         </div>
         <div class="col-12 col-lg-6">
 
@@ -53,6 +53,7 @@
                     </tr>
                 </tbody>
             </table>
+            <p class="text-center"><kbd>Miners = Belt Throughput / Mining Rate</kbd></p>
         </div>
     </div>
 
@@ -60,8 +61,8 @@
 
     <div class="row align-items-center">
         <div class="col text-center">
-                <img src="https://wiki.factorio.com/images/Burner_drill_to_chest.png" class="col img-fluid rounded">
-                <img src="https://wiki.factorio.com/images/Burner_drill_to_furnace.png" class="col img-fluid rounded"><br>
+                <img src="https://wiki.factorio.com/images/Burner_drill_to_chest.png" class="img-fluid rounded">
+                <img src="https://wiki.factorio.com/images/Burner_drill_to_furnace.png" class="img-fluid rounded"><br>
             <strong>Tip:</strong> Mining drills will output resources directly without the need of inserters.
         </div>
     </div>

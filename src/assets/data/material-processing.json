@@ -72,9 +72,9 @@
                     "processor": ["Centrifuge"],
                     "material": ["Uranium_ore"],
                     "product": ["Uranium-235", "Uranium-238"],
-                    "beltYellow": { "toEmpty": 18, "toFill": "?" },
-                    "beltRed": { "toEmpty": 36, "toFill": "?" },
-                    "beltBlue": { "toEmpty": 54, "toFill": "?" }
+                    "beltYellow": { "toEmpty": 18, "toFill": 180 },
+                    "beltRed": { "toEmpty": 36, "toFill": 360 },
+                    "beltBlue": { "toEmpty": 54, "toFill": 540 }
                 }
             ]
         }
