@@ -1,0 +1,66 @@
+{
+    "content": {
+        "cheatSheet": {
+            "title": "Basic Power",
+            "icon": "Accumulator"
+        },
+        "data": {
+            "steamRatioPower": "36 MW",
+            "steamRatio": [
+                {
+                    "iconId": "Offshore_pump",
+                    "count": 1
+                },
+                {
+                    "iconId": "Boiler",
+                    "count": 20
+                },
+                {
+                    "iconId": "Steam_engine",
+                    "count": 40
+                }
+            ],
+            "solarRatioPower": "1 MW",
+            "solarRatio": [
+                {
+                    "iconId": "Solar_panel",
+                    "count": 25
+                },
+                {
+                    "iconId": "Accumulator",
+                    "count": 21
+                }
+            ],
+            "boilerSupport": [
+                {
+                    "fuel": "Raw_wood",
+                    "fuelEnergy": "4MJ",
+                    "beltYellow": 15,
+                    "beltRed": 30,
+                    "beltBlue": 45
+                },
+                {
+                    "fuel": "Coal",
+                    "fuelEnergy": "8MJ",
+                    "beltYellow": 30,
+                    "beltRed": 60,
+                    "beltBlue": 89
+                },
+                {
+                    "fuel": "Solid_fuel",
+                    "fuelEnergy": "25MJ",
+                    "beltYellow": 93,
+                    "beltRed": 186,
+                    "beltBlue": 278
+                },
+                {
+                    "fuel": "Rocket_fuel",
+                    "fuelEnergy": "225MJ",
+                    "beltYellow": 834,
+                    "beltRed": 1667,
+                    "beltBlue": 2500
+                }
+            ]
+        }
+    }
+}

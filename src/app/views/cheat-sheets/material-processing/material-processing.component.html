@@ -7,8 +7,8 @@
                 <th>Refinery/Smelter</th>
                 <th>Input</th>
                 <th colspan="3">Empty Input Belt</th>
-                <th colspan="3">Fill Output Belt</th>
                 <th>Output</th>
+                <th colspan="3">Fill Output Belt</th>
             </tr>
             <tr>
                 <th></th>
@@ -22,6 +22,7 @@
                 <th>
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon>
                 </th>
+                <th></th>
                 <th>
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt')"></app-factorio-icon>
                 </th>
@@ -31,7 +32,6 @@
                 <th>
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon>
                 </th>
-                <th></th>
             </tr>
         </thead>
         <tbody class="text-center">
@@ -45,37 +45,34 @@
                 <td class="bg-input">{{item?.beltYellow?.toEmpty}}</td>
                 <td class="bg-input">{{item?.beltRed?.toEmpty}}</td>
                 <td class="bg-input">{{item?.beltBlue?.toEmpty}}</td>
-                <td class="bg-output">{{item?.beltYellow?.toFill}}</td>
-                <td class="bg-output">{{item?.beltRed?.toFill}}</td>
-                <td class="bg-output">{{item?.beltBlue?.toFill}}</td>
                 <td *ngIf="idx%2 == 0" rowspan="2">
                     <app-factorio-icon *ngFor="let iconId of item?.product" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
                 </td>
+                <td class="bg-output">{{item?.beltYellow?.toFill}}</td>
+                <td class="bg-output">{{item?.beltRed?.toFill}}</td>
+                <td class="bg-output">{{item?.beltBlue?.toFill}}</td>
             </tr>
         </tbody>
     </table>
 
     <hr>
 
+    <h4 class="card-title">Smelting Facts</h4>
     <div class="row align-items-center">
         <div class="col-12 col-lg-7">
-
             <ul>
                 <li>Smelting iron, copper, and stone each take a base 3.5 seconds to finish. Smelting steel takes base 17.5 seconds.</li>
                 <li><a href="https://wiki.factorio.com/Stone_furnace">Stone Furnaces</a> have a crafting speed of 1. Both steel
-                    and electric furnaces have a crafting speed of 2.</li>
+                    and electric furnaces have a crafting speed of 2.
+                </li>
                 <li>One furnace turning iron ore to plate can support one furnace turning iron plate to steel.</li>
                 <li>Stone and Steel Furnaces consume 0.0225 coal/second.</li>
-                <li><a href="https://wiki.factorio.com/Uranium_processing">Uranium processing</a> has a 99.3% chance to produce
-                    1 uranium-238 and a 0.7% chance to produce 1 uranium-235.</li>
             </ul>
-
         </div>
 
         <div class="col-12 col-lg-5">
-
             <table class="table table-sm table-hover fixed-width">
-                <caption class="text-center"># Furnaces can be suplied by coal belt</caption>
+                <caption class="text-center">Furnaces supplied by coal belt</caption>
                 <thead class="text-center">
                     <tr>
                         <th>
@@ -102,8 +99,37 @@
                     </tr>
                 </tbody>
             </table>
+            <p class="text-center"><kbd>Buildings = Belt Throughput / Material Consumption Rate</kbd></p>
         </div>
     </div>
 
+
+    <h4 class="card-title">Uranium Facts</h4>
+    <div class="row align-items-center">
+        <div class="col-12 col-lg-7">
+            <ul>
+                <li><a href="https://wiki.factorio.com/Uranium_processing">Uranium processing</a> has a 99.3% chance to produce
+                    1 uranium-238 and a 0.7% chance to produce 1 uranium-235.
+                </li>
+                <li>Its recommended save up 40 U-235 to kick off the Enrichment process in order to speed up U-235 production.</li>
+            </ul>
+        </div>
+
+        <div class="col-12 col-lg-5">
+            <p class="text-center">
+                <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium_ore', 1000)"></app-factorio-icon>
+                <i class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
+                <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-235', 7)"></app-factorio-icon>
+                <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-238', 993)"></app-factorio-icon>
+            </p>
+            <p class="text-center">
+                <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-235', 40)"></app-factorio-icon>
+                <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-238', 5)"></app-factorio-icon>
+                <i class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
+                <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-235', 41)"></app-factorio-icon>
+                <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-238', 2)"></app-factorio-icon>
+            </p>
+        </div>
+    </div>
 
 </app-cheat-sheet>

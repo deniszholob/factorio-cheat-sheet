@@ -8,7 +8,6 @@
     </p>
 
     <div class="text-center">
-        <strong>Ratio Of Science Assemblers</strong><br>
         <span class="text-muted">Number of assemblers needed to produce science equally</span>
         <div>
             <app-factorio-icon [icon]="dataService.getFactorioIcon(sheetData?.space2?.iconId, sheetData?.space2?.speed)"></app-factorio-icon>
@@ -43,8 +42,8 @@
             </p>
             <p class="card-text">
                 For 1 space science pack per second you need to launch a rocket with satellite every 16.67 minutes.<br>
-                <samp> Rockets launch interval (in minutes) = (1000 science / (assembler speed * ratio multiplier)) * (1min/60sec)</samp>
             </p>
+            <p class="text-center"><kbd>Rockets launch interval (in minutes) = (1000 science / (assembler speed * ratio multiplier)) * (1min/60sec)</kbd></p>
         </div>
         <div class="col-12 col-lg-6">
             <div class="merged-input-group">

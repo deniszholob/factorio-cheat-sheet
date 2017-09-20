@@ -38,6 +38,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         appViews.FooterComponent,
         appShared.CheatSheetComponent,
         appShared.FactorioIconComponent,
+        sheetComponents.BasicPowerComponent,
         sheetComponents.BeltThroughputComponent,
         sheetComponents.CommonRatiosComponent,
         sheetComponents.LinksComponent,
