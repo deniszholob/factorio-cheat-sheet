@@ -1,0 +1,52 @@
+{
+    "content": {
+        "cheatSheet": {
+            "title": "Nuclear Power",
+            "icon": "Nuclear_reactor"
+        },
+        "data": {
+            "reactorPower": 40,
+            "heatExchangerPower": 10,
+            "turbinePower": 5.82,
+            "waterPerTurbine": 60,
+            "simpleRatioPower": "40 MW",
+            "simpleRatio": [
+                {
+                    "iconId": "Nuclear_reactor",
+                    "count": 1
+                },
+                {
+                    "iconId": "Offshore_pump",
+                    "count": 1
+                },
+                {
+                    "iconId": "Heat_exchanger",
+                    "count": 4
+                },
+                {
+                    "iconId": "Steam_turbine",
+                    "count": 7
+                }
+            ],
+            "perfectRatioPower": "480 MW",
+            "perfectRatio": [
+                {
+                    "iconId": "Nuclear_reactor",
+                    "count": 4
+                },
+                {
+                    "iconId": "Offshore_pump",
+                    "count": 5
+                },
+                {
+                    "iconId": "Heat_exchanger",
+                    "count": 48
+                },
+                {
+                    "iconId": "Steam_turbine",
+                    "count": 83
+                }
+            ]
+        }
+    }
+}
