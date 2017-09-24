@@ -19,62 +19,78 @@
                     "furnacesSupplied": 1778
                 }
             ],
-            "beltDrainFill": [
+            "beltEmpty": [
                 {
                     "processor": ["Stone_furnace"],
-                    "material": ["Copper_ore", "Iron_ore"],
-                    "product": ["Copper_plate", "Iron_plate"],
-                    "beltYellow": { "toEmpty": 47, "toFill": 47 },
-                    "beltRed": { "toEmpty": 94, "toFill": 94 },
-                    "beltBlue": { "toEmpty": 140, "toFill": 140 }
+                    "material": ["Copper_ore", "Iron_ore", "Iron_plate"],
+                    "beltYellow": 47,
+                    "beltRed": 94,
+                    "beltBlue": 140
                 },
                 {
                     "processor": ["Steel_furnace", "Electric_furnace"],
-                    "material": ["Copper_ore", "Iron_ore"],
-                    "product": ["Copper_plate", "Iron_plate"],
-                    "beltYellow": { "toEmpty": 24, "toFill": 24 },
-                    "beltRed": { "toEmpty": 47, "toFill": 47 },
-                    "beltBlue": { "toEmpty": 70, "toFill": 70 }
+                    "material": ["Copper_ore", "Iron_ore", "Iron_plate"],
+                    "beltYellow": 24,
+                    "beltRed": 47,
+                    "beltBlue": 70
                 },
                 {
                     "processor": ["Stone_furnace"],
                     "material": ["Stone"],
-                    "product": ["Stone_brick"],
-                    "beltYellow": { "toEmpty": 24, "toFill": 47 },
-                    "beltRed": { "toEmpty": 47, "toFill": 94 },
-                    "beltBlue": { "toEmpty": 70, "toFill": 140 }
+                    "beltYellow": 24,
+                    "beltRed": 47,
+                    "beltBlue": 70
                 },
                 {
                     "processor": ["Steel_furnace", "Electric_furnace"],
                     "material": ["Stone"],
-                    "product": ["Stone_brick"],
-                    "beltYellow": { "toEmpty": 12, "toFill": 24 },
-                    "beltRed": { "toEmpty": 24, "toFill": 47 },
-                    "beltBlue": { "toEmpty": 35, "toFill": 70 }
-                },
-                {
-                    "processor": ["Stone_furnace"],
-                    "material": ["Iron_plate"],
-                    "product": ["Steel_plate"],
-                    "beltYellow": { "toEmpty": 47, "toFill": 234 },
-                    "beltRed": { "toEmpty": 94, "toFill": 467 },
-                    "beltBlue": { "toEmpty": 140, "toFill": 700 }
-                },
-                {
-                    "processor": ["Steel_furnace", "Electric_furnace"],
-                    "material": ["Iron_plate"],
-                    "product": ["Steel_plate"],
-                    "beltYellow": { "toEmpty": 24, "toFill": 117 },
-                    "beltRed": { "toEmpty": 47, "toFill": 234 },
-                    "beltBlue": { "toEmpty": 70, "toFill": 350 }
+                    "beltYellow": 12,
+                    "beltRed": 24,
+                    "beltBlue": 35
                 },
                 {
                     "processor": ["Centrifuge"],
                     "material": ["Uranium_ore"],
-                    "product": ["Uranium-235", "Uranium-238"],
-                    "beltYellow": { "toEmpty": 18, "toFill": 180 },
-                    "beltRed": { "toEmpty": 36, "toFill": 360 },
-                    "beltBlue": { "toEmpty": 54, "toFill": 540 }
+                    "beltYellow":18,
+                    "beltRed": 36,
+                    "beltBlue": 54
+                }
+            ],
+            "beltFill": [
+                {
+                    "processor": ["Stone_furnace"],
+                    "material": ["Copper_plate", "Iron_plate", "Stone_brick"],
+                    "beltYellow": 47,
+                    "beltRed": 94,
+                    "beltBlue": 140
+                },
+                {
+                    "processor": ["Steel_furnace", "Electric_furnace"],
+                    "material": ["Copper_ore", "Iron_ore", "Iron_plate"],
+                    "beltYellow": 24,
+                    "beltRed": 47,
+                    "beltBlue": 70
+                },
+                {
+                    "processor": ["Stone_furnace"],
+                    "material": ["Steel_plate"],
+                    "beltYellow": 234,
+                    "beltRed": 467,
+                    "beltBlue": 700
+                },
+                {
+                    "processor": ["Steel_furnace", "Electric_furnace"],
+                    "material": ["Steel_plate"],
+                    "beltYellow": 117,
+                    "beltRed": 234,
+                    "beltBlue": 350
+                },
+                {
+                    "processor": ["Centrifuge"],
+                    "material": ["Uranium-235", "Uranium-238"],
+                    "beltYellow":178,
+                    "beltRed": 356,
+                    "beltBlue": 534
                 }
             ]
         }

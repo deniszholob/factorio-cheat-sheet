@@ -14,7 +14,7 @@ const dataFile = 'common-ratios';
 @Component({
     selector: 'app-common-ratios',
     templateUrl: './common-ratios.component.html',
-    // styleUrls: ['./common-ratios.component.scss'] // Enable as needed
+    styleUrls: ['./common-ratios.component.scss'] // Enable as needed
 })
 export class CommonRatiosComponent implements OnInit {
     cheatSheet: CheatSheet;

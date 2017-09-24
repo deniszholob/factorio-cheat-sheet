@@ -20,11 +20,57 @@
         <li>You can move potions between labs with inserters.</li>
         <li>Fluids can move through boilers, tanks, and electric mining drills (only when mining uranium).</li>
         <li>Blueprints can be used from map view when zoomed in on a revealed area of the map (near the player or by radar).</li>
-        <li><kbd>Numpad+</kbd> / <kbd>Numpad-</kbd> can be used to increase / decrease the size of any placed tile (such as landfill or concrete).</li>
+        <li><kbd>Numpad+</kbd> / <kbd>Numpad-</kbd> can be used to increase / decrease the size of any placed tile (such as landfill
+            or concrete).
+        </li>
         <li>
             Underground belts can be sideloaded, this will drain only 1 lane of a belt. <br>
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('underground-belt-sideload.jpg')}}" style="width: 400px;" class="img-fluid rounded">
+            <img src="{{APP_SETTINGS.links.getLocalImagePath('underground-belt-sideload.jpg')}}" class="img-fluid rounded">
         </li>
     </ul>
+
+    <hr>
+
+    <div class="row align-items-center">
+        <div class="col-12 col-lg-3">
+            <div class="eq-container">
+                <div class="eq-field bg-nuetral">
+                    <span class="eq-label">Machines Needed</span>
+                    <input type="number" class="eq-input" [value]="calcMachines.machinesToFillBelt" readonly>
+                </div>
+                <div class="eq-operator">=</div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-9">
+            <div class="eq-container">
+                <div class="eq-field bg-factorio-yellow-muted">
+                    <span class="eq-label">Belt Thoughput</span>
+                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.beltThroughput" (keyup)="calcMachinesTofillBelt()" (change)="calcMachinesTofillBelt()">
+                </div>
+                <div class="eq-operator">*</div>
+                <div class="eq-field bg-factorio-green">
+                    <span class="eq-label">Recipe Base Craft Time</span>
+                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.recipeBaseCraftTime" (keyup)="calcMachinesTofillBelt()" (change)="calcMachinesTofillBelt()">
+                </div>
+            </div>
+            <div class="eq-operator op-divide"></div>
+            <div class="eq-container">
+                <div class="eq-field bg-factorio-gray">
+                    <span class="eq-label">Items per Craft</span>
+                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.itemsPerCraft" (keyup)="calcMachinesTofillBelt()" (change)="calcMachinesTofillBelt()">
+                </div>
+                <div class="eq-operator">*</div>
+                <div class="eq-field bg-factorio-blue">
+                    <span class="eq-label">Machine Craft Speed</span>
+                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.machineCraftSpeed" (keyup)="calcMachinesTofillBelt()" (change)="calcMachinesTofillBelt()">
+                </div>
+                <div class="eq-operator">*</div>
+                <div class="eq-field bg-factorio-red">
+                    <span class="eq-label">Machine Productivity</span>
+                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.machineProductivity" (keyup)="calcMachinesTofillBelt()" (change)="calcMachinesTofillBelt()">
+                </div>
+            </div>
+        </div>
+    </div>
 
 </app-cheat-sheet>

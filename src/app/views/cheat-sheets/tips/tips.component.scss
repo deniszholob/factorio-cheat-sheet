@@ -1,0 +1,84 @@
+table {
+    width: 100%;
+}
+
+.eq-operator {
+    display: inline-flex;
+    padding: 1px 5px;
+    margin: 0;
+    background-color: transparent;
+
+    &.op-divide {
+        display: flex;
+        width: 90%;
+        margin: auto;
+        content: '';
+        border-top: 2px solid rgba(255, 255, 255, 0.4);
+    }
+}
+
+.eq-container {
+    display: flex;
+    margin: 5px;
+    align-items: center;
+    justify-content: center;
+
+    .eq-operator {
+        padding: 1px 5px;
+        margin: 0;
+    }
+
+    .eq-field {
+        display: inline-flex;
+        color: whitesmoke;
+        position: relative;
+        padding: .2em;
+
+        /* Brackets */
+        &:after,
+        &:before {
+            border: .2em solid rgba(255, 255, 255, 0.4);
+            bottom: 0;
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 10px;
+        }
+        &:after {
+            border-left: none;
+            right: 0;
+        }
+        &:before {
+            border-right: none;
+            left: 0;
+        }
+
+        .eq-label {
+            display: inline-flex;
+            flex: 1 1 auto;
+            padding: 1px 5px;
+            margin: 0;
+            background: rgba(0, 0, 0, 0.4);
+            color: inherit;
+
+            font-size: 1rem;
+            line-height: 1.25;
+        }
+
+        .eq-input {
+            display: inline-flex;
+            flex: 1 1 auto;
+            padding: 1px 5px;
+            margin: 0;
+            background: rgba(50, 50, 50, 0.4);
+            color: inherit;
+
+            width: 100px;
+            border: none;
+
+            font-size: 1rem;
+            line-height: 1.25;
+        }
+
+    }
+}
