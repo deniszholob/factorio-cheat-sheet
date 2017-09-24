@@ -1,10 +1,8 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
     <p class="card-text">
-        Based on
-        <a href="https://goo.gl/cc1Y2k">
-                MadZuri's Efficiency numbers
-            </a>.<br>
         What are the best things to put efficiency modules in?
+        <br> Based on
+        <a href="https://goo.gl/cc1Y2k">MadZuri's Efficiency numbers</a>.
     </p>
 
     <table class="table table-sm table-hover fixed-width text-center">
@@ -20,7 +18,9 @@
         <tbody>
             <tr *ngFor="let data of sheetData; let idx=index">
                 <td>{{idx}}</td>
-                <td><app-factorio-icon [icon]="dataService.getFactorioIcon(data.iconId)"></app-factorio-icon></td>
+                <td>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon(data.iconId)"></app-factorio-icon>
+                </td>
                 <td>{{data.payoffNoBeacons}}</td>
                 <td>{{data.payoffBeaconed}}</td>
             </tr>

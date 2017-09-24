@@ -8,33 +8,38 @@
             "officialLinks": [
                 {
                     "url": "http://wiki.factorio.com",
-                    "text": "Official Factorio Wiki",
+                    "text": "Factorio Wiki",
                     "caption": "More in depth info."
                 },
                 {
                     "url": "https://www.reddit.com/r/factorio",
-                    "text": "Official Reddit",
-                    "caption": "Lots of helpful users"
+                    "text": "Factorio Reddit",
+                    "caption": "Lots of helpful users."
                 },
                 {
                     "url": "https://discordapp.com/invite/factorio",
-                    "text": "Official Discord",
-                    "caption": "Discuss the game in realtime"
+                    "text": "Factorio Discord",
+                    "caption": "Discuss the game in realtime."
                 },
                 {
                     "url": "https://forums.factorio.com/",
-                    "text": "Official Forums",
+                    "text": "Factorio Forums",
                     "caption": "Help make the game better!"
                 },
                 {
                     "url": "https://www.factorio.com/blog/ ",
-                    "text": "Official Blog",
-                    "caption": "Unreleased features and News"
+                    "text": "Factorio Blog",
+                    "caption": "Unreleased features and News."
                 },
                 {
                     "url": "https://www.youtube.com/channel/UC5B2sfAI2MjD7aNhUXHAeyA",
-                    "text": "Official Youtube",
+                    "text": "Factorio Youtube",
                     "caption": "Maybe they will make a new Factorio Trailer"
+                },
+                {
+                    "url": "https://mods.factorio.com/",
+                    "text": "Factorio Mod Portal",
+                    "caption": "Browse and download mods."
                 }
             ],
             "communityLinks": [
