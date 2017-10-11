@@ -11,7 +11,6 @@
         <br> Using the level 3 assemblers you can produce 10 rails every second.
     </p>
 
-
     <div class="row">
         <div class="col-12 col-lg-6">
             <div class="list-group fixed-width">
@@ -62,5 +61,21 @@
             </div>
         </div>
     </div>
+
+    <hr>
+    <h5>Rocket Components</h5>
+    
+    <span *ngFor="let item of sheetData?.rocketComponentsRatio">
+        <app-factorio-icon *ngIf="item.iconId" [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
+    </span>
+
+    <p>
+        With no productivity modules a rocket needs 1000 of each + the requirements for the satellite.
+        <br>This is a ratio of 1100:1050:1000 or simplified of 22:21:20 (divide by 50).
+        <br>As these components all have the same crafting time, this ratio applies.
+    </p>
+    <p>
+        As the satellite can't get productivity bonus, you need a ratio of ~814:764:714 per rocket (to be precise: 5700:5350:5000 per 7 rockets), which makes it a ratio of 114:107:100.
+    </p>
 
 </app-cheat-sheet>

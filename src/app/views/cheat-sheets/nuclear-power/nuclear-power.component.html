@@ -35,6 +35,9 @@
             such as steam tanks or accumulators, is full.
         </li>
         <li>
+            Nuclear reactor can buffer 500C worth of energy after heat up as well as heatpipes, steam pipes and heat exchangers in addition to steam tanks and accumulators.
+        </li>
+        <li>
             A Storage tank holding 25k units of Steam at 500°C contains 2.425 GJ of energy, equal to 485 fully charged Accumulators!
         </li>
         <li>
@@ -54,7 +57,7 @@
                 <caption>Nuclear Ratio Table</caption>
                 <thead class="text-center">
                     <tr>
-                        <th colspan="6">
+                        <th colspan="7">
                             <div class="merged-input-group mx-auto" style="max-width:269px">
                                 <div class="input-group">
                                     <span class="input-group-addon">Reactor Table Count</span>
@@ -81,7 +84,7 @@
                         <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Offshore_pump')"></app-factorio-icon></th>
                         <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Heat_exchanger')"></app-factorio-icon></th>
                         <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Steam_turbine')"></app-factorio-icon></th>
-                        <!-- <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Steam', 'Tanks')"></app-factorio-icon></th> -->
+                        <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Steam', '*Tanks')"></app-factorio-icon></th>
                         <th><i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i></th>
                     </tr>
                 </thead>
@@ -92,7 +95,7 @@
                         <td>{{item?.pumps | number:'1.0-1'}}</td>
                         <td>{{item?.heatExchangers}}</td>
                         <td>{{item?.turbines | number:'1.0-1'}}</td>
-                        <!-- <td>{{item?.steamTanks | number:'1.0-1'}}</td> -->
+                        <td>{{item?.steamTanks | number:'1.0-1'}}</td>
                         <td>{{item?.power}} {{item?.powerUnit}}</td>
                     </tr>
                 </tbody>
@@ -105,7 +108,7 @@
     <h4 class="card-title">Formulas</h4>
     <p>
         See <a href="https://www.reddit.com/r/factorio/comments/67xgge/nuclear_ratios/">Nuclear Ratios</a> Post
-        and, <a href="https://www.reddit.com/r/factorio/comments/6a1lf4/015_nuclear_guide/">Nuclear Guide</a> Post
+        and, <a href="https://wiki.factorio.com/Tutorial:Nuclear_power">Nuclear Guide</a> Wiki
         for more details.
     </p>
 
@@ -121,5 +124,10 @@
     <p><kbd>
     Pumps = Turbines * (Water Per Turbine / Water Per Pump);
     </kbd></p>
+    <p><strong>Steam Tanks:</strong> 1 fuel cell creates 8 GJ per reactor (eg 2 reactors puts out 4 solo reactors of energy = 32 GJ).
+        <br>Each tank can hold 2.425 GJ worth of steam, or 3.29 tanks per reactor.
+    </p>
+    <p class="txt-muted"><strong>*Note:</strong> This is steam tanks per 1 effective (neighbor bonus) nuclear reactor using 1 fuel rod not including the reactor warmup, or heat stored in the reactor or pipes (both heat and steam).
+    </p>
 
 </app-cheat-sheet>

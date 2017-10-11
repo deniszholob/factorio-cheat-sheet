@@ -163,6 +163,9 @@
                         "name": "Plastic",
                         "iconId": "Plastic_bar",
                         "count": 1
+                    },
+                    {
+                        "comment": "Doesn't take into account Wire for GC"
                     }
                 ],
                 [
@@ -299,14 +302,6 @@
                         "count": "1/s"
                     },
                     {
-                        "iconId": "Low_density_structure",
-                        "count": 24
-                    },
-                    {
-                        "iconId": "Rocket_control_unit",
-                        "count": 24
-                    },
-                    {
                         "iconId": "Rocket_fuel",
                         "count": 24
                     },
@@ -321,16 +316,30 @@
                         "count": "6.25/s"
                     },
                     {
+                        "iconId": "Battery",
+                        "count": 25
+                    },
+                    {
                         "iconId": "Sulfuric_acid",
                         "count": 2
                     },
                     {
                         "iconId": "Sulfur",
                         "count": 5
+                    }
+                ],
+                [
+                    {
+                        "iconId": "Chemical_plant",
+                        "count": "12.5/s"
                     },
                     {
-                        "iconId": "Battery",
-                        "count": 25
+                        "iconId": "Processing_unit",
+                        "count": 100
+                    },
+                    {
+                        "iconId": "Sulfuric_acid",
+                        "count": 1
                     }
                 ]
             ],
@@ -401,6 +410,20 @@
                         "count": 35
                     }
                 ]
+            ],
+            "rocketComponentsRatio": [
+                {
+                    "iconId": "Low_density_structure",
+                    "count": 22
+                },
+                {
+                    "iconId": "Rocket_control_unit",
+                    "count": 21
+                },
+                {
+                    "iconId": "Rocket_fuel",
+                    "count": 20
+                }
             ]
         }
     }

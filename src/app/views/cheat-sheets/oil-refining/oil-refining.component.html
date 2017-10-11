@@ -1,0 +1,114 @@
+<app-cheat-sheet [cheatSheet]="cheatSheet">
+    <h4>Basic Oil</h4>
+    <p>
+        <span class="txt-muted">Basic Plasic Production</span><br>
+        <ng-container *ngFor="let item of sheetData?.basicOil">
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
+        </ng-container>
+    </p>
+    <p>
+        When starting oil, it is most efficient to rush <a href="https://wiki.factorio.com/Advanced_oil_processing_(research)">Advanced Oil Processing</a> research.
+        <br>This allows to obtain more efficient oil ratios and be able to convert Heavy and Light Oil into Petroleum Gas,
+        elimintating need to buffer or waste oil products.
+    </p>
+    <p> To research
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Advanced_oil_processing')"></app-factorio-icon>
+        <i class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Plastic_bar', 150)"></app-factorio-icon>
+        using
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Coal', 75)"></app-factorio-icon>
+        are needed to make the
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Science_pack_3', 75)"></app-factorio-icon>
+        required for the research.
+    </p>
+    <p><strong>Ratio Rationale:</strong>
+        <br>To keep Plastic production, Heavy and Light oil need to be used up. Luckily Flamethrower Ammo production drains them in a perfect ratio.
+        <br>Alternatively the the oil products would need to be stored or consumed another way.
+    </p>
+
+    <hr>
+    <h4>Advanced Oil</h4>
+
+    <div class="row align-items-center">
+        <p class="col-12 col-sm-6 text-center">
+            <span class="txt-muted">Simple Cracking Ratio</span><br>
+            <ng-container *ngFor="let item of sheetData?.simpleCrackingRatio">
+                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
+            </ng-container>
+        </p>
+
+        <p class="col-12 col-sm-6 text-center">
+            <span class="txt-muted">Accurate Cracking Ratio</span><br>
+            <ng-container *ngFor="let item of sheetData?.perfectCrackingRatio">
+                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
+            </ng-container>
+        </p>
+    </div>
+
+    <p>
+        If you want to convert <strong>all refinery products to petroleum</strong>:
+        for every {{sheetData?.perfectCrackingRatio[0]?.count}} refineries you have running Advanced Oil Processing,
+        you need {{sheetData?.perfectCrackingRatio[1]?.count}} chemical plants cracking heavy oil into light oil and
+        {{sheetData?.perfectCrackingRatio[2]?.count}} chemical plants cracking light oil into petroleum.
+    </p>
+
+    <table class="table table-sm table-hover fixed-width">
+        <caption class="text-center">Refining Rates</caption>
+        <thead class="text-center">
+            <tr>
+                <th></th>
+                <th colspan="2">Liquids Needed</th>
+                <th colspan="3">Liquids Produced</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Crude_oil')"></app-factorio-icon></th>
+                <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Water')"></app-factorio-icon></th>
+                <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Heavy_oil')"></app-factorio-icon></th>
+                <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Light_oil')"></app-factorio-icon></th>
+                <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Petroleum_gas')"></app-factorio-icon></th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr *ngFor="let item of sheetData?.production">
+                <td>
+                    <app-factorio-icon *ngFor="let iconId of item.processes" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
+                </td>
+                <td>{{item?.oil}}</td>
+                <td>{{item?.water}}</td>
+                <td>{{item?.heavyOil}}</td>
+                <td>{{item?.lighOil}}</td>
+                <td>{{item?.petrol}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <h4>Solid Fuel Production</h4>
+
+    <p>Use light oil to produce the most amount of solid fuel per unit of crude oil.</p>
+
+    <div class="row align-items-center">
+        <div class="col-12 col-md-4 text-center">
+            <span *ngFor="let item of sheetData?.solidFuel[0]; let idx = index">
+                <i *ngIf="idx!=0" class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
+                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.material, item?.count)"></app-factorio-icon>
+            </span>
+        </div>
+
+        <div class="col-12 col-md-4 text-center">
+            <span *ngFor="let item of sheetData?.solidFuel[1]; let idx = index">
+                <i *ngIf="idx!=0" class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
+                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.material, item?.count)"></app-factorio-icon>
+            </span>
+        </div>
+
+        <div class="col-12 col-md-4 text-center">
+            <span *ngFor="let item of sheetData?.solidFuel[2]; let idx = index">
+                <i *ngIf="idx!=0" class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
+                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.material, item?.count)"></app-factorio-icon>
+            </span>
+        </div>
+    </div>
+
+</app-cheat-sheet>
