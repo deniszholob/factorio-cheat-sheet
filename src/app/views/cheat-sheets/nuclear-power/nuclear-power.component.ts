@@ -45,10 +45,11 @@ export class NuclearPowerComponent implements OnInit {
                 this.cheatSheet = result.cheatSheet;
                 this.sheetData = result.data;
 
-                this.nuclearData.reactorPower = this.sheetData.reactorPower;
-                this.nuclearData.heatExchangerPower = this.sheetData.heatExchangerPower;
-                this.nuclearData.turbinePower = this.sheetData.turbinePower;
+                this.nuclearData.reactorPower = this.sheetData.reactorPowerMW;
+                this.nuclearData.heatExchangerPower = this.sheetData.heatExchangerPowerMW;
+                this.nuclearData.turbinePower = this.sheetData.turbinePowerMW;
                 this.nuclearData.waterPerTurbine = this.sheetData.waterPerTurbine;
+                this.nuclearData.storageTanksPerReactor = this.sheetData.storageTanksPerReactor;
                 this.getNukeRatios();
             },
             error => {
@@ -84,6 +85,7 @@ export class NuclearPowerComponent implements OnInit {
         const turbinePower = this.nuclearData.turbinePower;
         const heatExchangersPerReactor = reactorPower / heatExchangerPower;
         const waterPerTurbine = this.nuclearData.waterPerTurbine;
+        const storageTanksPerReactor = this.nuclearData.storageTanksPerReactor;
         const waterPerPump = 1200;
 
         // Set inital data that will be calculated
@@ -107,9 +109,7 @@ export class NuclearPowerComponent implements OnInit {
         }
         turbines = heatExchangers * heatExchangerPower / turbinePower;
         pumps = turbines * (waterPerTurbine / waterPerPump);
-
-        // TODO: Figure out formula for steam tanks
-        steamTanks = heatExchangers;
+        steamTanks = heatExchangers / 4 * storageTanksPerReactor;
 
         if (power < 1000) {
             powerUnit = 'MW';
@@ -125,7 +125,7 @@ export class NuclearPowerComponent implements OnInit {
             pumps: this.roundUp ? Math.ceil(pumps) : pumps,
             heatExchangers: heatExchangers,
             turbines: this.roundUp ? Math.ceil(turbines) : turbines,
-            steamTanks: steamTanks,
+            steamTanks: this.roundUp ? Math.ceil(steamTanks) : steamTanks,
             power: power,
             powerUnit: powerUnit
         };
@@ -151,4 +151,5 @@ interface NuclearData {
     heatExchangerPower: number;
     turbinePower: number;
     waterPerTurbine: number;
+    storageTanksPerReactor: number;
 }

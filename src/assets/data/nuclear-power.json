@@ -5,11 +5,12 @@
             "icon": "Nuclear_reactor"
         },
         "data": {
-            "reactorPower": 40,
-            "heatExchangerPower": 10,
-            "turbinePower": 5.82,
+            "reactorPowerMW": 40,
+            "heatExchangerPowerMW": 10,
+            "turbinePowerMW": 5.82,
             "waterPerTurbine": 60,
             "simpleRatioPower": "40 MW",
+            "storageTanksPerReactor": 3.299,
             "simpleRatio": [
                 {
                     "iconId": "Nuclear_reactor",

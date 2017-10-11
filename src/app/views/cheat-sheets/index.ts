@@ -5,6 +5,7 @@ export * from './links/links.component';
 export * from './material-processing/material-processing.component';
 export * from './mining/mining.component';
 export * from './nuclear-power/nuclear-power.component';
+export * from './oil-refining/oil-refining.component';
 export * from './productivity-module-payoffs/productivity-module-payoffs.component';
 export * from './science/science.component';
 export * from './tips/tips.component';
