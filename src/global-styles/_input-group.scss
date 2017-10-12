@@ -1,13 +1,19 @@
 .input-group-addon {
     color: $c-pallete-text;
     background-color: $c-pallete-transp-light;
-    border-color:$c-pallete-transp-light;
+    border-color: $c-pallete-transp-light;
 }
 
 .form-control {
     color: $c-pallete-text;
     background-color: $c-pallete-nuetral;
-    border-color:$c-pallete-transp-light;
+    border-color: $c-pallete-transp-light;
+
+    &:focus {
+        color: $c-pallete-text;
+        background-color: $c-pallete-nuetral;
+        border-color: $c-pallete-accent;
+    }
 }
 
 .form-control:disabled, .form-control[readonly] {
@@ -16,9 +22,9 @@
 }
 
 .merged-input-group {
-    .input-group:not(:first-child) > * {
-        border-top: none;
-    }
+    // .input-group:not(:first-child) > * {
+    //     border-top: none;
+    // }
     .input-group:not(:first-child):not(:last-child) > * {
         border-radius: 0;
     }

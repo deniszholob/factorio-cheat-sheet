@@ -39,7 +39,6 @@ export class TipsComponent implements OnInit {
 
     ngOnInit() {
         this.cheatSheet = new CheatSheet(this.dataService.getFactorioIcon(cheatSheet.icon), cheatSheet.title);
-        console.log(this.calcMachines);
         this.calcMachinesTofillBelt();
     }
 

@@ -61,6 +61,10 @@ export class DataService {
     }
 
     private getFactorioIconSrc(iconId): string {
+        if (iconId.includes('research')) {
+            iconId = iconId.replace(/_/g, '-');
+            return APP_SETTINGS.links.wikiImagesBase + 'thumb/' + iconId + '.png/32px-' + iconId + '.png';
+        }
         return APP_SETTINGS.links.wikiImagesBase + iconId + '.png';
     }
 }
