@@ -1,0 +1,75 @@
+<app-cheat-sheet [cheatSheet]="cheatSheet">
+
+    <div class="row">
+        <div class="col-12 col-lg-8">
+            <ul>
+                <li>
+                        <a href="https://wiki.factorio.com/Fluid_wagon">Fluid wagons</a> require at least one pump and at most 3 pumps per fluid wagon.
+                </li>
+                <li>
+                    If more than 3 pumps can be active on the fluid wagon, only 3 will “latch on” and be in use with the remaining pumps inactive.
+                </li>
+                <li>
+                    Fluid wagons can hold 75k units of fluids which is
+                    equal to 3 <a href="https://wiki.factorio.com/Storage_tank">Storage Tanks</a>.
+                </li>
+                <li>
+                    A <a href="https://wiki.factorio.com/Pump#Throughput">Pump</a> has a maximum throughput of 12k units/s.
+                </li>
+            </ul>
+
+            <p class="text-center">
+                <app-factorio-icon [icon]="dataService.getFactorioIcon('Fluid_wagon', 1)"></app-factorio-icon>
+                <app-factorio-icon [icon]="dataService.getFactorioIcon('Storage_tank', 3)"></app-factorio-icon>
+            </p>
+
+        </div>
+
+        <div class="col-12 col-lg-4 text-center">
+            <table class="table table-sm table-hover fixed-width" style="max-width: 300px;">
+                <caption class="text-center">*Direct connection (no pipes)</caption>
+                <thead class="text-center">
+                    <tr>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Pump')"></app-factorio-icon>
+                        </th>
+                        <th>Loading &amp; Unloading Times</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr *ngFor="let item of sheetData">
+                        <td>{{item?.pumps}}</td>
+                        <td>{{item?.transferTime}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <br>
+    <p>
+        *It is recommended that fluid wagons are loaded directly from a tank with a pump. Otherwise due to pipe pressure, the loading
+        and unloading times may <a href="https://www.reddit.com/r/factorio/comments/69kop6/pumppipe_throughput_tests_for_015/">increase significantly</a>.
+    </p>
+
+    <hr>
+
+
+    <div class="row align-items-center">
+        <div class="col text-center">
+            <span><strong>Aligned</strong></span><br>
+            <img src="{{APP_SETTINGS.links.getLocalImagePath('fluid-wagon-pump-aligned.jpg')}}" class="img-fluid rounded" title="Aligned wagon">
+        </div>
+        <br>
+        <div class="col text-center">
+            <span><strong>Misaligned</strong></span><br>
+            <img src="{{APP_SETTINGS.links.getLocalImagePath('fluid-wagon-pump-misaligned.jpg')}}" class="img-fluid rounded" title="Misaligned wagon">
+        </div>
+    </div>
+
+    <p class="txt-muted text-center">
+        You can see that the pumps have connected if you see the “latching on” mechanism (in green).
+    </p>
+
+
+</app-cheat-sheet>
