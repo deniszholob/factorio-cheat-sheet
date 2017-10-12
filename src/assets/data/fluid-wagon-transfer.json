@@ -1,0 +1,22 @@
+{
+    "content": {
+        "cheatSheet": {
+            "title": "Fluid Wagon Transfer",
+            "icon": "Fluid_wagon"
+        },
+        "data": [
+            {
+                "pumps": 1,
+                "transferTime": "6.250s"
+            },
+            {
+                "pumps": 2,
+                "transferTime": "3.125s"
+            },
+            {
+                "pumps": 3,
+                "transferTime": "2.083s"
+            }
+        ]
+    }
+}

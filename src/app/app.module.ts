@@ -45,6 +45,7 @@ const appRoutes: Routes = [];
         sheetComponents.BasicPowerComponent,
         sheetComponents.BeltThroughputComponent,
         sheetComponents.CommonRatiosComponent,
+        sheetComponents.FluidWagonComponent,
         sheetComponents.InserterThroughputComponent,
         sheetComponents.LinksComponent,
         sheetComponents.MaterialProcessingComponent,
