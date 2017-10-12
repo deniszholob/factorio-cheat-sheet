@@ -18,20 +18,12 @@ const cheatSheet = {
 @Component({
     selector: 'app-tips',
     templateUrl: './tips.component.html',
-    styleUrls: ['./tips.component.scss'] // Enable as needed
+    // styleUrls: ['./tips.component.scss'] // Enable as needed
 })
 export class TipsComponent implements OnInit {
-    APP_SETTINGS = APP_SETTINGS;
     cheatSheet: CheatSheet;
 
-    calcMachines: TroughputCalc = {
-        machinesToFillBelt: 1,
-        beltThroughput: 40,
-        recipeBaseCraftTime: 1,
-        itemsPerCraft: 1,
-        machineCraftSpeed: 0.75,
-        machineProductivity: 1,
-    };
+    APP_SETTINGS = APP_SETTINGS;
 
     constructor(
         public dataService: DataService
@@ -39,23 +31,6 @@ export class TipsComponent implements OnInit {
 
     ngOnInit() {
         this.cheatSheet = new CheatSheet(this.dataService.getFactorioIcon(cheatSheet.icon), cheatSheet.title);
-        this.calcMachinesTofillBelt();
     }
 
-    calcMachinesTofillBelt() {
-        this.calcMachines.machinesToFillBelt =
-            (this.calcMachines.beltThroughput * this.calcMachines.recipeBaseCraftTime) /
-            (this.calcMachines.itemsPerCraft * this.calcMachines.machineCraftSpeed * this.calcMachines.machineProductivity);
-        this.calcMachines.machinesToFillBelt = this.calcMachines.machinesToFillBelt.toFixed(2);
-    }
-
-}
-
-interface TroughputCalc {
-    machinesToFillBelt: any;
-    beltThroughput: number;
-    recipeBaseCraftTime: number;
-    itemsPerCraft: number;
-    machineCraftSpeed: number;
-    machineProductivity: number;
 }
