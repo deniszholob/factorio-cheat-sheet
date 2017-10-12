@@ -1,3 +1,11 @@
+@import './src/global-styles/variables';
+
+img {
+    box-shadow: none;
+    filter: drop-shadow(2px 2px 2px $c-pallete-transp-medium);
+    width: 100%;
+}
+
 table {
     width: 100%;
 }
@@ -19,13 +27,15 @@ table {
 
 .eq-container {
     display: flex;
-    margin: 5px;
+    margin: 0 5px;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    font-size: 1em;
 
     .eq-operator {
-        padding: 1px 5px;
-        margin: 0;
+        padding: 5px 5px;
+        margin: 5px 0;
     }
 
     .eq-field {
@@ -33,6 +43,7 @@ table {
         color: whitesmoke;
         position: relative;
         padding: .2em;
+        margin: 5px 0;
 
         /* Brackets */
         &:after,
@@ -61,7 +72,7 @@ table {
             background: rgba(0, 0, 0, 0.4);
             color: inherit;
 
-            font-size: 1rem;
+            font-size: 1em;
             line-height: 1.25;
         }
 
@@ -76,9 +87,24 @@ table {
             width: 100px;
             border: none;
 
-            font-size: 1rem;
+            font-size: 1em;
             line-height: 1.25;
         }
 
+    }
+}
+
+@media (min-width: 576px){
+    .eq-container {
+        flex-wrap: nowrap;
+        font-size: 0.9em;
+        .eq-field .eq-input {
+            width: 70px;
+        }
+    }
+}
+@media (min-width: 768px){
+    .eq-container {
+        font-size: 1em;
     }
 }

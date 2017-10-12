@@ -50,6 +50,7 @@ const appRoutes: Routes = [];
         sheetComponents.LinksComponent,
         sheetComponents.MaterialProcessingComponent,
         sheetComponents.MiningComponent,
+        sheetComponents.ModulesAndBeaconsComponent,
         sheetComponents.NuclearPowerComponent,
         sheetComponents.OilRefiningComponent,
         sheetComponents.ProductivityModulePayoffsComponent,
