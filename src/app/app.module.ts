@@ -1,5 +1,6 @@
 // Angular Imports
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
@@ -20,9 +21,12 @@ import * as sheetComponents from 'app/views/cheat-sheets';
 // ===  Other Imports === //
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+const appRoutes: Routes = [];
+
 @NgModule({
     imports: [
         BrowserModule,
+        RouterModule.forRoot(appRoutes),
         BrowserAnimationsModule,
         FormsModule,
         HttpModule,
