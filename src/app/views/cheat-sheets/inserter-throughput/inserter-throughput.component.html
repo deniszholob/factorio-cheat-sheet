@@ -1,0 +1,98 @@
+<app-cheat-sheet [cheatSheet]="cheatSheet">
+    <p class="card-text">
+        <strong><a href="https://wiki.factorio.com/Inserters#Inserter_Throughput">Inserter Throughput</a></strong> - Items
+        per second (i/s) moved by the inserter between targets (chests, belts, assemblers, trains, etc...)
+    </p>
+    <p class="card-text">
+        <strong><a href="https://wiki.factorio.com/Inserter_capacity_bonus_(research)">Inserter capacity research</a></strong>        is used to increase the throughput.
+    </p>
+    <p>The inserter throughput displayed in the tables below could be used to calculate the exact number of inserters needed
+        for your task.</p>
+
+    <p><kbd>
+        Inserters Required = (Target Item Rate) / (Inserter Throughput)
+    </kbd></p>
+
+    <table class="table table-sm table-hover fixed-width" style="max-width: 800px;">
+        <caption class="text-center">Inserter Throughtput</caption>
+        <thead class="text-center">
+            <tr>
+                <th colspan="6">
+                    <div class="merged-input-group mx-auto" style="max-width:230px">
+                        <div class="input-group">
+                            <span class="input-group-addon">Inserter Bonus Level</span>
+                            <select class="form-control" type="number" [(ngModel)]="bonusLevel" (ngModelChange)="updateTable()">
+                                <option *ngFor="let level of bonusLevels" [ngValue]="level">{{level}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>Stack Size</th>
+                <th>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Steel_chest')"></app-factorio-icon>
+                    <i class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Steel_chest')"></app-factorio-icon>
+                </th>
+                <th>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Steel_chest')"></app-factorio-icon>
+                    <i class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt')"></app-factorio-icon>
+                </th>
+                <th>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Steel_chest')"></app-factorio-icon>
+                    <i class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_transport_belt')"></app-factorio-icon>
+                </th>
+                <th>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Steel_chest')"></app-factorio-icon>
+                    <i class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr *ngFor="let item of tableData">
+                <td>
+                    <app-factorio-icon *ngFor="let iconId of item.icons" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
+                </td>
+                <td><strong>{{item.stackSize}}</strong></td>
+                <td>{{item.chestToChest | number:'1.2-2'}} i/s</td>
+                <td>{{item.chestToYellowBelt | number:'1.2-2'}} i/s</td>
+                <td>{{item.chestToRedBelt | number:'1.2-2'}} i/s</td>
+                <td>{{item.chestToBlueBelt | number:'1.2-2'}} i/s</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <!-- <h5>Notes</h5> -->
+
+    <ul>
+        <li>
+            Taking items from belts is slightly slower than placing them.
+        </li>
+        <li>
+            It takes 3.28 stack inserters (exclusive swinging time) to fill a blue belt.
+        </li>
+        <li>
+            Achieving full compression on a belt is only possible by sideloading, inserting into underground belts or by compressing
+            two belts to one using a splitter.
+        </li>
+    </ul>
+
+    <div class="row align-items-center">
+        <div class="col text-center">
+            <span><strong>Compressed</strong> with Underground Belt</span><br>
+            <img src="{{APP_SETTINGS.links.getLocalImagePath('inserter-belt-compressed.jpg')}}" class="img-fluid rounded">
+        </div>
+        <br>
+        <div class="col text-center">
+            <span><strong>Uncompressed</strong></span><br>
+            <img src="{{APP_SETTINGS.links.getLocalImagePath('inserter-belt-uncompressed.jpg')}}" class="img-fluid rounded">
+        </div>
+    </div>
+
+</app-cheat-sheet>

@@ -1,0 +1,166 @@
+{
+    "content": {
+        "cheatSheet": {
+            "title": "Inserter Throughput",
+            "icon": "Inserter"
+        },
+        "data": {
+            "throughputNoBonus": [
+                {
+                    "icons": [
+                        "Burner_inserter"
+                    ],
+                    "stackSize": 1,
+                    "chestToChest": 0.59,
+                    "chestToYellowBelt": 0.59,
+                    "chestToRedBelt": 0.59,
+                    "chestToBlueBelt": 0.59
+                },
+                {
+                    "icons": [
+                        "Inserter"
+                    ],
+                    "stackSize": 1,
+                    "chestToChest": 0.83,
+                    "chestToYellowBelt": 0.83,
+                    "chestToRedBelt": 0.83,
+                    "chestToBlueBelt": 0.83
+                },
+                {
+                    "icons": [
+                        "Long_handed_inserter"
+                    ],
+                    "stackSize": 1,
+                    "chestToChest": 1.15,
+                    "chestToYellowBelt": 1.15,
+                    "chestToRedBelt": 1.15,
+                    "chestToBlueBelt": 1.15
+                },
+                {
+                    "icons": [
+                        "Fast_inserter", "Filter_inserter"
+                    ],
+                    "stackSize": 1,
+                    "chestToChest": 2.31,
+                    "chestToYellowBelt": 2.31,
+                    "chestToRedBelt": 2.31,
+                    "chestToBlueBelt": 2.31
+                },
+                {
+                    "icons": [
+                        "Stack_inserter", "Stack_filter_inserter"
+                    ],
+                    "stackSize": 2,
+                    "chestToChest": 4.62,
+                    "chestToYellowBelt": 3.64,
+                    "chestToRedBelt": 4.00,
+                    "chestToBlueBelt": 4.14
+                }
+            ],
+            "throughputBonus2": [
+                {
+                    "icons": [
+                        "Burner_inserter"
+                    ],
+                    "stackSize": 2,
+                    "chestToChest": 1.18,
+                    "chestToYellowBelt": 1.10,
+                    "chestToRedBelt": 1.13,
+                    "chestToBlueBelt": 1.14
+                },
+                {
+                    "icons": [
+                        "Inserter"
+                    ],
+                    "stackSize": 2,
+                    "chestToChest": 1.67,
+                    "chestToYellowBelt": 1.52,
+                    "chestToRedBelt": 1.58,
+                    "chestToBlueBelt": 1.60
+                },
+                {
+                    "icons": [
+                        "Long_handed_inserter"
+                    ],
+                    "stackSize": 2,
+                    "chestToChest": 2.31,
+                    "chestToYellowBelt": 2.03,
+                    "chestToRedBelt": 2.14,
+                    "chestToBlueBelt": 2.18
+                },
+                {
+                    "icons": [
+                        "Fast_inserter", "Filter_inserter"
+                    ],
+                    "stackSize": 2,
+                    "chestToChest": 4.62,
+                    "chestToYellowBelt": 3.64,
+                    "chestToRedBelt": 4.00,
+                    "chestToBlueBelt": 4.14
+                },
+                {
+                    "icons": [
+                        "Stack_inserter", "Stack_filter_inserter"
+                    ],
+                    "stackSize": 4,
+                    "chestToChest": 9.23,
+                    "chestToYellowBelt": 4.71,
+                    "chestToRedBelt": 6.15,
+                    "chestToBlueBelt": 6.86
+                }
+            ],
+            "throughputMaxBonus": [
+                {
+                    "icons": [
+                        "Burner_inserter"
+                    ],
+                    "stackSize": 3,
+                    "chestToChest": 1.76,
+                    "chestToYellowBelt": 1.53,
+                    "chestToRedBelt": 1.62,
+                    "chestToBlueBelt": 1.67
+                },
+                {
+                    "icons": [
+                        "Inserter"
+                    ],
+                    "stackSize": 3,
+                    "chestToChest": 2.50,
+                    "chestToYellowBelt": 2.02,
+                    "chestToRedBelt": 2.22,
+                    "chestToBlueBelt": 2.31
+                },
+                {
+                    "icons": [
+                        "Long_handed_inserter"
+                    ],
+                    "stackSize": 3,
+                    "chestToChest": 3.46,
+                    "chestToYellowBelt": 2.65,
+                    "chestToRedBelt": 2.95,
+                    "chestToBlueBelt": 3.10
+                },
+                {
+                    "icons": [
+                        "Fast_inserter", "Filter_inserter"
+                    ],
+                    "stackSize": 3,
+                    "chestToChest": 6.93,
+                    "chestToYellowBelt": 4.29,
+                    "chestToRedBelt": 5.14,
+                    "chestToBlueBelt": 5.63
+                },
+                {
+                    "icons": [
+                        "Stack_inserter", "Stack_filter_inserter"
+                    ],
+                    "stackSize": 12,
+                    "chestToChest": 27.70,
+                    "chestToYellowBelt": 5.90,
+                    "chestToRedBelt": 9.60,
+                    "chestToBlueBelt": 12.20
+                }
+            ]
+        }
+    }
+}
