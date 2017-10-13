@@ -1,0 +1,73 @@
+{
+    "content": {
+        "cheatSheet": {
+            "title": "Cargo Wagon Transfer",
+            "icon": "Cargo_wagon"
+        },
+        "data": [
+            {
+                "ItemsPerSwing": 1,
+                "stack10": 29.03,
+                "stack50": 144.73,
+                "stack100": 289.03,
+                "stack200": 578.07
+            },
+            {
+                "ItemsPerSwing": 2,
+                "stack10": 14.73,
+                "stack50": 72.37,
+                "stack100": 144.73,
+                "stack200": 239.03
+            },
+            {
+                "ItemsPerSwing": 3,
+                "stack10": 9.97,
+                "stack50": 48.53,
+                "stack100": 96.63,
+                "stack200": 192.83
+            },
+            {
+                "ItemsPerSwing": 4,
+                "stack10": 7.37,
+                "stack50": 36.40,
+                "stack100": 72.37,
+                "stack200": 144.73
+            },
+            {
+                "ItemsPerSwing": 5,
+                "stack10": 6.07,
+                "stack50": 29.03,
+                "stack100": 58.07,
+                "stack200": 115.70
+            },
+            {
+                "ItemsPerSwing": 6,
+                "stack10": 5.20,
+                "stack50": 24.27,
+                "stack100": 48.53,
+                "stack200": 96.63
+            },
+            {
+                "ItemsPerSwing": 8,
+                "stack10": 3.90,
+                "stack50": 18.20,
+                "stack100": 36.40,
+                "stack200": 72.37
+            },
+            {
+                "ItemsPerSwing": 10,
+                "stack10": 3.03,
+                "stack50": 14.73,
+                "stack100": 29.03,
+                "stack200": 58.07
+            },
+            {
+                "ItemsPerSwing": 12,
+                "stack10": 2.60,
+                "stack50": 12.13,
+                "stack100": 24.27,
+                "stack200": 48.53
+            }
+        ]
+    }
+}

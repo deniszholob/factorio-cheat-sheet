@@ -1,0 +1,76 @@
+<app-cheat-sheet [cheatSheet]="cheatSheet">
+    <p>
+        The table shows the time (in seconds) it takes to load or unload a cargo wagon assuming you are using 6 fast or stack inserters.
+        <br> With seven optional inserter capacity research bonuses, there are a lot of different loading and unloading rates.
+    </p>
+
+    <p>If you use 12 fast or stack inserters (6 on each side of the wagon), divide the time listed by 2 to get the approximate
+        time required.
+    </p>
+
+    <div class="row align-items-center">
+        <div class="col-12 col-lg-6 text-center">
+            <table class="table table-sm table-hover fixed-width">
+                <caption class="text-center">Time to transfer inventory b/w wagon and chests</caption>
+                <thead class="text-center">
+                    <tr>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_inserter')"></app-factorio-icon>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Stack_inserter')"></app-factorio-icon>
+                            <br> Items / <br> swing</th>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Empty_barrel')"></app-factorio-icon>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Crude_oil_barrel')"></app-factorio-icon>
+                            <br>
+                            <span>10 items <br> per stack</span>
+                        </th>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Copper_ore')"></app-factorio-icon>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Iron_ore')"></app-factorio-icon>
+                            <br>
+                            <span>50 items <br> per stack</span>
+                        </th>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Copper_plate')"></app-factorio-icon>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Iron_plate')"></app-factorio-icon>
+                            <br>
+                            <span>100 items <br> per stack</span>
+                        </th>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Electronic_circuit')"></app-factorio-icon>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Advanced_circuit')"></app-factorio-icon>
+                            <br>
+                            <span>200 items <br> per stack</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr *ngFor="let item of sheetData">
+                        <td>{{item?.ItemsPerSwing}}</td>
+                        <td>{{item?.stack10}} s</td>
+                        <td>{{item?.stack50}} s</td>
+                        <td>{{item?.stack100}} s</td>
+                        <td>{{item?.stack200}} s</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-12 col-lg-6 text-center">
+            <span><strong>Inserter Setup</strong></span><br>
+            <img src="{{APP_SETTINGS.links.getLocalImagePath('train-stack-load.jpg')}}" class="img-fluid rounded" title="Wagon Load">
+        </div>
+    </div>
+
+    <span>Notes: </span>
+    <ul>
+        <li>
+            The times are very slightly off as inserters ready themselves after the wagon leaves, therefore the first swing loading/last
+            swing unloading are not needed.
+        </li>
+        <li>
+            These times are for unloading/loading using chests. If inserters are directly fed by or directly feeding belts, loading times
+            will be higher.
+        </li>
+    </ul>
+
+</app-cheat-sheet>
