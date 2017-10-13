@@ -28,11 +28,11 @@
 
     <p class="card-text">
         <strong>Blueprint:</strong>
-        Here is a 2x ratio science pack <a href="http://deniszholob.com/factorio/blueprints/#bpbScience">blueprint book</a>
+        Here is a 2x ratio science pack <a href="http://deniszholob.com/factorio/blueprints/#bpbScience" target="_blank">blueprint book</a>
         that will produce 90 of each per minute using blue assemblers.
         <br>
         Check your
-        <a href="http://doomeer.com/factorio/#s1132bbbbbbbbbbbbbbrgrgrrrrgrrrgrgrrrrrrrrrrrrrrrA5rA6rA12rA5rA7rA7rrrrgrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr">
+        <a href="http://doomeer.com/factorio/#s1132bbbbbbbbbbbbbbrgrgrrrrgrrrgrgrrrrrrrrrrrrrrrA5rA6rA12rA5rA7rA7rrrrgrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr" target="_blank">
             Resource requirements
         </a> to keep production steady
     </p>
@@ -58,15 +58,15 @@
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">Science Per Launch</span>
-                    <input type="number" class="form-control" [(ngModel)]="rocketCalcData.sciencePerLaunch" (keyup)="onCalcRocketRate()">
+                    <input type="number" class="form-control" [(ngModel)]="rocketCalcData.sciencePerLaunch" (keyup)="onCalcRocketRate()" (change)="onCalcRocketRate()">
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">Assembler Speed</span>
-                    <input type="number" class="form-control" [(ngModel)]="rocketCalcData.assemblerSpeed" (keyup)="onCalcRocketRate()" step="0.25">
+                    <input type="number" class="form-control" [(ngModel)]="rocketCalcData.assemblerSpeed" (keyup)="onCalcRocketRate()" (change)="onCalcRocketRate()" step="0.25">
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">Ratio Multiplier</span>
-                    <input type="number" class="form-control" [(ngModel)]="rocketCalcData.ratioMultiplier" (keyup)="onCalcRocketRate()">
+                    <input type="number" class="form-control" [(ngModel)]="rocketCalcData.ratioMultiplier" (keyup)="onCalcRocketRate()" (change)="onCalcRocketRate()">
             </div>
         </div>
         </div>
