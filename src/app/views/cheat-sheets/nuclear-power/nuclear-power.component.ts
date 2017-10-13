@@ -29,10 +29,13 @@ export class NuclearPowerComponent implements OnInit {
     // Nuke ratios for various reactor numbers
     reactorTable: NukeRatioData[] = [];
 
+    reactorInfoCountChanged = 10;
     reactorInfoCount = 10;
     reactorInfoCountMax = 292;
     evenOnly = true;
     roundUp = true;
+
+    inputStep = 1;
 
     constructor(
         public dataService: DataService
@@ -58,9 +61,27 @@ export class NuclearPowerComponent implements OnInit {
         );
     }
 
+    /** Makes sure the value changes before running calculations
+     *  Mostly for the mouse click event, since the change event is not registering the tick change untill mouse moves.
+     */
+    inputChange() {
+        if (this.reactorInfoCount !== this.reactorInfoCountChanged) {
+            this.reactorInfoCountChanged = this.reactorInfoCount;
+            this.getNukeRatios();
+        }
+    }
+
+    /** If user toggles b/w all and even entries */
+    changeInputStep(){
+        this.inputStep = this.evenOnly ? 2 : 1;
+    }
+
     /** Populates the Nuke ratios array to display */
     getNukeRatios() {
         const reactorCount = this.reactorInfoCount;
+
+        // Change input step
+        this.changeInputStep();
 
         // Clear table
         this.reactorTable = [];

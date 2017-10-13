@@ -4,27 +4,31 @@
         <div class="col-12 col-lg-8">
             <ul>
                 <li>
-                        <a href="https://wiki.factorio.com/Fluid_wagon">Fluid wagons</a> require at least one pump and at most 3 pumps per fluid wagon.
+                    <a href="https://wiki.factorio.com/Fluid_wagon" target="_blank">Fluid wagons</a> require at least one pump and at most 3 pumps per fluid wagon.
                 </li>
                 <li>
                     If more than 3 pumps can be active on the fluid wagon, only 3 will “latch on” and be in use with the remaining pumps inactive.
                 </li>
                 <li>
-                    Fluid wagons can hold 75k units of fluids which is
-                    equal to 3 <a href="https://wiki.factorio.com/Storage_tank">Storage Tanks</a>.
+                    A <a href="https://wiki.factorio.com/Pump#Throughput" target="_blank">Pump</a> has a maximum throughput of 12k units/s.
+                </li>
+                <li>
+                    Fluid wagons can hold 75k units of fluids which is equal to 3
+                    <a href="https://wiki.factorio.com/Storage_tank" target="_blank">Storage Tanks</a>.
+                    <p class="text-center">
+                        <app-factorio-icon [icon]="dataService.getFactorioIcon('Fluid_wagon', 1)"></app-factorio-icon>
+                        <app-factorio-icon [icon]="dataService.getFactorioIcon('Storage_tank', 3)"></app-factorio-icon>
+                    </p>
                 </li>
                 <li>
                     Click the fluid wagon to separate the tanks so they can carry 2 or 3 different fluids.
                 </li>
                 <li>
-                    A <a href="https://wiki.factorio.com/Pump#Throughput">Pump</a> has a maximum throughput of 12k units/s.
+                    It is recommended that a fluid wagon's pump is connected directly to a tank. Otherwise due to pipe pressure, the loading
+                    and unloading times may
+                    <a href="https://www.reddit.com/r/factorio/comments/69kop6/pumppipe_throughput_tests_for_015/" target="_blank">increase significantly</a>.
                 </li>
             </ul>
-
-            <p class="text-center">
-                <app-factorio-icon [icon]="dataService.getFactorioIcon('Fluid_wagon', 1)"></app-factorio-icon>
-                <app-factorio-icon [icon]="dataService.getFactorioIcon('Storage_tank', 3)"></app-factorio-icon>
-            </p>
 
         </div>
 
@@ -50,11 +54,6 @@
     </div>
 
     <br>
-    <p>
-        *It is recommended that a fluid wagon's pump is connected directly to a tank. Otherwise due to pipe pressure, the loading
-        and unloading times may <a href="https://www.reddit.com/r/factorio/comments/69kop6/pumppipe_throughput_tests_for_015/">increase significantly</a>.
-    </p>
-
     <hr>
 
     <div class="row align-items-center">
@@ -73,5 +72,17 @@
         You can see that the pumps have connected if you see the “latching on” mechanism (in green).
     </p>
 
+
+    <div class="row align-items-center">
+        <div class="col text-center">
+            <span><strong>Separated Wagons</strong></span><br>
+            <img src="{{APP_SETTINGS.links.getLocalImagePath('seperate-fluid-wagon-tanks.jpg')}}" class="img-fluid rounded" alt="Aligned Wagon" title="Aligned Wagon">
+        </div>
+        <br>
+        <div class="col text-center">
+            <span><strong>Example Fast Transfer Build</strong></span><br>
+            <img src="{{APP_SETTINGS.links.getLocalImagePath('fluid-wagon-fastest-transfer.jpg')}}" class="img-fluid rounded" alt="Misaligned Wagon" title="Misaligned Wagon">
+        </div>
+    </div>
 
 </app-cheat-sheet>

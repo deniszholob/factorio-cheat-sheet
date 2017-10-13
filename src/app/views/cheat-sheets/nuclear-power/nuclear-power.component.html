@@ -2,7 +2,7 @@
 
     <div class="row align-items-center">
                 <p class="col-12 col-sm-4 text-center">
-            <span class="txt-muted">Simple Setup Ratio</span><br>
+            <span class="txt-muted">Simple Build Ratio</span><br>
             <ng-container *ngFor="let item of sheetData?.simpleRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
@@ -11,12 +11,12 @@
         </p>
 
         <p class="col-12 col-sm-4 text-center">
-            <span class="txt-muted">Common Setup Ratio</span><br>
-            <ng-container *ngFor="let item of sheetData?.perfectRatio">
+            <span class="txt-muted">Common Build Ratio</span><br>
+            <ng-container *ngFor="let item of sheetData?.commonRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
             <i class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
-            <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i> <sub style="vertical-align: baseline"><strong>{{sheetData?.perfectRatioPower}}</strong></sub>
+            <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i> <sub style="vertical-align: baseline"><strong>{{sheetData?.commonRatioPower}}</strong></sub>
         </p>
 
         <p class="col-12 col-sm-4 text-center">
@@ -29,12 +29,14 @@
         </p>
     </div>
 
+    <p class="txt-muted text-center"><strong>Note:</strong> Pumps and Steam Turbines are rounded up for build ratios. See table for percise numbers.</p>
+
     <hr>
     <h4 class="card-title">Summary</h4>
 
     <ul>
         <li>
-            One uranium fuel cell will <a href="https://wiki.factorio.com/Nuclear_reactor">always last</a> 200s,
+            One uranium fuel cell will <a href="https://wiki.factorio.com/Nuclear_reactor" target="_blank">always last</a> 200s,
             even if the produced heat does not get consumed,
             so the rest of the energy is wasted if not used.
         </li>
@@ -47,13 +49,13 @@
             Nuclear reactor can buffer 500C worth of energy after heat up as well as heatpipes, steam pipes and heat exchangers in addition to steam tanks and accumulators.
         </li>
         <li>
-            A Storage tank holding 25k units of Steam at 500°C contains 2.425 GJ of energy, equal to 485 fully charged Accumulators!
+            A Storage tank holding 25k units of Steam at <strong>500°C</strong> contains 2.425 GJ of energy, equal to 485 fully charged Accumulators!
         </li>
         <li>
-            <a href="https://wiki.factorio.com/Nuclear_reactor">Reactors</a> experience a 100% increase in energy output when placed directly next to another reactor.
+            <a href="https://wiki.factorio.com/Nuclear_reactor" target="_blank">Reactors</a> experience a 100% increase in energy output when placed directly next to another reactor.
         </li>
         <li>
-            One Offshore pump can fully supply 12 Heat Exchangers driving 20 Steam Turbines producing 120MW.
+            One Offshore pump can fully supply 12 <a href="https://wiki.factorio.com/Heat_exchanger" target="_blank">Heat Exchangers</a> driving 20 <a href="https://wiki.factorio.com/Steam_turbine" target="_blank">Steam Turbines</a> producing 120MW.
         </li>
     </ul>
 
@@ -80,7 +82,7 @@
                             <div class="merged-input-group mx-auto" style="max-width:269px">
                                 <div class="input-group">
                                     <span class="input-group-addon">Reactor Table Count</span>
-                                    <input type="number" class="form-control" [(ngModel)]="reactorInfoCount" min="1" max="{{reactorInfoCountMax}}" (keyup)="getNukeRatios()" (change)="getNukeRatios()">
+                                    <input type="number" class="form-control" [(ngModel)]="reactorInfoCount" min="{{inputStep}}" max="{{reactorInfoCountMax}}" step="{{inputStep}}" (keyup)="getNukeRatios()" (change)="getNukeRatios()" (mouseup)="inputChange()">
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon">Even Only</span>
@@ -126,22 +128,22 @@
 
     <h4 class="card-title">Formulas</h4>
     <p>
-        See <a href="https://www.reddit.com/r/factorio/comments/67xgge/nuclear_ratios/">Nuclear Ratios</a> Post
-        and, <a href="https://wiki.factorio.com/Tutorial:Nuclear_power">Nuclear Guide</a> Wiki
+        See <a href="https://www.reddit.com/r/factorio/comments/67xgge/nuclear_ratios/" target="_blank">Nuclear Ratios</a> Post
+        and, <a href="https://wiki.factorio.com/Tutorial:Nuclear_power" target="_blank">Nuclear Guide</a> Wiki
         for more details.
     </p>
 
     <p><kbd>
-    Heat Exchangers (even config) = (Heat Exchangers Per Reactor * 4 * reactors) - (Heat Exchangers Per Reactor * 4);
+    Heat Exchangers (even config) = [Heat Exchangers Per Reactor * 4 * reactors] - [Heat Exchangers Per Reactor * 4];
     </kbd></p>
     <p><kbd>
-    Power (even config) = (Reactor Power * 4 * reactors) - (Reactor Power * 4);
+    Power (even config) = [Reactor Power * 4 * reactors] - [Reactor Power * 4];
     </kbd></p>
     <p><kbd>
-    Turbines = Heat Exchangers * Heat Exchanger Power / Turbine Power;
+    Turbines = [Heat Exchangers * Heat Exchanger Power(10MW)] / [Turbine Power(5.8MW)];
     </kbd></p>
     <p><kbd>
-    Pumps = Turbines * (Water Per Turbine / Water Per Pump);
+    Pumps = [Turbines] * [Water Per Turbine / Water Per Pump];
     </kbd></p>
     <p><strong>Steam Tanks:</strong> 1 fuel cell creates 8 GJ per reactor (eg 2 reactors puts out 4 solo reactors of energy = 32 GJ).
         <br>Each tank can hold 2.425 GJ worth of steam, or 3.29 tanks per reactor.

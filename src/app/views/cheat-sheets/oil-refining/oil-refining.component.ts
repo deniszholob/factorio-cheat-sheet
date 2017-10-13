@@ -9,6 +9,7 @@ import { Data } from 'app/services/data';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 
 // Constants
+import { APP_SETTINGS } from 'app/shared/app-settings';
 const dataFile = 'oil-refining';
 
 @Component({
@@ -19,6 +20,8 @@ const dataFile = 'oil-refining';
 export class OilRefiningComponent implements OnInit {
     cheatSheet: CheatSheet;
     sheetData: any;
+
+    APP_SETTINGS = APP_SETTINGS;
 
     constructor(
         public dataService: DataService

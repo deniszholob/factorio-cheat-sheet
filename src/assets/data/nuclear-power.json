@@ -29,8 +29,8 @@
                     "count": 7
                 }
             ],
-            "perfectRatioPower": "480 MW",
-            "perfectRatio": [
+            "commonRatioPower": "480 MW",
+            "commonRatio": [
                 {
                     "iconId": "Nuclear_reactor",
                     "count": 4

@@ -1,5 +1,6 @@
 <div id="mySidenav" class="sidenav" [class.open]="isNavOpen">
     <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+    <a href="#Top" (click)="closeNav()">Top</a>
     <a *ngFor="let sheet of sheetIds" href="#{{sheet}}" (click)="closeNav()">{{sheetName(sheet)}}</a>
 </div>
 
