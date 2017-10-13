@@ -13,11 +13,11 @@ import { APP_SETTINGS } from 'app/shared/app-settings';
 const dataFile = 'fluid-wagon-transfer';
 
 @Component({
-    selector: 'app-fluid-wagon',
-    templateUrl: './fluid-wagon.component.html',
-    // styleUrls: ['./fluid-wagon.component.scss'] // Enable as needed
+    selector: 'app-fluid-wagon-transfer',
+    templateUrl: './fluid-wagon-transfer.component.html',
+    // styleUrls: ['./fluid-wagon-transfer.component.scss'] // Enable as needed
 })
-export class FluidWagonComponent implements OnInit {
+export class FluidWagonTransferComponent implements OnInit {
     cheatSheet: CheatSheet;
     sheetData: any;
 

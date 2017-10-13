@@ -8,11 +8,12 @@
         "nuclear-power",
         "oil-refining",
         "fluid-wagon-transfer",
+        "cargo-wagon-transfer",
         "inserter-throughput",
-        "train-speed",
         "common-ratios",
         "modules-and-beacons",
         "productivity-module-payoffs",
+        "train-speed",
         "tips",
         "links"
     ]
