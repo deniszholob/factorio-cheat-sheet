@@ -1,6 +1,6 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
     <p>
-        The table shows the time (in seconds) it takes to load or unload a cargo wagon assuming you are using 6 fast or stack inserters.
+        The table shows the time (in seconds) it takes to load or unload a <a href="https://wiki.factorio.com/Cargo_wagon">Cargo Wagon</a> assuming you are using 6 fast or stack inserters.
         <br> With seven optional inserter capacity research bonuses, there are a lot of different loading and unloading rates.
     </p>
 
@@ -22,7 +22,7 @@
                             <app-factorio-icon [icon]="dataService.getFactorioIcon('Empty_barrel')"></app-factorio-icon>
                             <app-factorio-icon [icon]="dataService.getFactorioIcon('Crude_oil_barrel')"></app-factorio-icon>
                             <br>
-                            <span>10 items <br> per stack</span>
+                            <span>* 10 items <br> per stack</span>
                         </th>
                         <th>
                             <app-factorio-icon [icon]="dataService.getFactorioIcon('Copper_ore')"></app-factorio-icon>
@@ -57,12 +57,12 @@
         </div>
         <div class="col-12 col-lg-6 text-center">
             <span><strong>Inserter Setup</strong></span><br>
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('train-stack-load.jpg')}}" class="img-fluid rounded" title="Wagon Load">
+            <img src="{{APP_SETTINGS.links.getLocalImagePath('train-stack-load.jpg')}}" class="img-fluid rounded" alt="Wagon Load" title="Wagon Load">
         </div>
     </div>
 
-    <span>Notes: </span>
-    <ul>
+    <span class="txt-muted">Notes: </span>
+    <ul class="txt-muted">
         <li>
             The times are very slightly off as inserters ready themselves after the wagon leaves, therefore the first swing loading/last
             swing unloading are not needed.
@@ -70,6 +70,9 @@
         <li>
             These times are for unloading/loading using chests. If inserters are directly fed by or directly feeding belts, loading times
             will be higher.
+        </li>
+        <li>
+            *Barrel transfer rate doesnt change between 10 and 12 because inserters only do a stack at a time.
         </li>
     </ul>
 

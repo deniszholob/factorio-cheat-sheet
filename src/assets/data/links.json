@@ -7,6 +7,11 @@
         "data": {
             "officialLinks": [
                 {
+                    "url": "http://factorio.com",
+                    "text": "Factorio",
+                    "caption": "The official website"
+                },
+                {
                     "url": "http://wiki.factorio.com",
                     "text": "Factorio Wiki",
                     "caption": "More in depth info."
@@ -56,7 +61,7 @@
                         },
                         {
                             "url": "http://xtvideos.net/factorio/blueprint/",
-                            "text": "Xtrerminator’s Blueprints"
+                            "text": "Xterminator’s Blueprints"
                         },
                         {
                             "url": "http://forums.factorio.com/viewtopic.php?f=194&t=46855",

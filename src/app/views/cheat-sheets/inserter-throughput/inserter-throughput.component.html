@@ -14,7 +14,7 @@
     </kbd></p>
 
     <table class="table table-sm table-hover fixed-width" style="max-width: 800px;">
-        <caption class="text-center">Inserter Throughtput</caption>
+        <caption class="text-center">Inserter Throughtput <span class="d-inline-block d-sm-none">(i/s)</span></caption>
         <thead class="text-center">
             <tr>
                 <th colspan="6">
@@ -33,22 +33,26 @@
                 <th>Stack Size</th>
                 <th>
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Steel_chest')"></app-factorio-icon>
-                    <i class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
+                    <i class="fa fa-long-arrow-right txt-muted d-none d-md-inline-block" aria-hidden="true"></i>
+                    <i class="fa fa-long-arrow-down txt-muted d-inline-block d-md-none" aria-hidden="true"></i>
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Steel_chest')"></app-factorio-icon>
                 </th>
                 <th>
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Steel_chest')"></app-factorio-icon>
-                    <i class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
+                    <i class="fa fa-long-arrow-right txt-muted d-none d-md-inline-block" aria-hidden="true"></i>
+                    <i class="fa fa-long-arrow-down txt-muted d-inline-block d-md-none" aria-hidden="true"></i>
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt')"></app-factorio-icon>
                 </th>
                 <th>
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Steel_chest')"></app-factorio-icon>
-                    <i class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
+                    <i class="fa fa-long-arrow-right txt-muted d-none d-md-inline-block" aria-hidden="true"></i>
+                    <i class="fa fa-long-arrow-down txt-muted d-inline-block d-md-none" aria-hidden="true"></i>
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_transport_belt')"></app-factorio-icon>
                 </th>
                 <th>
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Steel_chest')"></app-factorio-icon>
-                    <i class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
+                    <i class="fa fa-long-arrow-right txt-muted d-none d-md-inline-block" aria-hidden="true"></i>
+                    <i class="fa fa-long-arrow-down txt-muted d-inline-block d-md-none" aria-hidden="true"></i>
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon>
                 </th>
             </tr>
@@ -59,10 +63,10 @@
                     <app-factorio-icon *ngFor="let iconId of item.icons" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
                 </td>
                 <td><strong>{{item.stackSize}}</strong></td>
-                <td>{{item.chestToChest | number:'1.2-2'}} i/s</td>
-                <td>{{item.chestToYellowBelt | number:'1.2-2'}} i/s</td>
-                <td>{{item.chestToRedBelt | number:'1.2-2'}} i/s</td>
-                <td>{{item.chestToBlueBelt | number:'1.2-2'}} i/s</td>
+                <td>{{item.chestToChest | number:'1.2-2'}} <span class="d-none d-sm-inline-block">i/s</span></td>
+                <td>{{item.chestToYellowBelt | number:'1.2-2'}} <span class="d-none d-sm-inline-block">i/s</span></td>
+                <td>{{item.chestToRedBelt | number:'1.2-2'}} <span class="d-none d-sm-inline-block">i/s</span></td>
+                <td>{{item.chestToBlueBelt | number:'1.2-2'}} <span class="d-none d-sm-inline-block">i/s</span></td>
             </tr>
         </tbody>
     </table>
@@ -86,12 +90,12 @@
     <div class="row align-items-center">
         <div class="col text-center">
             <span><strong>Compressed</strong> with Underground Belt</span><br>
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('inserter-belt-compressed.jpg')}}" class="img-fluid rounded">
+            <img src="{{APP_SETTINGS.links.getLocalImagePath('inserter-belt-compressed.jpg')}}" class="img-fluid rounded" alt="Comressed Belt" title="Comressed Belt">
         </div>
         <br>
         <div class="col text-center">
             <span><strong>Uncompressed</strong></span><br>
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('inserter-belt-uncompressed.jpg')}}" class="img-fluid rounded">
+            <img src="{{APP_SETTINGS.links.getLocalImagePath('inserter-belt-uncompressed.jpg')}}" class="img-fluid rounded" alt="Uncomressed Belt" title="Uncomressed Belt">
         </div>
     </div>
 
