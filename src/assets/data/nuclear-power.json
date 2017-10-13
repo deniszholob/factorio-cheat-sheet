@@ -37,7 +37,7 @@
                 },
                 {
                     "iconId": "Offshore_pump",
-                    "count": 5
+                    "count": 1
                 },
                 {
                     "iconId": "Heat_exchanger",
@@ -46,6 +46,21 @@
                 {
                     "iconId": "Steam_turbine",
                     "count": 83
+                }
+            ],
+            "pumpRatioPower": "120 MW",
+            "pumpRatio": [
+                {
+                    "iconId": "Offshore_pump",
+                    "count": 1
+                },
+                {
+                    "iconId": "Heat_exchanger",
+                    "count": 12
+                },
+                {
+                    "iconId": "Steam_turbine",
+                    "count": 20
                 }
             ]
         }
