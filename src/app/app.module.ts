@@ -55,7 +55,8 @@ const appRoutes: Routes = [];
         sheetComponents.OilRefiningComponent,
         sheetComponents.ProductivityModulePayoffsComponent,
         sheetComponents.ScienceComponent,
-        sheetComponents.TipsComponent
+        sheetComponents.TipsComponent,
+        sheetComponents.TrainSpeedComponent
     ],
     providers: [
         appServices.DataService
