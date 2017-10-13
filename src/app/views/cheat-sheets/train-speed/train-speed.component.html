@@ -1,0 +1,115 @@
+<app-cheat-sheet [cheatSheet]="cheatSheet">
+
+    <div class="row align-items-center">
+        <div class="col-12 col-lg-6">
+            <ul>
+                <li><a href="https://wiki.factorio.com/Fuel">Fuel</a> affects train max speed and how fast trains accelerate.</li>
+                <li>The <a href="https://wiki.factorio.com/Braking_force_(research)">braking force research</a> affects how fast
+                    trains slow down.</li>
+                <li>The faster a train can slow down, the longer it can stay at higher speeds.</li>
+                <li><a href="https://www.reddit.com/r/factorio/comments/3oavpk/trains_and_ratio_of_wagonslocomotives/">Trains with ratio of 1:2 will not experience a decrease in max speed</a>.</li>
+                <li>Single locomotive can go <a href="https://www.reddit.com/r/factorio/comments/70t3l8/anyone_calculated_the_max_distance_a_train_can_go/">31,176.5 blocks</a>                    on 1 rocket fuel.</li>
+            </ul>
+        </div>
+
+        <div class="col-12 col-lg-6 text-center">
+            <table class="table table-sm table-hover fixed-width" style="max-width: 250px;">
+                <caption class="text-center">Acceleration bonus</caption>
+                <thead class="text-center">
+                    <tr>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Raw_wood')"></app-factorio-icon>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Coal')"></app-factorio-icon>
+                        </th>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Solid_fuel')"></app-factorio-icon>
+                        </th>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Rocket_fuel')"></app-factorio-icon>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr>
+                        <td>{{sheetData?.accelerationBonus?.basicFuel}}</td>
+                        <td>{{sheetData?.accelerationBonus?.solidFuel}}</td>
+                        <td>{{sheetData?.accelerationBonus?.rocketFuel}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row align-items-center">
+        <div class="col-12 col-lg-6">
+            <table class="table table-sm table-hover fixed-width">
+                <caption class="text-center">Acceleration time for a 1-4-1 train</caption>
+                <thead class="text-center">
+                    <tr>
+                        <th>Speed</th>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Raw_wood')"></app-factorio-icon>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Coal')"></app-factorio-icon>
+                        </th>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Solid_fuel')"></app-factorio-icon>
+                        </th>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Rocket_fuel')"></app-factorio-icon>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr *ngFor="let item of sheetData?.accelerationTimes">
+                        <td>{{item?.speed}}</td>
+                        <td>{{item?.timeBasic}}</td>
+                        <td>{{item?.timeSolid}}</td>
+                        <td>{{item?.timeRocket}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-12 col-lg-6 text-center">
+            <table class="table table-sm table-hover fixed-width">
+                <caption class="text-center">Max speed per fuel type and number of wagons
+                    <br> for a single locomotive
+                </caption>
+                <thead class="text-center">
+                    <tr>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Cargo_wagon')"></app-factorio-icon>
+                        </th>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Raw_wood')"></app-factorio-icon>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Coal')"></app-factorio-icon>
+                        </th>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Solid_fuel')"></app-factorio-icon>
+                        </th>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Rocket_fuel')"></app-factorio-icon>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr *ngFor="let item of sheetData?.speedWithWagons">
+                        <td>{{item?.wagons}}</td>
+                        <td>{{item?.basicFuel}} KPH</td>
+                        <td>{{item?.solidFuel}} KPH</td>
+                        <td>{{item?.rocketFuel}} KPH</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <br>
+
+    <p class="text-center">
+        Additional information and discussion on <a href="https://www.reddit.com/r/factorio/comments/6bgmvh/01510_train_max_speed_per_fuel_type/">Reddit</a>.
+    </p>
+
+</app-cheat-sheet>

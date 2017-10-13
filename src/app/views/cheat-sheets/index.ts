@@ -12,3 +12,4 @@ export * from './oil-refining/oil-refining.component';
 export * from './productivity-module-payoffs/productivity-module-payoffs.component';
 export * from './science/science.component';
 export * from './tips/tips.component';
+export * from './train-speed/train-speed.component';
