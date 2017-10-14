@@ -59,26 +59,42 @@
         </li>
     </ul>
 
+    <div class="row align-items-center">
+        <div class="col-12 col-lg-9">
+            <p class="text-left">You will need about 1 centrifuge to produce U-235 to make fuel for 1 Reactor continuously.</p>
+            <p>It takes 1 U-235 and 19 U-238 to create 10 <a href="https://wiki.factorio.com/Uranium_fuel_cell">fuel cells</a>, but you can reprocess 10 used up fuel cells for 6 U-238, making the ratio be 13 U-238 to 1 U-235.
+            </p>
+        </div>
+
+        <div class="col-12 col-lg-3">
+            <p class="text-center">
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Centrifuge', 1)"></app-factorio-icon>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Nuclear_reactor', 1)"></app-factorio-icon>
+            </p>
+            <p class="text-center">
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium_fuel_cell', 10)"></app-factorio-icon>
+                    <i class="fa fa-long-arrow-left txt-muted" aria-hidden="true"></i>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-235', 1)"></app-factorio-icon>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-238', 13)"></app-factorio-icon>
+            </p>
+        </div>
+    </div>
+
     <hr>
 
     <div class="row">
         <div class="col-12 col-lg-5 text-center">
-            <p class="text-left"><strong>Note:</strong> You will need about 1 centrifuge to produce U-235 to make fuel for 1 Reactor continuously.</p>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Centrifuge', 1)"></app-factorio-icon>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Nuclear_reactor', 1)"></app-factorio-icon>
-
-            <br><br>
-
             <strong>Most efficient setup:</strong> a series of repeating 2x1 reactors
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('nuclear-config-h.jpg')}}" style="width: 400px;" class="img-fluid rounded" alt="2x3 Reactor Setup" title="2x3 Reactor Setup">
+            <img src="{{APP_SETTINGS.links.getLocalImagePath('nuclear-config-h.jpg')}}" class="img-fluid rounded" alt="2x3 Reactor Setup" title="2x3 Reactor Setup">
         </div>
 
         <div class="col-12 col-lg-7 text-center">
-            <table class="table table-sm table-hover table-responsive fixed-width text-center">
-                <caption>Nuclear Ratio Table</caption>
+            <table class="table table-sm table-hover fixed-width text-center">
+
                 <thead class="text-center">
                     <tr>
                         <th colspan="7">
+                            <span class="txt-muted">Nuclear Ratio Table</span>
                             <div class="merged-input-group mx-auto" style="max-width:269px">
                                 <div class="input-group">
                                     <span class="input-group-addon">Reactor Table Count</span>
@@ -96,7 +112,6 @@
                                     </span>
                                 </div>
                             </div>
-                            <br>
                         </th>
                     </tr>
                     <tr>

@@ -1,5 +1,7 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
 
+    <p>See more <a href="https://wiki.factorio.com/Tutorial:Keyboard_shortcuts">keyboard shortcuts</a> on the wiki.</p>
+
     <ul>
         <li>The <kbd>Alt</kbd> key will reveal detailed information on entities.</li>
         <li>Trains snap into position when placed at train stations.</li>
@@ -27,11 +29,10 @@
         <li><kbd>Numpad+</kbd> / <kbd>Numpad-</kbd> can be used to increase / decrease the size of any placed tile (such as landfill
             or concrete).
         </li>
-        <li>
-            Underground belts can be sideloaded, this will drain only 1 lane of a belt. <br>
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('underground-belt-sideload.jpg')}}" class="img-fluid rounded" alt="Side Load Underground" title="Side Load Underground">
-        </li>
     </ul>
-
+    <p class="text-center">
+        Underground belts can be sideloaded, this will drain only 1 lane of a belt. <br>
+        <img src="{{APP_SETTINGS.links.getLocalImagePath('underground-belt-sideload.jpg')}}" class="img-fluid rounded" style="max-width: 250px; height: auto;" alt="Side Load Underground" title="Side Load Underground">
+    </p>
 
 </app-cheat-sheet>
