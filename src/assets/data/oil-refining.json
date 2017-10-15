@@ -51,6 +51,52 @@
                     "count": 21
                 }
             ],
+            "moduledCrackingRatio": [
+                {
+                    "iconId": "Advanced_oil_processing",
+                    "count": 10
+                },
+                {
+                    "iconId": "Heavy_oil_cracking",
+                    "count": 2
+                },
+                {
+                    "iconId": "Light_oil_cracking",
+                    "count": 14
+                }
+            ],
+            "simpleLiquefactionCrackingRatio": [
+                {
+                    "iconId": "Coal_liquefaction",
+                    "count": 8
+                },
+                {
+                    "iconId": "Heavy_oil_cracking",
+                    "count": 1
+                },
+                {
+                    "iconId": "Light_oil_cracking",
+                    "count": 3
+                }
+            ],
+            "perfectLiquefactionCrackingRatio": [
+                {
+                    "iconId": "Coal_liquefaction",
+                    "count": 20
+                },
+                {
+                    "iconId": "Heavy_oil_cracking",
+                    "count": 3
+                },
+                {
+                    "iconId": "Light_oil_cracking",
+                    "count": 9
+                },
+                {
+                    "iconId": "Plastic_bar",
+                    "count": 7
+                }
+            ],
             "solidFuel": [
                 [
                     {
