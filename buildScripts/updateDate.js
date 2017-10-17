@@ -14,5 +14,6 @@ const json = JSON.stringify(outputData);
 
 // Attempt to write to file
 fs.writeFile(outputFile, json, 'utf8', (error) => {
-    throw error; // Rethrow any errors on callback
+    if(error){ throw error; } // Rethrow any errors on callback
+    else { console.log("Update: " + date); }
 });
