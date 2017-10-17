@@ -13,6 +13,7 @@
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    margin-right: -2px; /* Account for 2px border */
 
     &.open {
         width: 250px;
@@ -46,7 +47,7 @@
     background: $c-pallete-transp-heavy;
     border: 1px solid $c-pallete-transp-medium;
     border-right: none;
-    margin-right: -1px;
+    margin-right: -3px; /* Account for 1px + 2px border */
     border-bottom-left-radius: 10%;
     border-top-left-radius: 10%;
     transition: 0.5s; /* 0.5 second same time as the sidenav */

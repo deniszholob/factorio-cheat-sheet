@@ -1,7 +1,15 @@
 <div id="mySidenav" class="sidenav" [class.open]="isNavOpen">
     <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+    <div class="row">
+        <div class="col-6 text-center">
+            <button class="btn btn-primary" (click)="collapseAllSheets()">Collapse All</button>
+        </div>
+        <div class="col-6 text-center">
+            <button class="btn btn-primary" (click)="expandAllSheets()">Expand All</button>
+        </div>
+    </div>
     <a href="#Top" (click)="closeNav()">Top</a>
-    <a *ngFor="let sheet of sheetIds" href="#{{sheet}}" (click)="closeNav()">{{sheetName(sheet)}}</a>
+    <a *ngFor="let sheet of sheetIds" href="#{{sheet}}" (click)="clickedLink(sheet)">{{sheetName(sheet)}}</a>
 </div>
 
 <!-- Use any element to open the sidenav -->

@@ -1,8 +1,11 @@
 // Angular Imports
 import { Component, OnInit } from '@angular/core';
 
+// Services
+import { DataService } from 'app/services/data.service';
+
 // Constants
-import { APP_SETTINGS } from 'app/shared/app-settings';
+const dataFile = 'update';
 
 @Component({
     selector: 'app-footer',
@@ -10,12 +13,21 @@ import { APP_SETTINGS } from 'app/shared/app-settings';
     //   styleUrls: ['./footer.component.scss'] // Enable as needed
 })
 export class FooterComponent implements OnInit {
+    lastUpdate: number;
 
-    public APP_SETTINGS = APP_SETTINGS;
-
-    constructor() { }
+    constructor(
+        public dataService: DataService
+    ) { }
 
     ngOnInit() {
+        this.dataService.GET<number>(dataFile).subscribe(
+            (result: number) => {
+                this.lastUpdate = result;
+            },
+            error => {
+                console.log(error);
+            }
+        );
     }
 
 }

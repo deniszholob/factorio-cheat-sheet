@@ -1,13 +1,13 @@
-<div class="card" id="{{cheatSheet?.name}}">
+<div class="card" id="{{cheatSheet?.id}}">
     <div class="card-header">
-        <a href="#{{cheatSheet?.name}}">
+        <a href="#{{cheatSheet?.id}}">
             <app-factorio-icon [icon]="cheatSheet?.icon"></app-factorio-icon>
             <h5 class="card-title">{{cheatSheet?.title}}</h5>
         </a>
-        <button *ngIf="cheatSheet?.isCollapsed" class="card-collapse" (click)="cheatSheet.isCollapsed = !cheatSheet.isCollapsed">
+        <button *ngIf="cheatSheet?.isCollapsed" class="card-collapse" (click)="cheatSheet?.toggleCollapse()">
             <i class="fa fa-plus" aria-hidden="true" title="Expand"></i>
         </button>
-        <button *ngIf="!cheatSheet?.isCollapsed" class="card-collapse" (click)="cheatSheet.isCollapsed = !cheatSheet.isCollapsed">
+        <button *ngIf="!cheatSheet?.isCollapsed" class="card-collapse" (click)="cheatSheet?.toggleCollapse()">
             <i class="fa fa-minus" aria-hidden="true" title="Collapse"></i>
         </button>
     </div>

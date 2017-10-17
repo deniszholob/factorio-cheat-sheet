@@ -7,7 +7,7 @@ import { APP_SETTINGS } from 'app/shared/app-settings';
 @Component({
     selector: 'app-overview',
     templateUrl: './overview.component.html',
-    // styleUrls: ['./overview.component.scss'] // Enable as needed
+    styleUrls: ['./overview.component.scss'] // Enable as needed
 })
 export class OverviewComponent implements OnInit {
 
