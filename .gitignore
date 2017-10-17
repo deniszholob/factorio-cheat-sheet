@@ -2,6 +2,7 @@
 
 # Dev
 /src/assets/images/dev
+/src/assets/data/update.json
 
 # compiled output
 /dist

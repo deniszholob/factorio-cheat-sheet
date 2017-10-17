@@ -60,7 +60,8 @@ const appRoutes: Routes = [];
         sheetComponents.TrainSpeedComponent
     ],
     providers: [
-        appServices.DataService
+        appServices.DataService,
+        appServices.SheetCollapseToggleService
     ],
     bootstrap: [AppComponent]
 })
