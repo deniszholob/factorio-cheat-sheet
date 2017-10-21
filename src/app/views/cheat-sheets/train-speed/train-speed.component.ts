@@ -20,6 +20,13 @@ export class TrainSpeedComponent implements OnInit {
     cheatSheet: CheatSheet;
     sheetData: any;
 
+    trainSizes = [
+        {idx: 1, name: '1-4-1'},
+        {idx: 2, name: '1-10-1'}
+      ];
+    trainSizeIdx = 1;
+    tableData: any;
+
     constructor(
         public dataService: DataService
     ) { }
@@ -29,11 +36,21 @@ export class TrainSpeedComponent implements OnInit {
             (result: Data) => {
                 this.cheatSheet = result.cheatSheet;
                 this.sheetData = result.data;
+                this.updateTable();
             },
             error => {
                 console.log(error);
             }
         );
+    }
+
+    updateTable() {
+        if (this.trainSizeIdx === 1) {
+            this.tableData = this.sheetData.accelerationTimes['S-1-4-1'];
+        }
+        if (this.trainSizeIdx === 2) {
+            this.tableData = this.sheetData.accelerationTimes['S-1-10-1'];
+        }
     }
 
 }

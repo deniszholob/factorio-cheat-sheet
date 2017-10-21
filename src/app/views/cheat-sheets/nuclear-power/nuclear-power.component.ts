@@ -29,7 +29,7 @@ export class NuclearPowerComponent implements OnInit {
     // Nuke ratios for various reactor numbers
     reactorTable: NukeRatioData[] = [];
 
-    reactorInfoCountChanged = 6;
+    reactorInfoCountChanged = 8;
     reactorInfoCount = this.reactorInfoCountChanged;
     reactorInfoCountMax = 292;
     evenOnly = true;
