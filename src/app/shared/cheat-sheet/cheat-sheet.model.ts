@@ -1,6 +1,7 @@
 import { FactorioIcon } from 'app/shared/factorio-icon/factorio-icon.model';
 
 const PREFIX = 'cs-';
+const BREAKPOINT_RESOLUTION = 767; // pixels
 
 export class CheatSheet {
     icon: FactorioIcon;
@@ -16,7 +17,12 @@ export class CheatSheet {
         this.icon = icon;
         this.title = title || '';
         this.id = this.title.replace(/ /g, '-').toLocaleLowerCase();
-        this.isCollapsed = isCollapsed || false;
+        this.isCollapsed = isCollapsed || this.defaultCollapsed();
+    }
+
+    /** Collapsed By default on Mobile, expanded on Desktop */
+    private defaultCollapsed(){
+        return window.innerWidth < BREAKPOINT_RESOLUTION;
     }
 
     /** Toggle the isCollapsed Flag */

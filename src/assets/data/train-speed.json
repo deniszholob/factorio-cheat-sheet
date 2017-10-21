@@ -66,38 +66,72 @@
                     "rocketFuel": 285
                 }
             ],
-            "accelerationTimes": [
-                {
-                    "speed": 100,
-                    "timeBasic": "12s",
-                    "timeSolid": "9s",
-                    "timeRocket": "5s"
-                },
-                {
-                    "speed": 150,
-                    "timeBasic": "25s",
-                    "timeSolid": "15s",
-                    "timeRocket": "8s"
-                },
-                {
-                    "speed": 200,
-                    "timeBasic": "90s",
-                    "timeSolid": "26s",
-                    "timeRocket": "11s"
-                },
-                {
-                    "speed": 250,
-                    "timeBasic": "-",
-                    "timeSolid": "60s",
-                    "timeRocket": "16s"
-                },
-                {
-                    "speed": 298.1,
-                    "timeBasic": "-",
-                    "timeSolid": "-",
-                    "timeRocket": "21s"
-                }
-            ]
+            "accelerationTimes": {
+                "S-1-4-1": [
+                    {
+                        "speed": 100,
+                        "timeBasic": "12s",
+                        "timeSolid": "9s",
+                        "timeRocket": "5s"
+                    },
+                    {
+                        "speed": 150,
+                        "timeBasic": "25s",
+                        "timeSolid": "15s",
+                        "timeRocket": "8s"
+                    },
+                    {
+                        "speed": 200,
+                        "timeBasic": "90s",
+                        "timeSolid": "26s",
+                        "timeRocket": "11s"
+                    },
+                    {
+                        "speed": 250,
+                        "timeBasic": "-",
+                        "timeSolid": "60s",
+                        "timeRocket": "16s"
+                    },
+                    {
+                        "speed": 298.1,
+                        "timeBasic": "-",
+                        "timeSolid": "-",
+                        "timeRocket": "21s"
+                    }
+                ],
+                "S-1-10-1": [
+                    {
+                        "speed": 100,
+                        "timeBasic": "-",
+                        "timeSolid": "-",
+                        "timeRocket": "11s"
+                    },
+                    {
+                        "speed": 150,
+                        "timeBasic": "-",
+                        "timeSolid": "-",
+                        "timeRocket": "18s"
+                    },
+                    {
+                        "speed": 200,
+                        "timeBasic": "-",
+                        "timeSolid": "-",
+                        "timeRocket": "27s"
+                    },
+                    {
+                        "speed": 250,
+                        "timeBasic": "-",
+                        "timeSolid": "-",
+                        "timeRocket": "40s"
+                    },
+                    {
+                        "speed": 298.1,
+                        "timeBasic": "-",
+                        "timeSolid": "-",
+                        "timeRocket": "63s"
+                    }
+                ]
+            }
         }
     }
 }

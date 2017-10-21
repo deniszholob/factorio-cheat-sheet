@@ -56,11 +56,9 @@ export class DataService {
         return null;
     }
 
-    /** Returns CheatSheet Object with icon and title, collapsed by default on mobile */
+    /** Returns CheatSheet Object with icon and title */
     private getCheatSheet(cheatSheet): CheatSheet {
-        const width = window.innerWidth;
-        const collapse = width < 767;
-        return new CheatSheet(this.getFactorioIcon(cheatSheet.icon), cheatSheet.title, collapse);
+        return new CheatSheet(this.getFactorioIcon(cheatSheet.icon), cheatSheet.title);
     }
 
     private getFactorioIconSrc(iconId): string {
