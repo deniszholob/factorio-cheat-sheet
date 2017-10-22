@@ -4,6 +4,7 @@ export * from './cargo-wagon-transfer/cargo-wagon-transfer.component';
 export * from './common-ratios/common-ratios.component';
 export * from './fluid-wagon-transfer/fluid-wagon-transfer.component';
 export * from './inserter-throughput/inserter-throughput.component';
+export * from './inserter-capacity-bonus/inserter-capacity-bonus.component';
 export * from './links/links.component';
 export * from './material-processing/material-processing.component';
 export * from './mining/mining.component';
