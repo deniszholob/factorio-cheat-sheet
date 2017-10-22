@@ -48,6 +48,7 @@ const appRoutes: Routes = [];
         sheetComponents.CommonRatiosComponent,
         sheetComponents.FluidWagonTransferComponent,
         sheetComponents.InserterThroughputComponent,
+        sheetComponents.InserterCapacityBonusComponent,
         sheetComponents.LinksComponent,
         sheetComponents.MaterialProcessingComponent,
         sheetComponents.MiningComponent,

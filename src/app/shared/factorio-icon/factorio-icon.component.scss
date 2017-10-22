@@ -4,7 +4,7 @@
     display: inline-block;
     position: relative;
     padding: 3px;
-    border-radius: 5px;
+    border-radius: 2px;
 
     &.icon-space {
         margin: 5px;
@@ -12,9 +12,10 @@
 
     & > img {
         vertical-align: middle;
-        width: 34px;
+        width: 32px;
         filter: drop-shadow(2px 2px 2px $c-pallete-transp-medium);
         box-shadow: none;
+        margin-bottom: 2px;
     }
 
     & > .factorio-icon-text {
