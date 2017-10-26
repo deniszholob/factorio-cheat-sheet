@@ -82,7 +82,7 @@
             "perfectLiquefactionCrackingRatio": [
                 {
                     "iconId": "Coal_liquefaction",
-                    "count": 20
+                    "count": 25
                 },
                 {
                     "iconId": "Heavy_oil_cracking",
