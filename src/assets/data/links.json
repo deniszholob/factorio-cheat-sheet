@@ -100,8 +100,21 @@
                     ]
                 },
                 {
-                    "url": "https://wiki.factorio.com/Balancers",
-                    "text": "Belt Balancers"
+                    "text": "Guides",
+                    "links": [
+                        {
+                            "url": "https://wiki.factorio.com/Balancers",
+                            "text": "Belt Balancers"
+                        },
+                        {
+                            "url": "https://www.reddit.com/r/factorio/comments/4f38sk/factorio_train_automation_complete_parts_23_and/",
+                            "text": "Train Automation"
+                        },
+                        {
+                            "url": "http://steamcommunity.com/sharedfiles/filedetails/?id=862972621",
+                            "text": "Smelting"
+                        }
+                    ]
                 },
                 {
                     "url": "http://factorio.rotol.me/pack/base-f15-normal/",

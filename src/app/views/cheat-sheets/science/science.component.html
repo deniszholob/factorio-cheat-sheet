@@ -1,6 +1,60 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
+    <table class="table table-sm fixed-width">
+        <caption class="text-center">Science Research Unlocks</caption>
+        <thead class="text-center">
+            <tr>
+                <th class="d-none d-sm-table-cell">
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Science_pack_1')"></app-factorio-icon>
+                </th>
+                <th class="d-none d-sm-table-cell">
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Science_pack_2')"></app-factorio-icon>
+                </th>
+                <th>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Science_pack_3')"></app-factorio-icon>
+                </th>
+                <th>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Military_science_pack')"></app-factorio-icon>
+                </th>
+                <th>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Production_science_pack')"></app-factorio-icon>
+                </th>
+                <th>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('High_tech_science_pack')"></app-factorio-icon>
+                </th>
+                <th>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Space_science_pack')"></app-factorio-icon>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr>
+                <td class="d-none d-sm-table-cell">
+                    -
+                </td>
+                <td class="d-none d-sm-table-cell">
+                    -
+                </td>
+                <td>
+                    <app-factorio-icon class="bg-factorio-green" [icon]="dataService.getFactorioIcon('Advanced_electronics_research')"></app-factorio-icon>
+                </td>
+                <td>
+                    <app-factorio-icon class="bg-factorio-green" [icon]="dataService.getFactorioIcon('Military_research', 2)"></app-factorio-icon>
+                </td>
+                <td>
+                    <app-factorio-icon class="bg-factorio-green" [icon]="dataService.getFactorioIcon('Advanced_material_processing_research', 2)"></app-factorio-icon>
+                </td>
+                <td>
+                    <app-factorio-icon class="bg-factorio-green" [icon]="dataService.getFactorioIcon('Advanced_electronics_2_research')"></app-factorio-icon>
+                </td>
+                <td>
+                    <app-factorio-icon class="bg-factorio-green" [icon]="dataService.getFactorioIcon('Rocket_silo_research')"></app-factorio-icon>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
     <p class="card-text">
-        <strong>Description:</strong>
         <span>The Vanilla game has all research balanced in number of different science packs required,
             so optimally all science should be produced at the same rate.</span><br>
         <span>However the different science pack themselves have various crafting times and outputs,
@@ -38,7 +92,6 @@
     </p>
 
     <hr>
-
     <div class="row align-items-center">
         <div class="col-12 col-lg-6">
             <p class="card-text text-center">
