@@ -83,12 +83,53 @@
     </div>
 
     <hr>
+    <h4 class="card-title">SRE Diagrams</h4>
+    <strong>SRE:</strong> Single Reactor Equivalence - Because of the neighbor bonus 1 reactor can became equivalent to up to 5 reactors in certain patterns.
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <div class="card text-center" style="margin-bottom:0">
+                <div class="card-body row">
+                    <div class="col-12 col-sm-6">
+                    <h6 class="card-subtitle mb-2 txt-muted">2xN Configuration</h6>
+                    <p class="card-text">
+                        16 reactors: 2x8, is<br>
+                        <kbd>4*3 + 12*4 = 60 SRE</kbd>
+                    <p>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        3 4 4 4 4 4 4 3<br>
+                        3 4 4 4 4 4 4 3
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-6">
+            <div class="card text-center" style="margin-bottom:0">
+                <div class="card-body row">
+                    <div class="col-12 col-sm-6">
+                    <h6 class="card-subtitle mb-2 txt-muted">NxM Configuration</h6>
+                    <p class="card-text">
+                        16 reactors: 4x4, is<br>
+                        <kbd>4*3 + 8*4 + 4*5 = 64 SRE</kbd>
+                    <p>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                            3 4 4 3<br>
+                            4 5 5 4<br>
+                            4 5 5 4<br>
+                            3 4 4 3
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <hr>
     <div class="row">
         <div class="col-12 col-lg-5 text-center">
-            <strong>Most efficient setup*:</strong> a series of repeating 2x1 reactors
+            <strong>Most efficient setup</strong>**: a series of repeating 2x1 reactors
             <img src="{{APP_SETTINGS.links.getLocalImagePath('nuclear-config-h.jpg')}}" class="img-fluid rounded" alt="2x3 Reactor Setup" title="2x3 Reactor Setup">
-            <p class="txt-muted">*That gives access to every reactor</p>
+            <p class="txt-muted">**That gives access to every reactor</p>
         </div>
 
         <div class="col-12 col-lg-7 text-center">
@@ -142,6 +183,9 @@
         </div>
     </div>
 
+    <p class="txt-muted"><strong>*Note:</strong> This is steam tanks per 1 effective (neighbor bonus) nuclear reactor using 1 fuel rod not including the reactor warmup, or heat stored in the reactor or pipes (both heat and steam).
+    </p>
+
     <hr>
 
     <h4 class="card-title">Formulas</h4>
@@ -152,21 +196,19 @@
     </p>
 
     <p><kbd>
-    Heat Exchangers (even config) = [Heat Exchangers Per Reactor * 4 * reactors] - [Heat Exchangers Per Reactor * 4];
+    Heat Exchangers (even config) = [Heat Exchangers Per Reactor * 4 * reactors] - [Heat Exchangers Per Reactor * 4]
     </kbd></p>
     <p><kbd>
-    Power (even config) = [Reactor Power * 4 * reactors] - [Reactor Power * 4];
+    Power (even config) = [Reactor Power * 4 * reactors] - [Reactor Power * 4]
     </kbd></p>
     <p><kbd>
-    Turbines = [Heat Exchangers * Heat Exchanger Power(10MW)] / [Turbine Power(5.8MW)];
+    Turbines = [Heat Exchangers * Heat Exchanger Power(10MW)] / [Turbine Power(5.8MW)]
     </kbd></p>
     <p><kbd>
-    Pumps = [Turbines] * [Water Per Turbine / Water Per Pump];
+    Pumps = [Turbines] * [Water Per Turbine / Water Per Pump]
     </kbd></p>
     <p><strong>Steam Tanks:</strong> 1 fuel cell creates 8 GJ per reactor (eg 2 reactors puts out 4 solo reactors of energy = 32 GJ).
         <br>Each tank can hold 2.425 GJ worth of steam, or 3.29 tanks per reactor.
-    </p>
-    <p class="txt-muted"><strong>*Note:</strong> This is steam tanks per 1 effective (neighbor bonus) nuclear reactor using 1 fuel rod not including the reactor warmup, or heat stored in the reactor or pipes (both heat and steam).
     </p>
 
 </app-cheat-sheet>
