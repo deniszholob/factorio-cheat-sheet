@@ -1,68 +1,68 @@
-// Angular Imports
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+// Angular
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
-// === Project Imports === //
-// Shared
-import * as appShared from 'app/shared';
+// UI (Bootstrap)
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+// Routing
+import { RouterModule } from '@angular/router';
 
 // Services
-import * as appServices from 'app/services';
+import * as Services from 'app/services';
 
 // Components
 import { AppComponent } from 'app/app.component';
-import * as appViews from 'app/views';
-import * as sheetComponents from 'app/views/cheat-sheets';
+import * as SharedComponents from 'app/shared';
+import * as ViewComponents from 'app/views';
+import * as SheetComponents from 'app/views/cheat-sheets';
 
-// ===  Other Imports === //
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-const appRoutes: Routes = [];
 
 @NgModule({
+    // Modules
     imports: [
         BrowserModule,
-        RouterModule.forRoot(appRoutes),
-        BrowserAnimationsModule,
+        RouterModule.forRoot([]),
         FormsModule,
-        HttpModule,
+        HttpClientModule,
         NgbModule.forRoot(),
     ],
+    // Components
     declarations: [
         AppComponent,
-        appViews.NavComponent,
-        appViews.IntroComponent,
-        appViews.OverviewComponent,
-        appViews.MainComponent,
-        appViews.CreditsComponent,
-        appViews.FooterComponent,
-        appShared.CheatSheetComponent,
-        appShared.FactorioIconComponent,
-        sheetComponents.BasicPowerComponent,
-        sheetComponents.BeltThroughputComponent,
-        sheetComponents.CargoWagonTransferComponent,
-        sheetComponents.CommonRatiosComponent,
-        sheetComponents.FluidWagonTransferComponent,
-        sheetComponents.InserterThroughputComponent,
-        sheetComponents.InserterCapacityBonusComponent,
-        sheetComponents.LinksComponent,
-        sheetComponents.MaterialProcessingComponent,
-        sheetComponents.MiningComponent,
-        sheetComponents.ModulesAndBeaconsComponent,
-        sheetComponents.NuclearPowerComponent,
-        sheetComponents.OilRefiningComponent,
-        sheetComponents.ProductivityModulePayoffsComponent,
-        sheetComponents.ScienceComponent,
-        sheetComponents.TipsComponent,
-        sheetComponents.TrainSpeedComponent
+        ViewComponents.NavComponent,
+        ViewComponents.IntroComponent,
+        ViewComponents.OverviewComponent,
+        ViewComponents.MainComponent,
+        ViewComponents.CreditsComponent,
+        ViewComponents.FooterComponent,
+        SharedComponents.CheatSheetComponent,
+        SharedComponents.FactorioIconComponent,
+        SheetComponents.BasicPowerComponent,
+        SheetComponents.BeltThroughputComponent,
+        SheetComponents.CargoWagonTransferComponent,
+        SheetComponents.CommonRatiosComponent,
+        SheetComponents.FluidWagonTransferComponent,
+        SheetComponents.InserterThroughputComponent,
+        SheetComponents.InserterCapacityBonusComponent,
+        SheetComponents.LinksComponent,
+        SheetComponents.MaterialProcessingComponent,
+        SheetComponents.MiningComponent,
+        SheetComponents.ModulesAndBeaconsComponent,
+        SheetComponents.NuclearPowerComponent,
+        SheetComponents.OilRefiningComponent,
+        SheetComponents.ProductivityModulePayoffsComponent,
+        SheetComponents.ScienceComponent,
+        SheetComponents.TipsComponent,
+        SheetComponents.TrainSpeedComponent
     ],
+    // Services
     providers: [
-        appServices.DataService,
-        appServices.SheetCollapseToggleService
+        Services.DataService,
+        Services.SheetCollapseToggleService,
     ],
     bootstrap: [AppComponent]
 })

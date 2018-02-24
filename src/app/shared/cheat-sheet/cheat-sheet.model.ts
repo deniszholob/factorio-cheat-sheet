@@ -21,7 +21,7 @@ export class CheatSheet {
     }
 
     /** Collapsed By default on Mobile, expanded on Desktop */
-    private defaultCollapsed(){
+    private defaultCollapsed() {
         return window.innerWidth < BREAKPOINT_RESOLUTION;
     }
 

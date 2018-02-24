@@ -17,7 +17,7 @@
         </div>
 
         <div class="col-12 col-lg-6 text-center">
-            <table class="table table-sm table-hover fixed-width" style="max-width: 250px;">
+            <table class="table table-sm table-hover fixed-width" style="max-width: 300px;">
                 <caption class="text-center">Acceleration bonus</caption>
                 <thead class="text-center">
                     <tr>
@@ -31,6 +31,9 @@
                         <th>
                             <app-factorio-icon [icon]="dataService.getFactorioIcon('Rocket_fuel')"></app-factorio-icon>
                         </th>
+                        <th>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Nuclear_fuel')"></app-factorio-icon>
+                        </th>
                     </tr>
                 </thead>
                 <tbody class="text-center">
@@ -38,6 +41,7 @@
                         <td>{{sheetData?.accelerationBonus?.basicFuel}}</td>
                         <td>{{sheetData?.accelerationBonus?.solidFuel}}</td>
                         <td>{{sheetData?.accelerationBonus?.rocketFuel}}</td>
+                        <td>{{sheetData?.accelerationBonus?.nuclearFuel}}</td>
                     </tr>
                 </tbody>
             </table>

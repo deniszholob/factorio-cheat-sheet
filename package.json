@@ -1,38 +1,42 @@
 {
   "name": "factorio-cheat-sheet",
   "version": "0.0.0",
-  "license": "MIT",
+  "license": "GPL-3",
+  "repository": "github:DDDGamer/factorio-cheat-sheet",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 9009",
     "build": "node buildScripts/updateDate.js && npm run lint && npm run build:prod",
     "build:dev": "ng build --dev --base-href ./",
-    "build:prod": "ng build --prod --aot --base-href ./",
+    "build:prod": "ng build --prod --base-href ./",
     "test": "echo 'No tests yet...'",
     "lint": "ng lint"
   },
+  "private": true,
   "dependencies": {
-    "@angular/animations": "^4.2.4",
-    "@angular/common": "^4.2.4",
-    "@angular/compiler": "^4.2.4",
-    "@angular/core": "^4.2.4",
-    "@angular/forms": "^4.2.4",
-    "@angular/http": "^4.2.4",
-    "@angular/platform-browser": "^4.2.4",
-    "@angular/platform-browser-dynamic": "^4.2.4",
-    "@angular/router": "^4.2.4",
-    "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.4",
-    "bootstrap": "^4.0.0-beta",
+    "@angular/animations": "^5.2.0",
+    "@angular/common": "^5.2.0",
+    "@angular/compiler": "^5.2.0",
+    "@angular/core": "^5.2.0",
+    "@angular/forms": "^5.2.0",
+    "@angular/http": "^5.2.0",
+    "@angular/platform-browser": "^5.2.0",
+    "@angular/platform-browser-dynamic": "^5.2.0",
+    "@angular/router": "^5.2.0",
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0",
+    "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
-    "rxjs": "^5.4.2",
-    "zone.js": "^0.8.14"
+    "rxjs": "^5.5.6",
+    "zone.js": "^0.8.19"
   },
   "devDependencies": {
-    "@angular/cli": "1.4.0",
-    "@angular/compiler-cli": "^4.2.4",
-    "@angular/language-service": "^4.2.4",
-    "codelyzer": "^3.2.0",
-    "tslint": "^5.7.0",
-    "typescript": "~2.3.3"
+    "@angular/cli": "~1.7.0",
+    "@angular/compiler-cli": "^5.2.0",
+    "@angular/language-service": "^5.2.0",
+    "@types/node": "~6.0.60",
+    "codelyzer": "^4.0.1",
+    "ts-node": "~4.1.0",
+    "tslint": "~5.9.1",
+    "typescript": "~2.5.3"
   }
 }

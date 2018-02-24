@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/services/data';
+import { Data } from 'app/services/data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 
 // Constants
@@ -72,7 +72,7 @@ export class NuclearPowerComponent implements OnInit {
     }
 
     /** If user toggles b/w all and even entries */
-    changeInputStep(){
+    changeInputStep() {
         this.inputStep = this.evenOnly ? 2 : 1;
     }
 

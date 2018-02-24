@@ -49,7 +49,7 @@
             <div class="eq-container">
                 <div class="eq-field bg-nuetral">
                     <span class="eq-label">Machines Needed</span>
-                    <input type="number" class="eq-input" [value]="calcMachines.machinesToFillBelt" readonly>
+                    <input type="text" class="eq-input" [value]="calcMachines.machinesToFillBelt" readonly>
                 </div>
                 <div class="eq-operator">=</div>
             </div>
@@ -75,7 +75,7 @@
                 <div class="eq-operator">*</div>
                 <div class="eq-field bg-factorio-blue">
                     <span class="eq-label">Machine Craft Speed</span>
-                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.machineCraftSpeed" (keyup)="calcMachinesTofillBelt()" (change)="calcMachinesTofillBelt()">
+                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.machineCraftSpeed" (keyup)="calcMachinesTofillBelt()" (change)="calcMachinesTofillBelt()" step="0.25">
                 </div>
                 <div class="eq-operator">*</div>
                 <div class="eq-field bg-factorio-red">

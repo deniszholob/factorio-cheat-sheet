@@ -1,5 +1,4 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
-
     <div class="row">
         <div class="col-12 col-lg-8">
             <ul>
@@ -10,16 +9,16 @@
                     If more than 3 pumps can be active on the fluid wagon, only 3 will “latch on” and be in use with the remaining pumps inactive.
                 </li>
                 <li>
-                    <a href="https://wiki.factorio.com/Pump#Throughput" target="_blank">Pumps</a> and Storage Tanks have a maximum throughput of 12k units/s.
+                    <a href="https://wiki.factorio.com/Pump#Throughput" target="_blank">Pumps</a> and Storage Tanks have a maximum throughput of {{sheetData?.pumpRate | number}} fluids/s.
                 </li>
-                <li>To keep 1200 <a href="https://forums.factorio.com/viewtopic.php?f=18&t=19851">fluid/s</a> (offshore pump rate), place <a href="https://forums.factorio.com/viewtopic.php?f=5&t=46030">18 pipes between pumps</a>.</li>
+                <li>To keep {{sheetData?.offshorePumpRate | number}} <a href="https://forums.factorio.com/viewtopic.php?f=18&t=19851">fluid/s</a> (offshore pump rate), place <a href="https://forums.factorio.com/viewtopic.php?f=5&t=46030">18 pipes between pumps</a>.</li>
                 <li>
-                    Fluid wagons can hold 75k units of fluids which is equal to 3
+                    Fluid wagons can hold {{sheetData?.storageTankSize | number}} units of fluids which is equal to {{sheetData?.fluidWagonSize / sheetData?.storageTankSize}}
                     <a href="https://wiki.factorio.com/Storage_tank" target="_blank">Storage Tanks</a>.
                     <div class="row">
                         <div class="col-6 text-center">
                             <app-factorio-icon [icon]="dataService.getFactorioIcon('Fluid_wagon', 1)"></app-factorio-icon>
-                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Storage_tank', 3)"></app-factorio-icon>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Storage_tank', sheetData?.fluidWagonSize / sheetData?.storageTankSize)"></app-factorio-icon>
                         </div>
                         <div class="col-6 text-center">
                             <app-factorio-icon [icon]="dataService.getFactorioIcon('Offshore_pump', 1)"></app-factorio-icon>
@@ -28,15 +27,9 @@
                     </div>
                 </li>
                 <li>
-                    Click the fluid wagon to separate the tanks so they can carry 2 or 3 different fluids.
-                </li>
-                <li>
                     It is recommended that a fluid wagon's pump is connected directly to a tank. Otherwise due to pipe pressure, the loading
                     and unloading times may
                     <a href="https://www.reddit.com/r/factorio/comments/69kop6/pumppipe_throughput_tests_for_015/" target="_blank">increase significantly</a>.
-                </li>
-                <li>
-                    Fluid Wagons are 3x heavier than Cargo Wagons.
                 </li>
             </ul>
 
@@ -54,9 +47,9 @@
                     </tr>
                 </thead>
                 <tbody class="text-center">
-                    <tr *ngFor="let item of sheetData">
+                    <tr *ngFor="let item of transferTimes">
                         <td>{{item?.pumps}}</td>
-                        <td>{{item?.transferTime}}</td>
+                        <td>{{item?.transferTime | number}}s</td>
                     </tr>
                 </tbody>
             </table>
@@ -76,16 +69,8 @@
             <span><strong>Example Fast Transfer Build</strong></span><br>
             <img src="{{APP_SETTINGS.links.getLocalImagePath('fluid-wagon-fastest-transfer.jpg')}}" class="img-fluid rounded" alt="Example Fast Transfer Build" title="Example Fast Transfer Build">
         </div>
-    </div>
-
-
-    <div class="row align-items-center">
-            <div class="col text-center">
-                <span><strong>Separated Wagon Tanks</strong></span><br>
-                <img src="{{APP_SETTINGS.links.getLocalImagePath('seperate-fluid-wagon-tanks.jpg')}}" class="img-fluid rounded" alt="Separated Wagon Fluids" title="Separated Wagon Fluids">
-            </div>
         <br>
-        <div class="col text-center">
+        <div class="col-12 text-center col-lg-4">
             <span><strong>Transfer Rate Comparison</strong></span><br>
             <a href="https://gfycat.com/LinedHospitableGroundhog" target="_blank">
                 <img src="https://giant.gfycat.com/LinedHospitableGroundhog.gif" class="img-fluid rounded" alt="Transfer Rate Comparison" title="Transfer Rate Comparison">

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Meta Data -->
     <meta charset="utf-8">
@@ -15,7 +16,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-28080172-9"></script>
@@ -27,7 +28,23 @@
     </script>
 
 </head>
+
 <body>
-    <app-root></app-root>
+    <app-root>
+        <div style="text-align:center; padding-top: 20px;">
+            Loading...
+            <div class="fa-3x">
+                <i class="fa fa-spinner fa-spin"></i>
+            </div>
+            <p class="txt-muted">
+                If this is loading forever, there may be a bug.
+                <br> Hit
+                <strong>F12</strong> to bring up the Debug console, and
+                <a href="https://github.com/DDDGamer/factorio-cheat-sheet/issues">report</a>
+                the error.
+            </p>
+        </div>
+    </app-root>
 </body>
+
 </html>

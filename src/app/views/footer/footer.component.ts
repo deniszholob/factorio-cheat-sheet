@@ -20,9 +20,9 @@ export class FooterComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.dataService.GET<number>(dataFile).subscribe(
-            (result: number) => {
-                this.lastUpdate = result;
+        this.dataService.GET<Object>(dataFile).subscribe(
+            (result: Object) => {
+                this.lastUpdate = result['updated'];
             },
             error => {
                 console.log(error);

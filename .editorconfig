@@ -1,16 +1,24 @@
-# http://editorconfig.org
+# Editor configuration, see http://editorconfig.org
 
 # top-most EditorConfig file
 root = true
 
+# All files
 [*]
-insert_final_newline = true
-trim_trailing_whitespace = true
+charset = utf-8
 indent_style = space
 indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
 
 # Unix-style newlines with a newline ending every file
-end_of_line = lf 
+end_of_line = lf
 
+# Typescript
 [*.ts]
 max_line_length = 120
+
+# Markdown
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false

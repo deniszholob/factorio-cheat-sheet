@@ -2,7 +2,7 @@
 export const APP_SETTINGS = {
     app: {
         appTitle: 'Factorio Cheat Sheet',
-        version: '0.15',
+        version: '0.16',
     },
     links: {
         getLocalImagePath: function (imageName) {
