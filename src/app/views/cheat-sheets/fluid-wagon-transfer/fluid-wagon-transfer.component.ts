@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/services/data';
+import { Data } from 'app/services/data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 
 // Constants
@@ -23,6 +23,8 @@ export class FluidWagonTransferComponent implements OnInit {
 
     APP_SETTINGS = APP_SETTINGS;
 
+    transferTimes = [];
+
     constructor(
         public dataService: DataService
     ) { }
@@ -32,11 +34,27 @@ export class FluidWagonTransferComponent implements OnInit {
             (result: Data) => {
                 this.cheatSheet = result.cheatSheet;
                 this.sheetData = result.data;
+                this.calcLoadingTimes();
             },
             error => {
                 console.log(error);
             }
         );
+    }
+
+    private calcLoadingTimes() {
+        const pumpRate = this.sheetData.pumpRate;
+        const fluidWagonSize = this.sheetData.fluidWagonSize;
+        this.transferTimes.length = 0; // Clear the array
+        for (let i = 1; i <= 3; i++) {
+            const transferTime = fluidWagonSize / (pumpRate * i);
+            this.transferTimes.push(
+                {
+                    'pumps': i,
+                    'transferTime': transferTime
+                }
+            );
+        }
     }
 
 }

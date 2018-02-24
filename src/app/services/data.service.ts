@@ -1,13 +1,13 @@
 // Angular
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
-// JX Observables
+// RXJX
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { map } from 'rxjs/operators';
 
 // Models
-import { Data } from './data';
+import { Data } from './data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 import { FactorioIcon } from 'app/shared/factorio-icon/factorio-icon.model';
 
@@ -19,23 +19,21 @@ const BASE_URL = './assets/data/';
 export class DataService {
 
     constructor(
-        private httpService: Http
+        private httpClientService: HttpClient
     ) { }
 
 
     GET<T>(endpoint: string): Observable<T> {
         const url = BASE_URL + endpoint + '.json';
-        return this.httpService.get(url).map(
-            (response: Response) => {
-                return response.json()['content'];
-            }
-        );
+        return this.httpClientService.get<T>(url);
     }
 
     getCheatSheetData(endpoint: string): Observable<Data> {
-        return this.GET<any>(endpoint).map((response: any) => {
-            return new Data(this.getCheatSheet(response.cheatSheet), response.data);
-        });
+        return this.GET<any>(endpoint).pipe(
+            map((response: any) => {
+                return new Data(this.getCheatSheet(response.cheatSheet), response.data);
+            })
+        );
     }
 
     toTitleCase(str) {

@@ -1,137 +1,136 @@
 {
-    "content": {
-        "cheatSheet": {
-            "title": "Train Speed",
-            "icon": "Locomotive"
+    "cheatSheet": {
+        "title": "Train Speed",
+        "icon": "Locomotive"
+    },
+    "data": {
+        "accelerationBonus": {
+            "basicFuel": 0,
+            "solidFuel": "+20%",
+            "rocketFuel": "+80%",
+            "nuclearFuel": "+150%"
         },
-        "data": {
-            "accelerationBonus": {
-                "basicFuel": 0,
-                "solidFuel": "+20%",
-                "rocketFuel": "+80%"
+        "speedWithWagons": [
+            {
+                "wagons": 0,
+                "basicFuel": 259.2,
+                "solidFuel": 272.2,
+                "rocketFuel": 298.1
             },
-            "speedWithWagons": [
+            {
+                "wagons": 1,
+                "basicFuel": 258,
+                "solidFuel": 272.2,
+                "rocketFuel": 298.1
+            },
+            {
+                "wagons": 2,
+                "basicFuel": 244,
+                "solidFuel": 272.2,
+                "rocketFuel": 298.1
+            },
+            {
+                "wagons": 3,
+                "basicFuel": 229,
+                "solidFuel": 272.2,
+                "rocketFuel": 298.1
+            },
+            {
+                "wagons": 4,
+                "basicFuel": 214,
+                "solidFuel": 272.2,
+                "rocketFuel": 298.1
+            },
+            {
+                "wagons": 5,
+                "basicFuel": 198,
+                "solidFuel": 257,
+                "rocketFuel": 298.1
+            },
+            {
+                "wagons": 6,
+                "basicFuel": 186,
+                "solidFuel": 242,
+                "rocketFuel": 298.1
+            },
+            {
+                "wagons": 7,
+                "basicFuel": 170,
+                "solidFuel": 228,
+                "rocketFuel": 298.1
+            },
+            {
+                "wagons": 15,
+                "basicFuel": 50,
+                "solidFuel": 105,
+                "rocketFuel": 285
+            }
+        ],
+        "accelerationTimes": {
+            "S-1-4-1": [
                 {
-                    "wagons": 0,
-                    "basicFuel": 259.2,
-                    "solidFuel": 272.2,
-                    "rocketFuel": 298.1
+                    "speed": 100,
+                    "timeBasic": "12s",
+                    "timeSolid": "9s",
+                    "timeRocket": "5s"
                 },
                 {
-                    "wagons": 1,
-                    "basicFuel": 258,
-                    "solidFuel": 272.2,
-                    "rocketFuel": 298.1
+                    "speed": 150,
+                    "timeBasic": "25s",
+                    "timeSolid": "15s",
+                    "timeRocket": "8s"
                 },
                 {
-                    "wagons": 2,
-                    "basicFuel": 244,
-                    "solidFuel": 272.2,
-                    "rocketFuel": 298.1
+                    "speed": 200,
+                    "timeBasic": "90s",
+                    "timeSolid": "26s",
+                    "timeRocket": "11s"
                 },
                 {
-                    "wagons": 3,
-                    "basicFuel": 229,
-                    "solidFuel": 272.2,
-                    "rocketFuel": 298.1
+                    "speed": 250,
+                    "timeBasic": "-",
+                    "timeSolid": "60s",
+                    "timeRocket": "16s"
                 },
                 {
-                    "wagons": 4,
-                    "basicFuel": 214,
-                    "solidFuel": 272.2,
-                    "rocketFuel": 298.1
-                },
-                {
-                    "wagons": 5,
-                    "basicFuel": 198,
-                    "solidFuel": 257,
-                    "rocketFuel": 298.1
-                },
-                {
-                    "wagons": 6,
-                    "basicFuel": 186,
-                    "solidFuel": 242,
-                    "rocketFuel": 298.1
-                },
-                {
-                    "wagons": 7,
-                    "basicFuel": 170,
-                    "solidFuel": 228,
-                    "rocketFuel": 298.1
-                },
-                {
-                    "wagons": 15,
-                    "basicFuel": 50,
-                    "solidFuel": 105,
-                    "rocketFuel": 285
+                    "speed": 298.1,
+                    "timeBasic": "-",
+                    "timeSolid": "-",
+                    "timeRocket": "21s"
                 }
             ],
-            "accelerationTimes": {
-                "S-1-4-1": [
-                    {
-                        "speed": 100,
-                        "timeBasic": "12s",
-                        "timeSolid": "9s",
-                        "timeRocket": "5s"
-                    },
-                    {
-                        "speed": 150,
-                        "timeBasic": "25s",
-                        "timeSolid": "15s",
-                        "timeRocket": "8s"
-                    },
-                    {
-                        "speed": 200,
-                        "timeBasic": "90s",
-                        "timeSolid": "26s",
-                        "timeRocket": "11s"
-                    },
-                    {
-                        "speed": 250,
-                        "timeBasic": "-",
-                        "timeSolid": "60s",
-                        "timeRocket": "16s"
-                    },
-                    {
-                        "speed": 298.1,
-                        "timeBasic": "-",
-                        "timeSolid": "-",
-                        "timeRocket": "21s"
-                    }
-                ],
-                "S-1-10-1": [
-                    {
-                        "speed": 100,
-                        "timeBasic": "-",
-                        "timeSolid": "-",
-                        "timeRocket": "11s"
-                    },
-                    {
-                        "speed": 150,
-                        "timeBasic": "-",
-                        "timeSolid": "-",
-                        "timeRocket": "18s"
-                    },
-                    {
-                        "speed": 200,
-                        "timeBasic": "-",
-                        "timeSolid": "-",
-                        "timeRocket": "27s"
-                    },
-                    {
-                        "speed": 250,
-                        "timeBasic": "-",
-                        "timeSolid": "-",
-                        "timeRocket": "40s"
-                    },
-                    {
-                        "speed": 298.1,
-                        "timeBasic": "-",
-                        "timeSolid": "-",
-                        "timeRocket": "63s"
-                    }
-                ]
-            }
+            "S-1-10-1": [
+                {
+                    "speed": 100,
+                    "timeBasic": "-",
+                    "timeSolid": "-",
+                    "timeRocket": "11s"
+                },
+                {
+                    "speed": 150,
+                    "timeBasic": "-",
+                    "timeSolid": "-",
+                    "timeRocket": "18s"
+                },
+                {
+                    "speed": 200,
+                    "timeBasic": "-",
+                    "timeSolid": "-",
+                    "timeRocket": "27s"
+                },
+                {
+                    "speed": 250,
+                    "timeBasic": "-",
+                    "timeSolid": "-",
+                    "timeRocket": "40s"
+                },
+                {
+                    "speed": 298.1,
+                    "timeBasic": "-",
+                    "timeSolid": "-",
+                    "timeRocket": "63s"
+                }
+            ]
         }
     }
 }

@@ -1,130 +1,128 @@
 {
-    "content": {
-        "cheatSheet": {
-            "title": "Links",
-            "icon": "Copper_cable"
-        },
-        "data": {
-            "officialLinks": [
-                {
-                    "url": "http://factorio.com",
-                    "text": "Factorio",
-                    "caption": "The official website"
-                },
-                {
-                    "url": "http://wiki.factorio.com",
-                    "text": "Factorio Wiki",
-                    "caption": "More in depth info."
-                },
-                {
-                    "url": "https://www.reddit.com/r/factorio",
-                    "text": "Factorio Reddit",
-                    "caption": "Lots of helpful users."
-                },
-                {
-                    "url": "https://discordapp.com/invite/factorio",
-                    "text": "Factorio Discord",
-                    "caption": "Discuss the game in realtime."
-                },
-                {
-                    "url": "https://forums.factorio.com/",
-                    "text": "Factorio Forums",
-                    "caption": "Help make the game better!"
-                },
-                {
-                    "url": "https://www.factorio.com/blog/ ",
-                    "text": "Factorio Blog",
-                    "caption": "Unreleased features and News."
-                },
-                {
-                    "url": "https://www.youtube.com/channel/UC5B2sfAI2MjD7aNhUXHAeyA",
-                    "text": "Factorio Youtube",
-                    "caption": "Maybe they will make a new Factorio Trailer"
-                },
-                {
-                    "url": "https://mods.factorio.com/",
-                    "text": "Factorio Mod Portal",
-                    "caption": "Browse and download mods."
-                }
-            ],
-            "communityLinks": [
-                {
-                    "text": "Blueprint Hubs",
-                    "links": [
-                        {
-                            "url": "https://factorioprints.com/",
-                            "text": "Factorio Blueprint Library"
-                        },
-                        {
-                            "url": "http://deniszholob.com/factorio/blueprints/",
-                            "text": "DDDGamer’s Blueprint Collection"
-                        },
-                        {
-                            "url": "http://xtvideos.net/factorio/blueprint/",
-                            "text": "Xterminator’s Blueprints"
-                        },
-                        {
-                            "url": "http://forums.factorio.com/viewtopic.php?f=194&t=46855",
-                            "text": "Train Intersections"
-                        }
-                    ]
-                },
-                {
-                    "text": "Ratio Planners/Calculators",
-                    "links": [
-                        {
-                            "url": "http://doomeer.com/factorio",
-                            "text": "Doomer's Calculator"
-                        },
-                        {
-                            "url": "https://kirkmcdonald.github.io/calc.html",
-                            "text": "Kirk's Calculator"
-                        },
-                        {
-                            "url": "http://barrykun.com/factorio/calc/",
-                            "text": "Barrykin’s Cost Calc"
-                        }
-                    ]
-                },
-                {
-                    "text": "Tools",
-                    "links": [
-                        {
-                            "url": "http://autotorio.com/outpost",
-                            "text": "Ore and oil outpost generator & blueprint modifier"
-                        },
-                        {
-                            "url": "http://miditorio.com/",
-                            "text": "Convert MIDI to blueprints"
-                        }
-                    ]
-                },
-                {
-                    "text": "Guides",
-                    "links": [
-                        {
-                            "url": "https://wiki.factorio.com/Balancers",
-                            "text": "Belt Balancers"
-                        },
-                        {
-                            "url": "https://www.reddit.com/r/factorio/comments/4f38sk/factorio_train_automation_complete_parts_23_and/",
-                            "text": "Train Automation"
-                        },
-                        {
-                            "url": "http://steamcommunity.com/sharedfiles/filedetails/?id=862972621",
-                            "text": "Smelting"
-                        }
-                    ]
-                },
-                {
-                    "url": "http://factorio.rotol.me/pack/base-f15-normal/",
-                    "text": "Recipe Reference"
-                },
-                {
-                    "url": "https://forums.factorio.com/viewtopic.php?p=284240#p284240",
-                    "text": "Expensive Mode Recipes"
-                }
-            ]
-        }
+    "cheatSheet": {
+        "title": "Links",
+        "icon": "Copper_cable"
+    },
+    "data": {
+        "officialLinks": [
+            {
+                "url": "http://factorio.com",
+                "text": "Factorio",
+                "caption": "The official website"
+            },
+            {
+                "url": "http://wiki.factorio.com",
+                "text": "Factorio Wiki",
+                "caption": "More in depth info."
+            },
+            {
+                "url": "https://www.reddit.com/r/factorio",
+                "text": "Factorio Reddit",
+                "caption": "Lots of helpful users."
+            },
+            {
+                "url": "https://discordapp.com/invite/factorio",
+                "text": "Factorio Discord",
+                "caption": "Discuss the game in realtime."
+            },
+            {
+                "url": "https://forums.factorio.com/",
+                "text": "Factorio Forums",
+                "caption": "Help make the game better!"
+            },
+            {
+                "url": "https://www.factorio.com/blog/ ",
+                "text": "Factorio Blog",
+                "caption": "Unreleased features and News."
+            },
+            {
+                "url": "https://www.youtube.com/channel/UC5B2sfAI2MjD7aNhUXHAeyA",
+                "text": "Factorio Youtube",
+                "caption": "Maybe they will make a new Factorio Trailer"
+            },
+            {
+                "url": "https://mods.factorio.com/",
+                "text": "Factorio Mod Portal",
+                "caption": "Browse and download mods."
+            }
+        ],
+        "communityLinks": [
+            {
+                "text": "Blueprint Hubs",
+                "links": [
+                    {
+                        "url": "https://factorioprints.com/",
+                        "text": "Factorio Blueprint Library"
+                    },
+                    {
+                        "url": "http://deniszholob.com/factorio/blueprints/",
+                        "text": "DDDGamer’s Blueprint Collection"
+                    },
+                    {
+                        "url": "http://xtvideos.net/factorio/blueprint/",
+                        "text": "Xterminator’s Blueprints"
+                    },
+                    {
+                        "url": "http://forums.factorio.com/viewtopic.php?f=194&t=46855",
+                        "text": "Train Intersections"
+                    }
+                ]
+            },
+            {
+                "text": "Ratio Planners/Calculators",
+                "links": [
+                    {
+                        "url": "http://doomeer.com/factorio",
+                        "text": "Doomer's Calculator"
+                    },
+                    {
+                        "url": "https://kirkmcdonald.github.io/calc.html",
+                        "text": "Kirk's Calculator"
+                    },
+                    {
+                        "url": "http://barrykun.com/factorio/calc/",
+                        "text": "Barrykin’s Cost Calc"
+                    }
+                ]
+            },
+            {
+                "text": "Tools",
+                "links": [
+                    {
+                        "url": "http://autotorio.com/outpost",
+                        "text": "Ore and oil outpost generator & blueprint modifier"
+                    },
+                    {
+                        "url": "http://miditorio.com/",
+                        "text": "Convert MIDI to blueprints"
+                    }
+                ]
+            },
+            {
+                "text": "Guides",
+                "links": [
+                    {
+                        "url": "https://wiki.factorio.com/Balancers",
+                        "text": "Belt Balancers"
+                    },
+                    {
+                        "url": "https://www.reddit.com/r/factorio/comments/4f38sk/factorio_train_automation_complete_parts_23_and/",
+                        "text": "Train Automation"
+                    },
+                    {
+                        "url": "http://steamcommunity.com/sharedfiles/filedetails/?id=862972621",
+                        "text": "Smelting"
+                    }
+                ]
+            },
+            {
+                "url": "http://factorio.rotol.me/pack/base-f15-normal/",
+                "text": "Recipe Reference"
+            },
+            {
+                "url": "https://forums.factorio.com/viewtopic.php?p=284240#p284240",
+                "text": "Expensive Mode Recipes"
+            }
+        ]
     }
 }

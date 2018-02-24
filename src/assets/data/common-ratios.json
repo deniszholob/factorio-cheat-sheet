@@ -1,430 +1,424 @@
 {
-    "content": {
-        "cheatSheet": {
-            "title": "Common Ratios",
-            "icon": "Repair_pack"
-        },
-        "data": {
-            "scienceRatios": [
-                [
-                    {
-                        "iconId": "Assembling_machine_3",
-                        "count": "2.5/s"
-                    },
-                    {
-                        "iconId": "Science_pack_1",
-                        "count": 10
-                    },
-                    {
-                        "iconId": "Iron_gear_wheel",
-                        "count": 1
-                    }
-                ],
-                [
-                    {
-                        "iconId": "Assembling_machine_3",
-                        "count": "2.5/s"
-                    },
-                    {
-                        "iconId": "Science_pack_2",
-                        "count": 12
-                    },
-                    {
-                        "iconId": "Inserter",
-                        "count": 1
-                    },
-                    {
-                        "iconId": "Transport_belt",
-                        "count": 0.5
-                    }
-                ],
-                [
-                    {
-                        "iconId": "Assembling_machine_3",
-                        "count": "1.25/s"
-                    },
-                    {
-                        "iconId": "Science_pack_3",
-                        "count": 12
-                    },
-                    {
-                        "iconId": "Advanced_circuit",
-                        "count": 6
-                    },
-                    {
-                        "iconId": "Engine_unit",
-                        "count": 10
-                    },
-                    {
-                        "iconId": "Electric_mining_drill",
-                        "count": 2
-                    }
-                ],
-                [
-                    {
-                        "iconId": "Assembling_machine_3",
-                        "count": "1.25/s"
-                    },
-                    {
-                        "iconId": "Military_science_pack",
-                        "count": 5
-                    },
-                    {
-                        "iconId": "Gun_turret",
-                        "count": 4
-                    },
-                    {
-                        "iconId": "Grenade",
-                        "count": 4
-                    },
-                    {
-                        "iconId": "Piercing_rounds_magazine",
-                        "count": 1.5
-                    }
-                ],
-                [
-                    {
-                        "iconId": "Assembling_machine_3",
-                        "count": "1.25/s"
-                    },
-                    {
-                        "iconId": "Production_science_pack",
-                        "count": 7
-                    },
-                    {
-                        "iconId": "Electric_engine_unit",
-                        "count": 5
-                    },
-                    {
-                        "iconId": "Assembling_machine_1",
-                        "count": 0.25
-                    },
-                    {
-                        "iconId": "Electric_furnace",
-                        "count": 2.5
-                    }
-                ],
-                [
-                    {
-                        "iconId": "Assembling_machine_3",
-                        "count": "1.25/s"
-                    },
-                    {
-                        "iconId": "High_tech_science_pack",
-                        "count": 7
-                    },
-                    {
-                        "iconId": "Battery",
-                        "count": 2.5
-                    },
-                    {
-                        "iconId": "Processing_unit",
-                        "count": 15
-                    },
-                    {
-                        "iconId": "Speed_module",
-                        "count": 7.5
-                    }
-                ]
-            ],
-            "electronicsRatios": [
-                [
-                    {
-                        "iconId": "Assembling_machine_3",
-                        "count": "5/s"
-                    },
-                    {
-                        "iconId": "Electronic_circuit",
-                        "count": 2
-                    },
-                    {
-                        "iconId": "Copper_cable",
-                        "count": 3
-                    }
-                ],
-                [
-                    {
-                        "iconId": "Assembling_machine_3",
-                        "count": "1.25/s"
-                    },
-                    {
-                        "iconId": "Advanced_circuit",
-                        "count": 6
-                    },
-                    {
-                        "iconId": "Electronic_circuit",
-                        "count": 1
-                    },
-                    {
-                        "iconId": "Copper_cable",
-                        "count": 1
-                    },
-                    {
-                        "name": "Plastic",
-                        "iconId": "Plastic_bar",
-                        "count": 1
-                    },
-                    {
-                        "comment": "Doesn't take into account Wire for GC"
-                    }
-                ],
-                [
-                    {
-                        "iconId": "Assembling_machine_3",
-                        "count": ".625/s"
-                    },
-                    {
-                        "iconId": "Processing_unit",
-                        "count": 5
-                    },
-                    {
-                        "iconId": "Advanced_circuit",
-                        "count": 6
-                    },
-                    {
-                        "iconId": "Electronic_circuit",
-                        "count": 5
-                    },
-                    {
-                        "comment": "Doesn't take into account GC for RC"
-                    }
-                ],
-                [
-                    {
-                        "iconId": "Assembling_machine_3",
-                        "count": ".042/s"
-                    },
-                    {
-                        "iconId": "Speed_module_3",
-                        "count": 2
-                    },
-                    {
-                        "iconId": "Speed_module_2",
-                        "count": 5
-                    },
-                    {
-                        "iconId": "Speed_module",
-                        "count": 10
-                    },
-                    {
-                        "comment": "Same for Other Modules"
-                    }
-                ],
-                [
-                    {
-                        "iconId": "Assembling_machine_3",
-                        "count": ".042/s"
-                    },
-                    {
-                        "iconId": "Speed_module_3",
-                        "count": 2
-                    },
-                    {
-                        "iconId": "Processing_unit",
-                        "count": 10
-                    },
-                    {
-                        "iconId": "Advanced_circuit",
-                        "count": 38
-                    },
-                    {
-                        "iconId": "Electronic_circuit",
-                        "count": 18
-                    }
-                ]
-            ],
-            "productionRatios": [
-                [
-                    {
-                        "iconId": "Assembling_machine_3",
-                        "count": "1.25/s"
-                    },
-                    {
-                        "iconId": "Uranium_rounds_magazine",
-                        "count": 10
-                    },
-                    {
-                        "iconId": "Piercing_rounds_magazine",
-                        "count": 3
-                    },
-                    {
-                        "iconId": "Firearm_magazine",
-                        "count": 1
-                    }
-                ],
-                [
-                    {
-                        "iconId": "Assembling_machine_3",
-                        "count": "10/s"
-                    },
-                    {
-                        "iconId": "Straight_rail",
-                        "count": 2
-                    },
-                    {
-                        "iconId": "Iron_stick",
-                        "count": 1
-                    }
-                ],
-                [
-                    {
-                        "iconId": "Assembling_machine_3",
-                        "count": "1.25/s"
-                    },
-                    {
-                        "iconId": "Flying_robot_frame",
-                        "count": 20
-                    },
-                    {
-                        "iconId": "Electric_engine_unit",
-                        "count": 10
-                    },
-                    {
-                        "iconId": "Engine_unit",
-                        "count": 10
-                    },
-                    {
-                        "iconId": "Battery",
-                        "count": 10
-                    },
-                    {
-                        "iconId": "Pipe",
-                        "count": 1
-                    },
-                    {
-                        "iconId": "Iron_gear_wheel",
-                        "count": 0.5
-                    }
-                ],
-                [
-                    {
-                        "iconId": "Assembling_machine_3",
-                        "count": "1/s"
-                    },
-                    {
-                        "iconId": "Rocket_fuel",
-                        "count": 24
-                    },
-                    {
-                        "iconId": "Solid_fuel",
-                        "count": 24
-                    }
-                ],
-                [
-                    {
-                        "iconId": "Chemical_plant",
-                        "count": "6.25/s"
-                    },
-                    {
-                        "iconId": "Battery",
-                        "count": 25
-                    },
-                    {
-                        "iconId": "Sulfuric_acid",
-                        "count": 2
-                    },
-                    {
-                        "iconId": "Sulfur",
-                        "count": 5
-                    }
-                ],
-                [
-                    {
-                        "iconId": "Chemical_plant",
-                        "count": "12.5/s"
-                    },
-                    {
-                        "iconId": "Processing_unit",
-                        "count": 100
-                    },
-                    {
-                        "iconId": "Sulfuric_acid",
-                        "count": 1
-                    }
-                ]
-            ],
-            "miscRatios": [
-                [
-                    {
-                        "iconId": "Assembling_machine_1",
-                        "count": "2/s"
-                    },
-                    {
-                        "iconId": "Iron_gear_wheel",
-                        "count": 2
-                    },
-                    {
-                        "iconId": "Iron_plate",
-                        "count": "4/s"
-                    },
-                    {
-                        "iconId": "Stone_furnace",
-                        "count": 14
-                    },
-                    {
-                        "iconId": "Electric_furnace",
-                        "count": 7
-                    }
-                ],
-                [
-                    {
-                        "iconId": "Assembling_machine_2",
-                        "count": "6/s"
-                    },
-                    {
-                        "iconId": "Iron_gear_wheel",
-                        "count": 4
-                    },
-                    {
-                        "iconId": "Iron_plate",
-                        "count": "12/s"
-                    },
-                    {
-                        "iconId": "Stone_furnace",
-                        "count": 42
-                    },
-                    {
-                        "iconId": "Electric_furnace",
-                        "count": 21
-                    }
-                ],
-                [
-                    {
-                        "iconId": "Assembling_machine_3",
-                        "count": "10/s"
-                    },
-                    {
-                        "iconId": "Iron_gear_wheel",
-                        "count": 4
-                    },
-                    {
-                        "iconId": "Iron_plate",
-                        "count": "20/s"
-                    },
-                    {
-                        "iconId": "Stone_furnace",
-                        "count": 70
-                    },
-                    {
-                        "iconId": "Electric_furnace",
-                        "count": 35
-                    }
-                ]
-            ],
-            "rocketComponentsRatio": [
+    "cheatSheet": {
+        "title": "Common Ratios",
+        "icon": "Repair_pack"
+    },
+    "data": {
+        "scienceRatios": [
+            [
                 {
-                    "iconId": "Low_density_structure",
-                    "count": 22
+                    "iconId": "Assembling_machine_3",
+                    "count": "2.5/s"
                 },
                 {
-                    "iconId": "Rocket_control_unit",
-                    "count": 21
+                    "iconId": "Science_pack_1",
+                    "count": 10
+                },
+                {
+                    "iconId": "Iron_gear_wheel",
+                    "count": 1
+                }
+            ],
+            [
+                {
+                    "iconId": "Assembling_machine_3",
+                    "count": "2.5/s"
+                },
+                {
+                    "iconId": "Science_pack_2",
+                    "count": 12
+                },
+                {
+                    "iconId": "Inserter",
+                    "count": 1
+                },
+                {
+                    "iconId": "Transport_belt",
+                    "count": 0.5
+                }
+            ],
+            [
+                {
+                    "iconId": "Assembling_machine_3",
+                    "count": "1.25/s"
+                },
+                {
+                    "iconId": "Science_pack_3",
+                    "count": 12
+                },
+                {
+                    "iconId": "Advanced_circuit",
+                    "count": 6
+                },
+                {
+                    "iconId": "Engine_unit",
+                    "count": 10
+                },
+                {
+                    "iconId": "Electric_mining_drill",
+                    "count": 2
+                }
+            ],
+            [
+                {
+                    "iconId": "Assembling_machine_3",
+                    "count": "1.25/s"
+                },
+                {
+                    "iconId": "Military_science_pack",
+                    "count": 5
+                },
+                {
+                    "iconId": "Gun_turret",
+                    "count": 4
+                },
+                {
+                    "iconId": "Grenade",
+                    "count": 4
+                },
+                {
+                    "iconId": "Piercing_rounds_magazine",
+                    "count": 1.5
+                }
+            ],
+            [
+                {
+                    "iconId": "Assembling_machine_3",
+                    "count": "1.25/s"
+                },
+                {
+                    "iconId": "Production_science_pack",
+                    "count": 7
+                },
+                {
+                    "iconId": "Electric_engine_unit",
+                    "count": 5
+                },
+                {
+                    "iconId": "Electric_furnace",
+                    "count": 2.5
+                }
+            ],
+            [
+                {
+                    "iconId": "Assembling_machine_3",
+                    "count": "1.25/s"
+                },
+                {
+                    "iconId": "High_tech_science_pack",
+                    "count": 7
+                },
+                {
+                    "iconId": "Battery",
+                    "count": 2.5
+                },
+                {
+                    "iconId": "Processing_unit",
+                    "count": 15
+                },
+                {
+                    "iconId": "Speed_module",
+                    "count": 7.5
+                }
+            ]
+        ],
+        "electronicsRatios": [
+            [
+                {
+                    "iconId": "Assembling_machine_3",
+                    "count": "5/s"
+                },
+                {
+                    "iconId": "Electronic_circuit",
+                    "count": 2
+                },
+                {
+                    "iconId": "Copper_cable",
+                    "count": 3
+                }
+            ],
+            [
+                {
+                    "iconId": "Assembling_machine_3",
+                    "count": "1.25/s"
+                },
+                {
+                    "iconId": "Advanced_circuit",
+                    "count": 6
+                },
+                {
+                    "iconId": "Electronic_circuit",
+                    "count": 1
+                },
+                {
+                    "iconId": "Copper_cable",
+                    "count": 1
+                },
+                {
+                    "name": "Plastic",
+                    "iconId": "Plastic_bar",
+                    "count": 1
+                },
+                {
+                    "comment": "Doesn't take into account Wire for GC"
+                }
+            ],
+            [
+                {
+                    "iconId": "Assembling_machine_3",
+                    "count": ".625/s"
+                },
+                {
+                    "iconId": "Processing_unit",
+                    "count": 5
+                },
+                {
+                    "iconId": "Advanced_circuit",
+                    "count": 6
+                },
+                {
+                    "iconId": "Electronic_circuit",
+                    "count": 5
+                },
+                {
+                    "comment": "Doesn't take into account GC for RC"
+                }
+            ],
+            [
+                {
+                    "iconId": "Assembling_machine_3",
+                    "count": ".042/s"
+                },
+                {
+                    "iconId": "Speed_module_3",
+                    "count": 2
+                },
+                {
+                    "iconId": "Speed_module_2",
+                    "count": 5
+                },
+                {
+                    "iconId": "Speed_module",
+                    "count": 10
+                },
+                {
+                    "comment": "Same for Other Modules"
+                }
+            ],
+            [
+                {
+                    "iconId": "Assembling_machine_3",
+                    "count": ".042/s"
+                },
+                {
+                    "iconId": "Speed_module_3",
+                    "count": 2
+                },
+                {
+                    "iconId": "Processing_unit",
+                    "count": 10
+                },
+                {
+                    "iconId": "Advanced_circuit",
+                    "count": 38
+                },
+                {
+                    "iconId": "Electronic_circuit",
+                    "count": 18
+                }
+            ]
+        ],
+        "productionRatios": [
+            [
+                {
+                    "iconId": "Assembling_machine_3",
+                    "count": "1.25/s"
+                },
+                {
+                    "iconId": "Uranium_rounds_magazine",
+                    "count": 10
+                },
+                {
+                    "iconId": "Piercing_rounds_magazine",
+                    "count": 3
+                },
+                {
+                    "iconId": "Firearm_magazine",
+                    "count": 1
+                }
+            ],
+            [
+                {
+                    "iconId": "Assembling_machine_3",
+                    "count": "10/s"
+                },
+                {
+                    "iconId": "Straight_rail",
+                    "count": 2
+                },
+                {
+                    "iconId": "Iron_stick",
+                    "count": 1
+                }
+            ],
+            [
+                {
+                    "iconId": "Assembling_machine_3",
+                    "count": "1.25/s"
+                },
+                {
+                    "iconId": "Flying_robot_frame",
+                    "count": 20
+                },
+                {
+                    "iconId": "Electric_engine_unit",
+                    "count": 10
+                },
+                {
+                    "iconId": "Engine_unit",
+                    "count": 10
+                },
+                {
+                    "iconId": "Battery",
+                    "count": 10
+                },
+                {
+                    "iconId": "Pipe",
+                    "count": 1
+                },
+                {
+                    "iconId": "Iron_gear_wheel",
+                    "count": 0.5
+                }
+            ],
+            [
+                {
+                    "iconId": "Assembling_machine_3",
+                    "count": "1/s"
                 },
                 {
                     "iconId": "Rocket_fuel",
-                    "count": 20
+                    "count": 24
+                },
+                {
+                    "iconId": "Solid_fuel",
+                    "count": 24
+                }
+            ],
+            [
+                {
+                    "iconId": "Chemical_plant",
+                    "count": "6.25/s"
+                },
+                {
+                    "iconId": "Battery",
+                    "count": 25
+                },
+                {
+                    "iconId": "Sulfuric_acid",
+                    "count": 2
+                },
+                {
+                    "iconId": "Sulfur",
+                    "count": 5
+                }
+            ],
+            [
+                {
+                    "iconId": "Chemical_plant",
+                    "count": "12.5/s"
+                },
+                {
+                    "iconId": "Processing_unit",
+                    "count": 100
+                },
+                {
+                    "iconId": "Sulfuric_acid",
+                    "count": 1
                 }
             ]
-        }
+        ],
+        "miscRatios": [
+            [
+                {
+                    "iconId": "Assembling_machine_1",
+                    "count": "2/s"
+                },
+                {
+                    "iconId": "Iron_gear_wheel",
+                    "count": 2
+                },
+                {
+                    "iconId": "Iron_plate",
+                    "count": "4/s"
+                },
+                {
+                    "iconId": "Stone_furnace",
+                    "count": 14
+                },
+                {
+                    "iconId": "Electric_furnace",
+                    "count": 7
+                }
+            ],
+            [
+                {
+                    "iconId": "Assembling_machine_2",
+                    "count": "6/s"
+                },
+                {
+                    "iconId": "Iron_gear_wheel",
+                    "count": 4
+                },
+                {
+                    "iconId": "Iron_plate",
+                    "count": "12/s"
+                },
+                {
+                    "iconId": "Stone_furnace",
+                    "count": 42
+                },
+                {
+                    "iconId": "Electric_furnace",
+                    "count": 21
+                }
+            ],
+            [
+                {
+                    "iconId": "Assembling_machine_3",
+                    "count": "10/s"
+                },
+                {
+                    "iconId": "Iron_gear_wheel",
+                    "count": 4
+                },
+                {
+                    "iconId": "Iron_plate",
+                    "count": "20/s"
+                },
+                {
+                    "iconId": "Stone_furnace",
+                    "count": 70
+                },
+                {
+                    "iconId": "Electric_furnace",
+                    "count": 35
+                }
+            ]
+        ],
+        "rocketComponentsRatio": [
+            {
+                "iconId": "Low_density_structure",
+                "count": 22
+            },
+            {
+                "iconId": "Rocket_control_unit",
+                "count": 21
+            },
+            {
+                "iconId": "Rocket_fuel",
+                "count": 20
+            }
+        ]
     }
 }

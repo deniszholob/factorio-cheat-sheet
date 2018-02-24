@@ -1,188 +1,200 @@
 {
-    "content": {
-        "cheatSheet": {
-            "title": "Oil Refining",
-            "icon": "Oil_refinery"
-        },
-        "data": {
-            "basicOil": [
+    "cheatSheet": {
+        "title": "Oil Refining",
+        "icon": "Oil_refinery"
+    },
+    "data": {
+        "basicOil": [
+            {
+                "iconId": "Pumpjack",
+                "count": 6
+            },
+            {
+                "iconId": "Basic_oil_processing",
+                "count": 3
+            },
+            {
+                "iconId": "Plastic_bar",
+                "count": 1
+            },
+            {
+                "iconId": "Flamethrower_ammo",
+                "count": 1
+            }
+        ],
+        "simpleCrackingRatio": [
+            {
+                "iconId": "Advanced_oil_processing",
+                "count": 8
+            },
+            {
+                "iconId": "Heavy_oil_cracking",
+                "count": 1
+            },
+            {
+                "iconId": "Light_oil_cracking",
+                "count": 7
+            }
+        ],
+        "perfectCrackingRatio": [
+            {
+                "iconId": "Advanced_oil_processing",
+                "count": 25
+            },
+            {
+                "iconId": "Heavy_oil_cracking",
+                "count": 3
+            },
+            {
+                "iconId": "Light_oil_cracking",
+                "count": 21
+            }
+        ],
+        "moduledCrackingRatio": [
+            {
+                "iconId": "Advanced_oil_processing",
+                "count": 10
+            },
+            {
+                "iconId": "Heavy_oil_cracking",
+                "count": 2
+            },
+            {
+                "iconId": "Light_oil_cracking",
+                "count": 14
+            }
+        ],
+        "simpleLiquefactionCrackingRatio": [
+            {
+                "iconId": "Coal_liquefaction",
+                "count": 8
+            },
+            {
+                "iconId": "Heavy_oil_cracking",
+                "count": 1
+            },
+            {
+                "iconId": "Light_oil_cracking",
+                "count": 3
+            }
+        ],
+        "perfectLiquefactionCrackingRatio": [
+            {
+                "iconId": "Coal_liquefaction",
+                "count": 25
+            },
+            {
+                "iconId": "Heavy_oil_cracking",
+                "count": 3
+            },
+            {
+                "iconId": "Light_oil_cracking",
+                "count": 9
+            },
+            {
+                "iconId": "Plastic_bar",
+                "count": 7
+            }
+        ],
+        "solidFuel": [
+            [
                 {
-                    "iconId": "Pumpjack",
-                    "count": 6
+                    "material": "Heavy_oil",
+                    "count": 40
                 },
                 {
-                    "iconId": "Basic_oil_processing",
+                    "material": "Light_oil",
+                    "count": 30
+                },
+                {
+                    "material": "Solid_fuel",
                     "count": 3
-                },
-                {
-                    "iconId": "Plastic_bar",
-                    "count": 1
-                },
-                {
-                    "iconId": "Flamethrower_ammo",
-                    "count": 1
                 }
             ],
-            "simpleCrackingRatio": [
+            [
                 {
-                    "iconId": "Advanced_oil_processing",
-                    "count": 8
+                    "material": "Heavy_oil",
+                    "count": 40
                 },
                 {
-                    "iconId": "Heavy_oil_cracking",
-                    "count": 1
-                },
-                {
-                    "iconId": "Light_oil_cracking",
-                    "count": 7
-                }
-            ],
-            "perfectCrackingRatio": [
-                {
-                    "iconId": "Advanced_oil_processing",
-                    "count": 25
-                },
-                {
-                    "iconId": "Heavy_oil_cracking",
-                    "count": 3
-                },
-                {
-                    "iconId": "Light_oil_cracking",
-                    "count": 21
-                }
-            ],
-            "moduledCrackingRatio": [
-                {
-                    "iconId": "Advanced_oil_processing",
-                    "count": 10
-                },
-                {
-                    "iconId": "Heavy_oil_cracking",
+                    "material": "Solid_fuel",
                     "count": 2
-                },
-                {
-                    "iconId": "Light_oil_cracking",
-                    "count": 14
                 }
             ],
-            "simpleLiquefactionCrackingRatio": [
+            [
                 {
-                    "iconId": "Coal_liquefaction",
-                    "count": 8
+                    "material": "Heavy_oil",
+                    "count": 40
                 },
                 {
-                    "iconId": "Heavy_oil_cracking",
+                    "material": "Light_oil",
+                    "count": 30
+                },
+                {
+                    "material": "Petroleum_gas",
+                    "count": 20
+                },
+                {
+                    "material": "Solid_fuel",
                     "count": 1
-                },
-                {
-                    "iconId": "Light_oil_cracking",
-                    "count": 3
-                }
-            ],
-            "perfectLiquefactionCrackingRatio": [
-                {
-                    "iconId": "Coal_liquefaction",
-                    "count": 25
-                },
-                {
-                    "iconId": "Heavy_oil_cracking",
-                    "count": 3
-                },
-                {
-                    "iconId": "Light_oil_cracking",
-                    "count": 9
-                },
-                {
-                    "iconId": "Plastic_bar",
-                    "count": 7
-                }
-            ],
-            "solidFuel": [
-                [
-                    {
-                        "material": "Heavy_oil",
-                        "count": 40
-                    },
-                    {
-                        "material": "Light_oil",
-                        "count": 30
-                    },
-                    {
-                        "material": "Solid_fuel",
-                        "count": 3
-                    }
-                ],
-                [
-                    {
-                        "material": "Heavy_oil",
-                        "count": 40
-                    },
-                    {
-                        "material": "Solid_fuel",
-                        "count": 2
-                    }
-                ],
-                [
-                    {
-                        "material": "Heavy_oil",
-                        "count": 40
-                    },
-                    {
-                        "material": "Light_oil",
-                        "count": 30
-                    },
-                    {
-                        "material": "Petroleum_gas",
-                        "count": 20
-                    },
-                    {
-                        "material": "Solid_fuel",
-                        "count": 1
-                    }
-                ]
-            ],
-            "production": [
-                {
-                    "processes": ["Basic_oil_processing"],
-                    "oil": "20/s",
-                    "water": "-",
-                    "petrol": "8/s",
-                    "lighOil": "6/s",
-                    "heavyOil": "6/s"
-                },
-                {
-                    "processes": ["Advanced_oil_processing"],
-                    "oil": "20/s",
-                    "water": "10/s",
-                    "petrol": "11/s",
-                    "lighOil": "9/s",
-                    "heavyOil": "2/s"
-                },
-                {
-                    "processes": ["Advanced_oil_processing", "Light_oil_cracking"],
-                    "oil": "20/s",
-                    "water": "19/s",
-                    "petrol": "17/s",
-                    "lighOil": "-",
-                    "heavyOil": "2/s"
-                },
-                {
-                    "processes": ["Advanced_oil_processing", "Heavy_oil_cracking"],
-                    "oil": "20/s",
-                    "water": "11.5/s",
-                    "petrol": "11/s",
-                    "lighOil": "10.5/s",
-                    "heavyOil": "-"
-                },
-                {
-                    "processes": ["Advanced_oil_processing", "Heavy_oil_cracking", "Light_oil_cracking"],
-                    "oil": "20/s",
-                    "water": "22/s",
-                    "petrol": "18/s",
-                    "lighOil": "-",
-                    "heavyOil": "-"
                 }
             ]
-        }
+        ],
+        "production": [
+            {
+                "processes": [
+                    "Basic_oil_processing"
+                ],
+                "oil": "20/s",
+                "water": "-",
+                "petrol": "8/s",
+                "lighOil": "6/s",
+                "heavyOil": "6/s"
+            },
+            {
+                "processes": [
+                    "Advanced_oil_processing"
+                ],
+                "oil": "20/s",
+                "water": "10/s",
+                "petrol": "11/s",
+                "lighOil": "9/s",
+                "heavyOil": "2/s"
+            },
+            {
+                "processes": [
+                    "Advanced_oil_processing",
+                    "Light_oil_cracking"
+                ],
+                "oil": "20/s",
+                "water": "19/s",
+                "petrol": "17/s",
+                "lighOil": "-",
+                "heavyOil": "2/s"
+            },
+            {
+                "processes": [
+                    "Advanced_oil_processing",
+                    "Heavy_oil_cracking"
+                ],
+                "oil": "20/s",
+                "water": "11.5/s",
+                "petrol": "11/s",
+                "lighOil": "10.5/s",
+                "heavyOil": "-"
+            },
+            {
+                "processes": [
+                    "Advanced_oil_processing",
+                    "Heavy_oil_cracking",
+                    "Light_oil_cracking"
+                ],
+                "oil": "20/s",
+                "water": "22/s",
+                "petrol": "18/s",
+                "lighOil": "-",
+                "heavyOil": "-"
+            }
+        ]
     }
 }

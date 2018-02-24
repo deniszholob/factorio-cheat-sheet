@@ -4,9 +4,8 @@ const fs = require('fs');
 const date = Date.now();
 const outputFile = 'src/assets/data/update.json';
 
-// Data service looks for "content"
 const outputData = {
-    content: date
+    updated: date
 }
 
 // Prepare string to write to file

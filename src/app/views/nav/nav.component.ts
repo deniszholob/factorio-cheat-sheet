@@ -24,9 +24,9 @@ export class NavComponent implements OnInit {
 
     /** Get Nav Data: sheet id's to anchor link to */
     ngOnInit() {
-        this.dataService.GET<string[]>(dataFile).subscribe(
-            (result: string[]) => {
-                this.sheetIds = result;
+        this.dataService.GET<Object>(dataFile).subscribe(
+            (result: Object) => {
+                this.sheetIds = result['nav'];
             },
             error => {
                 console.log(error);
@@ -36,7 +36,7 @@ export class NavComponent implements OnInit {
     }
 
     /** Expand the sheet jumped to and close the nav */
-    clickedLink(id: string){
+    clickedLink(id: string) {
         this.sheetCollapseToggleService.expandId(id);
         this.closeNav();
     }

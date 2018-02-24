@@ -1,10 +1,7 @@
 export class Collapse {
-    public doCollapse: boolean;
-    public id: string;
-
     constructor(
-        doCollapse: boolean,
-        id?: string
+        public doCollapse: boolean,
+        public id?: string
     ) {
         this.doCollapse = doCollapse;
         this.id = id;
