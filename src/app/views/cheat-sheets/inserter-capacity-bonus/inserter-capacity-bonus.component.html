@@ -32,8 +32,8 @@
         <tbody class="text-center">
             <tr *ngFor="let item of sheetData; let idx = index">
                 <td>
-                    <app-factorio-icon *ngIf="idx==0" [icon]="dataService.getFactorioIcon('Inserter_capacity_research')" class="bg-factorio-red-muted"></app-factorio-icon>
-                    <app-factorio-icon *ngIf="idx>0" [icon]="dataService.getFactorioIcon('Inserter_capacity_research', item?.tech)" class="bg-factorio-green"></app-factorio-icon>
+                    <app-factorio-icon *ngIf="idx==0" [icon]="dataService.getFactorioIcon('Inserter_capacity_bonus_(research)')" class="bg-factorio-red-muted"></app-factorio-icon>
+                    <app-factorio-icon *ngIf="idx>0" [icon]="dataService.getFactorioIcon('Inserter_capacity_bonus_(research)', item?.tech)" class="bg-factorio-green"></app-factorio-icon>
                 </td>
                 <td>
                     <strong>{{item?.nonStackItems}}</strong>
