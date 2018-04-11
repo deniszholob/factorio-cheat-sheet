@@ -406,17 +406,39 @@
                 }
             ]
         ],
-        "rocketComponentsRatio": [
+        "rocketPartRatio": [
+            {
+                "iconId": "Rocket_part",
+                "count": 1
+            },
+            {
+                "iconId": "Low_density_structure",
+                "count": 10
+            },
+            {
+                "iconId": "Rocket_fuel",
+                "count": 10
+            },
+            {
+                "iconId": "Rocket_control_unit",
+                "count": 10
+            }
+        ],
+        "totalRocketComponentsRatio": [
+            {
+                "iconId": "Rocket_silo",
+                "count": 1
+            },
             {
                 "iconId": "Low_density_structure",
                 "count": 22
             },
             {
-                "iconId": "Rocket_control_unit",
+                "iconId": "Rocket_fuel",
                 "count": 21
             },
             {
-                "iconId": "Rocket_fuel",
+                "iconId": "Rocket_control_unit",
                 "count": 20
             }
         ]
