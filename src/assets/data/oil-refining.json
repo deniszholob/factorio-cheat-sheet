@@ -53,15 +53,15 @@
         "moduledCrackingRatio": [
             {
                 "iconId": "Advanced_oil_processing",
-                "count": 10
+                "count": 5
             },
             {
                 "iconId": "Heavy_oil_cracking",
-                "count": 2
+                "count": 1
             },
             {
                 "iconId": "Light_oil_cracking",
-                "count": 14
+                "count": 7
             }
         ],
         "simpleLiquefactionCrackingRatio": [
