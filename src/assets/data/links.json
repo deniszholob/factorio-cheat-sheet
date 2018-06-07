@@ -89,6 +89,10 @@
                 "text": "Tools",
                 "links": [
                     {
+                        "url": "https://davemcw.com/factorio/tech-tree/",
+                        "text": "Interactive Tech Tree Viewer"
+                    },
+                    {
                         "url": "http://autotorio.com/outpost",
                         "text": "Ore and oil outpost generator & blueprint modifier"
                     },
