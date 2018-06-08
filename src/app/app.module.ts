@@ -57,7 +57,8 @@ import * as SheetComponents from 'app/views/cheat-sheets';
         SheetComponents.ProductivityModulePayoffsComponent,
         SheetComponents.ScienceComponent,
         SheetComponents.TipsComponent,
-        SheetComponents.TrainSpeedComponent
+        SheetComponents.TrainColorsComponent,
+        SheetComponents.TrainSpeedComponent,
     ],
     // Services
     providers: [

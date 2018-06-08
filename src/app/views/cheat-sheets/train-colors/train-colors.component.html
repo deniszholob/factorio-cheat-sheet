@@ -1,0 +1,36 @@
+<app-cheat-sheet [cheatSheet]="cheatSheet">
+    <p>Based on Data from
+        <a href="https://www.reddit.com/r/factorio/comments/5e3uuf/what_is_your_color_scheme_for_trains/">Reddit</a> by
+        <a href="https://www.reddit.com/user/bilka2">Bilka</a>
+    </p>
+
+    <table class="table table-sm table-hover fixed-width">
+        <caption class="text-center">Suggested locomotive colors based on cargo</caption>
+        <thead class="text-left">
+            <tr>
+                <th>
+                    Train Type
+                </th>
+                <th>
+                    RGB String
+                </th>
+                <th>
+                    Color
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of sheetData?.trainColors">
+                <td>
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon(item.icon)"></app-factorio-icon>
+                    {{item?.type}}
+                </td>
+                <td>{{item.rgb[0]}}, {{item.rgb[1]}}, {{item.rgb[2]}}</td>
+                <td>
+                    <i class="color-circle" [ngStyle]="getColorStyle(item.rgb)"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</app-cheat-sheet>
