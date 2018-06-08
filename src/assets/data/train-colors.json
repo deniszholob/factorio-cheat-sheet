@@ -1,0 +1,135 @@
+{
+    "cheatSheet": {
+        "title": "Train Colors",
+        "icon": "Train_stop"
+    },
+    "data": {
+        "trainColors": [
+            {
+                "type": "Iron Ore",
+                "rgb": [0, 140, 255],
+                "icon": "Iron_ore"
+            },
+            {
+                "type": "Copper Ore",
+                "rgb": [255, 55, 0],
+                "icon": "Copper_ore"
+            },
+            {
+                "type": "Coal",
+                "rgb": [0, 0, 0],
+                "icon": "Coal"
+            },
+            {
+                "type": "Stone",
+                "rgb": [120, 100, 100],
+                "icon": "Stone"
+            },
+            {
+                "type": "Uranium Ore",
+                "rgb": [100, 180, 0],
+                "icon": "Uranium_ore"
+            },
+            {
+                "type": "Iron Plates",
+                "rgb": [210, 210, 255],
+                "icon": "Iron_plate"
+            },
+            {
+                "type": "Copper Plates",
+                "rgb": [255, 125, 85],
+                "icon": "Copper_plate"
+            },
+            {
+                "type": "Steel",
+                "rgb": [200, 200, 200],
+                "icon": "Steel_plate"
+            },
+            {
+                "type": "Green Circuits",
+                "rgb": [0, 255, 0],
+                "icon": "Electronic_circuit"
+            },
+            {
+                "type": "Red Circuits",
+                "rgb": [255, 0, 0],
+                "icon": "Advanced_circuit"
+            },
+            {
+                "type": "Blue Circuits",
+                "rgb": [0, 0, 255],
+                "icon": "Processing_unit"
+            },
+            {
+                "type": "Oil",
+                "rgb": [0, 0, 30],
+                "icon": "Crude_oil"
+            },
+            {
+                "type": "Lubricant",
+                "rgb": [0, 170, 0],
+                "icon": "Lubricant"
+            },
+            {
+                "type": "Acid",
+                "rgb": [255, 255, 0],
+                "icon": "Sulfuric_acid"
+            },
+            {
+                "type": "Plastic",
+                "rgb": [255, 255, 255],
+                "icon": "Plastic_bar"
+            },
+            {
+                "type": "Red Science",
+                "rgb": [255, 50, 50],
+                "icon": "Science_pack_1"
+            },
+            {
+                "type": "Green Science",
+                "rgb": [100, 255, 100],
+                "icon": "Science_pack_2"
+            },
+            {
+                "type": "Blue Science",
+                "rgb": [80, 180, 255],
+                "icon": "Science_pack_3"
+            },
+            {
+                "type": "Grey Science",
+                "rgb": [200, 200, 255],
+                "icon": "Military_science_pack"
+            },
+            {
+                "type": "Purple Science",
+                "rgb": [255, 80, 255],
+                "icon": "Production_science_pack"
+            },
+            {
+                "type": "Yellow Science",
+                "rgb": [255, 180, 80],
+                "icon": "High_tech_science_pack"
+            },
+            {
+                "type": "Space Science",
+                "rgb": [200, 200, 255],
+                "icon": "Space_science_pack"
+            },
+            {
+                "type": "Solar",
+                "rgb": [0, 100, 150],
+                "icon": "Solar_panel"
+            },
+            {
+                "type": "Rocket Supply",
+                "rgb": [255, 0, 100],
+                "icon": "Rocket_part"
+            },
+            {
+                "type": "PAX Shuttle",
+                "rgb": [255, 0, 255],
+                "icon": "Power_armor"
+            }
+        ]
+    }
+}
