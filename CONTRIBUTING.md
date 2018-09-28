@@ -1,5 +1,5 @@
 # To contribute
-Make a new branch and follow the belt-thoughput example
+Make a new branch and follow the belt-throughput example
 * Make a new json data in assets/data
 * Make a new component in src/app/views/cheat-sheets (make sure to add to the components in the index.ts and app.module.ts)
 * Call the DataService.getCheatSheetData from src/app/services/data.service in the new component

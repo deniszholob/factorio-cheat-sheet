@@ -1,4 +1,4 @@
-.input-group-addon { // Newer Bootstrap does addons differentely, added this in from older version.
+.input-group-addon { // Newer Bootstrap does addons differently, added this in from older version.
     padding: .375rem .75rem;
     margin-bottom: 0;
     font-size: 1rem;
@@ -12,26 +12,26 @@
 }
 
 .input-group-addon {
-    color: $c-pallete-text;
-    background-color: $c-pallete-transp-light;
-    border-color: $c-pallete-transp-light;
+    color: $c-pallette-text;
+    background-color: $c-pallette-transp-light;
+    border-color: $c-pallette-transp-light;
 }
 
 .form-control {
-    color: $c-pallete-text;
-    background-color: $c-pallete-nuetral;
-    border-color: $c-pallete-transp-light;
+    color: $c-pallette-text;
+    background-color: $c-pallette-neutral;
+    border-color: $c-pallette-transp-light;
 
     &:focus {
-        color: $c-pallete-text;
-        background-color: $c-pallete-nuetral;
-        border-color: $c-pallete-accent;
+        color: $c-pallette-text;
+        background-color: $c-pallette-neutral;
+        border-color: $c-pallette-accent;
     }
 }
 
 .form-control:disabled, .form-control[readonly] {
-    background-color: $c-pallete-nuetral;
-    color: $c-pallete-text-muted;
+    background-color: $c-pallette-neutral;
+    color: $c-pallette-text-muted;
 }
 
 .merged-input-group {

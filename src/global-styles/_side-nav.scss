@@ -8,8 +8,8 @@
     z-index: 10; /* Stay on top */
     top: 0;
     right: 0;
-    background-color: $c-pallete-transp-heavy; /* Black*/
-    border: 1px solid $c-pallete-transp-medium;
+    background-color: $c-pallette-transp-heavy; /* Black*/
+    border: 1px solid $c-pallette-transp-medium;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -24,7 +24,7 @@
         padding: 8px 8px 8px 32px;
         text-decoration: none;
         font-size: 18px;
-        color: $c-pallete-text-muted;
+        color: $c-pallette-text-muted;
         display: block;
     }
 
@@ -44,8 +44,8 @@
     top: 50%;
     z-index: 11; /* Stay on top */
     cursor: pointer;
-    background: $c-pallete-transp-heavy;
-    border: 1px solid $c-pallete-transp-medium;
+    background: $c-pallette-transp-heavy;
+    border: 1px solid $c-pallette-transp-medium;
     border-right: none;
     margin-right: -3px; /* Account for 1px + 2px border */
     border-bottom-left-radius: 10%;
@@ -60,7 +60,7 @@
     }
 
     &:hover {
-        color: $c-pallete-accent;
+        color: $c-pallette-accent;
     }
 
     &.closed {
@@ -79,7 +79,7 @@
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover, .offcanvas a:focus{
-    color: $c-pallete-accent;
+    color: $c-pallette-accent;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */

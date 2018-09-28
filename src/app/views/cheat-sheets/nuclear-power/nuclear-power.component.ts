@@ -88,9 +88,9 @@ export class NuclearPowerComponent implements OnInit {
         this.reactorTable.push(this.calcNuke(1));
 
         const start = 2;
-        let incement = 1;
-        if (this.evenOnly) { incement = 2; }
-        for (let i = start; i <= this.reactorInfoCount; i = i + incement) {
+        let increment = 1;
+        if (this.evenOnly) { increment = 2; }
+        for (let i = start; i <= this.reactorInfoCount; i = i + increment) {
             this.reactorTable.push(this.calcNuke(i));
         }
     }
