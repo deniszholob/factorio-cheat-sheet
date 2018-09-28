@@ -65,6 +65,10 @@
                     {
                         "url": "http://forums.factorio.com/viewtopic.php?f=194&t=46855",
                         "text": "Train Intersections"
+                    },
+                    {
+                        "url": "https://discordapp.com/oauth2/authorize?scope=bot&client_id=310607046020169729&permissions=379968",
+                        "text": "Discord Blueprint Bot"
                     }
                 ]
             },
@@ -93,8 +97,8 @@
                         "text": "Interactive Tech Tree Viewer"
                     },
                     {
-                        "url": "http://autotorio.com/outpost",
-                        "text": "Ore and oil outpost generator & blueprint modifier"
+                        "url": "http://autotorio.com/blueprint",
+                        "text": "Blueprint Modifier & Ore and oil outpost generator"
                     },
                     {
                         "url": "http://miditorio.com/",

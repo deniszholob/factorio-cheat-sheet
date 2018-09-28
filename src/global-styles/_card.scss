@@ -1,13 +1,13 @@
 .card {
-    background-color: $c-pallete-nuetral-dark;
+    background-color: $c-pallette-neutral-dark;
     border: none;
-    box-shadow: 2px 2px 5px 2px $c-pallete-transp-light;
+    box-shadow: 2px 2px 5px 2px $c-pallette-transp-light;
     margin-bottom: 40px;
 }
 
 .card-header {
-    background-color: $c-pallete-transp-light;
-    border-color: $c-pallete-transp-medium;
+    background-color: $c-pallette-transp-light;
+    border-color: $c-pallette-transp-medium;
     position: relative;
 
     .card-title {
@@ -28,7 +28,7 @@
         position: absolute;
         background-color: transparent;
         border: none;
-        color: $c-pallete-accent;
+        color: $c-pallette-accent;
 
         &:focus {
             outline: none;

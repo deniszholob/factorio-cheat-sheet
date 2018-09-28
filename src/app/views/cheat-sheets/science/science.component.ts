@@ -23,8 +23,8 @@ export class ScienceComponent implements OnInit {
     rocketCalcData: RocketCalcData = {
         rocketRate: 0,          // This is calculated
         sciencePerLaunch: 1000, // As of v0.15 you get 1000 space science per rocket launch
-        assemblerSpeed: 0.75,   // The speed at wich the other sciences are being made
-        ratioMultiplier: 1,     // Multiplier for the science ratio (incase you have more sciecen set up)
+        assemblerSpeed: 0.75,   // The speed at which the other sciences are being made
+        ratioMultiplier: 1,     // Multiplier for the science ratio (incase you have more science set up)
     };
 
     constructor(
@@ -45,7 +45,7 @@ export class ScienceComponent implements OnInit {
         this.onCalcRocketRate();
     }
 
-    /** Calculates the rocket launch rate (in minutes) to keep up with other sicence */
+    /** Calculates the rocket launch rate (in minutes) to keep up with other science */
     onCalcRocketRate() {
         this.rocketCalcData.rocketRate =
             this.rocketCalcData.sciencePerLaunch /

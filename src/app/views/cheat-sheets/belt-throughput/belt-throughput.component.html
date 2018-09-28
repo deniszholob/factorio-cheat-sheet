@@ -21,7 +21,7 @@
     <div class="row align-items-center">
         <div class="col-12 col-lg-6">
             <table class="table table-sm table-hover fixed-width">
-                <caption class="text-center">Belt Throughtput</caption>
+                <caption class="text-center">Belt Throughput</caption>
                 <thead class="text-center">
                     <tr>
                         <th>Tier</th>
@@ -35,8 +35,8 @@
                         <td>
                             <app-factorio-icon *ngFor="let iconId of item.icons" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
                         </td>
-                        <td>{{item.thoughput / 2 | number:'1.3-3'}} i/s</td>
-                        <td>{{item.thoughput | number:'1.3-3'}} i/s</td>
+                        <td>{{item.throughput / 2 | number:'1.3-3'}} i/s</td>
+                        <td>{{item.throughput | number:'1.3-3'}} i/s</td>
                         <td><strong>{{item.multiplier}}x</strong></td>
                     </tr>
                 </tbody>

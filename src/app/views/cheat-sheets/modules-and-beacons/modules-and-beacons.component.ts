@@ -25,7 +25,7 @@ export class ModulesAndBeaconsComponent implements OnInit {
 
     APP_SETTINGS = APP_SETTINGS;
 
-    calcMachines: TroughputCalc = {
+    calcMachines: ThroughputCalc = {
         machinesToFillBelt: 1,
         itemConsumptionRate: 40,
         recipeBaseCraftTime: 1,
@@ -40,10 +40,10 @@ export class ModulesAndBeaconsComponent implements OnInit {
 
     ngOnInit() {
         this.cheatSheet = new CheatSheet(this.dataService.getFactorioIcon(cheatSheet.icon), cheatSheet.title);
-        this.calcMachinesTofillBelt();
+        this.calcMachinesToFillBelt();
     }
 
-    calcMachinesTofillBelt() {
+    calcMachinesToFillBelt() {
         this.calcMachines.machinesToFillBelt =
             (this.calcMachines.itemConsumptionRate * this.calcMachines.recipeBaseCraftTime) /
             (this.calcMachines.itemsPerCraft * this.calcMachines.machineCraftSpeed * this.calcMachines.machineProductivity);
@@ -52,7 +52,7 @@ export class ModulesAndBeaconsComponent implements OnInit {
 
 }
 
-interface TroughputCalc {
+interface ThroughputCalc {
     machinesToFillBelt: any;
     itemConsumptionRate: number;
     recipeBaseCraftTime: number;
