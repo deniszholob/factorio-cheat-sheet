@@ -117,6 +117,7 @@ export class NuclearPowerComponent implements OnInit {
         let turbines = 1;
         let pumps = 1;
         let steamTanks = 1;
+        let reactorEfficiency = 1;
 
         // Calc data
         if (reactors % 2 === 0) { // Even number of reactors
@@ -131,6 +132,9 @@ export class NuclearPowerComponent implements OnInit {
         turbines = heatExchangers * heatExchangerPower / turbinePower;
         pumps = turbines * (waterPerTurbine / waterPerPump);
         steamTanks = heatExchangers / 4 * storageTanksPerReactor;
+
+        reactorEfficiency = power/(reactors*40);
+        reactorEfficiency = Math.round(reactorEfficiency * 100);
 
         if (power < 1000) {
             powerUnit = 'MW';
@@ -148,7 +152,8 @@ export class NuclearPowerComponent implements OnInit {
             turbines: this.roundUp ? Math.ceil(turbines) : turbines,
             steamTanks: this.roundUp ? Math.ceil(steamTanks) : steamTanks,
             power: power,
-            powerUnit: powerUnit
+            powerUnit: powerUnit,
+            reactorEfficiency: reactorEfficiency
         };
         return data;
 
@@ -165,6 +170,7 @@ interface NukeRatioData {
     steamTanks: number;
     power: number;
     powerUnit: string;
+    reactorEfficiency: number;
 }
 
 interface NuclearData {
