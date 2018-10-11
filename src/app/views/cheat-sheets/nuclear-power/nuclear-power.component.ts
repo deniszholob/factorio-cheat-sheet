@@ -133,7 +133,7 @@ export class NuclearPowerComponent implements OnInit {
         pumps = turbines * (waterPerTurbine / waterPerPump);
         steamTanks = heatExchangers / 4 * storageTanksPerReactor;
 
-        reactorEfficiency = power/(reactors*40);
+        reactorEfficiency = power/(reactors * reactorPower);
         reactorEfficiency = Math.round(reactorEfficiency * 100);
 
         if (power < 1000) {
