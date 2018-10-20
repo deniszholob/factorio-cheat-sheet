@@ -53,9 +53,9 @@
                 ],
                 "stackSize": 2,
                 "chestToChest": 4.62,
-                "chestToYellowBelt": 3.64,
-                "chestToRedBelt": 4.00,
-                "chestToBlueBelt": 4.14
+                "chestToYellowBelt": 4.44,
+                "chestToRedBelt": 4.44,
+                "chestToBlueBelt": 4.44
             }
         ],
         "throughputBonus2": [
@@ -65,9 +65,9 @@
                 ],
                 "stackSize": 2,
                 "chestToChest": 1.18,
-                "chestToYellowBelt": 1.10,
-                "chestToRedBelt": 1.13,
-                "chestToBlueBelt": 1.14
+                "chestToYellowBelt": 1.17,
+                "chestToRedBelt": 1.17,
+                "chestToBlueBelt": 1.17
             },
             {
                 "icons": [
@@ -75,9 +75,9 @@
                 ],
                 "stackSize": 2,
                 "chestToChest": 1.67,
-                "chestToYellowBelt": 1.52,
-                "chestToRedBelt": 1.58,
-                "chestToBlueBelt": 1.60
+                "chestToYellowBelt": 1.64,
+                "chestToRedBelt": 1.64,
+                "chestToBlueBelt": 1.64
             },
             {
                 "icons": [
@@ -85,9 +85,9 @@
                 ],
                 "stackSize": 2,
                 "chestToChest": 2.31,
-                "chestToYellowBelt": 2.03,
-                "chestToRedBelt": 2.14,
-                "chestToBlueBelt": 2.18
+                "chestToYellowBelt": 2.26,
+                "chestToRedBelt": 2.26,
+                "chestToBlueBelt": 2.26
             },
             {
                 "icons": [
@@ -96,9 +96,9 @@
                 ],
                 "stackSize": 2,
                 "chestToChest": 4.62,
-                "chestToYellowBelt": 3.64,
-                "chestToRedBelt": 4.00,
-                "chestToBlueBelt": 4.14
+                "chestToYellowBelt": 4.44,
+                "chestToRedBelt": 4.44,
+                "chestToBlueBelt": 4.44
             },
             {
                 "icons": [
@@ -107,9 +107,9 @@
                 ],
                 "stackSize": 4,
                 "chestToChest": 9.23,
-                "chestToYellowBelt": 4.71,
-                "chestToRedBelt": 6.15,
-                "chestToBlueBelt": 6.86
+                "chestToYellowBelt": 5.45,
+                "chestToRedBelt": 6.86,
+                "chestToBlueBelt": 7.50
             }
         ],
         "throughputMaxBonus": [
@@ -119,9 +119,9 @@
                 ],
                 "stackSize": 3,
                 "chestToChest": 1.76,
-                "chestToYellowBelt": 1.53,
-                "chestToRedBelt": 1.62,
-                "chestToBlueBelt": 1.67
+                "chestToYellowBelt": 1.62,
+                "chestToRedBelt": 1.70,
+                "chestToBlueBelt": 1.71
             },
             {
                 "icons": [
@@ -129,9 +129,9 @@
                 ],
                 "stackSize": 3,
                 "chestToChest": 2.50,
-                "chestToYellowBelt": 2.02,
-                "chestToRedBelt": 2.22,
-                "chestToBlueBelt": 2.31
+                "chestToYellowBelt": 2.22,
+                "chestToRedBelt": 2.37,
+                "chestToBlueBelt": 2.40
             },
             {
                 "icons": [
@@ -139,9 +139,9 @@
                 ],
                 "stackSize": 3,
                 "chestToChest": 3.46,
-                "chestToYellowBelt": 2.65,
-                "chestToRedBelt": 2.95,
-                "chestToBlueBelt": 3.10
+                "chestToYellowBelt": 2.95,
+                "chestToRedBelt": 3.21,
+                "chestToBlueBelt": 3.27
             },
             {
                 "icons": [
@@ -149,10 +149,10 @@
                     "Filter_inserter"
                 ],
                 "stackSize": 3,
-                "chestToChest": 6.93,
-                "chestToYellowBelt": 4.29,
-                "chestToRedBelt": 5.14,
-                "chestToBlueBelt": 5.63
+                "chestToChest": 6.92,
+                "chestToYellowBelt": 5.14,
+                "chestToRedBelt": 6.00,
+                "chestToBlueBelt": 6.21
             },
             {
                 "icons": [
@@ -160,10 +160,10 @@
                     "Stack_filter_inserter"
                 ],
                 "stackSize": 12,
-                "chestToChest": 27.70,
-                "chestToYellowBelt": 5.90,
-                "chestToRedBelt": 9.60,
-                "chestToBlueBelt": 12.20
+                "chestToChest": 27.69,
+                "chestToYellowBelt": 6.21,
+                "chestToRedBelt": 10.14,
+                "chestToBlueBelt": 12.86
             }
         ]
     }
