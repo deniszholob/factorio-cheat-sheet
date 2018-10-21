@@ -1,0 +1,680 @@
+{
+    "cheatSheet": {
+        "title": "Stack sizes",
+        "icon": "Fast_inserter"
+    },
+    "data": [
+        {
+            "Item": "nuclear_fuel",
+            "icons": [
+                "Nuclear_fuel"
+            ],
+            "stacksize": 1
+        },
+		{
+            "Item": "artillery_shell",
+            "icons": [
+                "Artillery_shell"
+            ],
+            "stacksize": 1
+        },
+        {
+            "Item": "satellite",
+            "icons": [
+                "Satellite"
+            ],
+            "stacksize": 1
+        },
+        {
+            "Item": "silo",
+            "icons": [
+                "Rocket_silo"
+            ],
+            "stacksize": 1
+        },
+        {
+            "Item": "vehicle",
+            "icons": [
+                "Tank",
+                "Car"
+            ],
+            "stacksize": 1
+        },
+        {
+            "Item": "remotes",
+            "icons": [
+                "Discharge_defense_remote",
+                "Artillery_targeting_remote"
+            ],
+            "stacksize": 1
+        },
+        {
+            "Item": "armor_1",
+            "icons": [
+				"Light_armor",
+                "Heavy_armor"
+            ],
+            "stacksize": 10
+        },
+        {
+            "Item": "armor_2",
+            "icons": [
+                "Modular_armor",
+                "Power_armor",
+                "Power_armor_MK2"
+            ],
+            "stacksize": 1
+        },
+        {
+            "Item": "construction_plans",
+            "icons": [
+                "Blueprint",
+                "Deconstruction_planner",
+                "Blueprint_book"
+            ],
+            "stacksize": 1
+        },
+        {
+            "Item": "trains",
+            "icons": [
+                "Locomotive",
+                "Cargo_wagon",
+                "Fluid_wagon",
+                "Artillery_wagon"
+            ],
+            "stacksize": 5
+        },
+        {
+            "Item": "hand_weapons",
+            "icons": [
+                "Pistol",
+                "Submachine_gun",
+                "Shotgun",
+                "Combat_shotgun",
+                "Rocket_launcher",
+                "Flamethrower"
+            ],
+            "stacksize": 5
+        },
+        {
+            "Item": "personal_roboports",
+            "icons": [
+                "Personal_roboport",
+                "Personal_roboport_MK2"
+            ],
+            "stacksize": 5
+        },
+        {
+            "Item": "rocket_parts",
+            "icons": [
+                "Rocket_part"
+            ],
+            "stacksize": 5
+        },
+        {
+            "Item": "trainstop",
+            "icons": [
+                "Train_stop"
+            ],
+            "stacksize": 10
+        },
+        {
+            "Item": "turbines",
+            "icons": [
+                "Steam_engine",
+                "Steam_turbine"
+            ],
+            "stacksize": 10
+        },
+        {
+            "Item": "nuclear_reactor",
+            "icons": [
+                "Nuclear_reactor"
+            ],
+            "stacksize": 10
+        },
+        {
+            "Item": "oil_chemistry",
+            "icons": [
+                "Oil_refinery",
+                "Chemical_plant"
+            ],
+            "stacksize": 10
+        },
+        {
+            "Item": "barrels",
+            "icons": [
+                "Empty_barrel",
+                "Crude_oil_barrel",
+                "Light_oil_barrel",
+                "Heavy_oil_barrel",
+                "Petroleum_gas_barrel",
+                "Lubricant_barrel",
+                "Sulfuric_acid_barrel",
+                "Water_barrel"
+            ],
+            "stacksize": 10
+        },
+        {
+            "Item": "rocket_related",
+            "icons": [
+                "Rocket_control_unit",
+                "Low_density_structure",
+                "Rocket_fuel"
+            ],
+            "stacksize": 10
+        },
+        {
+            "Item": "lab",
+            "icons": [
+                "Lab"
+            ],
+            "stacksize": 10
+        },
+		{
+            "Item": "beacon",
+            "icons": [
+                "Beacon"
+            ],
+            "stacksize": 10
+        },
+		{
+            "Item": "Atomic_bomb",
+            "icons": [
+                "Atomic_bomb"
+            ],
+            "stacksize": 10
+        },
+		{
+            "Item": "exoskeleton",
+            "icons": [
+                "Exoskeleton"
+            ],
+            "stacksize": 10
+        },
+		{
+            "Item": "Artillery_turret",
+            "icons": [
+                "Artillery_turret"
+            ],
+            "stacksize": 10
+        },
+		{
+            "Item": "Armor_devices",
+            "icons": [
+                "Portable_solar_panel",
+                "Portable_fusion_reactor",
+                "Personal_laser_defense",
+                "Discharge_defense",
+                "Nightvision"
+            ],
+            "stacksize": 20
+        },
+		{
+            "Item": "tools",
+            "icons": [
+                "Iron_axe",
+                "Steel_axe",
+                "Cliff_explosives"
+            ],
+            "stacksize": 20
+        },
+		{
+            "Item": "offshore_pump",
+            "icons": [
+                "Offshore_pump"
+            ],
+            "stacksize": 20
+        },
+		{
+            "Item": "pumpjack",
+            "icons": [
+                "Pumpjack"
+            ],
+            "stacksize": 20
+        },
+		{
+            "Item": "chests",
+            "icons": [
+                "Wooden_chest",
+                "Iron_chest",
+                "Steel_chest",
+                "Passive_provider_chest",
+                "Active_provider_chest",
+                "Buffer_chest",
+                "Storage_chest",
+                "Requester_chest"
+            ],
+            "stacksize": 50
+        },
+		{
+            "Item": "inserter",
+            "icons": [
+                "Burner_inserter",
+                "Inserter",
+                "Long_handed_inserter",
+                "Fast_inserter",
+                "Filter_inserter",
+                "Stack_inserter",
+                "Stack_filter_inserter"
+            ],
+            "stacksize": 50
+        },
+		{
+            "Item": "poles",
+            "icons": [
+                "Small_electric_pole",
+                "Medium_electric_pole",
+                "Big_electric_pole",
+                "Substation"
+            ],
+            "stacksize": 50
+        },
+		{
+            "Item": "belts_special",
+            "icons": [
+                "Splitter",
+                "Fast_splitter",
+                "Express_splitter",
+                "Underground_belt",
+                "Fast_underground_belt",
+                "Express_underground_belt"
+            ],
+            "stacksize": 50
+        },
+		{
+            "Item": "Pipe and pump",
+            "icons": [
+                "Pipe_to_ground",
+                "Pump"
+            ],
+            "stacksize": 50
+        },
+		{
+            "Item": "Signals",
+            "icons": [
+                "Rail_signal",
+                "Rail_chain_signal"
+            ],
+            "stacksize": 50
+        },
+		{
+            "Item": "Robots",
+            "icons": [
+                "Construction_robot",
+                "Logistic_robot"
+            ],
+            "stacksize": 50
+        },
+		{
+            "Item": "Storage_tank",
+            "icons": [
+                "Storage_tank"
+            ],
+            "stacksize": 50
+        },
+		{
+            "Item": "Lamp",
+            "icons": [
+                "Lamp"
+            ],
+            "stacksize": 50
+        },
+ 		{
+            "Item": "Combinators",
+            "icons": [
+                "Arithmetic_combinator",
+                "Decider_combinator",
+                "Constant_combinator"
+            ],
+            "stacksize": 50
+        },
+		{
+            "Item": "Switch",
+            "icons": [
+                "Power_switch"
+            ],
+            "stacksize": 50
+        },
+		{
+            "Item": "Speaker",
+            "icons": [
+                "Programmable_speaker"
+            ],
+            "stacksize": 50
+         },
+		 {
+            "Item": "Furnaces",
+            "icons": [
+                "Stone_furnace",
+                "Steel_furnace",
+                "Electric_furnace"
+            ],
+            "stacksize": 50
+         },
+		 {
+            "Item": "Assembling_machines",
+            "icons": [
+                "Assembling_machine_1",
+                "Assembling_machine_2",
+                "Assembling_machine_3"
+            ],
+            "stacksize": 50
+         },
+		 {
+            "Item": "Drills",
+            "icons": [
+                "Burner_mining_drill",
+                "Electric_mining_drill"
+            ],
+            "stacksize": 50
+         },
+		 {
+            "Item": "Heat_items",
+            "icons": [
+                "Heat_exchanger",
+                "Heat_pipe"
+            ],
+            "stacksize": 50
+         },
+		 {
+            "Item": "Boiler",
+            "icons": [
+                "Boiler"
+            ],
+            "stacksize": 50
+         },
+		 {
+            "Item": "Solar_panel",
+            "icons": [
+                "Solar_panel"
+            ],
+            "stacksize": 50
+         },
+		 {
+            "Item": "Accumulator",
+            "icons": [
+                "Accumulator"
+            ],
+            "stacksize": 50
+         },
+		 {
+            "Item": "Centrifuge",
+            "icons": [
+                "Centrifuge"
+            ],
+            "stacksize": 50
+         },
+		 {
+            "Item": "Modules",
+            "icons": [
+                "Speed_module",
+                "Speed_module_2",
+                "Speed_module_3",
+                "Productivity_module",
+                "Productivity_module_2",
+                "Productivity_module_3",
+                "Efficiency_module",
+                "Efficiency_module_2",
+                "Efficiency_module_3"
+            ],
+            "stacksize": 50
+         },   
+		 {
+            "Item": "Combustibles",
+            "icons": [
+                "Coal",
+                "Solid_fuel"
+            ],
+            "stacksize": 50
+         },
+		 {
+            "Item": "Ores",
+            "icons": [
+                "Iron_ore",
+                "Copper_ore",
+                "Uranium_ore"
+            ],
+            "stacksize": 50
+         },
+		 {
+            "Item": "Sulfur",
+            "icons": [
+                "Sulfur"
+            ],
+            "stacksize": 50
+         },
+		 {
+            "Item": "Explosives",
+            "icons": [
+                "Explosives"
+            ],
+            "stacksize": 50
+         },
+		 {
+            "Item": "Engines",
+            "icons": [
+                "Engine_unit",
+                "Electric_engine_unit"
+            ],
+            "stacksize": 50
+         },
+		 {
+            "Item": "Robot_frames",
+            "icons": [
+                "Flying_robot_frame"
+            ],
+            "stacksize": 50
+         },
+		 {
+            "Item": "Fuel_cells",
+            "icons": [
+                "Uranium_fuel_cell",
+                "Used_up_uranium_fuel_cell"
+            ],
+            "stacksize": 50
+         },
+		 {
+            "Item": "Shields",
+            "icons": [
+                "Energy_shield",
+                "Energy_shield_MK2"
+            ],
+            "stacksize": 50
+         },
+		 {
+            "Item": "Personal_battery",
+            "icons": [
+                "Personal_battery",
+                "Personal_battery_MK2"
+            ],
+            "stacksize": 50
+         },
+		 {
+            "Item": "Gate",
+            "icons": [
+                "Gate"
+            ],
+            "stacksize": 50
+         },
+		 {
+            "Item": "Radar",
+            "icons": [
+                "Radar"
+            ],
+            "stacksize": 50
+         },
+		 {
+            "Item": "Turrets",
+            "icons": [
+                "Gun_turret",
+                "Laser_turret",
+                "Flamethrower_turret"
+            ],
+            "stacksize": 50
+         },
+		 {
+            "Item": "Belts",
+            "icons": [
+                "Transport_belt",
+                "Fast_transport_belt",
+                "Express_transport_belt"
+            ],
+            "stacksize": 100
+         },
+		 {
+            "Item": "Pipe",
+            "icons": [
+                "Pipe"
+            ],
+            "stacksize": 100
+         },
+		 {
+            "Item": "Rail",
+            "icons": [
+                "Straight_rail"
+            ],
+            "stacksize": 100
+         },
+		 {
+            "Item": "Construction_material",
+            "icons": [
+                "Stone_brick",
+                "Concrete",
+                "Hazard_concrete",
+                "Refined_concrete",
+                "Landfill"
+            ],
+            "stacksize": 100
+         },
+		 {
+            "Item": "Woods",
+            "icons": [
+                "Raw_wood",
+                "Wood"
+            ],
+            "stacksize": 100
+         },
+		 {
+            "Item": "Fish",
+            "icons": [
+                "Raw_fish"
+            ],
+            "stacksize": 100
+         },
+		 {
+            "Item": "Repair_pack",
+            "icons": [
+                "Repair_pack"
+            ],
+            "stacksize": 100
+         },
+		 {
+            "Item": "Plates",
+            "icons": [
+                "Iron_plate",
+                "Copper_plate",
+                "Steel_plate"
+            ],
+            "stacksize": 100
+         },
+		 {
+            "Item": "Plastics",
+            "icons": [
+                "Plastic_bar"
+            ],
+            "stacksize": 100
+         },
+		 {
+            "Item": "Processing_unit",
+            "icons": [
+                "Processing_unit"
+            ],
+            "stacksize": 100
+         },
+		 {
+            "Item": "Iron_products",
+            "icons": [
+                "Iron_stick",
+                "Iron_gear_wheel"
+            ],
+            "stacksize": 100
+         },
+ 		 {
+            "Item": "Uranium",
+            "icons": [
+                "Uranium-235",
+                "Uranium-238"
+            ],
+            "stacksize": 100
+         },
+ 		 {
+            "Item": "Consumable_weapons",
+            "icons": [
+                "Land_mine",
+                "Flamethrower_ammo",
+                "Grenade",
+                "Cluster_grenade",
+                "Poison_capsule",
+                "Slowdown_capsule",
+                "Defender_capsule",
+                "Distractor_capsule",
+                "Destroyer_capsule"
+            ],
+            "stacksize": 100
+         },
+        {
+            "Item": "Ammo",
+            "icons": [
+                "Firearm_magazine",
+                "Piercing_rounds_magazine",
+                "Uranium_rounds_magazine",
+                "Shotgun_shells",
+                "Piercing_shotgun_shells",
+                "Cannon_shell",
+                "Explosive_cannon_shell",
+                "Uranium_cannon_shell",
+                "Explosive_uranium_cannon_shell",
+                "Rocket",
+                "Explosive_rocket"                
+            ],
+            "stacksize": 100
+        },
+        {
+            "Item": "Science_packs",
+            "icons": [
+                "Science_pack_1",
+                "Science_pack_2",
+                "Science_pack_3",
+                "Military_science_pack",
+                "Production_science_pack",
+                "High_tech_science_pack"           
+            ],
+            "stacksize": 200
+        },
+        {
+            "Item": "Circuits",
+            "icons": [
+                "Electronic_circuit",
+                "Advanced_circuit"           
+            ],
+            "stacksize": 200
+        },
+        {
+            "Item": "Wires",
+            "icons": [
+                "Red_wire",
+                "Green_wire",
+                "Copper_cable"          
+            ],
+            "stacksize": 200
+        },
+        {
+            "Item": "Space_science_pack",
+            "icons": [
+                "Space_science_pack"
+            ],
+            "stacksize": 2000
+        }
+    ]
+}

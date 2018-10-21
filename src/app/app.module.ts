@@ -56,6 +56,7 @@ import * as SheetComponents from 'app/views/cheat-sheets';
         SheetComponents.OilRefiningComponent,
         SheetComponents.ProductivityModulePayoffsComponent,
         SheetComponents.ScienceComponent,
+        SheetComponents.StacksComponent,
         SheetComponents.TipsComponent,
         SheetComponents.TrainColorsComponent,
         SheetComponents.TrainSpeedComponent,

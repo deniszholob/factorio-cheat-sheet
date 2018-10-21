@@ -1,0 +1,37 @@
+<app-cheat-sheet [cheatSheet]="cheatSheet">
+    <p class="card-text">
+        <strong><a href="https://wiki.factorio.com/Stack" target="_blank">Stacks</a></strong> - Items per stack.
+    </p>
+    <p class="card-text">
+        <strong>Stack sizes</strong> - Maximum Items in one stack.
+    </p>
+    <div class="card-text">
+        See <a href="https://wiki.factorio.com/Stack" target="_blank">Stack</a> for all relevant information on stacks.
+    </div>
+
+    <hr>
+
+    <div class="row align-items-center">
+        <div class="col-12 col-lg-6">
+            <table class="table table-sm table-hover fixed-width">
+                <caption class="text-center">Stack sizes</caption>
+                <thead class="text-center">
+                    <tr>
+                        <th>Item</th>
+                        <th>Items/Stack</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr *ngFor="let item of sheetData">
+                        <td>
+                            <app-factorio-icon *ngFor="let iconId of item.icons" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
+                        </td>
+                        <td>{{item.stacksize}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+      </div>
+</app-cheat-sheet>
