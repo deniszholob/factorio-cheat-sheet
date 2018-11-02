@@ -2,7 +2,7 @@
   "name": "factorio-cheat-sheet",
   "version": "0.0.0",
   "license": "GPL-3",
-  "repository": "github:DDDGamer/factorio-cheat-sheet",
+  "repository": "github:deniszholob/factorio-cheat-sheet",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 9009",

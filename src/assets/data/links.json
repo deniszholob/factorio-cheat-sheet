@@ -55,12 +55,12 @@
                         "text": "Factorio Blueprint Library"
                     },
                     {
-                        "url": "http://deniszholob.com/factorio/blueprints/",
-                        "text": "DDDGamer’s Blueprint Collection"
-                    },
-                    {
                         "url": "http://xtvideos.net/factorio/blueprint/",
                         "text": "Xterminator’s Blueprints"
+                    },
+                    {
+                        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=1177804260",
+                        "text": "Teoxoy’s Blueprints"
                     },
                     {
                         "url": "http://forums.factorio.com/viewtopic.php?f=194&t=46855",
@@ -76,16 +76,20 @@
                 "text": "Ratio Planners/Calculators",
                 "links": [
                     {
-                        "url": "http://doomeer.com/factorio",
-                        "text": "Doomer's Calculator"
-                    },
-                    {
                         "url": "https://kirkmcdonald.github.io/calc.html",
                         "text": "Kirk's Calculator"
                     },
                     {
+                        "url": "http://doomeer.com/factorio",
+                        "text": "Doomer's Calculator"
+                    },
+                    {
                         "url": "http://barrykun.com/factorio/calc/",
                         "text": "Barrykin’s Cost Calc"
+                    },
+                    {
+                        "url": "https://deniszholob.github.io/factorio-machine-ratio-calc/",
+                        "text": "Generic Ratio Calculator"
                     }
                 ]
             },
@@ -99,6 +103,10 @@
                     {
                         "url": "http://autotorio.com/blueprint",
                         "text": "Blueprint Modifier & Ore and oil outpost generator"
+                    },
+                    {
+                        "url": "https://teoxoy.github.io/factorio-blueprint-editor/",
+                        "text": "Blueprint Editor"
                     },
                     {
                         "url": "http://miditorio.com/",
