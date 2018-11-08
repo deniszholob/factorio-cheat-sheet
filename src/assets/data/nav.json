@@ -1,6 +1,7 @@
 {
     "nav": [
         "belt-throughput",
+        "balancers",
         "material-processing",
         "mining",
         "science",
