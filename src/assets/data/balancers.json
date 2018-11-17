@@ -7,37 +7,37 @@
         "table": [
             {
                 "name": "1-8 belt balancers",
-                "yellow": "yes",
-                "red": "no",
-                "blue": "no",
+                "yellow": true,
+                "red": false,
+                "blue": false,
                 "string": "https://gist.githubusercontent.com/Bilka2/db1e1187e8996a821f62f563ca7545e0/raw/3396771950e3932c61db1ed381f325e63d940ee7/Yellow%2520belt.txt"
             },
             {
                 "name": "1-8 belt balancers",
-                "yellow": "no",
-                "red": "yes",
-                "blue": "no",
+                "yellow": false,
+                "red": true,
+                "blue": false,
                 "string": "https://gist.githubusercontent.com/Bilka2/db1e1187e8996a821f62f563ca7545e0/raw/3396771950e3932c61db1ed381f325e63d940ee7/Fast%2520(red)%2520belt.txt"
             },
             {
                 "name": "1-8 belt balancers",
-                "yellow": "no",
-                "red": "no",
-                "blue": "yes",
+                "yellow": false,
+                "red": false,
+                "blue": true,
                 "string": "https://gist.githubusercontent.com/Bilka2/db1e1187e8996a821f62f563ca7545e0/raw/3396771950e3932c61db1ed381f325e63d940ee7/Express%2520(blue)%2520belt.txt"
             },
             {
                 "name": "Big balancers*",
-                "yellow": "yes",
-                "red": "yes",
-                "blue": "yes",
+                "yellow": true,
+                "red": true,
+                "blue": true,
                 "string": "https://gist.githubusercontent.com/Bilka2/e98a7b97d738e9161a3db8497cb35f7c/raw/255e7f42b7c1f278ada5e7536e79f6793c621fa4/gistfile1.txt"
             },
             {
                 "name": "Lane balancers**",
-                "yellow": "yes",
-                "red": "yes",
-                "blue": "yes",
+                "yellow": true,
+                "red": true,
+                "blue": true,
                 "string": "https://gist.githubusercontent.com/Bilka2/9594fc58b4bd7250dd1005abef3f0bfc/raw/015847fa31600ed7a4a6ed55f0ba732ea59ab86b/gistfile1.txt"
             }
         ],

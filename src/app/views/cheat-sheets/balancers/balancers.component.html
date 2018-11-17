@@ -38,13 +38,13 @@
                         <td><a href="{{blueprintBook.string}}">{{blueprintBook.name}}</a></td>
                         <td class="balancer-icons">
                             <div>
-                                <app-factorio-icon *ngIf="blueprintBook.yellow == 'yes'" [icon]="dataService.getFactorioIcon('Splitter')"></app-factorio-icon>
+                                <app-factorio-icon *ngIf="blueprintBook.yellow" [icon]="dataService.getFactorioIcon('Splitter')"></app-factorio-icon>
                             </div>
                             <div>
-                                <app-factorio-icon *ngIf="blueprintBook.red == 'yes'" [icon]="dataService.getFactorioIcon('Fast_splitter')"></app-factorio-icon>
+                                <app-factorio-icon *ngIf="blueprintBook.red" [icon]="dataService.getFactorioIcon('Fast_splitter')"></app-factorio-icon>
                             </div>
                             <div>
-                                <app-factorio-icon *ngIf="blueprintBook.blue == 'yes'" [icon]="dataService.getFactorioIcon('Express_splitter')"></app-factorio-icon>
+                                <app-factorio-icon *ngIf="blueprintBook.blue" [icon]="dataService.getFactorioIcon('Express_splitter')"></app-factorio-icon>
                             </div>
                         </td>
                     </tr>
