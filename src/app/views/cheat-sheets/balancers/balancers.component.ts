@@ -15,7 +15,7 @@ const dataFile = 'balancers';
 @Component({
     selector: 'app-balancers',
     templateUrl: './balancers.component.html',
-    // styleUrls: ['./balancers.component.scss'] // Enable as needed
+    styleUrls: ['./balancers.component.scss'] // Enable as needed
 })
 export class BalancersComponent implements OnInit {
     cheatSheet: CheatSheet;
