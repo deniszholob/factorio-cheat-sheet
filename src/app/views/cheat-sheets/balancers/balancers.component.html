@@ -1,0 +1,55 @@
+<app-cheat-sheet [cheatSheet]="cheatSheet">
+    <p class="card-text">
+        <strong><a href="https://wiki.factorio.com/Balancer-mechanics">Balancers</a></strong> are used to evenly distribute items over multiple belts. </p>
+    <p>
+        Balancers that are <strong>input balanced</strong> take evenly from input belts. Balancers that are <strong>output balanced</strong> distribute evenly to output belts.
+    </p>
+    <p>
+        Balancers that are <strong>throughput limited</strong> may not be able to provide maximum output if one or more outputs are blocked.
+    </p>
+    <hr>
+    <div class="row">
+        <div class="col-12 col-lg-7 align-items-center text-center">
+            <p>
+                <strong>4 to 4 balancer</strong>
+                <br>
+                <img src="{{APP_SETTINGS.links.getLocalImagePath('4-to-4-balancer.png')}}" class="img-fluid rounded" alt="4 to 4 Balancer" title="4 to 4 Balancer">
+            </p>
+            <p>
+                <strong>1 belt lane balancer</strong>
+                <br>
+                <img src="{{APP_SETTINGS.links.getLocalImagePath('1-lane-balancer.png')}}" class="img-fluid rounded" alt="1 Belt Lane Balancer" title="1 Belt Lane Balancer">
+            </p>
+        </div>
+        <div class="col-12 col-lg-5">
+            <p>
+                <a href="https://camo.githubusercontent.com/434edd154fcc104a85d12fd497a902eeb11a4d63/68747470733a2f2f692e696d6775722e636f6d2f6b635a725061632e6a7067">
+                    Large image of all 1-8 balancers.
+                </a>
+            </p>
+            <p>
+                More details can be found at <a href="https://gist.github.com/Bilka2/aeec4ff7123ff5544cb9a80cf1046a06">Bilka's Belt Balancers</a>.
+            </p>
+            <table class="table table-sm table-hover fixed-width align-items-center text-center">
+                <caption>Balancer Blueprints</caption>
+                <thead>
+                    <tr>
+                        <th>Blueprint link</th>
+                        <th>Tiers included</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let blueprintBook of sheetData?.table">
+                        <td><a href="{{blueprintBook.string}}">{{blueprintBook.name}}</a></td>
+                        <td>
+                            <app-factorio-icon [ngStyle]="{'visibility': blueprintBook.yellow ? 'visible' : 'hidden'}" [icon]="dataService.getFactorioIcon('Splitter')"></app-factorio-icon>
+                            <app-factorio-icon [ngStyle]="{'visibility': blueprintBook.red ? 'visible' : 'hidden'}" [icon]="dataService.getFactorioIcon('Fast_splitter')"></app-factorio-icon>
+                            <app-factorio-icon [ngStyle]="{'visibility': blueprintBook.blue ? 'visible' : 'hidden'}" [icon]="dataService.getFactorioIcon('Express_splitter')"></app-factorio-icon>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="txt-muted" *ngFor="let foot of sheetData?.footnotes">{{foot}}</p>
+        </div>
+    </div>
+</app-cheat-sheet>
