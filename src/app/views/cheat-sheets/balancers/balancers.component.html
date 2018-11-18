@@ -41,16 +41,10 @@
                 <tbody>
                     <tr *ngFor="let blueprintBook of sheetData?.table">
                         <td><a href="{{blueprintBook.string}}">{{blueprintBook.name}}</a></td>
-                        <td class="balancer-icons">
-                            <div>
-                                <app-factorio-icon *ngIf="blueprintBook.yellow" [icon]="dataService.getFactorioIcon('Splitter')"></app-factorio-icon>
-                            </div>
-                            <div>
-                                <app-factorio-icon *ngIf="blueprintBook.red" [icon]="dataService.getFactorioIcon('Fast_splitter')"></app-factorio-icon>
-                            </div>
-                            <div>
-                                <app-factorio-icon *ngIf="blueprintBook.blue" [icon]="dataService.getFactorioIcon('Express_splitter')"></app-factorio-icon>
-                            </div>
+                        <td>
+                            <app-factorio-icon [ngStyle]="{'visibility': blueprintBook.yellow ? 'visible' : 'hidden'}" [icon]="dataService.getFactorioIcon('Splitter')"></app-factorio-icon>
+                            <app-factorio-icon [ngStyle]="{'visibility': blueprintBook.red ? 'visible' : 'hidden'}" [icon]="dataService.getFactorioIcon('Fast_splitter')"></app-factorio-icon>
+                            <app-factorio-icon [ngStyle]="{'visibility': blueprintBook.blue ? 'visible' : 'hidden'}" [icon]="dataService.getFactorioIcon('Express_splitter')"></app-factorio-icon>
                         </td>
                     </tr>
                 </tbody>
