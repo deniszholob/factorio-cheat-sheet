@@ -11,7 +11,7 @@
                 "Underground_belt",
                 "Splitter"
             ],
-            "throughput": 13.33333,
+            "throughput": 15,
             "multiplier": 1
         },
         {
@@ -21,7 +21,7 @@
                 "Fast_underground_belt",
                 "Fast_splitter"
             ],
-            "throughput": 26.6666,
+            "throughput": 30,
             "multiplier": 2
         },
         {
@@ -31,7 +31,7 @@
                 "Express_underground_belt",
                 "Express_splitter"
             ],
-            "throughput": 40,
+            "throughput": 45,
             "multiplier": 3
         }
     ]
