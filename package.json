@@ -6,37 +6,43 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 9009",
-    "build": "node buildScripts/updateDate.js && npm run lint && npm run build:prod",
+    "build": "npm run lint && npm run build:prod && node buildScripts/updateDate.js",
     "build:dev": "ng build --dev --base-href ./",
     "build:prod": "ng build --prod --base-href ./",
     "test": "echo 'No tests yet...'",
     "lint": "ng lint"
   },
   "private": true,
+  "engines": {
+    "node": ">= 10.14.1",
+    "npm": ">= 6.4.1"
+  },
   "dependencies": {
-    "@angular/animations": "^5.2.0",
-    "@angular/common": "^5.2.0",
-    "@angular/compiler": "^5.2.0",
-    "@angular/core": "^5.2.0",
-    "@angular/forms": "^5.2.0",
-    "@angular/http": "^5.2.0",
-    "@angular/platform-browser": "^5.2.0",
-    "@angular/platform-browser-dynamic": "^5.2.0",
-    "@angular/router": "^5.2.0",
-    "@ng-bootstrap/ng-bootstrap": "^1.0.0",
+    "@angular/animations": "^7.2.0",
+    "@angular/common": "^7.2.0",
+    "@angular/compiler": "^7.2.0",
+    "@angular/core": "^7.2.0",
+    "@angular/forms": "^7.2.0",
+    "@angular/http": "^7.2.0",
+    "@angular/platform-browser": "^7.2.0",
+    "@angular/platform-browser-dynamic": "^7.2.0",
+    "@angular/router": "^7.2.0",
+    "@ng-bootstrap/ng-bootstrap": "^4.0.1",
     "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
-    "rxjs": "^5.5.6",
+    "rxjs": "^6.3.3",
+    "tslib": "^1.9.0",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
-    "@angular/cli": "~1.7.0",
-    "@angular/compiler-cli": "^5.2.0",
-    "@angular/language-service": "^5.2.0",
-    "@types/node": "~6.0.60",
-    "codelyzer": "^4.0.1",
-    "ts-node": "~4.1.0",
-    "tslint": "~5.9.1",
-    "typescript": "~2.5.3"
+    "@angular-devkit/build-angular": "~0.11.4",
+    "@angular/cli": "^7.1.2",
+    "@angular/compiler-cli": "^7.2.0",
+    "@angular/language-service": "^7.2.0",
+    "@types/node": "~10.12.18",
+    "codelyzer": "^4.5.0",
+    "ts-node": "~7.0.1",
+    "tslint": "~5.12.0",
+    "typescript": "~3.2.2"
   }
 }

@@ -2,7 +2,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 // RXJX Observables
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
 // Services
 import { SheetCollapseToggleService } from 'app/services/sheet-collapse-toggle.service';

@@ -36,11 +36,11 @@
                     <app-factorio-icon *ngIf="idx>0" [icon]="dataService.getFactorioIcon('Inserter_capacity_bonus_(research)', item?.tech)" class="bg-factorio-green"></app-factorio-icon>
                 </td>
                 <td>
-                    <strong>{{item?.nonStackItems}}</strong>
+                    <strong>{{item?.nonStackItems}} </strong>
                     <span *ngIf="item.nonStackBonus">({{item.nonStackBonus}})</span>
                 </td>
                 <td>
-                    <strong>{{item?.stackItems}}</strong>
+                    <strong>{{item?.stackItems}} </strong>
                     <span *ngIf="item.stackBonus">({{item.stackBonus}})</span>
                 </td>
             </tr>
