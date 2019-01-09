@@ -28,7 +28,7 @@ import * as SheetComponents from 'app/views/cheat-sheets';
         RouterModule.forRoot([]),
         FormsModule,
         HttpClientModule,
-        NgbModule.forRoot(),
+        NgbModule,
     ],
     // Components
     declarations: [

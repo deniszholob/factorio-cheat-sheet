@@ -6,7 +6,7 @@
             <ng-container *ngFor="let item of sheetData?.simpleRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
-            <i class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
+            <i class="fas fa-long-arrow-alt-right txt-muted"></i>
             <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i> <sub style="vertical-align: baseline"><strong>{{sheetData?.simpleRatioPower}}</strong></sub>
         </p>
 
@@ -15,7 +15,7 @@
             <ng-container *ngFor="let item of sheetData?.commonRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
-            <i class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
+            <i class="fas fa-long-arrow-alt-right txt-muted"></i>
             <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i> <sub style="vertical-align: baseline"><strong>{{sheetData?.commonRatioPower}}</strong></sub>
         </p>
 
@@ -24,7 +24,7 @@
             <ng-container *ngFor="let item of sheetData?.pumpRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
-            <i class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
+            <i class="fas fa-long-arrow-alt-right txt-muted"></i>
             <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i> <sub style="vertical-align: baseline"><strong>{{sheetData?.pumpRatioPower}}</strong></sub>
         </p>
     </div>
@@ -75,7 +75,7 @@
             </p>
             <p class="text-center">
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium_fuel_cell', 10)"></app-factorio-icon>
-                    <i class="fa fa-long-arrow-left txt-muted" aria-hidden="true"></i>
+                    <i class="fas fa-long-arrow-alt-left txt-muted" aria-hidden="true"></i>
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-235', 1)"></app-factorio-icon>
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-238', 13)"></app-factorio-icon>
             </p>

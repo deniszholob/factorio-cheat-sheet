@@ -28,6 +28,10 @@
         display: block;
     }
 
+    button {
+        white-space: nowrap;
+    }
+
     /* Position and style the close button (top right corner) */
     .closebtn {
         position: absolute;
@@ -52,28 +56,17 @@
     border-top-left-radius: 10%;
     transition: 0.5s; /* 0.5 second same time as the sidenav */
 
-    &:before {
-        font-family: 'FontAwesome';
-        content: '\f104';
-        padding: 7px 15px;
-        font-size: 50px;
-    }
-
     &:hover {
         color: $c-pallette-accent;
     }
 
     &.closed {
-        right: 250px; /* hide off screen */
-        &:before{
-            content: '\f105';
-        }
+        right: 250px;
     }
 
     &>i {
-        padding: 7px 15px;
+        padding: 12px;
         font-size: 50px;
-        display: none;
     }
 }
 

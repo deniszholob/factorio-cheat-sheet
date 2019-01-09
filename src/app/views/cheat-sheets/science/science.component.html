@@ -65,15 +65,15 @@
         <span class="txt-muted">Number of assemblers needed to produce science equally</span>
         <div>
             <app-factorio-icon class="d-none d-sm-inline-block" [icon]="dataService.getFactorioIcon(sheetData?.space2?.iconId, sheetData?.space2?.speed)"></app-factorio-icon>
-            <i class="fa fa-long-arrow-left txt-muted d-none d-sm-inline-block" aria-hidden="true"></i>
+            <i class="fas fa-long-arrow-alt-left txt-muted d-none d-sm-inline-block" aria-hidden="true"></i>
             <app-factorio-icon class="d-none d-md-inline-block" [icon]="dataService.getFactorioIcon(sheetData?.assembler2?.iconId, sheetData?.assembler2?.speed)"></app-factorio-icon>
-            <i class="fa fa-long-arrow-left txt-muted d-none d-md-inline-block" aria-hidden="true"></i>
+            <i class="fas fa-long-arrow-alt-left txt-muted d-none d-md-inline-block" aria-hidden="true"></i>
 
             <app-factorio-icon *ngFor="let pack of sheetData?.packs" [icon]="dataService.getFactorioIcon(pack?.iconId, pack?.count)"></app-factorio-icon>
 
-            <i class="fa fa-long-arrow-right txt-muted d-none d-md-inline-block" aria-hidden="true"></i>
+            <i class="fas fa-long-arrow-alt-right txt-muted d-none d-md-inline-block" aria-hidden="true"></i>
             <app-factorio-icon class="d-none d-md-inline-block" [icon]="dataService.getFactorioIcon(sheetData?.assembler3?.iconId, sheetData?.assembler3?.speed)"></app-factorio-icon>
-            <i class="fa fa-long-arrow-right txt-muted d-none d-sm-inline-block" aria-hidden="true"></i>
+            <i class="fas fa-long-arrow-alt-right txt-muted d-none d-sm-inline-block" aria-hidden="true"></i>
             <app-factorio-icon class="d-none d-sm-inline-block" [icon]="dataService.getFactorioIcon(sheetData?.space3?.iconId, sheetData?.space3?.speed)"></app-factorio-icon>
         </div>
     </div>

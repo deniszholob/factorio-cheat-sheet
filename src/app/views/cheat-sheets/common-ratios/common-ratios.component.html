@@ -17,7 +17,7 @@
                 <div *ngFor="let data of sheetData?.scienceRatios" class="list-group-item">
                     <ng-container *ngFor="let item of data; let idx=index">
                         <app-factorio-icon *ngIf="item.iconId" [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
-                        <span *ngIf="idx == 0"> <i class="fa fa-arrows-h txt-muted" aria-hidden="true"></i> </span>
+                        <span *ngIf="idx == 0"> <i class="fas fa-arrows-alt-h txt-muted"></i> </span>
                         <span *ngIf="item.comment"><br>*{{item?.comment}}</span>
                     </ng-container>
                 </div>
@@ -29,7 +29,7 @@
                 <div *ngFor="let data of sheetData?.electronicsRatios" class="list-group-item">
                     <ng-container *ngFor="let item of data; let idx=index">
                         <app-factorio-icon *ngIf="item.iconId" [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
-                        <span *ngIf="idx == 0"> <i class="fa fa-arrows-h txt-muted" aria-hidden="true"></i> </span>
+                        <span *ngIf="idx == 0"> <i class="fas fa-arrows-alt-h txt-muted"></i> </span>
                         <span *ngIf="item.comment" class="txt-muted"><br>*{{item?.comment}}</span>
                     </ng-container>
                 </div>
@@ -43,7 +43,7 @@
                 <div *ngFor="let data of sheetData?.productionRatios" class="list-group-item">
                     <ng-container *ngFor="let item of data; let idx=index">
                         <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
-                        <span *ngIf="idx == 0"> <i class="fa fa-arrows-h txt-muted" aria-hidden="true"></i> </span>
+                        <span *ngIf="idx == 0"> <i class="fas fa-arrows-alt-h txt-muted"></i> </span>
                         <span *ngIf="item.comment" class="txt-muted"><br>{{item?.comment}}</span>
                     </ng-container>
                 </div>
@@ -55,7 +55,7 @@
                 <div *ngFor="let data of sheetData?.miscRatios" class="list-group-item">
                     <ng-container *ngFor="let item of data; let idx=index">
                         <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
-                        <span *ngIf="idx == 0"> <i class="fa fa-arrows-h txt-muted" aria-hidden="true"></i> </span>
+                        <span *ngIf="idx == 0"> <i class="fas fa-arrows-alt-h txt-muted"></i> </span>
                     </ng-container>
                 </div>
             </div>

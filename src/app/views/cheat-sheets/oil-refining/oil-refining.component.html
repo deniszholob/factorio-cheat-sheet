@@ -10,7 +10,7 @@
         </p>
         <p class="col-12 col-lg-7 text-center"> To research
             <app-factorio-icon [icon]="dataService.getFactorioIcon('Advanced_oil_processing')"></app-factorio-icon>
-            <i class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
+            <i class="fas fa-long-arrow-alt-right txt-muted"></i>
             Need
             <app-factorio-icon [icon]="dataService.getFactorioIcon('Plastic_bar', 150)"></app-factorio-icon>
             using
@@ -149,7 +149,7 @@
         <div class="col-12 col-md-4 text-center">
             <span class="txt-muted">Best</span><br>
             <span *ngFor="let item of sheetData?.solidFuel[0]; let idx = index">
-                <i *ngIf="idx!=0" class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
+                <i *ngIf="idx!=0" class="fas fa-long-arrow-alt-right txt-muted" aria-hidden="true"></i>
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.material, item?.count)"></app-factorio-icon>
             </span>
         </div>
@@ -157,7 +157,7 @@
         <div class="col-12 col-md-3 text-center">
             <span class="txt-muted">OK</span><br>
             <span *ngFor="let item of sheetData?.solidFuel[1]; let idx = index">
-                <i *ngIf="idx!=0" class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
+                <i *ngIf="idx!=0" class="fas fa-long-arrow-alt-right txt-muted" aria-hidden="true"></i>
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.material, item?.count)"></app-factorio-icon>
             </span>
         </div>
@@ -165,7 +165,7 @@
         <div class="col-12 col-md-5 text-center">
             <span class="txt-muted">Worst</span><br>
             <span *ngFor="let item of sheetData?.solidFuel[2]; let idx = index">
-                <i *ngIf="idx!=0" class="fa fa-long-arrow-right txt-muted" aria-hidden="true"></i>
+                <i *ngIf="idx!=0" class="fas fa-long-arrow-alt-right txt-muted" aria-hidden="true"></i>
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.material, item?.count)"></app-factorio-icon>
             </span>
         </div>

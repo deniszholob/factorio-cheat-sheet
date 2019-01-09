@@ -2,8 +2,7 @@
 import { Injectable } from '@angular/core';
 
 // RXJX Observables
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { Observable, Subject } from 'rxjs';
 
 // Models
 import { Collapse } from './collapse.model';
