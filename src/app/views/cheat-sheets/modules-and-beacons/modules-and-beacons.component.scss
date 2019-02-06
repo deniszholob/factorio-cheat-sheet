@@ -4,6 +4,8 @@ img {
     box-shadow: none;
     filter: drop-shadow(2px 2px 2px $c-pallette-transp-medium);
     width: 100%;
+    // Way to big full width... esp on print
+    max-width: 549px; // actual img size
 }
 
 table {

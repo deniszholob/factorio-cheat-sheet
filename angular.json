@@ -23,7 +23,8 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/global-styles/styles.scss"
+              "src/global-styles/styles.scss",
+              "src/global-styles/print.scss"
             ],
             "scripts": []
           },
@@ -74,7 +75,8 @@
             "scripts": [],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/global-styles/styles.scss"
+              "src/global-styles/styles.scss",
+              "src/global-styles/print.scss"
             ],
             "assets": [
               "src/assets",

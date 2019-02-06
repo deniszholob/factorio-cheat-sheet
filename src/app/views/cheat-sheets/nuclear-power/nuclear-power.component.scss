@@ -1,0 +1,30 @@
+@import '../../../../global-styles/variables';
+#NuclearTableControls {
+    max-width: 272px;
+}
+
+.card {
+    margin-top: 5px;
+    .card-body {
+        padding: 1rem;
+    }
+    border: 1px solid $c-pallette-neutral;
+    p {
+        margin: 0;
+    }
+}
+
+.sre {
+    display: inline-block;
+    line-height: 1;
+}
+
+img {
+    width: 80%;
+}
+
+@media (min-width: 992px) {
+    img {
+        width: 100%;
+    }
+}
