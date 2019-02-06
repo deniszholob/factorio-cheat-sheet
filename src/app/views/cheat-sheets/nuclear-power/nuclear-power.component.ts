@@ -15,7 +15,7 @@ const dataFile = 'nuclear-power';
 @Component({
     selector: 'app-nuclear-power',
     templateUrl: './nuclear-power.component.html',
-    // styleUrls: ['./nuclear-power.component.scss'] // Enable as needed
+    styleUrls: ['./nuclear-power.component.scss'] // Enable as needed
 })
 export class NuclearPowerComponent implements OnInit {
     cheatSheet: CheatSheet;

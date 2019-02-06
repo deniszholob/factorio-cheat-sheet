@@ -62,13 +62,13 @@
     </ul>
 
     <div class="row align-items-center">
-        <div class="col-12 col-lg-9">
+        <div class="col-12 col-md-9">
             <p class="text-left">You will need about 1 centrifuge to produce U-235 to make fuel for 1 Reactor continuously.</p>
             <p>It takes 1 U-235 and 19 U-238 to create 10 <a href="https://wiki.factorio.com/Uranium_fuel_cell">fuel cells</a>, but you can reprocess 10 used up fuel cells for 6 U-238, making the ratio be 13 U-238 to 1 U-235.
             </p>
         </div>
 
-        <div class="col-12 col-lg-3">
+        <div class="col-12 col-md-3">
             <p class="text-center">
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Centrifuge', 1)"></app-factorio-icon>
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Nuclear_reactor', 1)"></app-factorio-icon>
@@ -84,9 +84,9 @@
 
     <hr>
     <h4 class="card-title">SRE Diagrams</h4>
-    <strong>SRE:</strong> Single Reactor Equivalence - Because of the neighbor bonus 1 reactor can became equivalent to up to 5 reactors in certain patterns.
+    <strong>Single Reactor Equivalence:</strong> Because of the neighbor bonus; 1 reactor can be equivalent to up to 5 reactors in certain patterns.
     <div class="row">
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-md-6">
             <div class="card text-center" style="margin-bottom:0">
                 <div class="card-body row">
                     <div class="col-12 col-sm-6">
@@ -103,21 +103,23 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-md-6">
             <div class="card text-center" style="margin-bottom:0">
                 <div class="card-body row">
-                    <div class="col-12 col-sm-6">
+                    <div class="col-12 col-sm-7">
                     <h6 class="card-subtitle mb-2 txt-muted">NxM Configuration</h6>
                     <p class="card-text">
                         16 reactors: 4x4, is<br>
                         <kbd>4*3 + 8*4 + 4*5 = 64 SRE</kbd>
                     <p>
                     </div>
-                    <div class="col-12 col-sm-6">
+                    <div class="col-12 col-sm-5">
+                        <span class="sre">
                             3 4 4 3<br>
                             4 5 5 4<br>
                             4 5 5 4<br>
                             3 4 4 3
+                        </span>
                     </div>
                 </div>
             </div>
@@ -126,20 +128,20 @@
 
     <hr>
     <div class="row">
-        <div class="col-12 col-lg-5 text-center">
-            <strong>Most efficient setup</strong>**: a series of repeating 2x1 reactors
+        <div class="col-12 col-md-5 text-center">
+            <p><strong>Most efficient setup</strong>**: a series of repeating 2x1 reactors</p>
             <img src="{{APP_SETTINGS.links.getLocalImagePath('nuclear-config-h.jpg')}}" class="img-fluid rounded" alt="2x3 Reactor Setup" title="2x3 Reactor Setup">
             <p class="txt-muted">**That gives access to every reactor</p>
         </div>
 
-        <div class="col-12 col-lg-7 text-center">
+        <div class="col-12 col-md-7 text-center">
             <table class="table table-sm table-hover fixed-width text-center">
 
                 <thead class="text-center">
                     <tr>
                         <th colspan="7">
                             <span class="txt-muted">Nuclear Ratio Table</span>
-                            <div class="merged-input-group mx-auto" style="max-width:272px">
+                            <div class="merged-input-group mx-auto" id="NuclearTableControls">
                                 <div class="input-group">
                                     <span class="input-group-addon">Reactor Table Count</span>
                                     <input type="number" class="form-control" [(ngModel)]="reactorInfoCount" min="{{inputStep}}" max="{{reactorInfoCountMax}}" step="{{inputStep}}" (keyup)="getNukeRatios()" (change)="getNukeRatios()" (mouseup)="inputChange()">
