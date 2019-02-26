@@ -22,3 +22,7 @@ max_line_length = 120
 [*.md]
 max_line_length = off
 trim_trailing_whitespace = false
+
+# JS and Json
+[*.{js, json}]
+indent_size = 2

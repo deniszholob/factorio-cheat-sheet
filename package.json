@@ -7,8 +7,8 @@
     "ng": "ng",
     "start": "ng serve --port 9009",
     "build": "npm run lint && node buildScripts/updateDate.js && npm run build:prod",
-    "build:dev": "ng build --dev --base-href ./",
-    "build:prod": "ng build --prod --base-href ./",
+    "build:dev": "ng build --dev",
+    "build:prod": "ng build --prod",
     "test": "echo 'No tests yet...'",
     "lint": "ng lint"
   },

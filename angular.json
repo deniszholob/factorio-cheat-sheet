@@ -19,6 +19,13 @@
             "assets": [
               "src/assets",
               "src/favicon.ico",
+              "src/favicon-16x16.png",
+              "src/favicon-32x32.png",
+              "src/apple-touch-icon.png",
+              "src/browserconfig.xml",
+              "src/mstile-150x150.png",
+              "src/safari-pinned-tab.svg",
+              "src/manifest.webmanifest",
               "src/CNAME"
             ],
             "styles": [
@@ -63,26 +70,6 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "factorio-cheat-sheet:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "karmaConfig": "./karma.conf.js",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "scripts": [],
-            "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/global-styles/styles.scss",
-              "src/global-styles/print.scss"
-            ],
-            "assets": [
-              "src/assets",
-              "src/favicon.ico",
-              "src/CNAME"
-            ]
           }
         },
         "lint": {
