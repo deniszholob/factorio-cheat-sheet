@@ -2,34 +2,34 @@
 
     <div class="row align-items-center">
                 <p class="col-12 col-sm-4 text-center">
-            <span class="txt-muted">Simple Build Ratio</span><br>
+            <span class="text-muted">Simple Build Ratio</span><br>
             <ng-container *ngFor="let item of sheetData?.simpleRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
-            <i class="fas fa-long-arrow-alt-right txt-muted"></i>
+            <i class="fas fa-long-arrow-alt-right text-muted"></i>
             <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i> <sub style="vertical-align: baseline"><strong>{{sheetData?.simpleRatioPower}}</strong></sub>
         </p>
 
         <p class="col-12 col-sm-4 text-center">
-            <span class="txt-muted">Common Build Ratio</span><br>
+            <span class="text-muted">Common Build Ratio</span><br>
             <ng-container *ngFor="let item of sheetData?.commonRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
-            <i class="fas fa-long-arrow-alt-right txt-muted"></i>
+            <i class="fas fa-long-arrow-alt-right text-muted"></i>
             <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i> <sub style="vertical-align: baseline"><strong>{{sheetData?.commonRatioPower}}</strong></sub>
         </p>
 
         <p class="col-12 col-sm-4 text-center">
-            <span class="txt-muted">Pump Ratio</span><br>
+            <span class="text-muted">Pump Ratio</span><br>
             <ng-container *ngFor="let item of sheetData?.pumpRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
-            <i class="fas fa-long-arrow-alt-right txt-muted"></i>
+            <i class="fas fa-long-arrow-alt-right text-muted"></i>
             <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i> <sub style="vertical-align: baseline"><strong>{{sheetData?.pumpRatioPower}}</strong></sub>
         </p>
     </div>
 
-    <p class="txt-muted text-center"><strong>Note:</strong> Pumps and Steam Turbines are rounded up for build ratios. See table for precise numbers.</p>
+    <p class="text-muted text-center"><strong>Note:</strong> Pumps and Steam Turbines are rounded up for build ratios. See table for precise numbers.</p>
 
     <hr>
     <h4 class="card-title">Summary</h4>
@@ -75,7 +75,7 @@
             </p>
             <p class="text-center">
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium_fuel_cell', 10)"></app-factorio-icon>
-                    <i class="fas fa-long-arrow-alt-left txt-muted" aria-hidden="true"></i>
+                    <i class="fas fa-long-arrow-alt-left text-muted" aria-hidden="true"></i>
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-235', 1)"></app-factorio-icon>
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-238', 13)"></app-factorio-icon>
             </p>
@@ -90,7 +90,7 @@
             <div class="card text-center" style="margin-bottom:0">
                 <div class="card-body row">
                     <div class="col-12 col-sm-6">
-                    <h6 class="card-subtitle mb-2 txt-muted">2xN Configuration</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">2xN Configuration</h6>
                     <p class="card-text">
                         16 reactors: 2x8, is<br>
                         <kbd>4*3 + 12*4 = 60 SRE</kbd>
@@ -107,7 +107,7 @@
             <div class="card text-center" style="margin-bottom:0">
                 <div class="card-body row">
                     <div class="col-12 col-sm-7">
-                    <h6 class="card-subtitle mb-2 txt-muted">NxM Configuration</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">NxM Configuration</h6>
                     <p class="card-text">
                         16 reactors: 4x4, is<br>
                         <kbd>4*3 + 8*4 + 4*5 = 64 SRE</kbd>
@@ -131,7 +131,7 @@
         <div class="col-12 col-md-5 text-center">
             <p><strong>Most efficient setup</strong>**: a series of repeating 2x1 reactors</p>
             <img src="{{APP_SETTINGS.links.getLocalImagePath('nuclear-config-h.jpg')}}" class="img-fluid rounded" alt="2x3 Reactor Setup" title="2x3 Reactor Setup">
-            <p class="txt-muted">**That gives access to every reactor</p>
+            <p class="text-muted">**That gives access to every reactor</p>
         </div>
 
         <div class="col-12 col-md-7 text-center">
@@ -140,7 +140,7 @@
                 <thead class="text-center">
                     <tr>
                         <th colspan="7">
-                            <span class="txt-muted">Nuclear Ratio Table</span>
+                            <span class="text-muted">Nuclear Ratio Table</span>
                             <div class="merged-input-group mx-auto" id="NuclearTableControls">
                                 <div class="input-group">
                                     <span class="input-group-addon">Reactor Table Count</span>
@@ -187,7 +187,7 @@
         </div>
     </div>
 
-    <p class="txt-muted"><strong>*Note:</strong> This is steam tanks per 1 effective (neighbor bonus) nuclear reactor using 1 fuel rod not including the reactor warmup, or heat stored in the reactor or pipes (both heat and steam).
+    <p class="text-muted"><strong>*Note:</strong> This is steam tanks per 1 effective (neighbor bonus) nuclear reactor using 1 fuel rod not including the reactor warmup, or heat stored in the reactor or pipes (both heat and steam).
     </p>
 
     <hr>
