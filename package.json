@@ -6,10 +6,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 9009",
-    "build": "npm run lint && npm run build:prod && node buildScripts/updateDate.js",
-    "build:dev": "ng build --dev --base-href ./",
-    "build:prod": "ng build --prod --base-href ./",
-    "test": "echo 'No tests yet...'",
+    "start:prod": "http-server -p 8080 -c-1 public",
+    "build": "npm run lint && npm run build:prod",
+    "build:sh": "sh ./build-scripts/build.sh",
+    "build:dev": "ng build --dev",
+    "build:prod": "ng build --prod",
     "lint": "ng lint"
   },
   "private": true,
@@ -26,7 +27,9 @@
     "@angular/http": "^7.2.0",
     "@angular/platform-browser": "^7.2.0",
     "@angular/platform-browser-dynamic": "^7.2.0",
+    "@angular/pwa": "^0.13.3",
     "@angular/router": "^7.2.0",
+    "@angular/service-worker": "^7.2.0",
     "@ng-bootstrap/ng-bootstrap": "^4.0.1",
     "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
@@ -35,12 +38,13 @@
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.11.4",
-    "@angular/cli": "^7.1.2",
-    "@angular/compiler-cli": "^7.2.0",
+    "@angular-devkit/build-angular": "^0.13.3",
+    "@angular/cli": "^7.3.2",
+    "@angular/compiler-cli": "^7.2.6",
     "@angular/language-service": "^7.2.0",
     "@types/node": "~10.12.18",
     "codelyzer": "^4.5.0",
+    "http-server": "^0.11.1",
     "ts-node": "~7.0.1",
     "tslint": "~5.12.0",
     "typescript": "~3.2.2"

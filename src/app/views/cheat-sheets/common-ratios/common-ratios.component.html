@@ -12,25 +12,25 @@
     </p>
 
     <div class="row">
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-md-6">
             <div class="list-group fixed-width">
                 <div *ngFor="let data of sheetData?.scienceRatios" class="list-group-item">
                     <ng-container *ngFor="let item of data; let idx=index">
                         <app-factorio-icon *ngIf="item.iconId" [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
-                        <span *ngIf="idx == 0"> <i class="fas fa-arrows-alt-h txt-muted"></i> </span>
+                        <span *ngIf="idx == 0"> <i class="fas fa-arrows-alt-h text-muted"></i> </span>
                         <span *ngIf="item.comment"><br>*{{item?.comment}}</span>
                     </ng-container>
                 </div>
             </div>
         </div>
 
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-md-6">
             <div class="list-group fixed-width">
                 <div *ngFor="let data of sheetData?.electronicsRatios" class="list-group-item">
                     <ng-container *ngFor="let item of data; let idx=index">
                         <app-factorio-icon *ngIf="item.iconId" [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
-                        <span *ngIf="idx == 0"> <i class="fas fa-arrows-alt-h txt-muted"></i> </span>
-                        <span *ngIf="item.comment" class="txt-muted"><br>*{{item?.comment}}</span>
+                        <span *ngIf="idx == 0"> <i class="fas fa-arrows-alt-h text-muted"></i> </span>
+                        <span *ngIf="item.comment" class="text-muted"><br>*{{item?.comment}}</span>
                     </ng-container>
                 </div>
             </div>
@@ -38,24 +38,24 @@
     </div>
 
     <div class="row">
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-md-6">
             <div class="list-group fixed-width">
                 <div *ngFor="let data of sheetData?.productionRatios" class="list-group-item">
                     <ng-container *ngFor="let item of data; let idx=index">
                         <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
-                        <span *ngIf="idx == 0"> <i class="fas fa-arrows-alt-h txt-muted"></i> </span>
-                        <span *ngIf="item.comment" class="txt-muted"><br>{{item?.comment}}</span>
+                        <span *ngIf="idx == 0"> <i class="fas fa-arrows-alt-h text-muted"></i> </span>
+                        <span *ngIf="item.comment" class="text-muted"><br>{{item?.comment}}</span>
                     </ng-container>
                 </div>
             </div>
         </div>
 
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-md-6">
             <div class="list-group fixed-width">
                 <div *ngFor="let data of sheetData?.miscRatios" class="list-group-item">
                     <ng-container *ngFor="let item of data; let idx=index">
                         <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
-                        <span *ngIf="idx == 0"> <i class="fas fa-arrows-alt-h txt-muted"></i> </span>
+                        <span *ngIf="idx == 0"> <i class="fas fa-arrows-alt-h text-muted"></i> </span>
                     </ng-container>
                 </div>
             </div>
@@ -66,14 +66,14 @@
     <h5 id="rocket">Rocket Components</h5>
     <div class="row align-items-center">
         <p class="col-12 col-sm-6 text-center">
-            <span class="txt-muted">Rocket Ratio</span><br>
+            <span class="text-muted">Rocket Ratio</span><br>
             <ng-container *ngFor="let item of sheetData?.totalRocketComponentsRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
         </p>
 
         <p class="col-12 col-sm-6 text-center">
-            <span class="txt-muted">Rocket Part Ratio</span><br>
+            <span class="text-muted">Rocket Part Ratio</span><br>
             <ng-container *ngFor="let item of sheetData?.rocketPartRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>

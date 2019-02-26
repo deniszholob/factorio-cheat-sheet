@@ -5,7 +5,7 @@
             <h4 class="card-title">Official Links</h4>
             <ul>
                 <li *ngFor="let item of sheetData?.officialLinks">
-                    <a href="{{item?.url}}" target="_blank">{{item?.text}}</a><div *ngIf="item?.caption" class="txt-muted d-block d-md-inline"> - {{item?.caption}}</div>
+                    <a href="{{item?.url}}" target="_blank" rel="noopener">{{item?.text}}</a><div *ngIf="item?.caption" class="text-muted d-block d-md-inline"> - {{item?.caption}}</div>
                 </li>
             </ul>
         </div>
@@ -14,11 +14,11 @@
             <h4 class="card-title">Community Links</h4>
             <ul>
                 <li *ngFor="let item of sheetData?.communityLinks">
-                    <a *ngIf="item.url" href="{{item?.url}}" target="_blank">{{item?.text}}</a><span *ngIf="item?.caption" class="txt-muted"> - {{item?.caption}}</span>
+                    <a *ngIf="item.url" href="{{item?.url}}" target="_blank" rel="noopener">{{item?.text}}</a><span *ngIf="item?.caption" class="text-muted"> - {{item?.caption}}</span>
                     <span *ngIf="!item.url">{{item?.text}}</span>
                     <ul *ngIf="item.links">
                         <li *ngFor="let subLink of item?.links">
-                                <a href="{{subLink?.url}}" target="_blank">{{subLink?.text}}</a><span *ngIf="item?.caption" class="txt-muted"> - {{item?.subLink}}</span>
+                                <a href="{{subLink?.url}}" target="_blank" rel="noopener">{{subLink?.text}}</a><span *ngIf="item?.caption" class="text-muted"> - {{item?.subLink}}</span>
                         </li>
                     </ul>
                 </li>

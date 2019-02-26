@@ -3,14 +3,16 @@
 # Dev
 /DEV
 /src/assets/images/dev
-/src/assets/data/update.json
+/src/app/app-update.ts
 
 # compiled output
+/public
 /dist
 /tmp
 /out-tsc
 
 # dependencies
+/node
 /node_modules
 
 # IDEs and editors

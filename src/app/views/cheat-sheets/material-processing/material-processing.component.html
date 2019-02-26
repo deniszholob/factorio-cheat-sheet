@@ -2,7 +2,7 @@
 
 
     <div class="row align-items-center">
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-md-6">
             <table class="table table-sm table-hover table-bordered">
                 <thead class="text-center">
                     <tr>
@@ -39,7 +39,7 @@
             </table>
         </div>
 
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-md-6">
             <table class="table table-sm table-hover table-bordered">
                 <thead class="text-center">
                     <tr>
@@ -77,28 +77,28 @@
         </div>
     </div>
 
-    <p class="txt-muted">*Buildings rounded up to nearest whole number</p>
+    <p class="text-muted">*Buildings rounded up to nearest whole number</p>
 
     <hr>
 
     <h4 class="card-title">Smelting Facts</h4>
     <div class="row align-items-center">
-        <div class="col-12 col-lg-7">
+        <div class="col-12 col-lg-7 col-print-7">
             <ul>
                 <li>Smelting iron, copper, and stone each take a base 3.5 seconds to finish.
                     <br> Smelting steel takes base 17.5 seconds.
                 </li>
                 <li>
-                    <a href="https://wiki.factorio.com/Stone_furnace" target="_blank">Stone Furnaces</a> have a crafting speed of 1. <br> Both
-                    <a href="https://wiki.factorio.com/Steel_furnace" target="_blank">Steel</a> and
-                    <a href="https://wiki.factorio.com/Electric_furnace" target="_blank">Electric</a> Furnaces have a crafting speed of 2.
+                    <a href="https://wiki.factorio.com/Stone_furnace" target="_blank" rel="noopener">Stone Furnaces</a> have a crafting speed of 1. <br> Both
+                    <a href="https://wiki.factorio.com/Steel_furnace" target="_blank" rel="noopener">Steel</a> and
+                    <a href="https://wiki.factorio.com/Electric_furnace" target="_blank" rel="noopener">Electric</a> Furnaces have a crafting speed of 2.
                 </li>
                 <li>One furnace making iron can support one furnace making steel.</li>
                 <li>Stone and Steel Furnaces consume 0.0225 coal/second.</li>
             </ul>
         </div>
 
-        <div class="col-12 col-lg-5">
+        <div class="col-12 col-lg-5 col-print-5">
             <table class="table table-sm fixed-width">
                 <caption class="text-center">Furnaces supplied by coal belt</caption>
                 <thead class="text-center">
@@ -134,28 +134,28 @@
 
     <h4 class="card-title">Uranium Facts</h4>
     <div class="row align-items-center">
-        <div class="col-12 col-lg-7">
+        <div class="col-12 col-lg-7 col-print-7">
             <ul>
                 <li>
-                    <a href="https://wiki.factorio.com/Uranium_processing" target="_blank">Uranium processing</a> has a 99.3% chance to produce 1 uranium-238 and a 0.7% chance to produce 1 uranium-235 from 10 ore.
+                    <a href="https://wiki.factorio.com/Uranium_processing" target="_blank" rel="noopener">Uranium processing</a> has a 99.3% chance to produce 1 uranium-238 and a 0.7% chance to produce 1 uranium-235 from 10 ore.
                 </li>
                 <li>It's recommended save up 40 U-235 to kick off the
-                    <a href="https://wiki.factorio.com/Kovarex_enrichment_process" target="_blank">Kovarex Enrichment Process</a> in order to speed up U-235 production.</li>
+                    <a href="https://wiki.factorio.com/Kovarex_enrichment_process" target="_blank" rel="noopener">Kovarex Enrichment Process</a> in order to speed up U-235 production.</li>
             </ul>
         </div>
 
-        <div class="col-12 col-lg-5">
+        <div class="col-12 col-lg-5 col-print-5">
             <p class="text-center">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium_ore', 10000)"></app-factorio-icon>
-                <i class="fas fa-long-arrow-alt-right txt-muted"></i>
-                <i class="fas fa-long-arrow-alt-right txt-muted"></i>
+                <i class="fas fa-long-arrow-alt-right text-muted"></i>
+                <i class="fas fa-long-arrow-alt-right text-muted"></i>
                 <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-235', 7)"></app-factorio-icon>
                 <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-238', 993)"></app-factorio-icon>
             </p>
             <p class="text-center">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-235', 40)"></app-factorio-icon>
                 <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-238', 5)"></app-factorio-icon>
-                <i class="fas fa-long-arrow-alt-right txt-muted"></i>
+                <i class="fas fa-long-arrow-alt-right text-muted"></i>
                 <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-235', 41)"></app-factorio-icon>
                 <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-238', 2)"></app-factorio-icon>
             </p>

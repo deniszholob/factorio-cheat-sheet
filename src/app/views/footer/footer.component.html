@@ -1,14 +1,22 @@
 <div class="container">
     <div class="row align-items-center">
         <div class="col">
-            Design by <br class="d-md-none">
-            <a href="http://www.deniszholob.com" target="_blank">Denis Zholob</a>
+            <span class="text-muted">Design by </span>
+            <br class="d-md-none">
+
+            <a href="{{ APP_SETTINGS.author.url }}" title="{{ APP_SETTINGS.author.name }}" target="_blank" rel="noopener">
+                {{ APP_SETTINGS.author.name }}
+            </a>
+            <br class="d-md-none">
         </div>
         <div class="col text-center">
-            <a href="https://github.com/deniszholob/factorio-cheat-sheet" target="_blank">Github Source</a>
+            <a href="{{ APP_SETTINGS.github.url }}" title="{{ APP_SETTINGS.github.name }}" target="_blank" rel="noopener">
+                {{ APP_SETTINGS.github.name }}
+            </a>
         </div>
         <div class="col text-right">
-            Updated {{lastUpdate | date:'y/M/d'}}
+            <span class="text-muted">Updated </span>
+            <span>{{ APP_UPDATE_DATE | date:'y/M/d' }}</span>
         </div>
     </div>
 </div>

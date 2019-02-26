@@ -1,6 +1,6 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
     <p>
-        The table shows the time (in seconds) it takes to load or unload a <a href="https://wiki.factorio.com/Cargo_wagon" target="_blank">Cargo Wagon</a> assuming you are using 6 fast or stack inserters.
+        The table shows the time (in seconds) it takes to load or unload a <a href="https://wiki.factorio.com/Cargo_wagon" target="_blank" rel="noopener">Cargo Wagon</a> assuming you are using 6 fast or stack inserters.
         <br> With seven optional inserter capacity research bonuses, there are a lot of different loading and unloading rates.
     </p>
 
@@ -9,7 +9,7 @@
     </p>
 
     <div class="row align-items-center">
-        <div class="col-12 col-lg-6 text-center">
+        <div class="col-12 col-md-7 text-center">
             <table class="table table-sm table-hover fixed-width">
                 <caption class="text-center">Time to transfer inventory b/w wagon and chests</caption>
                 <thead class="text-center">
@@ -55,14 +55,14 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-12 col-lg-6 text-center">
+        <div class="col-12 col-md-5 text-center">
             <span><strong>Cargo Loading Setup</strong></span><br>
             <img src="{{APP_SETTINGS.links.getLocalImagePath('train-stack-load.jpg')}}" class="img-fluid rounded" alt="Wagon Load" title="Wagon Load">
         </div>
     </div>
 
-    <span class="txt-muted">Notes: </span>
-    <ul class="txt-muted">
+    <span class="text-muted">Notes: </span>
+    <ul class="text-muted">
         <li>
             The times are very slightly off as inserters ready themselves after the wagon leaves, therefore the first swing loading/last
             swing unloading are not needed.

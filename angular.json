@@ -11,7 +11,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "public",
             "index": "src/index.html",
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
@@ -19,11 +19,18 @@
             "assets": [
               "src/assets",
               "src/favicon.ico",
-              "src/CNAME"
+              "src/favicon-16x16.png",
+              "src/favicon-32x32.png",
+              "src/apple-touch-icon.png",
+              "src/browserconfig.xml",
+              "src/mstile-150x150.png",
+              "src/safari-pinned-tab.svg",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/global-styles/styles.scss"
+              "src/global-styles/styles.scss",
+              "src/global-styles/print.scss"
             ],
             "scripts": []
           },
@@ -43,7 +50,9 @@
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "src/ngsw-config.json"
             }
           }
         },
@@ -62,25 +71,6 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "factorio-cheat-sheet:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "karmaConfig": "./karma.conf.js",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "scripts": [],
-            "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/global-styles/styles.scss"
-            ],
-            "assets": [
-              "src/assets",
-              "src/favicon.ico",
-              "src/CNAME"
-            ]
           }
         },
         "lint": {

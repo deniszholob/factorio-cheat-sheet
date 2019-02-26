@@ -2,20 +2,20 @@
     <div class="row align-items-center">
         <div class="col-12 col-lg-6">
             <ul>
-                <li><a href="https://wiki.factorio.com/Mining" target="_blank">Mining speed</a> relies on more variables than most other machinery.</li>
+                <li><a href="https://wiki.factorio.com/Mining" target="_blank" rel="noopener">Mining speed</a> relies on more variables than most other machinery.</li>
                 <li>Ores have <i>mining hardness</i> and <i>mining time</i>, and miners have <i>mining power</i> and <i>mining speed</i>.</li>
                 <li>Luckily, many of ores’ values are the same, so things aren’t as complicated as they could be.</li>
                 <li>See various <a href="https://imgur.com/a/Imfhz">mining arrangements</a> with varying mining coverage.</li>
             </ul>
 
             <p>
-                In order to <a href="https://wiki.factorio.com/Uranium_ore" target="_blank">mine uranium ore</a>, sulfuric acid must be fed into the electric mining drill.
+                In order to <a href="https://wiki.factorio.com/Uranium_ore" target="_blank" rel="noopener">mine uranium ore</a>, sulfuric acid must be fed into the electric mining drill.
             </p>
 
-            <p class="text-center txt-muted">
+            <p class="text-center text-muted">
                 Per 10 uranium ore mined, 10 sulfuric acid are consumed.<br>
                 <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium_ore', 10)"></app-factorio-icon>
-                <i class="fas fa-arrows-alt-h txt-muted"></i>
+                <i class="fas fa-arrows-alt-h text-muted"></i>
                 <app-factorio-icon [icon]="dataService.getFactorioIcon('Sulfuric_acid', 10)"></app-factorio-icon>
             </p>
         </div>
