@@ -1,0 +1,45 @@
+{
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/index.html",
+          "/*.css",
+          "/*.js",
+          "/favicon.ico",
+          "/favicon-16x16.png",
+          "/favicon-32x32.png",
+          "/apple-touch-icon.png",
+          "/browserconfig.xml",
+          "/mstile-150x150.png",
+          "/safari-pinned-tab.svg",
+          "/manifest.webmanifest"
+        ],
+        "urls": [
+          "//fonts.googleapis.com/**",
+          "//fonts.gstatic.com/s/**",
+          "//use.fontawesome.com/**",
+          "//stackpath.bootstrapcdn.com/**"
+        ]
+      }
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [],
+  "navigationUrls": [
+    "/**"
+  ]
+}
