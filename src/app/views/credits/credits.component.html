@@ -5,7 +5,7 @@
         <div class="col">
             <!-- <h3>Reference/Inspiration</h3> -->
             <ul class="list-unstyled">
-                <li *ngFor="let ref of APP_SETTINGS.reference"><a href="{{ref.website}}" target="_blank">{{ref.name}}</a></li>
+                <li *ngFor="let ref of APP_SETTINGS.reference"><a href="{{ref.website}}" target="_blank" rel="noopener">{{ref.name}}</a></li>
             </ul>
         </div>
         <div class="col" *ngIf="APP_SETTINGS.contributors.length > 1">

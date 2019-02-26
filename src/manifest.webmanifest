@@ -1,6 +1,6 @@
 {
   "name": "Factorio Cheat Sheet",
-  "short_name": "Factorio Cheat Sheet",
+  "short_name": "Cheat Sheet",
   "theme_color": "#FF8400",
   "background_color": "#141516",
   "display": "standalone",
@@ -10,7 +10,6 @@
   "lang": "en-US",
   "orientation": "portrait-primary",
   "prefer_related_applications": false,
-  "splash_pages": null,
   "icons": [
     {
       "src": "assets/icons/factorio-cheat-sheet-icon-64x64.png",

@@ -51,7 +51,7 @@
                                 [ngbTooltip]="tipContent" [autoClose]="false" [disabled]="!blueprintStrings[i]">
                                 <i class="fas fa-book"></i>
                             </button>
-                            <a href="{{blueprintBook.url}}" target="_blank" [ngbTooltip]="tipContent_Source">
+                            <a href="{{blueprintBook.url}}" target="_blank" rel="noopener" [ngbTooltip]="tipContent_Source">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                             {{blueprintBook.name}}
