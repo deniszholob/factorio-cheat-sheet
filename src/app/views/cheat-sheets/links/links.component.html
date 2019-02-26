@@ -2,7 +2,7 @@
 
     <div class="row">
         <div class="col-12 col-lg-6">
-            <h4 class="card-title">Official Links</h4>
+            <h4 id="OfficialLinks" class="card-title">Official Links</h4>
             <ul>
                 <li *ngFor="let item of sheetData?.officialLinks">
                     <a href="{{item?.url}}" target="_blank" rel="noopener">{{item?.text}}</a><div *ngIf="item?.caption" class="text-muted d-block d-md-inline"> - {{item?.caption}}</div>
@@ -11,7 +11,7 @@
         </div>
 
         <div class="col-12 col-lg-6">
-            <h4 class="card-title">Community Links</h4>
+            <h4 id="CommunityLinks" class="card-title">Community Links</h4>
             <ul>
                 <li *ngFor="let item of sheetData?.communityLinks">
                     <a *ngIf="item.url" href="{{item?.url}}" target="_blank" rel="noopener">{{item?.text}}</a><span *ngIf="item?.caption" class="text-muted"> - {{item?.caption}}</span>

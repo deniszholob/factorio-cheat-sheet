@@ -1,5 +1,7 @@
 # To contribute
 
+**If you are working on an existing issue, please assign your name to it, so there is no accidental duplicate work.**
+
 If making a new cheat-sheet; follow the belt-throughput example
 * Make a new json data in `assets/data`
 * Make a new component in `src/app/views/cheat-sheets` (make sure to add to the components in the `index.ts` and `app.module.ts`)
