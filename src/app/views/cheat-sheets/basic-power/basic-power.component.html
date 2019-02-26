@@ -2,20 +2,20 @@
 
     <div class="row align-items-center">
         <p class="col-12 col-sm-6  text-center">
-            <span class="txt-muted">Steam Power Build Ratio</span><br>
+            <span class="text-muted">Steam Power Build Ratio</span><br>
             <ng-container *ngFor="let item of sheetData?.steamRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
-            <i class="fas fa-long-arrow-alt-right txt-muted"></i>
+            <i class="fas fa-long-arrow-alt-right text-muted"></i>
             <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i> <sub style="vertical-align: baseline"><strong>{{sheetData?.steamRatioPower}}</strong></sub>
         <p>
 
         <p class="col-12 col-sm-6  text-center">
-            <span class="txt-muted">Solar Power Build Ratio</span><br>
+            <span class="text-muted">Solar Power Build Ratio</span><br>
             <ng-container *ngFor="let item of sheetData?.solarRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
-            <i class="fas fa-long-arrow-alt-right txt-muted"></i>
+            <i class="fas fa-long-arrow-alt-right text-muted"></i>
             <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i> <sub style="vertical-align: baseline"><strong>{{sheetData?.solarRatioPower}}</strong></sub>
         <p>
     </div>
