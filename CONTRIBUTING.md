@@ -1,6 +1,6 @@
 # To contribute
 
-If making a new chat-sheet; follow the belt-throughput example
+If making a new cheat-sheet; follow the belt-throughput example
 * Make a new json data in `assets/data`
 * Make a new component in `src/app/views/cheat-sheets` (make sure to add to the components in the `index.ts` and `app.module.ts`)
 * Call the `DataService.getCheatSheetData` from `src/app/services/data.service` in the new component
