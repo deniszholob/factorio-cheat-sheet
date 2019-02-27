@@ -12,11 +12,11 @@
             ],
             "miningRate": {
                 "miner": "Burner_mining_drill",
-                "rate": 0.28
+                "rate": 0.25
             },
-            "beltYellow": 48,
-            "beltRed": 96,
-            "beltBlue": 143
+            "beltYellow": 60,
+            "beltRed": 120,
+            "beltBlue": 180
         },
         {
             "materials": [
@@ -26,11 +26,11 @@
             ],
             "miningRate": {
                 "miner": "Electric_mining_drill",
-                "rate": 0.525
+                "rate": 0.5
             },
-            "beltYellow": 26,
-            "beltRed": 51,
-            "beltBlue": 77
+            "beltYellow": 30,
+            "beltRed": 60,
+            "beltBlue": 90
         },
         {
             "materials": [
@@ -38,11 +38,11 @@
             ],
             "miningRate": {
                 "miner": "Burner_mining_drill",
-                "rate": 0.3675
+                "rate": 0.25
             },
-            "beltYellow": 37,
-            "beltRed": 73,
-            "beltBlue": 109
+            "beltYellow": 60,
+            "beltRed": 120,
+            "beltBlue": 180
         },
         {
             "materials": [
@@ -50,11 +50,11 @@
             ],
             "miningRate": {
                 "miner": "Electric_mining_drill",
-                "rate": 0.65
+                "rate": 0.5
             },
-            "beltYellow": 21,
-            "beltRed": 42,
-            "beltBlue": 62
+            "beltYellow": 30,
+            "beltRed": 60,
+            "beltBlue": 90
         },
         {
             "materials": [
@@ -62,11 +62,11 @@
             ],
             "miningRate": {
                 "miner": "Electric_mining_drill",
-                "rate": 0.2625
+                "rate": 0.25
             },
-            "beltYellow": 51,
-            "beltRed": 102,
-            "beltBlue": 153
+            "beltYellow": 60,
+            "beltRed": 120,
+            "beltBlue": 180
         }
     ]
 }
