@@ -6,15 +6,15 @@
     "data": {
         "packs": [
             {
-                "iconId": "Science_pack_1",
+                "iconId": "Automation_science_pack",
                 "count": 5
             },
             {
-                "iconId": "Science_pack_2",
+                "iconId": "Logistic_science_pack",
                 "count": 6
             },
             {
-                "iconId": "Science_pack_3",
+                "iconId": "Chemical_science_pack",
                 "count": 12
             },
             {
@@ -26,7 +26,7 @@
                 "count": 7
             },
             {
-                "iconId": "High_tech_science_pack",
+                "iconId": "Utility_science_pack",
                 "count": 7
             }
         ],
