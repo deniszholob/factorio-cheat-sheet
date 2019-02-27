@@ -1,54 +1,49 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
 
-    <div class="row align-items-center">
-        <div class="col-12 col-lg-6">
-            <ul>
-                <li>
-                    <a href="https://wiki.factorio.com/Fuel" target="_blank" rel="noopener">Fuel</a> affects train max speed and how fast trains accelerate.</li>
-                <li>The
-                    <a href="https://wiki.factorio.com/Braking_force_(research)" target="_blank" rel="noopener">braking force research</a> affects how fast trains slow down.</li>
-                <li>The faster a train can slow down, the longer it can stay at higher speeds.</li>
-                <li>Single locomotive can go
-                    <a href="https://www.reddit.com/r/factorio/comments/70t3l8/anyone_calculated_the_max_distance_a_train_can_go/" target="_blank" rel="noopener">31,176.5 blocks</a>
-                    on 1 rocket fuel.</li>
-            </ul>
-        </div>
-
-        <div class="col-12 col-lg-6 text-center">
-            <table class="table table-sm table-hover fixed-width" style="max-width: 300px;">
-                <caption class="text-center">Acceleration bonus</caption>
-                <thead class="text-center">
-                    <tr>
-                        <th>
-                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Wood')"></app-factorio-icon>
-                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Coal')"></app-factorio-icon>
-                        </th>
-                        <th>
-                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Solid_fuel')"></app-factorio-icon>
-                        </th>
-                        <th>
-                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Rocket_fuel')"></app-factorio-icon>
-                        </th>
-                        <th>
-                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Nuclear_fuel')"></app-factorio-icon>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody class="text-center">
-                    <tr>
-                        <td>{{sheetData?.accelerationBonus?.basicFuel}}</td>
-                        <td>{{sheetData?.accelerationBonus?.solidFuel}}</td>
-                        <td>{{sheetData?.accelerationBonus?.rocketFuel}}</td>
-                        <td>{{sheetData?.accelerationBonus?.nuclearFuel}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+    <ul>
+        <li>
+            <a href="https://wiki.factorio.com/Fuel" target="_blank" rel="noopener">Fuel</a> affects train max speed and
+            how fast trains accelerate.</li>
+        <li>The
+            <a href="https://wiki.factorio.com/Braking_force_(research)" target="_blank" rel="noopener">braking force
+                research</a> affects how fast trains slow down.</li>
+        <li>The faster a train can slow down, the longer it can stay at higher speeds.</li>
+        <li>Single locomotive can go
+            <a href="https://www.reddit.com/r/factorio/comments/70t3l8/anyone_calculated_the_max_distance_a_train_can_go/"
+                target="_blank" rel="noopener">31,176.5 blocks</a>
+            on 1 rocket fuel.</li>
+    </ul>
 
     <hr>
 
     <div class="row align-items-center">
+
+        <div class="col-12 col-lg-6">
+            <table class="table table-sm table-hover fixed-width">
+                <caption class="text-center">Fuel Bonuses</caption>
+                <thead class="text-center">
+                    <tr>
+                        <th>Fuel</th>
+                        <th>Stack Energy</th>
+                        <th>Acceleration Bonus</th>
+                        <th>Speed Bonus</th>
+                        <th>Train Top Speed</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr *ngFor="let fuelData of sheetData?.fuelData">
+                        <td>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon(fuelData.icon, fuelData.energy)">
+                            </app-factorio-icon>
+                        </td>
+                        <td>{{ fuelData.stackEnergy }}</td>
+                        <td>{{ fuelData.accelerationBonus }}</td>
+                        <td>{{ fuelData.speedBonus }}</td>
+                        <td>{{ fuelData.trainTopSpeed }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         <!-- <div class="col-12 col-lg-6">
             <table class="table table-sm table-hover fixed-width">
                 <thead class="text-center">
@@ -91,7 +86,7 @@
             <span class="text-muted">*Experimental Data, not complete, contact me if you have more.</span>
         </div> -->
 
-        <div class="col-12 text-center">
+        <div class="col-12 col-lg-6 text-center">
             <table class="table table-sm table-hover fixed-width">
                 <caption class="text-center">Max speed per fuel type and number of wagons
                     <br> for a single locomotive
@@ -110,15 +105,16 @@
                         </th>
                         <th>
                             <app-factorio-icon [icon]="dataService.getFactorioIcon('Rocket_fuel')"></app-factorio-icon>
+                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Nuclear_fuel')"></app-factorio-icon>
                         </th>
                     </tr>
                 </thead>
                 <tbody class="text-center">
                     <tr *ngFor="let item of sheetData?.speedWithWagons">
                         <td>{{item?.wagons}}</td>
-                        <td>{{item?.basicFuel}} KPH</td>
-                        <td>{{item?.solidFuel}} KPH</td>
-                        <td>{{item?.rocketFuel}} KPH</td>
+                        <td>{{item?.basicFuel}} km/h</td>
+                        <td>{{item?.solidFuel}} km/h</td>
+                        <td>{{item?.rocketFuel}} km/h</td>
                     </tr>
                 </tbody>
             </table>
@@ -129,7 +125,8 @@
 
     <p class="text-center">
         Additional information and discussion on
-        <a href="https://www.reddit.com/r/factorio/comments/6bgmvh/01510_train_max_speed_per_fuel_type/" target="_blank" rel="noopener">Reddit</a>.
+        <a href="https://www.reddit.com/r/factorio/comments/6bgmvh/01510_train_max_speed_per_fuel_type/" target="_blank"
+            rel="noopener">Reddit</a>.
     </p>
 
 </app-cheat-sheet>
