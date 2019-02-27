@@ -126,14 +126,14 @@
 
     <div class="row align-items-center">
         <p class="col-12 col-sm-6 text-center">
-            <span class="text-muted"><a href="https://www.reddit.com/r/factorio/comments/67ipoj/015_cracking_ratio_25_refineries_3_heavy_to_light/dgrfxiu/">Simple</a> Liquefaction + Cracking Ratio</span><br>
+            <span class="text-muted"><a href="https://wiki.factorio.com/Oil_processing#Petroleum_gas_production">Simple</a> Liquefaction + Cracking Ratio</span><br>
             <ng-container *ngFor="let item of sheetData?.simpleLiquefactionCrackingRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
         </p>
 
         <p class="col-12 col-sm-6 text-center">
-            <span class="text-muted"> <a href="https://www.reddit.com/r/factorio/comments/69y42y/coal_liquefaction_ratio_20397_coal_to_plastic/">Accurate</a> Liquefaction + Cracking Ratio</span><br>
+            <span class="text-muted"> <a href="https://wiki.factorio.com/Oil_processing#Petroleum_gas_production">Accurate</a> Liquefaction + Cracking Ratio</span><br>
             <ng-container *ngFor="let item of sheetData?.perfectLiquefactionCrackingRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
