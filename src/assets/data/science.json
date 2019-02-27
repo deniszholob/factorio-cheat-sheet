@@ -14,12 +14,12 @@
                 "count": 6
             },
             {
-                "iconId": "Chemical_science_pack",
-                "count": 12
-            },
-            {
                 "iconId": "Military_science_pack",
                 "count": 5
+            },
+            {
+                "iconId": "Chemical_science_pack",
+                "count": 12
             },
             {
                 "iconId": "Production_science_pack",
