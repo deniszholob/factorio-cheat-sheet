@@ -1,6 +1,22 @@
 .btn-link {
     padding: 0;
     vertical-align: baseline;
+    color: $c-pallette-accent;
+    &:hover {
+        color: $c-pallette-accent-dark;
+        text-decoration: none;
+    }
+}
+
+.btn-outline-primary {
+    font-weight: bold;
+    border-color: $c-pallette-accent;
+    color: $c-pallette-accent;
+    &:hover {
+        color: $c-pallette-neutral-dark;
+        background-color: $c-pallette-accent-dark;
+        border-color: $c-pallette-accent-dark;
+    }
 }
 
 .btn-primary {
@@ -13,10 +29,12 @@
         border-color: $c-pallette-accent-dark;
         color: $c-pallette-neutral-dark;
     }
-    &.focus, &:focus {
+    &.focus,
+    &:focus {
         box-shadow: 0 0 0 3px rgba(255, 120, 0, 0.5);
     }
-    &:active, &.active {
+    &:active,
+    &.active {
         background-color: $c-pallette-accent-dark;
         border-color: $c-pallette-accent-dark;
     }

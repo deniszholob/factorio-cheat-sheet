@@ -23,10 +23,10 @@ export const APP_SETTINGS: AppInfo = {
         },
         wikiImagesBase: 'https://wiki.factorio.com/images/',
     },
-    reference: [
+    old_cheat_sheets: [
         {
-            name: 'Factorio Wiki',
-            url: 'https://wiki.factorio.com/',
+            name: 'Factorio 0.16 Cheat Sheet',
+            url: 'https://v016.factoriocheatsheet.com/',
         },
         {
             name: 'Factorio 0.15 Cheat Sheet',
@@ -41,12 +41,24 @@ export const APP_SETTINGS: AppInfo = {
             url: 'https://forums.factorio.com/viewtopic.php?f=134&t=18162',
         },
     ],
-    contributors: [
+    pdfs: [
         {
-            name: 'Denis Zholob',
-            url: '//deniszholob.com',
+            name: 'Cheat Sheet v0.17 pdf',
+            url: 'assets/Factorio_Cheat_Sheet_v0.17.pdf',
         },
-    ],
+        {
+            name: 'Cheat Sheet v0.17 pdf light',
+            url: 'assets/Factorio_Cheat_Sheet_v0.17_light.pdf',
+        },
+        {
+            name: 'Cheat Sheet v0.16 pdf',
+            url: 'assets/Factorio_Cheat_Sheet_v0.16.pdf',
+        },
+        {
+            name: 'Cheat Sheet v0.16 pdf light',
+            url: 'assets/Factorio_Cheat_Sheet_v0.16_light.pdf',
+        },
+    ]
 };
 
 /** App level constants */
@@ -62,8 +74,8 @@ interface AppInfo {
     /** Languages supported by this app */
     // languages: string[];
     links: ImageLinks;
-    reference: Hyperlink[];
-    contributors: Hyperlink[];
+    old_cheat_sheets: Hyperlink[];
+    pdfs: Hyperlink[];
 }
 
 /** Hyperlink data */
