@@ -39,7 +39,7 @@ import * as SheetComponents from 'app/views/cheat-sheets';
         ViewComponents.IntroComponent,
         ViewComponents.OverviewComponent,
         ViewComponents.MainComponent,
-        ViewComponents.CreditsComponent,
+        ViewComponents.AnnexComponent,
         ViewComponents.FooterComponent,
         SharedComponents.CheatSheetComponent,
         SharedComponents.FactorioIconComponent,

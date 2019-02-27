@@ -5,11 +5,11 @@ import { Component, OnInit } from '@angular/core';
 import { APP_SETTINGS } from 'app/shared/app-settings';
 
 @Component({
-    selector: 'app-credits',
-    templateUrl: './credits.component.html',
-    //   styleUrls: ['./credits.component.scss'] // Enable as needed
+    selector: 'app-annex',
+    templateUrl: './annex.component.html',
+    //   styleUrls: ['./annex.component.scss'] // Enable as needed
 })
-export class CreditsComponent implements OnInit {
+export class AnnexComponent implements OnInit {
 
     public APP_SETTINGS = APP_SETTINGS;
 
