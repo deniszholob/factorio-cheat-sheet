@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'variables';
-@import 'colors';
 @import 'intro';
 @import 'side-nav';
 @import 'button';
@@ -9,6 +8,7 @@
 @import 'table';
 @import 'input-group';
 @import 'scroll-bar';
+@import 'colors';
 
 html {
     position: relative;

@@ -18,7 +18,7 @@
                     <ng-container *ngFor="let item of data; let idx=index">
                         <app-factorio-icon *ngIf="item.iconId" [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
                         <span *ngIf="idx == 0"> <i class="fas fa-arrows-alt-h text-muted"></i> </span>
-                        <span *ngIf="item.comment"><br>*{{item?.comment}}</span>
+                        <small *ngIf="item.comment"><br>*{{item?.comment}}</small>
                     </ng-container>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                     <ng-container *ngFor="let item of data; let idx=index">
                         <app-factorio-icon *ngIf="item.iconId" [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
                         <span *ngIf="idx == 0"> <i class="fas fa-arrows-alt-h text-muted"></i> </span>
-                        <span *ngIf="item.comment" class="text-muted"><br>*{{item?.comment}}</span>
+                        <small *ngIf="item.comment" class="text-muted"><br>*{{item?.comment}}</small>
                     </ng-container>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                     <ng-container *ngFor="let item of data; let idx=index">
                         <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
                         <span *ngIf="idx == 0"> <i class="fas fa-arrows-alt-h text-muted"></i> </span>
-                        <span *ngIf="item.comment" class="text-muted"><br>{{item?.comment}}</span>
+                        <small *ngIf="item.comment" class="text-muted"><br>{{item?.comment}}</small>
                     </ng-container>
                 </div>
             </div>
@@ -82,7 +82,7 @@
 
     <p>
         A Rocket needs 100 <a href="https://wiki.factorio.com/Rocket_part">Rocket Parts</a>.
-        <br>With no productivity modules a rocket needs 1000 of each component of the rocket part + the requirements for the <a href="https://wiki.factorio.com/Satellite">satellite</a>.
+        <br>To get <a href="https://wiki.factorio.com/Space_science_pack">Space Science</a>; with no productivity modules in the silo, a rocket needs 1000 of each component of the rocket part + the requirements for the <a href="https://wiki.factorio.com/Satellite">satellite</a>.
         <br>This is a ratio of 1100:1050:1000 or simplified of 22:21:20 (divide by 50).
         <br>As these components all have the same crafting time, this ratio applies.
     </p>

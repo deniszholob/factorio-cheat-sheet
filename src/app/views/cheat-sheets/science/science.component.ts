@@ -17,8 +17,10 @@ const dataFile = 'science';
     styleUrls: ['./science.component.scss'] // Enable as needed
 })
 export class ScienceComponent implements OnInit {
-    cheatSheet: CheatSheet;
-    sheetData: any;
+    public cheatSheet: CheatSheet;
+    public sheetData: any;
+
+    public scienceRequirementsLink: string;
 
     rocketCalcData: RocketCalcData = {
         rocketRate: 0,          // This is calculated
@@ -29,7 +31,10 @@ export class ScienceComponent implements OnInit {
 
     constructor(
         public dataService: DataService
-    ) { }
+    ) {
+        // tslint:disable-next-line:max-line-length
+        this.scienceRequirementsLink = 'https://kirkmcdonald.github.io/calc.html#zip=bY1BCsMwDAR/k5MMdWhqMPgxQlFbUcsOtnzo79Mem/S27LCzKxqmi/PB+UmlpHkSY+0Jh1VFk1pcJ+FC7DakV7zHBXJ9SDehI7mBShbD9j5v6MkqhPlI/Axbq+ugf1cBhn2NJ1+A/kn8W7d4XXY=';
+    }
 
     /** Get Data for the Cheat Sheet from the DataService */
     ngOnInit() {
