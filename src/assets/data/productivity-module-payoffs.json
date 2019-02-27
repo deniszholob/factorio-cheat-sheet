@@ -18,7 +18,7 @@
         },
         {
             "product": "High Tech Science (Yellow)",
-            "iconId": "High_tech_science_pack",
+            "iconId": "Utility_science_pack",
             "payoffNoBeacons": "55m 32s",
             "payoffBeaconed": "7m 39s"
         },
@@ -66,7 +66,7 @@
         },
         {
             "product": "Science 3 (Blue)",
-            "iconId": "Science_pack_3",
+            "iconId": "Chemical_science_pack",
             "payoffNoBeacons": "4h 59m 26s",
             "payoffBeaconed": "41m 14s"
         },
@@ -126,7 +126,7 @@
         },
         {
             "product": "Science 2 (Green)",
-            "iconId": "Science_pack_2",
+            "iconId": "Logistic_science_pack",
             "payoffNoBeacons": "16h 34m 34s",
             "payoffBeaconed": "2h 16m 59s"
         },
@@ -156,7 +156,7 @@
         },
         {
             "product": "Science 1 (Red)",
-            "iconId": "Science_pack_1",
+            "iconId": "Automation_science_pack",
             "payoffNoBeacons": "32h 13m 53s",
             "payoffBeaconed": "4h 26m 21s"
         },
