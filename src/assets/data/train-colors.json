@@ -98,17 +98,17 @@
             {
                 "type": "Red Science",
                 "rgb": [255, 50, 50],
-                "icon": "Science_pack_1"
+                "icon": "Automation_science_pack"
             },
             {
                 "type": "Green Science",
                 "rgb": [100, 255, 100],
-                "icon": "Science_pack_2"
+                "icon": "Logistic_science_pack"
             },
             {
                 "type": "Blue Science",
                 "rgb": [80, 180, 255],
-                "icon": "Science_pack_3"
+                "icon": "Chemical_science_pack"
             },
             {
                 "type": "Grey Science",
@@ -123,7 +123,7 @@
             {
                 "type": "Yellow Science",
                 "rgb": [255, 180, 80],
-                "icon": "High_tech_science_pack"
+                "icon": "Utility_science_pack"
             },
             {
                 "type": "Space Science",
