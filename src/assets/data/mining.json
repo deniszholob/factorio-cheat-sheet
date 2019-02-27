@@ -8,7 +8,8 @@
             "materials": [
                 "Copper_ore",
                 "Iron_ore",
-                "Coal"
+                "Coal",
+                "Stone"
             ],
             "miningRate": {
                 "miner": "Burner_mining_drill",
@@ -22,30 +23,7 @@
             "materials": [
                 "Copper_ore",
                 "Iron_ore",
-                "Coal"
-            ],
-            "miningRate": {
-                "miner": "Electric_mining_drill",
-                "rate": 0.5
-            },
-            "beltYellow": 30,
-            "beltRed": 60,
-            "beltBlue": 90
-        },
-        {
-            "materials": [
-                "Stone"
-            ],
-            "miningRate": {
-                "miner": "Burner_mining_drill",
-                "rate": 0.25
-            },
-            "beltYellow": 60,
-            "beltRed": 120,
-            "beltBlue": 180
-        },
-        {
-            "materials": [
+                "Coal",
                 "Stone"
             ],
             "miningRate": {
