@@ -33,31 +33,38 @@
         "boilerSupport": [
             {
                 "fuel": "Wood",
-                "fuelEnergy": "4MJ",
-                "beltYellow": 15,
-                "beltRed": 30,
-                "beltBlue": 45
+                "fuelEnergy": "2MJ",
+                "beltYellow": 17,
+                "beltRed": 34,
+                "beltBlue": 50
             },
             {
                 "fuel": "Coal",
-                "fuelEnergy": "8MJ",
-                "beltYellow": 30,
-                "beltRed": 60,
-                "beltBlue": 89
+                "fuelEnergy": "4MJ",
+                "beltYellow": 34,
+                "beltRed": 67,
+                "beltBlue": 100
             },
             {
                 "fuel": "Solid_fuel",
-                "fuelEnergy": "25MJ",
-                "beltYellow": 93,
-                "beltRed": 186,
-                "beltBlue": 278
+                "fuelEnergy": "12MJ",
+                "beltYellow": 100,
+                "beltRed": 200,
+                "beltBlue": 300
             },
             {
                 "fuel": "Rocket_fuel",
-                "fuelEnergy": "225MJ",
+                "fuelEnergy": "100MJ",
                 "beltYellow": 834,
                 "beltRed": 1667,
                 "beltBlue": 2500
+            },
+            {
+                "fuel": "Nuclear_fuel",
+                "fuelEnergy": "1.21GJ",
+                "beltYellow": 10084,
+                "beltRed": 20167,
+                "beltBlue": 30250
             }
         ]
     }

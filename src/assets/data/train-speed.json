@@ -1,15 +1,56 @@
 {
     "cheatSheet": {
-        "title": "Train Speed",
+        "title": "Vehicle Fuel Bonus",
         "icon": "Locomotive"
     },
     "data": {
-        "accelerationBonus": {
-            "basicFuel": 0,
-            "solidFuel": "+20%",
-            "rocketFuel": "+80%",
-            "nuclearFuel": "+150%"
-        },
+        "fuelData": [
+            {
+                "title": "Wood",
+                "icon": "Wood",
+                "energy": "2MJ",
+                "stackEnergy": "200MJ",
+                "accelerationBonus": "+0%",
+                "speedBonus": "+0%",
+                "trainTopSpeed": "259.2 km/h"
+            },
+            {
+                "title": "Coal",
+                "icon": "Coal",
+                "energy": "4MJ",
+                "stackEnergy": "200MJ",
+                "accelerationBonus": "+0%",
+                "speedBonus": "+0%",
+                "trainTopSpeed": "259.2 km/h"
+            },
+            {
+                "title": "Solid Fuel",
+                "icon": "Solid_fuel",
+                "energy": "12MJ",
+                "stackEnergy": "600MJ",
+                "accelerationBonus": "+20%",
+                "speedBonus": "+5%",
+                "trainTopSpeed": "272.2 km/h"
+            },
+            {
+                "title": "Rocket Fuel",
+                "icon": "Rocket_fuel",
+                "energy": "100MJ",
+                "stackEnergy": "1GJ",
+                "accelerationBonus": "+80%",
+                "speedBonus": "+15%",
+                "trainTopSpeed": "298.1 km/h"
+            },
+            {
+                "title": "Nuclear Fuel",
+                "icon": "Nuclear_fuel",
+                "energy": "1.21GJ",
+                "stackEnergy": "1.21GJ",
+                "accelerationBonus": "+150%",
+                "speedBonus": "+15%",
+                "trainTopSpeed": "298.1 km/h"
+            }
+        ],
         "speedWithWagons": [
             {
                 "wagons": 0,
