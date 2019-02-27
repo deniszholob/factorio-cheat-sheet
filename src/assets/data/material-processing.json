@@ -7,15 +7,15 @@
         "coalConsumption": [
             {
                 "belt": "Transport_belt",
-                "furnacesSupplied": 593
+                "furnacesSupplied": 666
             },
             {
                 "belt": "Fast_transport_belt",
-                "furnacesSupplied": 1186
+                "furnacesSupplied": 1333
             },
             {
                 "belt": "Express_transport_belt",
-                "furnacesSupplied": 1778
+                "furnacesSupplied": 2000
             }
         ],
         "beltEmpty": [
@@ -28,9 +28,9 @@
                     "Iron_ore",
                     "Iron_plate"
                 ],
-                "beltYellow": 47,
-                "beltRed": 94,
-                "beltBlue": 140
+                "beltYellow": 48,
+                "beltRed": 96,
+                "beltBlue": 144
             },
             {
                 "processor": [
@@ -43,8 +43,8 @@
                     "Iron_plate"
                 ],
                 "beltYellow": 24,
-                "beltRed": 47,
-                "beltBlue": 70
+                "beltRed": 48,
+                "beltBlue": 72
             },
             {
                 "processor": [
@@ -54,8 +54,8 @@
                     "Stone"
                 ],
                 "beltYellow": 24,
-                "beltRed": 47,
-                "beltBlue": 70
+                "beltRed": 48,
+                "beltBlue": 72
             },
             {
                 "processor": [
@@ -67,7 +67,7 @@
                 ],
                 "beltYellow": 12,
                 "beltRed": 24,
-                "beltBlue": 35
+                "beltBlue": 36
             },
             {
                 "processor": [
@@ -76,9 +76,9 @@
                 "material": [
                     "Uranium_ore"
                 ],
-                "beltYellow": 18,
-                "beltRed": 36,
-                "beltBlue": 54
+                "beltYellow": 15,
+                "beltRed": 30,
+                "beltBlue": 45
             }
         ],
         "beltFill": [
@@ -91,9 +91,9 @@
                     "Iron_plate",
                     "Stone_brick"
                 ],
-                "beltYellow": 47,
-                "beltRed": 94,
-                "beltBlue": 140
+                "beltYellow": 48,
+                "beltRed": 96,
+                "beltBlue": 144
             },
             {
                 "processor": [
@@ -106,8 +106,8 @@
                     "Iron_plate"
                 ],
                 "beltYellow": 24,
-                "beltRed": 47,
-                "beltBlue": 70
+                "beltRed": 48,
+                "beltBlue": 72
             },
             {
                 "processor": [
@@ -116,9 +116,9 @@
                 "material": [
                     "Steel_plate"
                 ],
-                "beltYellow": 234,
-                "beltRed": 467,
-                "beltBlue": 700
+                "beltYellow": 240,
+                "beltRed": 480,
+                "beltBlue": 720
             },
             {
                 "processor": [
@@ -128,9 +128,9 @@
                 "material": [
                     "Steel_plate"
                 ],
-                "beltYellow": 117,
-                "beltRed": 234,
-                "beltBlue": 350
+                "beltYellow": 120,
+                "beltRed": 240,
+                "beltBlue": 360
             },
             {
                 "processor": [
@@ -140,9 +140,9 @@
                     "Uranium-235",
                     "Uranium-238"
                 ],
-                "beltYellow": 178,
-                "beltRed": 356,
-                "beltBlue": 534
+                "beltYellow": 150,
+                "beltRed": 300,
+                "beltBlue": 450
             }
         ]
     }
