@@ -15,5 +15,5 @@ export * from './productivity-module-payoffs/productivity-module-payoffs.compone
 export * from './science/science.component';
 export * from './tips/tips.component';
 export * from './train-colors/train-colors.component';
-export * from './train-speed/train-speed.component';
+export * from './vehicle-fuel-bonus/vehicle-fuel-bonus.component';
 export * from './balancers/balancers.component';

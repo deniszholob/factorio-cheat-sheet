@@ -60,7 +60,7 @@ import * as SheetComponents from 'app/views/cheat-sheets';
         SheetComponents.ScienceComponent,
         SheetComponents.TipsComponent,
         SheetComponents.TrainColorsComponent,
-        SheetComponents.TrainSpeedComponent,
+        SheetComponents.VehicleFuelBonusComponent,
         SheetComponents.BalancersComponent,
     ],
     // Services
