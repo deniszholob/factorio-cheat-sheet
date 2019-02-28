@@ -12,11 +12,11 @@
             <app-factorio-icon [icon]="dataService.getFactorioIcon('Advanced_oil_processing')"></app-factorio-icon>
             <i class="fas fa-long-arrow-alt-right text-muted"></i>
             Need
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Plastic_bar', 150)"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Plastic_bar', sheetData?.rushAdvancedOil?.Plastic_bar)"></app-factorio-icon>
             using
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Coal', 75)"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Coal', sheetData?.rushAdvancedOil?.Coal)"></app-factorio-icon>
             to make
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Chemical_science_pack', 75)"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Chemical_science_pack', sheetData?.rushAdvancedOil?.Chemical_science_pack)"></app-factorio-icon>
             required.
         </p>
     </div>
@@ -36,22 +36,15 @@
     <h4 id="advanced-oil">Advanced Oil</h4>
 
     <div class="row align-items-center">
-        <p class="col-12 col-sm-4 text-center">
-            <span class="text-muted">Simple Cracking Ratio</span><br>
-            <ng-container *ngFor="let item of sheetData?.simpleCrackingRatio">
-                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
-            </ng-container>
-        </p>
-
-        <p class="col-12 col-sm-4 text-center">
+        <p class="col-12 col-sm-6 text-center">
             <span class="text-muted">Accurate Cracking Ratio</span><br>
             <ng-container *ngFor="let item of sheetData?.perfectCrackingRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
         </p>
 
-        <p class="col-12 col-sm-4 text-center">
-            <span class="text-muted"><a href="https://www.reddit.com/r/factorio/comments/68exg4/new_oil_ratio_in_015_with_modules_10_2_14/">Moduled</a> Cracking Ratio</span><br>
+        <p class="col-12 col-sm-6 text-center">
+            <span class="text-muted"><a href="https://www.reddit.com/r/factorio/comments/68exg4/new_oil_ratio_in_015_with_modules_10_2_14/">Moduled</a> Cracking Ratio*</span><br>
             <ng-container *ngFor="let item of sheetData?.moduledCrackingRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
@@ -63,9 +56,12 @@
         for every {{sheetData?.perfectCrackingRatio[0]?.count}} refineries you have running Advanced Oil Processing,
         you need {{sheetData?.perfectCrackingRatio[1]?.count}} chemical plants cracking heavy oil into light oil and
         {{sheetData?.perfectCrackingRatio[2]?.count}} chemical plants cracking light oil into petroleum.
-        <a href="https://www.youtube.com/watch?v=wbscDTocZBk">Video Explanation</a>.
     </p>
-
+    <p>
+        This <a href="https://www.youtube.com/watch?v=wbscDTocZBk">Video</a>
+        for 0.16 version that explains the calculations in detail.
+        Ratios changed but the concept and build style are still relevant.
+    </p>
 
     <div class="row align-items-center">
         <div class="col-12 col-lg-6 text-center col-print-6">
@@ -87,7 +83,7 @@
 
         <div class="col-12 col-lg-6 text-center col-print-6">
             <table class="table table-sm table-hover fixed-width">
-                <caption class="text-center">Refining Rates</caption>
+                <caption class="text-center">Rates for 1 Refinery and Cracking</caption>
                 <thead class="text-center">
                     <tr>
                         <th></th>
@@ -106,7 +102,7 @@
                 <tbody class="text-center">
                     <tr *ngFor="let item of sheetData?.production">
                         <td>
-                            <app-factorio-icon *ngFor="let iconId of item.processes" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
+                            <app-factorio-icon *ngFor="let process of item.processes" [icon]="dataService.getFactorioIcon(process?.iconId, process?.count)"></app-factorio-icon>
                         </td>
                         <td>{{item?.oil}}</td>
                         <td>{{item?.water}}</td>
@@ -125,23 +121,34 @@
     <p>Ratios to convert everything into Petroleum Gas.</p>
 
     <div class="row align-items-center">
-        <p class="col-12 col-sm-6 text-center">
+        <p class="col-12 col-sm-4 text-center">
             <span class="text-muted"><a href="https://wiki.factorio.com/Oil_processing#Petroleum_gas_production">Simple</a> Liquefaction + Cracking Ratio</span><br>
             <ng-container *ngFor="let item of sheetData?.simpleLiquefactionCrackingRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
         </p>
 
-        <p class="col-12 col-sm-6 text-center">
+        <p class="col-12 col-sm-4 text-center">
             <span class="text-muted"> <a href="https://wiki.factorio.com/Oil_processing#Petroleum_gas_production">Accurate</a> Liquefaction + Cracking Ratio</span><br>
             <ng-container *ngFor="let item of sheetData?.perfectLiquefactionCrackingRatio">
+                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
+            </ng-container>
+        </p>
+
+        <p class="col-12 col-sm-4 text-center">
+            <span class="text-muted"><a href="https://docs.google.com/spreadsheets/d/1Y6oL3Fl4P76_GAp6oNYDv9dXtjDKBE7xiUCtktTgFgY/">Moduled</a> Liquefaction + Cracking Ratio*</span><br>
+            <ng-container *ngFor="let item of sheetData?.moduledLiquefactionCrackingRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
         </p>
     </div>
 
     <hr>
-    <h4 id="solid-fuel">Solid Fuel Production</h4>
+    <h4 id="solid-fuel">
+        <a href="https://wiki.factorio.com/Solid_fuel#Which_solid_fuel_recipe_to_use" target="_blank" rel="noopener">
+            Solid Fuel
+        </a> Production
+    </h4>
 
     <p>Use light oil to produce the most amount of solid fuel per unit of crude oil.</p>
 
@@ -170,5 +177,13 @@
             </span>
         </div>
     </div>
+
+    <p><small>
+        * Moduled cracking ratio is based on this
+        <a href="https://docs.google.com/spreadsheets/d/1Y6oL3Fl4P76_GAp6oNYDv9dXtjDKBE7xiUCtktTgFgY/">
+            spreadsheet
+        </a> from Reddit; assuming 5.55 craft speed for Refineries,
+        4.55 craft speed for Chemical Plants, and 1.3 productivity for both, and using 0.17 data.
+    </small></p>
 
 </app-cheat-sheet>
