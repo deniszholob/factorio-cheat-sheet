@@ -44,19 +44,19 @@ export const APP_SETTINGS: AppInfo = {
     pdfs: [
         {
             name: 'Cheat Sheet v0.17 pdf',
-            url: 'assets/Factorio_Cheat_Sheet_v0.17.pdf',
+            url: 'https://www.dropbox.com/sh/sq14ydb7hs59trn/AAA1MUghu5gTy9gJeFX3v0RYa/Factorio_Cheat_Sheet_v0.17.pdf',
         },
         {
             name: 'Cheat Sheet v0.17 pdf light',
-            url: 'assets/Factorio_Cheat_Sheet_v0.17_light.pdf',
+            url: 'https://www.dropbox.com/sh/sq14ydb7hs59trn/AAB7bfGnNHWyMcdk3Jv7PWDfa/Factorio_Cheat_Sheet_v0.17_light.pdf',
         },
         {
             name: 'Cheat Sheet v0.16 pdf',
-            url: 'assets/Factorio_Cheat_Sheet_v0.16.pdf',
+            url: 'https://www.dropbox.com/sh/sq14ydb7hs59trn/AACHIdw9vZae1zlh8kCh3HJta/Factorio_Cheat_Sheet_v0.16.pdf',
         },
         {
             name: 'Cheat Sheet v0.16 pdf light',
-            url: 'assets/Factorio_Cheat_Sheet_v0.16_light.pdf',
+            url: 'https://www.dropbox.com/sh/sq14ydb7hs59trn/AAD_4cZlVFlGkd2EByGF5ocNa/Factorio_Cheat_Sheet_v0.16_light.pdf',
         },
     ]
 };
