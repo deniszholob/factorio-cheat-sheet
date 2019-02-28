@@ -76,9 +76,9 @@
                 "material": [
                     "Uranium_ore"
                 ],
-                "beltYellow": 15,
-                "beltRed": 30,
-                "beltBlue": 45
+                "beltYellow": 18,
+                "beltRed": 36,
+                "beltBlue": 54
             }
         ],
         "beltFill": [
