@@ -111,6 +111,10 @@
                     {
                         "url": "http://miditorio.com/",
                         "text": "Convert MIDI to blueprints"
+                    },
+                    {
+                        "url": "https://github.com/demodude4u/Factorio-FBSR/tree/master/FactorioBlueprintStringRenderer",
+                        "text": "Blueprint String Renderer"
                     }
                 ]
             },
@@ -118,16 +122,20 @@
                 "text": "Guides",
                 "links": [
                     {
+                        "url": "https://www.reddit.com/r/factorio/comments/arpn41/first_2030_minutes_guide_in_vanilla/",
+                        "text": "Beginner First 30 minutes"
+                    },
+                    {
+                        "url": "http://steamcommunity.com/sharedfiles/filedetails/?id=862972621",
+                        "text": "Smelting"
+                    },
+                    {
                         "url": "https://wiki.factorio.com/Balancers",
                         "text": "Belt Balancers"
                     },
                     {
                         "url": "https://www.reddit.com/r/factorio/comments/4f38sk/factorio_train_automation_complete_parts_23_and/",
                         "text": "Train Automation"
-                    },
-                    {
-                        "url": "http://steamcommunity.com/sharedfiles/filedetails/?id=862972621",
-                        "text": "Smelting"
                     }
                 ]
             },

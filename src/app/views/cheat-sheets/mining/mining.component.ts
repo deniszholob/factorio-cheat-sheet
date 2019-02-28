@@ -9,6 +9,9 @@ import { Data } from 'app/services/data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 
 // Constants
+import { APP_SETTINGS } from 'app/shared/app-settings';
+
+// Constants
 const dataFile = 'mining';
 
 @Component({
@@ -17,8 +20,9 @@ const dataFile = 'mining';
     styleUrls: ['./mining.component.scss'] // Enable as needed
 })
 export class MiningComponent implements OnInit {
-    cheatSheet: CheatSheet;
-    sheetData: any;
+    public APP_SETTINGS = APP_SETTINGS;
+    public cheatSheet: CheatSheet;
+    public sheetData: any;
 
     constructor(
         public dataService: DataService
