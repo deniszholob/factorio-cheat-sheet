@@ -27,7 +27,7 @@ export class ModulesAndBeaconsComponent implements OnInit {
 
     calcMachines: ThroughputCalc = {
         machinesToFillBelt: 1,
-        itemConsumptionRate: 40,
+        itemConsumptionRate: 45,
         recipeBaseCraftTime: 1,
         itemsPerCraft: 1,
         machineCraftSpeed: 0.75,
