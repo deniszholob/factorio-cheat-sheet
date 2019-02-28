@@ -1,6 +1,7 @@
 # Factorio [Cheat Sheet Webpage](https://factoriocheatsheet.com/)
 Cheat Sheet for [Factorio](https://www.factorio.com/) game.
 
+If you would like to contribute to the cheat sheet code/content, see `contributing.md`
 
 ## Deployments
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c54d4183-8c73-4d84-ab40-586fa2774790/deploy-status)](https://app.netlify.com/sites/factoriocheatsheet/deploys)
@@ -8,7 +9,6 @@ Cheat Sheet for [Factorio](https://www.factorio.com/) game.
 
 * [Master Deployment](https://factoriocheatsheet.com/)
 * [v0.16 Deployment](https://v016.factoriocheatsheet.com/)
-* [v0.17 Deployment](https://v017.factoriocheatsheet.com/)
 * Master branch is for the source code thats hosted [here](https://deniszholob.github.io/factorio-cheat-sheet/).
 
 

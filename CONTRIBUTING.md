@@ -1,6 +1,6 @@
 # To contribute
 
-**If you are working on an existing issue, please assign your name to it, so there is no accidental duplicate work.**
+**If you are working on an existing issue, please comment on it, so there is no accidental duplicate work.**
 
 If making a new cheat-sheet; follow the belt-throughput example
 * Make a new json data in `assets/data`
