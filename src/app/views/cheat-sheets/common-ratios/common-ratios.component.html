@@ -6,6 +6,17 @@
         <br> Following items represent the amount of machines needed making them. If there is no machine mixing (assemblers/chemical
         plants/furnaces) then ratios stay the same b/w assembly tiers.<br>
     </p>
+
+    <div class="text-center">
+        <span class="text-muted">Machine speeds</span>
+        <div>
+            <ng-container *ngFor="let machine of sheetData?.machineCraftSpeed">
+                <app-factorio-icon class="mx-2" *ngIf="machine.iconId" [icon]="dataService.getFactorioIcon(machine?.iconId, machine?.speed)">
+                </app-factorio-icon>
+            </ng-container>
+        </div>
+    </div>
+
     <p class="card-text">
         <strong>For example:</strong> To make rails, the right ratio is 1 iron stick assembler feeding 2 rail assemblers.
         <br> Using the level 3 assemblers you can produce 10 rails every second.
