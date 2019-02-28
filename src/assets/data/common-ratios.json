@@ -70,7 +70,7 @@
                 },
                 {
                     "iconId": "Military_science_pack",
-                    "count": 5
+                    "count": 10
                 },
                 {
                     "iconId": "Piercing_rounds_magazine",
@@ -136,7 +136,7 @@
                 },
                 {
                     "iconId": "Utility_science_pack",
-                    "count": 7
+                    "count": 14
                 },
                 {
                     "iconId": "Processing_unit",
@@ -430,8 +430,8 @@
                     "count": 1
                 },
                 {
-                    "iconId": "Stone",
-                    "count": "50/s"
+                    "iconId": "Stone_brick",
+                    "count": "12.5/s"
                 },
                 {
                     "iconId": "Stone_furnace",

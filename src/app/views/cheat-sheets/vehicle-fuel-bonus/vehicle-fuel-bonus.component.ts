@@ -9,14 +9,14 @@ import { Data } from 'app/services/data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 
 // Constants
-const dataFile = 'train-speed';
+const dataFile = 'vehicle-fuel-bonus';
 
 @Component({
-    selector: 'app-train-speed',
-    templateUrl: './train-speed.component.html',
-    // styleUrls: ['./train-speed.component.scss'] // Enable as needed
+    selector: 'app-vehicle-fuel-bonus',
+    templateUrl: './vehicle-fuel-bonus.component.html',
+    // styleUrls: ['./vehicle-fuel-bonus.component.scss'] // Enable as needed
 })
-export class TrainSpeedComponent implements OnInit {
+export class VehicleFuelBonusComponent implements OnInit {
     cheatSheet: CheatSheet;
     sheetData: any;
 

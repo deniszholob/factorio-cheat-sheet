@@ -161,7 +161,7 @@
                         </th>
                     </tr>
                     <tr>
-                        <th class="d-none d-lg-block"><app-factorio-icon [icon]="dataService.getFactorioIcon('Nuclear_reactor', 'Count')"></app-factorio-icon></th>
+                        <th class="d-none d-lg-table-cell"><app-factorio-icon [icon]="dataService.getFactorioIcon('Nuclear_reactor', 'Count')"></app-factorio-icon></th>
                         <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Nuclear_reactor', 'Config')"></app-factorio-icon></th>
                         <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Offshore_pump')"></app-factorio-icon></th>
                         <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Heat_exchanger')"></app-factorio-icon></th>
@@ -173,7 +173,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let item of reactorTable;">
-                        <td class="d-none d-lg-block">{{item?.reactors}}</td>
+                        <td class="d-none d-lg-table-cell">{{item?.reactors}}</td>
                         <td>{{item?.reactorConfig}}</td>
                         <td>{{item?.pumps | number:'1.0-1'}}</td>
                         <td>{{item?.heatExchangers}}</td>
