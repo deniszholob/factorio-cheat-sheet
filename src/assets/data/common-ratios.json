@@ -11,7 +11,7 @@
                     "count": "2.5/s"
                 },
                 {
-                    "iconId": "Science_pack_1",
+                    "iconId": "Automation_science_pack",
                     "count": 10
                 },
                 {
@@ -25,7 +25,7 @@
                     "count": "2.5/s"
                 },
                 {
-                    "iconId": "Science_pack_2",
+                    "iconId": "Logistic_science_pack",
                     "count": 12
                 },
                 {
@@ -43,7 +43,7 @@
                     "count": "1.25/s"
                 },
                 {
-                    "iconId": "Science_pack_3",
+                    "iconId": "Chemical_science_pack",
                     "count": 12
                 },
                 {
@@ -105,7 +105,7 @@
                     "count": "1.25/s"
                 },
                 {
-                    "iconId": "High_tech_science_pack",
+                    "iconId": "Utility_science_pack",
                     "count": 7
                 },
                 {

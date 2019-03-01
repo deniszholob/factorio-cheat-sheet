@@ -32,7 +32,7 @@
         ],
         "boilerSupport": [
             {
-                "fuel": "Raw_wood",
+                "fuel": "Wood",
                 "fuelEnergy": "4MJ",
                 "beltYellow": 15,
                 "beltRed": 30,
