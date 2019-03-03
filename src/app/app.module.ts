@@ -6,6 +6,9 @@ import { FormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
+// Angular CDK
+import { CdkTableModule } from '@angular/cdk/table';
+
 // Third Party (UI frameworks, etc...)
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -14,6 +17,9 @@ import { RouterModule } from '@angular/router';
 
 // Services
 import * as Services from 'app/services';
+
+// Pipes
+import * as Pipes from 'app/pipes';
 
 // Components
 import { AppComponent } from 'app/app.component';
@@ -29,6 +35,7 @@ import * as SheetComponents from 'app/views/cheat-sheets';
         RouterModule.forRoot([]),
         FormsModule,
         HttpClientModule,
+        CdkTableModule,
         NgbModule,
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     ],
@@ -62,6 +69,7 @@ import * as SheetComponents from 'app/views/cheat-sheets';
         SheetComponents.TrainColorsComponent,
         SheetComponents.VehicleFuelBonusComponent,
         SheetComponents.BalancersComponent,
+        Pipes.TimePipe,
     ],
     // Services
     providers: [

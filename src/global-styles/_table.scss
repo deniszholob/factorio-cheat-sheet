@@ -52,3 +52,43 @@ table {
         }
     }
 }
+
+th[cdk-header-cell].sorted {
+    cursor: pointer;
+    user-select: none;
+    color: $c-pallette-accent;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: $c-pallette-accent;
+    background-color: $c-pallette-neutral;
+    border: 1px solid $c-pallette-neutral;
+    &:hover {
+        z-index: 2;
+        color: $c-pallette-accent;
+        text-decoration: none;
+        background-color: $c-pallette-neutral-light;
+        border-color: $c-pallette-neutral;
+    }
+    &:focus {
+        box-shadow: none;
+    }
+}
+.page-item.disabled .page-link {
+    color: $c-pallette-text-muted;
+    pointer-events: none;
+    cursor: auto;
+    background-color: $c-pallette-neutral;
+    border-color: $c-pallette-neutral;
+}
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: $c-pallette-accent;
+    border-color: $c-pallette-accent;
+}
