@@ -3,36 +3,39 @@
         "title": "Belt Throughput",
         "icon": "Transport_belt"
     },
-    "data": [
-        {
-            "tier": "yellow",
-            "icons": [
-                "Transport_belt",
-                "Underground_belt",
-                "Splitter"
-            ],
-            "throughput": 15,
-            "multiplier": 1
-        },
-        {
-            "tier": "red",
-            "icons": [
-                "Fast_transport_belt",
-                "Fast_underground_belt",
-                "Fast_splitter"
-            ],
-            "throughput": 30,
-            "multiplier": 2
-        },
-        {
-            "tier": "blue",
-            "icons": [
-                "Express_transport_belt",
-                "Express_underground_belt",
-                "Express_splitter"
-            ],
-            "throughput": 45,
-            "multiplier": 3
-        }
-    ]
+    "data": {
+        "belt_density": 8,
+        "belt_info": [
+            {
+                "tier": 1,
+                "icons": [
+                    "Transport_belt",
+                    "Underground_belt",
+                    "Splitter"
+                ],
+                "throughput": 15,
+                "underground_distance": 4
+            },
+            {
+                "tier": 3,
+                "icons": [
+                    "Fast_transport_belt",
+                    "Fast_underground_belt",
+                    "Fast_splitter"
+                ],
+                "throughput": 30,
+                "underground_distance": 6
+            },
+            {
+                "tier": 2,
+                "icons": [
+                    "Express_transport_belt",
+                    "Express_underground_belt",
+                    "Express_splitter"
+                ],
+                "throughput": 45,
+                "underground_distance": 8
+            }
+        ]
+    }
 }

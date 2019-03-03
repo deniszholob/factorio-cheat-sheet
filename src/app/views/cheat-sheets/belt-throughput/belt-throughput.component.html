@@ -1,19 +1,27 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
     <p class="card-text">
-        <strong><a href="https://wiki.factorio.com/Transport_belt" target="_blank" rel="noopener">Transport Belt</a> Throughput</strong> - Items per second (i/s) passed over one belt tile.
+        <strong>
+            <a href="https://wiki.factorio.com/Transport_belt" target="_blank" rel="noopener">
+                Transport Belt
+            </a> Throughput
+        </strong> - Items per second (i/s) passed over one belt tile.
+        <br>
+        <strong>Transport Belt Density</strong> - Maximum items that fit in one tile:
+        <strong>{{ sheetData?.belt_density }} items</strong> for all belts.
     </p>
     <p class="card-text">
-        <strong>Transport Belt Density</strong> - Maximum items that fit in one tile: <strong>8 items</strong> for all belts.
-    </p>
-    <p class="card-text">
-        <strong>Note: </strong>
-        <kbd class="txt-factorio-red">Red belt</kbd> is exactly twice as fast as a
-        <kbd class="txt-factorio-yellow">Yellow belt</kbd>, and a
-        <kbd class="txt-factorio-blue">Blue belt</kbd> is exactly three times as fast as a
+        <kbd class="txt-factorio-red">Red belt</kbd> is
+        <strong>{{ sheetData?.belt_info[1].throughput / sheetData?.belt_info[0].throughput }}x</strong> faster than
+        <kbd class="txt-factorio-yellow">Yellow belt</kbd>
+        <br>
+        <kbd class="txt-factorio-blue">Blue belt</kbd> is
+        <strong>{{ sheetData?.belt_info[2].throughput / sheetData?.belt_info[0].throughput }}x</strong> faster than
         <kbd class="txt-factorio-yellow">Yellow belt</kbd>.
     </p>
     <div class="card-text">
-        See <a href="https://wiki.factorio.com/Belt_transport_system" target="_blank" rel="noopener">Belt Transport System</a> for all relevant belt information.
+        See <a href="https://wiki.factorio.com/Belt_transport_system" target="_blank" rel="noopener">
+            Belt Transport System
+        </a> for all relevant belt information.
     </div>
 
     <hr>
@@ -21,31 +29,28 @@
     <div class="row align-items-center">
         <div class="col-12 col-md-6">
             <table class="table table-sm table-hover fixed-width">
-                <caption class="text-center">Belt Throughput</caption>
                 <thead class="text-center">
                     <tr>
-                        <th>Tier</th>
-                        <th>Single Side</th>
-                        <th>Both Sides</th>
                         <th></th>
+                        <th>Throughput <br> (Both Sides)</th>
+                        <th>Underground <br> Distance</th>
                     </tr>
                 </thead>
                 <tbody class="text-center">
-                    <tr *ngFor="let item of sheetData">
+                    <tr *ngFor="let item of sheetData?.belt_info">
                         <td>
-                            <app-factorio-icon *ngFor="let iconId of item.icons" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
+                            <app-factorio-icon *ngFor="let iconId of item.icons" [icon]="dataService.getFactorioIcon(iconId)">
+                            </app-factorio-icon>
                         </td>
-                        <td>{{item.throughput / 2 | number:'1.3-3'}} i/s</td>
-                        <td>{{item.throughput | number:'1.3-3'}} i/s</td>
-                        <td><strong>{{item.multiplier}}x</strong></td>
+                        <td>{{ item.throughput | number:'1.0-3' }} i/s</td>
+                        <td>{{ item.underground_distance }} tiles</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
         <div class="col-12 col-md-6 text-center">
-            <p>All belts can hold up to <strong>8 items</strong> on each tile.
-            </p>
+            <p>All belts can hold up to <strong>{{ sheetData?.belt_density }} items</strong> on each tile.</p>
             <img src="{{APP_SETTINGS.links.getLocalImagePath('belt-signal-circuit.png')}}" class="img-fluid rounded" alt="Transport Belt Signal" title="Transport Belt Signal">
         </div>
     </div>
