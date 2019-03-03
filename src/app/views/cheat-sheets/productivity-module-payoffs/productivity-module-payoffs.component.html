@@ -5,47 +5,82 @@
         <a href="https://docs.google.com/spreadsheets/d/1M3bbVKSs3IWzLtBHEbe0iJcbnh7raERDcL6dOh1y3oY/" target="_blank"
             rel="noopener">
             MadZuri's <abbr title="Return on Investment">ROI</abbr> Calculations
-        </a>.
+        </a>
     </p>
 
-    <table class="table table-sm table-hover fixed-width text-center">
-        <caption>Best Payoff Time</caption>
-        <thead>
-            <tr>
-                <!-- <th class="text-center">Priority</th> -->
-                <th class="text-center">Product</th>
-                <th class="text-center">
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Speed_module_3', 1)">
-                    </app-factorio-icon>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Productivity_module_3', 3)">
-                    </app-factorio-icon>
-                </th>
-                <th class="text-center">
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Productivity_module_3', 4)">
-                    </app-factorio-icon>
-                </th>
-                <th class="text-center">
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Beacon', '8x8')">
-                    </app-factorio-icon>
-                </th>
-                <th class="text-center">
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Beacon', '12')">
-                    </app-factorio-icon>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let data of sheetData; let idx=index">
-                <!-- <td>{{idx}}</td> -->
-                <td>
+    <ngb-pagination class="d-flex justify-content-center"
+        [collectionSize]="tableDataSource$.value.length"
+        [pageSize]="pageSize$.value"
+        [page]="currentPage$.value"
+        (pageChange)="currentPage$.next($event)">
+    </ngb-pagination>
+
+    <table cdk-table [dataSource]="dataOnPage$" class="table table-sm table-hover fixed-width text-center">
+        <!-- Column product -->
+        <ng-container cdkColumnDef="product">
+                <th cdk-header-cell *cdkHeaderCellDef> Product </th>
+                <td cdk-cell *cdkCellDef="let data">
                     <app-factorio-icon [icon]="dataService.getFactorioIcon(data.product)">
                     </app-factorio-icon>
                 </td>
-                <td>{{ data.payoff_speed_prod | time }}</td>
-                <td>{{ data.payoff_prod | time }}</td>
-                <td>{{ data.payoff_beacon_8x8 | time }}</td>
-                <td>{{ data.payoff_beacon_12 | time }}</td>
-            </tr>
-        </tbody>
+            </ng-container>
+
+        <!-- Column payoff_speed_prod -->
+        <ng-container cdkColumnDef="payoff_speed_prod">
+            <th cdk-header-cell *cdkHeaderCellDef (click)="adjustSort('payoff_speed_prod')" class="sorted">
+                <span *ngIf="sortKey$.value === 'payoff_speed_prod'">
+                    <i *ngIf="sortDirection$.value === 'asc'" class="fas fa-sort-up"></i>
+                    <i *ngIf="sortDirection$.value !== 'asc'" class="fas fa-sort-down"></i>
+                </span>
+                <app-factorio-icon [icon]="dataService.getFactorioIcon('Speed_module_3', 1)">
+                </app-factorio-icon>
+                <app-factorio-icon [icon]="dataService.getFactorioIcon('Productivity_module_3', 3)">
+                </app-factorio-icon>
+            </th>
+            <td cdk-cell *cdkCellDef="let data">{{ data.payoff_speed_prod | time }}</td>
+        </ng-container>
+
+        <!-- Column payoff_prod -->
+        <ng-container cdkColumnDef="payoff_prod">
+            <th cdk-header-cell *cdkHeaderCellDef (click)="adjustSort('payoff_prod')" class="sorted">
+                <span *ngIf="sortKey$.value === 'payoff_prod'">
+                    <i *ngIf="sortDirection$.value === 'asc'" class="fas fa-sort-up"></i>
+                    <i *ngIf="sortDirection$.value !== 'asc'" class="fas fa-sort-down"></i>
+                </span>
+                <app-factorio-icon [icon]="dataService.getFactorioIcon('Productivity_module_3', 4)">
+                </app-factorio-icon>
+            </th>
+            <td cdk-cell *cdkCellDef="let data">{{ data.payoff_prod | time }}</td>
+        </ng-container>
+
+        <!-- Column payoff_beacon_8x8 -->
+        <ng-container cdkColumnDef="payoff_beacon_8x8">
+            <th cdk-header-cell *cdkHeaderCellDef (click)="adjustSort('payoff_beacon_8x8')" class="sorted">
+                <span *ngIf="sortKey$.value === 'payoff_beacon_8x8'">
+                    <i *ngIf="sortDirection$.value === 'asc'" class="fas fa-sort-up"></i>
+                    <i *ngIf="sortDirection$.value !== 'asc'" class="fas fa-sort-down"></i>
+                </span>
+                <app-factorio-icon [icon]="dataService.getFactorioIcon('Beacon', '8x8')">
+                </app-factorio-icon>
+            </th>
+            <td cdk-cell *cdkCellDef="let data">{{ data.payoff_beacon_8x8 | time }}</td>
+        </ng-container>
+
+        <!-- Column payoff_beacon_12 -->
+        <ng-container cdkColumnDef="payoff_beacon_12">
+            <th cdk-header-cell *cdkHeaderCellDef (click)="adjustSort('payoff_beacon_12')" class="sorted">
+                <span *ngIf="sortKey$.value === 'payoff_beacon_12'">
+                    <i *ngIf="sortDirection$.value === 'asc'" class="fas fa-sort-up"></i>
+                    <i *ngIf="sortDirection$.value !== 'asc'" class="fas fa-sort-down"></i>
+                </span>
+                <app-factorio-icon [icon]="dataService.getFactorioIcon('Beacon', '12')">
+                </app-factorio-icon>
+            </th>
+            <td cdk-cell *cdkCellDef="let data">{{ data.payoff_beacon_12 | time }}</td>
+        </ng-container>
+
+        <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+        <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+
 </app-cheat-sheet>
