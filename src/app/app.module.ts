@@ -15,6 +15,9 @@ import { RouterModule } from '@angular/router';
 // Services
 import * as Services from 'app/services';
 
+// Pipes
+import * as Pipes from 'app/pipes';
+
 // Components
 import { AppComponent } from 'app/app.component';
 import * as SharedComponents from 'app/shared';
@@ -62,6 +65,7 @@ import * as SheetComponents from 'app/views/cheat-sheets';
         SheetComponents.TrainColorsComponent,
         SheetComponents.VehicleFuelBonusComponent,
         SheetComponents.BalancersComponent,
+        Pipes.TimePipe,
     ],
     // Services
     providers: [
