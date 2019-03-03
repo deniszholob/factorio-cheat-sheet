@@ -18,10 +18,10 @@ const dataFile = 'belt-throughput';
     // styleUrls: ['./belt-throughput.component.scss'] // Enable as needed
 })
 export class BeltThroughputComponent implements OnInit {
-    cheatSheet: CheatSheet;
-    sheetData: any;
+    public cheatSheet: CheatSheet;
+    public sheetData: any;
 
-    APP_SETTINGS = APP_SETTINGS;
+    public APP_SETTINGS = APP_SETTINGS;
 
     constructor(
         public dataService: DataService
