@@ -107,9 +107,9 @@
                 ],
                 "stackSize": 4,
                 "chestToChest": 9.23,
-                "chestToYellowBelt": 5.45,
-                "chestToRedBelt": 6.86,
-                "chestToBlueBelt": 7.50
+                "chestToYellowBelt": 5.71,
+                "chestToRedBelt": 7.06,
+                "chestToBlueBelt": 7.74
             }
         ],
         "throughputMaxBonus": [
