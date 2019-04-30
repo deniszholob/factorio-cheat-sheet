@@ -4,7 +4,7 @@
         <p class="col-12 col-sm-6  text-center">
             <span class="text-muted">
                 Steam Power
-                <a href="https://wiki.factorio.com/Power_production#Steam_engine_power">Build Ratio</a>
+                <a href="https://wiki.factorio.com/Power_production#Steam_engine_power" target="_blank" rel="noopener">Build Ratio</a>
             </span><br>
             <ng-container *ngFor="let item of sheetData?.steamRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)">
@@ -17,7 +17,7 @@
 
         <p class="col-12 col-sm-6  text-center">
             <span class="text-muted">Solar Power
-                <a href="https://wiki.factorio.com/Power_production#Solar_panels_and_accumulators">Build Ratio</a>
+                <a href="https://wiki.factorio.com/Power_production#Solar_panels_and_accumulators" target="_blank" rel="noopener">Build Ratio</a>
             </span><br>
             <ng-container *ngFor="let item of sheetData?.solarRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
