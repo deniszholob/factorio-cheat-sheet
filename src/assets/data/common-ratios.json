@@ -297,34 +297,26 @@
                 }
             ],
             [
-                {
-                    "iconId": "Assembling_machine_3",
-                    "count": "1.25/s"
-                },
-                {
-                    "iconId": "Flying_robot_frame",
-                    "count": 20
-                },
-                {
-                    "iconId": "Electric_engine_unit",
-                    "count": 10
-                },
-                {
-                    "iconId": "Engine_unit",
-                    "count": 10
-                },
-                {
-                    "iconId": "Battery",
-                    "count": 10
-                },
-                {
-                    "iconId": "Pipe",
-                    "count": 1
-                },
-                {
-                    "iconId": "Iron_gear_wheel",
-                    "count": 0.5
-                }
+              {
+                  "iconId": "Assembling_machine_3",
+                  "count": "1.25/s"
+              },
+              {
+                  "iconId": "Flying_robot_frame",
+                  "count": 20
+              },
+              {
+                  "iconId": "Electric_engine_unit",
+                  "count": 10
+              },
+              {
+                  "iconId": "Battery",
+                  "count": 8
+              },
+              {
+                  "iconId": "Electronic_circuit",
+                  "count": 1.5
+              }
             ],
             [
                 {
