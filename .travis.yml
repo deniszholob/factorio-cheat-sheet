@@ -4,23 +4,23 @@
 # Runs the build script
 # ====================================== #
 
-language: node_js # Building with node js
-node_js:
-    - stable # Download the stable node version
+# language: node_js # Building with node js
+# node_js:
+#     - stable # Download the stable node version
 
-# Blocklist
-branches:
-    except:
-      - gh-pages # Will be deployed to, no need to build it
+# # Blocklist
+# branches:
+#     except:
+#       - gh-pages # Will be deployed to, no need to build it
 
-script:
-    - echo 'Building app...'
-    - sh ./build-scripts/build.sh # Generates the public folder with built angular app
-    - echo 'Deploying app...'
-deploy:
-    provider: pages
-    skip_cleanup: true # Prevent travis from cleaning out the branch before the deploy occurs
-    github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
-    on:
-        branch: master # Build only from master
-    local_dir: public # Only copy the public conents
+# script:
+#     - echo 'Building app...'
+#     - sh ./build-scripts/build.sh # Generates the public folder with built angular app
+#     - echo 'Deploying app...'
+# deploy:
+#     provider: pages
+#     skip_cleanup: true # Prevent travis from cleaning out the branch before the deploy occurs
+#     github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+#     on:
+#         branch: master # Build only from master
+#     local_dir: public # Only copy the public contents
