@@ -10,10 +10,10 @@
                     "Burner_inserter"
                 ],
                 "stackSize": 1,
-                "chestToChest": 0.59,
-                "chestToYellowBelt": 0.59,
-                "chestToRedBelt": 0.59,
-                "chestToBlueBelt": 0.59
+                "chestToChest": 0.60,
+                "chestToYellowBelt": 0.60,
+                "chestToRedBelt": 0.60,
+                "chestToBlueBelt": 0.60
             },
             {
                 "icons": [
@@ -30,10 +30,10 @@
                     "Long_handed_inserter"
                 ],
                 "stackSize": 1,
-                "chestToChest": 1.15,
-                "chestToYellowBelt": 1.15,
-                "chestToRedBelt": 1.15,
-                "chestToBlueBelt": 1.15
+                "chestToChest": 1.20,
+                "chestToYellowBelt": 1.20,
+                "chestToRedBelt": 1.20,
+                "chestToBlueBelt": 1.20
             },
             {
                 "icons": [
@@ -64,10 +64,10 @@
                     "Burner_inserter"
                 ],
                 "stackSize": 2,
-                "chestToChest": 1.18,
-                "chestToYellowBelt": 1.17,
-                "chestToRedBelt": 1.17,
-                "chestToBlueBelt": 1.17
+                "chestToChest": 1.20,
+                "chestToYellowBelt": 1.19,
+                "chestToRedBelt": 1.19,
+                "chestToBlueBelt": 1.19
             },
             {
                 "icons": [
@@ -84,10 +84,10 @@
                     "Long_handed_inserter"
                 ],
                 "stackSize": 2,
-                "chestToChest": 2.31,
-                "chestToYellowBelt": 2.26,
-                "chestToRedBelt": 2.26,
-                "chestToBlueBelt": 2.26
+                "chestToChest": 2.40,
+                "chestToYellowBelt": 2.35,
+                "chestToRedBelt": 2.35,
+                "chestToBlueBelt": 2.35
             },
             {
                 "icons": [
@@ -118,10 +118,10 @@
                     "Burner_inserter"
                 ],
                 "stackSize": 3,
-                "chestToChest": 1.76,
-                "chestToYellowBelt": 1.64,
-                "chestToRedBelt": 1.70,
-                "chestToBlueBelt": 1.73
+                "chestToChest": 1.80,
+                "chestToYellowBelt": 1.67,
+                "chestToRedBelt": 1.73,
+                "chestToBlueBelt": 1.76
             },
             {
                 "icons": [
@@ -138,10 +138,10 @@
                     "Long_handed_inserter"
                 ],
                 "stackSize": 3,
-                "chestToChest": 3.46,
-                "chestToYellowBelt": 3.00,
-                "chestToRedBelt": 3.21,
-                "chestToBlueBelt": 3.33
+                "chestToChest": 3.60,
+                "chestToYellowBelt": 3.10,
+                "chestToRedBelt": 3.33,
+                "chestToBlueBelt": 3.46
             },
             {
                 "icons": [
