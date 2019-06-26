@@ -43,11 +43,14 @@
                         <th>
                             <app-factorio-icon [icon]="dataService.getFactorioIcon('Pump')"></app-factorio-icon>
                         </th>
-                        <th>Loading &amp; Unloading Times</th>
+                        <th>
+                            <a href="https://wiki.factorio.com/Fluid_wagon#Load_and_unload_times" target="_blank" rel="noopener">Measured</a>
+                            Loading &amp; Unloading Times
+                        </th>
                     </tr>
                 </thead>
                 <tbody class="text-center">
-                    <tr *ngFor="let item of transferTimes">
+                    <tr *ngFor="let item of sheetData.measuredTransferTimes">
                         <td>{{item?.pumps}}</td>
                         <td>{{item?.transferTime | number}}s</td>
                     </tr>

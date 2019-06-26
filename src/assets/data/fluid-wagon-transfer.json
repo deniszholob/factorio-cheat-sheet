@@ -7,6 +7,20 @@
         "pumpRate": 12000,
         "offshorePumpRate": 1200,
         "storageTankSize": 25000,
-        "fluidWagonSize": 25000
+        "fluidWagonSize": 25000,
+        "measuredTransferTimes": [
+            {
+                "pumps": "1",
+                "transferTime": 6.3
+            },
+            {
+                "pumps": "2",
+                "transferTime": 3.7
+            },
+            {
+                "pumps": "3",
+                "transferTime": 2.5
+            }
+        ]
     }
 }
