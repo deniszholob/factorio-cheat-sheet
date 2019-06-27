@@ -150,6 +150,7 @@
                 <i class="fas fa-long-arrow-alt-right text-muted"></i>
                 <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-235', 7)"></app-factorio-icon>
                 <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-238', 993)"></app-factorio-icon>
+                <a href="#oil_ratio_note">*</a>
             </p>
             <p class="text-center">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-235', 40)"></app-factorio-icon>
@@ -161,5 +162,13 @@
         </div>
     </div>
 
+    <hr>
+    <p id="uranium_processing_ratio_note">
+        <small>
+            * 10000 not 1000 ore, as
+            <a href="https://wiki.factorio.com/Uranium_processing" target="_blank" rel="noopener">Uranium processing</a>
+             takes 10 ore and produces 1 product.
+        </small>
+    </p>
 
 </app-cheat-sheet>
