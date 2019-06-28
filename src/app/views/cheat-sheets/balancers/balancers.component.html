@@ -24,20 +24,22 @@
             <p>
                 <strong>4 lane balancer</strong>
                 <br>
-                <img src="{{APP_SETTINGS.links.getLocalImagePath('balancer-4x4.png')}}" class="img-fluid rounded"
-                    alt="4 lane Balancer" title="4 lane Balancer">
+                <img [lazyLoad]="APP_SETTINGS.links.getLocalImagePath('balancer-4x4.png')"
+                    class="img-fluid rounded" alt="4 lane Balancer" title="4 lane Balancer">
             </p>
             <p>
                 <strong>Balanced 2 lane split</strong>
                 <br>
-                <img src="{{APP_SETTINGS.links.getLocalImagePath('balancer-4x4-split-off.png')}}" class="img-fluid rounded"
-                    alt="balanced 2 lane split" title="balanced 2 lane split">
+                <img [lazyLoad]="APP_SETTINGS.links.getLocalImagePath('balancer-4x4-split-off.png')"
+                    class="img-fluid rounded" alt="balanced 2 lane split" title="balanced 2 lane split">
             </p>
         </div>
         <div class="col-12 col-md-5">
             <table class="table table-sm table-hover fixed-width align-items-center text-center">
-                <caption>Sample <a href="https://gist.github.com/Bilka2/aeec4ff7123ff5544cb9a80cf1046a06" target="_blank" rel="noopener">
-                        Bilka's Balancer</a> Blueprints
+                <caption>
+                    Sample
+                    <a href="https://gist.github.com/Bilka2/aeec4ff7123ff5544cb9a80cf1046a06" target="_blank" rel="noopener">
+                    Bilka's Balancer</a> Blueprints
                 </caption>
                 <thead>
                     <tr>

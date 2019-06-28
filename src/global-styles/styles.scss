@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-
 @import "variables";
 @import "intro";
 @import "side-nav";
@@ -113,6 +112,11 @@ img {
     margin-bottom: 10px;
     box-shadow: 2px 2px 10px $c-pallette-transp-medium;
     width: 400px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    &.ng-lazyloaded {
+        opacity: 1;
+    }
 }
 
 .limit-img-height {
@@ -130,4 +134,9 @@ img {
 
 .full-width {
     width: 100%;
+}
+
+.annex-link {
+    padding: 5px 0;
+    display: block;
 }

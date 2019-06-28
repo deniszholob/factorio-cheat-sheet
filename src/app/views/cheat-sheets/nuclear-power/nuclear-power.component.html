@@ -7,7 +7,7 @@
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
             <i class="fas fa-long-arrow-alt-right text-muted"></i>
-            <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+            <i class="fas fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
             <sub style="vertical-align: baseline"><strong>{{sheetData?.simpleRatioPower}}</strong></sub>
         </p>
 
@@ -17,7 +17,7 @@
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
             <i class="fas fa-long-arrow-alt-right text-muted"></i>
-            <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+            <i class="fas fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
             <sub style="vertical-align: baseline"><strong>{{sheetData?.commonRatioPower}}</strong></sub>
         </p>
 
@@ -27,7 +27,7 @@
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
             <i class="fas fa-long-arrow-alt-right text-muted"></i>
-            <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+            <i class="fas fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
             <sub style="vertical-align: baseline"><strong>{{sheetData?.pumpRatioPower}}</strong></sub>
         </p>
     </div>
@@ -136,7 +136,8 @@
     <div class="row">
         <div class="col-12 col-md-5 text-center">
             <p><strong>Most efficient setup</strong>**: a series of repeating 2x1 reactors</p>
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('nuclear-config-h.png')}}" class="img-fluid rounded" alt="2x3 Reactor Setup" title="2x3 Reactor Setup">
+            <img [lazyLoad]="APP_SETTINGS.links.getLocalImagePath('nuclear-config-h.png')"
+                class="img-fluid rounded" alt="2x3 Reactor Setup" title="2x3 Reactor Setup">
             <p class="text-muted">**That gives access to every reactor</p>
         </div>
 
@@ -173,7 +174,7 @@
                         <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Heat_exchanger')"></app-factorio-icon></th>
                         <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Steam_turbine')"></app-factorio-icon></th>
                         <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Steam', '*Tanks')"></app-factorio-icon></th>
-                        <th><i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i></th>
+                        <th><i class="fas fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i></th>
                         <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Efficiency_module_3', 'Efficiency')"></app-factorio-icon></th>
                     </tr>
                 </thead>

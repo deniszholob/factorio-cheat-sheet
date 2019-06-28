@@ -11,6 +11,7 @@ import { CdkTableModule } from '@angular/cdk/table';
 
 // Third Party (UI frameworks, etc...)
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 // Routing
 import { RouterModule } from '@angular/router';
@@ -37,6 +38,7 @@ import * as SheetComponents from 'app/views/cheat-sheets';
         HttpClientModule,
         CdkTableModule,
         NgbModule,
+        LazyLoadImageModule,
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     ],
     // Components

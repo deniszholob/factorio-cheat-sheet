@@ -67,7 +67,8 @@
 
     <div class="row align-items-center">
         <div class="col text-center">
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('mining-direct-feed.png')}}" class="img-fluid rounded" alt="Mining Direct Feed" title="Mining Direct Feed">
+            <img [lazyLoad]="APP_SETTINGS.links.getLocalImagePath('mining-direct-feed.png')"
+                class="img-fluid rounded" alt="Mining Direct Feed" title="Mining Direct Feed">
             <strong>Tip:</strong> Mining drills will output resources directly without the need of inserters.
         </div>
     </div>

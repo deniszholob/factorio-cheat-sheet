@@ -5,10 +5,10 @@
             <h5 class="card-title">{{cheatSheet?.title}}</h5>
         </a>
         <button *ngIf="cheatSheet?.isCollapsed" class="card-collapse" aria-label="Expand">
-            <i class="fa fa-plus" aria-hidden="true" title="Expand"></i>
+            <i class="fas fa-plus" aria-hidden="true" title="Expand"></i>
         </button>
         <button *ngIf="!cheatSheet?.isCollapsed" class="card-collapse" aria-label="Collapse">
-            <i class="fa fa-minus" aria-hidden="true" title="Collapse"></i>
+            <i class="fas fa-minus" aria-hidden="true" title="Collapse"></i>
         </button>
     </div>
     <div class="card-body" [ngbCollapse]="cheatSheet?.isCollapsed">

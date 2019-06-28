@@ -38,7 +38,8 @@
 
         </div>
         <div class="col-12 col-lg-6 text-center">
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('formula-diagram.png')}}" class="img-fluid rounded" alt="Formula Diagram" title="Formula Diagram">
+            <img [lazyLoad]="APP_SETTINGS.links.getLocalImagePath('formula-diagram.png')"
+                class="img-fluid rounded" alt="Formula Diagram" title="Formula Diagram">
         </div>
     </div>
 

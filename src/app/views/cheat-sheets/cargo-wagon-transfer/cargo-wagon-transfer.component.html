@@ -57,7 +57,8 @@
         </div>
         <div class="col-12 col-md-5 text-center">
             <span><strong>Cargo Loading Setup</strong></span><br>
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('train-stack-load.png')}}" class="img-fluid rounded" alt="Wagon Load" title="Wagon Load">
+            <img [lazyLoad]="APP_SETTINGS.links.getLocalImagePath('train-stack-load.png')"
+                class="img-fluid rounded" alt="Wagon Load" title="Wagon Load">
         </div>
     </div>
 
