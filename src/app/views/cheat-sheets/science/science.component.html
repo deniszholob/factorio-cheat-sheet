@@ -64,11 +64,74 @@
                 <div class="input-group">
                     <span class="input-group-addon">Ratio Multiplier</span>
                     <input type="number" class="form-control" [(ngModel)]="rocketCalcData.ratioMultiplier" (keyup)="onCalcRocketRate()" (change)="onCalcRocketRate()">
+                </div>
             </div>
         </div>
+    </div>
+    <hr>
+    <div class="row align-items-center">
+        <div class="col-12 col-lg-12">
+            <p class="card-text text-center">
+                <strong>Number of Labs required</strong>
+            </p>
         </div>
     </div>
-
+    <div class="row align-items-center">
+        <div class="col-12 col-lg-3">
+            <div class="eq-container">
+                <div class="eq-field bg-neutral">
+                    <span class="eq-label">Labs Needed</span>
+                    <input type="text" class="eq-input" [value]="calcScience.labsRequired" readonly>
+                </div>
+                <div class="eq-operator">=</div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-3">
+            <div class="eq-container">
+                <div class="eq-field bg-factorio-yellow-muted">
+                    <span class="eq-label">Packs Per Minute</span>
+                    <input type="number" class="eq-input" [(ngModel)]="calcScience.packsPerMinute" (keyup)="calcScienceNumberOfLabs()" (change)="calcScienceNumberOfLabs()">
+                </div>
+            </div>
+            <div class="eq-operator op-divide"></div>
+            <div class="eq-container">
+                <div class="eq-field">
+                    <span class="eq-label">Seconds</span>
+                    <input type="text" class="eq-input" [value]="60" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-1">
+            <div class="eq-container">
+                <div class="eq-field">
+                    <span class="eq-label">x</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-5">
+            <div class="eq-container">
+                <div class="eq-field bg-factorio-green">
+                    <span class="eq-label">Research cycle time</span>
+                    <input type="number" class="eq-input" [(ngModel)]="calcScience.researchCycleTime" (keyup)="calcScienceNumberOfLabs()" (change)="calcScienceNumberOfLabs()">
+                </div>
+            </div>
+            <div class="eq-operator op-divide"></div>
+            <div class="eq-container">
+                <div class="eq-field bg-factorio-blue">
+                    <span class="eq-label">1 + </span>
+                    <span class="eq-label">Lab Speed Bonus (%)</span>
+                    <input type="number" class="eq-input" [(ngModel)]="calcScience.labSpeedBonus" (keyup)="calcScienceNumberOfLabs()" (change)="calcScienceNumberOfLabs()">
+                    <span class="eq-label"> / 100 </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="text-muted text-center">Use the formula above to calculate how many labs satisfy a target consumption rate of science packs per minute.</p>
+    <p class="text-muted">
+        Research Cycle Time = Time in seconds to complete one research cycle (usually 60 seconds for all infinite tech)<br>
+        Lab Speed Bonus = Speed bonus as reported by the lab, including modules and beacons.<br>
+        <span class="small">Numbers used for a 12 beacon setup, researching a 60 second infinite tech</span>
+    </p>
     <br>
 
 </app-cheat-sheet>
