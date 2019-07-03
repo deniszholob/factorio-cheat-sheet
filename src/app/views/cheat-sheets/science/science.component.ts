@@ -68,7 +68,8 @@ export class ScienceComponent implements OnInit {
     }
 
     calcScienceNumberOfLabs() {
-        this.calcScience.labsRequired = (this.calcScience.packsPerMinute / 60) * (this.calcScience.researchCycleTime / (1 + this.calcScience.labSpeedBonus / 100));
+        this.calcScience.labsRequired =
+            (this.calcScience.packsPerMinute / 60) * (this.calcScience.researchCycleTime / (1 + this.calcScience.labSpeedBonus / 100));
         this.calcScience.labsRequired = this.calcScience.labsRequired.toFixed(2);
     }
 
