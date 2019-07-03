@@ -29,6 +29,13 @@ export class ScienceComponent implements OnInit {
         ratioMultiplier: 1,     // Multiplier for the science ratio (incase you have more science set up)
     };
 
+    calcScience: LabsCalc = {
+        labsRequired: 1,
+        packsPerMinute: 1000,
+        researchCycleTime: 60,
+        labSpeedBonus: 2245
+    };
+
     constructor(
         public dataService: DataService
     ) {
@@ -48,6 +55,7 @@ export class ScienceComponent implements OnInit {
             }
         );
         this.onCalcRocketRate();
+        this.calcScienceNumberOfLabs();
     }
 
     /** Calculates the rocket launch rate (in minutes) to keep up with other science */
@@ -59,6 +67,12 @@ export class ScienceComponent implements OnInit {
         this.rocketCalcData.rocketRate = this.rocketCalcData.rocketRate / 60; // Convert to minutes
     }
 
+    calcScienceNumberOfLabs() {
+        this.calcScience.labsRequired =
+            (this.calcScience.packsPerMinute / 60) * (this.calcScience.researchCycleTime / (1 + this.calcScience.labSpeedBonus / 100));
+        this.calcScience.labsRequired = this.calcScience.labsRequired.toFixed(2);
+    }
+
 }
 
 /** Defines the Rocket Data Structure */
@@ -67,4 +81,11 @@ interface RocketCalcData {
     sciencePerLaunch: number;
     assemblerSpeed: number;
     ratioMultiplier: number;
+}
+
+interface LabsCalc {
+    labsRequired: any;
+    packsPerMinute: number;
+    researchCycleTime: number;
+    labSpeedBonus: number;
 }
