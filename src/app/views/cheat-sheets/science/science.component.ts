@@ -29,7 +29,7 @@ export class ScienceComponent implements OnInit {
         ratioMultiplier: 1,     // Multiplier for the science ratio (incase you have more science set up)
     };
 
-    calcScience: labsCalc = {
+    calcScience: LabsCalc = {
         labsRequired: 1,
         packsPerMinute: 1000,
         researchCycleTime: 60,
@@ -82,7 +82,7 @@ interface RocketCalcData {
     ratioMultiplier: number;
 }
 
-interface labsCalc {
+interface LabsCalc {
     labsRequired: any;
     packsPerMinute: number;
     researchCycleTime: number;
