@@ -23,7 +23,7 @@ export class FluidWagonTransferComponent implements OnInit {
 
     APP_SETTINGS = APP_SETTINGS;
 
-    transferTimes = [];
+    theoreticalTransferTimes = [];
 
     constructor(
         public dataService: DataService
@@ -34,7 +34,7 @@ export class FluidWagonTransferComponent implements OnInit {
             (result: Data) => {
                 this.cheatSheet = result.cheatSheet;
                 this.sheetData = result.data;
-                this.calcLoadingTimes();
+                // this.calcLoadingTimes();
             },
             error => {
                 console.log(error);
@@ -45,10 +45,10 @@ export class FluidWagonTransferComponent implements OnInit {
     private calcLoadingTimes() {
         const pumpRate = this.sheetData.pumpRate;
         const fluidWagonSize = this.sheetData.fluidWagonSize;
-        this.transferTimes.length = 0; // Clear the array
+        this.theoreticalTransferTimes.length = 0; // Clear the array
         for (let i = 1; i <= 3; i++) {
             const transferTime = fluidWagonSize / (pumpRate * i);
-            this.transferTimes.push(
+            this.theoreticalTransferTimes.push(
                 {
                     'pumps': i,
                     'transferTime': transferTime

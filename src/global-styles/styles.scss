@@ -111,6 +111,11 @@ img {
     width: 400px;
 }
 
+.limit-img-height {
+    max-height: 250px;
+    width: auto;
+}
+
 .color-circle {
     display: inline-block;
     width: 25px;

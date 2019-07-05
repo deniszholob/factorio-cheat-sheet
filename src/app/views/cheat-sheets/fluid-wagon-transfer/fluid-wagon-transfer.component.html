@@ -11,7 +11,11 @@
                 <li>
                     <a href="https://wiki.factorio.com/Pump#Throughput" target="_blank" rel="noopener">Pumps</a> and Storage Tanks have a maximum throughput of {{sheetData?.pumpRate | number}} fluids/s.
                 </li>
-                <li>To keep {{sheetData?.offshorePumpRate | number}} <a href="https://forums.factorio.com/viewtopic.php?f=18&t=19851" target="_blank" rel="noopener">fluid/s</a> (offshore pump rate), place <a href="https://forums.factorio.com/viewtopic.php?f=5&t=46030">18 pipes between pumps</a>.</li>
+                <li>
+                    To keep {{ sheetData?.offshorePumpRate | number }}
+                    <a href="https://forums.factorio.com/viewtopic.php?f=18&t=19851" target="_blank" rel="noopener">fluid/s</a>
+                    (offshore pump rate), place <a href="https://forums.factorio.com/viewtopic.php?f=5&t=46030">18 pipes between pumps</a>.
+                </li>
                 <li>
                     Fluid wagons can hold {{sheetData?.storageTankSize | number}} units of fluids which is equal to {{sheetData?.fluidWagonSize / sheetData?.storageTankSize}}
                     <a href="https://wiki.factorio.com/Storage_tank" target="_blank" rel="noopener">Storage Tanks</a>.
@@ -27,8 +31,8 @@
                     </div>
                 </li>
                 <li>
-                    It is recommended that a fluid wagon's pump is connected directly to a tank. Otherwise due to pipe pressure, the loading
-                    and unloading times may
+                    It is recommended that a fluid wagon's pump is connected directly to a tank.
+                    Otherwise due to pipe pressure, the loading and unloading times may
                     <a href="https://www.reddit.com/r/factorio/comments/69kop6/pumppipe_throughput_tests_for_015/" target="_blank" rel="noopener">increase significantly</a>.
                 </li>
             </ul>
@@ -43,11 +47,14 @@
                         <th>
                             <app-factorio-icon [icon]="dataService.getFactorioIcon('Pump')"></app-factorio-icon>
                         </th>
-                        <th>Loading &amp; Unloading Times</th>
+                        <th>
+                            <a href="https://wiki.factorio.com/Fluid_wagon#Load_and_unload_times" target="_blank" rel="noopener">Measured</a>
+                            Loading &amp; Unloading Times
+                        </th>
                     </tr>
                 </thead>
                 <tbody class="text-center">
-                    <tr *ngFor="let item of transferTimes">
+                    <tr *ngFor="let item of sheetData?.measuredTransferTimes">
                         <td>{{item?.pumps}}</td>
                         <td>{{item?.transferTime | number}}s</td>
                     </tr>
@@ -59,7 +66,7 @@
     <br>
     <hr>
 
-    <div class="row align-items-center">
+    <div class="row align-items-center justify-content-around">
         <div class="col text-center col-print-4">
             <span><strong>Tanker-Pump Alignment</strong></span><br>
             <img src="{{APP_SETTINGS.links.getLocalImagePath('Wagon-Alignment.gif')}}" class="img-fluid rounded" alt="Tanker-Pump Alignment" title="Tanker-Pump Alignment">
@@ -75,6 +82,26 @@
             <a href="https://gfycat.com/LinedHospitableGroundhog" target="_blank" rel="noopener">
                 <img src="https://giant.gfycat.com/LinedHospitableGroundhog.gif" class="img-fluid rounded" alt="Transfer Rate Comparison" title="Transfer Rate Comparison">
             </a>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row justify-content-around">
+        <div class="col-12 col-lg-8">
+            <h4 class="card-title">Fluid Flow and Pipe Length</h4>
+            <ul>
+                <li>Best pipe length is ~ 0-20 to keep healthy fluid flow</li>
+                <li>Experimental data shows 1200 fluid/s through 16 pipes</li>
+                <li>Throughput is staying at &gt; 1000 fluid/s with pipe length &lt; 200, then drops off significantly.</li>
+            </ul>
+            <p class="text-muted">
+                Thanks to <kbd>malventano</kbd> on discord for providing the data and graphs.
+            </p>
+        </div>
+
+        <div class="col-8 col-lg-4 text-center">
+            <img src="{{APP_SETTINGS.links.getLocalImagePath('fluid-flow-vs-pipe-length.png')}}" class="img-fluid rounded limit-img-height" alt="Flow vs Pipe Length" title="Flow vs Pipe Length">
         </div>
     </div>
 

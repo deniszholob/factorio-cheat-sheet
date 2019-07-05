@@ -1,10 +1,12 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
 
     <p class="card-text">
-        <strong>Description: </strong> First Item represents the type of machine thats expected to assemble the following
-        components.
-        <br> Following items represent the amount of machines needed making them. If there is no machine mixing (assemblers/chemical
-        plants/furnaces) then ratios stay the same b/w assembly tiers.<br>
+        <strong>Description: </strong> First Item represents the type of machine
+        thats expected to assemble the following components.
+        <br> Following items represent the amount of machines needed making them.
+        If there is no machine mixing (assemblers/chemical plants/furnaces)
+        then ratios stay the same b/w assembly tiers.
+        <br>
     </p>
 
     <div class="text-center">
@@ -18,32 +20,35 @@
     </div>
 
     <p class="card-text">
-        <strong>For example:</strong> To make rails, the right ratio is 1 iron stick assembler feeding 2 rail assemblers.
+        <strong>For example:</strong> To make rails,
+        the right ratio is 1 iron stick assembler feeding 2 rail assemblers.
         <br> Using the level 3 assemblers you can produce 10 rails every second.
     </p>
 
     <div class="row">
         <div class="col-12 col-md-6">
             <div class="list-group fixed-width">
-                <div *ngFor="let data of sheetData?.scienceRatios" class="list-group-item">
-                    <ng-container *ngFor="let item of data; let idx=index">
-                        <app-factorio-icon *ngIf="item.iconId" [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
+                <a *ngFor="let data of sheetData?.scienceRatios" class="list-group-item" href="{{ data.source }}" title="{{ data.name }}" target="_blank" rel="noopener">
+                    <ng-container *ngFor="let item of data.ratio; let idx=index">
+                        <app-factorio-icon *ngIf="item.iconId" [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)">
+                        </app-factorio-icon>
                         <span *ngIf="idx == 0"> <i class="fas fa-arrows-alt-h text-muted"></i> </span>
-                        <small *ngIf="item.comment"><br>*{{item?.comment}}</small>
+                        <small *ngIf="item.comment"><br>*{{ item?.comment }}</small>
                     </ng-container>
-                </div>
+                </a>
             </div>
         </div>
 
         <div class="col-12 col-md-6">
             <div class="list-group fixed-width">
-                <div *ngFor="let data of sheetData?.electronicsRatios" class="list-group-item">
-                    <ng-container *ngFor="let item of data; let idx=index">
-                        <app-factorio-icon *ngIf="item.iconId" [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
+                <a *ngFor="let data of sheetData?.electronicsRatios" class="list-group-item" href="{{ data.source }}" title="{{ data.name }}" target="_blank" rel="noopener">
+                    <ng-container *ngFor="let item of data.ratio; let idx=index">
+                        <app-factorio-icon *ngIf="item.iconId" [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)">
+                        </app-factorio-icon>
                         <span *ngIf="idx == 0"> <i class="fas fa-arrows-alt-h text-muted"></i> </span>
-                        <small *ngIf="item.comment" class="text-muted"><br>*{{item?.comment}}</small>
+                        <small *ngIf="item.comment" class="text-muted"><br>*{{ item?.comment }}</small>
                     </ng-container>
-                </div>
+                </a>
             </div>
         </div>
     </div>
@@ -51,24 +56,26 @@
     <div class="row">
         <div class="col-12 col-md-6">
             <div class="list-group fixed-width">
-                <div *ngFor="let data of sheetData?.productionRatios" class="list-group-item">
-                    <ng-container *ngFor="let item of data; let idx=index">
-                        <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
+                <a *ngFor="let data of sheetData?.productionRatios" class="list-group-item" href="{{ data.source }}" title="{{ data.name }}" target="_blank" rel="noopener">
+                    <ng-container *ngFor="let item of data.ratio; let idx=index">
+                        <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)">
+                        </app-factorio-icon>
                         <span *ngIf="idx == 0"> <i class="fas fa-arrows-alt-h text-muted"></i> </span>
-                        <small *ngIf="item.comment" class="text-muted"><br>{{item?.comment}}</small>
+                        <small *ngIf="item.comment" class="text-muted"><br>{{ item?.comment }}</small>
                     </ng-container>
-                </div>
+                </a>
             </div>
         </div>
 
         <div class="col-12 col-md-6">
             <div class="list-group fixed-width">
-                <div *ngFor="let data of sheetData?.miscRatios" class="list-group-item">
-                    <ng-container *ngFor="let item of data; let idx=index">
-                        <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
+                <a *ngFor="let data of sheetData?.miscRatios" class="list-group-item" href="{{ data.source }}" title="{{ data.name }}" target="_blank" rel="noopener">
+                    <ng-container *ngFor="let item of data.ratio; let idx=index">
+                        <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)">
+                        </app-factorio-icon>
                         <span *ngIf="idx == 0"> <i class="fas fa-arrows-alt-h text-muted"></i> </span>
                     </ng-container>
-                </div>
+                </a>
             </div>
         </div>
     </div>
@@ -77,30 +84,37 @@
     <h5 id="rocket">Rocket Components</h5>
     <div class="row align-items-center">
         <p class="col-12 col-sm-6 text-center">
-            <span class="text-muted">Rocket Ratio</span><br>
-            <ng-container *ngFor="let item of sheetData?.totalRocketComponentsRatio">
-                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
+            <!-- <span class="text-muted">{{ sheetData?.rocketComponentsRatioNoSatellite?.name }}</span><br> -->
+            <a href="{{ sheetData?.rocketComponentsRatioNoSatellite.source }}" target="_blank" rel="noopener">
+                {{ sheetData?.rocketComponentsRatioNoSatellite?.name }}
+            </a>
+            <br>
+            <ng-container *ngFor="let item of sheetData?.rocketComponentsRatioNoSatellite.ratio">
+                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)">
+                </app-factorio-icon>
             </ng-container>
         </p>
 
         <p class="col-12 col-sm-6 text-center">
-            <span class="text-muted">Rocket Part Ratio</span><br>
-            <ng-container *ngFor="let item of sheetData?.rocketPartRatio">
-                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
+            <!-- <span class="text-muted">{{ sheetData?.rocketComponentsRatioWithSatellite?.name }}</span><br> -->
+            <a href="{{ sheetData?.rocketComponentsRatioWithSatellite.source }}" target="_blank" rel="noopener">
+                {{ sheetData?.rocketComponentsRatioWithSatellite?.name }}
+            </a>
+            <br>
+            <ng-container *ngFor="let item of sheetData?.rocketComponentsRatioWithSatellite.ratio">
+                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)">
+                </app-factorio-icon>
             </ng-container>
         </p>
     </div>
 
     <p>
         A Rocket needs 100 <a href="https://wiki.factorio.com/Rocket_part" target="_blank" rel="noopener">Rocket Parts</a>.
-        <br>To get <a href="https://wiki.factorio.com/Space_science_pack" target="_blank" rel="noopener">Space Science</a>; with no productivity modules in the silo, a rocket needs 1000 of each component of the rocket part + the requirements for the <a href="https://wiki.factorio.com/Satellite">satellite</a>.
-        <br>This is a ratio of 1100:1050:1000 or simplified of 22:21:20 (divide by 50).
-        <br>As these components all have the same crafting time, this ratio applies.
-    </p>
-    <p>
-        As the satellite can't get productivity bonus, you need a ratio of
-        <a href="http://doomeer.com/factorio/#s1132bbbbbbbbbbbbbb40rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrgrgr100rgr1" target="_blank" rel="noopener">~814:764:714</a>
-        per rocket (to be precise: 5700:5350:5000 per 7 rockets), which makes it a ratio of 114:107:100. (4x lvl 3 prod modules in silo, no speed beacons)
+        <br>To get <a href="https://wiki.factorio.com/Space_science_pack" target="_blank" rel="noopener">Space Science</a>;
+        with no productivity modules in the silo, a rocket needs 1000 of each component of the rocket part + the requirements
+        for the <a href="https://wiki.factorio.com/Satellite">satellite</a>.
+        <br>This is a ratio of (1100 * 20) : (1050 * 30) : (1000 * 30) or simplified of 44 : 63 : 60.
+        <br>Where 20 and 30 are the respective crafting speeds.
     </p>
 
 </app-cheat-sheet>

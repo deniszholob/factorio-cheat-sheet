@@ -7,7 +7,15 @@
     </p>
 
     <ul>
-        <li>The <kbd>Alt</kbd> key will reveal detailed information on entities.</li>
+        <li>
+            The <kbd>Alt</kbd> key will reveal detailed information on entities,
+            this is also toggleable in the
+            <a href="https://wiki.factorio.com/Shortcut_bar" target="_blank" rel="noopener">shortcut bar</a>
+        </li>
+        <li>
+            The <kbd>MMB</kbd> will clear an item in the
+            <a href="https://wiki.factorio.com/Quickbar" target="_blank" rel="noopener">quick bar</a>.
+        </li>
         <li>
             You can rotate entities with <kbd>R</kbd>,
             even when already placed, <kbd>Shift+R</kbd> for the opposite.
@@ -83,16 +91,27 @@
             on the map by enabling <strong>"show-rail-signal-states"</strong>
             in the <kbd>F4</kbd> debug menu.
         </li>
+        <li>
+            To take a large screenshot use the <a href="https://wiki.factorio.com/Console#Normal_commands">command </a> <kbd>/screenshot [x resolution] [y resolution] [zoom]</kbd>.
+            <br> (Resolution is optional and defaults to the current window size and zoom is optional and defaults to 1).
+            <br> This command does <strong>not</strong> disable achievements.
+        </li>
     </ul>
 
-    <div class="row">
-        <div class="col text-center">
-            Underground belts can be side loaded, this will drain only 1 lane of a belt. <br>
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('belt-tip-sideload.png')}}" class="img-fluid rounded" style="max-height: 250px; width: auto;" alt="Side Load Underground" title="Side Load Underground">
+    <hr>
+
+    <div class="row align-items-center justify-content-around">
+        <div class="col-6 col-lg-4 col-print-4 text-center">
+            <strong>Underground belts can be side loaded</strong><br>
+            <img src="{{APP_SETTINGS.links.getLocalImagePath('belt-tip-sideload.png')}}" class="img-fluid rounded limit-img-height" alt="Side Load Underground" title="Side Load Underground">
         </div>
-        <div class="col text-center">
-            Splitters can have an item filter set on a specific lane <br>
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('belt-tip-filter.png')}}" class="img-fluid rounded" style="max-height: 250px; width: auto;" alt="Splitter Filter" title="Splitter Filter">
+        <div class="col-6 col-lg-4 col-print-4 text-center">
+            <strong>Splitters can filter items</strong><br>
+            <img src="{{APP_SETTINGS.links.getLocalImagePath('belt-tip-filter.png')}}" class="img-fluid rounded limit-img-height" alt="Splitter Filter" title="Splitter Filter">
+        </div>
+        <div class="col-6 col-lg-4 col-print-4 text-center">
+            <strong>Belts can be weaved</strong><br>
+            <img src="{{APP_SETTINGS.links.getLocalImagePath('belt-weaving.png')}}" class="img-fluid rounded limit-img-height" alt="Splitter Filter" title="Splitter Filter">
         </div>
     </div>
 
