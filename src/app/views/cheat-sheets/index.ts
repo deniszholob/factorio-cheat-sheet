@@ -1,6 +1,8 @@
+export * from './balancers/balancers.component';
 export * from './basic-power/basic-power.component';
 export * from './belt-throughput/belt-throughput.component';
 export * from './cargo-wagon-transfer/cargo-wagon-transfer.component';
+export * from './combat/combat.component';
 export * from './common-ratios/common-ratios.component';
 export * from './fluid-wagon-transfer/fluid-wagon-transfer.component';
 export * from './inserter-throughput/inserter-throughput.component';
@@ -16,4 +18,3 @@ export * from './science/science.component';
 export * from './tips/tips.component';
 export * from './train-colors/train-colors.component';
 export * from './vehicle-fuel-bonus/vehicle-fuel-bonus.component';
-export * from './balancers/balancers.component';
