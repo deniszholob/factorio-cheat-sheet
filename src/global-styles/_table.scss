@@ -92,3 +92,8 @@ th[cdk-header-cell].sorted {
     background-color: $c-pallette-accent;
     border-color: $c-pallette-accent;
 }
+
+table.inline {
+    display: inline;
+    vertical-align: middle;
+}

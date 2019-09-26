@@ -11,44 +11,55 @@
             },
             {
                 "iconId": "Basic_oil_processing",
-                "count": 3
+                "count": 4.5
             },
             {
                 "iconId": "Plastic_bar",
-                "count": 1
-            },
-            {
-                "iconId": "Flamethrower_ammo",
-                "count": 1
+                "count": 2
             }
         ],
         "rushAdvancedOil": {
+            "Sulfur": 38,
             "Plastic_bar": 225,
-            "Coal": 113,
-            "Chemical_science_pack": 75
+            "Petroleum_gas": 2813,
+            "Crude_oil": 6250
         },
-        "perfectCrackingRatio": [
+        "simpleCrackingRatio": [
             {
                 "iconId": "Advanced_oil_processing",
-                "count": 10
+                "count": 8
             },
             {
                 "iconId": "Heavy_oil_cracking",
-                "count": 1
+                "count": 2
             },
             {
                 "iconId": "Light_oil_cracking",
                 "count": 7
             }
         ],
-        "moduledCrackingRatio": [
+        "perfectCrackingRatio": [
             {
                 "iconId": "Advanced_oil_processing",
-                "count": 19
+                "count": 20
             },
             {
                 "iconId": "Heavy_oil_cracking",
-                "count": 3
+                "count": 5
+            },
+            {
+                "iconId": "Light_oil_cracking",
+                "count": 17
+            }
+        ],
+        "moduledCrackingRatio": [
+            {
+                "iconId": "Advanced_oil_processing",
+                "count": 15
+            },
+            {
+                "iconId": "Heavy_oil_cracking",
+                "count": 6
             },
             {
                 "iconId": "Light_oil_cracking",
@@ -151,9 +162,9 @@
                 ],
                 "oil": "20/s",
                 "water": "-",
-                "petrol": "8/s",
-                "lighOil": "6/s",
-                "heavyOil": "6/s"
+                "petrol": "9/s",
+                "lighOil": "-",
+                "heavyOil": "-"
             },
             {
                 "processes": [
@@ -166,7 +177,7 @@
                 "water": "10/s",
                 "petrol": "11/s",
                 "lighOil": "9/s",
-                "heavyOil": "2/s"
+                "heavyOil": "5/s"
             },
             {
                 "processes": [
@@ -183,7 +194,7 @@
                 "water": "19/s",
                 "petrol": "17/s",
                 "lighOil": "-",
-                "heavyOil": "2/s"
+                "heavyOil": "5/s"
             },
             {
                 "processes": [
@@ -193,13 +204,13 @@
                     },
                     {
                         "iconId": "Heavy_oil_cracking",
-                        "count": 0.1
+                        "count": 0.25
                     }
                 ],
                 "oil": "20/s",
-                "water": "11.5/s",
+                "water": "13.75/s",
                 "petrol": "11/s",
-                "lighOil": "10.5/s",
+                "lighOil": "12.75/s",
                 "heavyOil": "-"
             },
             {
@@ -210,17 +221,43 @@
                     },
                     {
                         "iconId": "Heavy_oil_cracking",
-                        "count": 0.1
+                        "count": 0.25
                     },
                     {
                         "iconId": "Light_oil_cracking",
-                        "count": 0.7
+                        "count": 0.85
                     }
                 ],
                 "oil": "20/s",
-                "water": "22/s",
-                "petrol": "18/s",
+                "water": "26.5/s",
+                "petrol": "19.5/s",
                 "lighOil": "-",
+                "heavyOil": "-"
+            },
+            {
+                "processes": [
+                    {
+                        "iconId": "Heavy_oil_cracking",
+                        "count": 1
+                    }
+                ],
+                "oil": "-",
+                "water": "15/s",
+                "petrol": "-",
+                "lighOil": "15/s",
+                "heavyOil": "20/s"
+            },
+            {
+                "processes": [
+                    {
+                        "iconId": "Light_oil_cracking",
+                        "count": 1
+                    }
+                ],
+                "oil": "-",
+                "water": "15/s",
+                "petrol": "10/s",
+                "lighOil": "15/s",
                 "heavyOil": "-"
             }
         ]

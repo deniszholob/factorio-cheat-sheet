@@ -1,51 +1,56 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
     <h4 id="basic-oil">Basic Oil</h4>
 
-    <div class="row align-items-center">
-        <!-- <p class="col-12 col-lg-3 text-center">
-            <span class="text-muted">Basic Plastic Production</span><br>
-            <ng-container *ngFor="let item of sheetData?.basicOil">
-                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
-            </ng-container>
-        </p> -->
-        <p class="col-12 col-lg-7 text-center"> To research
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Advanced_oil_processing')"></app-factorio-icon>
-            <i class="fas fa-long-arrow-alt-right text-muted"></i>
-            Need
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Plastic_bar', sheetData?.rushAdvancedOil?.Plastic_bar)"></app-factorio-icon>
-            using
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Coal', sheetData?.rushAdvancedOil?.Coal)"></app-factorio-icon>
-            to make
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Chemical_science_pack', sheetData?.rushAdvancedOil?.Chemical_science_pack)"></app-factorio-icon>
-            required.
-        </p>
+    <div>
+        To research
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Advanced_oil_processing')"></app-factorio-icon>
+        <i class="fas fa-long-arrow-alt-right text-muted"></i>
+        Need
+        <table class="inline">
+            <tbody class="text-center">
+                <tr>
+                    <td *ngFor="let item of sheetData?.rushAdvancedOil | keyvalue">
+                        <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.key, item?.value)"></app-factorio-icon>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        to make
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Chemical_science_pack', 75)"></app-factorio-icon>
+        <a href="https://kirkmcdonald.github.io/calc.html#data=0-17-60&p=basic&items=chemical-science-pack:r:75" target="_blank" rel="noopener">
+            required
+        </a>.
     </div>
+
+    <br>
 
     <p>
         When starting oil, it is most efficient to rush <a href="https://wiki.factorio.com/Advanced_oil_processing_(research)" target="_blank" rel="noopener">Advanced Oil Processing</a> research.
-        <br>This allows to obtain more efficient oil ratios and be able to convert Heavy and Light Oil into Petroleum Gas,
-        eliminating need to buffer or waste oil products.
+        <br>This allows to obtain more efficient oil ratios and be able to convert Heavy and Light Oil into Petroleum Gas.
     </p>
-
-    <!-- <p><strong>Ratio Rationale:</strong>
-        <br>To keep Plastic production, Heavy and Light oil need to be used up. Luckily Flamethrower Ammo production drains them in a perfect ratio.
-        <br>Alternatively the oil products would need to be stored or consumed another way.
-    </p> -->
 
     <hr>
     <h4 id="advanced-oil">Advanced Oil</h4>
 
     <div class="row align-items-center">
-        <p class="col-12 col-sm-6 text-center">
+        <p class="col-12 col-sm-4 text-center">
+            <span class="text-muted">Simple Cracking Ratio</span><br>
+            <ng-container *ngFor="let item of sheetData?.simpleCrackingRatio">
+                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
+            </ng-container>
+        </p>
+
+        <p class="col-12 col-sm-4 text-center">
             <span class="text-muted">Accurate Cracking Ratio</span><br>
             <ng-container *ngFor="let item of sheetData?.perfectCrackingRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
         </p>
 
-        <p class="col-12 col-sm-6 text-center">
+        <p class="col-12 col-sm-4 text-center">
             <span class="text-muted">
-                <a href="https://www.reddit.com/r/factorio/comments/68exg4/new_oil_ratio_in_015_with_modules_10_2_14/">Moduled</a>
+                <a href="https://www.reddit.com/r/factorio/comments/68exg4/new_oil_ratio_in_015_with_modules_10_2_14/" target="_blank" rel="noopener">Moduled</a>
                 Cracking Ratio<a href="#oil_ratio_note">*</a>
             </span><br>
             <ng-container *ngFor="let item of sheetData?.moduledCrackingRatio">
@@ -55,7 +60,7 @@
     </div>
 
     <p>
-        If you want to <a href="https://www.reddit.com/r/factorio/comments/67ipoj/015_cracking_ratio_25_refineries_3_heavy_to_light/" target="_blank" rel="noopener">convert all refinery products to petroleum</a>:
+        If you want to convert all refinery products to petroleum:
         for every {{sheetData?.perfectCrackingRatio[0]?.count}} refineries you have running Advanced Oil Processing,
         you need {{sheetData?.perfectCrackingRatio[1]?.count}} chemical plants cracking heavy oil into light oil and
         {{sheetData?.perfectCrackingRatio[2]?.count}} chemical plants cracking light oil into petroleum.
@@ -86,7 +91,10 @@
 
         <div class="col-12 col-lg-6 text-center col-print-6">
             <table class="table table-sm table-hover fixed-width">
-                <caption class="text-center">Rates for 1 Refinery and Cracking</caption>
+                <caption class="text-center">
+                    <a href="https://wiki.factorio.com/Oil_processing" target="_blank" rel="noopener">Rates</a>
+                    for 1 Refinery and Cracking
+                </caption>
                 <thead class="text-center">
                     <tr>
                         <th></th>
