@@ -6,7 +6,7 @@
 
 language: node_js # Building with node js
 node_js:
-    - stable # Download the stable node version
+    - 10.14.1 # Same node version as package.json
 
 # Blocklist
 branches:

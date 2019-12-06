@@ -10,7 +10,7 @@ If you would like to contribute to the cheat sheet code/content, see `contributi
 [![Build Status](https://travis-ci.org/deniszholob/factorio-cheat-sheet.svg?branch=master)](https://travis-ci.org/deniszholob/factorio-cheat-sheet)
 
 * [Master Deployment](https://factoriocheatsheet.com/)
-* [v0.16 Deployment](https://v016.factoriocheatsheet.com/)
+<!-- * [v0.16 Deployment](https://v016.factoriocheatsheet.com/) -->
 * Master branch is for the source code thats hosted [here](https://deniszholob.github.io/factorio-cheat-sheet/).
 
 
