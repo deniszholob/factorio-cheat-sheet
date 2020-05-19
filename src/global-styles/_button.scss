@@ -2,6 +2,7 @@
     padding: 0;
     vertical-align: baseline;
     color: $c-pallette-accent;
+
     &:hover {
         color: $c-pallette-accent-dark;
         text-decoration: none;
@@ -12,6 +13,7 @@
     font-weight: bold;
     border-color: $c-pallette-accent;
     color: $c-pallette-accent;
+
     &:hover {
         color: $c-pallette-neutral-dark;
         background-color: $c-pallette-accent-dark;
@@ -24,15 +26,18 @@
     border-color: $c-pallette-accent;
     color: $c-pallette-neutral-dark;
     font-weight: bold;
+
     &:hover {
         background-color: $c-pallette-accent-dark;
         border-color: $c-pallette-accent-dark;
         color: $c-pallette-neutral-dark;
     }
+
     &.focus,
     &:focus {
         box-shadow: 0 0 0 3px rgba(255, 120, 0, 0.5);
     }
+
     &:active,
     &.active {
         background-color: $c-pallette-accent-dark;

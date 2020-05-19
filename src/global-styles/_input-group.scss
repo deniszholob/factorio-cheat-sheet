@@ -1,4 +1,5 @@
-.input-group-addon { // Newer Bootstrap does addons differently, added this in from older version.
+.input-group-addon {
+    // Newer Bootstrap does addons differently, added this in from older version.
     padding: .375rem .75rem;
     margin-bottom: 0;
     font-size: 1rem;
@@ -29,23 +30,27 @@
     }
 }
 
-.form-control:disabled, .form-control[readonly] {
+.form-control:disabled,
+.form-control[readonly] {
     background-color: $c-pallette-neutral;
     color: $c-pallette-text-muted;
 }
 
 .merged-input-group {
+
     // .input-group:not(:first-child) > * {
     //     border-top: none;
     // }
-    .input-group:not(:first-child):not(:last-child) > * {
+    .input-group:not(:first-child):not(:last-child)>* {
         border-radius: 0;
     }
-    .input-group:first-child > * {
+
+    .input-group:first-child>* {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
     }
-    .input-group:last-child > * {
+
+    .input-group:last-child>* {
         border-top-left-radius: 0;
         border-top-right-radius: 0;
     }
