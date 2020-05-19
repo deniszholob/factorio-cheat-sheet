@@ -51,7 +51,7 @@
         <p class="col-12 col-sm-4 text-center">
             <span class="text-muted">
                 <a href="https://www.reddit.com/r/factorio/comments/68exg4/new_oil_ratio_in_015_with_modules_10_2_14/" target="_blank" rel="noopener">Moduled</a>
-                Cracking Ratio<a href="#oil_ratio_note">*</a>
+                Cracking Ratio<a href="#note_oil_ratio">*</a>
             </span><br>
             <ng-container *ngFor="let item of sheetData?.moduledCrackingRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
@@ -118,7 +118,7 @@
                         <td>{{item?.oil}}</td>
                         <td>{{item?.water}}</td>
                         <td>{{item?.heavyOil}}</td>
-                        <td>{{item?.lighOil}}</td>
+                        <td>{{item?.lightOil}}</td>
                         <td>{{item?.petrol}}</td>
                     </tr>
                 </tbody>
@@ -155,7 +155,7 @@
         <p class="col-12 col-sm-4 text-center">
             <span class="text-muted">
                 <a href="https://docs.google.com/spreadsheets/d/1Y6oL3Fl4P76_GAp6oNYDv9dXtjDKBE7xiUCtktTgFgY/" target="_blank" rel="noopener">Moduled</a>
-                Cracking Ratio<a href="#oil_ratio_note">*</a>
+                Cracking Ratio<a href="#note_oil_ratio">*</a>
             </span><br>
             <ng-container *ngFor="let item of sheetData?.moduledLiquefactionCrackingRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
@@ -200,7 +200,7 @@
 
     <hr>
 
-    <p id="oil_ratio_note"><small>
+    <p id="note_oil_ratio"><small>
         * Moduled cracking ratio is based on this
         <a href="https://docs.google.com/spreadsheets/d/1Y6oL3Fl4P76_GAp6oNYDv9dXtjDKBE7xiUCtktTgFgY/" target="_blank" rel="noopener">
             spreadsheet for Factorio v0.15

@@ -32,7 +32,7 @@
             },
             {
                 "type": "Iron Plates",
-                "rgb": [210, 210, 255],
+                "rgb": [180, 200, 255],
                 "icon": "Iron_plate"
             },
             {
@@ -42,7 +42,7 @@
             },
             {
                 "type": "Steel",
-                "rgb": [200, 200, 200],
+                "rgb": [255, 200, 180],
                 "icon": "Steel_plate"
             },
             {
@@ -112,7 +112,7 @@
             },
             {
                 "type": "Grey Science",
-                "rgb": [200, 200, 255],
+                "rgb": [50, 50, 50],
                 "icon": "Military_science_pack"
             },
             {
@@ -127,7 +127,7 @@
             },
             {
                 "type": "Space Science",
-                "rgb": [200, 200, 255],
+                "rgb": [150, 150, 150],
                 "icon": "Space_science_pack"
             },
             {
@@ -144,6 +144,11 @@
                 "type": "PAX Shuttle",
                 "rgb": [255, 0, 255],
                 "icon": "Power_armor"
+            },
+            {
+                "type": "Supply/Trash/etc.",
+                "rgb": [0, 255, 255],
+                "icon": "Repair_pack"
             }
         ]
     }

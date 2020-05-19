@@ -26,7 +26,8 @@
               "src/browserconfig.xml",
               "src/mstile-150x150.png",
               "src/safari-pinned-tab.svg",
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              "CNAME"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",

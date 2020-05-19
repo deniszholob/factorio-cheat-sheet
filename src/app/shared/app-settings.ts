@@ -15,7 +15,7 @@ export const APP_SETTINGS: AppInfo = {
         name: 'Github Source',
         url: '//github.com/deniszholob/factorio-cheat-sheet',
     },
-    data_version: '0.17.69',
+    data_version: '0.17.69, 0.18.25',
     // languages: ['en-US'],
     links: {
         getLocalImagePath: function (imageName) {
@@ -24,10 +24,10 @@ export const APP_SETTINGS: AppInfo = {
         wikiImagesBase: 'https://wiki.factorio.com/images/',
     },
     old_cheat_sheets: [
-        {
-            name: 'Factorio 0.16 Cheat Sheet',
-            url: 'https://v016.factoriocheatsheet.com/',
-        },
+        // {
+        //     name: 'Factorio 0.16 Cheat Sheet',
+        //     url: 'https://v016.factoriocheatsheet.com/',
+        // },
         {
             name: 'Factorio 0.15 Cheat Sheet',
             url: 'https://docs.google.com/presentation/d/1kQRwD9y92yeEInJaDrTzwc3qvk16UzA8GJ-n_RUgxu8/',
@@ -43,11 +43,11 @@ export const APP_SETTINGS: AppInfo = {
     ],
     pdfs: [
         {
-            name: 'Cheat Sheet v0.17 pdf',
+            name: 'Cheat Sheet v0.17/v0.18 pdf',
             url: 'https://www.dropbox.com/sh/sq14ydb7hs59trn/AAA1MUghu5gTy9gJeFX3v0RYa/Factorio_Cheat_Sheet_v0.17.pdf',
         },
         {
-            name: 'Cheat Sheet v0.17 pdf light',
+            name: 'Cheat Sheet v0.17/v0.18 pdf light',
             url: 'https://www.dropbox.com/sh/sq14ydb7hs59trn/AAB7bfGnNHWyMcdk3Jv7PWDfa/Factorio_Cheat_Sheet_v0.17_light.pdf',
         },
         {
