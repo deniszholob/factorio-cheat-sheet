@@ -11,6 +11,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "public",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -36,6 +37,12 @@
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -90,28 +97,28 @@
   "defaultProject": "factorio-cheat-sheet",
   "schematics": {
     "@schematics/angular:class": {
-      "spec": false
+      "skipTests": true
     },
     "@schematics/angular:component": {
-      "spec": false,
+      "skipTests": true,
       "prefix": "app",
-      "styleext": "scss"
+      "style": "scss"
     },
     "@schematics/angular:directive": {
-      "spec": false,
+      "skipTests": true,
       "prefix": "app"
     },
     "@schematics/angular:guard": {
-      "spec": false
+      "skipTests": true
     },
     "@schematics/angular:module": {
-      "spec": false
+      "skipTests": true
     },
     "@schematics/angular:pipe": {
-      "spec": false
+      "skipTests": true
     },
     "@schematics/angular:service": {
-      "spec": false
+      "skipTests": true
     }
   }
 }

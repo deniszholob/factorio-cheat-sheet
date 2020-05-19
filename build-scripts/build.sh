@@ -6,9 +6,10 @@
 # Run npm build
 # ====================================== #
 
-echo 'Build Script Started ...'
+echo ' -- Build Script Started ...'
 sh ./build-scripts/update-date.sh
-echo 'Running npm build script ...'
+echo ' -- Running npm build script ...'
 npm run build
+echo ' -- Build contents ...'
 ls -al "public"
-echo 'Build script finished...'
+echo ' -- Build script finished ...'

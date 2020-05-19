@@ -6,7 +6,7 @@
 
 language: node_js # Building with node js
 node_js:
-    - 10.14.1 # Same node version as package.json
+    - 12.16.3 # Same node version as package.json
 
 # Blocklist
 branches:
@@ -16,7 +16,6 @@ branches:
 script:
     - echo 'Building app...'
     - sh ./build-scripts/build.sh # Generates the public folder with built angular app
-    - echo 'Deploying app...'
 deploy:
     provider: pages
     skip_cleanup: true # Prevent travis from cleaning out the branch before the deploy occurs

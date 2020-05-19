@@ -1,52 +1,59 @@
-table {
+table,
+.table {
+    color: $c-pallette-text;
+
     caption {
         caption-side: top;
         text-align: center;
     }
 
-    thead.text-center > tr > th {
+    thead.text-center>tr>th {
         text-align: center;
     }
 }
 
 
-.table > tbody > tr > td {
+.table>tbody>tr>td {
     vertical-align: middle;
 }
+
 .table:not(.table-bordered)>caption+thead>tr:first-child>td,
 .table:not(.table-bordered)>caption+thead>tr:first-child>th,
 .table:not(.table-bordered)>colgroup+thead>tr:first-child>td,
 .table:not(.table-bordered)>colgroup+thead>tr:first-child>th,
 .table:not(.table-bordered)>thead:first-child>tr:first-child>td,
-.table:not(.table-bordered)>thead:first-child>tr:first-child>th{
+.table:not(.table-bordered)>thead:first-child>tr:first-child>th {
     border-top: 0;
 }
 
-.table > tbody > tr > td,
-.table > tbody > tr > th,
-.table > tfoot > tr > td,
-.table > tfoot > tr > th,
-.table > thead > tr > td,
-.table > thead > tr > th {
-    border-color: $c-pallette-neutral2;
-}
-.table-bordered,
-.table-bordered > tbody > tr > td,
-.table-bordered > tbody > tr > th,
-.table-bordered > tfoot > tr > td,
-.table-bordered > tfoot > tr > th,
-.table-bordered > thead > tr > td,
-.table-bordered > thead > tr > th {
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
     border-color: $c-pallette-neutral2;
 }
 
-.table-hover > tbody > tr:hover {
+.table-bordered,
+.table-bordered>tbody>tr>td,
+.table-bordered>tbody>tr>th,
+.table-bordered>tfoot>tr>td,
+.table-bordered>tfoot>tr>th,
+.table-bordered>thead>tr>td,
+.table-bordered>thead>tr>th {
+    border-color: $c-pallette-neutral2;
+}
+
+.table-hover>tbody>tr:hover {
     background-color: inherit;
+    color: inherit;
 }
 
 .table-hover {
     tr:hover td {
         transition: 0.2s;
+
         &:not([rowspan]) {
             background-color: $c-pallette-transp-light;
         }
@@ -68,6 +75,7 @@ th[cdk-header-cell].sorted {
     color: $c-pallette-accent;
     background-color: $c-pallette-neutral;
     border: 1px solid $c-pallette-neutral;
+
     &:hover {
         z-index: 2;
         color: $c-pallette-accent;
@@ -75,10 +83,12 @@ th[cdk-header-cell].sorted {
         background-color: $c-pallette-neutral-light;
         border-color: $c-pallette-neutral;
     }
+
     &:focus {
         box-shadow: none;
     }
 }
+
 .page-item.disabled .page-link {
     color: $c-pallette-text-muted;
     pointer-events: none;
@@ -86,6 +96,7 @@ th[cdk-header-cell].sorted {
     background-color: $c-pallette-neutral;
     border-color: $c-pallette-neutral;
 }
+
 .page-item.active .page-link {
     z-index: 1;
     color: #fff;
