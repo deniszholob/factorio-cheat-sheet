@@ -163,7 +163,7 @@
                 "oil": "20/s",
                 "water": "-",
                 "petrol": "9/s",
-                "lighOil": "-",
+                "lightOil": "-",
                 "heavyOil": "-"
             },
             {
@@ -176,7 +176,7 @@
                 "oil": "20/s",
                 "water": "10/s",
                 "petrol": "11/s",
-                "lighOil": "9/s",
+                "lightOil": "9/s",
                 "heavyOil": "5/s"
             },
             {
@@ -193,7 +193,7 @@
                 "oil": "20/s",
                 "water": "19/s",
                 "petrol": "17/s",
-                "lighOil": "-",
+                "lightOil": "-",
                 "heavyOil": "5/s"
             },
             {
@@ -210,7 +210,7 @@
                 "oil": "20/s",
                 "water": "13.75/s",
                 "petrol": "11/s",
-                "lighOil": "12.75/s",
+                "lightOil": "12.75/s",
                 "heavyOil": "-"
             },
             {
@@ -231,7 +231,7 @@
                 "oil": "20/s",
                 "water": "26.5/s",
                 "petrol": "19.5/s",
-                "lighOil": "-",
+                "lightOil": "-",
                 "heavyOil": "-"
             },
             {
@@ -244,7 +244,7 @@
                 "oil": "-",
                 "water": "15/s",
                 "petrol": "-",
-                "lighOil": "15/s",
+                "lightOil": "15/s",
                 "heavyOil": "20/s"
             },
             {
@@ -257,7 +257,7 @@
                 "oil": "-",
                 "water": "15/s",
                 "petrol": "10/s",
-                "lighOil": "15/s",
+                "lightOil": "15/s",
                 "heavyOil": "-"
             }
         ]
