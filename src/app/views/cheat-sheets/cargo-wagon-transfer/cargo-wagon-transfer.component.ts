@@ -13,25 +13,25 @@ import { APP_SETTINGS } from 'app/shared/app-settings';
 const dataFile = 'cargo-wagon-transfer';
 
 interface CargoTransferTimeModel {
-    itemsPerCycle: number,
-    stack10: number,
-    stack50: number,
-    stack100: number,
-    stack200: number,
+    itemsPerCycle: number;
+    stack10: number;
+    stack50: number;
+    stack100: number;
+    stack200: number;
 }
 
 interface CargoChestFill {
-    chests: number,
-    slotsPerChest: SlotItem,
-    stack10: SlotItem,
-    stack50: SlotItem,
-    stack100: SlotItem,
-    stack200: SlotItem,
+    chests: number;
+    slotsPerChest: SlotItem;
+    stack10: SlotItem;
+    stack50: SlotItem;
+    stack100: SlotItem;
+    stack200: SlotItem;
 }
 
 interface SlotItem {
-    dec: number,
-    round: number,
+    dec: number;
+    round: number;
 }
 
 @Component({
@@ -46,30 +46,7 @@ export class CargoWagonTransferComponent implements OnInit {
     APP_SETTINGS = APP_SETTINGS;
 
     tableCargoTransferTime: CargoTransferTimeModel[] = [];
-    tableCargoTransferTimeEntry = (ipc: number): CargoTransferTimeModel => {
-        return {
-            itemsPerCycle: ipc,
-            stack10: this.calcTransferTime(10, ipc),
-            stack50: this.calcTransferTime(50, ipc),
-            stack100: this.calcTransferTime(100, ipc),
-            stack200: this.calcTransferTime(200, ipc),
-        };
-    }
-
     tableChestFill: CargoChestFill[] = [];
-    tableChestFillEntry = (chests: number): CargoChestFill => {
-        return {
-            chests: chests,
-            slotsPerChest: this.calcCargoChestFill(chests, 1),
-            stack10: this.calcCargoChestFill(chests, 10),
-            stack50: this.calcCargoChestFill(chests, 50),
-            stack100: this.calcCargoChestFill(chests, 100),
-            stack200: this.calcCargoChestFill(chests, 200),
-        };
-    }
-    slotItemEntry = (dec: number, round: number): SlotItem => {
-        return { dec, round }
-    }
 
     constructor(
         public dataService: DataService
@@ -100,6 +77,15 @@ export class CargoWagonTransferComponent implements OnInit {
         }
     }
 
+    tableCargoTransferTimeEntry = (ipc: number): CargoTransferTimeModel => {
+        return {
+            itemsPerCycle: ipc,
+            stack10: this.calcTransferTime(10, ipc),
+            stack50: this.calcTransferTime(50, ipc),
+            stack100: this.calcTransferTime(100, ipc),
+            stack200: this.calcTransferTime(200, ipc),
+        };
+    }
     calcTransferTime(stackSize: number, itemsPerCycle: number): number {
         // ((this.cargoSlots * 10) - this.inserterCount * i) / ips
         if (stackSize < itemsPerCycle) { itemsPerCycle = stackSize; }
@@ -109,11 +95,25 @@ export class CargoWagonTransferComponent implements OnInit {
         return (totalItems) / itemsPerSecond;
     }
 
+    tableChestFillEntry = (chests: number): CargoChestFill => {
+        return {
+            chests: chests,
+            slotsPerChest: this.calcCargoChestFill(chests, 1),
+            stack10: this.calcCargoChestFill(chests, 10),
+            stack50: this.calcCargoChestFill(chests, 50),
+            stack100: this.calcCargoChestFill(chests, 100),
+            stack200: this.calcCargoChestFill(chests, 200),
+        };
+    }
+    slotItemEntry = (dec: number, round: number): SlotItem => {
+        return { dec, round };
+    }
+
     calcCargoChestFill(chests: number, stackSize: number): SlotItem {
         let result = this.sheetData.cargoSlots / chests * stackSize;
-        result = stackSize == 1 ? result : Math.ceil(result);
-        let m = result % stackSize;
-        const resultRound = m == 0 ? result : result - m + stackSize;
+        result = stackSize === 1 ? result : Math.ceil(result);
+        const remainder = result % stackSize;
+        const resultRound = remainder === 0 ? result : result - remainder + stackSize;
 
         return this.slotItemEntry(result, resultRound);
     }

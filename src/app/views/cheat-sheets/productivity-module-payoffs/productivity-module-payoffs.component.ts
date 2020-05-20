@@ -60,7 +60,7 @@ export class ProductivityModulePayoffsComponent implements OnInit {
 
     ngOnInit() {
         //  Pagination Subscription
-        combineLatest(this.tableDataSource$, this.currentPage$, this.pageSize$)
+        combineLatest([this.tableDataSource$, this.currentPage$, this.pageSize$])
             .subscribe(([allSources, currentPage, pageSize]) => {
                 const startingIndex = (currentPage - 1) * pageSize;
                 const onPage = allSources.slice(startingIndex, startingIndex + pageSize);
@@ -68,10 +68,10 @@ export class ProductivityModulePayoffsComponent implements OnInit {
             });
 
         // Data/Sorting Subscription
-        combineLatest(
+        combineLatest([
             this.dataService.getCheatSheetData(dataFile),
             this.sortKey$, this.sortDirection$,
-        ).subscribe(
+        ]).subscribe(
             ([newData, sortKey, sortDirection]: [Data, string, string]) => {
                 this.cheatSheet = newData.cheatSheet;
                 const data: PayoffData[] = newData.data;
