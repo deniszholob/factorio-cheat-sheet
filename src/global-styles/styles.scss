@@ -1,14 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import 'variables';
-@import 'intro';
-@import 'side-nav';
-@import 'button';
-@import 'card';
-@import 'table';
-@import 'input-group';
-@import 'scroll-bar';
-@import 'colors';
+@import "variables";
+@import "intro";
+@import "side-nav";
+@import "button";
+@import "card";
+@import "table";
+@import "input-group";
+@import "scroll-bar";
+@import "colors";
 
 html {
     position: relative;
@@ -20,7 +20,8 @@ body {
     margin-bottom: 60px;
 }
 
-html, body {
+html,
+body {
     background-color: $c-pallette-bg;
     color: $c-pallette-text;
 }
@@ -29,7 +30,8 @@ html, body {
     padding: 0px 5px;
 }
 
-footer, .footer {
+footer,
+.footer {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -43,6 +45,7 @@ footer, .footer {
 a {
     color: $c-pallette-accent;
     transition: 0.2s;
+
     &:hover {
         color: $c-pallette-accent-dark;
         text-decoration: none;
@@ -55,7 +58,8 @@ hr {
 
 h1 {
     color: $c-pallette-accent;
-    font-family: 'Play',Verdana, sans-serif;
+    font-family: "Play", Verdana, sans-serif;
+
     small {
         color: $c-pallette-text-muted;
         font-size: 65%;
@@ -63,23 +67,26 @@ h1 {
 }
 
 h5 {
-    font-family: 'Jura', sans-serif;
+    font-family: "Jura", sans-serif;
     font-weight: bold;
 }
 
-section, .section {
+section,
+.section {
     height: 100%;
     display: block;
+
     .container {
         padding-top: 50px;
         padding-bottom: 50px;
     }
 }
 
-.list-group-item  {
+.list-group-item {
     transition: 0.2s;
     background-color: $c-pallette-transp-light;
     border-color: $c-pallette-neutral;
+
     &:hover {
         background-color: $c-pallette-transp-medium;
     }

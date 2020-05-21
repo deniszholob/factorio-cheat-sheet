@@ -18,6 +18,15 @@
     "node": ">= 12.16.3",
     "npm": ">= 6.13.4"
   },
+  "lint-staged": {
+    "*.js": "eslint",
+    "*.ts": "tslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "@angular/animations": "^9.1.7",
     "@angular/cdk": "^9.2.4",
@@ -46,6 +55,8 @@
     "@types/node": "^12.11.1",
     "codelyzer": "^5.2.2",
     "http-server": "^0.12.3",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.4",
     "ts-node": "~7.0.1",
     "tslint": "~6.1.2",
     "typescript": "~3.8.3"

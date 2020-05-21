@@ -1,0 +1,32 @@
+{
+    "cSpell.words": [
+        "Zuri's",
+        "browserconfig",
+        "codelyzer",
+        "combinators",
+        "deniszholob",
+        "devkit",
+        "factorio",
+        "mstile",
+        "ngsw",
+        "readonly",
+        "rowspan",
+        "stylelint",
+        "tslib"
+    ],
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+}

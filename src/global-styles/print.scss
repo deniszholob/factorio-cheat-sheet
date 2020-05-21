@@ -2,41 +2,51 @@
 * Ref: https://www.jotform.com/blog/css-perfect-print-stylesheet-98272/
 */
 
-@import 'variables';
+@import "variables";
+
 @media print {
     /** Setting margins */
     @page {
         size: letter;
         margin: 0cm;
     }
+
     /* Defining all page breaks */
     .section:not(:last-child) {
         page-break-after: always;
     }
-    .cheat-sheet-pages>*:not(:first-child) {
+
+    .cheat-sheet-pages > *:not(:first-child) {
         page-break-before: always;
     }
+
     .cheat-sheet {
         page-break-inside: auto;
         display: block;
         overflow: visible;
     }
+
     section .container,
     .section .container {
         padding: 20px;
     }
+
     .card {
         margin: 10px 0;
     }
+
     a {
-        page-break-inside: avoid
+        page-break-inside: avoid;
     }
+
     p {
         margin-bottom: 0.4rem;
     }
+
     blockquote {
         page-break-inside: avoid;
     }
+
     h1,
     h2,
     h3,
@@ -46,49 +56,62 @@
         page-break-after: avoid;
         page-break-inside: avoid;
     }
+
     h4 {
         break-before: auto;
         font-size: 1.3rem;
     }
+
     h4,
     .card-title {
         margin-bottom: 0.4rem;
     }
+
     img {
         page-break-inside: avoid;
         page-break-after: avoid;
     }
+
     /* Hiding unnecessary elements for the print */
     .side-nav,
     .nav-opener {
         display: none;
     }
+
     hr {
         margin: 0.5rem 0;
     }
+
     .col-print-7 {
         max-width: 58.333333%;
     }
+
     .col-print-6 {
         max-width: 50%;
     }
+
     .col-print-5 {
         max-width: 41.666667%;
     }
+
     .col-print-4 {
         max-width: 33.333333%;
     }
+
     .list-group-item,
     .card-header,
     .card-body {
         padding: 0.4rem 1rem 1px;
     }
+
     img.factorio-icon {
         height: 1.5rem !important;
     }
+
     .factorio-icon-text {
         color: #eeeeee !important;
     }
+
     #belt-throughput,
     #balancers,
     #nuclear-power {
@@ -96,30 +119,38 @@
             width: 60%;
         }
     }
+
     #modules-and-beacons {
         img:not(.factorio-icon) {
             width: 40%;
         }
     }
+
     #NuclearTableControls {
         display: none;
     }
+
     .table td,
     .table th {
         padding: 0;
     }
+
     .table-caption,
-    table>caption {
+    table > caption {
         padding: 0;
-    } // Overwrite bootstrap's print styles... -_-
+    }
+
+    // Overwrite bootstrap's print styles... -_-
     .table td,
     .table th {
         background-color: initial !important;
     }
+
     .table-bordered td,
     .table-bordered th {
         border: 1px solid $c-pallette-neutral2 !important;
     }
+
     .hide-print {
         display: none !important;
     }

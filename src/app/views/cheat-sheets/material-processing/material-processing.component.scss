@@ -1,8 +1,9 @@
-@import './src/global-styles/variables';
+@import "./src/global-styles/variables";
 
 .bg-input {
     background-color: rgba($color-factorio-red, 0.2);
 }
+
 .bg-output {
     background-color: rgba($color-factorio-green, 0.2);
 }
@@ -11,6 +12,7 @@ tr:hover {
     .bg-input {
         background-color: rgba($color-factorio-red, 0.1);
     }
+
     .bg-output {
         background-color: rgba($color-factorio-green, 0.1);
     }

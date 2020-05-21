@@ -1,14 +1,18 @@
-@import '../../../../global-styles/variables';
+@import "../../../../global-styles/variables";
+
 #NuclearTableControls {
     max-width: 272px;
 }
 
 .card {
     margin-top: 5px;
+
     .card-body {
         padding: 1rem;
     }
+
     border: 1px solid $c-pallette-neutral;
+
     p {
         margin: 0;
     }

@@ -1,4 +1,4 @@
-@import './src/global-styles/variables';
+@import "./src/global-styles/variables";
 
 img {
     box-shadow: none;
@@ -22,7 +22,7 @@ table {
         display: flex;
         width: 90%;
         margin: auto;
-        content: '';
+        content: "";
         border-top: 2px solid rgba(255, 255, 255, 0.4);
     }
 }
@@ -44,23 +44,25 @@ table {
         display: inline-flex;
         color: whitesmoke;
         position: relative;
-        padding: .2em;
+        padding: 0.2em;
         margin: 5px 0;
 
         /* Brackets */
         &:after,
         &:before {
-            border: .2em solid rgba(255, 255, 255, 0.4);
+            border: 0.2em solid rgba(255, 255, 255, 0.4);
             bottom: 0;
-            content: '';
+            content: "";
             position: absolute;
             top: 0;
             width: 10px;
         }
+
         &:after {
             border-left: none;
             right: 0;
         }
+
         &:before {
             border-right: none;
             left: 0;
@@ -92,20 +94,21 @@ table {
             font-size: 1em;
             line-height: 1.25;
         }
-
     }
 }
 
-@media (min-width: 576px){
+@media (min-width: 576px) {
     .eq-container {
         flex-wrap: nowrap;
         font-size: 0.9em;
+
         .eq-field .eq-input {
             width: 70px;
         }
     }
 }
-@media (min-width: 768px){
+
+@media (min-width: 768px) {
     .eq-container {
         font-size: 1em;
     }

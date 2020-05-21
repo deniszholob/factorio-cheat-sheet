@@ -2,18 +2,18 @@
 
 /* The side navigation menu */
 .side-nav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 10; /* Stay on top */
+    height: 100%; // 100% Full-height
+    width: 0; // 0 width - change this with JavaScript
+    position: fixed; // Stay in place
+    z-index: 10; // Stay on top
     top: 0;
     right: 0;
-    background-color: $c-pallette-transp-heavy; /* Black*/
+    background-color: $c-pallette-transp-heavy; // Black
     border: 1px solid $c-pallette-transp-medium;
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the side-nav */
-    margin-right: -2px; /* Account for 2px border */
+    overflow-x: hidden; // Disable horizontal scroll
+    padding-top: 60px; // Place content 60px from the top
+    transition: 0.5s; // 0.5 second transition effect to slide in the side-nav
+    margin-right: -2px; // Account for 2px border
 
     &.open {
         width: 250px;
@@ -46,15 +46,15 @@
     position: fixed;
     right: 0;
     top: 50%;
-    z-index: 11; /* Stay on top */
+    z-index: 11; // Stay on top
     cursor: pointer;
     background: $c-pallette-transp-heavy;
     border: 1px solid $c-pallette-transp-medium;
     border-right: none;
-    margin-right: -3px; /* Account for 1px + 2px border */
+    margin-right: -3px; // Account for 1px + 2px border
     border-bottom-left-radius: 10%;
     border-top-left-radius: 10%;
-    transition: 0.5s; /* 0.5 second same time as the side-nav */
+    transition: 0.5s; // 0.5 second same time as the side-nav
 
     &:hover {
         color: $c-pallette-accent;
@@ -64,7 +64,7 @@
         right: 250px;
     }
 
-    &>i {
+    & > i {
         padding: 12px;
         font-size: 50px;
     }
@@ -77,12 +77,17 @@
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
-    transition: margin-left .5s;
+    transition: margin-left 0.5s;
     padding: 20px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the side-nav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-    .side-nav {padding-top: 15px;}
-    .side-nav a {font-size: 14px;}
+    .side-nav {
+        padding-top: 15px;
+    }
+
+    .side-nav a {
+        font-size: 14px;
+    }
 }

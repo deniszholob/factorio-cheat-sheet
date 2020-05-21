@@ -1,13 +1,14 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
 
     <div class="row align-items-center">
-                <p class="col-12 col-sm-4 text-center">
+        <p class="col-12 col-sm-4 text-center">
             <span class="text-muted">Simple Build Ratio</span><br>
             <ng-container *ngFor="let item of sheetData?.simpleRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
             <i class="fas fa-long-arrow-alt-right text-muted"></i>
-            <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i> <sub style="vertical-align: baseline"><strong>{{sheetData?.simpleRatioPower}}</strong></sub>
+            <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+            <sub style="vertical-align: baseline"><strong>{{sheetData?.simpleRatioPower}}</strong></sub>
         </p>
 
         <p class="col-12 col-sm-4 text-center">
@@ -16,7 +17,8 @@
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
             <i class="fas fa-long-arrow-alt-right text-muted"></i>
-            <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i> <sub style="vertical-align: baseline"><strong>{{sheetData?.commonRatioPower}}</strong></sub>
+            <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+            <sub style="vertical-align: baseline"><strong>{{sheetData?.commonRatioPower}}</strong></sub>
         </p>
 
         <p class="col-12 col-sm-4 text-center">
@@ -25,18 +27,21 @@
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
             <i class="fas fa-long-arrow-alt-right text-muted"></i>
-            <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i> <sub style="vertical-align: baseline"><strong>{{sheetData?.pumpRatioPower}}</strong></sub>
+            <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+            <sub style="vertical-align: baseline"><strong>{{sheetData?.pumpRatioPower}}</strong></sub>
         </p>
     </div>
 
-    <p class="text-muted text-center"><strong>Note:</strong> Pumps and Steam Turbines are rounded up for build ratios. See table for precise numbers.</p>
+    <p class="text-muted text-center"><strong>Note:</strong>
+        Pumps and Steam Turbines are rounded up for build ratios. See table for precise numbers.</p>
 
     <hr>
     <h4 class="card-title">Summary</h4>
 
     <ul>
         <li>
-            One uranium fuel cell will <a href="https://wiki.factorio.com/Nuclear_reactor" target="_blank" rel="noopener">always last</a> 200s,
+            One uranium fuel cell will
+            <a href="https://wiki.factorio.com/Nuclear_reactor" target="_blank" rel="noopener">always last</a> 200s,
             even if the produced heat does not get consumed,
             so the rest of the energy is wasted if not used.
         </li>
@@ -64,7 +69,8 @@
     <div class="row align-items-center">
         <div class="col-12 col-md-9">
             <p class="text-left">You will need about 1 centrifuge to produce U-235 to make fuel for 1 Reactor continuously.</p>
-            <p>It takes 1 U-235 and 19 U-238 to create 10 <a href="https://wiki.factorio.com/Uranium_fuel_cell" target="_blank" rel="noopener">fuel cells</a>, but you can reprocess 10 used up fuel cells for 6 U-238, making the ratio be 13 U-238 to 1 U-235.
+            <p>It takes 1 U-235 and 19 U-238 to create 10 <a href="https://wiki.factorio.com/Uranium_fuel_cell" target="_blank" rel="noopener">fuel cells</a>,
+                but you can reprocess 10 used up fuel cells for 6 U-238, making the ratio be 13 U-238 to 1 U-235.
             </p>
         </div>
 
