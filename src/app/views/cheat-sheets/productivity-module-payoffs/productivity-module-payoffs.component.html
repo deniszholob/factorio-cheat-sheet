@@ -18,12 +18,12 @@
     <table cdk-table [dataSource]="dataOnPage$" class="table table-sm table-hover fixed-width text-center">
         <!-- Column product -->
         <ng-container cdkColumnDef="product">
-                <th cdk-header-cell *cdkHeaderCellDef> Product </th>
-                <td cdk-cell *cdkCellDef="let data">
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon(data.product)">
-                    </app-factorio-icon>
-                </td>
-            </ng-container>
+            <th cdk-header-cell *cdkHeaderCellDef> Product </th>
+            <td cdk-cell *cdkCellDef="let data">
+                <app-factorio-icon [icon]="dataService.getFactorioIcon(data.product)">
+                </app-factorio-icon>
+            </td>
+        </ng-container>
 
         <!-- Column payoff_speed_prod -->
         <ng-container cdkColumnDef="payoff_speed_prod">
@@ -79,6 +79,7 @@
             <td cdk-cell *cdkCellDef="let data">{{ data.payoff_beacon_12 | time }}</td>
         </ng-container>
 
+        <!-- Header and Row Declarations -->
         <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
         <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
     </table>

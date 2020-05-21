@@ -1,5 +1,5 @@
-<div id="mySidenav" class="sidenav" [class.open]="isNavOpen">
-    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+<div id="mySidenav" class="side-nav" [class.open]="isNavOpen">
+    <a href="javascript:void(0)" class="close-btn" (click)="closeNav()">&times;</a>
     <div class="row">
         <div class="col-6 text-center">
             <button class="btn btn-primary" (click)="collapseAllSheets()">Collapse All</button>
@@ -13,7 +13,7 @@
     <a href="#Annex" (click)="closeNav()">Annex</a>
 </div>
 
-<!-- Use any element to open the sidenav -->
+<!-- Use any element to open the side-nav -->
 <div (click)="toggleNav()" class="nav-opener" [class.closed]="isNavOpen">
     <i class="fas fa-angle-right" [class.d-none]="!isNavOpen"></i>
     <i class="fas fa-angle-left" [class.d-none]="isNavOpen"></i>

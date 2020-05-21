@@ -1,7 +1,7 @@
 /* https://www.w3schools.com/howto/howto_js_sidenav.asp */
 
 /* The side navigation menu */
-.sidenav {
+.side-nav {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
@@ -12,7 +12,7 @@
     border: 1px solid $c-pallette-transp-medium;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the side-nav */
     margin-right: -2px; /* Account for 2px border */
 
     &.open {
@@ -33,7 +33,7 @@
     }
 
     /* Position and style the close button (top right corner) */
-    .closebtn {
+    .close-btn {
         position: absolute;
         top: 0;
         right: 25px;
@@ -54,7 +54,7 @@
     margin-right: -3px; /* Account for 1px + 2px border */
     border-bottom-left-radius: 10%;
     border-top-left-radius: 10%;
-    transition: 0.5s; /* 0.5 second same time as the sidenav */
+    transition: 0.5s; /* 0.5 second same time as the side-nav */
 
     &:hover {
         color: $c-pallette-accent;
@@ -71,7 +71,7 @@
 }
 
 /* When you mouse over the navigation links, change their color */
-.sidenav a:hover, .offcanvas a:focus{
+.side-nav a:hover {
     color: $c-pallette-accent;
 }
 
@@ -81,8 +81,8 @@
     padding: 20px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+/* On smaller screens, where height is less than 450px, change the style of the side-nav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 14px;}
+    .side-nav {padding-top: 15px;}
+    .side-nav a {font-size: 14px;}
 }

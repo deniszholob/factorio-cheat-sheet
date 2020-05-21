@@ -7,6 +7,7 @@ import { DataService } from 'app/services/data.service';
 // Models
 import { Data } from 'app/services/data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { TrainColorsData, TrainColor } from 'app/definitions/TrainColors';
 
 // Constants
 const dataFile = 'train-colors';
@@ -17,11 +18,12 @@ const dataFile = 'train-colors';
     // styleUrls: ['./train-colors.component.scss'] // Enable as needed
 })
 export class TrainColorsComponent implements OnInit {
-    cheatSheet: CheatSheet;
-    sheetData: any;
+    public cheatSheet: CheatSheet;
+    private sheetData: TrainColorsData;
+    public displayedData: TrainColor[];
 
     constructor(
-        public dataService: DataService
+        public dataService: DataService,
     ) { }
 
     ngOnInit() {
@@ -29,6 +31,7 @@ export class TrainColorsComponent implements OnInit {
             (result: Data) => {
                 this.cheatSheet = result.cheatSheet;
                 this.sheetData = result.data;
+                this.filter('');
             },
             error => {
                 console.log(error);
@@ -36,8 +39,18 @@ export class TrainColorsComponent implements OnInit {
         );
     }
 
-    getColorStyle(rgb: number[]) {
+    public getColorStyle(rgb: number[]) {
         return { 'background-color': 'rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ')' };
+    }
+
+    public filter(value: string): void {
+        this.displayedData = this.sheetData.trainColors.filter((color: TrainColor) => {
+            const val = value.toLowerCase();
+            return color.type.toLowerCase().includes(val) ||
+                color.rgb[0].toString().includes(val) ||
+                color.rgb[1].toString().includes(val) ||
+                color.rgb[2].toString().includes(val);
+        });
     }
 
 }

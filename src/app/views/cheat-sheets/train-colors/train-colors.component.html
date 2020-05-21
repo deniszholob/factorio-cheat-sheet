@@ -1,10 +1,13 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
+
     <table class="table table-sm table-hover fixed-width">
         <caption class="text-center">
             Suggested
-            <a href="https://www.reddit.com/r/factorio/comments/5e3uuf/what_is_your_color_scheme_for_trains/" target="_blank" rel="noopener">
+            <a href="https://www.reddit.com/r/factorio/comments/5e3uuf/what_is_your_color_scheme_for_trains/"
+                target="_blank" rel="noopener">
                 locomotive colors
             </a> based on cargo
+            <input class="form-control hide-print" type="text" placeholder="Filter" #filterInput (keyup)="filter(filterInput.value)" />
         </caption>
         <thead class="text-left">
             <tr>
@@ -20,7 +23,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of sheetData?.trainColors">
+            <caption *ngIf="!displayedData || displayedData.length === 0" class="d-flex hide-print">Nothing found.</caption>
+            <tr *ngFor="let item of displayedData">
                 <td>
                     <app-factorio-icon [icon]="dataService.getFactorioIcon(item.icon)"></app-factorio-icon>
                     {{item?.type}}
