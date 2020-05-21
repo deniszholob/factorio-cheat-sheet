@@ -13,10 +13,10 @@
     .section:not(:last-child) {
         page-break-after: always;
     }
-    .cheatsheet-pages>*:not(:first-child) {
+    .cheat-sheet-pages>*:not(:first-child) {
         page-break-before: always;
     }
-    .cheatsheet {
+    .cheat-sheet {
         page-break-inside: auto;
         display: block;
         overflow: visible;
@@ -59,7 +59,7 @@
         page-break-after: avoid;
     }
     /* Hiding unnecessary elements for the print */
-    .sidenav,
+    .side-nav,
     .nav-opener {
         display: none;
     }
@@ -119,5 +119,8 @@
     .table-bordered td,
     .table-bordered th {
         border: 1px solid $c-pallette-neutral2 !important;
+    }
+    .hide-print {
+        display: none !important;
     }
 }

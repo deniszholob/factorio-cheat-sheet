@@ -9,12 +9,13 @@
     <ul>
         <li>
             The <kbd>Alt</kbd> key will reveal detailed information on entities,
-            this is also toggleable in the
+            this is also can be toggled in the
             <a href="https://wiki.factorio.com/Shortcut_bar" target="_blank" rel="noopener">shortcut bar</a>
         </li>
         <li>
             The <kbd>MMB</kbd> will clear an item in the
-            <a href="https://wiki.factorio.com/Quickbar" target="_blank" rel="noopener">quick bar</a>.
+            <a href="https://wiki.factorio.com/Quickbar" target="_blank" rel="noopener">quick bar</a>,
+            and can set filters in cargo wagons and your inventory. <small>(<kbd>CMD+RMB</kbd> on macOS.)</small>
         </li>
         <li>
             You can rotate entities with <kbd>R</kbd>,
@@ -29,8 +30,8 @@
             to place a ghost of the item (single entity blueprint).
         </li>
         <li>
-            <kbd>Shift+RightClick</kbd> will copy entity configurations,
-            <kbd>Shift+LeftClick</kbd> will paste them.
+            <kbd>Shift+RMB</kbd> will copy entity configurations,
+            <kbd>Shift+LMB</kbd> will paste them.
             <ul>
                 <li>This works for: filter inserters, assemblers, requester chests, combinators, etc...</li>
                 <li>You can paste across multiple entities by dragging.</li>
@@ -38,6 +39,7 @@
                     You can copy from assemblers into requester chests
                     (requests the required amount to craft 30 seconds worth of the item production).
                 </li>
+                <li>You can copy individual slots (inventory, cargo wagon)</li>
             </ul>
         </li>
         <li>Placing over ghosts will preserve the recipes</li>
@@ -50,6 +52,7 @@
         <li>
             You can use standard <kbd>CTRL+C</kbd>, <kbd>CTRL+V</kbd>,
             <kbd>CTRL+X</kbd>, <kbd>CTRL+Z</kbd> commands to copy, paste, cut and undo your builds.
+            <small>(<kbd>CMD</kbd> vs <kbd>CTRL</kbd> on macOS.)</small>
         </li>
         <li>You can move science packs between labs with inserters.</li>
         <li>
@@ -69,17 +72,13 @@
             (such as landfill or concrete).
         </li>
         <li>Trains snap into position when placed at train stations.</li>
-        <li>
-            You can build rails outside your normal build range
-            as long as you start inside the range.
-        </li>
-        <li>Clear Blueprint or Deconstruction Planner Filters by <kbd>Shift+RightClick</kbd></li>
+        <li>Clear Blueprint or Deconstruction Planner Filters by <kbd>Shift+RMB</kbd></li>
         <li>
             For <strong>Lazy Bastard Achievement</strong> Open Console,
             type <kbd>/permissions</kbd>, Disable <i>Craft</i>.
         </li>
         <li>
-            Map ping tags can be created by <kbd>Shift+LeftClick</kbd> the ground/map.
+            Map ping tags can be created by <kbd>Shift+LMB</kbd> the ground/map.
         </li>
         <li>
             Rich text "<i>[item=iron-plate]</i>" is displayed as the iron plate icon.
@@ -105,7 +104,7 @@
     <div class="row align-items-center justify-content-around">
         <div class="col-6 col-lg-4 col-print-4 text-center">
             <strong>Underground belts can be side loaded</strong><br>
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('belt-tip-sideload.png')}}" class="img-fluid rounded limit-img-height" alt="Side Load Underground" title="Side Load Underground">
+            <img src="{{APP_SETTINGS.links.getLocalImagePath('belt-tip-side-load.png')}}" class="img-fluid rounded limit-img-height" alt="Side Load Underground" title="Side Load Underground">
         </div>
         <div class="col-6 col-lg-4 col-print-4 text-center">
             <strong>Splitters can filter items</strong><br>
