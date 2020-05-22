@@ -4,6 +4,12 @@
 
 @import "variables";
 
+.d-block-not-print,
+.d-inline-block-not-print,
+.d-inline-not-print {
+    display: none;
+}
+
 @media print {
     /** Setting margins */
     @page {
@@ -151,7 +157,16 @@
         border: 1px solid $c-pallette-neutral2 !important;
     }
 
-    .hide-print {
+    .d-none-print {
         display: none !important;
+    }
+    .d-block-not-print {
+        display: block !important;
+    }
+    .d-inline-block-not-print {
+        display: inline-block !important;
+    }
+    .d-inline-not-print {
+        display: inline !important;
     }
 }

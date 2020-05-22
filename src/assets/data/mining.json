@@ -3,48 +3,49 @@
         "title": "Mining",
         "icon": "Electric_mining_drill"
     },
-    "data": [
-        {
-            "materials": [
-                "Copper_ore",
-                "Iron_ore",
-                "Coal",
-                "Stone"
-            ],
-            "miningRate": {
-                "miner": "Burner_mining_drill",
-                "rate": 0.25
+    "data": {
+        "prodBonusPercent": 10,
+        "drills": [
+            {
+                "id": "Burner_mining_drill",
+                "miningSpeed": 0.25
             },
-            "beltYellow": 60,
-            "beltRed": 120,
-            "beltBlue": 180
-        },
-        {
-            "materials": [
-                "Copper_ore",
-                "Iron_ore",
-                "Coal",
-                "Stone"
-            ],
-            "miningRate": {
-                "miner": "Electric_mining_drill",
-                "rate": 0.5
+            {
+                "id": "Electric_mining_drill",
+                "miningSpeed": 0.50
+            }
+        ],
+        "ores": [
+            {
+                "id": "Copper_ore",
+                "miningTime": 1,
+                "burnerMiningDrill": true,
+                "electricMiningDrill": true
             },
-            "beltYellow": 30,
-            "beltRed": 60,
-            "beltBlue": 90
-        },
-        {
-            "materials": [
-                "Uranium_ore"
-            ],
-            "miningRate": {
-                "miner": "Electric_mining_drill",
-                "rate": 0.25
+            {
+                "id": "Iron_ore",
+                "miningTime": 1,
+                "burnerMiningDrill": true,
+                "electricMiningDrill": true
             },
-            "beltYellow": 60,
-            "beltRed": 120,
-            "beltBlue": 180
-        }
-    ]
+            {
+                "id": "Coal",
+                "miningTime": 1,
+                "burnerMiningDrill": true,
+                "electricMiningDrill": true
+            },
+            {
+                "id": "Stone",
+                "miningTime": 1,
+                "burnerMiningDrill": true,
+                "electricMiningDrill": true
+            },
+            {
+                "id": "Uranium_ore",
+                "miningTime": 2,
+                "burnerMiningDrill": false,
+                "electricMiningDrill": true
+            }
+        ]
+    }
 }
