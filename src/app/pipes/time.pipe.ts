@@ -1,9 +1,7 @@
-// Angulare
+// Angular
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({
-    name: 'time'
-})
+@Pipe({ name: 'time' })
 export class TimePipe implements PipeTransform {
     private time_units = 'smhdMY';
 
