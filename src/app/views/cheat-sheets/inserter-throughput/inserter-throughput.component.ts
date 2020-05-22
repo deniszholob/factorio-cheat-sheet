@@ -15,7 +15,7 @@ const dataFile = 'inserter-throughput';
 @Component({
     selector: 'app-inserter-throughput',
     templateUrl: './inserter-throughput.component.html',
-    // styleUrls: ['./inserter-throughput.component.scss'] // Enable as needed
+    styleUrls: ['./inserter-throughput.component.scss'] // Enable as needed
 })
 export class InserterThroughputComponent implements OnInit {
     cheatSheet: CheatSheet;

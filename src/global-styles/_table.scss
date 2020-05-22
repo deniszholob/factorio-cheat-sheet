@@ -5,6 +5,11 @@ table,
     caption {
         caption-side: top;
         text-align: center;
+        padding: 5px 0;
+
+        .input-group {
+            margin-top: 5px;
+        }
     }
 
     thead.text-center > tr > th {

@@ -13,21 +13,18 @@
         Inserters Required = (Target Item Rate) / (Inserter Throughput)
     </kbd></p>
 
-    <table class="table table-sm table-hover fixed-width" style="max-width: 800px;">
-        <caption class="text-center">Inserter Throughtput <span class="d-inline-block d-sm-none">(i/s)</span></caption>
+    <table class="table table-sm table-hover fixed-width">
+        <caption class="text-center">
+            Inserter Throughput <span class="d-inline-block d-sm-none">(i/s)</span>
+
+            <div class="input-group d-none-print fixed-width">
+                <span class="input-group-addon">Inserter Bonus Level</span>
+                <select class="form-control" type="number" [(ngModel)]="bonusLevel" (ngModelChange)="updateTable()">
+                    <option *ngFor="let level of bonusLevels" [ngValue]="level">{{level}}</option>
+                </select>
+            </div>
+        </caption>
         <thead class="text-center">
-            <tr>
-                <th colspan="6">
-                    <div class="merged-input-group mx-auto" style="max-width:230px">
-                        <div class="input-group">
-                            <span class="input-group-addon">Inserter Bonus Level</span>
-                            <select class="form-control" type="number" [(ngModel)]="bonusLevel" (ngModelChange)="updateTable()">
-                                <option *ngFor="let level of bonusLevels" [ngValue]="level">{{level}}</option>
-                            </select>
-                        </div>
-                    </div>
-                </th>
-            </tr>
             <tr>
                 <th></th>
                 <th>Stack Size</th>
