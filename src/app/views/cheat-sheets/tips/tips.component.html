@@ -104,15 +104,16 @@
     <div class="row align-items-center justify-content-around">
         <div class="col-6 col-lg-4 col-print-4 text-center">
             <strong>Underground belts can be side loaded</strong><br>
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('belt-tip-side-load.png')}}" class="img-fluid rounded limit-img-height" alt="Side Load Underground" title="Side Load Underground">
+            <img [lazyLoad]="APP_SETTINGS.links.getLocalImagePath('belt-tip-side-load.png')" class="img-fluid rounded limit-img-height" alt="Side Load Underground" title="Side Load Underground">
         </div>
         <div class="col-6 col-lg-4 col-print-4 text-center">
             <strong>Splitters can filter items</strong><br>
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('belt-tip-filter.png')}}" class="img-fluid rounded limit-img-height" alt="Splitter Filter" title="Splitter Filter">
+            <img [lazyLoad]="APP_SETTINGS.links.getLocalImagePath('belt-tip-filter.png')"
+                class="img-fluid rounded limit-img-height" alt="Splitter Filter" title="Splitter Filter">
         </div>
         <div class="col-6 col-lg-4 col-print-4 text-center">
             <strong>Belts can be woven</strong><br>
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('belt-weaving.png')}}" class="img-fluid rounded limit-img-height" alt="Splitter Filter" title="Splitter Filter">
+            <img [lazyLoad]="APP_SETTINGS.links.getLocalImagePath('belt-weaving.png')" class="img-fluid rounded limit-img-height" alt="Splitter Filter" title="Splitter Filter">
         </div>
     </div>
 

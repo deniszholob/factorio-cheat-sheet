@@ -51,7 +51,8 @@
 
         <div class="col-12 col-md-6 text-center">
             <p>All belts can hold up to <strong>{{ sheetData?.belt_density }} items</strong> on each tile.</p>
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('belt-signal-circuit.png')}}" class="img-fluid rounded" alt="Transport Belt Signal" title="Transport Belt Signal">
+            <img [lazyLoad]="APP_SETTINGS.links.getLocalImagePath('belt-signal-circuit.png')"
+                class="img-fluid rounded" alt="Transport Belt Signal" title="Transport Belt Signal">
         </div>
     </div>
 </app-cheat-sheet>
