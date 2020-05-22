@@ -2,9 +2,10 @@
     <div class="row align-items-center">
         <div class="col-12 col-lg-6">
             <ul>
-                <li><a href="https://wiki.factorio.com/Mining" target="_blank" rel="noopener">Mining speed</a> relies on more variables than most other machinery.</li>
-                <li>Ores have a <i>mining time</i>, and miners have <i>mining speed</i>.</li>
-                <li>Luckily, many of ores’ values are the same, so things aren’t as complicated as they could be.</li>
+                <li>
+                    <a href="https://wiki.factorio.com/Mining" target="_blank" rel="noopener">Mining rate</a>
+                    relies on drill <i>mining speed</i> and ore <i>mining time</i>.
+                </li>
                 <li>See various <a href="https://imgur.com/a/Imfhz" target="_blank" rel="noopener">mining arrangements</a> with varying mining coverage.</li>
                 <li><a href="https://wiki.factorio.com/Mining_productivity_(research)" target="_blank" rel="noopener">Mining productivity</a> research increases the output of all mining drills and pumpjacks.</li>
                 <li>Refer to an <a href="https://kirkmcdonald.github.io/calc.html#data=0-17-1&mprod=10&items=iron-ore:r:15" target="_blank" rel="noopener">online calculator</a> for more information on productivity bonuses. <span class="text-muted small">Note mining productivity bonus on settings page</span></li>
@@ -23,7 +24,14 @@
         </div>
         <div class="col-12 col-lg-6">
             <table class="table table-sm table-hover fixed-width">
-                <caption class="text-center">Miners needed to fill a belt*</caption>
+                <caption class="text-center">
+                    Miners needed to fill a belt <span class="d-inline-not-print">*</span>
+                    <div class="input-group d-none-print fixed-width">
+                        <span class="input-group-addon">Prod lvl</span>
+                        <input class="form-control" type="number" [(ngModel)]="prodBonusLevel" min="{{inputMin}}" step="{{inputStep}}" (change)="updateTable()" (keyup)="updateTable()" (mouseup)="inputChange()">
+                        <span class="input-group-addon">Productivity {{productivityPercent | number:'1.0-0'}}%</span>
+                    </div>
+                </caption>
                 <thead class="text-center">
                     <tr>
                         <th>Ore</th>
@@ -41,24 +49,25 @@
                     </tr>
                 </thead>
                 <tbody class="text-center">
-                    <tr *ngFor="let item of sheetData; let idx=index">
-                        <td *ngIf="idx%2 == 0" rowspan="2">
+                    <tr *ngFor="let item of miningRateTable; let idx=index">
+                        <!-- <td *ngIf="idx%2 == 0" rowspan="2"> -->
+                        <td *ngIf="item.rowspan !==0" [attr.rowspan]="item.rowspan">
                             <app-factorio-icon *ngFor="let iconId of item.materials" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
                         </td>
                         <td>
                             <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.miningRate?.miner)"></app-factorio-icon>
                         </td>
-                        <td>{{item?.beltYellow}}</td>
-                        <td>{{item?.beltRed}}</td>
-                        <td>{{item?.beltBlue}}</td>
+                        <td>{{item?.beltYellow | ceiling }}</td>
+                        <td>{{item?.beltRed | ceiling }}</td>
+                        <td>{{item?.beltBlue | ceiling }}</td>
                         <td class="text-right">{{item?.miningRate?.rate | number:'1.2-2'}} i/s</td>
                     </tr>
                 </tbody>
             </table>
             <p class="text-center">
-                <kbd>Miners = Belt Throughput / Mining Rate</kbd>
+                <kbd>Miners = Belt Throughput / Mining Rate * Productivity</kbd>
                 <br>
-                <span class="text-muted small">* Assuming no mining productivity bonus</span>
+                <span class="text-muted small d-inline-not-print">* Assuming no mining productivity bonus</span>
             </p>
         </div>
     </div>

@@ -7,7 +7,9 @@
                 target="_blank" rel="noopener">
                 locomotive colors
             </a> based on cargo
-            <input class="form-control hide-print" type="text" placeholder="Filter" #filterInput (keyup)="filter(filterInput.value)" />
+            <div class="input-group">
+                <input class="form-control d-none-print" type="text" placeholder="Filter" #filterInput (keyup)="filter(filterInput.value)" />
+            </div>
         </caption>
         <thead class="text-left">
             <tr>
@@ -23,7 +25,7 @@
             </tr>
         </thead>
         <tbody>
-            <caption *ngIf="!displayedData || displayedData.length === 0" class="d-flex hide-print">Nothing found.</caption>
+            <caption *ngIf="!displayedData || displayedData.length === 0" class="d-flex d-none-print">Nothing found.</caption>
             <tr *ngFor="let item of displayedData">
                 <td>
                     <app-factorio-icon [icon]="dataService.getFactorioIcon(item.icon)"></app-factorio-icon>

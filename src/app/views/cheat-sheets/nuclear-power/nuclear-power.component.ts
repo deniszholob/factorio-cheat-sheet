@@ -62,7 +62,7 @@ export class NuclearPowerComponent implements OnInit {
     }
 
     /** Makes sure the value changes before running calculations
-     *  Mostly for the mouse click event, since the change event is not registering the tick change untill mouse moves.
+     *  Mostly for the mouse click event, since the change event is not registering the tick change until mouse moves.
      */
     inputChange() {
         if (this.reactorInfoCount !== this.reactorInfoCountChanged) {
