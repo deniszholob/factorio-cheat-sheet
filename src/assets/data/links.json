@@ -6,12 +6,12 @@
     "data": {
         "officialLinks": [
             {
-                "url": "http://factorio.com",
+                "url": "https://factorio.com",
                 "text": "Factorio",
                 "caption": "The official website"
             },
             {
-                "url": "http://wiki.factorio.com",
+                "url": "https://wiki.factorio.com",
                 "text": "Factorio Wiki",
                 "caption": "More in depth info."
             },
@@ -63,7 +63,7 @@
                         "text": "Teoxoy’s Blueprints"
                     },
                     {
-                        "url": "http://forums.factorio.com/viewtopic.php?f=194&t=46855",
+                        "url": "https://forums.factorio.com/viewtopic.php?f=194&t=46855",
                         "text": "Train Intersections"
                     },
                     {
@@ -105,7 +105,7 @@
                         "text": "Interactive Tech Tree Viewer"
                     },
                     {
-                        "url": "http://autotorio.com/blueprint",
+                        "url": "https://autotorio.com/blueprint",
                         "text": "Blueprint Modifier & Ore and oil outpost generator"
                     },
                     {
@@ -130,7 +130,7 @@
                         "text": "Beginner First 30 minutes"
                     },
                     {
-                        "url": "http://steamcommunity.com/sharedfiles/filedetails/?id=862972621",
+                        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=862972621",
                         "text": "Smelting"
                     },
                     {
