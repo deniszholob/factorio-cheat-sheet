@@ -70,6 +70,7 @@ import * as SheetComponents from 'app/views/cheat-sheets';
         SheetComponents.TipsComponent,
         SheetComponents.TrainColorsComponent,
         SheetComponents.VehicleFuelBonusComponent,
+        Pipes.CeilingPipe,
         Pipes.TimePipe,
     ],
     // Services

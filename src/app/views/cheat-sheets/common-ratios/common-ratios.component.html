@@ -9,15 +9,15 @@
         <br>
     </p>
 
-    <div class="text-center">
-        <span class="text-muted">Machine speeds</span>
-        <div>
+    <p class="text-center">
+        <span class="text-muted d-inline-block">Machine speeds</span>
+        <span class=" d-block">
             <ng-container *ngFor="let machine of sheetData?.machineCraftSpeed">
                 <app-factorio-icon class="mx-2" *ngIf="machine.iconId" [icon]="dataService.getFactorioIcon(machine?.iconId, machine?.speed)">
                 </app-factorio-icon>
             </ng-container>
-        </div>
-    </div>
+        </span>
+    </p>
 
     <p class="card-text">
         <strong>For example:</strong> To make rails,
