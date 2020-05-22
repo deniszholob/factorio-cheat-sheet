@@ -17,7 +17,7 @@
                 "underground_distance": 4
             },
             {
-                "tier": 3,
+                "tier": 2,
                 "icons": [
                     "Fast_transport_belt",
                     "Fast_underground_belt",
@@ -27,7 +27,7 @@
                 "underground_distance": 6
             },
             {
-                "tier": 2,
+                "tier": 3,
                 "icons": [
                     "Express_transport_belt",
                     "Express_underground_belt",
