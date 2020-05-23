@@ -17,7 +17,7 @@ html {
 
 body {
     /* Margin bottom by footer height */
-    margin-bottom: 60px;
+    // margin-bottom: 60px;
 }
 
 html,
@@ -32,9 +32,9 @@ body {
 
 footer,
 .footer {
-    position: absolute;
+    // position: absolute;
     bottom: 0;
-    width: 100%;
+    // width: 100%;
     /* Set the fixed height of the footer here */
     height: 60px;
     background-color: $c-pallette-transp-heavy;
@@ -130,4 +130,12 @@ img {
 
 .full-width {
     width: 100%;
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the side-nav (less padding and a smaller font size) */
+@media screen and (min-width: 1366px) {
+    .section-nav-margin {
+        margin-right: 250px;
+    }
 }
