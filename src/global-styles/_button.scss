@@ -19,6 +19,20 @@
         background-color: $c-pallette-accent-dark;
         border-color: $c-pallette-accent-dark;
     }
+
+    &:not(:disabled):not(.disabled).active,
+    &:not(:disabled):not(.disabled):active {
+        box-shadow: 0 0 0 3px rgba(255, 120, 0, 0.5);
+        background-color: $c-pallette-neutral-dark;
+        border-color: $c-pallette-accent-dark;
+    }
+
+    &.focus,
+    &:focus,
+    &:not(:disabled):not(.disabled).active:focus,
+    &:not(:disabled):not(.disabled):active:focus {
+        box-shadow: 0 0 0 3px rgba(255, 120, 0, 0.5);
+    }
 }
 
 .btn-primary {
@@ -35,12 +49,23 @@
 
     &.focus,
     &:focus {
-        box-shadow: 0 0 0 3px rgba(255, 120, 0, 0.5);
+        color: $c-pallette-neutral-dark;
     }
 
-    &:active,
-    &.active {
+    &.focus,
+    &:focus,
+    &:not(:disabled):not(.disabled).active,
+    &:not(:disabled):not(.disabled):active {
+        box-shadow: 0 0 0 3px rgba(255, 120, 0, 0.5);
         background-color: $c-pallette-accent-dark;
         border-color: $c-pallette-accent-dark;
+    }
+
+
+    &.focus,
+    &:focus,
+    &:not(:disabled):not(.disabled).active:focus,
+    &:not(:disabled):not(.disabled):active:focus {
+        box-shadow: 0 0 0 3px rgba(255, 120, 0, 0.5);
     }
 }

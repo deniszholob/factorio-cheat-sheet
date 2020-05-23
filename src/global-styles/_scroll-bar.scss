@@ -1,16 +1,19 @@
+$sb-radius: 5px;
+
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px $c-pallette-transp-light;
-    border-radius: 10px;
+    box-shadow: inset 0 0 6px $c-pallette-transp-light;
+    border-radius: $sb-radius;
     background-color: $c-pallette-neutral;
 }
 
 ::-webkit-scrollbar {
+    border-radius: $sb-radius;
     width: 12px;
     background-color: $c-pallette-neutral;
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px $c-pallette-transp-light;
+    border-radius: $sb-radius;
+    box-shadow: inset 0 0 6px $c-pallette-transp-light;
     background-color: $c-pallette-accent-dark;
 }

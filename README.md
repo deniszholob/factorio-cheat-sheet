@@ -5,9 +5,7 @@ If you would like to contribute to the cheat sheet code/content, see `contributi
 
 ![Factorio Cheat Sheet](src/assets/icons/factorio-cheat-sheet-splash.png)
 
-## Deployments
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c54d4183-8c73-4d84-ab40-586fa2774790/deploy-status)](https://app.netlify.com/sites/factoriocheatsheet/deploys)
-[![Build Status](https://travis-ci.org/deniszholob/factorio-cheat-sheet.svg?branch=master)](https://travis-ci.org/deniszholob/factorio-cheat-sheet)
+## Deployments [![Build Status](https://travis-ci.com/deniszholob/factorio-cheat-sheet.svg?branch=master)](https://travis-ci.com/deniszholob/factorio-cheat-sheet)
 
 * [Master Deployment](https://factoriocheatsheet.com/)
 * Master branch is for the source code that's hosted [here](https://deniszholob.github.io/factorio-cheat-sheet/).
