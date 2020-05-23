@@ -1,6 +1,8 @@
 /* https://www.w3schools.com/howto/howto_js_sidenav.asp */
 
 /* The side navigation menu */
+$nav-width: 250px;
+
 .side-nav {
     height: 100%; // 100% Full-height
     width: 0; // 0 width - change this with JavaScript
@@ -8,15 +10,17 @@
     z-index: 10; // Stay on top
     top: 0;
     right: 0;
-    background-color: $c-pallette-transp-heavy; // Black
+    background-color: $c-pallette-transp-heavy; // Transp Black
     border: 1px solid $c-pallette-transp-medium;
-    overflow-x: hidden; // Disable horizontal scroll
-    padding-top: 60px; // Place content 60px from the top
+    margin-right: -2px; // Account for 2px border of the side-nav when open
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; // Disable parent scroll
     transition: 0.5s; // 0.5 second transition effect to slide in the side-nav
-    margin-right: -2px; // Account for 2px border
 
     &.open {
-        width: 250px;
+        width: $nav-width;
+        margin-right: 0;
     }
 
     /* The navigation menu links */
@@ -30,15 +34,27 @@
 
     button {
         white-space: nowrap;
+        width: 100%;
     }
 
     /* Position and style the close button (top right corner) */
     .close-btn {
-        position: absolute;
-        top: 0;
-        right: 25px;
+        text-align: right;
         font-size: 36px;
-        margin-left: 50px;
+        display: block;
+        margin-top: -15px; // Too much space with large font
+    }
+
+    .nav-header {
+        position: sticky;
+        top: 0;
+        padding: 5px 0;
+    }
+
+    .nav-contents {
+        overflow-y: auto;
+        overflow-x: hidden; // Disable horizontal scroll
+        margin-top: 5px;
     }
 }
 
@@ -55,13 +71,14 @@
     border-bottom-left-radius: 10%;
     border-top-left-radius: 10%;
     transition: 0.5s; // 0.5 second same time as the side-nav
+    margin-right: -2px; // Account for 2px border of the side-nav when open
 
     &:hover {
         color: $c-pallette-accent;
     }
 
     &.closed {
-        right: 250px;
+        right: $nav-width;
     }
 
     & > i {

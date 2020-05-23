@@ -1,5 +1,5 @@
 // Angular Imports
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 // Services
 import { DataService } from 'app/services/data.service';
@@ -14,8 +14,10 @@ const dataFile = 'nav';
     styleUrls: ['./nav.component.scss'] // Enable as needed
 })
 export class NavComponent implements OnInit {
-    isNavOpen: boolean;
-    sheetIds: string[];
+    public isNavOpen: boolean;
+    public sheetIds: string[];
+    private isUserOpen: boolean;
+    private maxWidthToKeepOpen = 1366; // In pixels, keep the same as breakpoint in styles.scss
 
     constructor(
         public dataService: DataService,
@@ -27,6 +29,7 @@ export class NavComponent implements OnInit {
         this.dataService.GET<Object>(dataFile).subscribe(
             (result: Object) => {
                 this.sheetIds = result['nav'];
+                this.onResize(null);
             },
             error => {
                 console.log(error);
@@ -35,17 +38,36 @@ export class NavComponent implements OnInit {
         this.closeNav();
     }
 
+    @HostListener('window:resize', ['$event'])
+    onResize(event) {
+        this.isNavOpen = this.isUserOpen || this.doKeepOpen();
+    }
+
+    doKeepOpen(): boolean {
+        return this.getViewportWidth() > this.maxWidthToKeepOpen;
+    }
+
+    private getViewportWidth(): number { return window.innerWidth; }
+
     /** Expand the sheet jumped to and close the nav */
     clickedLink(id: string) {
         this.sheetCollapseToggleService.expandId(id);
         this.closeNav();
     }
 
-    closeNav() { this.isNavOpen = false; }
+    closeNav() {
+        if (!this.doKeepOpen()) {
+            this.isNavOpen = false;
+            this.isUserOpen = this.isNavOpen;
+        }
+    }
 
     openNav() { this.isNavOpen = true; }
 
-    toggleNav() { this.isNavOpen = !this.isNavOpen; }
+    toggleNav() {
+        this.isNavOpen = !this.isNavOpen;
+        this.isUserOpen = this.isNavOpen;
+    }
 
     sheetName(id) {
         return this.dataService.toTitleCase(id.replace(/-/g, ' '));
