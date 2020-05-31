@@ -63,6 +63,10 @@
                         "text": "Teoxoy’s Blueprints"
                     },
                     {
+                        "url": "https://deniszholob.github.io/factorio-blueprints/",
+                        "text": "DDDGamer’s Blueprints"
+                    },
+                    {
                         "url": "https://forums.factorio.com/viewtopic.php?f=194&t=46855",
                         "text": "Train Intersections"
                     },
@@ -89,7 +93,7 @@
                     },
                     {
                         "url": "https://deniszholob.github.io/factorio-machine-ratio-calc/",
-                        "text": "Generic Ratio Calculator"
+                        "text": "Generic Machine Ratio Calculator"
                     },
                     {
                         "url": "https://calculatorio.com/train_acceleration/",
@@ -110,7 +114,7 @@
                     },
                     {
                         "url": "https://teoxoy.github.io/factorio-blueprint-editor/",
-                        "text": "Blueprint Editor"
+                        "text": "Blueprint Maker"
                     },
                     {
                         "url": "http://miditorio.com/",
