@@ -13,7 +13,7 @@ import { FactorioIcon } from 'app/shared/factorio-icon/factorio-icon.model';
 
 // Constants
 import { APP_SETTINGS } from 'app/shared/app-settings';
-const BASE_URL = './assets/data/';
+export const BASE_URL = './assets/data/';
 
 @Injectable()
 export class DataService {

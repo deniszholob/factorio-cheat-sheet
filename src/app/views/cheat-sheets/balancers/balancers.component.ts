@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { forkJoin } from 'rxjs';
 
 // Services
-import { DataService, ClipboardService } from 'app/services/index';
+import { DataService, ClipboardService, BASE_URL } from 'app/services/index';
 
 // Models
 import { Data } from 'app/services/data.model';
@@ -62,7 +62,7 @@ export class BalancersComponent implements OnInit {
         const streams = [];
         this.sheetData.table.forEach(blueprintBook => {
             this.tooltipMsgs.push(tooltip_Default);
-            streams.push(this.httpClientService.get(blueprintBook.url, { responseType: 'text' }));
+            streams.push(this.httpClientService.get(BASE_URL + blueprintBook.url, { responseType: 'text' }));
         });
         forkJoin(streams).subscribe(
             (response: string[]) => {
