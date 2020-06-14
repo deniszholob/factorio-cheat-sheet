@@ -1,10 +1,11 @@
 
 export interface TrainColorsData {
     trainColors: TrainColor[];
+    trainColorsGenerated: TrainColor[];
 }
 
 export interface TrainColor {
-    type: string;
-    rgb: number[];
     icon: string;
+    rgb: number[];
+    type?: string;
 }

@@ -72,6 +72,7 @@ import * as SheetComponents from 'app/views/cheat-sheets';
         SheetComponents.VehicleFuelBonusComponent,
         Pipes.CeilingPipe,
         Pipes.TimePipe,
+        Pipes.ReplacePipe,
     ],
     // Services
     providers: [
