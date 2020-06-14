@@ -18,6 +18,7 @@
             may not be able to provide maximum output due to bottlenecks in the design.
         </li>
     </ul>
+
     <hr>
     <div class="row">
         <div class="col-12 col-md-7 align-items-center text-center">
@@ -27,17 +28,52 @@
                 <img src="{{APP_SETTINGS.links.getLocalImagePath('balancer-4x4.png')}}" class="img-fluid rounded"
                     alt="4 lane Balancer" title="4 lane Balancer">
             </p>
-            <p>
+            <!-- <p>
                 <strong>Balanced 2 lane split</strong>
                 <br>
                 <img src="{{APP_SETTINGS.links.getLocalImagePath('balancer-4x4-split-off.png')}}" class="img-fluid rounded"
                     alt="balanced 2 lane split" title="balanced 2 lane split">
-            </p>
+            </p> -->
         </div>
+
         <div class="col-12 col-md-5">
+            <strong class="d-block text-center">Tips</strong>
+            <ul>
+                <li>Don't overuse balancers, use when needed.</li>
+                <li>
+                    It's generally recommended to make builds inherently balanced targeting a complete use of a lane.
+                </li>
+                <li>
+                    Balancers can still be useful regardless; most common are the
+                    <ng-template #tipContent>{{tooltipMsg}}</ng-template>
+                    <button class="btn btn-link txt-factorio-blue" (click)="copyBpString(blueprintStrings[0], tooltip)"
+                        [ngbTooltip]="tipContent" #tooltip="ngbTooltip" triggers="hover"
+                        [autoClose]="false" [disabled]="!sheetData?.commonBalancers[0].raw">
+                        <i class="fas fa-book"></i>
+                    </button>
+                    <a href="{{sheetData?.commonBalancers[0].url}}" target="_blank" rel="noopener">4<i class="fas fa-long-arrow-alt-right"></i>4</a> and
+                    <button class="btn btn-link txt-factorio-blue" (click)="copyBpString(blueprintStrings[1], tooltip)"
+                        [ngbTooltip]="tipContent" #tooltip="ngbTooltip" triggers="hover"
+                        [autoClose]="false" [disabled]="!sheetData?.commonBalancers[1].raw">
+                        <i class="fas fa-book"></i>
+                    </button>
+                    <a href="{{sheetData?.commonBalancers[1].url}}" target="_blank" rel="noopener">8<i class="fas fa-long-arrow-alt-right"></i>8</a> throughput unlimited.
+                </li>
+                <li>
+                    Being throughput unlimited input/output amount can vary thus those two cover most cases.
+                </li>
+                <li>
+                    There are lots more of designs available online such as
+                    <a href="https://pastebin.com/igs2CvVd" target="_blank" rel="noopener">Balancer Book</a> by
+                    <a href="https://www.reddit.com/u/raynquist/" target="_blank" rel="noopener">Raynquist</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-12 col-md-5 d-none">
             <table class="table table-sm table-hover fixed-width align-items-center text-center">
                 <caption>Sample <a href="https://gist.github.com/Bilka2/aeec4ff7123ff5544cb9a80cf1046a06" target="_blank" rel="noopener">
-                        Bilka's Balancer</a> Blueprints
+                        Bilka's Old Balancer Collection</a>
                 </caption>
                 <thead>
                     <tr>
@@ -49,12 +85,12 @@
                     <ng-template #tipContent_Source>Source</ng-template>
                     <tr *ngFor="let blueprintBook of sheetData?.table; let i=index">
                         <td class="text-left">
-                            <ng-template #tipContent>{{tooltipMsgs[i]}}</ng-template>
-                            <button class="btn btn-link txt-factorio-blue" (click)="copyBpString(blueprintBook.url, i)"
-                                [ngbTooltip]="tipContent" [autoClose]="false" [disabled]="!blueprintStrings[i]">
+                            <ng-template #tipContent>{{tooltipMsg}}</ng-template>
+                            <button class="btn btn-link txt-factorio-blue" (click)="copyBpString(i)"
+                                [ngbTooltip]="tipContent" [autoClose]="false" [disabled]="!blueprintTable[i]">
                                 <i class="fas fa-book"></i>
                             </button>
-                            <a href="{{blueprintBook.url}}" target="_blank" rel="noopener" [ngbTooltip]="tipContent_Source">
+                            <a href="{{'https://raw.githubusercontent.com/deniszholob/factorio-cheat-sheet/master/src/assets/data/' + blueprintBook.url}}" target="_blank" rel="noopener" [ngbTooltip]="tipContent_Source">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                             {{blueprintBook.name}}
@@ -77,21 +113,21 @@
         <div class="col-12 col-lg-6 col-print-6">
             <a href="https://imgur.com/gallery/Qtv6xHD" target="_blank" rel="noopener">Old wiki balancer page</a> screenshot
             <br>
-
-            <a href="https://www.reddit.com/r/factorio/comments/9y4zjl/standard_56_67_and_78_balancers_dont_quite/" target="_blank" rel="noopener">
-                More balancers
-            </a> from raynquist
+            <a href="https://gist.github.com/Bilka2/aeec4ff7123ff5544cb9a80cf1046a06" target="_blank" rel="noopener">Balancer Collection</a> from Bilka
             <br>
         </div>
         <div class="col-12 col-lg-6 col-print-6">
-            <a href="https://www.reddit.com/r/factorio/comments/9x3m14/i_couldnt_find_a_general_guide_to_balancers_so_i/" target="_blank" rel="noopener">
-                Balancer Guide
-            </a> by CptTrifonius
+            <a href="https://github.com/tzwaan/factorio_balancers" target="_blank" rel="noopener">
+                Balancer tool
+            </a> by tzwaan
             <br>
-
+            Balancer Guides by
+            <a href="https://www.reddit.com/r/factorio/comments/9x3m14/i_couldnt_find_a_general_guide_to_balancers_so_i/" target="_blank" rel="noopener">
+                CptTrifonius
+            </a> and
             <a href="https://forums.factorio.com/viewtopic.php?t=61424" target="_blank" rel="noopener">
-                Balancer Guide
-            </a> by EX_plode
+                EX_plode
+            </a>
         </div>
     </div>
 </app-cheat-sheet>

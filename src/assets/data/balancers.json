@@ -4,6 +4,18 @@
         "icon": "Fast_splitter"
     },
     "data": {
+        "commonBalancers": [
+            {
+                "name": "4x4 balancer",
+                "url": "https://github.com/deniszholob/factorio-blueprints/blob/master/blueprint-data/bp-balancer-4x4.txt",
+                "raw": "https://raw.githubusercontent.com/deniszholob/factorio-blueprints/master/blueprint-data/bp-balancer-4x4.txt"
+            },
+            {
+                "name": "4x4 balancer",
+                "url": "https://github.com/deniszholob/factorio-blueprints/blob/master/blueprint-data/bp-balancer-8x8.txt",
+                "raw": "https://raw.githubusercontent.com/deniszholob/factorio-blueprints/master/blueprint-data/bp-balancer-8x8.txt"
+            }
+        ],
         "table": [
             {
                 "name": "1-8 belt balancers",
