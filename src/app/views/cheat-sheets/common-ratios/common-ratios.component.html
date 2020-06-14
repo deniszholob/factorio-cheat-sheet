@@ -83,7 +83,7 @@
     <hr>
     <h5 id="rocket">Rocket Components</h5>
     <div class="row align-items-center">
-        <p class="col-12 col-sm-6 text-center">
+        <p class="col-12 col-sm-4 text-center">
             <!-- <span class="text-muted">{{ sheetData?.rocketComponentsRatioNoSatellite?.name }}</span><br> -->
             <a href="{{ sheetData?.rocketComponentsRatioNoSatellite.source }}" target="_blank" rel="noopener">
                 {{ sheetData?.rocketComponentsRatioNoSatellite?.name }}
@@ -95,7 +95,7 @@
             </ng-container>
         </p>
 
-        <p class="col-12 col-sm-6 text-center">
+        <p class="col-12 col-sm-4 text-center">
             <!-- <span class="text-muted">{{ sheetData?.rocketComponentsRatioWithSatellite?.name }}</span><br> -->
             <a href="{{ sheetData?.rocketComponentsRatioWithSatellite.source }}" target="_blank" rel="noopener">
                 {{ sheetData?.rocketComponentsRatioWithSatellite?.name }}
@@ -106,15 +106,33 @@
                 </app-factorio-icon>
             </ng-container>
         </p>
+
+        <p class="col-12 col-sm-4 text-center">
+            <!-- <span class="text-muted">{{ sheetData?.rocketComponentsModuledRatioWithSatellite?.name }}</span><br> -->
+            <a href="{{ sheetData?.rocketComponentsModuledRatioWithSatellite.source }}" target="_blank" rel="noopener">
+                {{ sheetData?.rocketComponentsModuledRatioWithSatellite?.name }}
+            </a>
+            <br>
+            <ng-container *ngFor="let item of sheetData?.rocketComponentsModuledRatioWithSatellite.ratio">
+                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)">
+                </app-factorio-icon>
+            </ng-container>
+        </p>
     </div>
 
-    <p>
-        A Rocket needs 100 <a href="https://wiki.factorio.com/Rocket_part" target="_blank" rel="noopener">Rocket Parts</a>.
-        <br>To get <a href="https://wiki.factorio.com/Space_science_pack" target="_blank" rel="noopener">Space Science</a>;
-        with no productivity modules in the silo, a rocket needs 1000 of each component of the rocket part + the requirements
-        for the <a href="https://wiki.factorio.com/Satellite">satellite</a>.
-        <br>This is a ratio of (1100 * 20) : (1050 * 30) : (1000 * 30) or simplified of 44 : 63 : 60.
-        <br>Where 20 and 30 are the respective crafting speeds.
-    </p>
+    <ul>
+        <li>
+            A Rocket needs 100 <a href="https://wiki.factorio.com/Rocket_part" target="_blank" rel="noopener">Rocket
+                Parts</a>.
+        </li>
+        <li>
+            To get <a href="https://wiki.factorio.com/Space_science_pack" target="_blank" rel="noopener">Space Science</a>
+            (no productivity modules in the silo); <br> a rocket needs 1000 of each component of the rocket part + the
+            requirements for the <a href="https://wiki.factorio.com/Satellite">satellite</a>.
+        </li>
+        <li>This is a ratio of (1100 * 20) : (1050 * 30) : (1000 * 30) or simplified of 44 : 63 : 60.</li>
+        <li>Where 20 and 30 are the respective crafting speeds.</li>
+        <li>Module ratio is approximate with lvl 3 productivity modules</li>
+    </ul>
 
 </app-cheat-sheet>

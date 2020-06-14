@@ -2,28 +2,39 @@
 
     <div class="row">
         <div class="col-12 col-lg-6">
-            <h4 id="OfficialLinks" class="card-title">Official Links</h4>
-            <ul>
-                <li *ngFor="let item of sheetData?.officialLinks">
-                    <a href="{{item?.url}}" target="_blank" rel="noopener">{{item?.text}}</a><div *ngIf="item?.caption" class="text-muted d-block d-md-inline"> - {{item?.caption}}</div>
-                </li>
-            </ul>
+            <h4 id="MainLinks" class="card-title">Main</h4>
+            <ng-container *ngTemplateOutlet="NestedLinks; context: {$implicit: sheetData?.mainLinks}">
+            </ng-container>
         </div>
 
         <div class="col-12 col-lg-6">
-            <h4 id="CommunityLinks" class="card-title">Community Links</h4>
-            <ul>
-                <li *ngFor="let item of sheetData?.communityLinks">
-                    <a *ngIf="item.url" href="{{item?.url}}" target="_blank" rel="noopener">{{item?.text}}</a><span *ngIf="item?.caption" class="text-muted"> - {{item?.caption}}</span>
-                    <span *ngIf="!item.url">{{item?.text}}</span>
-                    <ul *ngIf="item.links">
-                        <li *ngFor="let subLink of item?.links">
-                                <a href="{{subLink?.url}}" target="_blank" rel="noopener">{{subLink?.text}}</a><span *ngIf="item?.caption" class="text-muted"> - {{item?.subLink}}</span>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+            <h4 id="CommunityLinks" class="card-title">Community</h4>
+            <ng-container *ngTemplateOutlet="NestedLinks; context: {$implicit: sheetData?.communityLinks}">
+            </ng-container>
         </div>
     </div>
 
+    <hr>
+
+    <h4 id="CreatorLinks" class="card-title">Creator Blueprints</h4>
+    <ul class="row">
+        <li class="col-12 col-md-6 col-lg-4 col-xl-3 col" *ngFor="let link of sheetData?.creatorBlueprints">
+            <a *ngIf="link.url" href="{{link?.url}}" target="_blank" rel="noopener">{{link?.name}}</a>
+            <span *ngIf="link?.caption" class="text-muted"> - {{link?.caption}}</span>
+            <span *ngIf="!link.url">{{link?.text}}</span>
+        </li>
+    </ul>
+
 </app-cheat-sheet>
+
+<ng-template #NestedLinks let-links>
+    <ul>
+        <li *ngFor="let link of links" class="{{link.url || link.links ? '' : 'd-none'}}">
+            <a *ngIf="link.url" href="{{link?.url}}" target="_blank" rel="noopener">{{link?.text}}</a>
+            <span *ngIf="link?.caption" class="text-muted"> - {{link?.caption}}</span>
+            <span *ngIf="!link.url">{{link?.text}}</span>
+            <!-- Recurse down to nested links -->
+            <ng-container *ngTemplateOutlet="NestedLinks; context: {$implicit: link.links}"></ng-container>
+        </li>
+    </ul>
+</ng-template>
