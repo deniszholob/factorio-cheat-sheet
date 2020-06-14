@@ -15,47 +15,6 @@
                 "url": "https://github.com/deniszholob/factorio-blueprints/blob/master/blueprint-data/bp-balancer-8x8.txt",
                 "raw": "https://raw.githubusercontent.com/deniszholob/factorio-blueprints/master/blueprint-data/bp-balancer-8x8.txt"
             }
-        ],
-        "table": [
-            {
-                "name": "1-8 belt balancers",
-                "yellow": true,
-                "red": false,
-                "blue": false,
-                "url": "bilkas-balancers/1-8-belt-balancers-yellow.txt"
-            },
-            {
-                "name": "1-8 belt balancers",
-                "yellow": false,
-                "red": true,
-                "blue": false,
-                "url": "bilkas-balancers/1-8-belt-balancers-red.txt"
-            },
-            {
-                "name": "1-8 belt balancers",
-                "yellow": false,
-                "red": false,
-                "blue": true,
-                "url": "bilkas-balancers/1-8-belt-balancers-blue.txt"
-            },
-            {
-                "name": "Big balancers*",
-                "yellow": true,
-                "red": true,
-                "blue": true,
-                "url": "bilkas-balancers/big-balancers.txt"
-            },
-            {
-                "name": "Lane balancers**",
-                "yellow": true,
-                "red": true,
-                "blue": true,
-                "url": "bilkas-balancers/lane-balancers.txt"
-            }
-        ],
-        "footnotes": [
-            "* 12 to 4, 6, and 12; 16 to 16; and 24 to 24. 12 to 4 and second group of 16 to 16 are throughput unlimited.",
-            "** 1-belt output balanced; 2- and 4-belt input balanced; 1-, 2-, and 4-belt fully balanced."
         ]
     }
 }

@@ -9,11 +9,12 @@ import { forkJoin } from 'rxjs';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 
 // Services
-import { DataService, ClipboardService, BASE_URL } from 'app/services/index';
+import { DataService, ClipboardService } from 'app/services/index';
 
 // Models
 import { Data } from 'app/services/data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { BalancerData } from 'app/definitions/Balancers';
 
 // Constants
 import { APP_SETTINGS } from 'app/shared/app-settings';
@@ -29,15 +30,12 @@ const tooltip_Copied = 'BP String Copied';
 })
 export class BalancersComponent implements OnInit {
     public cheatSheet: CheatSheet;
-    public sheetData: any;
+    public sheetData: BalancerData;
 
     /** Tooltip for copying blueprint book */
     public tooltipMsg = tooltip_Default;
     /** Holds the blueprint strings for user to copy */
     public blueprintStrings: string[] = [];
-    /** Holds the blueprint strings for user to copy */
-    public blueprintTable: string[] = [];
-
     public APP_SETTINGS = APP_SETTINGS;
 
     constructor(
@@ -66,13 +64,9 @@ export class BalancersComponent implements OnInit {
     private async processBlueprints() {
         this.tooltipMsg = tooltip_Default;
         const blueprintStreams = [];
-        const tableStreams = [];
 
         this.sheetData.commonBalancers.forEach(blueprint => {
             blueprintStreams.push(this.httpClientService.get(blueprint.raw, { responseType: 'text' }));
-        });
-        this.sheetData.table.forEach(blueprintBook => {
-            tableStreams.push(this.httpClientService.get(BASE_URL + blueprintBook.url, { responseType: 'text' }));
         });
 
         // Common links
@@ -85,15 +79,6 @@ export class BalancersComponent implements OnInit {
             }
         );
 
-        // Old Table
-        forkJoin(tableStreams).subscribe(
-            (response: string[]) => {
-                this.blueprintTable = response;
-            },
-            error => {
-                console.log(error);
-            }
-        );
         // await this.testBPMatch();
     }
 
@@ -120,21 +105,13 @@ export class BalancersComponent implements OnInit {
         this.resetTooltip(tooltip);
     }
 
-    /**
-     * @param condition Boolean to check against
-     * @returns a Visibility style (visible or hidden) depending on condition boolean
-     */
-    public visibility(condition: boolean): any {
-        return { 'visibility': condition ? 'visible' : 'hidden' };
-    }
-
 
     /** Quick test to compare the order of the bp strings in the array */
     private testBPMatch() {
         let i = 0;
-        this.sheetData.table.forEach(blueprintBook => {
+        this.sheetData.commonBalancers.forEach(blueprintBook => {
             const j = i;
-            this.httpClientService.get(blueprintBook.url, { responseType: 'text' }).subscribe(
+            this.httpClientService.get(blueprintBook.raw, { responseType: 'text' }).subscribe(
                 (response) => {
                     if (response === this.blueprintStrings[j]) { console.log(j + ' match'); }
                     else { console.log(j + ' NOT match'); }
