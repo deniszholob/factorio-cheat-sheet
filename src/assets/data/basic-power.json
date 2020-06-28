@@ -35,8 +35,9 @@
         "steam_boiler_energy": "1.8MJ",
         "steam_engine_fluid": 30,
         "steam_engine_power": "0.9MW",
-        "solar_energy_max": "60kW",
-        "solar_energy_avg": "42kW",
+        "solar_energy_max": 60,
+        "solar_energy_avg": 42,
+        "solar_energy_unit": "kW",
         "boilerSupport": [
             {
                 "fuel": "Wood",
