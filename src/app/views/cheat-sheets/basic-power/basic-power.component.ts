@@ -17,8 +17,10 @@ const dataFile = 'basic-power';
     // styleUrls: ['./basic-power.component.scss'] // Enable as needed
 })
 export class BasicPowerComponent implements OnInit {
-    cheatSheet: CheatSheet;
-    sheetData: any;
+    public cheatSheet: CheatSheet;
+    public sheetData: any;
+
+    public solarPowerRatio = 1;
 
     constructor(
         public dataService: DataService
@@ -30,6 +32,7 @@ export class BasicPowerComponent implements OnInit {
             (result: Data) => {
                 this.cheatSheet = result.cheatSheet;
                 this.sheetData = result.data;
+                this.solarPowerRatio = this.sheetData.solar_energy_avg / this.sheetData.solar_energy_max;
             },
             error => {
                 console.log(error);

@@ -1,7 +1,7 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
 
     <div class="row align-items-center">
-        <p class="col-12 col-sm-6  text-center">
+        <p class="col-12 col-sm-4 text-center">
             <span class="text-muted">
                 Steam Power
                 <a href="https://wiki.factorio.com/Power_production#Steam_engine_power" target="_blank" rel="noopener">Build Ratio</a>
@@ -15,7 +15,7 @@
             <sub style="vertical-align: baseline"><strong>{{ sheetData?.steamRatioPower }}</strong></sub>
         </p>
 
-        <p class="col-12 col-sm-6  text-center">
+        <p class="col-12 col-sm-4 text-center">
             <span class="text-muted">Solar Power
                 <a href="https://wiki.factorio.com/Power_production#Solar_panels_and_accumulators" target="_blank" rel="noopener">Build Ratio</a>
             </span><br>
@@ -25,6 +25,14 @@
             <i class="fas fa-long-arrow-alt-right text-muted"></i>
             <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
             <sub style="vertical-align: baseline"><strong>{{ sheetData?.solarRatioPower }}</strong></sub>
+        </p>
+
+        <p class="col-12 col-sm-4 text-center">
+            <span class="text-muted">Solar Total to Usable</span><br>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Solar_panel', '10MW')"></app-factorio-icon>
+            <i class="fas fa-long-arrow-alt-right text-muted"></i>
+            <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+            <sub style="vertical-align: baseline"><strong>{{ 10 * solarPowerRatio }}MW</strong></sub>
         </p>
     </div>
 
@@ -63,32 +71,37 @@
         <thead class="text-center">
             <tr>
                 <th></th>
-                <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt')"></app-factorio-icon></th>
-                <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_transport_belt')"></app-factorio-icon></th>
-                <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon></th>
+                <th *ngFor="let item of sheetData?.boilerSupport">
+                    <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.fuel, item?.fuelEnergy)">
+                    </app-factorio-icon>
+                </th>
             </tr>
         </thead>
         <tbody class="text-center">
-            <tr *ngFor="let item of sheetData?.boilerSupport">
-                <td>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.fuel, item?.fuelEnergy)">
-                    </app-factorio-icon>
-                </td>
-                <td>
+            <tr>
+                <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt')"></app-factorio-icon></th>
+                <td *ngFor="let item of sheetData?.boilerSupport">
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Boiler', item?.beltYellow)">
                     </app-factorio-icon>
                 </td>
-                <td>
+            </tr>
+            <tr>
+                <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_transport_belt')"></app-factorio-icon></th>
+                <td *ngFor="let item of sheetData?.boilerSupport">
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Boiler', item?.beltRed)">
                     </app-factorio-icon>
                 </td>
-                <td>
+            </tr>
+            <tr>
+                <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon></th>
+                <td *ngFor="let item of sheetData?.boilerSupport">
                     <app-factorio-icon [icon]="dataService.getFactorioIcon('Boiler', item?.beltBlue)">
                     </app-factorio-icon>
                 </td>
             </tr>
         </tbody>
     </table>
+
     <p class="text-center">
         <kbd>Boilers supported by belt of fuel = Belt Throughput(i/s) * Fuel Energy(MJ) / {{ sheetData?.steam_boiler_energy }}</kbd>
     </p>
@@ -98,13 +111,18 @@
         <li>
             <a href="https://wiki.factorio.com/Solar_panel" target="_blank" rel="noopener">Solar panels</a>
             only provide energy during the day. (
-            {{ sheetData?.solar_energy_max }} Max,
-            {{ sheetData?.solar_energy_avg }} avg per solar panel )
+            {{ sheetData?.solar_energy_max }}{{ sheetData?.solar_energy_unit }} Max,
+            {{ sheetData?.solar_energy_avg }}{{ sheetData?.solar_energy_unit }} avg per solar panel,
+            ratio of {{ solarPowerRatio | percent }} "usable" to total)
+        </li>
+        <li>
+            10MW worth of solar panels will power a factory of
+            {{ 10*solarPowerRatio }}MW
         </li>
         <li>
             During the day, excess power generated is stored in
             <a href="https://wiki.factorio.com/Accumulator" target="_blank" rel="noopener">accumulators</a>,
-            and during the night, those accumulators release their charge to power your factory.
+            during the night, accumulators release their charge to power your factory.
         </li>
         <li>Place accumulators until they can keep your factory powered through the night.</li>
         <li>Add some extra accumulators to account for burst consumption, such as firing a lot of lasers.</li>
