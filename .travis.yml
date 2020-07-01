@@ -6,7 +6,7 @@
 
 language: node_js # Building with node js
 node_js:
-    - 12.16.3 # Same node version as package.json
+    - 12.18.2 # Same node version as package.json
 
 # Blocklist
 branches:

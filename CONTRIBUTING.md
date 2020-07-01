@@ -4,7 +4,7 @@
 
 ## What you will need before you begin:
 
-1. Ensure NodeJS version 12.16.3 LTS is installed on your system.
+1. Ensure NodeJS version 12.18.2 LTS is installed on your system.
 2. Clone the repository.
 3. Run `npm install` in the folder that you've just cloned to ensure you have all dependencies that are needed for development.
 
