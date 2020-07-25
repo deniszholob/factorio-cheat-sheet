@@ -58,19 +58,19 @@
             <div class="eq-container">
                 <div class="eq-field bg-factorio-yellow-muted">
                     <span class="eq-label">Item Consumption Rate</span>
-                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.itemConsumptionRate" (keyup)="calcMachinesToFillBelt()" (change)="calcMachinesToFillBelt()">
+                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.itemConsumptionRate" (keyup)="calcMachinesToFillBelt()" (change)="calcMachinesToFillBelt()" step="1">
                 </div>
                 <div class="eq-operator">*</div>
                 <div class="eq-field bg-factorio-green">
                     <span class="eq-label">Recipe Base Craft Time</span>
-                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.recipeBaseCraftTime" (keyup)="calcMachinesToFillBelt()" (change)="calcMachinesToFillBelt()">
+                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.recipeBaseCraftTime" (keyup)="calcMachinesToFillBelt()" (change)="calcMachinesToFillBelt()" step="0.1">
                 </div>
             </div>
             <div class="eq-operator op-divide"></div>
             <div class="eq-container">
                 <div class="eq-field bg-factorio-gray">
                     <span class="eq-label">Items per Craft</span>
-                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.itemsPerCraft" (keyup)="calcMachinesToFillBelt()" (change)="calcMachinesToFillBelt()">
+                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.itemsPerCraft" (keyup)="calcMachinesToFillBelt()" (change)="calcMachinesToFillBelt()" step="1">
                 </div>
                 <div class="eq-operator">*</div>
                 <div class="eq-field bg-factorio-blue">
@@ -80,7 +80,7 @@
                 <div class="eq-operator">*</div>
                 <div class="eq-field bg-factorio-red">
                     <span class="eq-label">Machine Productivity</span>
-                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.machineProductivity" (keyup)="calcMachinesToFillBelt()" (change)="calcMachinesToFillBelt()">
+                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.machineProductivity" (keyup)="calcMachinesToFillBelt()" (change)="calcMachinesToFillBelt()" step="0.1">
                 </div>
             </div>
         </div>

@@ -4,18 +4,18 @@
 export const APP_SETTINGS: AppInfo = {
     app: {
         name: 'factoriocheatsheet.com',
-        url: '//factoriocheatsheet.com',
+        url: 'https://factoriocheatsheet.com',
         title: 'Factorio Cheat Sheet',
     },
     author: {
         name: 'Denis Zholob',
-        url: '//deniszholob.com',
+        url: 'https://deniszholob.com',
     },
     github: {
         name: 'Github Source',
-        url: '//github.com/deniszholob/factorio-cheat-sheet',
+        url: 'https://github.com/deniszholob/factorio-cheat-sheet',
     },
-    data_version: '0.17.79, 0.18.34',
+    data_version: '0.17.79, 0.18.36',
     // languages: ['en-US'],
     links: {
         getLocalImagePath: function (imageName) {
