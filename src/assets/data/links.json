@@ -121,6 +121,10 @@
                 "text": "Guides",
                 "links": [
                     {
+                        "url": "https://www.youtube.com/playlist?list=PLnIE0W-m629dSJPPEETVY71CQhOfZ6r7W",
+                        "text": "Start Here: Factorio Fundamentals"
+                    },
+                    {
                         "url": "https://www.reddit.com/r/factorio/comments/arpn41/first_2030_minutes_guide_in_vanilla/",
                         "text": "Beginner First 30 minutes"
                     },
