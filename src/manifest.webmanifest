@@ -55,6 +55,12 @@
       "src": "assets/icons/factorio-cheat-sheet-icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "assets/icons/factorio-cheat-sheet-icon-maskable-787x787.png",
+      "sizes": "787x787",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
