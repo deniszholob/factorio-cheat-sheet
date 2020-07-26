@@ -43,6 +43,14 @@ export const APP_SETTINGS: AppInfo = {
     ],
     pdfs: [
         {
+            name: 'Cheat Sheet v1.0 pdf',
+            url: 'https://www.dropbox.com/s/jzcgv09655b8mqy/Factorio_Cheat_Sheet_v1.0.pdf',
+        },
+        {
+            name: 'Cheat Sheet v1.0 pdf light',
+            url: 'https://www.dropbox.com/s/yx6rdsf0lebiw4b/Factorio_Cheat_Sheet_v1.0_light.pdf',
+        },
+        {
             name: 'Cheat Sheet v0.17/v0.18 pdf',
             url: 'https://www.dropbox.com/sh/sq14ydb7hs59trn/AAA1MUghu5gTy9gJeFX3v0RYa/Factorio_Cheat_Sheet_v0.17.pdf',
         },
