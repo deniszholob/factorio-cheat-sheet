@@ -11,15 +11,15 @@
         "measuredTransferTimes": [
             {
                 "pumps": "1",
-                "transferTime": 6.3
+                "transferTime": 3.4
             },
             {
                 "pumps": "2",
-                "transferTime": 3.7
+                "transferTime": 2.2
             },
             {
                 "pumps": "3",
-                "transferTime": 2.5
+                "transferTime": 1.8
             }
         ]
     }
