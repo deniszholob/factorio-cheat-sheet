@@ -19,7 +19,7 @@ const dataFile = 'train-colors';
 })
 export class TrainColorsComponent implements OnInit {
     public cheatSheet: CheatSheet;
-    private sheetData: TrainColorsData;
+    public sheetData: TrainColorsData;
     public displayedData: TrainColor[];
     public generated = false;
     public filterString = '';

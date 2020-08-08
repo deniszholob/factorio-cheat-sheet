@@ -4,6 +4,7 @@
         "icon": "Train_stop"
     },
     "data": {
+        "blueprint": "https://raw.githubusercontent.com/deniszholob/factorio-blueprints/master/blueprint-data/bp-train-station-colors.txt",
         "trainColors": [
             {
                 "icon": "Iron_ore",
@@ -115,7 +116,7 @@
             },
             {
                 "icon": "Space_science_pack",
-                "rgb": [150, 150, 150],
+                "rgb": [200, 200, 200],
                 "type": "Space Science"
             },
             {

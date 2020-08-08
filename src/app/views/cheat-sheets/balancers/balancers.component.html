@@ -39,18 +39,9 @@
                 </li>
                 <li>
                     Balancers can still be useful regardless; most common are the
-                    <ng-template #tipContent>{{tooltipMsg}}</ng-template>
-                    <button class="btn btn-link txt-factorio-blue" (click)="copyBpString(blueprintStrings[0], tooltip)"
-                        [ngbTooltip]="tipContent" #tooltip="ngbTooltip" triggers="hover"
-                        [autoClose]="false" [disabled]="!sheetData?.commonBalancers[0].raw">
-                        <i class="fas fa-book"></i>
-                    </button>
+                    <app-blueprint-clipboard [url]="sheetData?.commonBalancers[0].raw"></app-blueprint-clipboard>
                     <a href="{{sheetData?.commonBalancers[0].url}}" target="_blank" rel="noopener">4<i class="fas fa-long-arrow-alt-right"></i>4</a> and
-                    <button class="btn btn-link txt-factorio-blue" (click)="copyBpString(blueprintStrings[1], tooltip)"
-                        [ngbTooltip]="tipContent" #tooltip="ngbTooltip" triggers="hover"
-                        [autoClose]="false" [disabled]="!sheetData?.commonBalancers[1].raw">
-                        <i class="fas fa-book"></i>
-                    </button>
+                    <app-blueprint-clipboard [url]="sheetData?.commonBalancers[1].raw"></app-blueprint-clipboard>
                     <a href="{{sheetData?.commonBalancers[1].url}}" target="_blank" rel="noopener">8<i class="fas fa-long-arrow-alt-right"></i>8</a> throughput unlimited.
                 </li>
                 <li>

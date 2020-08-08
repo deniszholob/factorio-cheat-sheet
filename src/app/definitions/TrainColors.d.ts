@@ -1,5 +1,6 @@
 
 export interface TrainColorsData {
+    blueprint: string;
     trainColors: TrainColor[];
     trainColorsGenerated: TrainColor[];
 }
