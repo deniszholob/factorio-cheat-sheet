@@ -67,8 +67,23 @@
     </p>
     <p>
         This <a href="https://www.youtube.com/watch?v=wbscDTocZBk">Video</a>
-        for 0.16 version that explains the calculations in detail.
+        for 0.16 version that explains the setup and calculations in detail.
         Ratios changed but the concept and build style are still relevant.
+    </p>
+
+    <p>
+
+        You can supply
+        <a href="https://kirkmcdonald.github.io/calc.html#data=0-17-60&rate=s&min=4&items=petroleum-gas:f:106&modules=advanced-oil-processing:;null:10,heavy-oil-cracking:;null:8,light-oil-cracking:;null:8" target="_blank" rel="noopener">
+            ~106 refineries
+        </a> + respective cracking from 1 pipeline at
+        <a href="#fluid-flow-and-pipe-length">1200 oil/s</a>.
+        <br>
+        You can supply
+        <a href="https://kirkmcdonald.github.io/calc.html#zip=fcpLCsMgEADQ27jKgIkhBcscZtCpkfrDMYHcvtDsuii85fM0CDXMD9i06jQYReVYcFVxcBZsPHpNfGQIJPZlF6Ny9UdiQfInFcceakzQenUsEkuwzdyeYuyip53pvL7HdXLv3zFvU4phH//GBw==" target="_blank" rel="noopener">
+            ~23 moduled refineries
+        </a> + respective cracking from 1 pipeline at
+        <a href="#fluid-flow-and-pipe-length">1200 oil/s</a>.
     </p>
 
     <div class="row align-items-center">
@@ -206,13 +221,13 @@
             spreadsheet for Factorio v0.15
         </a> from Reddit; but
         <a href="https://docs.google.com/spreadsheets/d/1AVGjAeokJ6_GFIZqEacsyCxCRzgM1s0bOTwmPn3Ldxo/edit?usp=sharing" target="_blank" rel="noopener">
-            modified to use v0.17
+            modified to use v{{APP_SETTINGS.data_version}}
         </a>
         recipe data with 1.3 productivity and
         5.55 craft speed for Refineries (10 beacons) and
         5 craft speed for Chemical Plants (8 beacons).
         <br>
-        Caution: If you use the original spreadsheet as is, it will not produce correct results for version 0.17.
+        Caution: If you use the original spreadsheet as is, it will not produce correct results for version v{{APP_SETTINGS.data_version}}.
         You would need to make the
         <a href="https://docs.google.com/spreadsheets/d/1AVGjAeokJ6_GFIZqEacsyCxCRzgM1s0bOTwmPn3Ldxo/edit?usp=sharing" target="_blank" rel="noopener">
             same modifications

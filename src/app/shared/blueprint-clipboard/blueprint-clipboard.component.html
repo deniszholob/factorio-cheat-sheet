@@ -1,0 +1,6 @@
+<ng-template #tipContent>{{tooltipMsg}}</ng-template>
+<button class="btn btn-link txt-factorio-blue" (click)="copyBpString(blueprintString, tooltip)"
+    [ngbTooltip]="tipContent" #tooltip="ngbTooltip" triggers="hover" [autoClose]="false"
+    [disabled]="!url||!blueprintString">
+    <i class="fas fa-book"></i>
+</button>

@@ -48,6 +48,7 @@ import * as SheetComponents from 'app/views/cheat-sheets';
         ViewComponents.MainComponent,
         ViewComponents.AnnexComponent,
         ViewComponents.FooterComponent,
+        SharedComponents.BlueprintClipboardComponent,
         SharedComponents.CheatSheetComponent,
         SharedComponents.FactorioIconComponent,
         SheetComponents.BalancersComponent,
