@@ -3,7 +3,7 @@ Cheat Sheet for [Factorio](https://www.factorio.com/): *"A compendium of the mos
 
 If you would like to contribute to the cheat sheet code/content, see `contributing.md`
 
-![Factorio Cheat Sheet](src/assets/icons/factorio-cheat-sheet-splash.png)
+![Factorio Cheat Sheet](src/assets/icons/factorio-cheat-sheet-splash.webp)
 
 ## Deployments [![Build Status](https://travis-ci.com/deniszholob/factorio-cheat-sheet.svg?branch=master)](https://travis-ci.com/deniszholob/factorio-cheat-sheet)
 
@@ -18,10 +18,10 @@ For anyone who is doing development work with Angular, I hope this project helps
 # Support Me
 If you find the cheat sheet or the source code useful, consider supporting me on Patreon.
 
-[![button](https://c5.patreon.com/external/logo/downloads_wordmark_white_on_coral.png)](https://www.patreon.com/deniszholob)
+<img src="https://c5.patreon.com/external/logo/downloads_wordmark_white_on_coral.png" width="260" />
 
 # Screenshots
 
-![Factorio Cheat Sheet Mobile Website](screenshots/factorio-sheat-sheet-home-screen-500.png)
+![Factorio Cheat Sheet Mobile Website](screenshots/factorio-sheat-sheet-home-screen-phone.webp)
 
-![Factorio Cheat Sheet Desktop Website](screenshots/factorio-cheat-sheet.png)
+![Factorio Cheat Sheet Desktop Website](screenshots/factorio-sheat-sheet-screen-pc.webp)

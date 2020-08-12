@@ -16,6 +16,7 @@
                     <a href="https://forums.factorio.com/viewtopic.php?f=18&t=19851" target="_blank" rel="noopener">fluid/s</a>
                     (offshore pump rate), place <a href="https://forums.factorio.com/viewtopic.php?f=5&t=46030">18 pipes between pumps</a>.
                 </li>
+                <li>Using underground pipes counts as less entities then if straight pipe for same distance.</li>
                 <li>
                     Fluid wagons can hold {{sheetData?.storageTankSize | number}} units of fluids which is equal to {{sheetData?.fluidWagonSize / sheetData?.storageTankSize}}
                     <a href="https://wiki.factorio.com/Storage_tank" target="_blank" rel="noopener">Storage Tanks</a>.
@@ -68,7 +69,7 @@
 
     <div class="row align-items-center justify-content-around">
         <div class="col text-center col-print-3">
-            <span><strong>Tanker-Pump Alignment</strong></span><br>
+            <span><strong>Tanker-Pump Alignment <a href="#note-alignment">*</a></strong></span><br>
             <video autoplay loop muted src="{{APP_SETTINGS.links.getLocalImagePath('fluid-wagon-alignment.webm')}}" class="img-fluid rounded" alt="Tanker-Pump Alignment" title="Tanker-Pump Alignment"></video>
         </div>
         <br>
@@ -82,6 +83,7 @@
             <video autoplay loop muted src="{{APP_SETTINGS.links.getLocalImagePath('fluid-transfer-rate-comparison.webm')}}" class="img-fluid rounded" alt="Transfer Rate Comparison" title="Transfer Rate Comparison"></video>
         </div>
     </div>
+    <p id="note-alignment">*Trains snap into position when placed at train stations.</p>
 
     <hr>
 

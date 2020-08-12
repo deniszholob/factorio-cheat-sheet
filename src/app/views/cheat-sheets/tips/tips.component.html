@@ -1,29 +1,30 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
 
-    <p>
-        See more
-        <a href="https://wiki.factorio.com/Tutorial:Keyboard_shortcuts" target="_blank" rel="noopener">keyboard shortcuts</a>
-        on the wiki.
-    </p>
-
+    <h4 id="tips-shortcuts">
+        <a href="https://wiki.factorio.com/Tutorial:Keyboard_shortcuts" target="_blank" rel="noopener">
+            Shortcuts
+        </a> <small class="text-muted">(Most Used)</small>
+    </h4>
     <ul>
         <li>
-            The <kbd>Alt</kbd> key will reveal detailed information on entities,
+            <kbd>Alt</kbd> - reveal detailed information on entities,
             you can also use the
             <a href="https://wiki.factorio.com/Shortcut_bar" target="_blank" rel="noopener">shortcut bar (click on the ALT button)</a>
         </li>
         <li>
-            The <kbd>MMB</kbd> will clear an item in the
+            <kbd>MMB</kbd> - clear an item in the
             <a href="https://wiki.factorio.com/Quickbar" target="_blank" rel="noopener">quick bar</a>,
             and can set filters in cargo wagons and your inventory. <small>(<kbd>CMD+RMB</kbd> on macOS.)</small>
         </li>
         <li>
-            You can rotate entities with <kbd>R</kbd>,
+            <kbd>R</kbd> - rotate entities,
             even when already placed, <kbd>Shift+R</kbd> for the opposite.
         </li>
         <li>
-            Inserters will always place items on the furthest side of the belt,
-            and prioritize taking items from the closest.
+            <kbd>CTRL-LMB</kbd> - Put/Take All Items, <kbd>CTRL-RMB</kbd> - Put/Take Half Items
+        </li>
+        <li>
+            <kbd>Z</kbd> Drop 1 Item
         </li>
         <li>
             Hold <kbd>Shift</kbd> while building
@@ -42,79 +43,104 @@
                 <li>You can copy individual slots (inventory, cargo wagon)</li>
             </ul>
         </li>
-        <li>Placing over ghosts will preserve the recipes</li>
         <li>
-            Hover over an entity and press <kbd>Q</kbd> to quick-select it from your inventory.
+            <kbd>Q</kbd> while hovering over anything to quick-select it from your inventory.
             <ul>
                 <li>Press <kbd>Q</kbd> on ores to select miners.</li>
             </ul>
         </li>
         <li>
-            You can use standard <kbd>CTRL+C</kbd>, <kbd>CTRL+V</kbd>,
-            <kbd>CTRL+X</kbd>, <kbd>CTRL+Z</kbd> commands to copy, paste, cut and undo your builds.
+            <kbd>CTRL+C</kbd>, <kbd>CTRL+V</kbd>,
+            <kbd>CTRL+X</kbd>, <kbd>CTRL+Z</kbd> - copy, paste, cut and undo your builds.
             <small>(<kbd>CMD</kbd> vs <kbd>CTRL</kbd> on macOS.)</small>
         </li>
-        <li>You can move science packs between labs with inserters.</li>
+        <li>
+            <kbd>Numpad-</kbd> / <kbd>Numpad+</kbd> - increase / decrease
+            the size of any placed tile (such as landfill or concrete).
+        </li>
+        <li>
+            <kbd>Shift+RMB</kbd> - clear Blueprint or Deconstruction Planner Filters
+        </li>
+        <li>
+            <kbd>Shift+LMB</kbd> - ping the ground/map.
+        </li>
+        <li>
+            <kbd>`</kbd> (tilde key) - Open chat/command line
+        </li>
+    </ul>
+
+    <h4 id="tips-cmd">
+        <a href="https://wiki.factorio.com/Console#Normal_commands">Commands</a>
+         <small class="text-muted"> (These do <strong>not</strong> disable achievements)</small>
+    </h4>
+    <ul>
+        <li>
+            <kbd>/permissions</kbd>, disable <i>Craft</i> - Useful for
+            <a href="https://wiki.factorio.com/Achievements" target="_blank" rel="noopener">
+                Lazy Bastard Achievement
+            </a>
+        </li>
+        <li>
+            <kbd>/screenshot [x resolution] [y resolution] [zoom]</kbd> - Useful for large/HD screenshots.
+            <br> (Resolution is optional and defaults to the current window size and zoom is optional and defaults to 1).
+        </li>
+        <li>
+            <kbd>[item=iron-plate]</kbd> / <kbd>[fluid=crude-oil]</kbd> - part of
+            <a href="https://wiki.factorio.com/Rich_text" target="_blank" rel="noopener">Rich text</a>,
+            will display as an icon! Useful for blueprints/station names.
+            <br> To quickly get a rich text tag for an item: open the console, then <kbd>Shift+LMB</kbd> on the item (eg. in your inventory, a chest, etc.)
+            <br> A rich text tag for that item appears in the console and can be copied.
+        </li>
+    </ul>
+
+    <h4 id="tips-debug">
+        <a href="https://wiki.factorio.com/Debug_mode" target="_blank" rel="noopener">
+            Debug Menu
+        </a>
+        <small class="text-muted">(<kbd>F4</kbd> also <kbd>F5</kbd> )</small>
+    </h4>
+    <p>Some useful options to enable</p>
+    <ul>
+        <li><kbd>show-fps</kbd> - FPS/UPS</li>
+        <li><kbd>show-multiplayer-statistics</kbd> - Latency</li>
+        <li><kbd>show-tile-grid</kbd>, <kbd>show-raw-tile-transitions</kbd> - Precision construction</li>
+        <li><kbd>show-rail-paths</kbd> - Less likely to get run over</li>
+        <li>
+            <kbd>show-rail-signal-states</kbd> -
+            <a href="https://www.reddit.com/r/factorio/comments/8zvbfn/til_you_can_display_signal_states_on_the_map/" target="_blank" rel="noopener">
+                Rail signal states
+            </a>
+            on the map.
+        </li>
+        <li><kbd>show-transport-line-gaps</kbd> - Identify unsaturated belts</li>
+        <li><kbd>show-logistic-robots-on-map</kbd></li>
+        <li><kbd>show-recipe-icons-on-map</kbd></li>
+        <li><kbd>show-player-robots</kbd> - Makes it clear if there are stragglers</li>
+        <li><kbd>allow-increased-zoom</kbd></li>
+    </ul>
+
+    <h4 id="tips-misc">Misc</h4>
+    <ul>
+        <li>
+            <a href="https://www.reddit.com/r/factorio/comments/bjbcsi/ranges_of_all_turrets_worms_vehicles_weapons_and/" target="_blank" rel="noopener">
+                Combat
+            </a>: Weapon
+            <a href="https://i.imgur.com/6EenAcn.png" target="_blank" rel="noopener">
+                Range Comparison
+            </a> Diagram
+        </li>
+        <li>
+            Inserters will always place items on the furthest side of the belt,
+            and prioritize taking items from the closest.
+        </li>
+        <li>Placing over ghosts will preserve the recipes</li>
         <li>
             Fluids can move through boilers, tanks,
             and electric mining drills (only when mining uranium).
         </li>
-        <li>
-            Using underground pipes counts as less entities then
-            if straight pipe for same distance, increasing game performance.
-        </li>
         <li>Blueprints can be used from map view when
             zoomed in on a revealed area of the map (near the player or by radar).
         </li>
-        <li>
-            <kbd>Numpad+</kbd> / <kbd>Numpad-</kbd> can be used to
-            increase / decrease the size of any placed tile
-            (such as landfill or concrete).
-        </li>
-        <li>Trains snap into position when placed at train stations.</li>
-        <li>Clear Blueprint or Deconstruction Planner Filters by <kbd>Shift+RMB</kbd></li>
-        <li>
-            For <strong>Lazy Bastard Achievement</strong> Open Console,
-            type <kbd>/permissions</kbd>, Disable <i>Craft</i>.
-        </li>
-        <li>
-            Map ping tags can be created by <kbd>Shift+LMB</kbd> the ground/map.
-        </li>
-        <li>
-            <a href="https://wiki.factorio.com/Rich_text" target="_blank" rel="noopener noreferrer">Rich text</a>
-            "<i>[item=iron-plate]</i>" is displayed as the iron plate icon.
-            <br> To quickly get a rich text tag for an item: open the console, then shift-click on the item (eg in your inventory, a chest, etc.)
-            <br> A rich text tag for that item appears in the console and can be copied.
-        </li>
-        <li>
-            <a href="https://www.reddit.com/r/factorio/comments/8zvbfn/til_you_can_display_signal_states_on_the_map/" target="_blank" rel="noopener">
-                Display signal states
-            </a>
-            on the map by enabling <strong>"show-rail-signal-states"</strong>
-            in the <kbd>F4</kbd> debug menu.
-        </li>
-        <li>
-            To take a large screenshot use the <a href="https://wiki.factorio.com/Console#Normal_commands">command </a> <kbd>/screenshot [x resolution] [y resolution] [zoom]</kbd>.
-            <br> (Resolution is optional and defaults to the current window size and zoom is optional and defaults to 1).
-            <br> This command does <strong>not</strong> disable achievements.
-        </li>
     </ul>
-
-    <hr>
-
-    <div class="row align-items-center justify-content-around">
-        <div class="col-6 col-lg-4 col-print-4 text-center">
-            <strong>Underground belts can be side loaded</strong><br>
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('belt-tip-side-load.webp')}}" class="img-fluid rounded limit-img-height" alt="Side Load Underground" title="Side Load Underground">
-        </div>
-        <div class="col-6 col-lg-4 col-print-4 text-center">
-            <strong>Splitters can filter items</strong><br>
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('belt-tip-filter.webp')}}" class="img-fluid rounded limit-img-height" alt="Splitter Filter" title="Splitter Filter">
-        </div>
-        <div class="col-6 col-lg-4 col-print-4 text-center">
-            <strong>Belts can be woven</strong><br>
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('belt-weaving.webp')}}" class="img-fluid rounded limit-img-height" alt="Splitter Filter" title="Splitter Filter">
-        </div>
-    </div>
 
 </app-cheat-sheet>
