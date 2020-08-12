@@ -89,6 +89,10 @@
                     {
                         "url": "https://calculatorio.com/",
                         "text": "Calculatorio Production Calcs"
+                    },
+                    {
+                        "url": "https://factoriolab.github.io/",
+                        "text": "Factorio Lab"
                     }
                 ]
             },
@@ -122,11 +126,15 @@
                 "links": [
                     {
                         "url": "https://www.youtube.com/playlist?list=PLnIE0W-m629dSJPPEETVY71CQhOfZ6r7W",
-                        "text": "Start Here: Factorio Fundamentals"
+                        "text": "Factorio Fundamentals (JDPlays)"
                     },
                     {
                         "url": "https://www.youtube.com/playlist?list=PLV3rF--heRVu2xlDGZiRbdb7nbwzM9Vyz",
-                        "text": "Factorio Master Class"
+                        "text": "Factorio Master Class (Nilaus)"
+                    },
+                    {
+                        "url": "https://www.youtube.com/playlist?list=PLwehwVVQirAep2XwjX1IoJR4XIqU4eUCH",
+                        "text": "Factorio Fundamentals (Xterminator)"
                     },
                     {
                         "url": "https://www.reddit.com/r/factorio/comments/arpn41/first_2030_minutes_guide_in_vanilla/",

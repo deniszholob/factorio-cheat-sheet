@@ -48,6 +48,7 @@ export class NuclearPowerComponent implements OnInit {
                 this.cheatSheet = result.cheatSheet;
                 this.sheetData = result.data;
 
+                this.nuclearData.waterPerPump = 1200;
                 this.nuclearData.reactorPower = this.sheetData.reactorPowerMW;
                 this.nuclearData.heatExchangerPower = this.sheetData.heatExchangerPowerMW;
                 this.nuclearData.turbinePower = this.sheetData.turbinePowerMW;
@@ -107,7 +108,7 @@ export class NuclearPowerComponent implements OnInit {
         const heatExchangersPerReactor = reactorPower / heatExchangerPower;
         const waterPerTurbine = this.nuclearData.waterPerTurbine;
         const storageTanksPerReactor = this.nuclearData.storageTanksPerReactor;
-        const waterPerPump = 1200;
+        const waterPerPump = this.nuclearData.waterPerPump;
 
         // Set inital data that will be calculated
         let reactorConfig = '1';
@@ -174,6 +175,7 @@ interface NukeRatioData {
 }
 
 interface NuclearData {
+    waterPerPump: number;
     reactorPower: number;
     heatExchangerPower: number;
     turbinePower: number;

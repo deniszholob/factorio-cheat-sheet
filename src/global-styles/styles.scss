@@ -58,9 +58,11 @@ hr {
     border-color: $c-pallette-accent;
 }
 
+// Site Title
 h1 {
     color: $c-pallette-accent;
     font-family: "Play", Verdana, sans-serif;
+    font-size: 2.5rem;
 
     small {
         color: $c-pallette-text-muted;
@@ -68,9 +70,26 @@ h1 {
     }
 }
 
-h5 {
+// Section Title
+h2 {
+    font-size: 2rem;
+}
+
+// Sheet Title (controlled by _card)
+h3 {
     font-family: "Jura", sans-serif;
     font-weight: bold;
+    font-size: 1.4rem;
+}
+
+// Sheet subsection
+h4 {
+    font-size: 1.4rem;
+}
+
+// Small Title
+h5 {
+    font-size: 1.25rem;
 }
 
 li.col {
@@ -136,6 +155,10 @@ img {
 
 .full-width {
     width: 100%;
+}
+
+.hide {
+    display: none;
 }
 
 

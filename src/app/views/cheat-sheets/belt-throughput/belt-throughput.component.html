@@ -1,33 +1,21 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
-    <p class="card-text">
-        <strong>
-            <a href="https://wiki.factorio.com/Transport_belt" target="_blank" rel="noopener">
-                Transport Belt
-            </a> Throughput
-        </strong> - Items per second (i/s) passed over one belt tile.
-        <br>
-        <strong>Transport Belt Density</strong> - Maximum items that fit in one tile:
-        <strong>{{ sheetData?.belt_density }} items</strong> for all belts.
-    </p>
-    <p class="card-text">
-        <kbd class="txt-factorio-red">Red belt</kbd> is
-        <strong>{{ sheetData?.belt_info[1].throughput / sheetData?.belt_info[0].throughput }}x</strong> faster than
-        <kbd class="txt-factorio-yellow">Yellow belt</kbd>
-        <br>
-        <kbd class="txt-factorio-blue">Blue belt</kbd> is
-        <strong>{{ sheetData?.belt_info[2].throughput / sheetData?.belt_info[0].throughput }}x</strong> faster than
-        <kbd class="txt-factorio-yellow">Yellow belt</kbd>.
-    </p>
-    <div class="card-text">
-        See <a href="https://wiki.factorio.com/Belt_transport_system" target="_blank" rel="noopener">
-            Belt Transport System
-        </a> for all relevant belt information.
-    </div>
-
-    <hr>
-
     <div class="row align-items-center">
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-7">
+            <p>
+                See <a href="https://wiki.factorio.com/Belt_transport_system" target="_blank" rel="noopener">
+                    Belt Transport System
+                </a> for all relevant belt information.
+            </p><p>
+                <strong>
+                    <a href="https://wiki.factorio.com/Transport_belt" target="_blank" rel="noopener">
+                        Transport Belt
+                    </a> Throughput
+                </strong> - Items per second (i/s) passed over one belt tile.
+                <br>
+                <strong>Transport Belt Density</strong> - Maximum items that fit in one tile:
+                <strong>{{ sheetData?.belt_density }} items</strong> for all belts.
+            </p>
+
             <table class="table table-sm table-hover fixed-width">
                 <thead class="text-center">
                     <tr>
@@ -49,9 +37,44 @@
             </table>
         </div>
 
-        <div class="col-12 col-md-6 text-center">
+        <div class="col-12 col-md-5 text-center">
             <p>All belts can hold up to <strong>{{ sheetData?.belt_density }} items</strong> on each tile.</p>
             <img src="{{APP_SETTINGS.links.getLocalImagePath('belt-signal-circuit.webp')}}" class="img-fluid rounded" alt="Transport Belt Signal" title="Transport Belt Signal">
         </div>
     </div>
+
+<br>
+    <p>
+        Its common to stack belts to form a <a href="https://wiki.factorio.com/Tutorial:Main_bus" target="_blank" rel="noopener">Main Bus</a>, which you can learn more with
+        <a href="https://www.youtube.com/watch?v=e9LSMqCRsd0&list=PLwehwVVQirAep2XwjX1IoJR4XIqU4eUCH&index=2" target="_blank" rel="noopener">Xterminator</a>,
+        <a href="https://www.youtube.com/watch?v=-kOxTtgHssk&list=PLnIE0W-m629dSJPPEETVY71CQhOfZ6r7W&index=8" target="_blank" rel="noopener">JDplays</a> and
+        <a href="https://www.youtube.com/watch?v=ErdHbEgJG58&list=PLV3rF--heRVu2xlDGZiRbdb7nbwzM9Vyz&index=2" target="_blank" rel="noopener">Nilaus</a>
+    </p>
+    <div class="row align-items-center">
+        <div class="col-12 align-items-center text-center">
+            <!-- <strong>Main Bus</strong> <br> -->
+            <a href="{{APP_SETTINGS.links.getLocalImagePath('bus.webp')}}" target="_blank" rel="noopener">
+                <img src="{{APP_SETTINGS.links.getLocalImagePath('bus.webp')}}" class="img-fluid rounded limit-img-height" alt="Main Bus" title="Main Bus">
+            </a>
+        </div>
+    </div>
+
+<br>
+
+    <div class="row align-items-center justify-content-around">
+        <div class="col-12 col-sm-6 col-lg-4 col-print-4 text-center">
+            <strong>Underground belts can be side loaded</strong><br>
+            <img src="{{APP_SETTINGS.links.getLocalImagePath('belt-tip-side-load.webp')}}" class="img-fluid rounded limit-img-height" alt="Side Load Underground" title="Side Load Underground">
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 col-print-4 text-center">
+            <strong>Splitters can filter items</strong><br>
+            <img src="{{APP_SETTINGS.links.getLocalImagePath('belt-tip-filter.webp')}}" class="img-fluid rounded limit-img-height" alt="Splitter Filter" title="Splitter Filter">
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 col-print-4 text-center">
+            <strong>Belts can be woven</strong><br>
+            <img src="{{APP_SETTINGS.links.getLocalImagePath('belt-weaving.webp')}}" class="img-fluid rounded limit-img-height" alt="Splitter Filter" title="Splitter Filter">
+        </div>
+    </div>
+
+
 </app-cheat-sheet>

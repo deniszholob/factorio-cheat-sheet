@@ -1,9 +1,9 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
 
-    <p class="card-text">
-        <strong>Description: </strong> First Item represents the type of machine
+    <p>
+        <strong>Description: </strong> First item represents the type of machine
         thats expected to assemble the following components.
-        <br> Following items represent the amount of machines needed making them.
+        <br> Following items represent the amount of <strong>machines</strong> needed making them.
         If there is no machine mixing (assemblers/chemical plants/furnaces)
         then ratios stay the same b/w assembly tiers.
         <br>
@@ -19,10 +19,11 @@
         </span>
     </p>
 
-    <p class="card-text">
+    <p>
         <strong>For example:</strong> To make rails,
         the right ratio is 1 iron stick assembler feeding 2 rail assemblers.
         <br> Using the level 3 assemblers you can produce 10 rails every second.
+        <br>See <a href="#links">Links</a> for blueprints and calculators
     </p>
 
     <div class="row">
@@ -81,7 +82,7 @@
     </div>
 
     <hr>
-    <h5 id="rocket">Rocket Components</h5>
+    <h3 id="rocket">Rocket Components</h3>
     <div class="row align-items-center">
         <p class="col-12 col-sm-4 text-center">
             <!-- <span class="text-muted">{{ sheetData?.rocketComponentsRatioNoSatellite?.name }}</span><br> -->

@@ -97,7 +97,7 @@
                 <div class="card-body row">
                     <div class="col-12 col-sm-6">
                     <h6 class="card-subtitle mb-2 text-muted">2xN Configuration</h6>
-                    <p class="card-text">
+                    <p>
                         16 reactors: 2x8, is<br>
                         <kbd>4*3 + 12*4 = 60 SRE</kbd>
                     <p>
@@ -114,7 +114,7 @@
                 <div class="card-body row">
                     <div class="col-12 col-sm-7">
                     <h6 class="card-subtitle mb-2 text-muted">NxM Configuration</h6>
-                    <p class="card-text">
+                    <p>
                         16 reactors: 4x4, is<br>
                         <kbd>4*3 + 8*4 + 4*5 = 64 SRE</kbd>
                     <p>
@@ -205,19 +205,44 @@
         for more details.
     </p>
 
-    <p><kbd>
-    Heat Exchangers (even config) = [Heat Exchangers Per Reactor * 4 * reactors] - [Heat Exchangers Per Reactor * 4]
-    </kbd></p>
-    <p><kbd>
-    Power (even config) = [Reactor Power * 4 * reactors] - [Reactor Power * 4]
-    </kbd></p>
-    <p><kbd>
-    Turbines = [Heat Exchangers * Heat Exchanger Power(10MW)] / [Turbine Power(5.82MW)]
-    </kbd></p>
-    <p><kbd>
-    Pumps = [Turbines] * [Water Per Turbine / Water Per Pump]
-    </kbd></p>
-    <p><strong>Steam Tanks:</strong> 1 fuel cell creates 8 GJ per reactor (eg 2 reactors puts out 4 solo reactors of energy = 32 GJ).
+    <table class="table table-sm table-hover">
+        <thead>
+            <tr>
+                <th>Unknown</th>
+                <th>Formula</th>
+                <th>Expanded Formula</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><kbd>Heat Exchangers Per Reactor</kbd></td>
+                <td><kbd>{{nuclearData.reactorPower / nuclearData.heatExchangerPower}}</kbd></td>
+                <td><kbd>Reactor Power({{nuclearData.reactorPower}}MW) / H.E. Power({{nuclearData.heatExchangerPower}}MW)</kbd></td>
+            </tr>
+            <tr>
+                <td><kbd>Power (even config)</kbd></td>
+                <td><kbd>{{nuclearData.reactorPower*4}} * [Reactors - 1]</kbd></td>
+                <td><kbd>[Reactor Power({{nuclearData.reactorPower}}MW) * 4 * Reactors] - [Reactor Power * 4]</kbd></td>
+            </tr>
+            <tr>
+                <td><kbd>Heat Exchangers (even config)</kbd></td>
+                <td><kbd>{{nuclearData.reactorPower / nuclearData.heatExchangerPower*4}} * [Reactors - 1]</kbd></td>
+                <td><kbd>[H.E. Per Reactor * 4 * Reactors] - [H.E. Per Reactor * 4]</kbd></td>
+            </tr>
+            <tr>
+                <td><kbd>Turbines</kbd></td>
+                <td><kbd>{{nuclearData.heatExchangerPower/nuclearData.turbinePower | number}} * Heat Exchangers</kbd></td>
+                <td><kbd>Heat Exchangers * H.E. Power({{nuclearData.heatExchangerPower}}MW) / Turbine Power({{nuclearData.turbinePower}}MW)</kbd></td>
+            </tr>
+            <tr>
+                <td><kbd>Pumps</kbd></td>
+                <td><kbd>{{nuclearData.waterPerTurbine/nuclearData.waterPerPump | number}} * Turbines</kbd></td>
+                <td><kbd>Turbines * Water Per Turbine({{nuclearData.waterPerTurbine}}) / Water Per Pump({{nuclearData.waterPerPump}})</kbd></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p><strong>Steam Tanks:</strong> 1 fuel cell creates 8 GJ per reactor (eg. 2 reactors put out 4 solo reactors worth of energy = 32 GJ).
         <br>Each tank can hold 2.425 GJ worth of steam, or 3.29 tanks per reactor.
     </p>
 

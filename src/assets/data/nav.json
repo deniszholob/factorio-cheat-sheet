@@ -1,6 +1,7 @@
 {
     "nav": [
-        "belt-throughput",
+        "common-ratios",
+        "belts",
         "balancers",
         "material-processing",
         "mining",
@@ -12,8 +13,6 @@
         "cargo-wagon-transfer",
         "inserter-throughput",
         "inserter-capacity-bonus",
-        "common-ratios",
-        "combat",
         "modules-and-beacons",
         "productivity-module-payoffs",
         "vehicle-fuel-bonus",
