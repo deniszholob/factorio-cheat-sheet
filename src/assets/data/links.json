@@ -11,12 +11,17 @@
                     {
                         "url": "https://factorio.com",
                         "text": "Factorio",
-                        "caption": "The official website"
+                        "caption": "The official website."
                     },
                     {
                         "url": "https://wiki.factorio.com",
                         "text": "Factorio Wiki",
                         "caption": "More in depth info."
+                    },
+                    {
+                        "url": "https://mods.factorio.com/",
+                        "text": "Factorio Mod Portal",
+                        "caption": "Browse & download mods."
                     },
                     {
                         "url": "https://forums.factorio.com/",
@@ -31,12 +36,7 @@
                     {
                         "url": "https://www.youtube.com/channel/UC5B2sfAI2MjD7aNhUXHAeyA",
                         "text": "Factorio Youtube",
-                        "caption": "Trailers & demos"
-                    },
-                    {
-                        "url": "https://mods.factorio.com/",
-                        "text": "Factorio Mod Portal",
-                        "caption": "Browse & download mods."
+                        "caption": "Trailers & demos."
                     }
                 ]
             },
@@ -49,6 +49,11 @@
                         "caption": "Lots of helpful users."
                     },
                     {
+                        "url": "https://www.reddit.com/r/technicalfactorio/",
+                        "text": "Factorio Technical Reddit",
+                        "caption": "Advanced players."
+                    },
+                    {
                         "url": "https://discordapp.com/invite/factorio",
                         "text": "Factorio Discord",
                         "caption": "Discuss the game in realtime."
@@ -56,12 +61,12 @@
                     {
                         "url": "https://discordapp.com/oauth2/authorize?scope=bot&client_id=310607046020169729&permissions=379968",
                         "text": "Discord Blueprint Bot",
-                        "caption": "Invite to preview blueprints"
+                        "caption": "Invite to preview blueprints."
                     },
                     {
                         "url": "https://factorioprints.com/top",
                         "text": "Factorio Blueprint Library",
-                        "caption": "Top community designs"
+                        "caption": "Top community designs."
                     }
                 ]
             }
@@ -155,8 +160,8 @@
                 "textDNE": "Recipe Reference"
             },
             {
-                "url": "https://forums.factorio.com/viewtopic.php?p=284240#p284240",
-                "text": "Expensive Mode Recipes"
+                "urlDNE": "https://forums.factorio.com/viewtopic.php?p=284240#p284240",
+                "textDNE": "Expensive Mode Recipes"
             }
         ],
         "creatorBlueprints": [
