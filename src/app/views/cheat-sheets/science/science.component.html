@@ -118,7 +118,7 @@
         <div class="col-12 col-lg-5">
             <div class="eq-container">
                 <div class="eq-field bg-factorio-green">
-                    <span class="eq-label">Research cycle time (seconds)</span>
+                    <span class="eq-label">Research cycle seconds</span>
                     <input type="number" class="eq-input" [(ngModel)]="calcScience.researchCycleTime" (keyup)="calcScienceNumberOfLabs()" (change)="calcScienceNumberOfLabs()">
                 </div>
             </div>
@@ -135,7 +135,7 @@
     </div>
     <p class="text-muted text-center">Use the formula above to calculate how many labs satisfy a target consumption rate of science packs per minute.</p>
     <p class="text-muted">
-        Research Cycle Time = Time in seconds to complete one research cycle, this is usually 60 seconds for all infinite tech.<br>
+        <b>Research Cycle Time</b> - Time in seconds to complete one research cycle, this is usually 60 seconds for all infinite tech.<br>
         Lab Speed Bonus = Speed bonus as reported by the lab, including modules and beacons.<br>
         Numbers assume a 12 beacon setup, which is researching a 60 second infinite tech.
     </p>
