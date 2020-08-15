@@ -15,7 +15,7 @@ export const APP_SETTINGS: AppInfo = {
         name: 'Github Source',
         url: 'https://github.com/deniszholob/factorio-cheat-sheet',
     },
-    data_version: '1.0',
+    data_version: '1.0.0',
     // languages: ['en-US'],
     links: {
         getLocalImagePath: function (imageName) {
