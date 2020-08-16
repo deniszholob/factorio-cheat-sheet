@@ -1,7 +1,7 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
     <p>
         <strong><a href="https://wiki.factorio.com/Balancer_mechanics">Balancers</a></strong> are used to evenly
-        distribute items over multiple belts, commonly used at ore patches or the <a href="https://wiki.factorio.com/Tutorial:Main_bus#Split-off">Main Bus</a>.
+        distribute items over multiple belts, they are commonly used at ore patches or the <a href="https://wiki.factorio.com/Tutorial:Main_bus#Split-off">Main Bus</a>.
     </p>
     <ul>
         <li>
@@ -11,11 +11,11 @@
             Balancers that are <strong>output balanced</strong> distribute evenly to output belts.
         </li>
         <li>
-            Balancers that are <strong>output balanced under back pressure</strong>, keep an even distribution while one or more output belts are blocked.
+            Balancers that are <strong>output balanced under back pressure</strong>, keep an even distribution even if one or more output belts are blocked.
         </li>
         <li>
             Balancers that are <a href="https://wiki.factorio.com/Balancer_mechanics#Throughput" target="_blank" rel="noopener">throughput limited</a>
-            may not be able to provide maximum output due to bottlenecks in the design.
+            may not provide the maximum throughput due to bottlenecks.
         </li>
     </ul>
 
@@ -33,9 +33,9 @@
         <div class="col-12 col-md-5">
             <strong class="d-block text-center">Tips</strong>
             <ul>
-                <li>Don't overuse balancers, use when needed.</li>
+                <li>Don't overuse balancers, use them when needed.</li>
                 <li>
-                    It's generally recommended to make builds inherently balanced targeting a complete use of a lane.
+                    Make a build that's inherently balanced, by letting the assembly machines consume a full belt of items.
                 </li>
                 <li>
                     Balancers can still be useful regardless; most common are the
@@ -45,12 +45,12 @@
                     <a href="{{sheetData?.commonBalancers[1].url}}" target="_blank" rel="noopener">8<i class="fas fa-long-arrow-alt-right"></i>8</a> throughput unlimited.
                 </li>
                 <li>
-                    Being throughput unlimited input/output amount can vary thus those two cover most cases.
+                    Being throughput unlimited, the input/output amount can vary, thus those two cover most cases.
                 </li>
                 <li>
-                    There are lots more of designs available online such as
+                    There are more designs available online such as the
                     <a href="https://pastebin.com/igs2CvVd" target="_blank" rel="noopener">Balancer Book</a> by
-                    <a href="https://www.reddit.com/u/raynquist/" target="_blank" rel="noopener">Raynquist</a>
+                    <a href="https://www.reddit.com/u/raynquist/" target="_blank" rel="noopener">Raynquist</a>.
                 </li>
             </ul>
         </div>
@@ -60,15 +60,15 @@
 
     <div class="row text-center">
         <div class="col-12 col-lg-6 col-print-6">
-            <a href="https://imgur.com/gallery/Qtv6xHD" target="_blank" rel="noopener">Old wiki balancer page</a> screenshot
+            <a href="https://imgur.com/gallery/Qtv6xHD" target="_blank" rel="noopener">Old wiki balancer page</a> screenshot.
             <br>
-            <a href="https://gist.github.com/Bilka2/aeec4ff7123ff5544cb9a80cf1046a06" target="_blank" rel="noopener">Balancer Collection</a> from Bilka
+            <a href="https://gist.github.com/Bilka2/aeec4ff7123ff5544cb9a80cf1046a06" target="_blank" rel="noopener">Balancer Collection</a> from Bilka.
             <br>
         </div>
         <div class="col-12 col-lg-6 col-print-6">
             <a href="https://github.com/tzwaan/factorio_balancers" target="_blank" rel="noopener">
                 Balancer tool
-            </a> by tzwaan
+            </a> by tzwaan.
             <br>
             Balancer Guides by
             <a href="https://www.reddit.com/r/factorio/comments/9x3m14/i_couldnt_find_a_general_guide_to_balancers_so_i/" target="_blank" rel="noopener">
@@ -76,7 +76,7 @@
             </a> and
             <a href="https://forums.factorio.com/viewtopic.php?t=61424" target="_blank" rel="noopener">
                 EX_plode
-            </a>
+            </a>.
         </div>
     </div>
 </app-cheat-sheet>
