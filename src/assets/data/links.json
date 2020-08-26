@@ -64,9 +64,19 @@
                         "caption": "Invite to preview blueprints."
                     },
                     {
+                        "url": "https://www.facebook.com/groups/150323068632560/",
+                        "text": "Factorio Facebook",
+                        "caption": "If you dare"
+                    },
+                    {
                         "url": "https://factorioprints.com/top",
                         "text": "Factorio Blueprint Library",
                         "caption": "Top community designs."
+                    },
+                    {
+                        "url": "https://factorio.school/top",
+                        "text": "Factorio More Blueprints",
+                        "caption": "More blueprints."
                     }
                 ]
             }
