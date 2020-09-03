@@ -10,7 +10,7 @@
                 "links": [
                     {
                         "url": "https://factorio.com",
-                        "text": "Factorio",
+                        "text": "Factorio Website",
                         "caption": "The official website."
                     },
                     {
@@ -44,18 +44,23 @@
                 "text": "Unofficial",
                 "links": [
                     {
+                        "url": "https://alt-f4.blog/",
+                        "text": "Alt-F4 Blog",
+                        "caption": "FFF inspired fan blog."
+                    },
+                    {
                         "url": "https://www.reddit.com/r/factorio",
-                        "text": "Factorio Reddit",
+                        "text": "Reddit",
                         "caption": "Lots of helpful users."
                     },
                     {
                         "url": "https://www.reddit.com/r/technicalfactorio/",
-                        "text": "Factorio Technical Reddit",
+                        "text": "Reddit (Technical)",
                         "caption": "Advanced players."
                     },
                     {
                         "url": "https://discordapp.com/invite/factorio",
-                        "text": "Factorio Discord",
+                        "text": "Discord",
                         "caption": "Discuss the game in realtime."
                     },
                     {
@@ -65,18 +70,73 @@
                     },
                     {
                         "url": "https://www.facebook.com/groups/150323068632560/",
-                        "text": "Factorio Facebook",
+                        "text": "Facebook",
                         "caption": "If you dare"
                     },
                     {
                         "url": "https://factorioprints.com/top",
-                        "text": "Factorio Blueprint Library",
+                        "text": "Blueprint Library",
                         "caption": "Top community designs."
                     },
                     {
                         "url": "https://factorio.school/top",
-                        "text": "Factorio More Blueprints",
+                        "text": "More Blueprints",
                         "caption": "More blueprints."
+                    },
+                    {
+                        "url": "https://hub.docker.com/r/factoriotools/factorio",
+                        "text": "Docker",
+                        "caption": "Easy headless servers"
+                    },
+                    {
+                        "url": "https://factoriomaps.com/",
+                        "text": "Maps",
+                        "caption": "View/Download Maps"
+                    },
+                    {
+                        "url": "https://www.speedrun.com/Factorio/resources",
+                        "text": "Speedruns",
+                        "caption": "How Fast can you go?"
+                    }
+                ]
+            },
+            {
+                "text": "Multiplayer Communities",
+                "links": [
+                    {
+                        "url": "https://explosivegaming.nl/",
+                        "text": "Explosive Gaming",
+                        "caption": "Hosts Multiplayer Maps"
+                    },
+                    {
+                        "url": "https://redmew.com/",
+                        "text": "Redmew",
+                        "caption": "Custom scenarios: Diggy, Crashsite"
+                    },
+                    {
+                        "url": "https://getcomfy.eu/",
+                        "text": "Comfy",
+                        "caption": "Custom scenarios: Biter Battles, Mnt Fortress"
+                    },
+                    {
+                        "url": "https://discord.gg/mtPyHfW",
+                        "text": "Factorio One",
+                        "caption": "Custom scenarios: Oarc, Rail Earth"
+                    },
+                    {
+                        "url": "https://discord.gg/ePjHDK4",
+                        "text": "Factorio MMMO",
+                        "caption": "Hosts Multiplayer Events"
+                    },
+                    {
+                        "url": "https://red-circuit.org/",
+                        "text": "Red Circuit",
+                        "caption": "Multiplayer Events"
+                    },
+                    {
+                        "url": "https://www.factoriogames.com/",
+                        "text": "Factorio Olympics",
+                        "caption": "Multiplayer Competitions"
                     }
                 ]
             }
