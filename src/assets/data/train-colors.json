@@ -186,6 +186,10 @@
                 "rgb": [0, 0, 18]
             },
             {
+                "icon": "Efficiency_module",
+                "rgb": [88, 132, 53]
+            },
+            {
                 "icon": "Electric_engine_unit",
                 "rgb": [109, 76, 79]
             },
