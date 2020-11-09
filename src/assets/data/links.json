@@ -84,6 +84,11 @@
                         "caption": "More blueprints."
                     },
                     {
+                        "url": "https://factorio.zone/",
+                        "text": "Factorio Zone",
+                        "caption": "Easy online servers"
+                    },
+                    {
                         "url": "https://hub.docker.com/r/factoriotools/factorio",
                         "text": "Docker",
                         "caption": "Easy headless servers"
@@ -237,7 +242,7 @@
         "creatorBlueprints": [
             {
                 "name": "MojoD",
-                "url": "https://pastebin.com/u/MojoD"
+                "url": "https://github.com/MojoDTV/Factorio-Blueprints"
             },
             {
                 "name": "Rain9441",
