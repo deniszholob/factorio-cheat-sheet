@@ -27,7 +27,7 @@
             },
             {
                 "icons": [
-                    "Long_handed_inserter"
+                    "Long-handed_inserter"
                 ],
                 "stackSize": 1,
                 "chestToChest": 1.20,
@@ -81,7 +81,7 @@
             },
             {
                 "icons": [
-                    "Long_handed_inserter"
+                    "Long-handed_inserter"
                 ],
                 "stackSize": 2,
                 "chestToChest": 2.40,
@@ -135,7 +135,7 @@
             },
             {
                 "icons": [
-                    "Long_handed_inserter"
+                    "Long-handed_inserter"
                 ],
                 "stackSize": 3,
                 "chestToChest": 3.60,
