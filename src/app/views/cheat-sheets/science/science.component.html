@@ -1,11 +1,17 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
     <ul>
         <li>
-            Research is balanced in the number of different science packs required,
+            <a href="https://wiki.factorio.com/Research" target="_blank" rel="noopener">
+                Research
+            </a>
+            is balanced in the number of different science packs required,
             so optimally all science should be produced at the same rate.
         </li>
         <li>
-            Science Packs have various crafting times and outputs;
+            <a href="https://wiki.factorio.com/Science_pack" target="_blank" rel="noopener">
+                Science Packs
+            </a>
+            have various crafting times and outputs;
             you'll need different number of assemblers making each type to prevent bottlenecks.
         </li>
     </ul>
@@ -39,6 +45,13 @@
         </li>
         <li>
             You can move science packs between labs with inserters.
+        </li>
+        <li>
+            Launching 1-100
+            <a href="https://wiki.factorio.com/Space_science_pack" target="_blank" rel="noopener">Space Science</a>
+            in a rocket will give you 1-100
+            <a href="https://wiki.factorio.com/Raw_fish" target="_blank" rel="noopener">Fish</a>
+            respectively.
         </li>
     </ul>
 
@@ -126,14 +139,14 @@
             <div class="eq-container">
                 <div class="eq-field bg-factorio-blue">
                     <span class="eq-label">1 + </span>
-                    <span class="eq-label">Lab Speed Bonus (%)</span>
+                    <span class="eq-label">(Lab Speed Bonus %</span>
                     <input type="number" class="eq-input" [(ngModel)]="calcScience.labSpeedBonus" (keyup)="calcScienceNumberOfLabs()" (change)="calcScienceNumberOfLabs()">
-                    <span class="eq-label"> / 100 </span>
+                    <span class="eq-label"> / 100)</span>
                 </div>
             </div>
         </div>
     </div>
-    <p class="text-muted text-center">Use the formula above to calculate how many labs satisfy a target consumption rate of science packs per minute.</p>
+    <p class="text-muted text-center">Calculates how many labs satisfy a target production rate of science packs per minute.</p>
     <p class="text-muted">
         <b>Research Cycle Time</b> - Time in seconds to complete one research cycle, this is usually 60 seconds for all infinite tech.<br>
         <b>Lab Speed Bonus</b> - Speed bonus as reported by the lab, including modules and beacons.<br>
