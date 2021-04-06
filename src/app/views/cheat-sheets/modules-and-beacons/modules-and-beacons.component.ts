@@ -27,7 +27,7 @@ export class ModulesAndBeaconsComponent implements OnInit {
 
     calcMachines: ThroughputCalc = {
         machinesToFillBelt: 1,
-        itemConsumptionRate: 45,
+        itemProductionRate: 45,
         recipeBaseCraftTime: 1,
         itemsPerCraft: 1,
         machineCraftSpeed: 0.75,
@@ -45,7 +45,7 @@ export class ModulesAndBeaconsComponent implements OnInit {
 
     calcMachinesToFillBelt() {
         this.calcMachines.machinesToFillBelt =
-            (this.calcMachines.itemConsumptionRate * this.calcMachines.recipeBaseCraftTime) /
+            (this.calcMachines.itemProductionRate * this.calcMachines.recipeBaseCraftTime) /
             (this.calcMachines.itemsPerCraft * this.calcMachines.machineCraftSpeed * this.calcMachines.machineProductivity);
         this.calcMachines.machinesToFillBelt = this.calcMachines.machinesToFillBelt.toFixed(2);
     }
@@ -54,7 +54,7 @@ export class ModulesAndBeaconsComponent implements OnInit {
 
 interface ThroughputCalc {
     machinesToFillBelt: any;
-    itemConsumptionRate: number;
+    itemProductionRate: number;
     recipeBaseCraftTime: number;
     itemsPerCraft: number;
     machineCraftSpeed: number;
