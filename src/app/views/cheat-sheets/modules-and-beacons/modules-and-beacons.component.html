@@ -7,7 +7,12 @@
                 <li>Beware of <a href="https://forums.factorio.com/viewtopic.php?f=5&t=5705" target="_blank" rel="noopener">Diminishing Returns</a>.</li>
                 <li>Also see <a href="https://www.reddit.com/r/factorio/comments/4phc78/math_energy_efficiency_of_productivity3/" target="_blank" rel="noopener">Beacon Arrangement Power Efficiency</a>.</li>
                 <li>
-                    Having <i>faster</i> machines with <a href="https://wiki.factorio.com/Speed_module_3" target="_blank" rel="noopener">Speed Modules</a> means you'll need less to fill a belt than you did before.
+                    Having <i>faster</i> machines with
+                    <a href="https://wiki.factorio.com/Speed_module_3" target="_blank" rel="noopener">
+                        <app-factorio-icon [icon]="dataService.getFactorioIcon('Speed_module_3')"></app-factorio-icon>
+                        Speed Modules
+                    </a>
+                    means you'll need less to fill a belt than you did before.
                     <ul>
                         <li>While generally space is infinite, this becomes very useful in bot networks to minimize flight distance.</li>
                         <li>You can also speed up oil pumping, or ore mining.</li>
@@ -15,8 +20,12 @@
                     </ul>
                 </li>
                 <li>
-                    Putting <a href="https://wiki.factorio.com/Productivity_module_3" target="_blank" rel="noopener">Productivity Modules</a> in your machines
-                    means you'll use less raw resources.
+                    Putting
+                    <a href="https://wiki.factorio.com/Productivity_module_3" target="_blank" rel="noopener">
+                        <app-factorio-icon [icon]="dataService.getFactorioIcon('Productivity_module_3')"></app-factorio-icon>
+                        Productivity Modules
+                    </a>
+                    in your machines means you'll use less raw resources.
                     <ul>
                         <li>This is absolutely critical for late game with big factories, especially when doing infinite research.</li>
                         <li>Be wary, Productivity Modules increase the energy consumption and pollution, while decreasing factory
@@ -27,7 +36,10 @@
                 </li>
 
                 <li>
-                    <a href="https://wiki.factorio.com/Efficiency_module_3" target="_blank" rel="noopener">Efficiency Modules</a> reduce power usage.
+                    <a href="https://wiki.factorio.com/Efficiency_module_3" target="_blank" rel="noopener">
+                        <app-factorio-icon [icon]="dataService.getFactorioIcon('Efficiency_module_3')"></app-factorio-icon>
+                        Efficiency Modules
+                    </a> reduce power usage.
                     <ul>
                         <li>Best to put in energy hogs.</li>
                         <li>Reducing Energy = Reducing pollution</li>
@@ -57,8 +69,8 @@
         <div class="col-12 col-lg-9">
             <div class="eq-container">
                 <div class="eq-field bg-factorio-yellow-muted">
-                    <span class="eq-label">Item Consumption Rate</span>
-                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.itemConsumptionRate" (keyup)="calcMachinesToFillBelt()" (change)="calcMachinesToFillBelt()" step="1">
+                    <span class="eq-label">Item Production Rate</span>
+                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.itemProductionRate" (keyup)="calcMachinesToFillBelt()" (change)="calcMachinesToFillBelt()" step="1">
                 </div>
                 <div class="eq-operator">*</div>
                 <div class="eq-field bg-factorio-green">
@@ -86,6 +98,6 @@
         </div>
     </div>
 
-    <p class="text-muted text-center">Use the formula above to calculate how many machines satisfy a target consumption rate of items they produce or consume.</p>
+    <p class="text-muted text-center">Calculates how many machines satisfy a target production rate of items.</p>
 
 </app-cheat-sheet>
