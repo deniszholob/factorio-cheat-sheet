@@ -4,6 +4,7 @@
   "license": "GPL-3",
   "repository": "github:deniszholob/factorio-cheat-sheet",
   "scripts": {
+    "i": "npm i --no-package-lock",
     "ng": "ng",
     "start": "ng serve --port 9009",
     "start:prod": "http-server -p 8080 -c-1 public",
@@ -44,7 +45,7 @@
     "core-js": "^2.4.1",
     "node-sass": "^4.14.1",
     "rxjs": "^6.5.5",
-    "tslib": "^2.0.0",
+    "tslib": "^2.2.0",
     "zone.js": "~0.10.3"
   },
   "devDependencies": {

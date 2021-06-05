@@ -5,12 +5,12 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/services/data.model';
+import { Data } from 'app/definitions/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
-import { TrainColorsData, TrainColor } from 'app/definitions/TrainColors';
+import { TrainColorsData, TrainColor } from 'app/definitions/TrainColorsData.model';
 
 // Constants
-const dataFile = 'train-colors';
+import { TRAIN_COLOR_DATA } from './train-colors.data';
 
 @Component({
     selector: 'app-train-colors',
@@ -29,8 +29,8 @@ export class TrainColorsComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.dataService.getCheatSheetData(dataFile).subscribe(
-            (result: Data) => {
+        this.dataService.getLocalCheatSheetData<TrainColorsData>(TRAIN_COLOR_DATA).subscribe(
+            (result: Data<TrainColorsData>) => {
                 this.cheatSheet = result.cheatSheet;
                 this.sheetData = result.data;
                 this.filter();

@@ -2,23 +2,21 @@
 import { Component, OnInit } from '@angular/core';
 
 // RXJS
-import { combineLatest, throwError } from 'rxjs';
+import { combineLatest } from 'rxjs';
 
 // Services
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/services/data.model';
+import { Data } from 'app/definitions/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { BeltsData } from 'app/definitions/BeltsData.model';
+import { MiningData, Ore } from 'app/definitions/MiningData';
 
 // Constants
 import { APP_SETTINGS } from 'app/shared/app-settings';
-import { MiningData, Ore } from 'app/definitions/MiningRate';
-import { BeltThroughputData } from 'app/definitions/BeltThroughput';
-
-// Constants
-const dataFile = 'mining';
-const dataFile2 = 'belt-throughput';
+import { MINING_DATA } from './mining.data';
+import { BELTS_DATA } from '../belts/belts.data';
 
 interface MiningRateTable {
     materials: string[];
@@ -43,7 +41,7 @@ export class MiningComponent implements OnInit {
     public APP_SETTINGS = APP_SETTINGS;
     public cheatSheet: CheatSheet;
     public sheetData: MiningData;
-    public beltData: BeltThroughputData;
+    public beltData: BeltsData;
 
     public miningRateTable: MiningRateTable[] = [];
 
@@ -60,10 +58,10 @@ export class MiningComponent implements OnInit {
     /** Get Data for the Cheat Sheet from the DataService */
     ngOnInit() {
         combineLatest([
-            this.dataService.getCheatSheetData(dataFile),
-            this.dataService.getCheatSheetData(dataFile2),
+            this.dataService.getLocalCheatSheetData<MiningData>(MINING_DATA),
+            this.dataService.getLocalCheatSheetData<BeltsData>(BELTS_DATA),
         ]).subscribe(
-            ([result, result2]: [Data, Data]) => {
+            ([result, result2]: [Data<MiningData>, Data<BeltsData>]) => {
                 this.cheatSheet = result.cheatSheet;
                 this.sheetData = result.data;
                 this.beltData = result2.data;

@@ -192,7 +192,7 @@
             <span class="text-muted">Best</span><br>
             <span *ngFor="let item of sheetData?.solidFuel[0]; let idx = index">
                 <i *ngIf="idx!=0" class="fas fa-long-arrow-alt-right text-muted" aria-hidden="true"></i>
-                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.material, item?.count)"></app-factorio-icon>
+                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </span>
         </div>
 
@@ -200,7 +200,7 @@
             <span class="text-muted">OK</span><br>
             <span *ngFor="let item of sheetData?.solidFuel[1]; let idx = index">
                 <i *ngIf="idx!=0" class="fas fa-long-arrow-alt-right text-muted" aria-hidden="true"></i>
-                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.material, item?.count)"></app-factorio-icon>
+                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </span>
         </div>
 
@@ -208,7 +208,7 @@
             <span class="text-muted">Worst</span><br>
             <span *ngFor="let item of sheetData?.solidFuel[2]; let idx = index">
                 <i *ngIf="idx!=0" class="fas fa-long-arrow-alt-right text-muted" aria-hidden="true"></i>
-                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.material, item?.count)"></app-factorio-icon>
+                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </span>
         </div>
     </div>

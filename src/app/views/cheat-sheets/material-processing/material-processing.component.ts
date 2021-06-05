@@ -5,11 +5,12 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/services/data.model';
+import { Data } from 'app/definitions/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { MaterialProcessingData } from 'app/definitions/MaterialProcessingData.model';
 
 // Constants
-const dataFile = 'material-processing';
+import { MATERIAL_PROCESSING_DATA } from './material-processing.data';
 
 @Component({
     selector: 'app-material-processing',
@@ -18,7 +19,7 @@ const dataFile = 'material-processing';
 })
 export class MaterialProcessingComponent implements OnInit {
     cheatSheet: CheatSheet;
-    sheetData: any;
+    sheetData: MaterialProcessingData;
 
     constructor(
         public dataService: DataService
@@ -26,8 +27,8 @@ export class MaterialProcessingComponent implements OnInit {
 
     /** Get Data for the Cheat Sheet from the DataService */
     ngOnInit() {
-        this.dataService.getCheatSheetData(dataFile).subscribe(
-            (result: Data) => {
+        this.dataService.getLocalCheatSheetData<MaterialProcessingData>(MATERIAL_PROCESSING_DATA).subscribe(
+            (result: Data<MaterialProcessingData>) => {
                 this.cheatSheet = result.cheatSheet;
                 this.sheetData = result.data;
             },

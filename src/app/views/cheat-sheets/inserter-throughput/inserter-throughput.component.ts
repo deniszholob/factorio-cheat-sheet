@@ -5,12 +5,13 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/services/data.model';
+import { Data } from 'app/definitions/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { InserterThroughputData, ThroughputBonus } from 'app/definitions/InserterThroughputData.model';
 
 // Constants
 import { APP_SETTINGS } from 'app/shared/app-settings';
-const dataFile = 'inserter-throughput';
+import { INSERTER_THROUGHPUT_DATA } from './inserter-throughput.data';
 
 @Component({
     selector: 'app-inserter-throughput',
@@ -19,14 +20,14 @@ const dataFile = 'inserter-throughput';
 })
 export class InserterThroughputComponent implements OnInit {
     cheatSheet: CheatSheet;
-    sheetData: any;
+    sheetData: InserterThroughputData;
 
     APP_SETTINGS = APP_SETTINGS;
 
     bonusLevel: number;
     bonusLevels: number[] = [7, 2, 0];
 
-    tableData: any;
+    tableData: ThroughputBonus[];
 
     constructor(
         public dataService: DataService
@@ -34,8 +35,8 @@ export class InserterThroughputComponent implements OnInit {
 
     ngOnInit() {
         this.bonusLevel = 7; // Default Value
-        this.dataService.getCheatSheetData(dataFile).subscribe(
-            (result: Data) => {
+        this.dataService.getLocalCheatSheetData<InserterThroughputData>(INSERTER_THROUGHPUT_DATA).subscribe(
+            (result: Data<InserterThroughputData>) => {
                 this.cheatSheet = result.cheatSheet;
                 this.sheetData = result.data;
                 this.updateTable();

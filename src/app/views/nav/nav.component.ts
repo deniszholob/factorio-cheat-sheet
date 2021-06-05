@@ -6,7 +6,7 @@ import { DataService } from 'app/services/data.service';
 import { SheetCollapseToggleService } from 'app/services/sheet-collapse-toggle.service';
 
 // Constants
-const dataFile = 'nav';
+import { NAV_DATA } from './nav.data';
 
 @Component({
     selector: 'app-nav',
@@ -26,15 +26,8 @@ export class NavComponent implements OnInit {
 
     /** Get Nav Data: sheet id's to anchor link to */
     ngOnInit() {
-        this.dataService.GET<Object>(dataFile).subscribe(
-            (result: Object) => {
-                this.sheetIds = result['nav'];
-                this.onResize(null);
-            },
-            error => {
-                console.log(error);
-            }
-        );
+      this.sheetIds = NAV_DATA;
+      this.onResize(null);
         this.closeNav();
     }
 

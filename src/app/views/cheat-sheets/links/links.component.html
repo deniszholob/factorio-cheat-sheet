@@ -19,7 +19,7 @@
     <h4 id="CreatorLinks" class="card-title">Creator Blueprints</h4>
     <ul class="row">
         <li class="col-12 col-md-6 col-lg-4 col-xl-3 col" *ngFor="let link of sheetData?.creatorBlueprints">
-            <a *ngIf="link.url" href="{{link?.url}}" target="_blank" rel="noopener">{{link?.name}}</a>
+            <a *ngIf="link.url" href="{{link?.url}}" target="_blank" rel="noopener">{{link?.text}}</a>
             <span *ngIf="link?.caption" class="text-muted"> - {{link?.caption}}</span>
             <span *ngIf="!link.url">{{link?.text}}</span>
         </li>

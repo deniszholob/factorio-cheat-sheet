@@ -5,11 +5,12 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/services/data.model';
+import { Data } from 'app/definitions/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { BasicPowerData } from 'app/definitions/BasicPowerData.model';
 
 // Constants
-const dataFile = 'basic-power';
+import { BASIC_POWER_DATA } from './basic-power.data';
 
 @Component({
     selector: 'app-basic-power',
@@ -18,7 +19,7 @@ const dataFile = 'basic-power';
 })
 export class BasicPowerComponent implements OnInit {
     public cheatSheet: CheatSheet;
-    public sheetData: any;
+    public sheetData: BasicPowerData;
 
     public solarPowerRatio = 1;
 
@@ -28,8 +29,8 @@ export class BasicPowerComponent implements OnInit {
 
     /** Get Data for the Cheat Sheet from the DataService */
     ngOnInit() {
-        this.dataService.getCheatSheetData(dataFile).subscribe(
-            (result: Data) => {
+        this.dataService.getLocalCheatSheetData<BasicPowerData>(BASIC_POWER_DATA).subscribe(
+            (result: Data<BasicPowerData>) => {
                 this.cheatSheet = result.cheatSheet;
                 this.sheetData = result.data;
                 this.solarPowerRatio = this.sheetData.solar_energy_avg / this.sheetData.solar_energy_max;

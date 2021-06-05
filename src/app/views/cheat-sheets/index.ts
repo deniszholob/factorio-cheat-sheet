@@ -1,6 +1,6 @@
 export * from './balancers/balancers.component';
 export * from './basic-power/basic-power.component';
-export * from './belt-throughput/belt-throughput.component';
+export * from './belts/belts.component';
 export * from './cargo-wagon-transfer/cargo-wagon-transfer.component';
 export * from './combat/combat.component';
 export * from './common-ratios/common-ratios.component';

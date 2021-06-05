@@ -5,12 +5,13 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/services/data.model';
+import { Data } from 'app/definitions/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { CargoWagonTransferData } from 'app/definitions/CargoWagonTransferData.model';
 
 // Constants
 import { APP_SETTINGS } from 'app/shared/app-settings';
-const dataFile = 'cargo-wagon-transfer';
+import { CARGO_WAGON_TRANSFER_DATA } from './cargo-wagon-transfer.data';
 
 interface CargoTransferTimeModel {
     itemsPerCycle: number;
@@ -41,7 +42,7 @@ interface SlotItem {
 })
 export class CargoWagonTransferComponent implements OnInit {
     cheatSheet: CheatSheet;
-    sheetData: any;
+    sheetData: CargoWagonTransferData;
 
     APP_SETTINGS = APP_SETTINGS;
 
@@ -53,8 +54,8 @@ export class CargoWagonTransferComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.dataService.getCheatSheetData(dataFile).subscribe(
-            (result: Data) => {
+        this.dataService.getLocalCheatSheetData<CargoWagonTransferData>(CARGO_WAGON_TRANSFER_DATA).subscribe(
+            (result: Data<CargoWagonTransferData>) => {
                 this.cheatSheet = result.cheatSheet;
                 this.sheetData = result.data;
                 this.calcData();
