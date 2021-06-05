@@ -11,7 +11,7 @@ node_js:
 # Blocklist
 branches:
     except:
-      - gh-pages # Will be deployed to, no need to build it
+        - gh-pages # Will be deployed to, no need to build it
 
 script:
     - echo 'Building app...'
