@@ -39,7 +39,7 @@
     "@angular/platform-browser-dynamic": "^11.2.14",
     "@angular/router": "^11.2.14",
     "@angular/service-worker": "^11.2.14",
-    "@ng-bootstrap/ng-bootstrap": "^7.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^9.1.2",
     "bootstrap": "^4.5.0",
     "core-js": "^2.4.1",
     "node-sass": "^4.14.1",
