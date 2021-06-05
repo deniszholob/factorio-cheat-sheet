@@ -6,12 +6,12 @@
 
 language: node_js # Building with node js
 node_js:
-    - 12.16.3 # Same node version as package.json
+    - 14.17.0 # Same node version as package.json
 
 # Blocklist
 branches:
     except:
-      - gh-pages # Will be deployed to, no need to build it
+        - gh-pages # Will be deployed to, no need to build it
 
 script:
     - echo 'Building app...'

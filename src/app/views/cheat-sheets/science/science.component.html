@@ -75,15 +75,15 @@
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">Science Per Launch</span>
-                    <input type="number" class="form-control" [(ngModel)]="rocketCalcData.sciencePerLaunch" (keyup)="onCalcRocketRate()" (change)="onCalcRocketRate()">
+                    <input type="number" class="form-control" [(ngModel)]="rocketCalcData.sciencePerLaunch" (keyup)="onCalcRocketRate()" (change)="onCalcRocketRate()" min="0">
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">Assembler Speed</span>
-                    <input type="number" class="form-control" [(ngModel)]="rocketCalcData.assemblerSpeed" (keyup)="onCalcRocketRate()" (change)="onCalcRocketRate()" step="0.25">
+                    <input type="number" class="form-control" [(ngModel)]="rocketCalcData.assemblerSpeed" (keyup)="onCalcRocketRate()" (change)="onCalcRocketRate()" step="0.25" min="0">
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">Ratio Multiplier</span>
-                    <input type="number" class="form-control" [(ngModel)]="rocketCalcData.ratioMultiplier" (keyup)="onCalcRocketRate()" (change)="onCalcRocketRate()">
+                    <input type="number" class="form-control" [(ngModel)]="rocketCalcData.ratioMultiplier" (keyup)="onCalcRocketRate()" (change)="onCalcRocketRate()" min="0">
                 </div>
             </div>
         </div>

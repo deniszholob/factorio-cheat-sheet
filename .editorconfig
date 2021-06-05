@@ -23,6 +23,6 @@ max_line_length = 120
 max_line_length = off
 trim_trailing_whitespace = false
 
-# JS and Json
-[*.{js, json}]
+# JS related
+[*.{js,ts,json,yml}]
 indent_size = 2

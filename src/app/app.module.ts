@@ -32,7 +32,7 @@ import * as SheetComponents from 'app/views/cheat-sheets';
     // Modules
     imports: [
         BrowserModule,
-        RouterModule.forRoot([]),
+        RouterModule.forRoot([], { relativeLinkResolution: 'legacy' }),
         FormsModule,
         HttpClientModule,
         CdkTableModule,
