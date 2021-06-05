@@ -3,10 +3,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 // RXJX
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { map, take } from 'rxjs/operators';
 
 // Models
+import { Data as IData , RawData } from 'app/definitions/Data.model';
 import { Data } from './data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 import { FactorioIcon } from 'app/shared/factorio-icon/factorio-icon.model';
@@ -22,18 +23,25 @@ export class DataService {
         private httpClientService: HttpClient
     ) { }
 
-
     GET<T>(endpoint: string): Observable<T> {
         const url = BASE_URL + endpoint + '.json';
         return this.httpClientService.get<T>(url);
     }
 
-    getCheatSheetData(endpoint: string): Observable<Data> {
+    /** @deprecated, use getLocalCheatSheetData */
+    getCheatSheetData<T>(endpoint: string): Observable<Data> {
         return this.GET<any>(endpoint).pipe(
             map((response: any) => {
                 return new Data(this.getCheatSheet(response.cheatSheet), response.data);
             })
         );
+    }
+
+    getLocalCheatSheetData<T>(rawData: RawData<T>): Observable<IData<T>> {
+        return of({
+          cheatSheet: this.getCheatSheet(rawData.cheatSheet),
+          data: rawData.data,
+        }).pipe(take(1));
     }
 
     toTitleCase(str) {

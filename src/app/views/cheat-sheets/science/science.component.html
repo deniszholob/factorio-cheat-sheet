@@ -110,14 +110,14 @@
             <div class="eq-container">
                 <div class="eq-field bg-factorio-yellow-muted">
                     <span class="eq-label">Packs Per Minute</span>
-                    <input type="number" class="eq-input" [(ngModel)]="calcScience.packsPerMinute" (keyup)="calcScienceNumberOfLabs()" (change)="calcScienceNumberOfLabs()">
+                    <input type="number" class="eq-input" [(ngModel)]="calcScience.packsPerMinute" (keyup)="calcScienceNumberOfLabs()" (change)="calcScienceNumberOfLabs()" min="0">
                 </div>
             </div>
             <div class="eq-operator op-divide"></div>
             <div class="eq-container">
                 <div class="eq-field">
                     <span class="eq-label">Seconds</span>
-                    <input type="text" class="eq-input" [value]="60" readonly>
+                    <input type="text" class="eq-input" [value]="60" readonly min="0">
                 </div>
             </div>
         </div>
@@ -132,7 +132,7 @@
             <div class="eq-container">
                 <div class="eq-field bg-factorio-green">
                     <span class="eq-label">Research cycle seconds</span>
-                    <input type="number" class="eq-input" [(ngModel)]="calcScience.researchCycleTime" (keyup)="calcScienceNumberOfLabs()" (change)="calcScienceNumberOfLabs()">
+                    <input type="number" class="eq-input" [(ngModel)]="calcScience.researchCycleTime" (keyup)="calcScienceNumberOfLabs()" (change)="calcScienceNumberOfLabs()" min="0">
                 </div>
             </div>
             <div class="eq-operator op-divide"></div>
@@ -140,7 +140,7 @@
                 <div class="eq-field bg-factorio-blue">
                     <span class="eq-label">1 + </span>
                     <span class="eq-label">(Lab Speed Bonus %</span>
-                    <input type="number" class="eq-input" [(ngModel)]="calcScience.labSpeedBonus" (keyup)="calcScienceNumberOfLabs()" (change)="calcScienceNumberOfLabs()">
+                    <input type="number" class="eq-input" [(ngModel)]="calcScience.labSpeedBonus" (keyup)="calcScienceNumberOfLabs()" (change)="calcScienceNumberOfLabs()" min="0">
                     <span class="eq-label"> / 100)</span>
                 </div>
             </div>

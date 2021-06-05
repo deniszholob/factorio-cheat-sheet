@@ -5,11 +5,12 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/services/data.model';
+import { Data } from 'app/definitions/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { LinksData } from 'app/definitions/LinksData.model';
 
 // Constants
-const dataFile = 'links';
+import { LINKS_DATA } from './links.data';
 
 @Component({
     selector: 'app-links',
@@ -18,7 +19,7 @@ const dataFile = 'links';
 })
 export class LinksComponent implements OnInit {
     cheatSheet: CheatSheet;
-    sheetData: any;
+    sheetData: LinksData;
 
     constructor(
         public dataService: DataService
@@ -26,8 +27,8 @@ export class LinksComponent implements OnInit {
 
     /** Get Data for the Cheat Sheet from the DataService */
     ngOnInit() {
-        this.dataService.getCheatSheetData(dataFile).subscribe(
-            (result: Data) => {
+        this.dataService.getLocalCheatSheetData<LinksData>(LINKS_DATA).subscribe(
+            (result: Data<LinksData>) => {
                 this.cheatSheet = result.cheatSheet;
                 this.sheetData = result.data;
             },

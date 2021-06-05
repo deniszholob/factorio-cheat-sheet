@@ -5,11 +5,12 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/services/data.model';
+import { Data } from 'app/definitions/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { CommonRatioData } from 'app/definitions/CommonRatiosData.model';
 
 // Constants
-const dataFile = 'common-ratios';
+import { COMMON_RATIO_DATA } from './common-ratios.data';
 
 @Component({
     selector: 'app-common-ratios',
@@ -18,15 +19,15 @@ const dataFile = 'common-ratios';
 })
 export class CommonRatiosComponent implements OnInit {
     cheatSheet: CheatSheet;
-    sheetData: any;
+    sheetData: CommonRatioData;
 
     constructor(
         public dataService: DataService
     ) { }
 
     ngOnInit() {
-        this.dataService.getCheatSheetData(dataFile).subscribe(
-            (result: Data) => {
+        this.dataService.getLocalCheatSheetData<CommonRatioData>(COMMON_RATIO_DATA).subscribe(
+            (result: Data<CommonRatioData>) => {
                 this.cheatSheet = result.cheatSheet;
                 this.sheetData = result.data;
             },

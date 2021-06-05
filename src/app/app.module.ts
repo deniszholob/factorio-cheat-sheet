@@ -10,7 +10,8 @@ import { environment } from '../environments/environment';
 import { CdkTableModule } from '@angular/cdk/table';
 
 // Third Party (UI frameworks, etc...)
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapseModule, NgbPaginationModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Routing
 import { RouterModule } from '@angular/router';
@@ -27,6 +28,12 @@ import * as SharedComponents from 'app/shared';
 import * as ViewComponents from 'app/views';
 import * as SheetComponents from 'app/views/cheat-sheets';
 
+const ngb = [
+  NgbCollapseModule,
+  NgbPaginationModule,
+  NgbTooltipModule,
+];
+
 
 @NgModule({
     // Modules
@@ -36,7 +43,7 @@ import * as SheetComponents from 'app/views/cheat-sheets';
         FormsModule,
         HttpClientModule,
         CdkTableModule,
-        NgbModule,
+        ...ngb,
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     ],
     // Components
@@ -53,7 +60,7 @@ import * as SheetComponents from 'app/views/cheat-sheets';
         SharedComponents.FactorioIconComponent,
         SheetComponents.BalancersComponent,
         SheetComponents.BasicPowerComponent,
-        SheetComponents.BeltThroughputComponent,
+        SheetComponents.BeltsComponent,
         SheetComponents.CargoWagonTransferComponent,
         SheetComponents.CombatComponent,
         SheetComponents.CommonRatiosComponent,

@@ -5,11 +5,12 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/services/data.model';
+import { Data } from 'app/definitions/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { InserterCapacityBonusData } from 'app/definitions/InserterCapacityBonusData.model';
 
 // Constants
-const dataFile = 'inserter-capacity-bonus';
+import { INSERTER_CAPACITY_BONUS_DATA } from './inserter-capacity-bonus.data';
 
 @Component({
     selector: 'app-inserter-capacity-bonus',
@@ -18,15 +19,15 @@ const dataFile = 'inserter-capacity-bonus';
 })
 export class InserterCapacityBonusComponent implements OnInit {
     cheatSheet: CheatSheet;
-    sheetData: any;
+    sheetData: InserterCapacityBonusData;
 
     constructor(
         public dataService: DataService
     ) { }
 
     ngOnInit() {
-        this.dataService.getCheatSheetData(dataFile).subscribe(
-            (result: Data) => {
+        this.dataService.getLocalCheatSheetData<InserterCapacityBonusData>(INSERTER_CAPACITY_BONUS_DATA).subscribe(
+            (result: Data<InserterCapacityBonusData>) => {
                 this.cheatSheet = result.cheatSheet;
                 this.sheetData = result.data;
             },

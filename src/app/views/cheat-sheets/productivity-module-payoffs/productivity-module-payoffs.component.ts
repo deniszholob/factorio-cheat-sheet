@@ -8,24 +8,16 @@ import { BehaviorSubject, combineLatest } from 'rxjs';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/services/data.model';
+import { Data } from 'app/definitions/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { Payoff, ProductivityModulePayoffsData } from 'app/definitions/ProductivityModulePayoffsData.model';
 
 // Constants
-const dataFile = 'productivity-module-payoffs';
+import { PRODUCTIVITY_MODULE_PAYOFFS_DATA } from './productivity-module-payoffs.data';
 
 // Data Table Ref:
 // https://blog.angularindepth.com/angular-cdk-tables-1537774d7c99
 // https://material.angular.io/cdk/table/overview#connecting-the-table-to-a-data-source
-
-interface PayoffData {
-    product: string;
-    description: string;
-    payoff_speed_prod: string;
-    payoff_prod: string;
-    payoff_beacon_8x8: string;
-    payoff_beacon_12: string;
-}
 
 @Component({
     selector: 'app-productivity-module-payoffs',
@@ -44,14 +36,14 @@ export class ProductivityModulePayoffsComponent implements OnInit {
     ];
 
     // Sorting Variables
-    public tableDataSource$ = new BehaviorSubject<PayoffData[]>([]);
+    public tableDataSource$ = new BehaviorSubject<Payoff[]>([]);
     public sortKey$ = new BehaviorSubject<string>('payoff_speed_prod');
     public sortDirection$ = new BehaviorSubject<string>('asc');
 
     // Pagination Variables
     public currentPage$ = new BehaviorSubject<number>(1);
     public pageSize$ = new BehaviorSubject<number>(10);
-    public dataOnPage$ = new BehaviorSubject<PayoffData[]>([]);
+    public dataOnPage$ = new BehaviorSubject<Payoff[]>([]);
 
 
     constructor(
@@ -69,12 +61,12 @@ export class ProductivityModulePayoffsComponent implements OnInit {
 
         // Data/Sorting Subscription
         combineLatest([
-            this.dataService.getCheatSheetData(dataFile),
+            this.dataService.getLocalCheatSheetData<ProductivityModulePayoffsData>(PRODUCTIVITY_MODULE_PAYOFFS_DATA),
             this.sortKey$, this.sortDirection$,
         ]).subscribe(
-            ([newData, sortKey, sortDirection]: [Data, string, string]) => {
+            ([newData, sortKey, sortDirection]: [Data<ProductivityModulePayoffsData>, string, string]) => {
                 this.cheatSheet = newData.cheatSheet;
-                const data: PayoffData[] = newData.data;
+                const data: Payoff[] = newData.data.payoffs;
 
                 // Sort the incoming data
                 const sorted = data.sort((a, b) => {

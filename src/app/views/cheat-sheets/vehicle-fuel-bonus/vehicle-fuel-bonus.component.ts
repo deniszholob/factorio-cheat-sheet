@@ -5,11 +5,12 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/services/data.model';
+import { Data } from 'app/definitions/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { VehicleFuelBonusData } from 'app/definitions/VehicleFuelBonusData.model';
 
 // Constants
-const dataFile = 'vehicle-fuel-bonus';
+import { VEHICLE_FUEL_BONUS_DATA } from './vehicle-fuel-bonus.data';
 
 @Component({
     selector: 'app-vehicle-fuel-bonus',
@@ -32,8 +33,8 @@ export class VehicleFuelBonusComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.dataService.getCheatSheetData(dataFile).subscribe(
-            (result: Data) => {
+        this.dataService.getLocalCheatSheetData<VehicleFuelBonusData>(VEHICLE_FUEL_BONUS_DATA).subscribe(
+            (result: Data<VehicleFuelBonusData>) => {
                 this.cheatSheet = result.cheatSheet;
                 this.sheetData = result.data;
                 this.updateTable();

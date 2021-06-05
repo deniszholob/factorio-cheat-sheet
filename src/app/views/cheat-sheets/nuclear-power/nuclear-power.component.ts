@@ -5,12 +5,13 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/services/data.model';
+import { Data } from 'app/definitions/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { NuclearPowerData } from 'app/definitions/NuclearPowerData.model';
 
 // Constants
 import { APP_SETTINGS } from 'app/shared/app-settings';
-const dataFile = 'nuclear-power';
+import { NUCLEAR_POWER_DATA } from './nuclear-power.data';
 
 @Component({
     selector: 'app-nuclear-power',
@@ -19,7 +20,7 @@ const dataFile = 'nuclear-power';
 })
 export class NuclearPowerComponent implements OnInit {
     cheatSheet: CheatSheet;
-    sheetData: any;
+    sheetData: NuclearPowerData;
 
     APP_SETTINGS = APP_SETTINGS;
 
@@ -43,8 +44,8 @@ export class NuclearPowerComponent implements OnInit {
 
     /** Get Data for the Cheat Sheet from the DataService */
     ngOnInit() {
-        this.dataService.getCheatSheetData(dataFile).subscribe(
-            (result: Data) => {
+        this.dataService.getLocalCheatSheetData<NuclearPowerData>(NUCLEAR_POWER_DATA).subscribe(
+            (result: Data<NuclearPowerData>) => {
                 this.cheatSheet = result.cheatSheet;
                 this.sheetData = result.data;
 

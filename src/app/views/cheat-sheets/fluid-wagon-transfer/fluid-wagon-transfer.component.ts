@@ -5,12 +5,13 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/services/data.model';
+import { Data } from 'app/definitions/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { FluidWagonTransferData } from 'app/definitions/FluidWagonTransferData.model';
 
 // Constants
 import { APP_SETTINGS } from 'app/shared/app-settings';
-const dataFile = 'fluid-wagon-transfer';
+import { FLUID_WAGON_TRANSFER_DATA } from './fluid-wagon-transfer.data';
 
 @Component({
     selector: 'app-fluid-wagon-transfer',
@@ -19,7 +20,7 @@ const dataFile = 'fluid-wagon-transfer';
 })
 export class FluidWagonTransferComponent implements OnInit {
     cheatSheet: CheatSheet;
-    sheetData: any;
+    sheetData: FluidWagonTransferData;
 
     APP_SETTINGS = APP_SETTINGS;
 
@@ -30,8 +31,8 @@ export class FluidWagonTransferComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.dataService.getCheatSheetData(dataFile).subscribe(
-            (result: Data) => {
+        this.dataService.getLocalCheatSheetData<FluidWagonTransferData>(FLUID_WAGON_TRANSFER_DATA).subscribe(
+            (result: Data<FluidWagonTransferData>) => {
                 this.cheatSheet = result.cheatSheet;
                 this.sheetData = result.data;
                 // this.calcLoadingTimes();

@@ -5,11 +5,12 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/services/data.model';
+import { Data } from 'app/definitions/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { ScienceData } from 'app/definitions/ScienceData.model';
 
 // Constants
-const dataFile = 'science';
+import { SCIENCE_DATA } from './science.data';
 
 @Component({
     selector: 'app-science',
@@ -18,7 +19,7 @@ const dataFile = 'science';
 })
 export class ScienceComponent implements OnInit {
     public cheatSheet: CheatSheet;
-    public sheetData: any;
+    public sheetData: ScienceData;
 
     public scienceRequirementsLink: string;
 
@@ -45,8 +46,8 @@ export class ScienceComponent implements OnInit {
 
     /** Get Data for the Cheat Sheet from the DataService */
     ngOnInit() {
-        this.dataService.getCheatSheetData(dataFile).subscribe(
-            (result: Data) => {
+        this.dataService.getLocalCheatSheetData<ScienceData>(SCIENCE_DATA).subscribe(
+            (result: Data<ScienceData>) => {
                 this.cheatSheet = result.cheatSheet;
                 this.sheetData = result.data;
             },

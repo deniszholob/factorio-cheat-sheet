@@ -5,21 +5,22 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/services/data.model';
+import { Data } from 'app/definitions/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 
 // Constants
 import { APP_SETTINGS } from 'app/shared/app-settings';
-const dataFile = 'belt-throughput';
+import { BELTS_DATA } from './belts.data';
+import { BeltsData } from 'app/definitions/BeltsData.model';
 
 @Component({
-    selector: 'app-belt-throughput',
-    templateUrl: './belt-throughput.component.html',
-    // styleUrls: ['./belt-throughput.component.scss'] // Enable as needed
+    selector: 'app-belts',
+    templateUrl: './belts.component.html',
+    // styleUrls: ['./belts.component.scss'] // Enable as needed
 })
-export class BeltThroughputComponent implements OnInit {
+export class BeltsComponent implements OnInit {
     public cheatSheet: CheatSheet;
-    public sheetData: any;
+    public sheetData: BeltsData;
 
     public APP_SETTINGS = APP_SETTINGS;
 
@@ -28,8 +29,8 @@ export class BeltThroughputComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.dataService.getCheatSheetData(dataFile).subscribe(
-            (result: Data) => {
+        this.dataService.getLocalCheatSheetData<BeltsData>(BELTS_DATA).subscribe(
+            (result: Data<BeltsData>) => {
                 this.cheatSheet = result.cheatSheet;
                 this.sheetData = result.data;
             },

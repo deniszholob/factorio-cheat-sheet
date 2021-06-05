@@ -30,7 +30,7 @@
             </tr>
         </thead>
         <tbody class="text-center">
-            <tr *ngFor="let item of sheetData; let idx = index">
+            <tr *ngFor="let item of sheetData.bonuses; let idx = index">
                 <td>
                     <app-factorio-icon *ngIf="idx==0" [icon]="dataService.getFactorioIcon('Inserter_capacity_bonus_(research)')" class="bg-factorio-red-muted"></app-factorio-icon>
                     <app-factorio-icon *ngIf="idx>0" [icon]="dataService.getFactorioIcon('Inserter_capacity_bonus_(research)', item?.tech)" class="bg-factorio-green"></app-factorio-icon>
