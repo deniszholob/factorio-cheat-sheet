@@ -168,3 +168,10 @@ img {
         margin-right: 250px;
     }
 }
+
+.support-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}

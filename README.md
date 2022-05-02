@@ -16,9 +16,10 @@ For anyone who is doing development work with Angular, I hope this project helps
 
 
 # Support Me
-If you find the cheat sheet or the source code useful, consider supporting me on Patreon.
+If you find the cheat sheet or the source code useful, consider:
 
-<img src="https://c5.patreon.com/external/logo/downloads_wordmark_white_on_coral.png" width="260" />
+* Donating Ko-fi: https://ko-fi.com/deniszholob
+* Supporting on Patreon: https://www.patreon.com/deniszholob
 
 # Screenshots
 
