@@ -1,5 +1,5 @@
-import { RawData } from "app/definitions/Data.model";
-import { ScienceData } from "app/definitions/ScienceData.model";
+import { RawData } from "app/models/Data.model";
+import { ScienceData } from "app/models/ScienceData.model";
 
 export const SCIENCE_DATA: RawData<ScienceData> = {
   "cheatSheet": {

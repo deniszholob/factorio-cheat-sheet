@@ -1,5 +1,5 @@
-import { RawData } from "app/definitions/Data.model";
-import { FluidWagonTransferData } from "app/definitions/FluidWagonTransferData.model";
+import { RawData } from "app/models/Data.model";
+import { FluidWagonTransferData } from "app/models/FluidWagonTransferData.model";
 
 export const FLUID_WAGON_TRANSFER_DATA: RawData<FluidWagonTransferData> = {
   "cheatSheet": {

@@ -5,9 +5,9 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/definitions/Data.model';
+import { Data } from 'app/models/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
-import { FluidWagonTransferData } from 'app/definitions/FluidWagonTransferData.model';
+import { FluidWagonTransferData } from 'app/models/FluidWagonTransferData.model';
 
 // Constants
 import { APP_SETTINGS } from 'app/shared/app-settings';

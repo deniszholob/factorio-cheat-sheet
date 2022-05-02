@@ -1,6 +1,6 @@
 
-import { CargoWagonTransferData } from "app/definitions/CargoWagonTransferData.model";
-import { RawData } from "app/definitions/Data.model";
+import { CargoWagonTransferData } from "app/models/CargoWagonTransferData.model";
+import { RawData } from "app/models/Data.model";
 
 export const CARGO_WAGON_TRANSFER_DATA: RawData<CargoWagonTransferData> = {
   "cheatSheet": {

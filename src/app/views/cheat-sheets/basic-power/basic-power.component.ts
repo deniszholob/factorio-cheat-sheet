@@ -5,9 +5,9 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/definitions/Data.model';
+import { Data } from 'app/models/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
-import { BasicPowerData } from 'app/definitions/BasicPowerData.model';
+import { BasicPowerData } from 'app/models/BasicPowerData.model';
 
 // Constants
 import { BASIC_POWER_DATA } from './basic-power.data';

@@ -7,7 +7,7 @@ import { Observable, of } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 
 // Models
-import { Data as IData , RawData } from 'app/definitions/Data.model';
+import { Data as IData , RawData } from 'app/models/Data.model';
 import { Data } from './data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 import { FactorioIcon } from 'app/shared/factorio-icon/factorio-icon.model';

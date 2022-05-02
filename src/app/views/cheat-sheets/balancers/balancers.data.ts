@@ -1,5 +1,5 @@
-import { BalancerData } from "app/definitions/BalancersData.model";
-import { RawData } from "app/definitions/Data.model";
+import { BalancerData } from "app/models/BalancersData.model";
+import { RawData } from "app/models/Data.model";
 
 export const BALANCERS_DATA: RawData<BalancerData> = {
   "cheatSheet": {

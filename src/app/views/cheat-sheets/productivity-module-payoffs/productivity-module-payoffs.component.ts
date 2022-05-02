@@ -8,9 +8,9 @@ import { BehaviorSubject, combineLatest } from 'rxjs';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/definitions/Data.model';
+import { Data } from 'app/models/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
-import { Payoff, ProductivityModulePayoffsData } from 'app/definitions/ProductivityModulePayoffsData.model';
+import { Payoff, ProductivityModulePayoffsData } from 'app/models/ProductivityModulePayoffsData.model';
 
 // Constants
 import { PRODUCTIVITY_MODULE_PAYOFFS_DATA } from './productivity-module-payoffs.data';

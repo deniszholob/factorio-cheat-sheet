@@ -1,6 +1,6 @@
 
-import { RawData } from "app/definitions/Data.model";
-import { OilRefiningData } from "app/definitions/OilRefiningData.model";
+import { RawData } from "app/models/Data.model";
+import { OilRefiningData } from "app/models/OilRefiningData.model";
 
 export const OIL_REFINING_DATA: RawData<OilRefiningData> = {
   "cheatSheet": {

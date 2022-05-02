@@ -1,6 +1,6 @@
 
-import { RawData } from "app/definitions/Data.model";
-import { LinksData } from "app/definitions/LinksData.model";
+import { RawData } from "app/models/Data.model";
+import { LinksData } from "app/models/LinksData.model";
 
 export const LINKS_DATA: RawData<LinksData> = {
   "cheatSheet": {

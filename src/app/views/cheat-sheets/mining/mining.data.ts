@@ -1,5 +1,5 @@
-import { RawData } from "app/definitions/Data.model";
-import { MiningData } from "app/definitions/MiningData";
+import { RawData } from "app/models/Data.model";
+import { MiningData } from "app/models/MiningData.model";
 
 export const MINING_DATA: RawData<MiningData> = {
   "cheatSheet": {

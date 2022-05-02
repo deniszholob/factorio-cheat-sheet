@@ -5,9 +5,9 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/index';
 
 // Models
-import { Data } from 'app/definitions/Data.model';
+import { Data } from 'app/models/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
-import { BalancerData } from 'app/definitions/BalancersData.model';
+import { BalancerData } from 'app/models/BalancersData.model';
 
 // Constants
 import { APP_SETTINGS } from 'app/shared/app-settings';

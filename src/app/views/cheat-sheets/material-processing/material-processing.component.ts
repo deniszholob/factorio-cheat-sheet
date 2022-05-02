@@ -5,9 +5,9 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/definitions/Data.model';
+import { Data } from 'app/models/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
-import { MaterialProcessingData } from 'app/definitions/MaterialProcessingData.model';
+import { MaterialProcessingData } from 'app/models/MaterialProcessingData.model';
 
 // Constants
 import { MATERIAL_PROCESSING_DATA } from './material-processing.data';
