@@ -7,7 +7,6 @@
         "abusaidm.html-snippets",
         "AESSoft.aessoft-class-autocomplete",
         "Angular.ng-template",
-        "CoenraadS.bracket-pair-colorizer",
         "davidbabel.vscode-simpler-icons",
         "dbaeumer.vscode-eslint",
         "EditorConfig.EditorConfig",
@@ -20,7 +19,8 @@
         "Mikael.Angular-BeastCode",
         "samverschueren.final-newline",
         "streetsidesoftware.code-spell-checker",
-        "stylelint.vscode-stylelint"
+        "stylelint.vscode-stylelint",
+        "adrianwilczynski.toggle-hidden"
     ],
     // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
     "unwantedRecommendations": []

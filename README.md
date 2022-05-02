@@ -5,7 +5,7 @@ If you would like to contribute to the cheat sheet code/content, see `contributi
 
 ![Factorio Cheat Sheet](src/assets/icons/factorio-cheat-sheet-splash.webp)
 
-## Deployments [![Build Status](https://travis-ci.com/deniszholob/factorio-cheat-sheet.svg?branch=master)](https://travis-ci.com/deniszholob/factorio-cheat-sheet)
+## Deployments [![Build Status](https://github.com/deniszholob/factorio-cheat-sheet/actions/workflows/main.yml/badge.svg)](https://github.com/deniszholob/factorio-cheat-sheet/actions/workflows/main.yml)
 
 * [Master Deployment](https://factoriocheatsheet.com/)
 * Master branch is for the source code that's hosted [here](https://deniszholob.github.io/factorio-cheat-sheet/).

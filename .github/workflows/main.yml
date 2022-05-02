@@ -1,0 +1,77 @@
+# CI/CD for Github Actions
+# @author Denis Zholob (deniszholob.com)
+# ====================================== #
+
+name: Build Test Deploy
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [master]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14.17.0'
+
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        run: echo "::set-output name=dir::$(npm config get cache)"
+
+      - name: Cache node modules
+        id: npm-cache
+        uses: actions/cache@v3
+        with:
+          path: ${{steps.npm-cache-dir.outputs.dir}}
+          key: ${{runner.os}}-node-${{hashFiles('**/package.json')}}
+          restore-keys: |
+            ${{runner.os}}-node-
+            ${{runner.os}}-
+
+      - name: Install NPM Dependencies
+        run: npm ci
+
+      - name: Build
+        run: sh ./build/build.sh # Generates the public folder with built angular app
+
+      # Save public artifacts for deployment jobs
+      # https://docs.github.com/en/actions/learn-github-actions/essential-features-of-github-actions#sharing-data-between-jobs
+      - name: Archive web demo build
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: web-build
+          path: public # Directory to push to GitHub Pages
+
+  # Ref: https://focisolutions.com/2020/04/github-actions-deploying-an-angular-app/
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Download build
+        uses: actions/download-artifact@v3
+        with:
+          name: web-build
+          path: web-build
+
+      - name: Display structure of downloaded files
+        run: ls -R
+        working-directory: web-build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages
+          folder: web-build
