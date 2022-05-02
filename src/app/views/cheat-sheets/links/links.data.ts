@@ -68,7 +68,7 @@ export const LINKS_DATA: RawData<LinksData> = {
                       "caption": "Discuss the game in realtime."
                   },
                   {
-                      "url": "https://discordapp.com/oauth2/authorize?scope=bot&client_id=310607046020169729&permissions=379968",
+                      "url": "https://discord.com/oauth2/authorize?scope=bot+applications.commands&client_id=310607046020169729&permissions=379968",
                       "text": "Discord Blueprint Bot",
                       "caption": "Invite to preview blueprints."
                   },
