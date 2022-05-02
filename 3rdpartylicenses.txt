@@ -98,8 +98,8 @@ bootstrap
 MIT
 The MIT License (MIT)
 
-Copyright (c) 2011-2021 Twitter, Inc.
-Copyright (c) 2011-2021 The Bootstrap Authors
+Copyright (c) 2011-2020 Twitter, Inc.
+Copyright (c) 2011-2020 The Bootstrap Authors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -122,7 +122,7 @@ THE SOFTWARE.
 
 core-js
 MIT
-Copyright (c) 2014-2020 Denis Pushkarev
+Copyright (c) 2014-2016 Denis Pushkarev
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
