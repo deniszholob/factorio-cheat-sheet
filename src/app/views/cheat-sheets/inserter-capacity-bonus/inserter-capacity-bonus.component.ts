@@ -5,9 +5,9 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/definitions/Data.model';
+import { Data } from 'app/models/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
-import { InserterCapacityBonusData } from 'app/definitions/InserterCapacityBonusData.model';
+import { InserterCapacityBonusData } from 'app/models/InserterCapacityBonusData.model';
 
 // Constants
 import { INSERTER_CAPACITY_BONUS_DATA } from './inserter-capacity-bonus.data';

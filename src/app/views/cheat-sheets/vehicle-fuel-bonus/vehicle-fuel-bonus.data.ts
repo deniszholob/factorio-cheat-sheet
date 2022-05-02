@@ -1,5 +1,5 @@
-import { RawData } from "app/definitions/Data.model";
-import { VehicleFuelBonusData } from "app/definitions/VehicleFuelBonusData.model";
+import { RawData } from "app/models/Data.model";
+import { VehicleFuelBonusData } from "app/models/VehicleFuelBonusData.model";
 
 export const VEHICLE_FUEL_BONUS_DATA: RawData<VehicleFuelBonusData> = {
   "cheatSheet": {

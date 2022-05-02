@@ -1,5 +1,5 @@
-import { BeltsData } from "app/definitions/BeltsData.model";
-import { RawData } from "app/definitions/Data.model";
+import { BeltsData } from "app/models/BeltsData.model";
+import { RawData } from "app/models/Data.model";
 
 export const BELTS_DATA: RawData<BeltsData> = {
   "cheatSheet": {

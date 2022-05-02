@@ -1,5 +1,5 @@
-import { RawData } from "app/definitions/Data.model";
-import { TrainColorsData } from "app/definitions/TrainColorsData.model";
+import { RawData } from "app/models/Data.model";
+import { TrainColorsData } from "app/models/TrainColorsData.model";
 
 export const TRAIN_COLOR_DATA: RawData<TrainColorsData> = {
   "cheatSheet": {

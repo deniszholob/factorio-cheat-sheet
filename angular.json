@@ -31,8 +31,8 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/global-styles/styles.scss",
-              "src/global-styles/print.scss"
+              "src/styles/styles.scss",
+              "src/styles/print.scss"
             ],
             "scripts": []
           },

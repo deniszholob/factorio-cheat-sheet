@@ -1,6 +1,6 @@
 
-import { BasicPowerData } from "app/definitions/BasicPowerData.model";
-import { RawData } from "app/definitions/Data.model";
+import { BasicPowerData } from "app/models/BasicPowerData.model";
+import { RawData } from "app/models/Data.model";
 
 export const BASIC_POWER_DATA: RawData<BasicPowerData> = {
   "cheatSheet": {

@@ -1,5 +1,5 @@
-import { RawData } from "app/definitions/Data.model";
-import { MaterialProcessingData } from "app/definitions/MaterialProcessingData.model";
+import { RawData } from "app/models/Data.model";
+import { MaterialProcessingData } from "app/models/MaterialProcessingData.model";
 
 export const MATERIAL_PROCESSING_DATA: RawData<MaterialProcessingData> = {
   "cheatSheet": {

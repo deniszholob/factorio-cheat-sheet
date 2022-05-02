@@ -1,5 +1,5 @@
-import { RawData } from "app/definitions/Data.model";
-import { InserterCapacityBonusData } from "app/definitions/InserterCapacityBonusData.model";
+import { RawData } from "app/models/Data.model";
+import { InserterCapacityBonusData } from "app/models/InserterCapacityBonusData.model";
 
 export const INSERTER_CAPACITY_BONUS_DATA: RawData<InserterCapacityBonusData> = {
   "cheatSheet": {

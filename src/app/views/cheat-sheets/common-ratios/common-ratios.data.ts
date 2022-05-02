@@ -1,6 +1,6 @@
 
-import { CommonRatioData } from "app/definitions/CommonRatiosData.model";
-import { RawData } from "app/definitions/Data.model";
+import { CommonRatioData } from "app/models/CommonRatiosData.model";
+import { RawData } from "app/models/Data.model";
 
 export const COMMON_RATIO_DATA: RawData<CommonRatioData> = {
   "cheatSheet": {

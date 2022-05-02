@@ -1,5 +1,5 @@
-import { RawData } from "app/definitions/Data.model";
-import { NuclearPowerData } from "app/definitions/NuclearPowerData.model";
+import { RawData } from "app/models/Data.model";
+import { NuclearPowerData } from "app/models/NuclearPowerData.model";
 
 export const NUCLEAR_POWER_DATA: RawData<NuclearPowerData> = {
   "cheatSheet": {

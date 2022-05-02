@@ -5,9 +5,9 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/definitions/Data.model';
+import { Data } from 'app/models/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
-import { CommonRatioData } from 'app/definitions/CommonRatiosData.model';
+import { CommonRatioData } from 'app/models/CommonRatiosData.model';
 
 // Constants
 import { COMMON_RATIO_DATA } from './common-ratios.data';

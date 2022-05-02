@@ -1,5 +1,5 @@
-import { RawData } from "app/definitions/Data.model";
-import { ProductivityModulePayoffsData } from "app/definitions/ProductivityModulePayoffsData.model";
+import { RawData } from "app/models/Data.model";
+import { ProductivityModulePayoffsData } from "app/models/ProductivityModulePayoffsData.model";
 
 export const PRODUCTIVITY_MODULE_PAYOFFS_DATA: RawData<ProductivityModulePayoffsData> = {
   "cheatSheet": {

@@ -7,7 +7,7 @@
 # ====================================== #
 
 echo ' -- Build Script Started ...'
-sh ./build-scripts/update-date.sh
+sh ./build/update-date.sh
 echo ' -- Running npm build script ...'
 npm run build
 echo ' -- Build contents ...'

@@ -9,7 +9,7 @@
     "start": "ng serve --port 9009",
     "start:prod": "http-server -p 8080 -c-1 public",
     "build": "npm run lint && npm run build:prod",
-    "build:sh": "sh ./build-scripts/build.sh",
+    "build:sh": "sh ./build/build.sh",
     "build:dev": "ng build",
     "build:prod": "ng build --prod",
     "lint": "ng lint"

@@ -1,5 +1,5 @@
-import { RawData } from "app/definitions/Data.model";
-import { InserterThroughputData } from "app/definitions/InserterThroughputData.model";
+import { RawData } from "app/models/Data.model";
+import { InserterThroughputData } from "app/models/InserterThroughputData.model";
 
 export const INSERTER_THROUGHPUT_DATA: RawData<InserterThroughputData> = {
   "cheatSheet": {
