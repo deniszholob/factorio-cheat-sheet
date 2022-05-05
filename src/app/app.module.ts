@@ -27,6 +27,7 @@ import { AppComponent } from 'app/app.component';
 import * as SharedComponents from 'app/shared';
 import * as ViewComponents from 'app/views';
 import * as SheetComponents from 'app/views/cheat-sheets';
+import { AdSenseModule } from './shared/ad-sense/ad-sense.module';
 
 const ngb = [
   NgbCollapseModule,
@@ -44,6 +45,11 @@ const ngb = [
         HttpClientModule,
         CdkTableModule,
         ...ngb,
+        AdSenseModule.forRoot({
+            adClient: 'ca-pub-8345050037615230',
+            fullWidthResponsive: true,
+            adFormat: 'auto',
+        }),
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     ],
     // Components
