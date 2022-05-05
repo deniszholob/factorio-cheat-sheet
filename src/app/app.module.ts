@@ -35,7 +35,6 @@ const ngb = [
   NgbTooltipModule,
 ];
 
-
 @NgModule({
     // Modules
     imports: [
@@ -45,11 +44,7 @@ const ngb = [
         HttpClientModule,
         CdkTableModule,
         ...ngb,
-        AdSenseModule.forRoot({
-            adClient: 'ca-pub-8345050037615230',
-            fullWidthResponsive: true,
-            adFormat: 'auto',
-        }),
+        AdSenseModule,
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     ],
     // Components
