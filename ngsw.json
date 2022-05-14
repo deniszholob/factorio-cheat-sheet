@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1651722199411,
+  "timestamp": 1652562902077,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -17,8 +17,8 @@
         "/favicon-32x32.png",
         "/favicon.ico",
         "/index.html",
-        "/main-es2015.27832446d87e0ec46dc2.js",
-        "/main-es5.27832446d87e0ec46dc2.js",
+        "/main-es2015.4242c821f4708240ba5c.js",
+        "/main-es5.4242c821f4708240ba5c.js",
         "/manifest.webmanifest",
         "/mstile-150x150.png",
         "/polyfills-es2015.b8de66d0446594a8eab5.js",
@@ -74,7 +74,8 @@
         "/assets/images/military-range-comparison.webp",
         "/assets/images/mining-direct-feed.webp",
         "/assets/images/nuclear-config-h.webp",
-        "/assets/images/train-stack-load.webp"
+        "/assets/images/train-stack-load.webp",
+        "/assets/images/weapons-range.1.1.57.webp"
       ],
       "patterns": []
     }
@@ -114,13 +115,14 @@
     "/assets/images/mining-direct-feed.webp": "f17f5d2e42d8dd58d001d622ca125e017c717b5d",
     "/assets/images/nuclear-config-h.webp": "a95c2b23f152673be08d005cb60e5a3e2293ee67",
     "/assets/images/train-stack-load.webp": "20b8822589efe5ede9a8801a697f1e9075eb0fd2",
+    "/assets/images/weapons-range.1.1.57.webp": "de10f17b57299bf1b0112f34f24a0e0965b178d5",
     "/browserconfig.xml": "974aea18bda5a95802c06b80126ab1d96d91d708",
     "/favicon-16x16.png": "8b9e790ca31c34160633f21404c9a2e7e5b71f1b",
     "/favicon-32x32.png": "e4dc39c7eb4b45ef44c424f6f6e9d90e0741e864",
     "/favicon.ico": "f3d7aac46ac43e464ed9a7aa65c1194818aeda6a",
-    "/index.html": "9c94529e906caaf499cc98801e755b1d4d041ae5",
-    "/main-es2015.27832446d87e0ec46dc2.js": "52eae7980b5ecb43d7d1b380bbece4752d20477c",
-    "/main-es5.27832446d87e0ec46dc2.js": "321a70d7d6472be777e70cc78aba4738797ccf6a",
+    "/index.html": "5fd2bf8624ce836c945131fdee4bdf0b4ca2d2b3",
+    "/main-es2015.4242c821f4708240ba5c.js": "e85c1878ec46d2608c2232e24c39a0d4fd847ce2",
+    "/main-es5.4242c821f4708240ba5c.js": "e934d9b31e900aa3ce9152ccd2709e8285863d32",
     "/manifest.webmanifest": "68caa9995a0f7b465a242d8e64666f667f225bc6",
     "/mstile-150x150.png": "24c3dc794f99c0f9cbc22a30d4ae270e9df78452",
     "/polyfills-es2015.b8de66d0446594a8eab5.js": "483068540a878d7e7133d752e170a4c907870796",
