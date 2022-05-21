@@ -12,7 +12,7 @@
         </p>
 
         <p class="col-12 col-sm-4 text-center">
-            <span class="text-muted">Common Build Ratio</span><br>
+            <span class="text-muted">Common Build Ratio <a href="#note_build_ratios">^</a></span><br>
             <ng-container *ngFor="let item of sheetData?.commonRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
@@ -22,7 +22,7 @@
         </p>
 
         <p class="col-12 col-sm-4 text-center">
-            <span class="text-muted">Pump Ratio</span><br>
+            <span class="text-muted">Pump Ratio <a href="#note_build_ratios">^</a></span><br>
             <ng-container *ngFor="let item of sheetData?.pumpRatio">
                 <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
             </ng-container>
@@ -32,8 +32,10 @@
         </p>
     </div>
 
-    <p class="text-muted text-center"><strong>Note:</strong>
-        Pumps and Steam Turbines are rounded up for build ratios. See table for precise numbers.</p>
+    <p id="note_build_ratios" class="text-muted text-center"><strong>^Note:</strong>
+        Pumps, Steam Turbines and Power are approximate for easier build ratios.
+        See <a href="#nuclear-table">table below</a> for precise numbers.
+    </p>
 
     <hr>
     <h4 class="card-title">Summary</h4>
@@ -92,6 +94,9 @@
     <hr>
     <h4 class="card-title" id="nuclear-sre-diagrams">SRE Diagrams</h4>
     <strong>Single Reactor Equivalence:</strong> Because of the neighbor bonus; 1 reactor can be equivalent to up to 5 stand-alone reactors in certain patterns.
+    <br> See <a href="https://factorio-nuclear-power-plant.netlify.app" target="_blank" rel="noopener noreferrer">SRE App</a>
+    by <a href="https://github.com/fangyi-zhou" target="_blank" rel="noopener noreferrer">Fangyi Zhou</a> for more.
+
     <div class="row">
         <div class="col-12 col-md-6">
             <div class="card text-center" style="margin-bottom:0">
@@ -132,17 +137,16 @@
             </div>
         </div>
     </div>
-
     <hr>
     <div class="row">
         <div class="col-12 col-md-5 text-center">
-            <p><strong>Most efficient setup</strong>**: a series of repeating 2x1 reactors</p>
+            <p><strong>Most efficient setup</strong><a href="#note_nuclear_effficient_setup">**</a>: a series of repeating 2x1 reactors</p>
             <img src="{{APP_SETTINGS.links.getLocalImagePath('nuclear-config-h.webp')}}" class="img-fluid rounded" alt="2x3 Reactor Setup" title="2x3 Reactor Setup">
-            <p class="text-muted">**That gives access to every reactor</p>
+            <p id="note_nuclear_effficient_setup" class="text-muted">**That gives access to every reactor</p>
         </div>
 
         <div class="col-12 col-md-7 text-center">
-            <table class="table table-sm table-hover fixed-width text-center">
+            <table id="nuclear-table" class="table table-sm table-hover fixed-width text-center">
 
                 <thead class="text-center">
                     <tr>
@@ -173,7 +177,7 @@
                         <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Offshore_pump')"></app-factorio-icon></th>
                         <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Heat_exchanger')"></app-factorio-icon></th>
                         <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Steam_turbine')"></app-factorio-icon></th>
-                        <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Steam', '*Tanks')"></app-factorio-icon></th>
+                        <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Steam', '^Tanks')"></app-factorio-icon></th>
                         <th><i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i></th>
                         <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Efficiency_module_3', 'Efficiency')"></app-factorio-icon></th>
                     </tr>
@@ -194,7 +198,7 @@
         </div>
     </div>
 
-    <p class="text-muted"><strong>*Note:</strong> This is steam tanks per 1 effective (neighbor bonus) nuclear reactor using 1 fuel rod not including the reactor warmup, or heat stored in the reactor or pipes (both heat and steam).
+    <p class="text-muted"><strong>^Note:</strong> This is steam tanks per 1 effective (neighbor bonus) nuclear reactor using 1 fuel rod not including the reactor warmup, or heat stored in the reactor or pipes (both heat and steam).
     </p>
 
     <hr>
