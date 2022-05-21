@@ -3,13 +3,15 @@
 **If you are working on an existing issue, please claim it with your comment, so there is no duplicate work.**
 
 ## What you will need before you begin:
-
 1. Ensure NodeJS version 12.16.3 LTS is installed on your system.
 2. Clone the repository.
 3. Run `npm install` in the folder that you've just cloned to ensure you have all dependencies that are needed for development.
 
-## Guide on making a new cheat-sheet:
+## Hidden Files in VSCode
+Some files are hidden in vscode by default, see the `files.exclude` option in the [settings file](.vscode/settings.json)
 
+There is a [recommended extension](.vscode/extensions.json) `adrianwilczynski.toggle-hidden` that allows to easily toggle hidden files on and off
+## Guide on making a new cheat-sheet:
 If you're making a new cheat-sheet; follow the belt-throughput example:
 * Make a new JSON data in `assets/data`.
 * Make a new component in `src/app/views/cheat-sheets` (Include the component in the `index.ts` and `app.module.ts` files).
@@ -17,7 +19,6 @@ If you're making a new cheat-sheet; follow the belt-throughput example:
 * Use the `src/app/shared/cheat-sheet` template along with data in the component HTML file to customize the presentation.
 
 ## Steps to follow when your work is ready:
-
 When your work is done:
 1. Run `npm run build`.
 2. After a successful build, make a commit and push your changes. If you're fixing a existing issue: be sure to link to that issue in the git commit message, like so: `Closes #issueNumberThatGetsFixed`.
