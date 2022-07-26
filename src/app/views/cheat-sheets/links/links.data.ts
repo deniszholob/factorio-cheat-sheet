@@ -192,7 +192,7 @@ export const LINKS_DATA: RawData<LinksData> = {
                       "text": "Blueprint Modifier + Ore & Oil Outpost Generator"
                   },
                   {
-                      "url": "https://teoxoy.github.io/factorio-blueprint-editor/",
+                      "url": "https://fbe.teoxoy.com/",
                       "text": "Blueprint Maker"
                   },
                   {
