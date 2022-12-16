@@ -1,8 +1,8 @@
 // Angular
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
@@ -13,9 +13,9 @@ import { CdkTableModule } from '@angular/cdk/table';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {
   NgbCollapseModule,
+  NgbModule,
   NgbPaginationModule,
   NgbTooltipModule,
-  NgbModule,
 } from '@ng-bootstrap/ng-bootstrap';
 
 // Routing
@@ -52,7 +52,11 @@ const ngb = [
     ...ngb,
     AdSenseModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
+      // enabled: !isDevMode(), // Generated my ng add @angular/pwa Should use this or environment.production ???  Note: import { NgModule, isDevMode } from '@angular/core';
       enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      // registrationStrategy: 'registerWhenStable:30000' // Default, so commenting out
     }),
   ],
   // Components
