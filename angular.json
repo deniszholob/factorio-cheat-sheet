@@ -96,6 +96,17 @@
             "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"],
             "exclude": ["**/node_modules/**"]
           }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "browserTarget": "factorio-cheat-sheet:build",
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles/styles.scss",
+              "src/styles/print.scss"
+            ]
+          }
         }
       },
       "schematics": {
