@@ -1,29 +1,33 @@
 <div class="container">
-    <h2 id="Annex">Annex</h2>
-    <hr>
-    <div class="row">
-        <div class="col-12 col-sm-6">
-            <h5 id="Old_Cheat_Sheets">Old Cheat Sheets</h5>
-            <ul class="list-unstyled">
-                <li *ngFor="let ref of APP_SETTINGS.old_cheat_sheets">
-                    <a href="{{ ref.url }}" title="{{ ref.name }}" target="_blank" rel="noopener">{{ ref.name }}</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col-12 col-sm-6">
-            <h5 id="PDF">PDF Downloads</h5>
-            <ul class="list-unstyled">
-                <li *ngFor="let pdf of APP_SETTINGS.pdfs">
-                    <a href="{{ pdf.url }}" title="{{ pdf.name }}" target="_blank" rel="noopener">{{ pdf.name }}</a>
-                </li>
-            </ul>
-        </div>
+  <h2 id="Annex">Annex</h2>
+  <hr />
+  <div class="row">
+    <div class="col-12 col-sm-6">
+      <h5 id="Old_Cheat_Sheets">Old Cheat Sheets</h5>
+      <ul class="list-unstyled">
+        <li *ngFor="let ref of APP_SETTINGS.old_cheat_sheets">
+          <a href="{{ ref.url }}" title="{{ ref.name }}" target="_blank" rel="noopener">{{ ref.name }}</a>
+        </li>
+      </ul>
     </div>
+    <div class="col-12 col-sm-6">
+      <h5 id="PDF">PDF Downloads</h5>
+      <ul class="list-unstyled">
+        <li *ngFor="let pdf of APP_SETTINGS.pdfs">
+          <a href="{{ pdf.url }}" title="{{ pdf.name }}" target="_blank" rel="noopener">{{ pdf.name }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-    <app-ad-sense>
-        <ins class="adsbygoogle" data-ad-layout="in-article" data-ad-format="fluid"
-            data-ad-client="ca-pub-8345050037615230" data-ad-slot="1129032034">
-        </ins>
-    </app-ad-sense>
-
+  <app-ad-sense>
+    <ins
+      class="adsbygoogle"
+      data-ad-layout="in-article"
+      data-ad-format="fluid"
+      data-ad-client="ca-pub-8345050037615230"
+      data-ad-slot="1129032034"
+    >
+    </ins>
+  </app-ad-sense>
 </div>

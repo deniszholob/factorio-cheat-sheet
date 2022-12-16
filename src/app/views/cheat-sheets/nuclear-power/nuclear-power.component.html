@@ -1,254 +1,360 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
-
-    <div class="row align-items-center">
-        <p class="col-12 col-sm-4 text-center">
-            <span class="text-muted">Simple Build Ratio</span><br>
-            <ng-container *ngFor="let item of sheetData?.simpleRatio">
-                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
-            </ng-container>
-            <i class="fas fa-long-arrow-alt-right text-muted"></i>
-            <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
-            <sub style="vertical-align: baseline"><strong>{{sheetData?.simpleRatioPower}}</strong></sub>
-        </p>
-
-        <p class="col-12 col-sm-4 text-center">
-            <span class="text-muted">Common Build Ratio <a href="#note_build_ratios">^</a></span><br>
-            <ng-container *ngFor="let item of sheetData?.commonRatio">
-                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
-            </ng-container>
-            <i class="fas fa-long-arrow-alt-right text-muted"></i>
-            <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
-            <sub style="vertical-align: baseline"><strong>{{sheetData?.commonRatioPower}}</strong></sub>
-        </p>
-
-        <p class="col-12 col-sm-4 text-center">
-            <span class="text-muted">Pump Ratio <a href="#note_build_ratios">^</a></span><br>
-            <ng-container *ngFor="let item of sheetData?.pumpRatio">
-                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
-            </ng-container>
-            <i class="fas fa-long-arrow-alt-right text-muted"></i>
-            <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
-            <sub style="vertical-align: baseline"><strong>{{sheetData?.pumpRatioPower}}</strong></sub>
-        </p>
-    </div>
-
-    <p id="note_build_ratios" class="text-muted text-center"><strong>^Note:</strong>
-        Pumps, Steam Turbines and Power are approximate for easier build ratios.
-        See <a href="#nuclear-table">table below</a> for precise numbers.
+  <div class="row align-items-center">
+    <p class="col-12 col-sm-4 text-center">
+      <span class="text-muted">Simple Build Ratio</span><br />
+      <ng-container *ngFor="let item of sheetData?.simpleRatio">
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
+      </ng-container>
+      <i class="fas fa-long-arrow-alt-right text-muted"></i>
+      <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+      <sub style="vertical-align: baseline"
+        ><strong>{{ sheetData?.simpleRatioPower }}</strong></sub
+      >
     </p>
 
-    <hr>
-    <h4 class="card-title">Summary</h4>
+    <p class="col-12 col-sm-4 text-center">
+      <span class="text-muted">Common Build Ratio <a href="#note_build_ratios">^</a></span
+      ><br />
+      <ng-container *ngFor="let item of sheetData?.commonRatio">
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
+      </ng-container>
+      <i class="fas fa-long-arrow-alt-right text-muted"></i>
+      <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+      <sub style="vertical-align: baseline"
+        ><strong>{{ sheetData?.commonRatioPower }}</strong></sub
+      >
+    </p>
 
-    <ul>
-        <li>
-            One uranium fuel cell will
-            <a href="https://wiki.factorio.com/Nuclear_reactor" target="_blank" rel="noopener">always last</a> 200 sec,
-            even if the produced heat does not get consumed,
-            so the rest of the energy is wasted if not used.
-        </li>
-        <li>
-            To prevent energy waste, unused energy could be buffered and
-            the nuclear reactor setup switched off before the energy buffer,
-            such as steam tanks or accumulators, are full.
-        </li>
-        <li>
-            A nuclear reactor buffers 500 °C worth of energy after it fully heated up.
-            Heat pipes, steam pipes and heat exchangers also buffer energy.
-        </li>
-        <li>
-            A Storage tank holding 25k units of Steam at 500 °C contains 2.425 GJ of energy, which is equal to 485 fully charged Accumulators!
-        </li>
-        <li>
-            <a href="https://wiki.factorio.com/Nuclear_reactor" target="_blank" rel="noopener">Reactors</a> experience a 100% increase in energy output when placed directly next to another reactor.
-        </li>
-        <li>
-            One Offshore pump can fully supply 12 (11.64) <a href="https://wiki.factorio.com/Heat_exchanger" target="_blank" rel="noopener">Heat Exchangers</a> driving 20
-            <a href="https://wiki.factorio.com/Steam_turbine" target="_blank" rel="noopener">Steam Turbines</a> producing
-            <a href="https://www.reddit.com/r/factorio/comments/761o4u/the_factorio_cheat_sheet_v015/doboeb4/" target="_blank" rel="noopener">116.4 MW</a>.
-        </li>
-    </ul>
+    <p class="col-12 col-sm-4 text-center">
+      <span class="text-muted">Pump Ratio <a href="#note_build_ratios">^</a></span
+      ><br />
+      <ng-container *ngFor="let item of sheetData?.pumpRatio">
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
+      </ng-container>
+      <i class="fas fa-long-arrow-alt-right text-muted"></i>
+      <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+      <sub style="vertical-align: baseline"
+        ><strong>{{ sheetData?.pumpRatioPower }}</strong></sub
+      >
+    </p>
+  </div>
 
-    <div class="row align-items-center">
-        <div class="col-12 col-md-9">
-            <p class="text-left">You will need 1 centrifuge to produce U-235 to make fuel for 1 Reactor continuously.</p>
-            <p>It takes 1 U-235 and 19 U-238 to create 10 <a href="https://wiki.factorio.com/Uranium_fuel_cell" target="_blank" rel="noopener">fuel cells</a>,
-                but you can reprocess 10 used up uranium fuel cells to get 6 U-238, which results in a ratio of 13 U-238 to 1 U-235.
-            </p>
-        </div>
+  <p class="text-muted text-center" id="note_build_ratios">
+    <strong>^Note:</strong> Pumps, Steam Turbines and Power are approximate for easier build ratios. See
+    <a href="#nuclear-table">table below</a>
+    for precise numbers.
+  </p>
 
-        <div class="col-12 col-md-3">
-            <p class="text-center">
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Centrifuge', 1)"></app-factorio-icon>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Nuclear_reactor', 1)"></app-factorio-icon>
-            </p>
-            <p class="text-center">
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium_fuel_cell', 10)"></app-factorio-icon>
-                    <i class="fas fa-long-arrow-alt-left text-muted" aria-hidden="true"></i>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-235', 1)"></app-factorio-icon>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-238', 13)"></app-factorio-icon>
-            </p>
-        </div>
+  <hr />
+  <h4 class="card-title">Summary</h4>
+
+  <ul>
+    <li>
+      One uranium fuel cell will
+      <a href="https://wiki.factorio.com/Nuclear_reactor" target="_blank" rel="noopener">always last</a>
+      200 sec, even if the produced heat does not get consumed, so the rest of the energy is wasted if not used.
+    </li>
+    <li>
+      To prevent energy waste, unused energy could be buffered and the nuclear reactor setup switched off before the energy buffer, such as
+      steam tanks or accumulators, are full.
+    </li>
+    <li>
+      A nuclear reactor buffers 500 °C worth of energy after it fully heated up. Heat pipes, steam pipes and heat exchangers also buffer
+      energy.
+    </li>
+    <li>
+      A Storage tank holding 25k units of Steam at 500 °C contains 2.425 GJ of energy, which is equal to 485 fully charged Accumulators!
+    </li>
+    <li>
+      <a href="https://wiki.factorio.com/Nuclear_reactor" target="_blank" rel="noopener">Reactors</a>
+      experience a 100% increase in energy output when placed directly next to another reactor.
+    </li>
+    <li>
+      One Offshore pump can fully supply 12 (11.64)
+      <a href="https://wiki.factorio.com/Heat_exchanger" target="_blank" rel="noopener">Heat Exchangers</a>
+      driving 20
+      <a href="https://wiki.factorio.com/Steam_turbine" target="_blank" rel="noopener">Steam Turbines</a>
+      producing
+      <a href="https://www.reddit.com/r/factorio/comments/761o4u/the_factorio_cheat_sheet_v015/doboeb4/" target="_blank" rel="noopener"
+        >116.4 MW</a
+      >.
+    </li>
+  </ul>
+
+  <div class="row align-items-center">
+    <div class="col-12 col-md-9">
+      <p class="text-left">You will need 1 centrifuge to produce U-235 to make fuel for 1 Reactor continuously.</p>
+      <p>
+        It takes 1 U-235 and 19 U-238 to create 10
+        <a href="https://wiki.factorio.com/Uranium_fuel_cell" target="_blank" rel="noopener">fuel cells</a>, but you can reprocess 10 used
+        up uranium fuel cells to get 6 U-238, which results in a ratio of 13 U-238 to 1 U-235.
+      </p>
     </div>
 
-    <hr>
-    <h4 class="card-title" id="nuclear-sre-diagrams">SRE Diagrams</h4>
-    <strong>Single Reactor Equivalence:</strong> Because of the neighbor bonus; 1 reactor can be equivalent to up to 5 stand-alone reactors in certain patterns.
-    <br> See <a href="https://factorio-nuclear-power-plant.netlify.app" target="_blank" rel="noopener noreferrer">SRE App</a>
-    by <a href="https://github.com/fangyi-zhou" target="_blank" rel="noopener noreferrer">Fangyi Zhou</a> for more.
+    <div class="col-12 col-md-3">
+      <p class="text-center">
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Centrifuge', 1)"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Nuclear_reactor', 1)"></app-factorio-icon>
+      </p>
+      <p class="text-center">
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium_fuel_cell', 10)"></app-factorio-icon>
+        <i class="fas fa-long-arrow-alt-left text-muted" aria-hidden="true"></i>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-235', 1)"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-238', 13)"></app-factorio-icon>
+      </p>
+    </div>
+  </div>
 
-    <div class="row">
-        <div class="col-12 col-md-6">
-            <div class="card text-center" style="margin-bottom:0">
-                <div class="card-body row">
-                    <div class="col-12 col-sm-6">
-                    <h6 class="card-subtitle mb-2 text-muted">2xN Configuration</h6>
-                    <p>
-                        16 reactors: 2x8, is<br>
-                        <kbd>4*3 + 12*4 = 60 SRE</kbd>
-                    <p>
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        3 4 4 4 4 4 4 3<br>
-                        3 4 4 4 4 4 4 3
-                    </div>
+  <hr />
+  <h4 class="card-title" id="nuclear-sre-diagrams">SRE Diagrams</h4>
+  <strong>Single Reactor Equivalence:</strong> Because of the neighbor bonus; 1 reactor can be equivalent to up to 5 stand-alone reactors in
+  certain patterns.
+  <br />
+  See
+  <a href="https://factorio-nuclear-power-plant.netlify.app" target="_blank" rel="noopener noreferrer">SRE App</a>
+  by
+  <a href="https://github.com/fangyi-zhou" target="_blank" rel="noopener noreferrer">Fangyi Zhou</a>
+  for more.
+
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="card text-center" style="margin-bottom: 0">
+        <div class="card-body row">
+          <div class="col-12 col-sm-6">
+            <h6 class="card-subtitle mb-2 text-muted">2xN Configuration</h6>
+            <p>
+              16 reactors: 2x8, is<br />
+              <kbd>4*3 + 12*4 = 60 SRE</kbd>
+            </p>
+
+            <p></p>
+          </div>
+
+          <div class="col-12 col-sm-6">
+            3 4 4 4 4 4 4 3<br />
+            3 4 4 4 4 4 4 3
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="card text-center" style="margin-bottom: 0">
+        <div class="card-body row">
+          <div class="col-12 col-sm-7">
+            <h6 class="card-subtitle mb-2 text-muted">NxM Configuration</h6>
+            <p>
+              16 reactors: 4x4, is<br />
+              <kbd>4*3 + 8*4 + 4*5 = 64 SRE</kbd>
+            </p>
+
+            <p></p>
+          </div>
+
+          <div class="col-12 col-sm-5">
+            <span class="sre">
+              3 4 4 3<br />
+              4 5 5 4<br />
+              4 5 5 4<br />
+              3 4 4 3
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-12 col-md-5 text-center">
+      <p><strong>Most efficient setup</strong><a href="#note_nuclear_effficient_setup">**</a>: a series of repeating 2x1 reactors</p>
+      <img
+        class="img-fluid rounded"
+        src="{{ APP_SETTINGS.links.getLocalImagePath('nuclear-config-h.webp') }}"
+        alt="2x3 Reactor Setup"
+        title="2x3 Reactor Setup"
+      />
+      <p class="text-muted" id="note_nuclear_effficient_setup">**That gives access to every reactor</p>
+    </div>
+
+    <div class="col-12 col-md-7 text-center">
+      <table class="table table-sm table-hover fixed-width text-center" id="nuclear-table">
+        <thead class="text-center">
+          <tr>
+            <th colspan="7">
+              <span class="text-muted">Nuclear Ratio Table</span>
+              <div class="merged-input-group mx-auto" id="NuclearTableControls">
+                <div class="input-group">
+                  <span class="input-group-addon">Reactor Table Count</span>
+                  <input
+                    class="form-control"
+                    [(ngModel)]="reactorInfoCount"
+                    (keyup)="getNukeRatios()"
+                    (change)="getNukeRatios()"
+                    (mouseup)="inputChange()"
+                    type="number"
+                    min="{{ inputStep }}"
+                    max="{{ reactorInfoCountMax }}"
+                    step="{{ inputStep }}"
+                  />
                 </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-6">
-            <div class="card text-center" style="margin-bottom:0">
-                <div class="card-body row">
-                    <div class="col-12 col-sm-7">
-                    <h6 class="card-subtitle mb-2 text-muted">NxM Configuration</h6>
-                    <p>
-                        16 reactors: 4x4, is<br>
-                        <kbd>4*3 + 8*4 + 4*5 = 64 SRE</kbd>
-                    <p>
-                    </div>
-                    <div class="col-12 col-sm-5">
-                        <span class="sre">
-                            3 4 4 3<br>
-                            4 5 5 4<br>
-                            4 5 5 4<br>
-                            3 4 4 3
-                        </span>
-                    </div>
+                <div class="input-group">
+                  <span class="input-group-addon">Even Only</span>
+                  <span class="input-group-addon">
+                    <input [(ngModel)]="evenOnly" (change)="getNukeRatios()" type="checkbox" aria-label="Even Only or all" />
+                  </span>
+
+                  <span class="input-group-addon">Round Up</span>
+                  <span class="input-group-addon">
+                    <input [(ngModel)]="roundUp" (change)="getNukeRatios()" type="checkbox" aria-label="Round up or Decimal" />
+                  </span>
                 </div>
-            </div>
-        </div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-12 col-md-5 text-center">
-            <p><strong>Most efficient setup</strong><a href="#note_nuclear_effficient_setup">**</a>: a series of repeating 2x1 reactors</p>
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('nuclear-config-h.webp')}}" class="img-fluid rounded" alt="2x3 Reactor Setup" title="2x3 Reactor Setup">
-            <p id="note_nuclear_effficient_setup" class="text-muted">**That gives access to every reactor</p>
-        </div>
-
-        <div class="col-12 col-md-7 text-center">
-            <table id="nuclear-table" class="table table-sm table-hover fixed-width text-center">
-
-                <thead class="text-center">
-                    <tr>
-                        <th colspan="7">
-                            <span class="text-muted">Nuclear Ratio Table</span>
-                            <div class="merged-input-group mx-auto" id="NuclearTableControls">
-                                <div class="input-group">
-                                    <span class="input-group-addon">Reactor Table Count</span>
-                                    <input type="number" class="form-control" [(ngModel)]="reactorInfoCount" min="{{inputStep}}" max="{{reactorInfoCountMax}}" step="{{inputStep}}" (keyup)="getNukeRatios()" (change)="getNukeRatios()" (mouseup)="inputChange()">
-                                </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon">Even Only</span>
-                                    <span class="input-group-addon">
-                                        <input type="checkbox" [(ngModel)]="evenOnly" (change)="getNukeRatios();" aria-label="Even Only or all">
-                                    </span>
-
-                                    <span class="input-group-addon">Round Up</span>
-                                    <span class="input-group-addon">
-                                        <input type="checkbox" [(ngModel)]="roundUp" (change)="getNukeRatios();" aria-label="Round up or Decimal">
-                                    </span>
-                                </div>
-                            </div>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th class="d-none d-lg-table-cell"><app-factorio-icon [icon]="dataService.getFactorioIcon('Nuclear_reactor', 'Count')"></app-factorio-icon></th>
-                        <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Nuclear_reactor', 'Config')"></app-factorio-icon></th>
-                        <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Offshore_pump')"></app-factorio-icon></th>
-                        <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Heat_exchanger')"></app-factorio-icon></th>
-                        <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Steam_turbine')"></app-factorio-icon></th>
-                        <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Steam', '^Tanks')"></app-factorio-icon></th>
-                        <th><i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i></th>
-                        <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Efficiency_module_3', 'Efficiency')"></app-factorio-icon></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of reactorTable;">
-                        <td class="d-none d-lg-table-cell">{{item?.reactors}}</td>
-                        <td>{{item?.reactorConfig}}</td>
-                        <td>{{item?.pumps | number:'1.0-1'}}</td>
-                        <td>{{item?.heatExchangers}}</td>
-                        <td>{{item?.turbines | number:'1.0-1'}}</td>
-                        <td>{{item?.steamTanks | number:'1.0-1'}}</td>
-                        <td>{{item?.power}} {{item?.powerUnit}}</td>
-                        <td>{{item?.reactorEfficiency}}%</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <p class="text-muted"><strong>^Note:</strong> This is steam tanks per 1 effective (neighbor bonus) nuclear reactor using 1 fuel rod not including the reactor warmup, or heat stored in the reactor or pipes (both heat and steam).
-    </p>
-
-    <hr>
-
-    <h4 class="card-title" id="nuclear-formulas">Formulas</h4>
-    <p>
-        See this <a href="https://www.reddit.com/r/factorio/comments/67xgge/nuclear_ratios/" target="_blank" rel="noopener">Reddit post about Nuclear Ratios</a>
-        and, <a href="https://wiki.factorio.com/Tutorial:Nuclear_power" target="_blank" rel="noopener">Nuclear Guide</a> Wiki
-        for more details.
-    </p>
-
-    <table class="table table-sm table-hover">
-        <thead>
-            <tr>
-                <th>Unknown</th>
-                <th>Formula</th>
-                <th>Expanded Formula</th>
-            </tr>
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <th class="d-none d-lg-table-cell">
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Nuclear_reactor', 'Count')"></app-factorio-icon>
+            </th>
+            <th>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Nuclear_reactor', 'Config')"></app-factorio-icon>
+            </th>
+            <th>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Offshore_pump')"></app-factorio-icon>
+            </th>
+            <th>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Heat_exchanger')"></app-factorio-icon>
+            </th>
+            <th>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Steam_turbine')"></app-factorio-icon>
+            </th>
+            <th>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Steam', '^Tanks')"></app-factorio-icon>
+            </th>
+            <th>
+              <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+            </th>
+            <th>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Efficiency_module_3', 'Efficiency')"></app-factorio-icon>
+            </th>
+          </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><kbd>Heat Exchangers Per Reactor</kbd></td>
-                <td><kbd>{{nuclearData.reactorPower / nuclearData.heatExchangerPower}}</kbd></td>
-                <td><kbd>Reactor Power({{nuclearData.reactorPower}}MW) / H.E. Power({{nuclearData.heatExchangerPower}}MW)</kbd></td>
-            </tr>
-            <tr>
-                <td><kbd>Power (even config)</kbd></td>
-                <td><kbd>{{nuclearData.reactorPower*4}} * [Reactors - 1]</kbd></td>
-                <td><kbd>[Reactor Power({{nuclearData.reactorPower}}MW) * 4 * Reactors] - [Reactor Power * 4]</kbd></td>
-            </tr>
-            <tr>
-                <td><kbd>Heat Exchangers (even config)</kbd></td>
-                <td><kbd>{{nuclearData.reactorPower / nuclearData.heatExchangerPower*4}} * [Reactors - 1]</kbd></td>
-                <td><kbd>[H.E. Per Reactor * 4 * Reactors] - [H.E. Per Reactor * 4]</kbd></td>
-            </tr>
-            <tr>
-                <td><kbd>Turbines</kbd></td>
-                <td><kbd>{{nuclearData.heatExchangerPower/nuclearData.turbinePower | number}} * Heat Exchangers</kbd></td>
-                <td><kbd>Heat Exchangers * H.E. Power({{nuclearData.heatExchangerPower}}MW) / Turbine Power({{nuclearData.turbinePower}}MW)</kbd></td>
-            </tr>
-            <tr>
-                <td><kbd>Pumps</kbd></td>
-                <td><kbd>{{nuclearData.waterPerTurbine/nuclearData.waterPerPump | number}} * Turbines</kbd></td>
-                <td><kbd>Turbines * Water Per Turbine({{nuclearData.waterPerTurbine}}) / Water Per Pump({{nuclearData.waterPerPump}})</kbd></td>
-            </tr>
+          <tr *ngFor="let item of reactorTable">
+            <td class="d-none d-lg-table-cell">
+              {{ item?.reactors }}
+            </td>
+            <td>
+              {{ item?.reactorConfig }}
+            </td>
+            <td>
+              {{ item?.pumps | number : '1.0-1' }}
+            </td>
+            <td>
+              {{ item?.heatExchangers }}
+            </td>
+            <td>
+              {{ item?.turbines | number : '1.0-1' }}
+            </td>
+            <td>
+              {{ item?.steamTanks | number : '1.0-1' }}
+            </td>
+            <td>
+              {{ item?.power }}
+              {{ item?.powerUnit }}
+            </td>
+            <td>{{ item?.reactorEfficiency }}%</td>
+          </tr>
         </tbody>
-    </table>
+      </table>
+    </div>
+  </div>
 
-    <p><strong>Steam Tanks:</strong> 1 uranium fuel cell creates 8 GJ per reactor (eg. 2 reactors put out 4 solo reactors worth of energy = 32 GJ).
-        <br>Each tank can hold 2.425 GJ worth of steam, or 3.29 tanks per reactor.
-    </p>
+  <p class="text-muted">
+    <strong>^Note:</strong> This is steam tanks per 1 effective (neighbor bonus) nuclear reactor using 1 fuel rod not including the reactor
+    warmup, or heat stored in the reactor or pipes (both heat and steam).
+  </p>
 
+  <hr />
+
+  <h4 class="card-title" id="nuclear-formulas">Formulas</h4>
+  <p>
+    See this
+    <a href="https://www.reddit.com/r/factorio/comments/67xgge/nuclear_ratios/" target="_blank" rel="noopener"
+      >Reddit post about Nuclear Ratios</a
+    >
+    and,
+    <a href="https://wiki.factorio.com/Tutorial:Nuclear_power" target="_blank" rel="noopener">Nuclear Guide</a>
+    Wiki for more details.
+  </p>
+
+  <table class="table table-sm table-hover">
+    <thead>
+      <tr>
+        <th>Unknown</th>
+        <th>Formula</th>
+        <th>Expanded Formula</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <kbd>Heat Exchangers Per Reactor</kbd>
+        </td>
+        <td>
+          <kbd>{{ nuclearData.reactorPower / nuclearData.heatExchangerPower }}</kbd>
+        </td>
+        <td>
+          <kbd>Reactor Power({{ nuclearData.reactorPower }}MW) / H.E. Power({{ nuclearData.heatExchangerPower }}MW)</kbd>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <kbd>Power (even config)</kbd>
+        </td>
+        <td>
+          <kbd>{{ nuclearData.reactorPower * 4 }} * [Reactors - 1]</kbd>
+        </td>
+        <td>
+          <kbd>[Reactor Power({{ nuclearData.reactorPower }}MW) * 4 * Reactors] - [Reactor Power * 4]</kbd>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <kbd>Heat Exchangers (even config)</kbd>
+        </td>
+        <td>
+          <kbd>{{ (nuclearData.reactorPower / nuclearData.heatExchangerPower) * 4 }} * [Reactors - 1]</kbd>
+        </td>
+        <td>
+          <kbd>[H.E. Per Reactor * 4 * Reactors] - [H.E. Per Reactor * 4]</kbd>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <kbd>Turbines</kbd>
+        </td>
+        <td>
+          <kbd>{{ nuclearData.heatExchangerPower / nuclearData.turbinePower | number }} * Heat Exchangers</kbd>
+        </td>
+        <td>
+          <kbd>Heat Exchangers * H.E. Power({{ nuclearData.heatExchangerPower }}MW) / Turbine Power({{ nuclearData.turbinePower }}MW)</kbd>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <kbd>Pumps</kbd>
+        </td>
+        <td>
+          <kbd>{{ nuclearData.waterPerTurbine / nuclearData.waterPerPump | number }} * Turbines</kbd>
+        </td>
+        <td>
+          <kbd>Turbines * Water Per Turbine({{ nuclearData.waterPerTurbine }}) / Water Per Pump({{ nuclearData.waterPerPump }})</kbd>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    <strong>Steam Tanks:</strong> 1 uranium fuel cell creates 8 GJ per reactor (eg. 2 reactors put out 4 solo reactors worth of energy = 32
+    GJ). <br />Each tank can hold 2.425 GJ worth of steam, or 3.29 tanks per reactor.
+  </p>
 </app-cheat-sheet>

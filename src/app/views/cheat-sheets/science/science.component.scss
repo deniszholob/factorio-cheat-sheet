@@ -1,127 +1,127 @@
-@import "./src/styles/variables";
+@import './src/styles/variables';
 
 img {
-    box-shadow: none;
-    filter: drop-shadow(2px 2px 2px $c-pallette-transp-medium);
-    width: 100%;
-    // Way to big full width... esp on print
-    max-width: 549px; // actual img size
+  box-shadow: none;
+  filter: drop-shadow(2px 2px 2px $c-pallette-transp-medium);
+  width: 100%;
+  // Way to big full width... esp on print
+  max-width: 549px; // actual img size
 }
 
 table {
-    width: 100%;
+  width: 100%;
 }
 
 .eq-operator {
-    display: inline-flex;
-    padding: 1px 5px;
-    margin: 0;
-    background-color: transparent;
+  display: inline-flex;
+  padding: 1px 5px;
+  margin: 0;
+  background-color: transparent;
 
-    &.op-divide {
-        display: flex;
-        width: 90%;
-        margin: auto;
-        content: "";
-        border-top: 2px solid rgba(255, 255, 255, 0.4);
-    }
+  &.op-divide {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    content: '';
+    border-top: 2px solid rgba(255, 255, 255, 0.4);
+  }
 }
 
 .eq-container {
-    display: flex;
-    margin: 0 5px;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    font-size: 1em;
+  display: flex;
+  margin: 0 5px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 1em;
 
-    .eq-operator {
-        padding: 5px 5px;
-        margin: 5px 0;
+  .eq-operator {
+    padding: 5px 5px;
+    margin: 5px 0;
+  }
+
+  .eq-field {
+    display: inline-flex;
+    color: whitesmoke;
+    position: relative;
+    padding: 0.2em;
+    margin: 5px 0;
+
+    /* Brackets */
+    &:after,
+    &:before {
+      border: 0.2em solid rgba(255, 255, 255, 0.4);
+      bottom: 0;
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 10px;
     }
 
-    .eq-field {
-        display: inline-flex;
-        color: whitesmoke;
-        position: relative;
-        padding: 0.2em;
-        margin: 5px 0;
-
-        /* Brackets */
-        &:after,
-        &:before {
-            border: 0.2em solid rgba(255, 255, 255, 0.4);
-            bottom: 0;
-            content: "";
-            position: absolute;
-            top: 0;
-            width: 10px;
-        }
-
-        &:after {
-            border-left: none;
-            right: 0;
-        }
-
-        &:before {
-            border-right: none;
-            left: 0;
-        }
-
-        .eq-label {
-            display: inline-flex;
-            flex: 1 1 auto;
-            padding: 1px 5px;
-            margin: 0;
-            background: rgba(0, 0, 0, 0.4);
-            color: inherit;
-
-            font-size: 1em;
-            line-height: 1.25;
-        }
-
-        .eq-input {
-            display: inline-flex;
-            flex: 1 1 auto;
-            padding: 1px 5px;
-            margin: 0;
-            background: rgba(50, 50, 50, 0.4);
-            color: inherit;
-
-            width: 100px;
-            border: none;
-
-            font-size: 1em;
-            line-height: 1.25;
-        }
+    &:after {
+      border-left: none;
+      right: 0;
     }
+
+    &:before {
+      border-right: none;
+      left: 0;
+    }
+
+    .eq-label {
+      display: inline-flex;
+      flex: 1 1 auto;
+      padding: 1px 5px;
+      margin: 0;
+      background: rgba(0, 0, 0, 0.4);
+      color: inherit;
+
+      font-size: 1em;
+      line-height: 1.25;
+    }
+
+    .eq-input {
+      display: inline-flex;
+      flex: 1 1 auto;
+      padding: 1px 5px;
+      margin: 0;
+      background: rgba(50, 50, 50, 0.4);
+      color: inherit;
+
+      width: 100px;
+      border: none;
+
+      font-size: 1em;
+      line-height: 1.25;
+    }
+  }
 }
 
 @media (min-width: 576px) {
-    .eq-container {
-        flex-wrap: nowrap;
-        font-size: 0.9em;
+  .eq-container {
+    flex-wrap: nowrap;
+    font-size: 0.9em;
 
-        .eq-field .eq-input {
-            width: 70px;
-        }
+    .eq-field .eq-input {
+      width: 70px;
     }
+  }
 }
 
 @media (min-width: 768px) {
-    .eq-container {
-        font-size: 1em;
-    }
+  .eq-container {
+    font-size: 1em;
+  }
 }
 
 .merged-input-group {
-    max-width: 400px;
-    margin: auto;
-    margin-top: 10px;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 10px;
 }
 
 .input-group-addon {
-    &:first-child {
-        width: 200px;
-    }
+  &:first-child {
+    width: 200px;
+  }
 }

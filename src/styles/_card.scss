@@ -1,41 +1,41 @@
 .card {
-    background-color: $c-pallette-neutral-dark;
-    border: none;
-    box-shadow: 2px 2px 5px 2px $c-pallette-transp-light;
-    margin-bottom: 40px;
+  background-color: $c-pallette-neutral-dark;
+  border: none;
+  box-shadow: 2px 2px 5px 2px $c-pallette-transp-light;
+  margin-bottom: 40px;
 }
 
 .card-header {
-    background-color: $c-pallette-transp-light;
-    border-color: $c-pallette-transp-medium;
-    position: relative;
+  background-color: $c-pallette-transp-light;
+  border-color: $c-pallette-transp-medium;
+  position: relative;
+  cursor: pointer;
+
+  .card-title {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+    font-size: 1.4rem;
+    line-height: 1.4em;
+  }
+
+  .card-collapse {
+    float: right;
+    // font-size: 30px;
+    font-weight: bold;
     cursor: pointer;
+    // margin: -.75rem -1.25rem;
+    padding: 0px 20px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    color: $c-pallette-accent;
 
-    .card-title {
-        display: inline-block;
-        margin: 0;
-        vertical-align: middle;
-        font-size: 1.4rem;
-        line-height: 1.4em;
+    &:focus {
+      outline: none;
     }
-
-    .card-collapse {
-        float: right;
-        // font-size: 30px;
-        font-weight: bold;
-        cursor: pointer;
-        // margin: -.75rem -1.25rem;
-        padding: 0px 20px;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        position: absolute;
-        background-color: transparent;
-        border: none;
-        color: $c-pallette-accent;
-
-        &:focus {
-            outline: none;
-        }
-    }
+  }
 }

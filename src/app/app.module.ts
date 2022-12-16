@@ -11,7 +11,12 @@ import { CdkTableModule } from '@angular/cdk/table';
 
 // Third Party (UI frameworks, etc...)
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbCollapseModule, NgbPaginationModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import {
+  NgbCollapseModule,
+  NgbPaginationModule,
+  NgbTooltipModule,
+  NgbModule,
+} from '@ng-bootstrap/ng-bootstrap';
 
 // Routing
 import { RouterModule } from '@angular/router';
@@ -33,61 +38,61 @@ const ngb = [
   NgbCollapseModule,
   NgbPaginationModule,
   NgbTooltipModule,
+  NgbModule,
 ];
 
 @NgModule({
-    // Modules
-    imports: [
-        BrowserModule,
-        RouterModule.forRoot([], { relativeLinkResolution: 'legacy' }),
-        FormsModule,
-        HttpClientModule,
-        CdkTableModule,
-        ...ngb,
-        AdSenseModule,
-        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    ],
-    // Components
-    declarations: [
-        AppComponent,
-        ViewComponents.NavComponent,
-        ViewComponents.IntroComponent,
-        ViewComponents.OverviewComponent,
-        ViewComponents.MainComponent,
-        ViewComponents.AnnexComponent,
-        ViewComponents.FooterComponent,
-        SharedComponents.BlueprintClipboardComponent,
-        SharedComponents.CheatSheetComponent,
-        SharedComponents.FactorioIconComponent,
-        SheetComponents.BalancersComponent,
-        SheetComponents.BasicPowerComponent,
-        SheetComponents.BeltsComponent,
-        SheetComponents.CargoWagonTransferComponent,
-        SheetComponents.CombatComponent,
-        SheetComponents.CommonRatiosComponent,
-        SheetComponents.FluidWagonTransferComponent,
-        SheetComponents.InserterThroughputComponent,
-        SheetComponents.InserterCapacityBonusComponent,
-        SheetComponents.LinksComponent,
-        SheetComponents.MaterialProcessingComponent,
-        SheetComponents.MiningComponent,
-        SheetComponents.ModulesAndBeaconsComponent,
-        SheetComponents.NuclearPowerComponent,
-        SheetComponents.OilRefiningComponent,
-        SheetComponents.ProductivityModulePayoffsComponent,
-        SheetComponents.ScienceComponent,
-        SheetComponents.TipsComponent,
-        SheetComponents.TrainColorsComponent,
-        SheetComponents.VehicleFuelBonusComponent,
-        Pipes.CeilingPipe,
-        Pipes.TimePipe,
-        Pipes.ReplacePipe,
-    ],
-    // Services
-    providers: [
-        Services.DataService,
-        Services.SheetCollapseToggleService,
-    ],
-    bootstrap: [AppComponent]
+  // Modules
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot([]),
+    FormsModule,
+    HttpClientModule,
+    CdkTableModule,
+    ...ngb,
+    AdSenseModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+    }),
+  ],
+  // Components
+  declarations: [
+    AppComponent,
+    ViewComponents.NavComponent,
+    ViewComponents.IntroComponent,
+    ViewComponents.OverviewComponent,
+    ViewComponents.MainComponent,
+    ViewComponents.AnnexComponent,
+    ViewComponents.FooterComponent,
+    SharedComponents.BlueprintClipboardComponent,
+    SharedComponents.CheatSheetComponent,
+    SharedComponents.FactorioIconComponent,
+    SheetComponents.BalancersComponent,
+    SheetComponents.BasicPowerComponent,
+    SheetComponents.BeltsComponent,
+    SheetComponents.CargoWagonTransferComponent,
+    SheetComponents.CombatComponent,
+    SheetComponents.CommonRatiosComponent,
+    SheetComponents.FluidWagonTransferComponent,
+    SheetComponents.InserterThroughputComponent,
+    SheetComponents.InserterCapacityBonusComponent,
+    SheetComponents.LinksComponent,
+    SheetComponents.MaterialProcessingComponent,
+    SheetComponents.MiningComponent,
+    SheetComponents.ModulesAndBeaconsComponent,
+    SheetComponents.NuclearPowerComponent,
+    SheetComponents.OilRefiningComponent,
+    SheetComponents.ProductivityModulePayoffsComponent,
+    SheetComponents.ScienceComponent,
+    SheetComponents.TipsComponent,
+    SheetComponents.TrainColorsComponent,
+    SheetComponents.VehicleFuelBonusComponent,
+    Pipes.CeilingPipe,
+    Pipes.TimePipe,
+    Pipes.ReplacePipe,
+  ],
+  // Services
+  providers: [Services.DataService, Services.SheetCollapseToggleService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

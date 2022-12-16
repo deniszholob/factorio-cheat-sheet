@@ -1,16 +1,22 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
-
-    <div class="row align-items-center">
-        <div class="col text-center">
-            <p><strong>
-                Military <a href="https://www.reddit.com/r/factorio/comments/bjbcsi/ranges_of_all_turrets_worms_vehicles_weapons_and/">
-                    Range Comparison
-                </a>
-            </strong></p>
-            <a href="https://i.imgur.com/6EenAcn.png">
-                <img src="{{APP_SETTINGS.links.getLocalImagePath('military-range-comparison.webp')}}" class="img-fluid rounded full-width" alt="Military Range Comparison" title="Military Range Comparison">
-            </a>
-        </div>
+  <div class="row align-items-center">
+    <div class="col text-center">
+      <p>
+        <strong>
+          Military
+          <a href="https://www.reddit.com/r/factorio/comments/bjbcsi/ranges_of_all_turrets_worms_vehicles_weapons_and/">
+            Range Comparison
+          </a>
+        </strong>
+      </p>
+      <a href="https://i.imgur.com/6EenAcn.png">
+        <img
+          class="img-fluid rounded full-width"
+          src="{{ APP_SETTINGS.links.getLocalImagePath('military-range-comparison.webp') }}"
+          alt="Military Range Comparison"
+          title="Military Range Comparison"
+        />
+      </a>
     </div>
-
+  </div>
 </app-cheat-sheet>

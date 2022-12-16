@@ -1,22 +1,22 @@
 <div class="container">
-    <div class="row align-items-center">
-        <div class="col">
-            <span class="text-muted">Design by </span>
-            <br class="d-md-none">
+  <div class="row align-items-center">
+    <div class="col">
+      <span class="text-muted">Design by </span>
+      <br class="d-md-none" />
 
-            <a href="{{ APP_SETTINGS.author.url }}" title="{{ APP_SETTINGS.author.name }}" target="_blank" rel="noopener">
-                {{ APP_SETTINGS.author.name }}
-            </a>
-            <br class="d-md-none">
-        </div>
-        <div class="col text-center">
-            <a href="{{ APP_SETTINGS.github.url }}" title="{{ APP_SETTINGS.github.name }}" target="_blank" rel="noopener">
-                {{ APP_SETTINGS.github.name }}
-            </a>
-        </div>
-        <div class="col text-right">
-            <span class="text-muted">Updated </span>
-            <span>{{ APP_UPDATE_DATE | date:'y/M/d' }}</span>
-        </div>
+      <a href="{{ APP_SETTINGS.author.url }}" title="{{ APP_SETTINGS.author.name }}" target="_blank" rel="noopener">
+        {{ APP_SETTINGS.author.name }}
+      </a>
+      <br class="d-md-none" />
     </div>
+    <div class="col text-center">
+      <a href="{{ APP_SETTINGS.github.url }}" title="{{ APP_SETTINGS.github.name }}" target="_blank" rel="noopener">
+        {{ APP_SETTINGS.github.name }}
+      </a>
+    </div>
+    <div class="col text-right">
+      <span class="text-muted">Updated </span>
+      <span>{{ APP_UPDATE_DATE | date : 'y/M/d' }}</span>
+    </div>
+  </div>
 </div>

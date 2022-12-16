@@ -1,50 +1,62 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
+  <p>
+    <strong
+      ><a href="https://wiki.factorio.com/Inserter_capacity_bonus_(research)" target="_blank" rel="noopener"
+        >Inserter capacity research</a
+      ></strong
+    >
+    is used to increase the stack size of the inserters.
+  </p>
+  <p>
+    The bonus is more effective when moving from stack to stack (chests, wagons, machines) than when moving from stack to belt or belt to
+    stack as inserters must wait to collect a full stack from a belt, but can instantly grab a stack from containers.
+  </p>
 
-    <p>
-        <strong><a href="https://wiki.factorio.com/Inserter_capacity_bonus_(research)" target="_blank" rel="noopener">Inserter capacity research</a></strong>
-        is used to increase the stack size of the inserters.
-    </p>
-    <p>
-        The bonus is more effective when moving from stack to stack (chests, wagons, machines) than when moving from stack to belt or
-        belt to stack as inserters must wait to collect a full stack from a belt, but can instantly grab a stack from containers.
-    </p>
-
-    <table class="table table-sm table-hover fixed-width">
-        <caption class="text-center">Grabbed Items</caption>
-        <thead class="text-center">
-            <tr>
-                <th>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Lab')"></app-factorio-icon>
-                </th>
-                <th>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Burner_inserter')"></app-factorio-icon>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Inserter')"></app-factorio-icon>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Long-handed_inserter')"></app-factorio-icon>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_inserter')"></app-factorio-icon>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Filter_inserter')"></app-factorio-icon>
-                </th>
-                <th>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Stack_inserter')"></app-factorio-icon>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Stack_filter_inserter')"></app-factorio-icon>
-                </th>
-            </tr>
-        </thead>
-        <tbody class="text-center">
-            <tr *ngFor="let item of sheetData.bonuses; let idx = index">
-                <td>
-                    <app-factorio-icon *ngIf="idx==0" [icon]="dataService.getFactorioIcon('Inserter_capacity_bonus_(research)')" class="bg-factorio-red-muted"></app-factorio-icon>
-                    <app-factorio-icon *ngIf="idx>0" [icon]="dataService.getFactorioIcon('Inserter_capacity_bonus_(research)', item?.tech)" class="bg-factorio-green"></app-factorio-icon>
-                </td>
-                <td>
-                    <strong>{{item?.nonStackItems}} </strong>
-                    <span *ngIf="item.nonStackBonus">({{item.nonStackBonus}})</span>
-                </td>
-                <td>
-                    <strong>{{item?.stackItems}} </strong>
-                    <span *ngIf="item.stackBonus">({{item.stackBonus}})</span>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
+  <table class="table table-sm table-hover fixed-width">
+    <caption class="text-center">
+      Grabbed Items
+    </caption>
+    <thead class="text-center">
+      <tr>
+        <th>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Lab')"></app-factorio-icon>
+        </th>
+        <th>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Burner_inserter')"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Inserter')"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Long-handed_inserter')"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_inserter')"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Filter_inserter')"></app-factorio-icon>
+        </th>
+        <th>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Stack_inserter')"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Stack_filter_inserter')"></app-factorio-icon>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr *ngFor="let item of sheetData?.bonuses; let idx = index">
+        <td>
+          <app-factorio-icon
+            class="bg-factorio-red-muted"
+            *ngIf="idx === 0"
+            [icon]="dataService.getFactorioIcon('Inserter_capacity_bonus_(research)')"
+          ></app-factorio-icon>
+          <app-factorio-icon
+            class="bg-factorio-green"
+            *ngIf="idx > 0"
+            [icon]="dataService.getFactorioIcon('Inserter_capacity_bonus_(research)', item?.tech)"
+          ></app-factorio-icon>
+        </td>
+        <td>
+          <strong>{{ item?.nonStackItems }} </strong>
+          <span *ngIf="item.nonStackBonus">({{ item.nonStackBonus }})</span>
+        </td>
+        <td>
+          <strong>{{ item?.stackItems }} </strong>
+          <span *ngIf="item.stackBonus">({{ item.stackBonus }})</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </app-cheat-sheet>

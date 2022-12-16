@@ -9,26 +9,23 @@ import { Collapse } from './collapse.model';
 
 @Injectable()
 export class SheetCollapseToggleService {
+  // Subject for Observables
+  private subjectMessage = new Subject<Collapse>();
 
-    // Subject for Observables
-    private subjectMessage = new Subject<Collapse>();
+  /** Returns message Observable */
+  public getCollapseToggle(): Observable<Collapse> {
+    return this.subjectMessage.asObservable();
+  }
 
-    constructor() { }
+  public collapseAll() {
+    this.subjectMessage.next(new Collapse(true));
+  }
 
-    /** Returns message Observable */
-    public getCollapseToggle(): Observable<Collapse> {
-        return this.subjectMessage.asObservable();
-    }
+  public expandAll() {
+    this.subjectMessage.next(new Collapse(false));
+  }
 
-    public collapseAll() {
-        this.subjectMessage.next(new Collapse(true));
-    }
-
-    public expandAll() {
-        this.subjectMessage.next(new Collapse(false));
-    }
-
-    public expandId(id: string) {
-        this.subjectMessage.next(new Collapse(false, id));
-    }
+  public expandId(id: string) {
+    this.subjectMessage.next(new Collapse(false, id));
+  }
 }

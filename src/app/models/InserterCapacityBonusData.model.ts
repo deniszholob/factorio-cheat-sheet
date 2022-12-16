@@ -1,11 +1,11 @@
 export interface InserterCapacityBonusData {
-  bonuses: TechBonus[]
+  bonuses: TechBonus[];
 }
 
 export interface TechBonus {
-  tech: string
-  nonStackItems: string
-  nonStackBonus: string
-  stackItems: string
-  stackBonus: string
+  tech: string;
+  nonStackItems: string;
+  nonStackBonus: string;
+  stackItems: string;
+  stackBonus: string;
 }

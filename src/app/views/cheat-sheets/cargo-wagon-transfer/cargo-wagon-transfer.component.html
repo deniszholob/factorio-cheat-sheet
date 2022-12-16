@@ -1,137 +1,219 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
-    <p>
-        The following table shows the time (in seconds) it takes to load or unload a <a href="https://wiki.factorio.com/Cargo_wagon" target="_blank" rel="noopener">Cargo Wagon</a> assuming you are using 6 fast or stack inserters.
-        <br> With seven optional inserter capacity research bonuses, there are a lot of different loading and unloading rates.
-    </p>
+  <p>
+    The following table shows the time (in seconds) it takes to load or unload a
+    <a href="https://wiki.factorio.com/Cargo_wagon" target="_blank" rel="noopener">Cargo Wagon</a>
+    assuming you are using 6 fast or stack inserters. <br />
+    With seven optional inserter capacity research bonuses, there are a lot of different loading and unloading rates.
+  </p>
 
-    <p>If you use 12 fast or stack inserters (6 on each side of the wagon), divide the time listed by 2 to get the approximate
-        transfer time.
-    </p>
+  <p>
+    If you use 12 fast or stack inserters (6 on each side of the wagon), divide the time listed by 2 to get the approximate transfer time.
+  </p>
 
-    <div class="row align-items-center">
-        <div class="col-12 col-md-7 text-center">
-            <table class="table table-sm table-hover fixed-width">
-                <caption class="text-center">Time to transfer inventory between wagon and chests (theoretical)</caption>
-                <thead class="text-center">
-                    <tr>
-                        <th>
-                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_inserter')"></app-factorio-icon>
-                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Stack_inserter')"></app-factorio-icon>
-                            <br> Items <br> per swing</th>
-                        <th>
-                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Empty_barrel')"></app-factorio-icon>
-                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Crude_oil_barrel')"></app-factorio-icon>
-                            <br>
-                            <span><a href="#note_wagon_transfer_barrel">*</a> 10 items <br> per stack</span>
-                        </th>
-                        <th>
-                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Copper_ore')"></app-factorio-icon>
-                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Iron_ore')"></app-factorio-icon>
-                            <br>
-                            <span>50 items <br> per stack</span>
-                        </th>
-                        <th>
-                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Copper_plate')"></app-factorio-icon>
-                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Iron_plate')"></app-factorio-icon>
-                            <br>
-                            <span>100 items <br> per stack</span>
-                        </th>
-                        <th>
-                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Electronic_circuit')"></app-factorio-icon>
-                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Advanced_circuit')"></app-factorio-icon>
-                            <br>
-                            <span>200 items <br> per stack</span>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody class="text-center">
-                    <tr *ngFor="let item of tableCargoTransferTime">
-                        <td>{{item?.itemsPerCycle}}</td>
-                        <td>{{item?.stack10 | number:'1.0-1'}} s</td>
-                        <td>{{item?.stack50 | number:'1.0-1'}} s</td>
-                        <td>{{item?.stack100 | number:'1.0-1'}} s</td>
-                        <td>{{item?.stack200 | number:'1.0-1'}} s</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-12 col-md-5 text-center">
-            <span><strong>Cargo Loading Setup</strong></span><br>
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('train-stack-load.webp')}}" class="img-fluid rounded" alt="Wagon Load" title="Wagon Load">
-        </div>
-    </div>
-
-    <span class="text-muted">Notes:</span>
-    <ul class="text-muted">
-        <li>
-            The times are slightly off as inserters ready themselves after the wagon leaves, thus the first swing to load/unload is skipped.
-        </li>
-        <li>
-            These times are for unloading/loading using chests. If inserters are directly fed by or directly feeding belts, transfer times
-            will be higher.
-        </li>
-        <li id="note_wagon_transfer_barrel">
-            * The barrel transfer rate doesn't increase when unlocking 12 items per swing because inserters only move a full stack (10).
-        </li>
-    </ul>
-
-    <hr>
-
-    <p>
-        The next table shows how much would chests fill up with the contents of a fully loaded cargo wagon.
-        <br> Numbers showing resulting items in each chest, and numbers in [brackets] take those rounded up to the nearest stack size.
-    </p>
-
-    <table class="table table-sm table-hover">
-        <caption class="text-center">Items per chest from 1 cargo wagon's worth</caption>
+  <div class="row align-items-center">
+    <div class="col-12 col-md-7 text-center">
+      <table class="table table-sm table-hover fixed-width">
+        <caption class="text-center">
+          Time to transfer inventory between wagon and chests (theoretical)
+        </caption>
         <thead class="text-center">
-            <tr>
-                <th>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Steel_chest')"></app-factorio-icon>
-                    <br> Chests <br> per wagon</th>
-                    <th>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Steel_chest')" class="bg-factorio-blue"></app-factorio-icon>
-                    <br> Slots <br> per chest</th>
-                <th>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Empty_barrel')"></app-factorio-icon>
-                    <br>
-                    <span> 10 items <br> per stack</span>
-                </th>
-                <th>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Iron_ore')"></app-factorio-icon>
-                    <br>
-                    <span>50 items <br> per stack</span>
-                </th>
-                <th>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Iron_plate')"></app-factorio-icon>
-                    <br>
-                    <span>100 items <br> per stack</span>
-                </th>
-                <th>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Electronic_circuit')"></app-factorio-icon>
-                    <br>
-                    <span>200 items <br> per stack</span>
-                </th>
-            </tr>
+          <tr>
+            <th>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_inserter')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Stack_inserter')"></app-factorio-icon>
+              <br />
+              Items
+              <br />
+              per swing
+            </th>
+            <th>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Empty_barrel')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Crude_oil_barrel')"></app-factorio-icon>
+              <br />
+              <span
+                ><a href="#note_wagon_transfer_barrel">*</a>
+                10 items
+                <br />
+                per stack</span
+              >
+            </th>
+            <th>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Copper_ore')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Iron_ore')"></app-factorio-icon>
+              <br />
+              <span
+                >50 items
+                <br />
+                per stack</span
+              >
+            </th>
+            <th>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Copper_plate')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Iron_plate')"></app-factorio-icon>
+              <br />
+              <span
+                >100 items
+                <br />
+                per stack</span
+              >
+            </th>
+            <th>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Electronic_circuit')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Advanced_circuit')"></app-factorio-icon>
+              <br />
+              <span
+                >200 items
+                <br />
+                per stack</span
+              >
+            </th>
+          </tr>
         </thead>
         <tbody class="text-center">
-            <tr *ngFor="let item of tableChestFill">
-                <td>{{item?.chests}}</td>
-                <td>{{item?.slotsPerChest.dec | number:'1.0-1'}} [{{item?.slotsPerChest.round | number:'1.0-0'}}]</td>
-                <td>{{item?.stack10.dec | number:'1.0-0'}}i [{{item?.stack10.round | number:'1.0-0'}}i]</td>
-                <td>{{item?.stack50.dec | number:'1.0-0'}}i [{{item?.stack50.round | number:'1.0-0'}}i]</td>
-                <td>{{item?.stack100.dec | number:'1.0-0'}}i [{{item?.stack100.round | number:'1.0-0'}}i]</td>
-                <td>{{item?.stack200.dec | number:'1.0-0'}}i [{{item?.stack200.round | number:'1.0-0'}}i]</td>
-            </tr>
+          <tr *ngFor="let item of tableCargoTransferTime">
+            <td>
+              {{ item?.itemsPerCycle }}
+            </td>
+            <td>
+              {{ item?.stack10 | number : '1.0-1' }}
+              s
+            </td>
+            <td>
+              {{ item?.stack50 | number : '1.0-1' }}
+              s
+            </td>
+            <td>
+              {{ item?.stack100 | number : '1.0-1' }}
+              s
+            </td>
+            <td>
+              {{ item?.stack200 | number : '1.0-1' }}
+              s
+            </td>
+          </tr>
         </tbody>
-    </table>
+      </table>
+    </div>
+    <div class="col-12 col-md-5 text-center">
+      <span><strong>Cargo Loading Setup</strong></span
+      ><br />
+      <img
+        class="img-fluid rounded"
+        src="{{ APP_SETTINGS.links.getLocalImagePath('train-stack-load.webp') }}"
+        alt="Wagon Load"
+        title="Wagon Load"
+      />
+    </div>
+  </div>
 
-    <span class="text-muted">Notes: </span>
-    <ul class="text-muted">
-        <li> Cargo wagon slots can be filtered with <kbd>MMB</kbd> and limited just like a chest.</li>
-        <li> Cargo wagon configuration can be copied with <kbd>Shift+RMB</kbd>/<kbd>Shift+LMB</kbd> on wagon,
-            as well as on individual slots.
-        </li>
-    </ul>
+  <span class="text-muted">Notes:</span>
+  <ul class="text-muted">
+    <li>
+      The times are slightly off as inserters ready themselves after the wagon leaves, thus the first swing to load/unload is skipped.
+    </li>
+    <li>
+      These times are for unloading/loading using chests. If inserters are directly fed by or directly feeding belts, transfer times will be
+      higher.
+    </li>
+    <li id="note_wagon_transfer_barrel">
+      * The barrel transfer rate doesn't increase when unlocking 12 items per swing because inserters only move a full stack (10).
+    </li>
+  </ul>
 
+  <hr />
+
+  <p>
+    The next table shows how much would chests fill up with the contents of a fully loaded cargo wagon.
+    <br />
+    Numbers showing resulting items in each chest, and numbers in [brackets] take those rounded up to the nearest stack size.
+  </p>
+
+  <table class="table table-sm table-hover">
+    <caption class="text-center">
+      Items per chest from 1 cargo wagon's worth
+    </caption>
+    <thead class="text-center">
+      <tr>
+        <th>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Steel_chest')"></app-factorio-icon>
+          <br />
+          Chests
+          <br />
+          per wagon
+        </th>
+        <th>
+          <app-factorio-icon class="bg-factorio-blue" [icon]="dataService.getFactorioIcon('Steel_chest')"></app-factorio-icon>
+          <br />
+          Slots
+          <br />
+          per chest
+        </th>
+        <th>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Empty_barrel')"></app-factorio-icon>
+          <br />
+          <span>
+            10 items
+            <br />
+            per stack</span
+          >
+        </th>
+        <th>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Iron_ore')"></app-factorio-icon>
+          <br />
+          <span
+            >50 items
+            <br />
+            per stack</span
+          >
+        </th>
+        <th>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Iron_plate')"></app-factorio-icon>
+          <br />
+          <span
+            >100 items
+            <br />
+            per stack</span
+          >
+        </th>
+        <th>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Electronic_circuit')"></app-factorio-icon>
+          <br />
+          <span
+            >200 items
+            <br />
+            per stack</span
+          >
+        </th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr *ngFor="let item of tableChestFill">
+        <td>
+          {{ item?.chests }}
+        </td>
+        <td>
+          {{ item?.slotsPerChest?.dec | number : '1.0-1' }}
+          [{{ item?.slotsPerChest?.round | number : '1.0-0' }}]
+        </td>
+        <td>{{ item?.stack10?.dec | number : '1.0-0' }}i [{{ item?.stack10?.round | number : '1.0-0' }}i]</td>
+        <td>{{ item?.stack50?.dec | number : '1.0-0' }}i [{{ item?.stack50?.round | number : '1.0-0' }}i]</td>
+        <td>{{ item?.stack100?.dec | number : '1.0-0' }}i [{{ item?.stack100?.round | number : '1.0-0' }}i]</td>
+        <td>{{ item?.stack200?.dec | number : '1.0-0' }}i [{{ item?.stack200?.round | number : '1.0-0' }}i]</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <span class="text-muted">Notes: </span>
+  <ul class="text-muted">
+    <li>
+      Cargo wagon slots can be filtered with
+      <kbd>MMB</kbd>
+      and limited just like a chest.
+    </li>
+    <li>
+      Cargo wagon configuration can be copied with
+      <kbd>Shift+RMB</kbd>/<kbd>Shift+LMB</kbd>
+      on wagon, as well as on individual slots.
+    </li>
+  </ul>
 </app-cheat-sheet>

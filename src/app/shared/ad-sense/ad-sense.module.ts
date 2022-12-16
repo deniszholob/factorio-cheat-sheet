@@ -8,4 +8,4 @@ import { AdSenseComponent } from './ad-sense.component';
   declarations: [AdSenseComponent],
   exports: [AdSenseComponent],
 })
-export class AdSenseModule { }
+export class AdSenseModule {}

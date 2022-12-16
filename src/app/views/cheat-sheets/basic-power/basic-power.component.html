@@ -1,136 +1,171 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
-
-    <div class="row align-items-center">
-        <p class="col-12 col-sm-4 text-center">
-            <span class="text-muted">
-                Steam Power
-                <a href="https://wiki.factorio.com/Power_production#Steam_engine_power" target="_blank" rel="noopener">Build Ratio</a>
-            </span><br>
-            <ng-container *ngFor="let item of sheetData?.steamRatio">
-                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)">
-                </app-factorio-icon>
-            </ng-container>
-            <i class="fas fa-long-arrow-alt-right text-muted"></i>
-            <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
-            <sub style="vertical-align: baseline"><strong>{{ sheetData?.steamRatioPower }}</strong></sub>
-        </p>
-
-        <p class="col-12 col-sm-4 text-center">
-            <span class="text-muted">Solar Power
-                <a href="https://wiki.factorio.com/Power_production#Solar_panels_and_accumulators" target="_blank" rel="noopener">Build Ratio</a>
-            </span><br>
-            <ng-container *ngFor="let item of sheetData?.solarRatio">
-                <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
-            </ng-container>
-            <i class="fas fa-long-arrow-alt-right text-muted"></i>
-            <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
-            <sub style="vertical-align: baseline"><strong>{{ sheetData?.solarRatioPower }}</strong></sub>
-        </p>
-
-        <p class="col-12 col-sm-4 text-center">
-            <span class="text-muted">Solar Total to Usable</span><br>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Solar_panel', '10MW')"></app-factorio-icon>
-            <i class="fas fa-long-arrow-alt-right text-muted"></i>
-            <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
-            <sub style="vertical-align: baseline"><strong>{{ 10 * solarPowerRatio }}MW</strong></sub>
-        </p>
-    </div>
-
-    <hr>
-
-    <h4 class="card-title" id="steam-power">Steam Power</h4>
-    <ul>
-        <li>
-            An <a href="https://wiki.factorio.com/Offshore_pump" target="_blank" rel="noopener">offshore pump</a>
-            provides {{ sheetData?.offshore_pump_water }} units of water per second.
-        </li>
-        <li>
-            A <a href="https://wiki.factorio.com/Boiler" target="_blank" rel="noopener">steam boiler</a>
-            can convert up to {{ sheetData?.steam_boiler_fluid }} units of water into steam per second,
-            providing {{ sheetData?.steam_boiler_energy }} of steam (at 165 °C).
-        </li>
-        <li>
-            A steam boiler consumes {{ sheetData?.steam_boiler_energy }} of fuel.
-        </li>
-        <li>
-            A <a href="https://wiki.factorio.com/Steam_engine" target="_blank" rel="noopener">steam engine</a>
-            can convert {{ sheetData?.steam_engine_fluid }} units of steam (at 165 °C) per second
-            into {{ sheetData?.steam_engine_power }} of electric power.
-        </li>
-        <li>
-            {{ sheetData?.steamRatio[2]?.count }} steam engines will provide
-            {{ sheetData?.steamRatioPower }} of power.
-        </li>
-    </ul>
-
-    <table class="table table-sm table-hover fixed-width">
-        <caption class="text-center">
-            Boilers supported by a full belt of fuel <br>
-            (Rounded up to nearest whole number)
-        </caption>
-        <thead class="text-center">
-            <tr>
-                <th></th>
-                <th *ngFor="let item of sheetData?.boilerSupport">
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.fuel, item?.fuelEnergy)">
-                    </app-factorio-icon>
-                </th>
-            </tr>
-        </thead>
-        <tbody class="text-center">
-            <tr>
-                <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt')"></app-factorio-icon></th>
-                <td *ngFor="let item of sheetData?.boilerSupport">
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Boiler', item?.beltYellow)">
-                    </app-factorio-icon>
-                </td>
-            </tr>
-            <tr>
-                <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_transport_belt')"></app-factorio-icon></th>
-                <td *ngFor="let item of sheetData?.boilerSupport">
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Boiler', item?.beltRed)">
-                    </app-factorio-icon>
-                </td>
-            </tr>
-            <tr>
-                <th><app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon></th>
-                <td *ngFor="let item of sheetData?.boilerSupport">
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon('Boiler', item?.beltBlue)">
-                    </app-factorio-icon>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-    <p class="text-center">
-        <kbd>Boilers supported by belt of fuel = Belt Throughput(i/s) * Fuel Energy(MJ) / {{ sheetData?.steam_boiler_energy }}</kbd>
+  <div class="row align-items-center">
+    <p class="col-12 col-sm-4 text-center">
+      <span class="text-muted">
+        Steam Power
+        <a href="https://wiki.factorio.com/Power_production#Steam_engine_power" target="_blank" rel="noopener">Build Ratio</a> </span
+      ><br />
+      <ng-container *ngFor="let item of sheetData?.steamRatio">
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"> </app-factorio-icon>
+      </ng-container>
+      <i class="fas fa-long-arrow-alt-right text-muted"></i>
+      <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+      <sub style="vertical-align: baseline"
+        ><strong>{{ sheetData?.steamRatioPower }}</strong></sub
+      >
     </p>
 
-    <h4 class="card-title" id="solar-power">Solar Power</h4>
-    <ul>
-        <li>
-            <a href="https://wiki.factorio.com/Solar_panel" target="_blank" rel="noopener">Solar panels</a>
-            only provide energy during the day. (
-            {{ sheetData?.solar_energy_max }}{{ sheetData?.solar_energy_unit }} Max,
-            {{ sheetData?.solar_energy_avg }}{{ sheetData?.solar_energy_unit }} average per solar panel,
-            ratio of {{ solarPowerRatio | percent }} "usable" to total)
-        </li>
-        <li>
-            10MW worth of solar panels will power a factory of
-            {{ 10*solarPowerRatio }}MW.
-        </li>
-        <li>
-            During the day, excess power generated is stored in
-            <a href="https://wiki.factorio.com/Accumulator" target="_blank" rel="noopener">accumulators</a>,
-            during the night, accumulators release their charge to power your factory.
-        </li>
-        <li>Place accumulators until they can keep your factory powered through the night.</li>
-        <li>Add some extra accumulators to account for burst consumption, such as firing a lot of lasers.</li>
-        <li>Then place solar panels until those accumulators are fully charged by the end of the day.</li>
-        <li>
-            User <a href="https://forums.factorio.com/viewtopic.php?f=5&t=5594" target="_blank" rel="noopener"><i>Cilya</i> on the forums</a> did the
-            <a href="https://www.wolframalpha.com/input/?i=(+(0.5+%2B+0.2)+*+(0.1+%2B+0.2+*+(0.5+%2B+0.2)+%2F+1.0)+%2F+1.0)+*+(25000+%2F+60)+*+(60+%2F+5000)" target="_blank" rel="noopener">math</a>
-            to figure out exactly how many solar panels we need per accumulator.
-        </li>
-    </ul>
+    <p class="col-12 col-sm-4 text-center">
+      <span class="text-muted"
+        >Solar Power
+        <a href="https://wiki.factorio.com/Power_production#Solar_panels_and_accumulators" target="_blank" rel="noopener"
+          >Build Ratio</a
+        > </span
+      ><br />
+      <ng-container *ngFor="let item of sheetData?.solarRatio">
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
+      </ng-container>
+      <i class="fas fa-long-arrow-alt-right text-muted"></i>
+      <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+      <sub style="vertical-align: baseline"
+        ><strong>{{ sheetData?.solarRatioPower }}</strong></sub
+      >
+    </p>
+
+    <p class="col-12 col-sm-4 text-center">
+      <span class="text-muted">Solar Total to Usable</span><br />
+      <app-factorio-icon [icon]="dataService.getFactorioIcon('Solar_panel', '10MW')"></app-factorio-icon>
+      <i class="fas fa-long-arrow-alt-right text-muted"></i>
+      <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+      <sub style="vertical-align: baseline"
+        ><strong>{{ 10 * solarPowerRatio }}MW</strong></sub
+      >
+    </p>
+  </div>
+
+  <hr />
+
+  <h4 class="card-title" id="steam-power">Steam Power</h4>
+  <ul>
+    <li>
+      An
+      <a href="https://wiki.factorio.com/Offshore_pump" target="_blank" rel="noopener">offshore pump</a>
+      provides
+      {{ sheetData?.offshore_pump_water }}
+      units of water per second.
+    </li>
+    <li>
+      A
+      <a href="https://wiki.factorio.com/Boiler" target="_blank" rel="noopener">steam boiler</a>
+      can convert up to
+      {{ sheetData?.steam_boiler_fluid }}
+      units of water into steam per second, providing
+      {{ sheetData?.steam_boiler_energy }}
+      of steam (at 165 °C).
+    </li>
+    <li>
+      A steam boiler consumes
+      {{ sheetData?.steam_boiler_energy }}
+      of fuel.
+    </li>
+    <li>
+      A
+      <a href="https://wiki.factorio.com/Steam_engine" target="_blank" rel="noopener">steam engine</a>
+      can convert
+      {{ sheetData?.steam_engine_fluid }}
+      units of steam (at 165 °C) per second into
+      {{ sheetData?.steam_engine_power }}
+      of electric power.
+    </li>
+    <li>
+      {{ sheetData?.steamRatio?.[2]?.count }}
+      steam engines will provide
+      {{ sheetData?.steamRatioPower }}
+      of power.
+    </li>
+  </ul>
+
+  <table class="table table-sm table-hover fixed-width">
+    <caption class="text-center">
+      Boilers supported by a full belt of fuel
+      <br />
+      (Rounded up to nearest whole number)
+    </caption>
+    <thead class="text-center">
+      <tr>
+        <th></th>
+        <th *ngFor="let item of sheetData?.boilerSupport">
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.fuel, item?.fuelEnergy)"> </app-factorio-icon>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <th>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt')"></app-factorio-icon>
+        </th>
+        <td *ngFor="let item of sheetData?.boilerSupport">
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Boiler', item?.beltYellow)"> </app-factorio-icon>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_transport_belt')"></app-factorio-icon>
+        </th>
+        <td *ngFor="let item of sheetData?.boilerSupport">
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Boiler', item?.beltRed)"> </app-factorio-icon>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon>
+        </th>
+        <td *ngFor="let item of sheetData?.boilerSupport">
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Boiler', item?.beltBlue)"> </app-factorio-icon>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="text-center">
+    <kbd>Boilers supported by belt of fuel = Belt Throughput(i/s) * Fuel Energy(MJ) / {{ sheetData?.steam_boiler_energy }}</kbd>
+  </p>
+
+  <h4 class="card-title" id="solar-power">Solar Power</h4>
+  <ul>
+    <li>
+      <a href="https://wiki.factorio.com/Solar_panel" target="_blank" rel="noopener">Solar panels</a>
+      only provide energy during the day. (
+      {{ sheetData?.solar_energy_max }}{{ sheetData?.solar_energy_unit }}
+      Max,
+      {{ sheetData?.solar_energy_avg }}{{ sheetData?.solar_energy_unit }}
+      average per solar panel, ratio of
+      {{ solarPowerRatio | percent }}
+      "usable" to total)
+    </li>
+    <li>
+      10MW worth of solar panels will power a factory of
+      {{ 10 * solarPowerRatio }}MW.
+    </li>
+    <li>
+      During the day, excess power generated is stored in
+      <a href="https://wiki.factorio.com/Accumulator" target="_blank" rel="noopener">accumulators</a>, during the night, accumulators
+      release their charge to power your factory.
+    </li>
+    <li>Place accumulators until they can keep your factory powered through the night.</li>
+    <li>Add some extra accumulators to account for burst consumption, such as firing a lot of lasers.</li>
+    <li>Then place solar panels until those accumulators are fully charged by the end of the day.</li>
+    <li>
+      User
+      <a href="https://forums.factorio.com/viewtopic.php?f=5&t=5594" target="_blank" rel="noopener"><i>Cilya</i> on the forums</a>
+      did the
+      <a
+        href="https://www.wolframalpha.com/input/?i=(+(0.5+%2B+0.2)+*+(0.1+%2B+0.2+*+(0.5+%2B+0.2)+%2F+1.0)+%2F+1.0)+*+(25000+%2F+60)+*+(60+%2F+5000)"
+        target="_blank"
+        rel="noopener"
+        >math</a
+      >
+      to figure out exactly how many solar panels we need per accumulator.
+    </li>
+  </ul>
 </app-cheat-sheet>

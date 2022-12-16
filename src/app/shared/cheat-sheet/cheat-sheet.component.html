@@ -1,23 +1,30 @@
-<div class="card cheat-sheet" id="{{cheatSheet?.id}}">
-    <div class="card-header" (click)="cheatSheet?.toggleCollapse()">
-        <a href="#{{cheatSheet?.id}}">
-            <app-factorio-icon [icon]="cheatSheet?.icon"></app-factorio-icon>
-            <h3 class="card-title">{{cheatSheet?.title}}</h3>
-        </a>
-        <button *ngIf="cheatSheet?.isCollapsed" class="card-collapse" aria-label="Expand">
-            <i class="fa fa-plus" aria-hidden="true" title="Expand"></i>
-        </button>
-        <button *ngIf="!cheatSheet?.isCollapsed" class="card-collapse" aria-label="Collapse">
-            <i class="fa fa-minus" aria-hidden="true" title="Collapse"></i>
-        </button>
-    </div>
-    <div class="card-body" [ngbCollapse]="cheatSheet?.isCollapsed">
-        <ng-content></ng-content>
+<div class="card cheat-sheet" id="{{ cheatSheet?.id }}">
+  <div class="card-header" (click)="cheatSheet?.toggleCollapse()">
+    <a href="#{{ cheatSheet?.id }}">
+      <app-factorio-icon [icon]="cheatSheet?.icon"></app-factorio-icon>
+      <h3 class="card-title">
+        {{ cheatSheet?.title }}
+      </h3>
+    </a>
+    <button class="card-collapse" *ngIf="cheatSheet?.isCollapsed" aria-label="Expand">
+      <i class="fa fa-plus" aria-hidden="true" title="Expand"></i>
+    </button>
+    <button class="card-collapse" *ngIf="!cheatSheet?.isCollapsed" aria-label="Collapse">
+      <i class="fa fa-minus" aria-hidden="true" title="Collapse"></i>
+    </button>
+  </div>
+  <div class="card-body" [ngbCollapse]="!!cheatSheet?.isCollapsed">
+    <ng-content></ng-content>
 
-        <app-ad-sense *ngIf="!cheatSheet?.isCollapsed">
-            <ins class="adsbygoogle" data-ad-format="fluid" data-ad-layout-key="-gw-3+1f-3d+2z"
-                data-ad-client="ca-pub-8345050037615230" data-ad-slot="3302402251">
-            </ins>
-        </app-ad-sense>
-    </div>
+    <app-ad-sense *ngIf="!cheatSheet?.isCollapsed">
+      <ins
+        class="adsbygoogle"
+        data-ad-format="fluid"
+        data-ad-layout-key="-gw-3+1f-3d+2z"
+        data-ad-client="ca-pub-8345050037615230"
+        data-ad-slot="3302402251"
+      >
+      </ins>
+    </app-ad-sense>
+  </div>
 </div>

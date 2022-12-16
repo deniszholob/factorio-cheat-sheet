@@ -14,30 +14,27 @@ import { BELTS_DATA } from './belts.data';
 import { BeltsData } from 'app/models/BeltsData.model';
 
 @Component({
-    selector: 'app-belts',
-    templateUrl: './belts.component.html',
-    // styleUrls: ['./belts.component.scss'] // Enable as needed
+  selector: 'app-belts',
+  templateUrl: './belts.component.html',
+  // styleUrls: ['./belts.component.scss'] // Enable as needed
 })
 export class BeltsComponent implements OnInit {
-    public cheatSheet: CheatSheet;
-    public sheetData: BeltsData;
+  public cheatSheet?: CheatSheet;
+  public sheetData?: BeltsData;
 
-    public APP_SETTINGS = APP_SETTINGS;
+  public APP_SETTINGS = APP_SETTINGS;
 
-    constructor(
-        public dataService: DataService
-    ) { }
+  constructor(public dataService: DataService) {}
 
-    ngOnInit() {
-        this.dataService.getLocalCheatSheetData<BeltsData>(BELTS_DATA).subscribe(
-            (result: Data<BeltsData>) => {
-                this.cheatSheet = result.cheatSheet;
-                this.sheetData = result.data;
-            },
-            error => {
-                console.log(error);
-            }
-        );
-    }
-
+  ngOnInit() {
+    this.dataService.getLocalCheatSheetData<BeltsData>(BELTS_DATA).subscribe(
+      (result: Data<BeltsData>) => {
+        this.cheatSheet = result.cheatSheet;
+        this.sheetData = result.data;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
 }

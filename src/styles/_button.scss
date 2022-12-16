@@ -1,71 +1,70 @@
 .btn-link {
-    padding: 0;
-    vertical-align: baseline;
-    color: $c-pallette-accent;
+  padding: 0;
+  vertical-align: baseline;
+  color: $c-pallette-accent;
 
-    &:hover {
-        color: $c-pallette-accent-dark;
-        text-decoration: none;
-    }
+  &:hover {
+    color: $c-pallette-accent-dark;
+    text-decoration: none;
+  }
 }
 
 .btn-outline-primary {
-    font-weight: bold;
-    border-color: $c-pallette-accent;
-    color: $c-pallette-accent;
+  font-weight: bold;
+  border-color: $c-pallette-accent;
+  color: $c-pallette-accent;
 
-    &:hover {
-        color: $c-pallette-neutral-dark;
-        background-color: $c-pallette-accent-dark;
-        border-color: $c-pallette-accent-dark;
-    }
+  &:hover {
+    color: $c-pallette-neutral-dark;
+    background-color: $c-pallette-accent-dark;
+    border-color: $c-pallette-accent-dark;
+  }
 
-    &:not(:disabled):not(.disabled).active,
-    &:not(:disabled):not(.disabled):active {
-        box-shadow: 0 0 0 3px rgba(255, 120, 0, 0.5);
-        background-color: $c-pallette-neutral-dark;
-        border-color: $c-pallette-accent-dark;
-    }
+  &:not(:disabled):not(.disabled).active,
+  &:not(:disabled):not(.disabled):active {
+    box-shadow: 0 0 0 3px rgba(255, 120, 0, 0.5);
+    background-color: $c-pallette-neutral-dark;
+    border-color: $c-pallette-accent-dark;
+  }
 
-    &.focus,
-    &:focus,
-    &:not(:disabled):not(.disabled).active:focus,
-    &:not(:disabled):not(.disabled):active:focus {
-        box-shadow: 0 0 0 3px rgba(255, 120, 0, 0.5);
-    }
+  &.focus,
+  &:focus,
+  &:not(:disabled):not(.disabled).active:focus,
+  &:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 3px rgba(255, 120, 0, 0.5);
+  }
 }
 
 .btn-primary {
-    background-color: $c-pallette-accent;
-    border-color: $c-pallette-accent;
+  background-color: $c-pallette-accent;
+  border-color: $c-pallette-accent;
+  color: $c-pallette-neutral-dark;
+  font-weight: bold;
+
+  &:hover {
+    background-color: $c-pallette-accent-dark;
+    border-color: $c-pallette-accent-dark;
     color: $c-pallette-neutral-dark;
-    font-weight: bold;
+  }
 
-    &:hover {
-        background-color: $c-pallette-accent-dark;
-        border-color: $c-pallette-accent-dark;
-        color: $c-pallette-neutral-dark;
-    }
+  &.focus,
+  &:focus {
+    color: $c-pallette-neutral-dark;
+  }
 
-    &.focus,
-    &:focus {
-        color: $c-pallette-neutral-dark;
-    }
+  &.focus,
+  &:focus,
+  &:not(:disabled):not(.disabled).active,
+  &:not(:disabled):not(.disabled):active {
+    box-shadow: 0 0 0 3px rgba(255, 120, 0, 0.5);
+    background-color: $c-pallette-accent-dark;
+    border-color: $c-pallette-accent-dark;
+  }
 
-    &.focus,
-    &:focus,
-    &:not(:disabled):not(.disabled).active,
-    &:not(:disabled):not(.disabled):active {
-        box-shadow: 0 0 0 3px rgba(255, 120, 0, 0.5);
-        background-color: $c-pallette-accent-dark;
-        border-color: $c-pallette-accent-dark;
-    }
-
-
-    &.focus,
-    &:focus,
-    &:not(:disabled):not(.disabled).active:focus,
-    &:not(:disabled):not(.disabled):active:focus {
-        box-shadow: 0 0 0 3px rgba(255, 120, 0, 0.5);
-    }
+  &.focus,
+  &:focus,
+  &:not(:disabled):not(.disabled).active:focus,
+  &:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 3px rgba(255, 120, 0, 0.5);
+  }
 }

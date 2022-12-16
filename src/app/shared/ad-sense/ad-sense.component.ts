@@ -17,19 +17,22 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AdSenseComponent implements AfterViewInit, OnDestroy {
-  @ViewChild('ins', { read: ElementRef, static: true }) ins!: ElementRef;
+  @ViewChild('ins', { read: ElementRef, static: true })
+  ins?: ElementRef;
 
   constructor(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    @Inject(PLATFORM_ID) private platform: any,
-  ) { }
-
+    @Inject(PLATFORM_ID)
+    private platform: any
+  ) {}
 
   ngOnDestroy(): void {
-    const iframe = this.ins.nativeElement.querySelector('iframe');
-    if (iframe && iframe.contentWindow) {
-      iframe.src = 'about:blank';
-      iframe.remove();
+    if (this.ins) {
+      const iframe = this.ins.nativeElement.querySelector('iframe');
+      if (iframe && iframe.contentWindow) {
+        iframe.src = 'about:blank';
+        iframe.remove();
+      }
     }
   }
 
@@ -43,7 +46,9 @@ export class AdSenseComponent implements AfterViewInit, OnDestroy {
     if (window) {
       try {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+        ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
+          {}
+        );
       } catch {
         // pass
       }
