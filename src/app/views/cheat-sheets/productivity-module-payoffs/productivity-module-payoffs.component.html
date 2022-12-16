@@ -1,6 +1,6 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
   <p>
-    What are the best things to invest productivity modules into?
+    How long it takes for the use of modules with the given setup to "pay for itself"
     <br />
     Based on
     <a href="https://docs.google.com/spreadsheets/d/1M3bbVKSs3IWzLtBHEbe0iJcbnh7raERDcL6dOh1y3oY/" target="_blank" rel="noopener">
@@ -8,6 +8,8 @@
       <abbr title="Return on Investment">ROI</abbr>
       Calculations
     </a>
+    <br />
+    Shorter times are the best things to invest productivity modules into.
   </p>
 
   <ngb-pagination
@@ -89,4 +91,14 @@
     <tr *cdkHeaderRowDef="displayedColumns" cdk-header-row></tr>
     <tr *cdkRowDef="let row; columns: displayedColumns" cdk-row></tr>
   </table>
+
+  <hr />
+
+  <span class="text-muted">
+    <a href="https://github.com/deniszholob/factorio-cheat-sheet/issues/345" target="_blank" rel="noopener noreferrer">Notes</a>:
+  </span>
+  <ul class="text-muted">
+    <li>For the costs, all minerals count as 1 and all oil liquids as 0.1, water is free.</li>
+    <li>You can actually see how each cost is calculated in the spreadsheet, in the columns R and S.</li>
+  </ul>
 </app-cheat-sheet>
