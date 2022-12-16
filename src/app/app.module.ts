@@ -33,6 +33,7 @@ import * as SharedComponents from 'app/shared';
 import * as ViewComponents from 'app/views';
 import * as SheetComponents from 'app/views/cheat-sheets';
 import { AdSenseModule } from './shared/ad-sense/ad-sense.module';
+// import { FactorioIconModule } from './shared/factorio-icon/factorio-icon.module';
 
 const ngb = [
   NgbCollapseModule,
@@ -44,13 +45,11 @@ const ngb = [
 @NgModule({
   // Modules
   imports: [
+    // Angular
     BrowserModule,
     RouterModule.forRoot([]),
     FormsModule,
     HttpClientModule,
-    CdkTableModule,
-    ...ngb,
-    AdSenseModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       // enabled: !isDevMode(), // Generated my ng add @angular/pwa Should use this or environment.production ???  Note: import { NgModule, isDevMode } from '@angular/core';
       enabled: environment.production,
@@ -58,6 +57,14 @@ const ngb = [
       // or after 30 seconds (whichever comes first).
       // registrationStrategy: 'registerWhenStable:30000' // Default, so commenting out
     }),
+
+    // External
+    CdkTableModule,
+    ...ngb,
+    AdSenseModule,
+
+    // Local
+    // FactorioIconModule,
   ],
   // Components
   declarations: [

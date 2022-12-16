@@ -11,6 +11,7 @@
 /tmp
 /out-tsc
 /bazel-out
+documentation.json
 
 # Node
 /node

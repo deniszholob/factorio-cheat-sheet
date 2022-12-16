@@ -4,7 +4,11 @@
   "overrides": [
     {
       "files": ["*.html"],
-      "extends": ["plugin:@angular-eslint/template/recommended", "prettier"],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended",
+        "plugin:storybook/recommended",
+        "prettier"
+      ],
       "rules": {}
     },
     {

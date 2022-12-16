@@ -69,7 +69,7 @@ export class DataService {
   }
 
   /** Returns CheatSheet Object with icon and title */
-  private getCheatSheet(cheatSheet: RawCheatSheet): CheatSheet {
+  public getCheatSheet(cheatSheet: RawCheatSheet): CheatSheet {
     return new CheatSheet(
       this.getFactorioIcon(cheatSheet.icon),
       cheatSheet.title
