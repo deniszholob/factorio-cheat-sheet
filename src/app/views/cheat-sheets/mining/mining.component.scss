@@ -1,14 +1,14 @@
 img {
-    margin: 0px 10px 10px;
-    width: auto;
+  margin: 0px 10px 10px;
+  width: auto;
 }
 
 .input-group-addon {
-    &:last-child {
-        min-width: 170px;
-    }
+  &:last-child {
+    min-width: 170px;
+  }
 }
 
 .input-group.fixed-width {
-    width: 350px;
+  width: 350px;
 }

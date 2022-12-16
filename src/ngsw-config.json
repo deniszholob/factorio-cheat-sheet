@@ -39,7 +39,5 @@
     }
   ],
   "dataGroups": [],
-  "navigationUrls": [
-    "/**"
-  ]
+  "navigationUrls": ["/**"]
 }

@@ -1,11 +1,11 @@
 img {
-    width: 90%; // Way to big full width... esp on print
-    max-width: 600px;
+  width: 90%; // Way to big full width... esp on print
+  max-width: 600px;
 }
 
 @media print {
-    img {
-        // Way to big full width... esp on print
-        max-width: 400px;
-    }
+  img {
+    // Way to big full width... esp on print
+    max-width: 400px;
+  }
 }

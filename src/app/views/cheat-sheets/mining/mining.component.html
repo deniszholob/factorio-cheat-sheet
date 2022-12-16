@@ -1,88 +1,130 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
-    <div class="row align-items-center">
-        <div class="col-12 col-lg-6">
-            <ul>
-                <li>
-                    <a href="https://wiki.factorio.com/Mining" target="_blank" rel="noopener">Mining rate</a>
-                    relies on drill <i>mining speed</i> and ore <i>mining time</i>.
-                </li>
-                <li>
-                    See various
-                    <a href="https://imgur.com/a/LsUJ3id" target="_blank" rel="noopener">mining arrangements</a>
-                    with varying
-                    <a href="https://www.reddit.com/r/factorio/comments/ig96gm/big_book_of_mining_blueprints/" target="_blank" rel="noopener">mining coverage</a>.
-                </li>
-                <li><a href="https://wiki.factorio.com/Mining_productivity_(research)" target="_blank" rel="noopener">Mining productivity</a> research increases the output of all mining drills and pumpjacks.</li>
-                <li>Refer to an <a href="https://kirkmcdonald.github.io/calc.html#data=0-17-1&mprod=10&items=iron-ore:r:15" target="_blank" rel="noopener">online calculator</a> for more information on productivity bonuses. <span class="text-muted small">Note mining productivity bonus on settings page</span></li>
-            </ul>
+  <div class="row align-items-center">
+    <div class="col-12 col-lg-6">
+      <ul>
+        <li>
+          <a href="https://wiki.factorio.com/Mining" target="_blank" rel="noopener">Mining rate</a>
+          relies on drill
+          <i>mining speed</i>
+          and ore
+          <i>mining time</i>.
+        </li>
+        <li>
+          See various
+          <a href="https://imgur.com/a/LsUJ3id" target="_blank" rel="noopener">mining arrangements</a>
+          with varying
+          <a href="https://www.reddit.com/r/factorio/comments/ig96gm/big_book_of_mining_blueprints/" target="_blank" rel="noopener"
+            >mining coverage</a
+          >.
+        </li>
+        <li>
+          <a href="https://wiki.factorio.com/Mining_productivity_(research)" target="_blank" rel="noopener">Mining productivity</a>
+          research increases the output of all mining drills and pumpjacks.
+        </li>
+        <li>
+          Refer to an
+          <a href="https://kirkmcdonald.github.io/calc.html#data=0-17-1&mprod=10&items=iron-ore:r:15" target="_blank" rel="noopener"
+            >online calculator</a
+          >
+          for more information on productivity bonuses.
+          <span class="text-muted small">Note mining productivity bonus on settings page</span>
+        </li>
+      </ul>
 
-            <p>
-                To mine <a href="https://wiki.factorio.com/Uranium_ore" target="_blank" rel="noopener">uranium ore</a>, you must supply the mining drill with sulfuric acid.
-            </p>
+      <p>
+        To mine
+        <a href="https://wiki.factorio.com/Uranium_ore" target="_blank" rel="noopener">uranium ore</a>, you must supply the mining drill
+        with sulfuric acid.
+      </p>
 
-            <p class="text-center text-muted">
-                Per 10 uranium ore mined, 10 sulfuric acid are consumed.<br>
-                <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium_ore', 10)"></app-factorio-icon>
-                <i class="fas fa-arrows-alt-h text-muted"></i>
-                <app-factorio-icon [icon]="dataService.getFactorioIcon('Sulfuric_acid', 10)"></app-factorio-icon>
-            </p>
-        </div>
-        <div class="col-12 col-lg-6">
-            <table class="table table-sm table-hover fixed-width">
-                <caption class="text-center">
-                    Miners needed to fill a belt <span class="d-inline-not-print">*</span>
-                    <div class="input-group d-none-print fixed-width">
-                        <span class="input-group-addon">Prod lvl</span>
-                        <input class="form-control" type="number" [(ngModel)]="prodBonusLevel" min="{{inputMin}}" step="{{inputStep}}" (change)="updateTable()" (keyup)="updateTable()" (mouseup)="inputChange()">
-                        <span class="input-group-addon">Productivity {{productivityPercent | number:'1.0-0'}}%</span>
-                    </div>
-                </caption>
-                <thead class="text-center">
-                    <tr>
-                        <th>Ore</th>
-                        <th>Miner</th>
-                        <th>
-                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt')"></app-factorio-icon>
-                        </th>
-                        <th>
-                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_transport_belt')"></app-factorio-icon>
-                        </th>
-                        <th>
-                            <app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon>
-                        </th>
-                        <th class="text-right">Mine Rate</th>
-                    </tr>
-                </thead>
-                <tbody class="text-center">
-                    <tr *ngFor="let item of miningRateTable; let idx=index">
-                        <!-- <td *ngIf="idx%2 == 0" rowspan="2"> -->
-                        <td *ngIf="item.rowspan !==0" [attr.rowspan]="item.rowspan">
-                            <app-factorio-icon *ngFor="let iconId of item.materials" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
-                        </td>
-                        <td>
-                            <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.miningRate?.miner)"></app-factorio-icon>
-                        </td>
-                        <td>{{item?.beltYellow | ceiling }}</td>
-                        <td>{{item?.beltRed | ceiling }}</td>
-                        <td>{{item?.beltBlue | ceiling }}</td>
-                        <td class="text-right">{{item?.miningRate?.rate | number:'1.2-2'}} i/s</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p class="text-center">
-                <kbd>Miners = Belt Throughput / Mining Rate * Productivity</kbd>
-                <br>
-                <span class="text-muted small d-inline-not-print">* Assuming no mining productivity bonus</span>
-            </p>
-        </div>
+      <p class="text-center text-muted">
+        Per 10 uranium ore mined, 10 sulfuric acid are consumed.<br />
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium_ore', 10)"></app-factorio-icon>
+        <i class="fas fa-arrows-alt-h text-muted"></i>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Sulfuric_acid', 10)"></app-factorio-icon>
+      </p>
     </div>
-
-    <hr>
-
-    <div class="row align-items-center">
-        <div class="col text-center">
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('mining-direct-feed.webp')}}" class="img-fluid rounded" alt="Mining Direct Feed" title="Mining Direct Feed">
-            <strong>Tip:</strong> Mining drills will output resources directly without the need of inserters.
-        </div>
+    <div class="col-12 col-lg-6">
+      <table class="table table-sm table-hover fixed-width">
+        <caption class="text-center">
+          Miners needed to fill a belt
+          <span class="d-inline-not-print">*</span>
+          <div class="input-group d-none-print fixed-width">
+            <span class="input-group-addon">Prod lvl</span>
+            <input
+              class="form-control"
+              [(ngModel)]="prodBonusLevel"
+              (change)="updateTable()"
+              (keyup)="updateTable()"
+              (mouseup)="inputChange()"
+              type="number"
+              min="{{ inputMin }}"
+              step="{{ inputStep }}"
+            />
+            <span class="input-group-addon">Productivity {{ productivityPercent | number : '1.0-0' }}%</span>
+          </div>
+        </caption>
+        <thead class="text-center">
+          <tr>
+            <th>Ore</th>
+            <th>Miner</th>
+            <th>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt')"></app-factorio-icon>
+            </th>
+            <th>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_transport_belt')"></app-factorio-icon>
+            </th>
+            <th>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon>
+            </th>
+            <th class="text-right">Mine Rate</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr *ngFor="let item of miningRateTable; let idx = index">
+            <!-- <td *ngIf="idx%2 == 0" rowspan="2"> -->
+            <td *ngIf="item.rowspan !== 0" [attr.rowspan]="item.rowspan">
+              <app-factorio-icon *ngFor="let iconId of item.materials" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
+            </td>
+            <td>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.miningRate?.miner)"></app-factorio-icon>
+            </td>
+            <td>
+              {{ item?.beltYellow | ceiling }}
+            </td>
+            <td>
+              {{ item?.beltRed | ceiling }}
+            </td>
+            <td>
+              {{ item?.beltBlue | ceiling }}
+            </td>
+            <td class="text-right">
+              {{ item?.miningRate?.rate | number : '1.2-2' }}
+              i/s
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="text-center">
+        <kbd>Miners = Belt Throughput / Mining Rate * Productivity</kbd>
+        <br />
+        <span class="text-muted small d-inline-not-print">* Assuming no mining productivity bonus</span>
+      </p>
     </div>
+  </div>
+
+  <hr />
+
+  <div class="row align-items-center">
+    <div class="col text-center">
+      <img
+        class="img-fluid rounded"
+        src="{{ APP_SETTINGS.links.getLocalImagePath('mining-direct-feed.webp') }}"
+        alt="Mining Direct Feed"
+        title="Mining Direct Feed"
+      />
+      <strong>Tip:</strong>
+      Mining drills will output resources directly without the need of inserters.
+    </div>
+  </div>
 </app-cheat-sheet>

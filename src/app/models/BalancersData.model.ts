@@ -1,10 +1,9 @@
-
 export interface BalancerData {
-    commonBalancers: CommonBalancer[];
+  commonBalancers: CommonBalancer[];
 }
 
 export interface CommonBalancer {
-    name: string;
-    url: string;
-    raw: string;
+  name: string;
+  url: string;
+  raw: string;
 }

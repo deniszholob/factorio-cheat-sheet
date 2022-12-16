@@ -10,7 +10,10 @@ import { DataService } from 'app/services/data.service';
 // Models
 import { Data } from 'app/models/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
-import { Payoff, ProductivityModulePayoffsData } from 'app/models/ProductivityModulePayoffsData.model';
+import {
+  Payoff,
+  ProductivityModulePayoffsData,
+} from 'app/models/ProductivityModulePayoffsData.model';
 
 // Constants
 import { PRODUCTIVITY_MODULE_PAYOFFS_DATA } from './productivity-module-payoffs.data';
@@ -20,80 +23,92 @@ import { PRODUCTIVITY_MODULE_PAYOFFS_DATA } from './productivity-module-payoffs.
 // https://material.angular.io/cdk/table/overview#connecting-the-table-to-a-data-source
 
 @Component({
-    selector: 'app-productivity-module-payoffs',
-    templateUrl: './productivity-module-payoffs.component.html',
-    //   styleUrls: ['./productivity-module-payoffs.component.scss'] // Enable as needed
+  selector: 'app-productivity-module-payoffs',
+  templateUrl: './productivity-module-payoffs.component.html',
+  //   styleUrls: ['./productivity-module-payoffs.component.scss'] // Enable as needed
 })
 export class ProductivityModulePayoffsComponent implements OnInit {
-    public cheatSheet: CheatSheet;
+  public cheatSheet?: CheatSheet;
 
-    public displayedColumns = [
-        'product',
-        'payoff_speed_prod',
-        'payoff_prod',
-        'payoff_beacon_8x8',
-        'payoff_beacon_12',
-    ];
+  public displayedColumns = [
+    'product',
+    'payoff_speed_prod',
+    'payoff_prod',
+    'payoff_beacon_8x8',
+    'payoff_beacon_12',
+  ];
 
-    // Sorting Variables
-    public tableDataSource$ = new BehaviorSubject<Payoff[]>([]);
-    public sortKey$ = new BehaviorSubject<string>('payoff_speed_prod');
-    public sortDirection$ = new BehaviorSubject<string>('asc');
+  // Sorting Variables
+  public tableDataSource$ = new BehaviorSubject<Payoff[]>([]);
+  public sortKey$ = new BehaviorSubject<keyof Payoff>('payoff_speed_prod');
+  public sortDirection$ = new BehaviorSubject<'asc' | 'desc'>('asc');
 
-    // Pagination Variables
-    public currentPage$ = new BehaviorSubject<number>(1);
-    public pageSize$ = new BehaviorSubject<number>(10);
-    public dataOnPage$ = new BehaviorSubject<Payoff[]>([]);
+  // Pagination Variables
+  public currentPage$ = new BehaviorSubject<number>(1);
+  public pageSize$ = new BehaviorSubject<number>(10);
+  public dataOnPage$ = new BehaviorSubject<Payoff[]>([]);
 
+  constructor(public dataService: DataService) {}
 
-    constructor(
-        public dataService: DataService,
-    ) { }
+  ngOnInit() {
+    //  Pagination Subscription
+    combineLatest([
+      this.tableDataSource$,
+      this.currentPage$,
+      this.pageSize$,
+    ]).subscribe(([allSources, currentPage, pageSize]) => {
+      const startingIndex = (currentPage - 1) * pageSize;
+      const onPage = allSources.slice(startingIndex, startingIndex + pageSize);
+      this.dataOnPage$.next(onPage);
+    });
 
-    ngOnInit() {
-        //  Pagination Subscription
-        combineLatest([this.tableDataSource$, this.currentPage$, this.pageSize$])
-            .subscribe(([allSources, currentPage, pageSize]) => {
-                const startingIndex = (currentPage - 1) * pageSize;
-                const onPage = allSources.slice(startingIndex, startingIndex + pageSize);
-                this.dataOnPage$.next(onPage);
-            });
+    // Data/Sorting Subscription
+    combineLatest([
+      this.dataService.getLocalCheatSheetData<ProductivityModulePayoffsData>(
+        PRODUCTIVITY_MODULE_PAYOFFS_DATA
+      ),
+      this.sortKey$,
+      this.sortDirection$,
+    ]).subscribe(
+      ([newData, sortKey, sortDirection]: [
+        Data<ProductivityModulePayoffsData>,
+        keyof Payoff,
+        string
+      ]) => {
+        this.cheatSheet = newData.cheatSheet;
+        const data: Payoff[] = newData.data.payoffs;
 
-        // Data/Sorting Subscription
-        combineLatest([
-            this.dataService.getLocalCheatSheetData<ProductivityModulePayoffsData>(PRODUCTIVITY_MODULE_PAYOFFS_DATA),
-            this.sortKey$, this.sortDirection$,
-        ]).subscribe(
-            ([newData, sortKey, sortDirection]: [Data<ProductivityModulePayoffsData>, string, string]) => {
-                this.cheatSheet = newData.cheatSheet;
-                const data: Payoff[] = newData.data.payoffs;
+        // Sort the incoming data
+        const sorted = data.sort((a, b) => {
+          if (a[sortKey] > b[sortKey]) {
+            return sortDirection === 'asc' ? 1 : -1;
+          }
+          if (a[sortKey] < b[sortKey]) {
+            return sortDirection === 'asc' ? -1 : 1;
+          }
+          return 0;
+        });
 
-                // Sort the incoming data
-                const sorted = data.sort((a, b) => {
-                    if (a[sortKey] > b[sortKey]) { return sortDirection === 'asc' ? 1 : -1; }
-                    if (a[sortKey] < b[sortKey]) { return sortDirection === 'asc' ? -1 : 1; }
-                    return 0;
-                });
+        this.tableDataSource$.next(sorted);
+      }
+    );
+  }
 
-                this.tableDataSource$.next(sorted);
-            });
-    }
-
-    /**
-     * Adjusts the sorting arrows for the target column
-     * @param key column data variable name
-     */
-    public adjustSort(key: string) {
-        if (this.sortKey$.value === key) {
-            if (this.sortDirection$.value === 'asc') {
-                this.sortDirection$.next('desc');
-            } else {
-                this.sortDirection$.next('asc');
-            }
-            return;
-        }
-
-        this.sortKey$.next(key);
+  /**
+   * Adjusts the sorting arrows for the target column
+   * @param key column data variable name
+   */
+  public adjustSort(key: keyof Payoff) {
+    if (this.sortKey$.value === key) {
+      if (this.sortDirection$.value === 'asc') {
+        this.sortDirection$.next('desc');
+      } else {
         this.sortDirection$.next('asc');
+      }
+      return;
     }
+
+    this.sortKey$.next(key);
+    this.sortDirection$.next('asc');
+  }
 }

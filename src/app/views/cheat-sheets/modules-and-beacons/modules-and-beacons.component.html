@@ -1,103 +1,152 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
+  <div class="row align-items-center">
+    <div class="col-12 col-lg-6">
+      <ul>
+        <li>Modules allow to change how fast, efficient, or productive your machines are working.</li>
+        <li>
+          Beware of
+          <a href="https://forums.factorio.com/viewtopic.php?f=5&t=5705" target="_blank" rel="noopener">Diminishing Returns</a>.
+        </li>
+        <li>
+          Also see
+          <a
+            href="https://www.reddit.com/r/factorio/comments/4phc78/math_energy_efficiency_of_productivity3/"
+            target="_blank"
+            rel="noopener"
+            >Beacon Arrangement Power Efficiency</a
+          >.
+        </li>
+        <li>
+          Having
+          <i>faster</i>
+          machines with
+          <a href="https://wiki.factorio.com/Speed_module_3" target="_blank" rel="noopener">
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Speed_module_3')"></app-factorio-icon>
+            Speed Modules
+          </a>
+          means you'll need less to fill a belt than you did before.
+          <ul>
+            <li>While generally space is infinite, this becomes very useful in bot networks to minimize flight distance.</li>
+            <li>You can also speed up oil pumping, or ore mining.</li>
+            <li>Speed Modules increase the energy consumption especially with beacons so be wary.</li>
+          </ul>
+        </li>
+        <li>
+          Putting
+          <a href="https://wiki.factorio.com/Productivity_module_3" target="_blank" rel="noopener">
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Productivity_module_3')"></app-factorio-icon>
+            Productivity Modules
+          </a>
+          in your machines means you'll use less raw resources.
+          <ul>
+            <li>This is absolutely critical for late game with big factories, especially when doing infinite research.</li>
+            <li>Be wary, Productivity Modules increase the energy consumption and pollution, while decreasing factory speed.</li>
+            <li>Use speed moduled beacons to compensate for the speed penalty.</li>
+          </ul>
+        </li>
 
-    <div class="row align-items-center">
-        <div class="col-12 col-lg-6">
-            <ul>
-                <li>Modules allow to change how fast, efficient, or productive your machines are working.</li>
-                <li>Beware of <a href="https://forums.factorio.com/viewtopic.php?f=5&t=5705" target="_blank" rel="noopener">Diminishing Returns</a>.</li>
-                <li>Also see <a href="https://www.reddit.com/r/factorio/comments/4phc78/math_energy_efficiency_of_productivity3/" target="_blank" rel="noopener">Beacon Arrangement Power Efficiency</a>.</li>
-                <li>
-                    Having <i>faster</i> machines with
-                    <a href="https://wiki.factorio.com/Speed_module_3" target="_blank" rel="noopener">
-                        <app-factorio-icon [icon]="dataService.getFactorioIcon('Speed_module_3')"></app-factorio-icon>
-                        Speed Modules
-                    </a>
-                    means you'll need less to fill a belt than you did before.
-                    <ul>
-                        <li>While generally space is infinite, this becomes very useful in bot networks to minimize flight distance.</li>
-                        <li>You can also speed up oil pumping, or ore mining.</li>
-                        <li>Speed Modules increase the energy consumption especially with beacons so be wary.</li>
-                    </ul>
-                </li>
-                <li>
-                    Putting
-                    <a href="https://wiki.factorio.com/Productivity_module_3" target="_blank" rel="noopener">
-                        <app-factorio-icon [icon]="dataService.getFactorioIcon('Productivity_module_3')"></app-factorio-icon>
-                        Productivity Modules
-                    </a>
-                    in your machines means you'll use less raw resources.
-                    <ul>
-                        <li>This is absolutely critical for late game with big factories, especially when doing infinite research.</li>
-                        <li>Be wary, Productivity Modules increase the energy consumption and pollution, while decreasing factory
-                            speed.
-                        </li>
-                        <li>Use speed moduled beacons to compensate for the speed penalty.</li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="https://wiki.factorio.com/Efficiency_module_3" target="_blank" rel="noopener">
-                        <app-factorio-icon [icon]="dataService.getFactorioIcon('Efficiency_module_3')"></app-factorio-icon>
-                        Efficiency Modules
-                    </a> reduce power usage.
-                    <ul>
-                        <li>Best to put in energy hogs.</li>
-                        <li>Reducing Energy = Reducing pollution</li>
-                        <li>Tier 1 are superb in mining drills. Because you'll have lots of mining drills, you can save a lot of energy.</li>
-                    </ul>
-                </li>
-            </ul>
-
-        </div>
-        <div class="col-12 col-lg-6 text-center">
-            <img src="{{APP_SETTINGS.links.getLocalImagePath('formula-diagram.webp')}}" class="img-fluid rounded" alt="Formula Diagram" title="Formula Diagram">
-        </div>
+        <li>
+          <a href="https://wiki.factorio.com/Efficiency_module_3" target="_blank" rel="noopener">
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Efficiency_module_3')"></app-factorio-icon>
+            Efficiency Modules
+          </a>
+          reduce power usage.
+          <ul>
+            <li>Best to put in energy hogs.</li>
+            <li>Reducing Energy = Reducing pollution</li>
+            <li>Tier 1 are superb in mining drills. Because you'll have lots of mining drills, you can save a lot of energy.</li>
+          </ul>
+        </li>
+      </ul>
     </div>
-
-    <hr>
-
-    <div class="row align-items-center">
-        <div class="col-12 col-lg-3">
-            <div class="eq-container">
-                <div class="eq-field bg-neutral">
-                    <span class="eq-label">Machines Needed</span>
-                    <input type="text" class="eq-input" [value]="calcMachines.machinesToFillBelt" readonly>
-                </div>
-                <div class="eq-operator">=</div>
-            </div>
-        </div>
-        <div class="col-12 col-lg-9">
-            <div class="eq-container">
-                <div class="eq-field bg-factorio-yellow-muted">
-                    <span class="eq-label">Item Production Rate</span>
-                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.itemProductionRate" (keyup)="calcMachinesToFillBelt()" (change)="calcMachinesToFillBelt()" step="1">
-                </div>
-                <div class="eq-operator">*</div>
-                <div class="eq-field bg-factorio-green">
-                    <span class="eq-label">Recipe Base Craft Time</span>
-                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.recipeBaseCraftTime" (keyup)="calcMachinesToFillBelt()" (change)="calcMachinesToFillBelt()" step="0.1">
-                </div>
-            </div>
-            <div class="eq-operator op-divide"></div>
-            <div class="eq-container">
-                <div class="eq-field bg-factorio-gray">
-                    <span class="eq-label">Items per Craft</span>
-                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.itemsPerCraft" (keyup)="calcMachinesToFillBelt()" (change)="calcMachinesToFillBelt()" step="1">
-                </div>
-                <div class="eq-operator">*</div>
-                <div class="eq-field bg-factorio-blue">
-                    <span class="eq-label">Machine Craft Speed</span>
-                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.machineCraftSpeed" (keyup)="calcMachinesToFillBelt()" (change)="calcMachinesToFillBelt()" step="0.25">
-                </div>
-                <div class="eq-operator">*</div>
-                <div class="eq-field bg-factorio-red">
-                    <span class="eq-label">Machine Productivity</span>
-                    <input type="number" class="eq-input" [(ngModel)]="calcMachines.machineProductivity" (keyup)="calcMachinesToFillBelt()" (change)="calcMachinesToFillBelt()" step="0.1">
-                </div>
-            </div>
-        </div>
+    <div class="col-12 col-lg-6 text-center">
+      <img
+        class="img-fluid rounded"
+        src="{{ APP_SETTINGS.links.getLocalImagePath('formula-diagram.webp') }}"
+        alt="Formula Diagram"
+        title="Formula Diagram"
+      />
     </div>
+  </div>
 
-    <p class="text-muted text-center">Calculates how many machines satisfy a target production rate of items.</p>
+  <hr />
 
+  <div class="row align-items-center">
+    <div class="col-12 col-lg-3">
+      <div class="eq-container">
+        <div class="eq-field bg-neutral">
+          <span class="eq-label">Machines Needed</span>
+          <input class="eq-input" [value]="calcMachines.machinesToFillBelt" type="text" readonly />
+        </div>
+        <div class="eq-operator">=</div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-9">
+      <div class="eq-container">
+        <div class="eq-field bg-factorio-yellow-muted">
+          <span class="eq-label">Item Production Rate</span>
+          <input
+            class="eq-input"
+            [(ngModel)]="calcMachines.itemProductionRate"
+            (keyup)="calcMachinesToFillBelt()"
+            (change)="calcMachinesToFillBelt()"
+            type="number"
+            step="1"
+          />
+        </div>
+        <div class="eq-operator">*</div>
+        <div class="eq-field bg-factorio-green">
+          <span class="eq-label">Recipe Base Craft Time</span>
+          <input
+            class="eq-input"
+            [(ngModel)]="calcMachines.recipeBaseCraftTime"
+            (keyup)="calcMachinesToFillBelt()"
+            (change)="calcMachinesToFillBelt()"
+            type="number"
+            step="0.1"
+          />
+        </div>
+      </div>
+      <div class="eq-operator op-divide"></div>
+      <div class="eq-container">
+        <div class="eq-field bg-factorio-gray">
+          <span class="eq-label">Items per Craft</span>
+          <input
+            class="eq-input"
+            [(ngModel)]="calcMachines.itemsPerCraft"
+            (keyup)="calcMachinesToFillBelt()"
+            (change)="calcMachinesToFillBelt()"
+            type="number"
+            step="1"
+          />
+        </div>
+        <div class="eq-operator">*</div>
+        <div class="eq-field bg-factorio-blue">
+          <span class="eq-label">Machine Craft Speed</span>
+          <input
+            class="eq-input"
+            [(ngModel)]="calcMachines.machineCraftSpeed"
+            (keyup)="calcMachinesToFillBelt()"
+            (change)="calcMachinesToFillBelt()"
+            type="number"
+            step="0.25"
+          />
+        </div>
+        <div class="eq-operator">*</div>
+        <div class="eq-field bg-factorio-red">
+          <span class="eq-label">Machine Productivity</span>
+          <input
+            class="eq-input"
+            [(ngModel)]="calcMachines.machineProductivity"
+            (keyup)="calcMachinesToFillBelt()"
+            (change)="calcMachinesToFillBelt()"
+            type="number"
+            step="0.1"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="text-muted text-center">Calculates how many machines satisfy a target production rate of items.</p>
 </app-cheat-sheet>

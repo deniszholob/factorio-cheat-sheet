@@ -1,48 +1,48 @@
 .intro {
-    display: block;
-    height: 100%;
-    border-bottom: 1px solid $c-pallette-accent;
+  display: block;
+  height: 100%;
+  border-bottom: 1px solid $c-pallette-accent;
 
-    .banner {
-        background-color: $c-pallette-transp-medium;
-        display: flex;
-        text-align: center;
-        height: 90px;
-        box-shadow: inset 0 -25px 25px -25px $c-pallette-transp-heavy;
+  .banner {
+    background-color: $c-pallette-transp-medium;
+    display: flex;
+    text-align: center;
+    height: 90px;
+    box-shadow: inset 0 -25px 25px -25px $c-pallette-transp-heavy;
 
-        a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            width: 100%;
-        }
-
-        h1 {
-            text-transform: uppercase;
-            text-shadow: 0px 0px 8px $c-pallette-transp-heavy;
-            letter-spacing: 3px;
-
-            small {
-                text-transform: none;
-            }
-        }
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
     }
 
-    .greeter-img {
-        display: flex;
+    h1 {
+      text-transform: uppercase;
+      text-shadow: 0px 0px 8px $c-pallette-transp-heavy;
+      letter-spacing: 3px;
 
-        box-shadow: inset 0 25px 25px -15px $c-pallette-transp-heavy;
-
-        background-color: $c-pallette-transp-light;
-        background-image: url("/assets/icons/factorio-cheat-sheet-rocket-launch.webp");
-        // background-image: url("https://cdn.factorio.com/assets/img/artwork/nuclear-cheers.png");
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-
-        height: 20vh;
-        min-height: 100px;
-        max-height: 200px;
+      small {
+        text-transform: none;
+      }
     }
+  }
+
+  .greeter-img {
+    display: flex;
+
+    box-shadow: inset 0 25px 25px -15px $c-pallette-transp-heavy;
+
+    background-color: $c-pallette-transp-light;
+    background-image: url('/assets/icons/factorio-cheat-sheet-rocket-launch.webp');
+    // background-image: url("https://cdn.factorio.com/assets/img/artwork/nuclear-cheers.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 20vh;
+    min-height: 100px;
+    max-height: 200px;
+  }
 }

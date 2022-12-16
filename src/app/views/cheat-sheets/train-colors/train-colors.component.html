@@ -1,63 +1,59 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
+  <table class="table table-sm table-hover fixed-width">
+    <caption class="text-center">
+      <app-blueprint-clipboard [url]="sheetData?.blueprint"></app-blueprint-clipboard>
+      Suggested locomotive colors based on cargo
+      <br />
+      Also see
+      <a href="https://mods.factorio.com/mod/Automatic_Train_Painter" target="_blank" rel="noopener"> Train Painter Mod </a
+      >.
+      <br />
 
-    <table class="table table-sm table-hover fixed-width">
-        <caption class="text-center">
-            <app-blueprint-clipboard [url]="sheetData?.blueprint"></app-blueprint-clipboard>
-            Suggested locomotive colors based on cargo
-            <br> Also see
-            <a href="https://mods.factorio.com/mod/Automatic_Train_Painter" target="_blank" rel="noopener">
-                Train Painter Mod
-            </a>.
-            <br>
+      <div class="d-none-print">
+        <a href="https://www.reddit.com/r/factorio/comments/5e3uuf/what_is_your_color_scheme_for_trains/" target="_blank" rel="noopener">
+          Tailored
+        </a>
+        <label class="switch">
+          <input [(ngModel)]="generated" (ngModelChange)="filter()" type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+        <a
+          href="https://www.reddit.com/r/factorio/comments/gvyryk/improved_my_average_icon_colours_sheet_from_the/"
+          target="_blank"
+          rel="noopener"
+        >
+          Generated
+        </a>
+      </div>
+      <div class="input-group d-none-print">
+        <input class="form-control" [(ngModel)]="filterString" (ngModelChange)="filter()" type="text" placeholder="Filter" />
+      </div>
+    </caption>
 
-            <div class="d-none-print">
-                <a href="https://www.reddit.com/r/factorio/comments/5e3uuf/what_is_your_color_scheme_for_trains/"
-                    target="_blank" rel="noopener">
-                    Tailored
-                </a>
-                <label class="switch">
-                    <input type="checkbox" [(ngModel)]="generated" (ngModelChange)="filter()">
-                    <span class="slider round"></span>
-                </label>
-                <a href="https://www.reddit.com/r/factorio/comments/gvyryk/improved_my_average_icon_colours_sheet_from_the/"
-                    target="_blank" rel="noopener">
-                    Generated
-                </a>
-            </div>
-            <div class="input-group d-none-print">
-                <input class="form-control" type="text" placeholder="Filter" [(ngModel)]="filterString"
-                    (ngModelChange)="filter()" />
-            </div>
-        </caption>
-
-        <thead class="text-left">
-            <tr>
-                <th>
-                    Train Type
-                </th>
-                <th>
-                    RGB String
-                </th>
-                <th>
-                    Color
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <caption *ngIf="!displayedData || displayedData.length === 0" class="d-flex d-none-print">
-                Nothing found.
-            </caption>
-            <tr *ngFor="let item of displayedData">
-                <td>
-                    <app-factorio-icon [icon]="dataService.getFactorioIcon(item.icon)"></app-factorio-icon>
-                    {{item.type ? item.type : item.icon | replace}}
-                </td>
-                <td>{{item.rgb[0]}}, {{item.rgb[1]}}, {{item.rgb[2]}}</td>
-                <td>
-                    <i class="color-circle" [ngStyle]="getColorStyle(item.rgb)"></i>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
+    <thead class="text-left">
+      <tr>
+        <th>Train Type</th>
+        <th>RGB String</th>
+        <th>Color</th>
+      </tr>
+    </thead>
+    <tbody>
+      <caption class="d-flex d-none-print" *ngIf="!displayedData || displayedData.length === 0">
+        Nothing found.
+      </caption>
+      <tr *ngFor="let item of displayedData">
+        <td>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(item.icon)"></app-factorio-icon>
+          {{ item.type ? item.type : (item.icon | replace) }}
+        </td>
+        <td>
+          {{ item.rgb[0] }}, {{ item.rgb[1] }},
+          {{ item.rgb[2] }}
+        </td>
+        <td>
+          <i class="color-circle" [ngStyle]="getColorStyle(item.rgb)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </app-cheat-sheet>

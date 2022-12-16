@@ -1,4 +1,4 @@
-# Editor configuration, see http://editorconfig.org
+# Editor configuration, see https://editorconfig.org
 
 # top-most EditorConfig file
 root = true
@@ -7,7 +7,7 @@ root = true
 [*]
 charset = utf-8
 indent_style = space
-indent_size = 4
+indent_size = 2
 insert_final_newline = true
 trim_trailing_whitespace = true
 
@@ -16,7 +16,12 @@ end_of_line = lf
 
 # Typescript
 [*.ts]
-max_line_length = 120
+max_line_length = 80
+
+# HTML
+[*.html]
+indent_size = 2
+max_line_length = 140
 
 # Markdown
 [*.md]

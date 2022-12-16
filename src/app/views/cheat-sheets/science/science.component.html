@@ -1,157 +1,206 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
-    <ul>
-        <li>
-            <a href="https://wiki.factorio.com/Research" target="_blank" rel="noopener">
-                Research
-            </a>
-            is balanced in the number of different science packs required,
-            so optimally all science should be produced at the same rate.
-        </li>
-        <li>
-            <a href="https://wiki.factorio.com/Science_pack" target="_blank" rel="noopener">
-                Science Packs
-            </a>
-            have various crafting times and outputs;
-            you'll need different number of assemblers making each type to prevent bottlenecks.
-        </li>
-    </ul>
+  <ul>
+    <li>
+      <a href="https://wiki.factorio.com/Research" target="_blank" rel="noopener"> Research </a>
+      is balanced in the number of different science packs required, so optimally all science should be produced at the same rate.
+    </li>
+    <li>
+      <a href="https://wiki.factorio.com/Science_pack" target="_blank" rel="noopener"> Science Packs </a>
+      have various crafting times and outputs; you'll need different number of assemblers making each type to prevent bottlenecks.
+    </li>
+  </ul>
 
-    <div class="text-center">
-        <span class="text-muted">Number of assemblers needed to produce science equally</span>
-        <div>
-            <app-factorio-icon class="d-none d-sm-inline-block" [icon]="dataService.getFactorioIcon(sheetData?.space2?.iconId, sheetData?.space2?.speed)"></app-factorio-icon>
-            <i class="fas fa-long-arrow-alt-left text-muted d-none d-sm-inline-block" aria-hidden="true"></i>
-            <app-factorio-icon class="d-none d-md-inline-block" [icon]="dataService.getFactorioIcon(sheetData?.assembler2?.iconId, sheetData?.assembler2?.speed)"></app-factorio-icon>
-            <i class="fas fa-long-arrow-alt-left text-muted d-none d-md-inline-block" aria-hidden="true"></i>
+  <div class="text-center">
+    <span class="text-muted">Number of assemblers needed to produce science equally</span>
+    <div>
+      <app-factorio-icon
+        class="d-none d-sm-inline-block"
+        [icon]="dataService.getFactorioIcon(sheetData?.space2?.iconId, sheetData?.space2?.speed)"
+      ></app-factorio-icon>
+      <i class="fas fa-long-arrow-alt-left text-muted d-none d-sm-inline-block" aria-hidden="true"></i>
+      <app-factorio-icon
+        class="d-none d-md-inline-block"
+        [icon]="dataService.getFactorioIcon(sheetData?.assembler2?.iconId, sheetData?.assembler2?.speed)"
+      ></app-factorio-icon>
+      <i class="fas fa-long-arrow-alt-left text-muted d-none d-md-inline-block" aria-hidden="true"></i>
 
-            <app-factorio-icon *ngFor="let pack of sheetData?.packs" [icon]="dataService.getFactorioIcon(pack?.iconId, pack?.count)"></app-factorio-icon>
+      <app-factorio-icon
+        *ngFor="let pack of sheetData?.packs"
+        [icon]="dataService.getFactorioIcon(pack?.iconId, pack?.count)"
+      ></app-factorio-icon>
 
-            <i class="fas fa-long-arrow-alt-right text-muted d-none d-md-inline-block" aria-hidden="true"></i>
-            <app-factorio-icon class="d-none d-md-inline-block" [icon]="dataService.getFactorioIcon(sheetData?.assembler3?.iconId, sheetData?.assembler3?.speed)"></app-factorio-icon>
-            <i class="fas fa-long-arrow-alt-right text-muted d-none d-sm-inline-block" aria-hidden="true"></i>
-            <app-factorio-icon class="d-none d-sm-inline-block" [icon]="dataService.getFactorioIcon(sheetData?.space3?.iconId, sheetData?.space3?.speed)"></app-factorio-icon>
-        </div>
+      <i class="fas fa-long-arrow-alt-right text-muted d-none d-md-inline-block" aria-hidden="true"></i>
+      <app-factorio-icon
+        class="d-none d-md-inline-block"
+        [icon]="dataService.getFactorioIcon(sheetData?.assembler3?.iconId, sheetData?.assembler3?.speed)"
+      ></app-factorio-icon>
+      <i class="fas fa-long-arrow-alt-right text-muted d-none d-sm-inline-block" aria-hidden="true"></i>
+      <app-factorio-icon
+        class="d-none d-sm-inline-block"
+        [icon]="dataService.getFactorioIcon(sheetData?.space3?.iconId, sheetData?.space3?.speed)"
+      ></app-factorio-icon>
     </div>
+  </div>
 
-    <ul>
-        <li>
-            Check the <a href="#common-ratios">ratios for each science pack</a>.
-        </li>
-        <li>
-            Check your
-            <a href="{{ scienceRequirementsLink }}" target="_blank" rel="noopener">
-                Resource requirements
-            </a> to keep production steady.
-        </li>
-        <li>
-            You can move science packs between labs with inserters.
-        </li>
-        <li>
-            Launching 1-100
-            <a href="https://wiki.factorio.com/Space_science_pack" target="_blank" rel="noopener">Space Science</a>
-            in a rocket will give you 1-100
-            <a href="https://wiki.factorio.com/Raw_fish" target="_blank" rel="noopener">Fish</a>
-            respectively.
-        </li>
-    </ul>
+  <ul>
+    <li>
+      Check the
+      <a href="#common-ratios">ratios for each science pack</a>.
+    </li>
+    <li>
+      Check your
+      <a href="{{ scienceRequirementsLink }}" target="_blank" rel="noopener"> Resource requirements </a>
+      to keep production steady.
+    </li>
+    <li>You can move science packs between labs with inserters.</li>
+    <li>
+      Launching 1-100
+      <a href="https://wiki.factorio.com/Space_science_pack" target="_blank" rel="noopener">Space Science</a>
+      in a rocket will give you 1-100
+      <a href="https://wiki.factorio.com/Raw_fish" target="_blank" rel="noopener">Fish</a>
+      respectively.
+    </li>
+  </ul>
 
-    <hr>
-    <div class="row align-items-center">
-        <div class="col-12 col-lg-6">
-            <p class="text-center">
-                <strong>Space Science</strong>
-            </p>
-            <p>
-                For 1 space science pack per second you need to launch a rocket with a satellite every 16.67 minutes.<br>
-            </p>
-            <p class="text-center"><kbd>Rockets launch interval (in minutes) = (1000 science / (assembler speed * ratio multiplier)) * (1min/60sec)</kbd></p>
-        </div>
-        <div class="col-12 col-lg-6">
-            <div class="merged-input-group">
-                <div class="input-group">
-                    <span class="input-group-addon">Rocket launch every</span>
-                    <input type="text" class="form-control" [value]="rocketCalcData.rocketRate | number:'1.0-0'" readonly>
-                    <span class="input-group-addon">Minutes</span>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-addon">Science Per Launch</span>
-                    <input type="number" class="form-control" [(ngModel)]="rocketCalcData.sciencePerLaunch" (keyup)="onCalcRocketRate()" (change)="onCalcRocketRate()" min="0">
-                </div>
-                <div class="input-group">
-                    <span class="input-group-addon">Assembler Speed</span>
-                    <input type="number" class="form-control" [(ngModel)]="rocketCalcData.assemblerSpeed" (keyup)="onCalcRocketRate()" (change)="onCalcRocketRate()" step="0.25" min="0">
-                </div>
-                <div class="input-group">
-                    <span class="input-group-addon">Ratio Multiplier</span>
-                    <input type="number" class="form-control" [(ngModel)]="rocketCalcData.ratioMultiplier" (keyup)="onCalcRocketRate()" (change)="onCalcRocketRate()" min="0">
-                </div>
-            </div>
-        </div>
+  <hr />
+  <div class="row align-items-center">
+    <div class="col-12 col-lg-6">
+      <p class="text-center">
+        <strong>Space Science</strong>
+      </p>
+      <p>For 1 space science pack per second you need to launch a rocket with a satellite every 16.67 minutes.<br /></p>
+      <p class="text-center">
+        <kbd>Rockets launch interval (in minutes) = (1000 science / (assembler speed * ratio multiplier)) * (1min/60sec)</kbd>
+      </p>
     </div>
-    <hr>
-    <div class="row align-items-center">
-        <div class="col-12 col-lg-12">
-            <p class="text-center">
-                <strong>Number of Labs required</strong>
-            </p>
+    <div class="col-12 col-lg-6">
+      <div class="merged-input-group">
+        <div class="input-group">
+          <span class="input-group-addon">Rocket launch every</span>
+          <input class="form-control" [value]="rocketCalcData.rocketRate | number : '1.0-0'" type="text" readonly />
+          <span class="input-group-addon">Minutes</span>
         </div>
+        <div class="input-group">
+          <span class="input-group-addon">Science Per Launch</span>
+          <input
+            class="form-control"
+            [(ngModel)]="rocketCalcData.sciencePerLaunch"
+            (keyup)="onCalcRocketRate()"
+            (change)="onCalcRocketRate()"
+            type="number"
+            min="0"
+          />
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Assembler Speed</span>
+          <input
+            class="form-control"
+            [(ngModel)]="rocketCalcData.assemblerSpeed"
+            (keyup)="onCalcRocketRate()"
+            (change)="onCalcRocketRate()"
+            type="number"
+            step="0.25"
+            min="0"
+          />
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Ratio Multiplier</span>
+          <input
+            class="form-control"
+            [(ngModel)]="rocketCalcData.ratioMultiplier"
+            (keyup)="onCalcRocketRate()"
+            (change)="onCalcRocketRate()"
+            type="number"
+            min="0"
+          />
+        </div>
+      </div>
     </div>
-    <div class="row align-items-center">
-        <div class="col-12 col-lg-3">
-            <div class="eq-container">
-                <div class="eq-field bg-neutral">
-                    <span class="eq-label">Labs Needed</span>
-                    <input type="text" class="eq-input" [value]="calcScience.labsRequired" readonly>
-                </div>
-                <div class="eq-operator">=</div>
-            </div>
-        </div>
-        <div class="col-12 col-lg-3">
-            <div class="eq-container">
-                <div class="eq-field bg-factorio-yellow-muted">
-                    <span class="eq-label">Packs Per Minute</span>
-                    <input type="number" class="eq-input" [(ngModel)]="calcScience.packsPerMinute" (keyup)="calcScienceNumberOfLabs()" (change)="calcScienceNumberOfLabs()" min="0">
-                </div>
-            </div>
-            <div class="eq-operator op-divide"></div>
-            <div class="eq-container">
-                <div class="eq-field">
-                    <span class="eq-label">Seconds</span>
-                    <input type="text" class="eq-input" [value]="60" readonly min="0">
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-lg-1">
-            <div class="eq-container">
-                <div class="eq-field">
-                    <span class="eq-label">x</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-lg-5">
-            <div class="eq-container">
-                <div class="eq-field bg-factorio-green">
-                    <span class="eq-label">Research cycle seconds</span>
-                    <input type="number" class="eq-input" [(ngModel)]="calcScience.researchCycleTime" (keyup)="calcScienceNumberOfLabs()" (change)="calcScienceNumberOfLabs()" min="0">
-                </div>
-            </div>
-            <div class="eq-operator op-divide"></div>
-            <div class="eq-container">
-                <div class="eq-field bg-factorio-blue">
-                    <span class="eq-label">1 + </span>
-                    <span class="eq-label">(Lab Speed Bonus %</span>
-                    <input type="number" class="eq-input" [(ngModel)]="calcScience.labSpeedBonus" (keyup)="calcScienceNumberOfLabs()" (change)="calcScienceNumberOfLabs()" min="0">
-                    <span class="eq-label"> / 100)</span>
-                </div>
-            </div>
-        </div>
+  </div>
+  <hr />
+  <div class="row align-items-center">
+    <div class="col-12 col-lg-12">
+      <p class="text-center">
+        <strong>Number of Labs required</strong>
+      </p>
     </div>
-    <p class="text-muted text-center">Calculates how many labs satisfy a target production rate of science packs per minute.</p>
-    <p class="text-muted">
-        <b>Research Cycle Time</b> - Time in seconds to complete one research cycle, this is usually 60 seconds for all infinite tech.<br>
-        <b>Lab Speed Bonus</b> - Speed bonus as reported by the lab, including modules and beacons.<br>
-        Default numbers assume a 12 beacon setup, which is researching a 60 second infinite tech.
-    </p>
-    <br>
-
+  </div>
+  <div class="row align-items-center">
+    <div class="col-12 col-lg-3">
+      <div class="eq-container">
+        <div class="eq-field bg-neutral">
+          <span class="eq-label">Labs Needed</span>
+          <input class="eq-input" [value]="calcScience.labsRequired" type="text" readonly />
+        </div>
+        <div class="eq-operator">=</div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-3">
+      <div class="eq-container">
+        <div class="eq-field bg-factorio-yellow-muted">
+          <span class="eq-label">Packs Per Minute</span>
+          <input
+            class="eq-input"
+            [(ngModel)]="calcScience.packsPerMinute"
+            (keyup)="calcScienceNumberOfLabs()"
+            (change)="calcScienceNumberOfLabs()"
+            type="number"
+            min="0"
+          />
+        </div>
+      </div>
+      <div class="eq-operator op-divide"></div>
+      <div class="eq-container">
+        <div class="eq-field">
+          <span class="eq-label">Seconds</span>
+          <input class="eq-input" [value]="60" type="text" readonly min="0" />
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-1">
+      <div class="eq-container">
+        <div class="eq-field">
+          <span class="eq-label">x</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-5">
+      <div class="eq-container">
+        <div class="eq-field bg-factorio-green">
+          <span class="eq-label">Research cycle seconds</span>
+          <input
+            class="eq-input"
+            [(ngModel)]="calcScience.researchCycleTime"
+            (keyup)="calcScienceNumberOfLabs()"
+            (change)="calcScienceNumberOfLabs()"
+            type="number"
+            min="0"
+          />
+        </div>
+      </div>
+      <div class="eq-operator op-divide"></div>
+      <div class="eq-container">
+        <div class="eq-field bg-factorio-blue">
+          <span class="eq-label">1 + </span>
+          <span class="eq-label">(Lab Speed Bonus %</span>
+          <input
+            class="eq-input"
+            [(ngModel)]="calcScience.labSpeedBonus"
+            (keyup)="calcScienceNumberOfLabs()"
+            (change)="calcScienceNumberOfLabs()"
+            type="number"
+            min="0"
+          />
+          <span class="eq-label"> / 100)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text-muted text-center">Calculates how many labs satisfy a target production rate of science packs per minute.</p>
+  <p class="text-muted">
+    <b>Research Cycle Time</b> - Time in seconds to complete one research cycle, this is usually 60 seconds for all infinite tech.<br />
+    <b>Lab Speed Bonus</b> - Speed bonus as reported by the lab, including modules and beacons.<br />
+    Default numbers assume a 12 beacon setup, which is researching a 60 second infinite tech.
+  </p>
+  <br />
 </app-cheat-sheet>

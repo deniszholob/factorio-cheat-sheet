@@ -7,7 +7,7 @@ import { Observable, of } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 
 // Models
-import { Data as IData , RawData } from 'app/models/Data.model';
+import { Data as IData, RawCheatSheet, RawData } from 'app/models/Data.model';
 import { Data } from './data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 import { FactorioIcon } from 'app/shared/factorio-icon/factorio-icon.model';
@@ -18,60 +18,79 @@ export const BASE_URL = './assets/data/';
 
 @Injectable()
 export class DataService {
+  // constructor(
+  //     private httpClientService: HttpClient
+  // ) { }
 
-    constructor(
-        private httpClientService: HttpClient
-    ) { }
+  // /** @deprecated, use getLocalCheatSheetData */
+  // public GET<T>(endpoint: string): Observable<T> {
+  //     const url = BASE_URL + endpoint + '.json';
+  //     return this.httpClientService.get<T>(url);
+  // }
 
-    GET<T>(endpoint: string): Observable<T> {
-        const url = BASE_URL + endpoint + '.json';
-        return this.httpClientService.get<T>(url);
+  // /** @deprecated, use getLocalCheatSheetData */
+  // public getCheatSheetData<T>(endpoint: string): Observable<Data> {
+  //     return this.GET<T>(endpoint).pipe(
+  //         map((response: any) => {
+  //             return new Data(this.getCheatSheet(response.cheatSheet), response.data);
+  //         })
+  //     );
+  // }
+
+  public getLocalCheatSheetData<T>(rawData: RawData<T>): Observable<IData<T>> {
+    return of({
+      cheatSheet: this.getCheatSheet(rawData.cheatSheet),
+      data: rawData.data,
+    }).pipe(take(1));
+  }
+
+  public toTitleCase(str: string): string {
+    return str.replace(/\w\S*/g, (txt) => {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  }
+
+  public getFactorioIcon(
+    iconId?: string,
+    text?: string | number,
+    name?: string
+  ): FactorioIcon {
+    if (iconId) {
+      // Avoid errors during runtime due to data not being loaded yet.
+      if (typeof iconId !== 'string') {
+        throw new Error('Icon ID: "' + iconId + '" is not a string.');
+      }
+      const src = this.getFactorioIconSrc(iconId);
+      name = name || this.toTitleCase(iconId.replace(/_/g, ' ')); // If custom name is passed use it, otherwise generate from id
+      text = typeof text == 'number' ? String(text) : text;
+      return new FactorioIcon(src, text, name);
     }
+    throw new Error('No Icon');
+  }
 
-    /** @deprecated, use getLocalCheatSheetData */
-    getCheatSheetData<T>(endpoint: string): Observable<Data> {
-        return this.GET<any>(endpoint).pipe(
-            map((response: any) => {
-                return new Data(this.getCheatSheet(response.cheatSheet), response.data);
-            })
-        );
-    }
+  /** Returns CheatSheet Object with icon and title */
+  private getCheatSheet(cheatSheet: RawCheatSheet): CheatSheet {
+    return new CheatSheet(
+      this.getFactorioIcon(cheatSheet.icon),
+      cheatSheet.title
+    );
+  }
 
-    getLocalCheatSheetData<T>(rawData: RawData<T>): Observable<IData<T>> {
-        return of({
-          cheatSheet: this.getCheatSheet(rawData.cheatSheet),
-          data: rawData.data,
-        }).pipe(take(1));
+  private getFactorioIconSrc(iconId?: string): string {
+    if (!iconId) {
+      throw new Error('No Icon Defined');
     }
-
-    toTitleCase(str) {
-        return str.replace(/\w\S*/g, (txt) => {
-            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-        });
+    if (iconId.includes('research')) {
+      // iconId = iconId.replace(/_/g, '-');
+      return (
+        APP_SETTINGS.links.wikiImagesBase +
+        'thumb/' +
+        iconId +
+        '.png/32px-' +
+        iconId +
+        '.png'
+      );
     }
-
-    getFactorioIcon(iconId, text = null, name = null): FactorioIcon {
-        if (iconId) { // Avoid errors during runtime due to data not being loaded yet.
-            if (typeof iconId !== 'string') {
-                throw new Error('Icon ID: "' + iconId + '" is not a string.');
-            }
-            const src = this.getFactorioIconSrc(iconId);
-            name = name || this.toTitleCase(iconId.replace(/_/g, ' ')); // If custom name is passed use it, otherwise generate from id
-            return new FactorioIcon(src, text, name);
-        }
-        return null;
-    }
-
-    /** Returns CheatSheet Object with icon and title */
-    private getCheatSheet(cheatSheet): CheatSheet {
-        return new CheatSheet(this.getFactorioIcon(cheatSheet.icon), cheatSheet.title);
-    }
-
-    private getFactorioIconSrc(iconId): string {
-        if (iconId.includes('research')) {
-            // iconId = iconId.replace(/_/g, '-');
-            return APP_SETTINGS.links.wikiImagesBase + 'thumb/' + iconId + '.png/32px-' + iconId + '.png';
-        }
-        return APP_SETTINGS.links.wikiImagesBase + iconId + '.png';
-    }
+    return APP_SETTINGS.links.wikiImagesBase + iconId + '.png';
+  }
 }

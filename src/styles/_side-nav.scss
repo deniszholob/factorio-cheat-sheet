@@ -4,107 +4,107 @@
 $nav-width: 250px;
 
 .side-nav {
-    height: 100%; // 100% Full-height
-    width: 0; // 0 width - change this with JavaScript
-    position: fixed; // Stay in place
-    z-index: 10; // Stay on top
+  height: 100%; // 100% Full-height
+  width: 0; // 0 width - change this with JavaScript
+  position: fixed; // Stay in place
+  z-index: 10; // Stay on top
+  top: 0;
+  right: 0;
+  background-color: $c-pallette-transp-heavy; // Transp Black
+  border: 1px solid $c-pallette-transp-medium;
+  margin-right: -2px; // Account for 2px border of the side-nav when open
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; // Disable parent scroll
+  transition: 0.5s; // 0.5 second transition effect to slide in the side-nav
+
+  &.open {
+    width: $nav-width;
+    margin-right: 0;
+  }
+
+  /* The navigation menu links */
+  a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: $c-pallette-text-muted;
+    display: block;
+  }
+
+  button {
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  /* Position and style the close button (top right corner) */
+  .close-btn {
+    text-align: right;
+    font-size: 36px;
+    display: block;
+    margin-top: -15px; // Too much space with large font
+  }
+
+  .nav-header {
+    position: sticky;
     top: 0;
-    right: 0;
-    background-color: $c-pallette-transp-heavy; // Transp Black
-    border: 1px solid $c-pallette-transp-medium;
-    margin-right: -2px; // Account for 2px border of the side-nav when open
-    display: flex;
-    flex-direction: column;
-    overflow: hidden; // Disable parent scroll
-    transition: 0.5s; // 0.5 second transition effect to slide in the side-nav
+    padding: 5px 0;
+  }
 
-    &.open {
-        width: $nav-width;
-        margin-right: 0;
-    }
-
-    /* The navigation menu links */
-    a {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 18px;
-        color: $c-pallette-text-muted;
-        display: block;
-    }
-
-    button {
-        white-space: nowrap;
-        width: 100%;
-    }
-
-    /* Position and style the close button (top right corner) */
-    .close-btn {
-        text-align: right;
-        font-size: 36px;
-        display: block;
-        margin-top: -15px; // Too much space with large font
-    }
-
-    .nav-header {
-        position: sticky;
-        top: 0;
-        padding: 5px 0;
-    }
-
-    .nav-contents {
-        overflow-y: auto;
-        overflow-x: hidden; // Disable horizontal scroll
-        margin-top: 5px;
-    }
+  .nav-contents {
+    overflow-y: auto;
+    overflow-x: hidden; // Disable horizontal scroll
+    margin-top: 5px;
+  }
 }
 
 .nav-opener {
-    position: fixed;
-    right: 0;
-    top: 50%;
-    z-index: 11; // Stay on top
-    cursor: pointer;
-    background: $c-pallette-transp-heavy;
-    border: 1px solid $c-pallette-transp-medium;
-    border-right: none;
-    margin-right: -3px; // Account for 1px + 2px border
-    border-bottom-left-radius: 10%;
-    border-top-left-radius: 10%;
-    transition: 0.5s; // 0.5 second same time as the side-nav
-    margin-right: -2px; // Account for 2px border of the side-nav when open
+  position: fixed;
+  right: 0;
+  top: 50%;
+  z-index: 11; // Stay on top
+  cursor: pointer;
+  background: $c-pallette-transp-heavy;
+  border: 1px solid $c-pallette-transp-medium;
+  border-right: none;
+  margin-right: -3px; // Account for 1px + 2px border
+  border-bottom-left-radius: 10%;
+  border-top-left-radius: 10%;
+  transition: 0.5s; // 0.5 second same time as the side-nav
+  margin-right: -2px; // Account for 2px border of the side-nav when open
 
-    &:hover {
-        color: $c-pallette-accent;
-    }
+  &:hover {
+    color: $c-pallette-accent;
+  }
 
-    &.closed {
-        right: $nav-width;
-    }
+  &.closed {
+    right: $nav-width;
+  }
 
-    & > i {
-        padding: 12px;
-        font-size: 50px;
-    }
+  & > i {
+    padding: 12px;
+    font-size: 50px;
+  }
 }
 
 /* When you mouse over the navigation links, change their color */
 .side-nav a:hover {
-    color: $c-pallette-accent;
+  color: $c-pallette-accent;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
-    transition: margin-left 0.5s;
-    padding: 20px;
+  transition: margin-left 0.5s;
+  padding: 20px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the side-nav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-    .side-nav {
-        padding-top: 15px;
-    }
+  .side-nav {
+    padding-top: 15px;
+  }
 
-    .side-nav a {
-        font-size: 14px;
-    }
+  .side-nav a {
+    font-size: 14px;
+  }
 }

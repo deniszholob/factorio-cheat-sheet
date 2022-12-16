@@ -14,29 +14,28 @@ import { APP_SETTINGS } from 'app/shared/app-settings';
 import { BALANCERS_DATA } from './balancers.data';
 
 @Component({
-    selector: 'app-balancers',
-    templateUrl: './balancers.component.html',
-    styleUrls: ['./balancers.component.scss'] // Enable as needed
+  selector: 'app-balancers',
+  templateUrl: './balancers.component.html',
+  styleUrls: ['./balancers.component.scss'], // Enable as needed
 })
 export class BalancersComponent implements OnInit {
-    public cheatSheet: CheatSheet;
-    public sheetData: BalancerData;
-    public APP_SETTINGS = APP_SETTINGS;
+  public cheatSheet?: CheatSheet;
+  public sheetData?: BalancerData;
+  public APP_SETTINGS = APP_SETTINGS;
 
-    constructor(
-        private dataService: DataService,
-    ) { }
+  constructor(private dataService: DataService) {}
 
-    ngOnInit() {
-        this.dataService.getLocalCheatSheetData<BalancerData>(BALANCERS_DATA).subscribe(
-            (result: Data<BalancerData>) => {
-                this.cheatSheet = result.cheatSheet;
-                this.sheetData = result.data;
-            },
-            error => {
-                console.log(error);
-            }
-        );
-    }
-
+  ngOnInit() {
+    this.dataService
+      .getLocalCheatSheetData<BalancerData>(BALANCERS_DATA)
+      .subscribe(
+        (result: Data<BalancerData>) => {
+          this.cheatSheet = result.cheatSheet;
+          this.sheetData = result.data;
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  }
 }

@@ -11,26 +11,26 @@ import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 // Constants
 import { APP_SETTINGS } from 'app/shared/app-settings';
 const cheatSheet = {
-    title: 'Combat',
-    icon: 'Artillery_turret',
+  title: 'Combat',
+  icon: 'Artillery_turret',
 };
 
 @Component({
-    selector: 'app-combat',
-    templateUrl: './combat.component.html',
-    // styleUrls: ['./combat.component.scss'] // Enable as needed
+  selector: 'app-combat',
+  templateUrl: './combat.component.html',
+  // styleUrls: ['./combat.component.scss'] // Enable as needed
 })
 export class CombatComponent implements OnInit {
-    cheatSheet: CheatSheet;
+  public cheatSheet?: CheatSheet;
 
-    APP_SETTINGS = APP_SETTINGS;
+  APP_SETTINGS = APP_SETTINGS;
 
-    constructor(
-        public dataService: DataService
-    ) { }
+  constructor(public dataService: DataService) {}
 
-    ngOnInit() {
-        this.cheatSheet = new CheatSheet(this.dataService.getFactorioIcon(cheatSheet.icon), cheatSheet.title);
-    }
-
+  ngOnInit() {
+    this.cheatSheet = new CheatSheet(
+      this.dataService.getFactorioIcon(cheatSheet.icon),
+      cheatSheet.title
+    );
+  }
 }

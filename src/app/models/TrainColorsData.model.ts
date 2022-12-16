@@ -1,12 +1,11 @@
-
 export interface TrainColorsData {
-    blueprint: string;
-    trainColors: TrainColor[];
-    trainColorsGenerated: TrainColor[];
+  blueprint: string;
+  trainColors: TrainColor[];
+  trainColorsGenerated: TrainColor[];
 }
 
 export interface TrainColor {
-    icon: string;
-    rgb: number[];
-    type?: string;
+  icon: string;
+  rgb: number[];
+  type?: string;
 }

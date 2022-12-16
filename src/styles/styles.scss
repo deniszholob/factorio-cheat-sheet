@@ -1,184 +1,185 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "variables";
-@import "intro";
-@import "side-nav";
-@import "button";
-@import "card";
-@import "table";
-@import "input-group";
-@import "switch";
-@import "scroll-bar";
-@import "colors";
+@import 'variables';
+@import 'intro';
+@import 'side-nav';
+@import 'button';
+@import 'card';
+@import 'table';
+@import 'input-group';
+@import 'switch';
+@import 'scroll-bar';
+@import 'colors';
 
 html {
-    position: relative;
-    min-height: 100%;
+  position: relative;
+  min-height: 100%;
 }
 
 body {
-    /* Margin bottom by footer height */
-    // margin-bottom: 60px;
+  /* Margin bottom by footer height */
+  // margin-bottom: 60px;
 }
 
 html,
 body {
-    background-color: $c-pallette-bg;
-    color: $c-pallette-text;
-    font-family: 'Play', sans-serif;
+  background-color: $c-pallette-bg;
+  color: $c-pallette-text;
+  font-family: 'Play', sans-serif;
 }
 
 .fas {
-    padding: 0px 5px;
+  padding: 0px 5px;
 }
 
 footer,
 .footer {
-    // position: absolute;
-    bottom: 0;
-    // width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 60px;
-    background-color: $c-pallette-transp-heavy;
-    display: flex;
-    align-items: center;
+  // position: absolute;
+  bottom: 0;
+  // width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: $c-pallette-transp-heavy;
+  display: flex;
+  align-items: center;
 }
 
 a {
-    color: $c-pallette-accent;
-    transition: 0.2s;
+  color: $c-pallette-accent;
+  transition: 0.2s;
+  text-decoration: none;
 
-    &:hover {
-        color: $c-pallette-accent-dark;
-        text-decoration: none;
-    }
+  &:hover {
+    color: $c-pallette-accent-dark;
+    text-decoration: none;
+  }
 }
 
 hr {
-    border-color: $c-pallette-accent;
+  border-color: $c-pallette-accent;
 }
 
 // Site Title
 h1 {
-    color: $c-pallette-accent;
-    font-family: "Play", Verdana, sans-serif;
-    font-size: 2.5rem;
+  color: $c-pallette-accent;
+  font-family: 'Play', Verdana, sans-serif;
+  font-size: 2.5rem;
 
-    small {
-        color: $c-pallette-text-muted;
-        font-size: 65%;
-    }
+  small {
+    color: $c-pallette-text-muted;
+    font-size: 65%;
+  }
 }
 
 // Section Title
 h2 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 // Sheet Title (controlled by _card)
 h3 {
-    font-family: "Jura", sans-serif;
-    font-weight: bold;
-    font-size: 1.4rem;
+  font-family: 'Jura', sans-serif;
+  font-weight: bold;
+  font-size: 1.4rem;
 }
 
 // Sheet subsection
 h4 {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 }
 
 // Small Title
 h5 {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 li.col {
-    padding-left: 0;
+  padding-left: 0;
 }
 
 section,
 .section {
-    height: 100%;
-    display: block;
+  height: 100%;
+  display: block;
 
-    .container {
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
+  .container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }
 
 .list-group-item {
-    transition: 0.2s;
-    background-color: $c-pallette-transp-light;
-    border-color: $c-pallette-neutral;
+  transition: 0.2s;
+  background-color: $c-pallette-transp-light;
+  border-color: $c-pallette-neutral;
 
-    &:hover {
-        background-color: $c-pallette-transp-medium;
-    }
+  &:hover {
+    background-color: $c-pallette-transp-medium;
+  }
 }
 
 caption {
-    color: $c-pallette-text-muted;
+  color: $c-pallette-text-muted;
 }
 
 kbd {
-    background-color: $c-pallette-transp-medium;
+  background-color: $c-pallette-transp-medium;
 }
 
 pre {
-    color: inherit;
+  color: inherit;
 }
 
 .fixed-width {
-    max-width: 500px;
-    margin: auto;
+  max-width: 500px;
+  margin: auto;
 }
 
 img {
-    margin-bottom: 10px;
-    box-shadow: 2px 2px 10px $c-pallette-transp-medium;
-    width: 400px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 10px $c-pallette-transp-medium;
+  width: 400px;
 }
 
 .limit-img-height {
-    max-height: 250px;
-    width: auto;
+  max-height: 250px;
+  width: auto;
 }
 
 .color-circle {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    border-radius: 25px;
-    box-shadow: 2px 2px 10px $c-pallette-transp-medium;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  box-shadow: 2px 2px 10px $c-pallette-transp-medium;
 }
 
 .full-width {
-    width: 100%;
+  width: 100%;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
-
 
 /* On smaller screens, where height is less than 450px, change the style of the side-nav (less padding and a smaller font size) */
 @media screen and (min-width: 1366px) {
-    .section-nav-margin {
-        margin-right: 250px;
-    }
+  .section-nav-margin {
+    margin-right: 250px;
+  }
 }
 
 .support-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
 }
 
 .adsbygoogle {
-    display: block;
-    text-align: center;
-    opacity: 75%;
-    width: 100%;
+  display: block;
+  text-align: center;
+  opacity: 75%;
+  width: 100%;
+  overflow: hidden;
 }

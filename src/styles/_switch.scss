@@ -5,68 +5,68 @@ $s-border: 1px;
 
 $s-toggle-spacing: 4px;
 $s-toggle-size: calc(
-    #{$s-height} - #{$s-toggle-spacing * 2} - #{$s-border * 2}
+  #{$s-height} - #{$s-toggle-spacing * 2} - #{$s-border * 2}
 );
 $s-translate: calc(#{$s-width} - #{$s-height});
 
 .switch {
-    position: relative;
-    display: inline-block;
-    width: $s-width;
-    height: $s-height;
-    margin: 0 4px;
+  position: relative;
+  display: inline-block;
+  width: $s-width;
+  height: $s-height;
+  margin: 0 4px;
 
-    input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
 }
 
 .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: $c-pallette-neutral;
-    transition: 0.4s;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $c-pallette-neutral;
+  transition: 0.4s;
 
-    &:before {
-        position: absolute;
-        content: "";
-        height: $s-toggle-size;
-        width: $s-toggle-size;
-        left: $s-toggle-spacing;
-        bottom: $s-toggle-spacing;
-        background-color: $c-pallette-text;
-        transition: 0.4s;
-    }
+  &:before {
+    position: absolute;
+    content: '';
+    height: $s-toggle-size;
+    width: $s-toggle-size;
+    left: $s-toggle-spacing;
+    bottom: $s-toggle-spacing;
+    background-color: $c-pallette-text;
+    transition: 0.4s;
+  }
 }
 
 input {
-    &:checked + .slider {
-        background-color: $c-pallette-accent-dark;
-    }
+  &:checked + .slider {
+    background-color: $c-pallette-accent-dark;
+  }
 
-    &:focus + .slider {
-        border-color: $c-pallette-accent;
-    }
+  &:focus + .slider {
+    border-color: $c-pallette-accent;
+  }
 
-    &:checked + .slider:before {
-        transform: translateX($s-translate);
-    }
+  &:checked + .slider:before {
+    transform: translateX($s-translate);
+  }
 }
 
 /* Rounded sliders */
 .slider {
-    border: $s-border solid $c-pallette-transp-light;
-    border-radius: 0.25rem;
-    &.round {
-        border-radius: $s-height;
-        &:before {
-            border-radius: 50%;
-        }
+  border: $s-border solid $c-pallette-transp-light;
+  border-radius: 0.25rem;
+  &.round {
+    border-radius: $s-height;
+    &:before {
+      border-radius: 50%;
     }
+  }
 }

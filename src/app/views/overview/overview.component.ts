@@ -5,17 +5,10 @@ import { Component, OnInit } from '@angular/core';
 import { APP_SETTINGS } from 'app/shared/app-settings';
 
 @Component({
-    selector: 'app-overview',
-    templateUrl: './overview.component.html',
-    styleUrls: ['./overview.component.scss'] // Enable as needed
+  selector: 'app-overview',
+  templateUrl: './overview.component.html',
+  styleUrls: ['./overview.component.scss'], // Enable as needed
 })
-export class OverviewComponent implements OnInit {
-
-    public APP_SETTINGS = APP_SETTINGS;
-
-    constructor() { }
-
-    ngOnInit() {
-    }
-
+export class OverviewComponent {
+  public APP_SETTINGS = APP_SETTINGS;
 }

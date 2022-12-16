@@ -1,2 +1,2 @@
-<img src="{{icon?.src}}" alt="{{icon?.name}}" title="{{icon?.name}}" class="factorio-icon">
-<div *ngIf="icon?.text" class="factorio-icon-text">{{icon?.text}}</div>
+<img class="factorio-icon" src="{{ icon?.src }}" alt="{{ icon?.name }}" title="{{ icon?.name }}" />
+<div class="factorio-icon-text" *ngIf="icon?.text">{{ icon?.text }}</div>

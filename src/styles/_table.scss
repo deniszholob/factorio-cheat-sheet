@@ -1,24 +1,24 @@
 table,
 .table {
-    color: $c-pallette-text;
+  color: $c-pallette-text;
 
-    caption {
-        caption-side: top;
-        text-align: center;
-        padding: 5px 0;
+  caption {
+    caption-side: top;
+    text-align: center;
+    padding: 5px 0;
 
-        .input-group {
-            margin-top: 5px;
-        }
+    .input-group {
+      margin-top: 5px;
     }
+  }
 
-    thead.text-center > tr > th {
-        text-align: center;
-    }
+  thead.text-center > tr > th {
+    text-align: center;
+  }
 }
 
 .table > tbody > tr > td {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 .table:not(.table-bordered) > caption + thead > tr:first-child > td,
@@ -27,7 +27,7 @@ table,
 .table:not(.table-bordered) > colgroup + thead > tr:first-child > th,
 .table:not(.table-bordered) > thead:first-child > tr:first-child > td,
 .table:not(.table-bordered) > thead:first-child > tr:first-child > th {
-    border-top: 0;
+  border-top: 0;
 }
 
 .table > tbody > tr > td,
@@ -36,7 +36,7 @@ table,
 .table > tfoot > tr > th,
 .table > thead > tr > td,
 .table > thead > tr > th {
-    border-color: $c-pallette-neutral2;
+  border-color: $c-pallette-neutral2;
 }
 
 .table-bordered,
@@ -46,69 +46,69 @@ table,
 .table-bordered > tfoot > tr > th,
 .table-bordered > thead > tr > td,
 .table-bordered > thead > tr > th {
-    border-color: $c-pallette-neutral2;
+  border-color: $c-pallette-neutral2;
 }
 
 .table-hover > tbody > tr:hover {
-    background-color: inherit;
-    color: inherit;
+  background-color: inherit;
+  color: inherit;
 }
 
 .table-hover {
-    tr:hover td {
-        transition: 0.2s;
+  tr:hover td {
+    transition: 0.2s;
 
-        &:not([rowspan]) {
-            background-color: $c-pallette-transp-light;
-        }
+    &:not([rowspan]) {
+      background-color: $c-pallette-transp-light;
     }
+  }
 }
 
 th[cdk-header-cell].sorted {
-    cursor: pointer;
-    user-select: none;
-    color: $c-pallette-accent;
+  cursor: pointer;
+  user-select: none;
+  color: $c-pallette-accent;
 }
 
 .page-link {
-    position: relative;
-    display: block;
-    padding: 0.5rem 0.75rem;
-    margin-left: -1px;
-    line-height: 1.25;
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: $c-pallette-accent;
+  background-color: $c-pallette-neutral;
+  border: 1px solid $c-pallette-neutral;
+
+  &:hover {
+    z-index: 2;
     color: $c-pallette-accent;
-    background-color: $c-pallette-neutral;
-    border: 1px solid $c-pallette-neutral;
+    text-decoration: none;
+    background-color: $c-pallette-neutral-light;
+    border-color: $c-pallette-neutral;
+  }
 
-    &:hover {
-        z-index: 2;
-        color: $c-pallette-accent;
-        text-decoration: none;
-        background-color: $c-pallette-neutral-light;
-        border-color: $c-pallette-neutral;
-    }
-
-    &:focus {
-        box-shadow: none;
-    }
+  &:focus {
+    box-shadow: none;
+  }
 }
 
 .page-item.disabled .page-link {
-    color: $c-pallette-text-muted;
-    pointer-events: none;
-    cursor: auto;
-    background-color: $c-pallette-neutral;
-    border-color: $c-pallette-neutral;
+  color: $c-pallette-text-muted;
+  pointer-events: none;
+  cursor: auto;
+  background-color: $c-pallette-neutral;
+  border-color: $c-pallette-neutral;
 }
 
 .page-item.active .page-link {
-    z-index: 1;
-    color: #fff;
-    background-color: $c-pallette-accent;
-    border-color: $c-pallette-accent;
+  z-index: 1;
+  color: #fff;
+  background-color: $c-pallette-accent;
+  border-color: $c-pallette-accent;
 }
 
 table.inline {
-    display: inline;
-    vertical-align: middle;
+  display: inline;
+  vertical-align: middle;
 }

@@ -1,24 +1,24 @@
-<div id="mySidenav" class="side-nav" [class.open]="isNavOpen">
-    <div class="nav-header">
-        <a href="javascript:void(0)" class="close-btn" (click)="closeNav()" [class.d-none]="doKeepOpen()">&times;</a>
-        <div class="row">
-            <div class="col-6 text-center">
-                <button class="btn btn-primary" (click)="collapseAllSheets()">Collapse All</button>
-            </div>
-            <div class="col-6 text-center">
-                <button class="btn btn-primary" (click)="expandAllSheets()">Expand All</button>
-            </div>
-        </div>
+<div class="side-nav" id="mySidenav" [class.open]="isNavOpen">
+  <div class="nav-header">
+    <a class="close-btn" [class.d-none]="doKeepOpen()" (click)="closeNav()" href="javascript:void(0)">&times;</a>
+    <div class="row">
+      <div class="col-6 text-center">
+        <button class="btn btn-primary" (click)="collapseAllSheets()">Collapse All</button>
+      </div>
+      <div class="col-6 text-center">
+        <button class="btn btn-primary" (click)="expandAllSheets()">Expand All</button>
+      </div>
     </div>
-    <div class="nav-contents">
-        <a href="#Top" (click)="closeNav()">Top</a>
-        <a *ngFor="let sheet of sheetIds" href="#{{sheet}}" (click)="clickedLink(sheet)">{{sheetName(sheet)}}</a>
-        <a href="#Annex" (click)="closeNav()">Annex</a>
-    </div>
+  </div>
+  <div class="nav-contents">
+    <a (click)="closeNav()" href="#Top">Top</a>
+    <a *ngFor="let sheet of sheetIds" (click)="clickedLink(sheet)" href="#{{ sheet }}">{{ sheetName(sheet) }}</a>
+    <a (click)="closeNav()" href="#Annex">Annex</a>
+  </div>
 </div>
 
 <!-- Use any element to open the side-nav -->
-<div (click)="toggleNav()" class="nav-opener" [class.closed]="isNavOpen" [class.d-none]="doKeepOpen()">
-    <i class="fas fa-angle-right" [class.d-none]="!isNavOpen"></i>
-    <i class="fas fa-angle-left" [class.d-none]="isNavOpen"></i>
+<div class="nav-opener" [class.closed]="isNavOpen" [class.d-none]="doKeepOpen()" (click)="toggleNav()">
+  <i class="fas fa-angle-right" [class.d-none]="!isNavOpen"></i>
+  <i class="fas fa-angle-left" [class.d-none]="isNavOpen"></i>
 </div>

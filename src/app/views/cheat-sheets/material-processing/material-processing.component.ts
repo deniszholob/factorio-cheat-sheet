@@ -13,29 +13,28 @@ import { MaterialProcessingData } from 'app/models/MaterialProcessingData.model'
 import { MATERIAL_PROCESSING_DATA } from './material-processing.data';
 
 @Component({
-    selector: 'app-material-processing',
-    templateUrl: './material-processing.component.html',
-    styleUrls: ['./material-processing.component.scss'] // Enable as needed
+  selector: 'app-material-processing',
+  templateUrl: './material-processing.component.html',
+  styleUrls: ['./material-processing.component.scss'], // Enable as needed
 })
 export class MaterialProcessingComponent implements OnInit {
-    cheatSheet: CheatSheet;
-    sheetData: MaterialProcessingData;
+  cheatSheet?: CheatSheet;
+  sheetData?: MaterialProcessingData;
 
-    constructor(
-        public dataService: DataService
-    ) { }
+  constructor(public dataService: DataService) {}
 
-    /** Get Data for the Cheat Sheet from the DataService */
-    ngOnInit() {
-        this.dataService.getLocalCheatSheetData<MaterialProcessingData>(MATERIAL_PROCESSING_DATA).subscribe(
-            (result: Data<MaterialProcessingData>) => {
-                this.cheatSheet = result.cheatSheet;
-                this.sheetData = result.data;
-            },
-            error => {
-                console.log(error);
-            }
-        );
-    }
-
+  /** Get Data for the Cheat Sheet from the DataService */
+  ngOnInit() {
+    this.dataService
+      .getLocalCheatSheetData<MaterialProcessingData>(MATERIAL_PROCESSING_DATA)
+      .subscribe(
+        (result: Data<MaterialProcessingData>) => {
+          this.cheatSheet = result.cheatSheet;
+          this.sheetData = result.data;
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  }
 }

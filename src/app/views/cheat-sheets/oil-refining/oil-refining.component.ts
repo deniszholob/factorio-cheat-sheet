@@ -14,31 +14,30 @@ import { APP_SETTINGS } from 'app/shared/app-settings';
 import { OIL_REFINING_DATA } from './oil-refining.data';
 
 @Component({
-    selector: 'app-oil-refining',
-    templateUrl: './oil-refining.component.html',
-    // styleUrls: ['./oil-refining.component.scss'] // Enable as needed
+  selector: 'app-oil-refining',
+  templateUrl: './oil-refining.component.html',
+  // styleUrls: ['./oil-refining.component.scss'] // Enable as needed
 })
 export class OilRefiningComponent implements OnInit {
-    cheatSheet: CheatSheet;
-    sheetData: OilRefiningData;
+  cheatSheet?: CheatSheet;
+  sheetData?: OilRefiningData;
 
-    APP_SETTINGS = APP_SETTINGS;
+  APP_SETTINGS = APP_SETTINGS;
 
-    constructor(
-        public dataService: DataService
-    ) { }
+  constructor(public dataService: DataService) {}
 
-    /** Get Data for the Cheat Sheet from the DataService */
-    ngOnInit() {
-        this.dataService.getLocalCheatSheetData<OilRefiningData>(OIL_REFINING_DATA).subscribe(
-            (result: Data<OilRefiningData>) => {
-                this.cheatSheet = result.cheatSheet;
-                this.sheetData = result.data;
-            },
-            error => {
-                console.log(error);
-            }
-        );
-    }
-
+  /** Get Data for the Cheat Sheet from the DataService */
+  ngOnInit() {
+    this.dataService
+      .getLocalCheatSheetData<OilRefiningData>(OIL_REFINING_DATA)
+      .subscribe(
+        (result: Data<OilRefiningData>) => {
+          this.cheatSheet = result.cheatSheet;
+          this.sheetData = result.data;
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  }
 }

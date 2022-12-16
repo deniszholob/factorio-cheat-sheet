@@ -1,41 +1,41 @@
-@import "./src/styles/variables";
+@import './src/styles/variables';
 
 :host {
-    display: inline-block;
-    position: relative;
-    padding: 3px;
-    margin: 0 2px;
-    border-radius: 2px;
+  display: inline-block;
+  position: relative;
+  padding: 3px;
+  margin: 0 2px;
+  border-radius: 2px;
 
-    &.icon-space {
-        margin: 5px;
-    }
+  &.icon-space {
+    margin: 5px;
+  }
 
-    & > img {
-        vertical-align: middle;
-        height: 1.75rem;
-        width: auto;
-        filter: drop-shadow(2px 2px 2px $c-pallette-transp-medium);
-        box-shadow: none;
-        margin-bottom: 2px;
-    }
+  & > img {
+    vertical-align: middle;
+    height: 1.75rem;
+    width: auto;
+    filter: drop-shadow(2px 2px 2px $c-pallette-transp-medium);
+    box-shadow: none;
+    margin-bottom: 2px;
+  }
 
-    & > .factorio-icon-text {
-        position: absolute;
-        bottom: 0;
-        right: 3px;
-        color: #fff;
-        font-weight: bold;
-        font-size: 0.8em;
-        text-shadow: 0px 1px 1px #000, 0px -1px 1px #000, 1px 0px 1px #000,
-            -1px 0px 1px #000;
-    }
+  & > .factorio-icon-text {
+    position: absolute;
+    bottom: 0;
+    right: 3px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.8em;
+    text-shadow: 0px 1px 1px #000, 0px -1px 1px #000, 1px 0px 1px #000,
+      -1px 0px 1px #000;
+  }
 }
 
 @media (min-width: 768px) {
-    :host {
-        & > img {
-            height: 2rem;
-        }
+  :host {
+    & > img {
+      height: 2rem;
     }
+  }
 }
