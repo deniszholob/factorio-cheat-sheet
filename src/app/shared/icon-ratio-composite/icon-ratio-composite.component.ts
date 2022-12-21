@@ -21,7 +21,7 @@ export class IconRatioCompositeComponent {
   @Input()
   public count?: number = 0;
   @Input()
-  public rate?: string = '2.5/s';
+  public rateSeconds?: number;
 
   public machineIcon: FactorioIcon = new FactorioIcon('');
   public productIcon: FactorioIcon = new FactorioIcon('');

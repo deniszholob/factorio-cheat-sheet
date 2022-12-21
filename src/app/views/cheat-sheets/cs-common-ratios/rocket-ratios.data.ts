@@ -14,17 +14,17 @@ export const ROCKET_RATIO_DATA: Ratio[] = [
       },
       {
         machineIconId: 'Assembling_machine_3',
+        productIconId: 'Rocket_control_unit',
+        count: 60,
+      },
+      {
+        machineIconId: 'Assembling_machine_3',
         productIconId: 'Low_density_structure',
         count: 40,
       },
       {
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Rocket_fuel',
-        count: 60,
-      },
-      {
-        machineIconId: 'Assembling_machine_3',
-        productIconId: 'Rocket_control_unit',
         count: 60,
       },
     ],
@@ -42,6 +42,11 @@ export const ROCKET_RATIO_DATA: Ratio[] = [
       },
       {
         machineIconId: 'Assembling_machine_3',
+        productIconId: 'Rocket_control_unit',
+        count: 60,
+      },
+      {
+        machineIconId: 'Assembling_machine_3',
         productIconId: 'Low_density_structure',
         count: 44,
       },
@@ -49,11 +54,6 @@ export const ROCKET_RATIO_DATA: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Rocket_fuel',
         count: 63,
-      },
-      {
-        machineIconId: 'Assembling_machine_3',
-        productIconId: 'Rocket_control_unit',
-        count: 60,
       },
     ],
   },
@@ -71,6 +71,11 @@ export const ROCKET_RATIO_DATA: Ratio[] = [
       },
       {
         machineIconId: 'Assembling_machine_3',
+        productIconId: 'Rocket_control_unit',
+        count: 43,
+      },
+      {
+        machineIconId: 'Assembling_machine_3',
         productIconId: 'Low_density_structure',
         count: 33,
       },
@@ -78,11 +83,6 @@ export const ROCKET_RATIO_DATA: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Rocket_fuel',
         count: 46,
-      },
-      {
-        machineIconId: 'Assembling_machine_3',
-        productIconId: 'Rocket_control_unit',
-        count: 43,
       },
     ],
   },
