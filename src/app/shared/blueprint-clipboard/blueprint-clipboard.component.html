@@ -5,6 +5,7 @@
   [ngbTooltip]="tipContent"
   [autoClose]="false"
   [disabled]="!url || !blueprintString"
+  [placement]="tooltipPlacement"
   (click)="copyBpString(blueprintString, tooltip)"
   triggers="hover"
 >

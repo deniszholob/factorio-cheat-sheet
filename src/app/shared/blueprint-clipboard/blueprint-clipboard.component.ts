@@ -1,11 +1,12 @@
 // Angular Imports
-import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Component, Input } from '@angular/core';
 
 // UI
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 
 // Services
+import { Placement } from '@ng-bootstrap/ng-bootstrap/util/positioning';
 import { ClipboardService } from 'app/services/index';
 
 const tooltip_Default = 'Click to copy Blueprint';
@@ -16,6 +17,9 @@ const tooltip_Copied = 'BP String Copied';
   // styleUrls: ['./blueprint-clipboard.component.scss']
 })
 export class BlueprintClipboardComponent {
+  @Input()
+  public tooltipPlacement: Placement = 'auto';
+
   @Input()
   public set url(url: string | undefined) {
     if (url) {

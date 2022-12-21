@@ -1,0 +1,68 @@
+<app-cheat-sheet-template [iconId]="cheatSheetIconId" [title]="cheatSheetTitle">
+  <p>
+    List of common ratios between machines to produce various products optimally (without stalling)<br />
+    <strong>For example:</strong> To make "rails", the right ratio is 1 "iron stick" assembler feeding 2 "rail" assemblers. <br />
+    If there is no machine mixing (assemblers/chemical plants/furnaces) then ratios stay the same between assembly tiers. <br />
+  </p>
+
+  <p class="text-center">
+    <span class="text-muted d-inline-block">Machine speeds</span>
+    <span class="d-block">
+      <ng-container *ngFor="let item of MACHINE_SPEEDS">
+        <app-factorio-icon class="mx-2" *ngIf="item.iconId" [icon]="dataService.getFactorioIcon(item.iconId, item.speed)">
+        </app-factorio-icon>
+      </ng-container>
+    </span>
+  </p>
+
+  <p>Go to the <a href="#links">links</a> section of this page, for blueprints and calculators.</p>
+
+  <div class="row">
+    <div class="col-12 col-md-6 mb-10" *ngFor="let item of COMMON_RATIO_DATA">
+      <div class="list-group fixed-width">
+        <!-- {{ item.name }} -->
+        <a
+          class="list-group-item"
+          *ngFor="let ratio of item.ratios"
+          href="{{ ratio.source }}"
+          title="{{ ratio.name }}"
+          target="_blank"
+          rel="noopener"
+        >
+          <app-ratio [ratios]="ratio.ratio"></app-ratio>
+          <small class="text-muted" *ngIf="ratio.description"><br />*{{ ratio?.description }}</small>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+  <h3 id="rocket">Rocket Components</h3>
+  <div class="row align-items-center">
+    <p class="col-12 col-sm-4 text-center" *ngFor="let item of ROCKET_RATIO_DATA">
+      <a [title]="item.description" [href]="item.source" target="_blank" rel="noopener">
+        {{ item.name }}
+      </a>
+      <br />
+      <app-ratio [ratios]="item.ratio"></app-ratio>
+    </p>
+  </div>
+
+  <ul>
+    <li>
+      A Rocket needs 100
+      <a href="https://wiki.factorio.com/Rocket_part" target="_blank" rel="noopener">Rocket Parts</a>.
+    </li>
+    <li>
+      To get
+      <a href="https://wiki.factorio.com/Space_science_pack" target="_blank" rel="noopener">Space Science</a>
+      (no productivity modules in the silo);
+      <br />
+      a rocket needs 1000 of each component of the rocket part + the requirements for the
+      <a href="https://wiki.factorio.com/Satellite">satellite</a>.
+    </li>
+    <li>This is a ratio of (1100 * 20) : (1050 * 30) : (1000 * 30) or simplified of 44 : 63 : 60.</li>
+    <li>Where 20 and 30 are the respective crafting speeds.</li>
+    <li>Module ratio is approximate with lvl 3 productivity modules</li>
+  </ul>
+</app-cheat-sheet-template>
