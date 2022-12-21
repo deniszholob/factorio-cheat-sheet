@@ -116,7 +116,7 @@ export class MiningComponent implements OnInit {
   }
 
   public calcProductivityPercent(): number {
-    return this.sheetData?.prodBonusPercent ?? 1 * this.prodBonusLevel;
+    return (this.sheetData?.prodBonusPercent ?? 1) * this.prodBonusLevel;
   }
 
   // Way too complicated for this small data set, that is unlikely to change,
