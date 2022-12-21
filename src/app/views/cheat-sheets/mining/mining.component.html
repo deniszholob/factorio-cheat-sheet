@@ -54,8 +54,8 @@
             <input
               class="form-control"
               [(ngModel)]="prodBonusLevel"
-              (change)="updateTable()"
-              (keyup)="updateTable()"
+              (change)="inputChange()"
+              (keyup)="inputChange()"
               (mouseup)="inputChange()"
               type="number"
               min="{{ inputMin }}"
