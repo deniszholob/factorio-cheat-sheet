@@ -4,7 +4,7 @@ export interface RatioItem {
   machineIconId: string;
   productIconId: string;
   count?: number;
-  rate?: string;
+  rateSeconds?: number;
 }
 
 @Component({
@@ -18,7 +18,7 @@ export class RatioComponent {
       machineIconId: 'Assembling_machine_3',
       productIconId: 'Automation_science_pack',
       count: 10,
-      rate: '2.5/s',
+      rateSeconds: 2.5,
     },
     {
       machineIconId: 'Assembling_machine_3',

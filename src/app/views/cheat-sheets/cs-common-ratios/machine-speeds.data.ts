@@ -1,4 +1,9 @@
-export const MACHINE_SPEEDS = [
+export interface MachineSpeeds {
+  iconId: string;
+  speed: string;
+}
+
+export const MACHINE_SPEEDS: MachineSpeeds[] = [
   {
     iconId: 'Assembling_machine_1',
     speed: '0.5/s',

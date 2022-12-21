@@ -31,7 +31,7 @@ const meta: Meta<ComponentWithCustomControls> = {
     machineIconId: FactorioIconIds.Assembling_machine_3,
     productIconId: FactorioIconIds.Advanced_circuit,
     count: 1,
-    rate: '2.5/s',
+    rateSeconds: 2.5,
   },
 };
 

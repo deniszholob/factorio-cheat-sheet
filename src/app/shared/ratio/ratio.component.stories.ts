@@ -23,7 +23,7 @@ const meta: Meta<ComponentWithCustomControls> = {
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Automation_science_pack',
         count: 10,
-        rate: '2.5/s',
+        rateSeconds: 2.5,
       },
       {
         machineIconId: 'Assembling_machine_3',

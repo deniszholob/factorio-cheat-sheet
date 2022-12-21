@@ -4,6 +4,7 @@
   $bigger: $size * $multiplier;
   $smaller: $bigger * 0.75;
   $offset: $bigger/2.5 - $smaller/2;
+  font-size: 0.8em;
 
   height: $bigger;
   width: $bigger;
@@ -43,16 +44,16 @@
   }
 
   .rate-text {
-    bottom: 3px;
-    left: 3px;
-    color: #808e99;
+    bottom: 0;
+    left: 0;
+    color: $c-pallette-text-muted;
     font-size: 0.8em;
     text-shadow: 0 0 1px #000;
   }
 
   .count-text {
     bottom: 0;
-    right: 3px;
+    right: 0;
     color: #fff;
     font-size: 1em;
     text-shadow: 0 1px 1px #000, 0 -1px 1px #000, 1px 0 1px #000,

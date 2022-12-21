@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { DataService } from 'app/services';
-import { COMMON_RATIO_DATA } from './common-ratios.data';
-import { MACHINE_SPEEDS } from './machine-speeds.data';
+
+import { COMMON_RATIO_DATA, RatioSection } from './common-ratios.data';
+import { MachineSpeeds, MACHINE_SPEEDS } from './machine-speeds.data';
 import { Ratio } from './ratio.model';
 import { ROCKET_RATIO_DATA } from './rocket-ratios.data';
 
@@ -10,12 +11,12 @@ import { ROCKET_RATIO_DATA } from './rocket-ratios.data';
   templateUrl: './cs-common-ratios.component.html',
 })
 export class CsCommonRatiosComponent {
-  public cheatSheetIconId = 'Repair_pack';
-  public cheatSheetTitle = 'Common Ratios';
+  public cheatSheetIconId: string = 'Repair_pack';
+  public cheatSheetTitle: string = 'Common Ratios';
 
   public ROCKET_RATIO_DATA: Ratio[] = ROCKET_RATIO_DATA;
-  public COMMON_RATIO_DATA = COMMON_RATIO_DATA;
-  public MACHINE_SPEEDS = MACHINE_SPEEDS;
+  public COMMON_RATIO_DATA: RatioSection[] = COMMON_RATIO_DATA;
+  public MACHINE_SPEEDS: MachineSpeeds[] = MACHINE_SPEEDS;
 
   constructor(public dataService: DataService) {}
 }

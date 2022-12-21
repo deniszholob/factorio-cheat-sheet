@@ -7,7 +7,7 @@ interface Ratio {
   ratio: RatioItem[];
 }
 
-interface RatioSection {
+export interface RatioSection {
   name: string;
   ratios: Ratio[];
 }
@@ -22,7 +22,7 @@ const _SCIENCE_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Automation_science_pack',
         count: 10,
-        rate: '2.5/s',
+        rateSeconds: 2.5,
       },
       {
         machineIconId: 'Assembling_machine_3',
@@ -39,7 +39,7 @@ const _SCIENCE_RATIOS: Ratio[] = [
       {
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Logistic_science_pack',
-        rate: '2.5/s',
+        rateSeconds: 2.5,
         count: 12,
       },
       {
@@ -68,7 +68,7 @@ const _SCIENCE_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Military_science_pack',
         count: 10,
-        rate: '2.5/s',
+        rateSeconds: 2.5,
       },
       {
         machineIconId: 'Assembling_machine_3',
@@ -96,7 +96,7 @@ const _SCIENCE_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Chemical_science_pack',
         count: 24,
-        rate: '2.5/s',
+        rateSeconds: 2.5,
       },
       {
         machineIconId: 'Chemical_plant',
@@ -124,7 +124,7 @@ const _SCIENCE_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Production_science_pack',
         count: 14,
-        rate: '2.5/s',
+        rateSeconds: 2.5,
       },
       {
         machineIconId: 'Assembling_machine_3',
@@ -152,7 +152,7 @@ const _SCIENCE_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Utility_science_pack',
         count: 14,
-        rate: '2.5/s',
+        rateSeconds: 2.5,
       },
       {
         machineIconId: 'Assembling_machine_3',
@@ -180,7 +180,7 @@ const _SCIENCE_RATIOS: Ratio[] = [
         machineIconId: 'Rocket_silo',
         productIconId: 'Space_science_pack',
         count: 1,
-        rate: '2.5/s',
+        rateSeconds: 2.5,
       },
       {
         machineIconId: 'Assembling_machine_3',
@@ -225,7 +225,7 @@ const _ELECTRONICS_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Electronic_circuit',
         count: 2,
-        rate: '5/s',
+        rateSeconds: 5,
       },
       {
         machineIconId: 'Assembling_machine_3',
@@ -244,7 +244,7 @@ const _ELECTRONICS_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Advanced_circuit',
         count: 6,
-        rate: '1.25/s',
+        rateSeconds: 1.25,
       },
       {
         machineIconId: 'Assembling_machine_3',
@@ -273,7 +273,7 @@ const _ELECTRONICS_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Processing_unit',
         count: 5,
-        rate: '.625/s',
+        rateSeconds: 0.625,
       },
       {
         machineIconId: 'Assembling_machine_3',
@@ -296,7 +296,7 @@ const _ELECTRONICS_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Speed_module',
         count: 2,
-        rate: '.167/s',
+        rateSeconds: 0.167,
       },
       {
         machineIconId: 'Assembling_machine_3',
@@ -320,7 +320,7 @@ const _ELECTRONICS_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Speed_module_3',
         count: 2,
-        rate: '.042/s',
+        rateSeconds: 0.042,
       },
       {
         machineIconId: 'Assembling_machine_3',
@@ -343,7 +343,7 @@ const _ELECTRONICS_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Speed_module_3',
         count: 2,
-        rate: '.042/s',
+        rateSeconds: 0.042,
       },
       {
         machineIconId: 'Assembling_machine_3',
@@ -378,7 +378,7 @@ const _PRODUCTION_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Uranium_rounds_magazine',
         count: 10,
-        rate: '1.25/s',
+        rateSeconds: 1.25,
       },
       {
         machineIconId: 'Assembling_machine_3',
@@ -401,12 +401,18 @@ const _PRODUCTION_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Straight_rail',
         count: 2,
-        rate: '10/s',
+        rateSeconds: 10,
       },
       {
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Iron_stick',
         count: 1,
+      },
+      {
+        machineIconId: 'Electric_furnace',
+        productIconId: 'Steel_plate',
+        count: 40,
+        rateSeconds: 5,
       },
     ],
   },
@@ -419,7 +425,7 @@ const _PRODUCTION_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Flying_robot_frame',
         count: 20,
-        rate: '1.25/s',
+        rateSeconds: 1.25,
       },
       {
         machineIconId: 'Assembling_machine_3',
@@ -457,7 +463,7 @@ const _PRODUCTION_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Rocket_fuel',
         count: 6,
-        rate: '0.833/s',
+        rateSeconds: 0.833,
       },
       {
         machineIconId: 'Chemical_plant',
@@ -475,7 +481,7 @@ const _PRODUCTION_RATIOS: Ratio[] = [
         machineIconId: 'Chemical_plant',
         productIconId: 'Battery',
         count: 20,
-        rate: '5/s',
+        rateSeconds: 5,
       },
       {
         machineIconId: 'Chemical_plant',
@@ -498,7 +504,7 @@ const _PRODUCTION_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Processing_unit',
         count: 75,
-        rate: '9.375/s',
+        rateSeconds: 9.375,
       },
       {
         machineIconId: 'Chemical_plant',
@@ -518,7 +524,7 @@ const _MISC_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Transport_belt',
         count: 1,
-        rate: '5/s',
+        rateSeconds: 5,
       },
       {
         machineIconId: 'Assembling_machine_3',
@@ -536,7 +542,7 @@ const _MISC_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Inserter',
         count: 1,
-        rate: '2.5/s',
+        rateSeconds: 2.5,
       },
       {
         machineIconId: 'Assembling_machine_3',
@@ -559,7 +565,7 @@ const _MISC_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Electric_engine_unit',
         count: 16,
-        rate: '2/s',
+        rateSeconds: 2,
       },
       {
         machineIconId: 'Chemical_plant',
@@ -577,13 +583,13 @@ const _MISC_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Wall',
         count: 1,
-        rate: '2.5/s',
+        rateSeconds: 2.5,
       },
       {
         machineIconId: 'Stone_furnace',
         productIconId: 'Stone_brick',
         count: 40,
-        rate: '12.5/s',
+        rateSeconds: 12.5,
       },
     ],
   },
@@ -596,13 +602,13 @@ const _MISC_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_1',
         productIconId: 'Iron_gear_wheel',
         count: 1,
-        rate: '1/s',
+        rateSeconds: 1,
       },
       {
         machineIconId: 'Stone_furnace',
         productIconId: 'Iron_plate',
         count: 6.5,
-        rate: '2/s',
+        rateSeconds: 2,
       },
     ],
   },
@@ -615,12 +621,12 @@ const _MISC_RATIOS: Ratio[] = [
         machineIconId: 'Assembling_machine_2',
         productIconId: 'Iron_gear_wheel',
         count: 1,
-        rate: '1.5/s',
+        rateSeconds: 1.5,
       },
       {
         machineIconId: 'Stone_furnace',
         productIconId: 'Iron_plate',
-        rate: '3/s',
+        rateSeconds: 3,
         count: 10,
       },
     ],

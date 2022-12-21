@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
+import { DataService } from 'app/services';
 import { CsCommonRatiosComponent } from './cs-common-ratios.component';
 import { CsCommonRatiosModule } from './cs-common-ratios.module';
 type ComponentWithCustomControls = CsCommonRatiosComponent & {
@@ -13,6 +14,7 @@ const meta: Meta<ComponentWithCustomControls> = {
   decorators: [
     moduleMetadata({
       imports: [CommonModule, CsCommonRatiosModule],
+      providers: [DataService],
     }),
   ],
 };
