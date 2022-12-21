@@ -30,10 +30,11 @@ import * as Pipes from 'app/pipes';
 // Components
 import { AppComponent } from 'app/app.component';
 import * as SharedComponents from 'app/shared';
+import { FactorioIconModule, RatioModule } from 'app/shared';
 import * as ViewComponents from 'app/views';
 import * as SheetComponents from 'app/views/cheat-sheets';
 import { AdSenseModule } from './shared/ad-sense/ad-sense.module';
-// import { FactorioIconModule } from './shared/factorio-icon/factorio-icon.module';
+import { CsCommonRatiosModule } from './views/cheat-sheets/cs-common-ratios/cs-common-ratios.module';
 
 const ngb = [
   NgbCollapseModule,
@@ -64,7 +65,9 @@ const ngb = [
     AdSenseModule,
 
     // Local
-    // FactorioIconModule,
+    FactorioIconModule,
+    RatioModule,
+    CsCommonRatiosModule,
   ],
   // Components
   declarations: [
@@ -77,13 +80,11 @@ const ngb = [
     ViewComponents.FooterComponent,
     SharedComponents.BlueprintClipboardComponent,
     SharedComponents.CheatSheetComponent,
-    SharedComponents.FactorioIconComponent,
     SheetComponents.BalancersComponent,
     SheetComponents.BasicPowerComponent,
     SheetComponents.BeltsComponent,
     SheetComponents.CargoWagonTransferComponent,
     SheetComponents.CombatComponent,
-    SheetComponents.CommonRatiosComponent,
     SheetComponents.FluidWagonTransferComponent,
     SheetComponents.InserterThroughputComponent,
     SheetComponents.InserterCapacityBonusComponent,

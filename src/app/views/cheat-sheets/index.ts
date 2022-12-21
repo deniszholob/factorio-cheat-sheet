@@ -3,7 +3,6 @@ export * from './basic-power/basic-power.component';
 export * from './belts/belts.component';
 export * from './cargo-wagon-transfer/cargo-wagon-transfer.component';
 export * from './combat/combat.component';
-export * from './common-ratios/common-ratios.component';
 export * from './fluid-wagon-transfer/fluid-wagon-transfer.component';
 export * from './inserter-throughput/inserter-throughput.component';
 export * from './inserter-capacity-bonus/inserter-capacity-bonus.component';

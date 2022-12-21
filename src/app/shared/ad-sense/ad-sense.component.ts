@@ -4,12 +4,13 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
+  ElementRef,
   Inject,
   OnDestroy,
-  ViewChild,
-  ElementRef,
   PLATFORM_ID,
+  ViewChild,
 } from '@angular/core';
+import { environment } from 'environments/environment';
 
 @Component({
   selector: 'app-ad-sense',
@@ -17,8 +18,10 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AdSenseComponent implements AfterViewInit, OnDestroy {
+  public displayAd: boolean = environment.production;
+
   @ViewChild('ins', { read: ElementRef, static: true })
-  ins?: ElementRef;
+  public ins?: ElementRef;
 
   constructor(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
