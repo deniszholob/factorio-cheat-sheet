@@ -1,6 +1,6 @@
 <div class="icon-composite">
   <app-factorio-icon class="icon icon-bg" [icon]="machineIcon"></app-factorio-icon>
-  <app-factorio-icon class="icon icon-fg" [icon]="productIcon"></app-factorio-icon>
+  <app-factorio-icon class="icon icon-fg" *ngIf="productIcon" [icon]="productIcon"></app-factorio-icon>
   <span class="rate-text" *ngIf="rateSeconds">{{ rateSeconds | number : '0.0-2' }}/s</span>
   <span class="count-text" *ngIf="count !== undefined"> {{ count }} </span>
 </div>

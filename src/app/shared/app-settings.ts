@@ -18,7 +18,7 @@ export const APP_SETTINGS: AppInfo = {
   data_version: '1.0',
   // languages: ['en-US'],
   links: {
-    getLocalImagePath: function (imageName) {
+    getLocalImagePath(imageName) {
       return './assets/images/' + imageName;
     },
     wikiImagesBase: 'https://wiki.factorio.com/images/',
@@ -95,6 +95,6 @@ export interface Hyperlink {
 
 /** Easy image access */
 interface ImageLinks {
-  getLocalImagePath: FunctionStringCallback;
+  getLocalImagePath: (imageName: string) => string;
   wikiImagesBase: string;
 }

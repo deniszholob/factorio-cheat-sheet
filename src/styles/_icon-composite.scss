@@ -31,7 +31,7 @@
     left: $offset;
     top: 0;
     filter: drop-shadow(0 0 1px #000) drop-shadow(0 0 1px #111)
-      drop-shadow(0 0 2px #111);
+      drop-shadow(0 0 2px #111) brightness(1.1);
   }
 
   .text-sm {

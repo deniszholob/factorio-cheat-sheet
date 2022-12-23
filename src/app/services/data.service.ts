@@ -80,6 +80,11 @@ export class DataService {
     if (!iconId) {
       throw new Error('No Icon Defined');
     }
+    if (iconId.includes('Assembling_machine_combined')) {
+      return APP_SETTINGS.links.getLocalImagePath(
+        'Assembling_machine_combined.png'
+      );
+    }
     if (iconId.includes('research')) {
       // iconId = iconId.replace(/_/g, '-');
       return (

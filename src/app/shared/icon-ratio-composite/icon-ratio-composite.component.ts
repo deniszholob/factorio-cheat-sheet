@@ -19,15 +19,14 @@ export class IconRatioCompositeComponent {
     this.productIcon = this.dataService.getFactorioIcon(productIconId);
   }
   @Input()
-  public count?: number = 0;
+  public count?: number | string = 0;
   @Input()
   public rateSeconds?: number;
 
   public machineIcon: FactorioIcon = new FactorioIcon('');
-  public productIcon: FactorioIcon = new FactorioIcon('');
+  public productIcon?: FactorioIcon;
 
   constructor(private dataService: DataService) {
     this.machineIconId = FactorioIconIds.Assembling_machine_3;
-    this.productIconId = FactorioIconIds.Iron_gear_wheel;
   }
 }
