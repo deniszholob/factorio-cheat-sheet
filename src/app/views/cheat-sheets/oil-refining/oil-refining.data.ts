@@ -29,85 +29,103 @@ export const OIL_REFINING_DATA: RawData<OilRefiningData> = {
     },
     simpleCrackingRatio: [
       {
-        iconId: 'Advanced_oil_processing',
+        machineIconId: 'Oil_refinery',
+        productIconId: 'Advanced_oil_processing',
         count: 8,
       },
       {
-        iconId: 'Heavy_oil_cracking',
+        machineIconId: 'Chemical_plant',
+        productIconId: 'Heavy_oil_cracking',
         count: 2,
       },
       {
-        iconId: 'Light_oil_cracking',
+        machineIconId: 'Chemical_plant',
+        productIconId: 'Light_oil_cracking',
         count: 7,
       },
     ],
     perfectCrackingRatio: [
       {
-        iconId: 'Advanced_oil_processing',
+        machineIconId: 'Oil_refinery',
+        productIconId: 'Advanced_oil_processing',
         count: 20,
       },
       {
-        iconId: 'Heavy_oil_cracking',
+        machineIconId: 'Chemical_plant',
+        productIconId: 'Heavy_oil_cracking',
         count: 5,
       },
       {
-        iconId: 'Light_oil_cracking',
+        machineIconId: 'Chemical_plant',
+        productIconId: 'Light_oil_cracking',
         count: 17,
       },
     ],
     moduledCrackingRatio: [
       {
-        iconId: 'Advanced_oil_processing',
+        machineIconId: 'Oil_refinery',
+        productIconId: 'Advanced_oil_processing',
         count: 15,
       },
       {
-        iconId: 'Heavy_oil_cracking',
+        machineIconId: 'Chemical_plant',
+        productIconId: 'Heavy_oil_cracking',
         count: 6,
       },
       {
-        iconId: 'Light_oil_cracking',
+        machineIconId: 'Chemical_plant',
+        productIconId: 'Light_oil_cracking',
         count: 22,
       },
     ],
     simpleLiquefactionCrackingRatio: [
       {
-        iconId: 'Coal_liquefaction',
+        machineIconId: 'Oil_refinery',
+        productIconId: 'Coal_liquefaction',
         count: 12,
       },
       {
-        iconId: 'Heavy_oil_cracking',
+        machineIconId: 'Chemical_plant',
+        productIconId: 'Heavy_oil_cracking',
         count: 8,
       },
       {
-        iconId: 'Light_oil_cracking',
+        machineIconId: 'Chemical_plant',
+        productIconId: 'Light_oil_cracking',
         count: 11,
       },
     ],
     perfectLiquefactionCrackingRatio: [
       {
-        iconId: 'Coal_liquefaction',
+        machineIconId: 'Oil_refinery',
+        productIconId: 'Coal_liquefaction',
         count: 60,
       },
       {
-        iconId: 'Heavy_oil_cracking',
+        machineIconId: 'Chemical_plant',
+        productIconId: 'Heavy_oil_cracking',
         count: 39,
       },
       {
-        iconId: 'Light_oil_cracking',
+        machineIconId: 'Chemical_plant',
+        productIconId: 'Light_oil_cracking',
         count: 55,
       },
     ],
     moduledLiquefactionCrackingRatio: [
       {
-        iconId: 'Coal_liquefaction',
+        machineIconId: 'Oil_refinery',
+        productIconId: 'Coal_liquefaction',
         count: 8,
       },
       {
-        iconId: 'Heavy_oil_cracking',
+        machineIconId: 'Chemical_plant',
+        productIconId: 'Heavy_oil_cracking',
         count: 9,
       },
       {
-        iconId: 'Light_oil_cracking',
+        machineIconId: 'Chemical_plant',
+        productIconId: 'Light_oil_cracking',
         count: 15,
       },
     ],
@@ -159,7 +177,8 @@ export const OIL_REFINING_DATA: RawData<OilRefiningData> = {
       {
         processes: [
           {
-            iconId: 'Basic_oil_processing',
+            machineIconId: 'Oil_refinery',
+            productIconId: 'Basic_oil_processing',
             count: 1,
           },
         ],
@@ -172,7 +191,8 @@ export const OIL_REFINING_DATA: RawData<OilRefiningData> = {
       {
         processes: [
           {
-            iconId: 'Advanced_oil_processing',
+            machineIconId: 'Oil_refinery',
+            productIconId: 'Advanced_oil_processing',
             count: 1,
           },
         ],
@@ -185,11 +205,13 @@ export const OIL_REFINING_DATA: RawData<OilRefiningData> = {
       {
         processes: [
           {
-            iconId: 'Advanced_oil_processing',
+            machineIconId: 'Oil_refinery',
+            productIconId: 'Advanced_oil_processing',
             count: 1,
           },
           {
-            iconId: 'Light_oil_cracking',
+            machineIconId: 'Chemical_plant',
+            productIconId: 'Light_oil_cracking',
             count: 0.6,
           },
         ],
@@ -202,11 +224,13 @@ export const OIL_REFINING_DATA: RawData<OilRefiningData> = {
       {
         processes: [
           {
-            iconId: 'Advanced_oil_processing',
+            machineIconId: 'Oil_refinery',
+            productIconId: 'Advanced_oil_processing',
             count: 1,
           },
           {
-            iconId: 'Heavy_oil_cracking',
+            machineIconId: 'Chemical_plant',
+            productIconId: 'Heavy_oil_cracking',
             count: 0.25,
           },
         ],
@@ -219,15 +243,18 @@ export const OIL_REFINING_DATA: RawData<OilRefiningData> = {
       {
         processes: [
           {
-            iconId: 'Advanced_oil_processing',
+            machineIconId: 'Oil_refinery',
+            productIconId: 'Advanced_oil_processing',
             count: 1,
           },
           {
-            iconId: 'Heavy_oil_cracking',
+            machineIconId: 'Chemical_plant',
+            productIconId: 'Heavy_oil_cracking',
             count: 0.25,
           },
           {
-            iconId: 'Light_oil_cracking',
+            machineIconId: 'Chemical_plant',
+            productIconId: 'Light_oil_cracking',
             count: 0.85,
           },
         ],
@@ -240,7 +267,8 @@ export const OIL_REFINING_DATA: RawData<OilRefiningData> = {
       {
         processes: [
           {
-            iconId: 'Heavy_oil_cracking',
+            machineIconId: 'Chemical_plant',
+            productIconId: 'Heavy_oil_cracking',
             count: 1,
           },
         ],
@@ -253,7 +281,8 @@ export const OIL_REFINING_DATA: RawData<OilRefiningData> = {
       {
         processes: [
           {
-            iconId: 'Light_oil_cracking',
+            machineIconId: 'Chemical_plant',
+            productIconId: 'Light_oil_cracking',
             count: 1,
           },
         ],

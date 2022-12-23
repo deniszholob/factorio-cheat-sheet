@@ -1,12 +1,14 @@
+import { RatioItem } from 'app/shared/ratio/ratio.component';
+
 export interface OilRefiningData {
   basicOil: Ratio[];
   rushAdvancedOil: RushAdvancedOil;
-  simpleCrackingRatio: Ratio[];
-  perfectCrackingRatio: Ratio[];
-  moduledCrackingRatio: Ratio[];
-  simpleLiquefactionCrackingRatio: Ratio[];
-  perfectLiquefactionCrackingRatio: Ratio[];
-  moduledLiquefactionCrackingRatio: Ratio[];
+  simpleCrackingRatio: RatioItem[];
+  perfectCrackingRatio: RatioItem[];
+  moduledCrackingRatio: RatioItem[];
+  simpleLiquefactionCrackingRatio: RatioItem[];
+  perfectLiquefactionCrackingRatio: RatioItem[];
+  moduledLiquefactionCrackingRatio: RatioItem[];
   solidFuel: Ratio[][];
   production: Production[];
 }
@@ -24,7 +26,7 @@ export interface RushAdvancedOil {
 }
 
 export interface Production {
-  processes: Ratio[];
+  processes: RatioItem[];
   oil: string;
   water: string;
   petrol: string;

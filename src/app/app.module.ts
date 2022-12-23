@@ -35,6 +35,7 @@ import * as ViewComponents from 'app/views';
 import * as SheetComponents from 'app/views/cheat-sheets';
 import { AdSenseModule } from './shared/ad-sense/ad-sense.module';
 import { CsCommonRatiosModule } from './views/cheat-sheets/cs-common-ratios/cs-common-ratios.module';
+import { IconRatioCompositeModule } from './shared/icon-ratio-composite/icon-ratio-composite.module';
 
 const ngb = [
   NgbCollapseModule,
@@ -68,6 +69,9 @@ const ngb = [
     FactorioIconModule,
     RatioModule,
     CsCommonRatiosModule,
+
+    // TODO Remove and only use in lower modules
+    IconRatioCompositeModule,
   ],
   // Components
   declarations: [

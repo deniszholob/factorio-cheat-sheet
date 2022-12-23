@@ -37,17 +37,31 @@
 
   <div class="row align-items-center">
     <p class="col-12 col-sm-4 text-center">
-      <span class="text-muted">Simple Cracking Ratio</span><br />
-      <ng-container *ngFor="let item of sheetData?.simpleCrackingRatio">
-        <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
-      </ng-container>
+      <span class="text-muted">
+        <a href="https://wiki.factorio.com/Oil_processing#Petroleum_gas_production" target="_blank" rel="noopener">Simple</a>
+        Cracking Ratio</span
+      >
+      <br />
+      <app-icon-ratio-composite
+        *ngFor="let item of sheetData?.simpleCrackingRatio"
+        [machineIconId]="item.machineIconId"
+        [productIconId]="item.productIconId"
+        [count]="item.count"
+      ></app-icon-ratio-composite>
     </p>
 
     <p class="col-12 col-sm-4 text-center">
-      <span class="text-muted">Accurate Cracking Ratio</span><br />
-      <ng-container *ngFor="let item of sheetData?.perfectCrackingRatio">
-        <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
-      </ng-container>
+      <span class="text-muted">
+        <a href="https://wiki.factorio.com/Oil_processing#Petroleum_gas_production" target="_blank" rel="noopener">Accurate</a>
+        Cracking Ratio</span
+      >
+      <br />
+      <app-icon-ratio-composite
+        *ngFor="let item of sheetData?.perfectCrackingRatio"
+        [machineIconId]="item.machineIconId"
+        [productIconId]="item.productIconId"
+        [count]="item.count"
+      ></app-icon-ratio-composite>
     </p>
 
     <p class="col-12 col-sm-4 text-center">
@@ -56,13 +70,19 @@
           href="https://www.reddit.com/r/factorio/comments/68exg4/new_oil_ratio_in_015_with_modules_10_2_14/"
           target="_blank"
           rel="noopener"
-          >Moduled</a
         >
-        Cracking Ratio<a href="#note_oil_ratio">*</a> </span
-      ><br />
-      <ng-container *ngFor="let item of sheetData?.moduledCrackingRatio">
-        <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
-      </ng-container>
+          Moduled
+        </a>
+        Cracking Ratio <a href="#note_oil_ratio">*</a>
+      </span>
+      <br />
+
+      <app-icon-ratio-composite
+        *ngFor="let item of sheetData?.moduledCrackingRatio"
+        [machineIconId]="item.machineIconId"
+        [productIconId]="item.productIconId"
+        [count]="item.count"
+      ></app-icon-ratio-composite>
     </p>
   </div>
 
@@ -177,10 +197,12 @@
         <tbody class="text-center">
           <tr *ngFor="let item of sheetData?.production">
             <td>
-              <app-factorio-icon
+              <app-icon-ratio-composite
                 *ngFor="let process of item.processes"
-                [icon]="dataService.getFactorioIcon(process?.iconId, process?.count)"
-              ></app-factorio-icon>
+                [machineIconId]="process.machineIconId"
+                [productIconId]="process.productIconId"
+                [count]="process.count"
+              ></app-icon-ratio-composite>
             </td>
             <td>
               {{ item?.oil }}
@@ -214,9 +236,12 @@
         <a href="https://wiki.factorio.com/Oil_processing#Petroleum_gas_production" target="_blank" rel="noopener">Simple</a>
         Cracking Ratio </span
       ><br />
-      <ng-container *ngFor="let item of sheetData?.simpleLiquefactionCrackingRatio">
-        <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
-      </ng-container>
+      <app-icon-ratio-composite
+        *ngFor="let item of sheetData?.simpleLiquefactionCrackingRatio"
+        [machineIconId]="item.machineIconId"
+        [productIconId]="item.productIconId"
+        [count]="item.count"
+      ></app-icon-ratio-composite>
     </p>
 
     <p class="col-12 col-sm-4 text-center">
@@ -224,9 +249,12 @@
         <a href="https://wiki.factorio.com/Oil_processing#Petroleum_gas_production" target="_blank" rel="noopener">Accurate</a>
         Cracking Ratio </span
       ><br />
-      <ng-container *ngFor="let item of sheetData?.perfectLiquefactionCrackingRatio">
-        <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
-      </ng-container>
+      <app-icon-ratio-composite
+        *ngFor="let item of sheetData?.perfectLiquefactionCrackingRatio"
+        [machineIconId]="item.machineIconId"
+        [productIconId]="item.productIconId"
+        [count]="item.count"
+      ></app-icon-ratio-composite>
     </p>
 
     <p class="col-12 col-sm-4 text-center">
@@ -236,9 +264,12 @@
         >
         Cracking Ratio<a href="#note_oil_ratio">*</a> </span
       ><br />
-      <ng-container *ngFor="let item of sheetData?.moduledLiquefactionCrackingRatio">
-        <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
-      </ng-container>
+      <app-icon-ratio-composite
+        *ngFor="let item of sheetData?.moduledLiquefactionCrackingRatio"
+        [machineIconId]="item.machineIconId"
+        [productIconId]="item.productIconId"
+        [count]="item.count"
+      ></app-icon-ratio-composite>
     </p>
   </div>
 
