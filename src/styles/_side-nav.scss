@@ -25,7 +25,7 @@ $nav-width: 250px;
 
   /* The navigation menu links */
   a {
-    padding: 8px 8px 8px 32px;
+    padding: 7px 8px 7px 32px;
     text-decoration: none;
     font-size: 18px;
     color: $c-pallette-text-muted;
@@ -48,13 +48,12 @@ $nav-width: 250px;
   .nav-header {
     position: sticky;
     top: 0;
-    padding: 5px 0;
+    padding: 4px 0;
   }
 
   .nav-contents {
     overflow-y: auto;
     overflow-x: hidden; // Disable horizontal scroll
-    margin-top: 5px;
   }
 }
 

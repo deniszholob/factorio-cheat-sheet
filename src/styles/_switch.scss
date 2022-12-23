@@ -1,6 +1,6 @@
 // Ref: https://www.w3schools.com/howto/howto_css_switch.asp
-$s-width: 60px;
-$s-height: #{$s-width/2.5 - 2px};
+$s-width: 50px;
+$s-height: calc(#{$s-width/2 - 2px});
 $s-border: 1px;
 
 $s-toggle-spacing: 4px;

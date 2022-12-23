@@ -4,11 +4,8 @@
       <table class="table table-sm table-hover table-bordered">
         <thead class="text-center">
           <tr>
-            <th colspan="2">
-              Buildings needed<a href="#note_building_processing">^</a>
-              to
-            </th>
-            <th colspan="3">Empty Input Belt</th>
+            <th colspan="2">Factories needed<a href="#note_building_processing">^</a> to</th>
+            <th colspan="3">Empty input belt</th>
           </tr>
           <tr>
             <th>With</th>
@@ -32,15 +29,9 @@
             <td *ngIf="idx % 2 === 0" rowspan="2">
               <app-factorio-icon *ngFor="let iconId of item?.material" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
             </td>
-            <td class="bg-input">
-              {{ item?.beltYellow }}
-            </td>
-            <td class="bg-input">
-              {{ item?.beltRed }}
-            </td>
-            <td class="bg-input">
-              {{ item?.beltBlue }}
-            </td>
+            <td class="bg-input" title="Factories">{{ item?.beltYellow }}</td>
+            <td class="bg-input" title="Factories">{{ item?.beltRed }}</td>
+            <td class="bg-input" title="Factories">{{ item?.beltBlue }}</td>
           </tr>
         </tbody>
       </table>
@@ -50,11 +41,8 @@
       <table class="table table-sm table-hover table-bordered">
         <thead class="text-center">
           <tr>
-            <th colspan="2">
-              Buildings needed<a href="#note_building_processing">^</a>
-              to
-            </th>
-            <th colspan="3">Fill Output Belt</th>
+            <th colspan="2">Factories needed<a href="#note_building_processing">^</a> to</th>
+            <th colspan="3">Fill output belt</th>
           </tr>
           <tr>
             <th>With</th>
@@ -78,22 +66,16 @@
             <td *ngIf="idx % 2 === 0" rowspan="2">
               <app-factorio-icon *ngFor="let iconId of item?.material" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
             </td>
-            <td class="bg-output">
-              {{ item?.beltYellow }}
-            </td>
-            <td class="bg-output">
-              {{ item?.beltRed }}
-            </td>
-            <td class="bg-output">
-              {{ item?.beltBlue }}
-            </td>
+            <td class="bg-output" title="Factories">{{ item?.beltYellow }}</td>
+            <td class="bg-output" title="Factories">{{ item?.beltRed }}</td>
+            <td class="bg-output" title="Factories">{{ item?.beltBlue }}</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 
-  <p class="text-muted" id="note_building_processing">^Buildings are rounded up to the nearest whole number.</p>
+  <p class="text-muted" id="note_building_processing">^Factories are rounded up to the nearest whole number.</p>
 
   <hr />
 
@@ -160,7 +142,7 @@
         </tbody>
       </table>
       <p class="text-center">
-        <kbd>Buildings = Belt Throughput / Material Consumption Rate</kbd>
+        <kbd>Factories = Belt Throughput / Material Consumption Rate</kbd>
       </p>
     </div>
   </div>

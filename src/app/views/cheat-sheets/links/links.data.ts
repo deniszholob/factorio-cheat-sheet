@@ -77,16 +77,6 @@ export const LINKS_DATA: RawData<LinksData> = {
             caption: 'If you dare',
           },
           {
-            url: 'https://factorioprints.com/top',
-            text: 'Blueprint Library',
-            caption: 'Top community designs.',
-          },
-          {
-            url: 'https://factorioblueprints.tech/',
-            text: 'Another Blueprint Library',
-            caption: 'More community designs.',
-          },
-          {
             url: 'https://factorio.zone/',
             text: 'Factorio Zone',
             caption: 'Easy online servers',
@@ -95,11 +85,6 @@ export const LINKS_DATA: RawData<LinksData> = {
             url: 'https://hub.docker.com/r/factoriotools/factorio',
             text: 'Docker',
             caption: 'Easy headless servers',
-          },
-          {
-            url: 'https://factoriomaps.com/',
-            text: 'Maps',
-            caption: 'View/Download Maps',
           },
           {
             url: 'https://www.speedrun.com/Factorio/resources',
@@ -230,6 +215,23 @@ export const LINKS_DATA: RawData<LinksData> = {
           {
             url: 'https://www.reddit.com/r/factorio/comments/4f38sk/factorio_train_automation_complete_parts_23_and/',
             text: 'Train Automation',
+          },
+        ],
+      },
+      {
+        text: 'Designs',
+        links: [
+          {
+            url: 'https://factoriomaps.com/',
+            text: 'View/Download Maps',
+          },
+          {
+            url: 'https://factorioblueprints.tech/',
+            text: 'Factorio Blueprints .tech',
+          },
+          {
+            url: 'https://factorioprints.com/top',
+            text: 'Factorio Prints .com',
           },
         ],
       },
