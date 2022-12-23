@@ -1,5 +1,10 @@
-import { Component, Input } from '@angular/core';
-import { DataService } from 'app/services';
+import { Component, Input, OnDestroy } from '@angular/core';
+import {
+  Collapse,
+  DataService,
+  SheetCollapseToggleService,
+} from 'app/services';
+import { Subject, takeUntil } from 'rxjs';
 import { FactorioIcon } from '../factorio-icon/factorio-icon.model';
 
 const CHT_BREAKPOINT_RESOLUTION = 767; // pixels
@@ -10,7 +15,7 @@ export const CHT_DEFAULT_ICON_ID = 'Blueprint';
   selector: 'app-cheat-sheet-template',
   templateUrl: './cheat-sheet-template.component.html',
 })
-export class CheatSheetTemplateComponent {
+export class CheatSheetTemplateComponent implements OnDestroy {
   @Input()
   public set iconId(iconId: string) {
     this.factorioIcon = this.dataService.getFactorioIcon(iconId);
@@ -32,7 +37,26 @@ export class CheatSheetTemplateComponent {
   public id: string = this.getIdFromTitle(this.title);
   public isCollapsed: boolean = this.defaultCollapsed();
 
-  constructor(private dataService: DataService) {}
+  private clearSub$ = new Subject<void>();
+
+  constructor(
+    private dataService: DataService,
+    sheetCollapseToggleService: SheetCollapseToggleService
+  ) {
+    sheetCollapseToggleService
+      .getCollapseToggle()
+      .pipe(takeUntil(this.clearSub$))
+      .subscribe((collapseObj: Collapse) => {
+        if ((collapseObj.id && collapseObj.id === this.id) || !collapseObj.id) {
+          collapseObj.doCollapse ? this.collapse() : this.expand();
+        }
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.clearSub$.next();
+    this.clearSub$.complete();
+  }
 
   /** Collapsed By default on Mobile, expanded on Desktop */
   private defaultCollapsed() {

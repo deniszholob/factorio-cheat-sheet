@@ -32,12 +32,12 @@ export class NavComponent implements OnInit {
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize() {
+  protected onResize() {
     this.isNavOpen = this.isUserOpen || this.doKeepOpen();
   }
 
-  doKeepOpen(): boolean {
-    return this.getViewportWidth() > this.maxWidthToKeepOpen;
+  public doKeepOpen(): boolean {
+    return this.getViewportWidth() >= this.maxWidthToKeepOpen;
   }
 
   private getViewportWidth(): number {
@@ -45,23 +45,23 @@ export class NavComponent implements OnInit {
   }
 
   /** Expand the sheet jumped to and close the nav */
-  clickedLink(id: string) {
+  public clickedLink(id: string) {
     this.sheetCollapseToggleService.expandId(id);
     this.closeNav();
   }
 
-  closeNav() {
+  public closeNav() {
     if (!this.doKeepOpen()) {
       this.isNavOpen = false;
       this.isUserOpen = this.isNavOpen;
     }
   }
 
-  openNav() {
+  protected openNav() {
     this.isNavOpen = true;
   }
 
-  toggleNav() {
+  public toggleNav() {
     this.isNavOpen = !this.isNavOpen;
     this.isUserOpen = this.isNavOpen;
   }
@@ -70,11 +70,11 @@ export class NavComponent implements OnInit {
     return this.dataService.toTitleCase(id.replace(/-/g, ' '));
   }
 
-  collapseAllSheets() {
+  public collapseAllSheets() {
     this.sheetCollapseToggleService.collapseAll();
   }
 
-  expandAllSheets() {
+  public expandAllSheets() {
     this.sheetCollapseToggleService.expandAll();
   }
 }
