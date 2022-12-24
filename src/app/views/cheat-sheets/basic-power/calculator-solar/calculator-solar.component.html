@@ -1,0 +1,49 @@
+<div class="solar-calculator">
+  <div class="input-group">
+    <span class="input-group-addon">
+      <app-factorio-icon [icon]="dataService.getFactorioIcon('Solar_panel')"></app-factorio-icon>
+      Solar Panels
+    </span>
+    <input
+      class="form-control"
+      [(ngModel)]="solarCalcData.solarPanels"
+      (keyup)="onCalcFromSolar()"
+      (change)="onCalcFromSolar()"
+      type="number"
+      min="0"
+    />
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon">
+      <app-factorio-icon [icon]="dataService.getFactorioIcon('Accumulator')"></app-factorio-icon>
+      Accumulators
+    </span>
+    <input
+      class="form-control"
+      [(ngModel)]="solarCalcData.accumulators"
+      (keyup)="onCalcFromAccumulators()"
+      (change)="onCalcFromAccumulators()"
+      type="number"
+      min="0"
+    />
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon">
+      <span class="factorio-icon-pad">
+        <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+      </span>
+      Usable Power
+    </span>
+    <input
+      class="form-control"
+      [(ngModel)]="solarCalcData.usablePower"
+      (keyup)="onCalcFromPower()"
+      (change)="onCalcFromPower()"
+      type="number"
+      min="0"
+    />
+    <span class="input-group-addon">MW</span>
+  </div>
+</div>

@@ -14,12 +14,27 @@
   /** Setting margins */
   @page {
     size: letter;
-    margin: 0cm;
+    margin: 0;
+  }
+  body {
+    margin: 0 auto;
+    font-size: 0.9rem;
+  }
+
+  .container {
+    max-width: none;
   }
 
   /* Defining all page breaks */
   .section:not(:last-child) {
     page-break-after: always;
+  }
+
+  app-ad-sense,
+  app-annex,
+  app-footer {
+    display: none;
+    visibility: hidden;
   }
 
   .cheat-sheet-pages > *:not(:first-child) {
@@ -34,7 +49,7 @@
 
   section .container,
   .section .container {
-    padding: 20px;
+    padding: 10px;
   }
 
   .card {
@@ -108,10 +123,16 @@
   .card-header,
   .card-body {
     padding: 0.4rem 1rem 1px;
+    // padding: 2px 1rem;
   }
 
   img.factorio-icon {
     height: 1.5rem !important;
+  }
+  .icon-composite {
+    img.factorio-icon {
+      height: initial !important;
+    }
   }
 
   .factorio-icon-text {

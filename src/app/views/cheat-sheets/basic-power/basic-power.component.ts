@@ -15,13 +15,13 @@ import { BASIC_POWER_DATA } from './basic-power.data';
 @Component({
   selector: 'app-basic-power',
   templateUrl: './basic-power.component.html',
-  // styleUrls: ['./basic-power.component.scss'] // Enable as needed
 })
 export class BasicPowerComponent implements OnInit {
   public cheatSheet?: CheatSheet;
   public sheetData?: BasicPowerData;
 
-  public solarPowerRatio = 1;
+  public solarPowerRatio = 0.7;
+  public solarAvgMw: number = 42 / 1000; // MW
 
   constructor(public dataService: DataService) {}
 
@@ -33,6 +33,7 @@ export class BasicPowerComponent implements OnInit {
         (result: Data<BasicPowerData>) => {
           this.cheatSheet = result.cheatSheet;
           this.sheetData = result.data;
+          this.solarAvgMw = this.sheetData.solar_energy_avg / 1000;
           this.solarPowerRatio =
             this.sheetData.solar_energy_avg / this.sheetData.solar_energy_max;
         },

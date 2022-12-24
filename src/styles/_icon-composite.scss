@@ -1,6 +1,9 @@
 .icon-composite {
   $size: 32px;
   $multiplier: 1.5;
+  // @media print {
+  //   $multiplier: 1;
+  // }
   $bigger: $size * $multiplier;
   $smaller: $bigger * 0.75;
   $offset: $bigger/2.5 - $smaller/2;
@@ -58,5 +61,24 @@
     font-size: 1em;
     text-shadow: 0 1px 1px #000, 0 -1px 1px #000, 1px 0 1px #000,
       -1px 0 1px #000;
+  }
+}
+
+.factorio-icon-pad {
+  $v-pad: 3px;
+  $box-size: 32px;
+  $size: calc(#{$box-size} - #{$v-pad} * 2);
+  padding: $v-pad;
+  margin: 0 2px;
+  display: inline-block;
+
+  i {
+    height: $box-size;
+    width: $box-size;
+    font-size: $size;
+    margin-bottom: 2px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 }

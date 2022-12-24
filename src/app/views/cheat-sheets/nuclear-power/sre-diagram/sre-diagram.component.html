@@ -1,0 +1,12 @@
+<div class="card text-center sre-diagram" style="margin-bottom: 0">
+  <div class="card-body d-flex flex-row justify-content-evenly">
+    <div>
+      <h6 class="card-subtitle mb-2 text-muted text-center">{{ reactorCount }} Reactor: {{ row }}x{{ column }} Configuration</h6>
+      <div>
+        <kbd>{{ sreFormula }} SRE</kbd> <br />
+        producing <kbd>{{ sre }} * {{ reactorPower }}MW = {{ sre * reactorPower }}MW</kbd> <br />
+      </div>
+    </div>
+    <app-sre-matrix [matrix]="matrix"></app-sre-matrix>
+  </div>
+</div>

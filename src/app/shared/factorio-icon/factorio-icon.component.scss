@@ -1,7 +1,8 @@
 @import './src/styles/variables';
 
 :host {
-  display: inline-block;
+  display: inline-flex;
+  vertical-align: middle;
   position: relative;
   padding: 3px;
   margin: 0 2px;
