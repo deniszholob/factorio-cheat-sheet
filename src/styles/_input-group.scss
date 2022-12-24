@@ -11,6 +11,8 @@
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
   // Overwrite settings here down
+  display: flex;
+  align-items: center;
   color: $c-pallette-text;
   background-color: $c-pallette-transp-light;
   border-color: $c-pallette-transp-light;

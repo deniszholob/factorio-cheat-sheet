@@ -1,0 +1,9 @@
+.solar-calculator {
+  .input-group {
+    max-width: 400px;
+    margin: auto;
+  }
+  .input-group-addon:first-child {
+    min-width: 170px;
+  }
+}

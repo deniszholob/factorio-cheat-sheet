@@ -3,12 +3,13 @@ img {
   width: auto;
 }
 
-.input-group-addon {
-  &:last-child {
-    min-width: 170px;
+.input-group {
+  flex-wrap: nowrap;
+  input {
+    min-width: 60px;
   }
-}
 
-.input-group.fixed-width {
-  width: 350px;
+  &.fixed-width {
+    max-width: 400px;
+  }
 }

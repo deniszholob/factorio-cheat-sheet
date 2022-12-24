@@ -1,0 +1,18 @@
+.sre-diagram {
+  background-color: $c-pallette-transp-light;
+  border: 1px solid $c-pallette-transp-light;
+}
+
+.sre-matrix {
+  table {
+    td {
+      text-align: center;
+      vertical-align: middle;
+      width: 25px;
+      height: 25px;
+      border: 1px solid $c-pallette-neutral-dark;
+      background-color: $c-pallette-neutral;
+      font-size: 0.9em;
+    }
+  }
+}

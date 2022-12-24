@@ -36,6 +36,9 @@ import * as SheetComponents from 'app/views/cheat-sheets';
 import { AdSenseModule } from './shared/ad-sense/ad-sense.module';
 import { CsCommonRatiosModule } from './views/cheat-sheets/cs-common-ratios/cs-common-ratios.module';
 import { IconRatioCompositeModule } from './shared/icon-ratio-composite/icon-ratio-composite.module';
+import { BasicPowerModule } from './views/cheat-sheets/basic-power/basic-power.module';
+import { CheatSheetModule } from './shared/cheat-sheet/cheat-sheet.module';
+import { NuclearPowerModule } from './views/cheat-sheets/nuclear-power/nuclear-power.component.module';
 
 const ngb = [
   NgbCollapseModule,
@@ -69,6 +72,9 @@ const ngb = [
     FactorioIconModule,
     RatioModule,
     CsCommonRatiosModule,
+    BasicPowerModule,
+    CheatSheetModule,
+    NuclearPowerModule,
 
     // TODO Remove and only use in lower modules
     IconRatioCompositeModule,
@@ -83,9 +89,7 @@ const ngb = [
     ViewComponents.AnnexComponent,
     ViewComponents.FooterComponent,
     SharedComponents.BlueprintClipboardComponent,
-    SharedComponents.CheatSheetComponent,
     SheetComponents.BalancersComponent,
-    SheetComponents.BasicPowerComponent,
     SheetComponents.BeltsComponent,
     SheetComponents.CargoWagonTransferComponent,
     SheetComponents.CombatComponent,
@@ -96,7 +100,6 @@ const ngb = [
     SheetComponents.MaterialProcessingComponent,
     SheetComponents.MiningComponent,
     SheetComponents.ModulesAndBeaconsComponent,
-    SheetComponents.NuclearPowerComponent,
     SheetComponents.OilRefiningComponent,
     SheetComponents.ProductivityModulePayoffsComponent,
     SheetComponents.ScienceComponent,

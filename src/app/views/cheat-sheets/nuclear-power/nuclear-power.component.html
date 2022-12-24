@@ -107,61 +107,27 @@
 
   <hr />
   <h4 class="card-title" id="nuclear-sre-diagrams">SRE Diagrams</h4>
-  <strong>Single Reactor Equivalence:</strong> Because of the neighbor bonus; 1 reactor can be equivalent to up to 5 stand-alone reactors in
-  certain patterns.
-  <br />
+  <strong>Single Reactor Equivalence:</strong> Because of the
+  <a href="https://wiki.factorio.com/Nuclear_reactor#Neighbour_bonus" target="_blank" rel="noopener noreferrer"> neighbor bonus </a>
+  ; 1 reactor can be equivalent to up to 5 stand-alone reactors. <br />
+
+  <div class="row">
+    <div class="col-12 col-md-6 pb-2">
+      <app-sre-diagram [row]="2" [column]="6" [reactorPower]="nuclearData.reactorPower"></app-sre-diagram>
+    </div>
+
+    <div class="col-12 col-md-6 p-b-2">
+      <app-sre-diagram [row]="3" [column]="4" [reactorPower]="nuclearData.reactorPower"></app-sre-diagram>
+    </div>
+  </div>
+
+  <strong>Note:</strong> SRE of 5 in inaccessible by inserters as the reactor is completely surrounded by other reactors <br />
   See
   <a href="https://factorio-nuclear-power-plant.netlify.app" target="_blank" rel="noopener noreferrer">SRE App</a>
   by
   <a href="https://github.com/fangyi-zhou" target="_blank" rel="noopener noreferrer">Fangyi Zhou</a>
   for more.
 
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <div class="card text-center" style="margin-bottom: 0">
-        <div class="card-body row">
-          <div class="col-12 col-sm-6">
-            <h6 class="card-subtitle mb-2 text-muted">2xN Configuration</h6>
-            <p>
-              16 reactors: 2x8, is<br />
-              <kbd>4*3 + 12*4 = 60 SRE</kbd>
-            </p>
-
-            <p></p>
-          </div>
-
-          <div class="col-12 col-sm-6">
-            3 4 4 4 4 4 4 3<br />
-            3 4 4 4 4 4 4 3
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6">
-      <div class="card text-center" style="margin-bottom: 0">
-        <div class="card-body row">
-          <div class="col-12 col-sm-7">
-            <h6 class="card-subtitle mb-2 text-muted">NxM Configuration</h6>
-            <p>
-              16 reactors: 4x4, is<br />
-              <kbd>4*3 + 8*4 + 4*5 = 64 SRE</kbd>
-            </p>
-
-            <p></p>
-          </div>
-
-          <div class="col-12 col-sm-5">
-            <span class="sre">
-              3 4 4 3<br />
-              4 5 5 4<br />
-              4 5 5 4<br />
-              3 4 4 3
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <hr />
   <div class="row">
     <div class="col-12 col-md-5 text-center">

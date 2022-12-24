@@ -50,7 +50,10 @@
           Miners needed to fill a belt
           <span class="d-inline-not-print">*</span>
           <div class="input-group d-none-print fixed-width">
-            <span class="input-group-addon">Prod lvl</span>
+            <span class="input-group-addon">
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Mining_productivity_(research)', prodBonusLevel)"></app-factorio-icon>
+              Prod lvl
+            </span>
             <input
               class="form-control"
               [(ngModel)]="prodBonusLevel"
@@ -64,6 +67,7 @@
             <span class="input-group-addon">Productivity {{ productivityPercent | number : '1.0-0' }}%</span>
           </div>
         </caption>
+
         <thead class="text-center">
           <tr>
             <th>Ore</th>
