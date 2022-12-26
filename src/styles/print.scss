@@ -21,6 +21,10 @@
     font-size: 0.9rem;
   }
 
+  .print-page-break {
+    page-break-before: always;
+  }
+
   .container {
     max-width: none;
   }
@@ -135,10 +139,6 @@
     }
   }
 
-  .factorio-icon-text {
-    color: #eeeeee !important;
-  }
-
   #belt-throughput,
   #balancers,
   #nuclear-power {
@@ -191,3 +191,25 @@
     display: inline !important;
   }
 }
+
+// ENABLE ONLY FOR LIGHT PDF
+
+// img.factorio-icon {
+//   filter: drop-shadow(2px 2px 2px white) !important;
+// }
+// .icon-composite {
+//   .icon-bg {
+//     filter: blur(0.7px) drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff)
+//       drop-shadow(0 0 2px #fff) !important;
+//   }
+//   .rate-text,
+//   .count-text {
+//     text-shadow: 0px 1px 1px #fff, 0px -1px 1px #fff, 1px 0px 1px #fff,
+//       -1px 0px 1px #fff, 0px 0px 10px #fff !important;
+//   }
+// }
+
+// .factorio-icon-text {
+//   text-shadow: 0px 1px 1px #fff, 0px -1px 1px #fff, 1px 0px 1px #fff,
+//     -1px 0px 1px #fff, 0px 0px 10px #fff !important;
+// }

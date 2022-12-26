@@ -259,7 +259,7 @@ const _ELECTRONICS_RATIOS: Ratio[] = [
       {
         machineIconId: 'Chemical_plant',
         productIconId: 'Plastic_bar',
-        count: 1.3,
+        count: 1.25,
       },
     ],
   },
