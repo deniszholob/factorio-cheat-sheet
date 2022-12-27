@@ -15,7 +15,7 @@
     </button>
   </div>
 
-  <div class="card-body" [ngbCollapse]="!!isCollapsed">
+  <div class="card-body" [ngbCollapse]="!!isCollapsed" [animation]="false">
     <ng-content></ng-content>
 
     <app-ad-sense *ngIf="!isCollapsed">
