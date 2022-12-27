@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1672104513017,
+  "timestamp": 1672105144132,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -29,8 +29,7 @@
         "\\/\\/fonts\\.googleapis\\.com\\/.*",
         "\\/\\/fonts\\.gstatic\\.com\\/s\\/.*",
         "\\/\\/use\\.fontawesome\\.com\\/.*",
-        "\\/\\/stackpath\\.bootstrapcdn\\.com\\/.*",
-        "https:\\/\\/wiki\\.factorio\\.com\\/images\\/.*"
+        "\\/\\/stackpath\\.bootstrapcdn\\.com\\/.*"
       ]
     },
     {
