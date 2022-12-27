@@ -52,7 +52,7 @@ const ngb = [
   imports: [
     // Angular
     BrowserModule,
-    RouterModule.forRoot([]),
+    RouterModule.forRoot([], { anchorScrolling: 'enabled' }),
     FormsModule,
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {

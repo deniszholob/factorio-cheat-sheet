@@ -22,7 +22,8 @@
           "//fonts.googleapis.com/**",
           "//fonts.gstatic.com/s/**",
           "//use.fontawesome.com/**",
-          "//stackpath.bootstrapcdn.com/**"
+          "//stackpath.bootstrapcdn.com/**",
+          "https://wiki.factorio.com/images/**"
         ]
       }
     },
