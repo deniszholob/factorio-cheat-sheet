@@ -15,10 +15,10 @@
     <a *ngFor="let sheet of sheetIds" (click)="clickedLink(sheet)" href="#{{ sheet }}">{{ sheetName(sheet) }}</a>
     <!-- <a (click)="closeNav()" href="#Annex">Annex</a> -->
   </div>
-</div>
 
-<!-- Use any element to open the side-nav -->
-<div class="nav-opener" [class.closed]="isNavOpen" [class.d-none]="doKeepOpen()" (click)="toggleNav()">
-  <i class="fas fa-angle-right" [class.d-none]="!isNavOpen"></i>
-  <i class="fas fa-angle-left" [class.d-none]="isNavOpen"></i>
+  <!-- Use any element to open the side-nav -->
+  <div class="nav-opener" [class.closed]="isNavOpen" [class.d-none]="doKeepOpen()" (click)="toggleNav()">
+    <i class="fas fa-angle-right" [class.d-none]="!isNavOpen"></i>
+    <i class="fas fa-angle-left" [class.d-none]="isNavOpen"></i>
+  </div>
 </div>

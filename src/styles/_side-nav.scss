@@ -1,11 +1,9 @@
 /* https://www.w3schools.com/howto/howto_js_sidenav.asp */
 
 /* The side navigation menu */
-$nav-width: 250px;
-
 .side-nav {
   height: 100%; // 100% Full-height
-  width: 0; // 0 width - change this with JavaScript
+  width: 250px; // Fixed width, move the container with transforms to hide/show
   position: fixed; // Stay in place
   z-index: 10; // Stay on top
   top: 0;
@@ -15,12 +13,11 @@ $nav-width: 250px;
   margin-right: -2px; // Account for 2px border of the side-nav when open
   display: flex;
   flex-direction: column;
-  overflow: hidden; // Disable parent scroll
-  transition: 0.5s; // 0.5 second transition effect to slide in the side-nav
+  transition: 0.35s; // 0.35 second transition effect to slide in the side-nav
+  transform: translateX(100%); // Slide in the side-nav from the right
 
   &.open {
-    width: $nav-width;
-    margin-right: 0;
+    transform: translateX(0);
   }
 
   /* The navigation menu links */
@@ -58,26 +55,21 @@ $nav-width: 250px;
 }
 
 .nav-opener {
-  position: fixed;
-  right: 0;
+  position: absolute;
+  right: 100%; // Right 100% pins this to the outside of the left edge.
   top: 50%;
   z-index: 11; // Stay on top
   cursor: pointer;
   background: $c-pallette-transp-heavy;
   border: 1px solid $c-pallette-transp-medium;
   border-right: none;
-  margin-right: -3px; // Account for 1px + 2px border
   border-bottom-left-radius: 10%;
   border-top-left-radius: 10%;
-  transition: 0.5s; // 0.5 second same time as the side-nav
-  margin-right: -2px; // Account for 2px border of the side-nav when open
+  transition: 0.35s; // 0.35 second same time as the side-nav
+  transform: translateY(-50%); // use with margin-top 50% to center vertically
 
   &:hover {
     color: $c-pallette-accent;
-  }
-
-  &.closed {
-    right: $nav-width;
   }
 
   & > i {
