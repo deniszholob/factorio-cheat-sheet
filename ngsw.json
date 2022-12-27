@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1672090243050,
+  "timestamp": 1672104513017,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -17,7 +17,7 @@
         "/favicon-32x32.png",
         "/favicon.ico",
         "/index.html",
-        "/main.c259032568fc8e67.js",
+        "/main.6c5bc7b52ac6d57b.js",
         "/manifest.webmanifest",
         "/mstile-150x150.png",
         "/polyfills.7cae7c4241e48001.js",
@@ -29,7 +29,8 @@
         "\\/\\/fonts\\.googleapis\\.com\\/.*",
         "\\/\\/fonts\\.gstatic\\.com\\/s\\/.*",
         "\\/\\/use\\.fontawesome\\.com\\/.*",
-        "\\/\\/stackpath\\.bootstrapcdn\\.com\\/.*"
+        "\\/\\/stackpath\\.bootstrapcdn\\.com\\/.*",
+        "https:\\/\\/wiki\\.factorio\\.com\\/images\\/.*"
       ]
     },
     {
@@ -119,8 +120,8 @@
     "/favicon-16x16.png": "8b9e790ca31c34160633f21404c9a2e7e5b71f1b",
     "/favicon-32x32.png": "e4dc39c7eb4b45ef44c424f6f6e9d90e0741e864",
     "/favicon.ico": "f3d7aac46ac43e464ed9a7aa65c1194818aeda6a",
-    "/index.html": "8d171fa9b461f60477aa7885768dc6509aa87918",
-    "/main.c259032568fc8e67.js": "62cf8473ebb1962615e25ee22b53ccea3243a258",
+    "/index.html": "50684a566ce4eb8d943029f68b85aae3ce6065e2",
+    "/main.6c5bc7b52ac6d57b.js": "3e437448805a0d93f44702f11848569a8ce2dde1",
     "/manifest.webmanifest": "68caa9995a0f7b465a242d8e64666f667f225bc6",
     "/mstile-150x150.png": "24c3dc794f99c0f9cbc22a30d4ae270e9df78452",
     "/polyfills.7cae7c4241e48001.js": "94a37e36199eb11ad7c2d10b4f862cc98e994b01",
