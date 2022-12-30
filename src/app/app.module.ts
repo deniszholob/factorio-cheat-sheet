@@ -52,7 +52,11 @@ const ngb = [
   imports: [
     // Angular
     BrowserModule,
-    RouterModule.forRoot([], { anchorScrolling: 'enabled' }),
+    RouterModule.forRoot([], {
+      // anchorScrolling: 'enabled', // Doesn't work with href="#something" but rather with [routerLink]="['./']" [fragment]="something"
+      // scrollPositionRestoration: 'enabled', // Works with anchorScrolling only
+      // useHash: true,
+    }),
     FormsModule,
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {

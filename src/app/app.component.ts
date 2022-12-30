@@ -1,5 +1,6 @@
 // Angular
-import { Component, OnDestroy } from '@angular/core';
+import { AfterViewChecked, Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 
 // PWA
 import {
@@ -17,46 +18,65 @@ import { filter, map, Subject, takeUntil } from 'rxjs';
   templateUrl: './app.component.html',
   // styleUrls: ['./app.component.scss'] // Enable as needed
 })
-export class AppComponent implements OnDestroy {
-  // private fragment: string = '';
-  // private scrolled: boolean = false;
+export class AppComponent implements OnDestroy, OnInit, AfterViewChecked {
+  private fragment: string = '';
+  private scrolled: boolean = false;
 
   private clearSub$ = new Subject<void>();
 
   constructor(
-    // private route: ActivatedRoute,
-    private swUpdate: SwUpdate
+    private route: ActivatedRoute,
+    private swUpdate: SwUpdate,
+    private router: Router
   ) {
     this.subToUpdateApp();
+    // Ref: https://www.bennadel.com/blog/3533-using-router-events-to-detect-back-and-forward-browser-navigation-in-angular-7-0-4.htm
+    this.router.events
+      .pipe(
+        takeUntil(this.clearSub$),
+        filter(
+          (event): event is NavigationStart => event instanceof NavigationStart
+        )
+      )
+      .subscribe((event: NavigationStart) => {
+        // User uses browser navigation (back/forward)
+        if (event.navigationTrigger === 'popstate') {
+          this.scrolled = false;
+        }
+      });
   }
 
-  // ngOnInit(): void {
-  // this.route.fragment
-  //   .pipe(takeUntil(this.clearSub$))
-  //   .subscribe((fragment: string | null) => {
-  //     this.fragment = fragment ?? '';
-  //   });
-  // }
+  ngOnInit(): void {
+    this.route.fragment
+      .pipe(takeUntil(this.clearSub$))
+      .subscribe((fragment: string | null) => {
+        this.fragment = fragment ?? '';
+      });
+  }
 
   /**
    * This will execute each time after every view is loaded
    * Only need one correct view to load then stop trying to scroll
    * Catch any invalid views.
    */
-  // ngAfterViewChecked(): void {
-  // if (!this.scrolled) {
-  //   try {
-  //     document.querySelector('#' + this.fragment)?.scrollIntoView();
-  //     this.scrolled = true;
-  //   } catch (e) {
-  //     // Ignore any invalid tries
-  //   }
-  // }
-  // }
+  ngAfterViewChecked(): void {
+    if (!this.scrolled) {
+      this.scrollIntoView();
+    }
+  }
 
   ngOnDestroy(): void {
     this.clearSub$.next();
     this.clearSub$.complete();
+  }
+
+  private scrollIntoView(): void {
+    try {
+      document.querySelector('#' + this.fragment)?.scrollIntoView();
+      this.scrolled = true;
+    } catch (e) {
+      // Ignore any invalid tries
+    }
   }
 
   /** Service worker auto refresh the page if new version available */
