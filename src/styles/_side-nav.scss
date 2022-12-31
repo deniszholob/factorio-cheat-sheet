@@ -10,7 +10,6 @@
   right: 0;
   background-color: $c-pallette-transp-heavy; // Transp Black
   border: 1px solid $c-pallette-transp-medium;
-  margin-right: -2px; // Account for 2px border of the side-nav when open
   display: flex;
   flex-direction: column;
   transition: 0.35s; // 0.35 second transition effect to slide in the side-nav

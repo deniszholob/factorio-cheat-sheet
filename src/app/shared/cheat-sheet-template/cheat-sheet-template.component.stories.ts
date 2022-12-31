@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
+import { SheetCollapseToggleService } from 'app/services';
 import { FactorioIconIds } from '../factorio-icon/factorio-icon.model';
 import {
   CheatSheetTemplateComponent,
@@ -20,7 +21,7 @@ const meta: Meta<ComponentWithCustomControls> = {
     moduleMetadata({
       imports: [CommonModule, CheatSheetTemplateModule],
       // declarations: [],
-      // providers: [],
+      providers: [SheetCollapseToggleService],
     }),
   ],
   argTypes: {

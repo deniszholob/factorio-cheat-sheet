@@ -14,7 +14,6 @@ const tooltip_Copied = 'BP String Copied';
 @Component({
   selector: 'app-blueprint-clipboard',
   templateUrl: './blueprint-clipboard.component.html',
-  // styleUrls: ['./blueprint-clipboard.component.scss']
 })
 export class BlueprintClipboardComponent {
   @Input()
@@ -30,7 +29,7 @@ export class BlueprintClipboardComponent {
   public get url(): string {
     return this._url;
   }
-  private _url = '';
+  private _url: string = '';
 
   /** Tooltip for copying blueprint book */
   public tooltipMsg = tooltip_Default;
@@ -46,9 +45,8 @@ export class BlueprintClipboardComponent {
    * Get Blueprint string from the url
    * Populate the tooltip array with default string
    */
-  private async processBlueprint() {
+  private async processBlueprint(): Promise<void> {
     this.tooltipMsg = tooltip_Default;
-    const blueprintStreams = [];
     if (!this.url) {
       throw Error('Empty url');
     }

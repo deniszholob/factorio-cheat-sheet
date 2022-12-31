@@ -1,5 +1,5 @@
 // Angular Imports
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { FactorioIcon } from './factorio-icon.model';
 

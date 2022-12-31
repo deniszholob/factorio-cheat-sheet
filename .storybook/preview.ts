@@ -1,5 +1,7 @@
+import '@angular/localize/init';
 import { setCompodocJson } from '@storybook/addon-docs/angular';
 import { Parameters } from '@storybook/angular';
+import { themes } from '@storybook/theming';
 import docJson from '../documentation.json';
 
 setCompodocJson(docJson);
@@ -13,6 +15,6 @@ export const parameters: Parameters = {
       date: /Date$/,
     },
   },
-  docs: { inlineStories: true },
-  background: { default: 'light' },
+  docs: { inlineStories: true, theme: themes.dark },
+  background: { default: 'dark' },
 };

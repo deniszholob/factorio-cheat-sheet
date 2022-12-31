@@ -33,13 +33,27 @@
     "setup-jest.ts": true,
     "CNAME": true,
     "documentation.json": true,
-    "coverage": true
+    "coverage": true,
+    "src/*.{png,xml,ico,webmanifest,json,svg}": true,
+    "src/CNAME": true
   },
   "editor.renderWhitespace": "all",
   "editor.rulers": [80, 140],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "explorer.sortOrderLexicographicOptions": "lower", // Case sensitive file ordering in tree
   "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.activeIconPack": "angular_ngrx",
+  "material-icon-theme.folders.associations": {
+    "workflows": "github",
+    "cheat-sheets": "content",
+    "models": "mjml"
+  },
+  "material-icon-theme.files.associations": {
+    "*.data.ts": "database",
+    "*.model.ts": "mjml",
+    "model.ts": "mjml",
+    "index.ts": "url"
+  },
   "cSpell.words": [
     "Zuri's",
     "browserconfig",
