@@ -5,22 +5,23 @@
   // List of extensions which should be recommended for users of this workspace.
   "recommendations": [
     "abusaidm.html-snippets",
-    "AESSoft.aessoft-class-autocomplete",
-    "Angular.ng-template",
+    "aessoft.aessoft-class-autocomplete",
+    "angular.ng-template",
     "davidbabel.vscode-simpler-icons",
     "dbaeumer.vscode-eslint",
-    "EditorConfig.EditorConfig",
+    "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
     "formulahendry.auto-close-tag",
     "formulahendry.auto-rename-tag",
     "ghaschel.vscode-angular-html",
     "medzhidov.font-awesome-codes-html",
     "michelemelluso.code-beautifier",
-    "Mikael.Angular-BeastCode",
+    "mikael.angular-beastcode",
     "samverschueren.final-newline",
     "streetsidesoftware.code-spell-checker",
     "stylelint.vscode-stylelint",
-    "adrianwilczynski.toggle-hidden"
+    "adrianwilczynski.toggle-hidden",
+    "deniszholob.angular-files-generator"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
   "unwantedRecommendations": []

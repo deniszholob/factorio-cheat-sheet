@@ -1,3 +1,7 @@
+.input-group {
+  justify-content: space-around;
+}
+
 .input-group-addon {
   // Newer Bootstrap does addons differently, added this in from older version.
   padding: 0.375rem 0.75rem;
@@ -32,7 +36,8 @@
   }
 }
 
-.form-control {
+.form-control,
+.form-select {
   color: $c-pallette-text;
   background-color: $c-pallette-neutral;
   border-color: $c-pallette-transp-light;
@@ -43,12 +48,18 @@
     border-color: $c-pallette-accent;
     box-shadow: none;
   }
+
+  &:disabled,
+  &[readonly] {
+    background-color: $c-pallette-neutral;
+    color: $c-pallette-text-muted;
+  }
 }
 
-.form-control:disabled,
-.form-control[readonly] {
-  background-color: $c-pallette-neutral;
-  color: $c-pallette-text-muted;
+.form-select {
+  appearance: auto;
+  background-image: none;
+  padding-right: 5px;
 }
 
 .merged-input-group {

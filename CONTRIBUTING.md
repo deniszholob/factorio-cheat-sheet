@@ -4,9 +4,11 @@
 
 ## What you will need before you begin:
 
-1. Ensure NodeJS version 18.12.1 LTS is installed on your system.
-2. Clone the repository.
-3. Run `npm install` in the folder that you've just cloned to ensure you have all dependencies that are needed for development.
+1. Ensure [NodeJS](https://nodejs.org/) version 18.12.1 LTS or later is installed on your system.
+2. Install [VSCode](https://code.visualstudio.com/) v1.74 or later
+3. Clone the repository using git cli or ui like github desktop/sourcetree/gitkraken etc...
+4. Open the cloned folder using VSCode and install recommended extensions
+5. Run `npm run i` in the folder that you've just cloned to ensure you have all dependencies that are needed for development.
 
 ## Hidden Files in VSCode
 
@@ -16,12 +18,24 @@ There is a [recommended extension](.vscode/extensions.json) `adrianwilczynski.to
 
 ## Guide on making a new cheat-sheet:
 
-If you're making a new cheat-sheet; follow the belt-throughput example:
+If you're making a new cheat-sheet; follow the [cs-common-ratios](./src/app/cheat-sheets/game-base/cs-common-ratios/) example:
 
-- Make a new JSON data in `assets/data`.
-- Make a new component in `src/app/views/cheat-sheets` (Include the component in the `index.ts` and `app.module.ts` files).
-- Call the `DataService.getCheatSheetData` from `src/app/services/data.service` in the new component.
-- Use the `src/app/shared/cheat-sheet` template along with data in the component HTML file to customize the presentation.
+- In the [cheat-sheets](./src/app/cheat-sheets/) folder look for the category you want to add to/modify.
+- Use the `deniszholob.angular-files-generator` extension to generate a new `Module Component` in one of those categories
+- Add the newly generated component module to the corresponding category module imports
+- In the .component file add
+  ```ts
+  public readonly cheatSheetIconId: string = 'Repair_pack';
+  public readonly cheatSheetTitle: string = 'Title';
+  ```
+- In the .html file add the `<app-cheat-sheet-template [iconId]="cheatSheetIconId" [title]="cheatSheetTitle">Your Content Here</app-cheat-sheet-template>`
+
+## StoryBook
+
+You can reference any of the existing components in the storybook instance
+
+- Active storybook via `npm run storybook` command
+- You can then browse the list of components and use the docs to help you use them
 
 ## Steps to follow when your work is ready:
 

@@ -1,5 +1,5 @@
 // Angular Imports
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 // RXJX Observables
 import { Subscription } from 'rxjs';
@@ -8,8 +8,8 @@ import { Subscription } from 'rxjs';
 import { SheetCollapseToggleService } from 'app/services/sheet-collapse-toggle.service';
 
 // Models
-import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 import { Collapse } from 'app/services/collapse.model';
+import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 
 @Component({
   selector: 'app-cheat-sheet',

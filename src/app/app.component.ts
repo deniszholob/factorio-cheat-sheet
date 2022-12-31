@@ -19,10 +19,10 @@ import { filter, map, Subject, takeUntil } from 'rxjs';
   // styleUrls: ['./app.component.scss'] // Enable as needed
 })
 export class AppComponent implements OnDestroy, OnInit, AfterViewChecked {
+  private readonly clearSub$ = new Subject<void>();
+
   private fragment: string = '';
   private scrolled: boolean = false;
-
-  private clearSub$ = new Subject<void>();
 
   constructor(
     private route: ActivatedRoute,

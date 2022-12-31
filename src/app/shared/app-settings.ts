@@ -70,7 +70,7 @@ export const APP_SETTINGS: AppInfo = {
 };
 
 /** App level constants */
-interface AppInfo {
+export interface AppInfo {
   /** App link */
   app: Hyperlink;
   /** Author of this app */

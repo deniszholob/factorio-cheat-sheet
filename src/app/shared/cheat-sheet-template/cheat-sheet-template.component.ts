@@ -24,7 +24,7 @@ export class CheatSheetTemplateComponent implements OnDestroy {
   @Input()
   public set title(title: string) {
     this._title = title;
-    this.id = this.getIdFromTitle(title);
+    this.id = this.updateId();
   }
 
   public get title(): string {
@@ -34,7 +34,7 @@ export class CheatSheetTemplateComponent implements OnDestroy {
   public factorioIcon: FactorioIcon =
     this.dataService.getFactorioIcon(CHT_DEFAULT_ICON_ID);
 
-  public id: string = this.getIdFromTitle(this.title);
+  public id: string = this.updateId();
   public isCollapsed: boolean = this.defaultCollapsed();
 
   private clearSub$ = new Subject<void>();
@@ -79,7 +79,7 @@ export class CheatSheetTemplateComponent implements OnDestroy {
   }
 
   /** Convert string to lowercase dashed sting */
-  private getIdFromTitle(title: string): string {
-    return title.replace(/ /g, '-').toLocaleLowerCase();
+  private updateId(): string {
+    return this.title.replace(/ /g, '-').toLocaleLowerCase();
   }
 }
