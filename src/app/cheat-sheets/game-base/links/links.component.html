@@ -33,11 +33,8 @@
   <ul class="row">
     <li class="col-12 col-md-6 col-lg-4 col-xl-3 col" *ngFor="let link of sheetData?.creatorBlueprints">
       <a *ngIf="link.url" href="{{ link?.url }}" target="_blank" rel="noopener">{{ link?.text }}</a>
-      <span class="text-muted" *ngIf="link?.caption">
-        -
-        {{ link?.caption }}</span
-      >
       <span *ngIf="!link.url">{{ link?.text }}</span>
+      <small class="text-muted" *ngIf="link?.caption"> — {{ link?.caption }}</small>
     </li>
   </ul>
 </app-cheat-sheet>
@@ -46,11 +43,8 @@
   <ul>
     <li class="{{ link.url || link.links ? '' : 'd-none' }}" *ngFor="let link of links">
       <a *ngIf="link.url" href="{{ link?.url }}" target="_blank" rel="noopener">{{ link?.text }}</a>
-      <span class="text-muted" *ngIf="link?.caption">
-        -
-        {{ link?.caption }}</span
-      >
       <span *ngIf="!link.url">{{ link?.text }}</span>
+      <small class="text-muted" *ngIf="link?.caption"> — {{ link?.caption }}</small>
       <!-- Recurse down to nested links -->
       <ng-container
         *ngTemplateOutlet="

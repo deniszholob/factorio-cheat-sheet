@@ -1,17 +1,17 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { StorybookCsModule } from 'app/shared/storybook-cs.module';
 
-import { UtilityModsComponent } from './utility-mods.component';
-import { UtilityModsModule } from './utility-mods.module';
+import { PopularModsComponent } from './popular-mods.component';
+import { PopularModsModule } from './popular-mods.module';
 
-type ComponentWithCustomControls = UtilityModsComponent;
+type ComponentWithCustomControls = PopularModsComponent;
 
 const meta: Meta<ComponentWithCustomControls> = {
   title: 'Cheat Sheets/Game Mods/Utility Mods',
-  component: UtilityModsComponent,
+  component: PopularModsComponent,
   decorators: [
     moduleMetadata({
-      imports: [UtilityModsModule, StorybookCsModule],
+      imports: [PopularModsModule, StorybookCsModule],
     }),
   ],
   parameters: {

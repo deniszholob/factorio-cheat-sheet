@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CheatSheetTemplateModule } from 'app/shared/cheat-sheet-template/cheat-sheet-template.module';
 
-import { UtilityModsComponent } from './utility-mods.component';
+import { PopularModsComponent } from './popular-mods.component';
 
 @NgModule({
   imports: [CommonModule, CheatSheetTemplateModule, RouterModule],
-  declarations: [UtilityModsComponent],
-  exports: [UtilityModsComponent],
+  declarations: [PopularModsComponent],
+  exports: [PopularModsComponent],
 })
-export class UtilityModsModule {}
+export class PopularModsModule {}

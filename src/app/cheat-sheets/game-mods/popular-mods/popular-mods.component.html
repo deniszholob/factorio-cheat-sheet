@@ -10,6 +10,14 @@
     >
       Xorimuth
     </a>
+    ,
+    <a
+      href="https://discord.com/channels/139677590393716737/231518135231053825/1059509540263039026"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      OceanPhantom
+    </a>
     and
     <a
       href="https://discord.com/channels/139677590393716737/753031298368536577/769458458977632276"
@@ -23,20 +31,21 @@
 
   <div *ngFor="let modGroup of MOD_LIST">
     <br />
-    <h4 id="{{ modGroup.groupName }}">
+    <h4 id="{{ modGroup.name }}">
       -
-      <a [routerLink]="[]" fragment="{{ modGroup.groupName }}">
-        {{ modGroup.groupName }}
+      <a [routerLink]="[]" fragment="{{ modGroup.name }}">
+        {{ modGroup.name }}
       </a>
-      <small class="text-muted" *ngIf="modGroup.groupNote"> - {{ modGroup.groupNote }}</small>
+      <small class="text-muted" *ngIf="modGroup.note"> — {{ modGroup.note }}</small>
     </h4>
     <hr />
     <ul>
       <li *ngFor="let modSubGroup of modGroup.subGroups">
-        <h5 id="{{ modGroup.groupName }}_{{ modSubGroup.name }}">
-          <a [routerLink]="[]" fragment="{{ modGroup.groupName }}_{{ modSubGroup.name }}">
+        <h5 id="{{ modGroup.name }}_{{ modSubGroup.name }}">
+          <a [routerLink]="[]" fragment="{{ modGroup.name }}_{{ modSubGroup.name }}">
             {{ modSubGroup.name }}
           </a>
+          <small class="text-muted" *ngIf="modSubGroup.note"> — {{ modSubGroup.note }}</small>
         </h5>
         <ul>
           <li *ngFor="let mod of modSubGroup.mods">
@@ -46,7 +55,7 @@
             <ng-template #modName>
               <span>{{ mod }}</span>
             </ng-template>
-            <span class="text-muted" *ngIf="modSubGroup.notes && modSubGroup.notes[mod]"> - {{ modSubGroup.notes[mod] }}</span>
+            <small class="text-muted" *ngIf="modSubGroup.modNotes && modSubGroup.modNotes[mod]"> — {{ modSubGroup.modNotes[mod] }}</small>
           </li>
         </ul>
       </li>

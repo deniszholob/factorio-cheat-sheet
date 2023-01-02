@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { UtilityModsComponent } from './utility-mods.component';
-import { UtilityModsModule } from './utility-mods.module';
+import { PopularModsComponent } from './popular-mods.component';
+import { PopularModsModule } from './popular-mods.module';
 
 describe('UtilityModsComponent', () => {
-  let component: UtilityModsComponent;
-  let fixture: ComponentFixture<UtilityModsComponent>;
+  let component: PopularModsComponent;
+  let fixture: ComponentFixture<PopularModsComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [UtilityModsModule],
+      imports: [PopularModsModule],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UtilityModsComponent);
+    fixture = TestBed.createComponent(PopularModsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

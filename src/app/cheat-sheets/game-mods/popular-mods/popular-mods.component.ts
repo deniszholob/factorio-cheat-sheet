@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { ModGroup, MOD_LIST } from './utility-mods.data';
+import { ModGroup, MOD_LIST } from './popular-mods.data';
 
 @Component({
-  selector: 'app-utility-mods',
-  templateUrl: './utility-mods.component.html',
+  selector: 'app-popular-mods',
+  templateUrl: './popular-mods.component.html',
 })
-export class UtilityModsComponent {
+export class PopularModsComponent {
   public readonly iconId: string = 'Repair_pack';
-  public readonly title: string = 'Utility Mod List';
+  public readonly title: string = 'Popular Mod List';
   public readonly MOD_LIST: ModGroup[] = MOD_LIST;
 
   public getModSearchLink(modName: string): string | undefined {

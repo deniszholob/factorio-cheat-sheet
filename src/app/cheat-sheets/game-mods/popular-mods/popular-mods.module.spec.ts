@@ -1,16 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UtilityModsModule } from './utility-mods.module';
+import { PopularModsModule } from './popular-mods.module';
 
 describe('UtilityModsModule', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [UtilityModsModule],
+      imports: [PopularModsModule],
     });
   });
 
   it('initializes', () => {
-    const module: UtilityModsModule = TestBed.inject(UtilityModsModule);
+    const module: PopularModsModule = TestBed.inject(PopularModsModule);
     expect(module).toBeTruthy();
   });
 });

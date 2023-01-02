@@ -5,7 +5,7 @@ import { ROUTES_GAME_MODS } from './game-mods.routes';
 
 import { ContributeModule } from './contribute/contribute.module';
 import { GameModsComponent } from './game-mods.component';
-import { UtilityModsModule } from './utility-mods/utility-mods.module';
+import { PopularModsModule } from './popular-mods/popular-mods.module';
 
 @NgModule({
   imports: [
@@ -14,7 +14,7 @@ import { UtilityModsModule } from './utility-mods/utility-mods.module';
 
     // Sheets
     ContributeModule,
-    UtilityModsModule,
+    PopularModsModule,
   ],
   declarations: [GameModsComponent],
   exports: [GameModsComponent, RouterModule],
