@@ -1,0 +1,31 @@
+<app-cheat-sheet-template [iconId]="iconId" [title]="title">
+  <p class="lead">Wouldn't it be awesome to have cheat sheets for mods?</p>
+
+  Some of you thought so!
+  <br />
+  <ul>
+    <li *ngFor="let request of MOD_REQUESTS">
+      <a href="{{ request.link }}" target="_blank" rel="noopener noreferrer">{{ request.user }}</a>
+    </li>
+  </ul>
+
+  Unfortunately, I do not have much experience with these heavy overhaul mods, so I need your <strong>help</strong>.
+  <br />
+  The framework has been set up, all that is needed is more info!
+  <hr />
+
+  <p>Here are some different ways how you can contribute:</p>
+  <ul>
+    <li>
+      Submit a
+      <a href="https://github.com/deniszholob/factorio-cheat-sheet" target="_blank" rel="noopener noreferrer">pull request on github</a>
+    </li>
+    <li>
+      Create an
+      <a href="https://github.com/deniszholob/factorio-cheat-sheet/issues" target="_blank" rel="noopener noreferrer">"issue" on github</a>
+      to tell me what you want to see added!
+    </li>
+    <li>Contact me on <a href="https://discord.gg/PkyzXzz" target="_blank" rel="noopener noreferrer">Discord</a></li>
+    <li>Contact me on <a href="https://www.reddit.com/user/DDDGamer" target="_blank" rel="noopener noreferrer">Reddit</a></li>
+  </ul>
+</app-cheat-sheet-template>

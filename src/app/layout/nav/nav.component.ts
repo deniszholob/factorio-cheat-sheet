@@ -1,19 +1,23 @@
 // Angular Imports
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 // Services
 import { DataService } from 'app/services/data.service';
 import { SheetCollapseToggleService } from 'app/services/sheet-collapse-toggle.service';
+import { Subject, takeUntil } from 'rxjs';
 
 // Constants
-import { NAV_DATA } from './nav.data';
+import { navMatchFilter } from '../util';
+import { NAV_ANCHOR_TAGS } from './nav.data';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss'], // Enable as needed
 })
-export class NavComponent implements OnInit {
+export class NavComponent implements OnInit, OnDestroy {
+  private readonly clearSub$ = new Subject<void>();
   public isNavOpen: boolean = false;
   public sheetIds: string[] = [];
   private isUserOpen: boolean = false;
@@ -21,14 +25,25 @@ export class NavComponent implements OnInit {
 
   constructor(
     public dataService: DataService,
-    private sheetCollapseToggleService: SheetCollapseToggleService
-  ) {}
+    private sheetCollapseToggleService: SheetCollapseToggleService,
+    router: Router
+  ) {
+    navMatchFilter(router)
+      .pipe(takeUntil(this.clearSub$))
+      .subscribe((key) => {
+        this.sheetIds = NAV_ANCHOR_TAGS[key];
+      });
+  }
 
   /** Get Nav Data: sheet id's to anchor link to */
   ngOnInit() {
-    this.sheetIds = NAV_DATA;
     this.onResize();
     this.closeNav();
+  }
+
+  ngOnDestroy(): void {
+    this.clearSub$.next();
+    this.clearSub$.complete();
   }
 
   @HostListener('window:resize', ['$event'])
