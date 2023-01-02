@@ -15,7 +15,7 @@
     "i": "npm i",
     "start": "ng serve --port 9009",
     "start:prod": "http-server -p 8080 -c-1 public",
-    "build": "npm run lint && npm run build:prod",
+    "build": "npm run build:prod",
     "build:sh": "sh ./build/build.sh",
     "build:dev": "ng --configuration development",
     "build:prod": "ng build --configuration production",

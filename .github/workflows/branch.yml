@@ -39,6 +39,9 @@ jobs:
       - name: Install NPM Dependencies
         run: npm ci
 
+      - name: Check lint
+        run: npm run lint
+
       - name: Build
         run: sh ./build/build.sh # Generates the public folder with built angular app
 
