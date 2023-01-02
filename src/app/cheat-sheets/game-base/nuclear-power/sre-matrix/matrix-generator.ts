@@ -1,5 +1,5 @@
 export type ValueOrArray<T> = T | Array<ValueOrArray<T>>;
-type NumberArray = ValueOrArray<number>;
+type NumberOrArray = ValueOrArray<number>;
 
 export function createSREMatrix(m: number, n?: number): number[][] {
   n = n || m;
@@ -37,20 +37,18 @@ export function createSREMatrix(m: number, n?: number): number[][] {
   return matrix;
 }
 
-export function sumMatrix(matrix: ValueOrArray<number> = 0): number {
+export function sumMatrix(matrix: NumberOrArray = 0): number {
   if (!Array.isArray(matrix)) {
     return matrix;
   }
 
   return matrix
-    .map((v: ValueOrArray<number>): number =>
-      Array.isArray(v) ? sumMatrix(v) : v
-    )
+    .map((v: NumberOrArray): number => (Array.isArray(v) ? sumMatrix(v) : v))
     .reduce((total: number, row: number): number => total + row, 0);
 }
 
 export function buildSREFormula(
-  matrix: ValueOrArray<number>,
+  matrix: NumberOrArray,
   formula: string = ''
 ): string {
   if (!matrix) {

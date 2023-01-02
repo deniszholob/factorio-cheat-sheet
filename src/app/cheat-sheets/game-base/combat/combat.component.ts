@@ -5,7 +5,6 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'app/services/data.service';
 
 // Models
-import { Data } from 'app/services/data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 
 // Constants
