@@ -1,0 +1,55 @@
+<app-cheat-sheet-template [iconId]="iconId" [title]="title">
+  <p class="lead"><a href="https://mods.factorio.com/" target="_blank" rel="noopener noreferrer">Factorio Mod Portal</a></p>
+
+  <p>
+    Here is a list of some popular mods to use courtesy of
+    <a
+      href="https://discord.com/channels/139677590393716737/231518135231053825/1021919222609219614"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Xorimuth
+    </a>
+    and
+    <a
+      href="https://discord.com/channels/139677590393716737/753031298368536577/769458458977632276"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      IronCartographer
+    </a>
+    .
+  </p>
+
+  <div *ngFor="let modGroup of MOD_LIST">
+    <br />
+    <h4 id="{{ modGroup.groupName }}">
+      -
+      <a [routerLink]="[]" fragment="{{ modGroup.groupName }}">
+        {{ modGroup.groupName }}
+      </a>
+      <small class="text-muted" *ngIf="modGroup.groupNote"> - {{ modGroup.groupNote }}</small>
+    </h4>
+    <hr />
+    <ul>
+      <li *ngFor="let modSubGroup of modGroup.subGroups">
+        <h5 id="{{ modGroup.groupName }}_{{ modSubGroup.name }}">
+          <a [routerLink]="[]" fragment="{{ modGroup.groupName }}_{{ modSubGroup.name }}">
+            {{ modSubGroup.name }}
+          </a>
+        </h5>
+        <ul>
+          <li *ngFor="let mod of modSubGroup.mods">
+            <ng-container *ngIf="getModSearchLink(mod) as link; else modName">
+              <a href="{{ link }}" target="_blank" rel="noopener noreferrer">{{ mod }}</a>
+            </ng-container>
+            <ng-template #modName>
+              <span>{{ mod }}</span>
+            </ng-template>
+            <span class="text-muted" *ngIf="modSubGroup.notes && modSubGroup.notes[mod]"> - {{ modSubGroup.notes[mod] }}</span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</app-cheat-sheet-template>
