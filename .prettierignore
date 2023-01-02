@@ -3,3 +3,9 @@ build
 coverage
 
 *.mdx
+
+# Misc
+/DEV
+/node_modules
+package-lock.json
+/.angular

@@ -14,7 +14,7 @@ import { LayoutModule } from './layout/layout.module';
 import { AdSenseModule } from './shared/ad-sense/ad-sense.module';
 
 const ROUTER_OPTIONS: ExtraOptions = {
-  anchorScrolling: 'enabled', // Doesn't work with href="#something" but rather with [routerLink]="['./']" [fragment]="something"
+  anchorScrolling: 'enabled', // Doesn't work with href="#something" but rather with [routerLink]="[]" [fragment]="something"
   scrollPositionRestoration: 'enabled', // Works with anchorScrolling only
   // useHash: true,
 };

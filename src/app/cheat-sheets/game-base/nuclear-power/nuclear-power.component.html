@@ -13,7 +13,7 @@
     </p>
 
     <p class="col-12 col-sm-4 text-center">
-      <span class="text-muted">Common Build Ratio <a href="#note_build_ratios">^</a></span
+      <span class="text-muted">Common Build Ratio <a [routerLink]="[]" fragment="note_build_ratios">^</a></span
       ><br />
       <ng-container *ngFor="let item of sheetData?.commonRatio">
         <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
@@ -26,7 +26,7 @@
     </p>
 
     <p class="col-12 col-sm-4 text-center">
-      <span class="text-muted">Pump Ratio <a href="#note_build_ratios">^</a></span
+      <span class="text-muted">Pump Ratio <a [routerLink]="[]" fragment="note_build_ratios">^</a></span
       ><br />
       <ng-container *ngFor="let item of sheetData?.pumpRatio">
         <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
@@ -41,7 +41,7 @@
 
   <p class="text-muted text-center" id="note_build_ratios">
     <strong>^Note:</strong> Pumps, Steam Turbines and Power are approximate for easier build ratios. See
-    <a href="#nuclear-table">table below</a>
+    <a [routerLink]="[]" fragment="nuclear-table">table below</a>
     for precise numbers.
   </p>
 
@@ -131,7 +131,10 @@
   <hr />
   <div class="row">
     <div class="col-12 col-md-5 text-center">
-      <p><strong>Most efficient setup</strong><a href="#note_nuclear_effficient_setup">**</a>: a series of repeating 2x1 reactors</p>
+      <p>
+        <strong>Most efficient setup</strong><a [routerLink]="[]" fragment="note_nuclear_effficient_setup">**</a>: a series of repeating 2x1
+        reactors
+      </p>
       <img
         class="img-fluid rounded"
         src="{{ APP_SETTINGS.links.getLocalImagePath('nuclear-config-h.webp') }}"

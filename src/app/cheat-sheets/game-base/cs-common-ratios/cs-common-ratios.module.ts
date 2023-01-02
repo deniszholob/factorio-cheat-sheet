@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { CsCommonRatiosComponent } from './cs-common-ratios.component';
 import { CheatSheetTemplateModule } from 'app/shared/cheat-sheet-template/cheat-sheet-template.module';
 import { FactorioIconModule, RatioModule } from 'app/shared';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
     CheatSheetTemplateModule,
     RatioModule,
     FactorioIconModule,
