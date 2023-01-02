@@ -73,7 +73,7 @@
         >
           Moduled
         </a>
-        Cracking Ratio <a href="#note_oil_ratio">*</a>
+        Cracking Ratio <a [routerLink]="[]" fragment="note_oil_ratio">*</a>
       </span>
       <br />
 
@@ -112,7 +112,7 @@
       ~106 refineries
     </a>
     + respective cracking from 1 pipeline at
-    <a href="#fluid-flow-and-pipe-length">1200 oil/s</a>.
+    <a [routerLink]="[]" fragment="fluid-flow-and-pipe-length">1200 oil/s</a>.
     <br />
     You can supply
     <a
@@ -123,7 +123,7 @@
       ~23 moduled refineries
     </a>
     + respective cracking from 1 pipeline at
-    <a href="#fluid-flow-and-pipe-length">1200 oil/s</a>.
+    <a [routerLink]="[]" fragment="fluid-flow-and-pipe-length">1200 oil/s</a>.
   </p>
 
   <div class="row align-items-center">
@@ -262,7 +262,7 @@
         <a href="https://docs.google.com/spreadsheets/d/1Y6oL3Fl4P76_GAp6oNYDv9dXtjDKBE7xiUCtktTgFgY/" target="_blank" rel="noopener"
           >Moduled</a
         >
-        Cracking Ratio<a href="#note_oil_ratio">*</a> </span
+        Cracking Ratio<a [routerLink]="[]" fragment="note_oil_ratio">*</a> </span
       ><br />
       <app-icon-ratio-composite
         *ngFor="let item of sheetData?.moduledLiquefactionCrackingRatio"

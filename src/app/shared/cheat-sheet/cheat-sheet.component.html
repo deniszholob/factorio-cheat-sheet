@@ -1,6 +1,6 @@
 <div class="card cheat-sheet" id="{{ cheatSheet?.id }}">
   <div class="card-header" (click)="cheatSheet?.toggleCollapse()">
-    <a href="#{{ cheatSheet?.id }}">
+    <a [routerLink]="[]" fragment="{{ cheatSheet?.id }}">
       <app-factorio-icon [icon]="cheatSheet?.icon"></app-factorio-icon>
       <h3 class="card-title">
         {{ cheatSheet?.title }}

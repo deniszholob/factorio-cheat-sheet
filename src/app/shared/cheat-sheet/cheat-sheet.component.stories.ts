@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
+import { RouterTestingModule } from '@angular/router/testing';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 import { DataService, SheetCollapseToggleService } from 'app/services';
-import { AdSenseComponent } from '../ad-sense/ad-sense.component';
 import { AdSenseModule } from '../ad-sense/ad-sense.module';
 import { FactorioIconComponent } from '../factorio-icon/factorio-icon.component';
 import {
@@ -23,7 +23,12 @@ const meta: Meta<ComponentWithCustomControls> = {
   component: CheatSheetComponent,
   decorators: [
     moduleMetadata({
-      imports: [CommonModule, AdSenseModule, NgbCollapseModule],
+      imports: [
+        CommonModule,
+        AdSenseModule,
+        NgbCollapseModule,
+        RouterTestingModule,
+      ],
       declarations: [FactorioIconComponent],
       providers: [SheetCollapseToggleService],
     }),
