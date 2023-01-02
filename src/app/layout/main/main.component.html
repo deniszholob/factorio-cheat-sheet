@@ -2,9 +2,19 @@
   <div class="cheat-sheet-pages-title d-none-print">
     <div class="d-flex justify-content-between">
       <h2 class="d-inline-block" id="cheat-sheets">Cheat Sheets</h2>
+
+      <div class="input-group fixed-width width-auto m-0">
+        <span class="input-group-addon">Category</span>
+        <select class="form-select" [(ngModel)]="categorySelection" (ngModelChange)="updateCategory()" type="number">
+          <option *ngFor="let category of CHEAT_SHEET_CATEGORIES | keyvalue" [ngValue]="category.key">
+            {{ category.value }}
+          </option>
+        </select>
+      </div>
     </div>
+
     <hr />
   </div>
 
-  <app-game-base></app-game-base>
+  <router-outlet></router-outlet>
 </div>

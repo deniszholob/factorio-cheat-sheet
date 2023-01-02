@@ -1,4 +1,6 @@
-export const NAV_DATA: string[] = [
+import { CheatSheetCategory } from 'app/cheat-sheets/cheat-sheets.module';
+
+export const NAV_BASE: string[] = [
   'common-ratios',
   'belts',
   'balancers',
@@ -19,3 +21,9 @@ export const NAV_DATA: string[] = [
   'tips',
   'links',
 ];
+export const NAV_MODS: string[] = ['factorio-mods'];
+
+export const NAV_ANCHOR_TAGS: Record<CheatSheetCategory, string[]> = {
+  base: NAV_BASE,
+  mods: NAV_MODS,
+};

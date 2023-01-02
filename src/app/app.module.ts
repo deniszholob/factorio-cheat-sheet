@@ -10,16 +10,12 @@ import * as Services from 'app/services';
 
 // Components
 import { AppComponent } from 'app/app.component';
-import * as ViewComponents from 'app/layout';
-import { FactorioIconModule, RatioModule } from 'app/shared';
-import { MainModule } from './layout/main/main.module';
-import { AdSenseModule } from './shared/ad-sense/ad-sense.module';
-import { CheatSheetModule } from './shared/cheat-sheet/cheat-sheet.module';
 import { LayoutModule } from './layout/layout.module';
+import { AdSenseModule } from './shared/ad-sense/ad-sense.module';
 
 const ROUTER_OPTIONS: ExtraOptions = {
-  // anchorScrolling: 'enabled', // Doesn't work with href="#something" but rather with [routerLink]="['./']" [fragment]="something"
-  // scrollPositionRestoration: 'enabled', // Works with anchorScrolling only
+  anchorScrolling: 'enabled', // Doesn't work with href="#something" but rather with [routerLink]="['./']" [fragment]="something"
+  scrollPositionRestoration: 'enabled', // Works with anchorScrolling only
   // useHash: true,
 };
 @NgModule({
@@ -36,17 +32,11 @@ const ROUTER_OPTIONS: ExtraOptions = {
       // registrationStrategy: 'registerWhenStable:30000' // Default, so commenting out
     }),
 
-    // Local - Shared
-    AdSenseModule,
-    FactorioIconModule,
-    RatioModule,
-    CheatSheetModule,
-    // Local - Layouts
+    // Local
     LayoutModule,
+    AdSenseModule,
   ],
-  // Components
   declarations: [AppComponent],
-  // Services
   providers: [Services.DataService, Services.SheetCollapseToggleService],
   bootstrap: [AppComponent],
 })

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { BalancersModule } from './balancers/balancers.module';
 import { BasicPowerModule } from './basic-power/basic-power.module';
@@ -8,6 +9,7 @@ import { CargoWagonTransferModule } from './cargo-wagon-transfer/cargo-wagon-tra
 import { CsCommonRatiosModule } from './cs-common-ratios/cs-common-ratios.module';
 import { FluidWagonTransferModule } from './fluid-wagon-transfer/fluid-wagon-transfer.module';
 import { GameBaseComponent } from './game-base.component';
+import { ROUTES_GAME_BASE } from './game-base.routes';
 import { InserterCapacityBonusModule } from './inserter-capacity-bonus/inserter-capacity-bonus.module';
 import { InserterThroughputModule } from './inserter-throughput/inserter-throughput.module';
 import { LinksModule } from './links/links.module';
@@ -25,6 +27,7 @@ import { VehicleFuelBonusModule } from './vehicle-fuel-bonus/vehicle-fuel-bonus.
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule.forChild(ROUTES_GAME_BASE),
 
     // Sheets
     BalancersModule,
