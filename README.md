@@ -9,7 +9,9 @@ If you would like to contribute to the cheat sheet code/content, see `contributi
 ## Deployments [![Build Status](https://github.com/deniszholob/factorio-cheat-sheet/actions/workflows/main.yml/badge.svg)](https://github.com/deniszholob/factorio-cheat-sheet/actions/workflows/main.yml)
 
 - [Master Deployment](https://factoriocheatsheet.com/)
-- Master branch is for the source code that's hosted [here](https://deniszholob.github.io/factorio-cheat-sheet/).
+- Master branch is for the source code that's hosted on
+  - [GhPages](https://deniszholob.github.io/factorio-cheat-sheet/)
+  - [Firebase](https://factorio-cheat-sheet.web.app//)
 
 This cheat sheet would not be possible without the Factorio community, big thanks to everyone on Reddit, previous cheat sheets, and the Wiki, which all of the data used here is based on.
 For anyone who is doing development work with Angular, I hope this project helps you out with the code structure and whatnot.
