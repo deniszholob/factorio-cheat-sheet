@@ -38,9 +38,8 @@
     "jest.setup.ts": true,
     "CNAME": true,
     "coverage": true,
-    "src/*.{png,xml,ico,webmanifest,json,svg}": true,
-    "src/CNAME": true,
-    "src/ads.txt": true
+    "src/*.{png,xml,ico,webmanifest,json,svg,txt}": true,
+    "src/CNAME": true
   },
   "editor.renderWhitespace": "all",
   "editor.rulers": [80, 140],

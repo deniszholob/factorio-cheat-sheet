@@ -16,9 +16,9 @@ Some files are hidden in vscode by default, see the `files.exclude` option in th
 
 There is a [recommended extension](.vscode/extensions.json) `adrianwilczynski.toggle-hidden` that allows to easily toggle hidden files on and off
 
-## Guide on making a new cheat-sheet:
+## Guide on making new cheat sheets:
 
-If you're making a new cheat-sheet; follow the [cs-common-ratios](./src/app/cheat-sheets/game-base/cs-common-ratios/) example:
+### If you're making a new cheat-sheet; follow the [cs-common-ratios](./src/app/cheat-sheets/game-base/cs-common-ratios/) example:
 
 - In the [cheat-sheets](./src/app/cheat-sheets/) folder look for the category you want to add to/modify.
 - Use the `deniszholob.angular-files-generator` extension to generate a new `Module Component` in one of those categories
@@ -30,7 +30,16 @@ If you're making a new cheat-sheet; follow the [cs-common-ratios](./src/app/chea
   ```
 - In the .html file add the `<app-cheat-sheet-template [iconId]="cheatSheetIconId" [title]="cheatSheetTitle">Your Content Here</app-cheat-sheet-template>`
 
-## StoryBook
+### If you're making a new cheat sheet category (mods, expansions, etc)
+
+- In the [cheat-sheets](./src/app/cheat-sheets/) folder add a new category folder using the `deniszholob.angular-files-generator` extension to generate a new `Module Component`
+- Follow the other category examples to create new routes, update the html etc..
+- Update the [cheat-sheets.module](./src/app/cheat-sheets/cheat-sheets.module.ts)
+- Update the [dav.data](./src/app/layout/nav/nav.data.ts)
+- Add new route to the [sitemap.xml](./src/sitemap.xml)
+- Add cheat sheets as needed following the guide above
+
+## Storybook
 
 You can reference any of the existing components in the storybook instance
 

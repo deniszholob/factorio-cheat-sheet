@@ -29,7 +29,9 @@
               "src/safari-pinned-tab.svg",
               "src/manifest.webmanifest",
               "src/CNAME",
-              "src/ads.txt"
+              "src/ads.txt",
+              "src/sitemap.xml",
+              "src/robots.txt"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
