@@ -18,7 +18,7 @@
     "build": "npm run build:prod",
     "build:sh": "sh ./build/build.sh",
     "build:dev": "ng --configuration development",
-    "build:prod": "ng build --configuration production --base-href=/factorio-cheat-sheet/",
+    "build:prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "echo 'No tests'",
     "lint": "ng lint",

@@ -28,7 +28,8 @@
               "src/mstile-150x150.png",
               "src/safari-pinned-tab.svg",
               "src/manifest.webmanifest",
-              "src/CNAME"
+              "src/CNAME",
+              "src/ads.txt"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
