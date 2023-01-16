@@ -6,8 +6,8 @@ import { DataService } from 'app/services/data.service';
 
 // Models
 import { Data } from 'app/models/Data.model';
-import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 import { NuclearPowerData } from 'app/models/NuclearPowerData.model';
+import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 
 // Constants
 import { APP_SETTINGS } from 'app/shared/app-settings';
