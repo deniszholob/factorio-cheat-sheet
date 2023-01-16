@@ -83,7 +83,17 @@
 
   <div class="row align-items-center">
     <div class="col-12 col-md-9">
-      <p class="text-left">You will need 1 centrifuge to produce U-235 to make fuel for 1 Reactor continuously.</p>
+      <p class="text-left">
+        <a
+          class="text-center"
+          href="https://factoriolab.github.io/list?z=eJxTK3SJ0DKMd3bUMtAzMFMr1tJyyq9zSatzSa9zyahzyaxzyapzya5zyVErMwUAINwN.A__&v=5"
+          target="_blank"
+          rel="noopener noreferrer"
+          >You will need
+        </a>
+        1 centrifuge to produce U-235 to make fuel for 1 Reactor continuously.<br />
+        3 uranium ore miners will sustain production.
+      </p>
       <p>
         It takes 1 U-235 and 19 U-238 to create 10
         <a href="https://wiki.factorio.com/Uranium_fuel_cell" target="_blank" rel="noopener">fuel cells</a>, but you can reprocess 10 used
@@ -93,8 +103,17 @@
 
     <div class="col-12 col-md-3">
       <p class="text-center">
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Centrifuge', 1)"></app-factorio-icon>
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Nuclear_reactor', 1)"></app-factorio-icon>
+        <a
+          class="text-center"
+          href="https://factoriolab.github.io/list?z=eJxTK3SJ0DKMd3bUMtAzMFMr1tJyyq9zSatzSa9zyahzyaxzyapzya5zyVErMwUAINwN.A__&v=5"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Nuclear_reactor', 1)"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Centrifuge', 1)"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Electric_mining_drill', 3)"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Chemical_plant', 0.1)"></app-factorio-icon>
+        </a>
       </p>
       <p class="text-center">
         <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium_fuel_cell', 10)"></app-factorio-icon>
