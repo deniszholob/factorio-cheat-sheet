@@ -1,14 +1,15 @@
 // Angular Imports
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 
 // Services
 import { DataService } from 'app/services/data.service';
 import { SheetCollapseToggleService } from 'app/services/sheet-collapse-toggle.service';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject } from 'rxjs';
+// import { Subject, takeUntil } from 'rxjs';
 
 // Constants
-import { navMatchFilter } from '../util';
+// import { navMatchFilter } from '../util';
 import { NAV_ANCHOR_TAGS } from './nav.data';
 
 @Component({
@@ -25,14 +26,18 @@ export class NavComponent implements OnInit, OnDestroy {
 
   constructor(
     public dataService: DataService,
-    private sheetCollapseToggleService: SheetCollapseToggleService,
-    router: Router
-  ) {
-    navMatchFilter(router)
-      .pipe(takeUntil(this.clearSub$))
-      .subscribe((key) => {
-        this.sheetIds = NAV_ANCHOR_TAGS[key];
-      });
+    private sheetCollapseToggleService: SheetCollapseToggleService
+  ) // router: Router
+  {
+    // Uncomment if using mods pages
+    // navMatchFilter(router)
+    //   .pipe(takeUntil(this.clearSub$))
+    //   .subscribe((key) => {
+    //     console.log(key)
+    //     this.sheetIds = NAV_ANCHOR_TAGS[key];
+    //   });
+
+    this.sheetIds = NAV_ANCHOR_TAGS.base;
   }
 
   /** Get Nav Data: sheet id's to anchor link to */
@@ -81,7 +86,7 @@ export class NavComponent implements OnInit, OnDestroy {
     this.isUserOpen = this.isNavOpen;
   }
 
-  sheetName(id: string) {
+  public sheetName(id: string) {
     return this.dataService.toTitleCase(id.replace(/-/g, ' '));
   }
 

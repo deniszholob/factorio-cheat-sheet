@@ -24,8 +24,7 @@ const ROUTER_OPTIONS: ExtraOptions = {
     // Angular
     BrowserModule,
     RouterModule.forRoot(
-      // Github pages building with --base-href=/factorio-cheat-sheet/" to correct for google's page indexing confusion
-      [{ path: 'factorio-cheat-sheet', redirectTo: '' }],
+      [{ path: '**', redirectTo: '' }], // Remove if adding back Mods pages
       ROUTER_OPTIONS
     ),
     ServiceWorkerModule.register('ngsw-worker.js', {

@@ -25,5 +25,5 @@ export const NAV_MODS: string[] = ['contribute', 'popular-mod-list'];
 
 export const NAV_ANCHOR_TAGS: Record<CheatSheetCategory, string[]> = {
   base: NAV_BASE,
-  mods: NAV_MODS,
+  // mods: NAV_MODS,
 };
