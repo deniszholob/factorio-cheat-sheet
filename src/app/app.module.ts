@@ -23,7 +23,11 @@ const ROUTER_OPTIONS: ExtraOptions = {
   imports: [
     // Angular
     BrowserModule,
-    RouterModule.forRoot([], ROUTER_OPTIONS),
+    RouterModule.forRoot(
+      // Github pages building with --base-href=/factorio-cheat-sheet/" to correct for google's page indexing confusion
+      [{ path: 'factorio-cheat-sheet', redirectTo: '' }],
+      ROUTER_OPTIONS
+    ),
     ServiceWorkerModule.register('ngsw-worker.js', {
       // enabled: !isDevMode(), // Generated my ng add @angular/pwa Should use this or environment.production ???  Note: import { NgModule, isDevMode } from '@angular/core';
       enabled: environment.production,

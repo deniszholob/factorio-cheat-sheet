@@ -34,7 +34,7 @@ export class ProductivityModulePayoffsComponent implements OnInit {
     'product',
     'payoff_speed_prod',
     'payoff_prod',
-    'payoff_beacon_8x8',
+    'payoff_beacon_4x4',
     'payoff_beacon_12',
   ];
 
