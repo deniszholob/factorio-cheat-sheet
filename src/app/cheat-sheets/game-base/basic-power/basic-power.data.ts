@@ -21,6 +21,10 @@ export const BASIC_POWER_DATA: RawData<BasicPowerData> = {
         iconId: 'Steam_engine',
         count: 40,
       },
+      {
+        iconId: 'Electric_mining_drill',
+        count: 18,
+      },
     ],
     solarRatioPower: '1MW',
     solarRatio: [
