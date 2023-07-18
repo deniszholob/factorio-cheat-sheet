@@ -24,28 +24,28 @@ export const MATERIAL_PROCESSING_DATA: RawData<MaterialProcessingData> = {
     beltEmpty: [
       {
         processor: ['Stone_furnace'],
-        material: ['Copper_ore', 'Iron_ore', 'Iron_plate'],
+        material: ['Copper_ore', 'Iron_ore', 'Stone'],
         beltYellow: 48,
         beltRed: 96,
         beltBlue: 144,
       },
       {
         processor: ['Steel_furnace', 'Electric_furnace'],
-        material: ['Copper_ore', 'Iron_ore', 'Iron_plate'],
+        material: ['Copper_ore', 'Iron_ore', 'Stone'],
         beltYellow: 24,
         beltRed: 48,
         beltBlue: 72,
       },
       {
         processor: ['Stone_furnace'],
-        material: ['Stone'],
+        material: ['Iron_plate'],
         beltYellow: 24,
         beltRed: 48,
         beltBlue: 72,
       },
       {
         processor: ['Steel_furnace', 'Electric_furnace'],
-        material: ['Stone'],
+        material: ['Iron_plate'],
         beltYellow: 12,
         beltRed: 24,
         beltBlue: 36,
