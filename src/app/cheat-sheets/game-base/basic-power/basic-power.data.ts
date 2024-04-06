@@ -40,7 +40,6 @@ export const BASIC_POWER_DATA: RawData<BasicPowerData> = {
     offshore_pump_water: 1200,
     steam_boiler_fluid: 60,
     steam_boiler_energy: '1.8MJ',
-    steam_boiler_power: '1.8MW',
     steam_engine_fluid: 30,
     steam_engine_power: '0.9MW',
     solar_energy_max: 60,
