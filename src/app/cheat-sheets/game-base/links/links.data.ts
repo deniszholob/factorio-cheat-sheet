@@ -131,6 +131,11 @@ export const LINKS_DATA: RawData<LinksData> = {
             text: 'Factorio Olympics',
             caption: 'Multiplayer Competitions',
           },
+          {
+            url: 'https://m45sci.xyz/',
+            text: 'M45',
+            caption: 'Multiplayer community with weekly and monthly map resets.',
+          },
         ],
       },
     ],
@@ -145,10 +150,6 @@ export const LINKS_DATA: RawData<LinksData> = {
           {
             url: 'http://doomeer.com/factorio',
             text: "Doomer's Calc",
-          },
-          {
-            url: 'http://barrykun.com/factorio/calc/',
-            text: 'Barrykin’s Cost Calc',
           },
           {
             url: 'https://deniszholob.github.io/factorio-machine-ratio-calc/',
@@ -246,11 +247,6 @@ export const LINKS_DATA: RawData<LinksData> = {
         url: 'https://pastebin.com/u/rain9441',
       },
       {
-        text: 'Xterminator',
-        url: 'http://xtvideos.net/factorio/blueprint/',
-        caption: '(Late Game Builds)',
-      },
-      {
         text: 'Teoxoy',
         url: 'https://steamcommunity.com/sharedfiles/filedetails/?id=1177804260',
         caption: '(Late Game Belt Builds)',
@@ -262,10 +258,6 @@ export const LINKS_DATA: RawData<LinksData> = {
       {
         text: 'Katherine of Sky',
         url: 'https://drive.google.com/drive/folders/0BwVHGs2mds_XRUVCekwxYnNldnc',
-      },
-      {
-        text: 'Mike C',
-        url: 'https://drive.google.com/drive/folders/0B5pW1qe69Ec2U1dXY0FVS3E4NzA',
       },
       {
         text: 'Nilaus',
