@@ -4,7 +4,6 @@
 
   // List of extensions which should be recommended for users of this workspace.
   "recommendations": [
-    "abusaidm.html-snippets",
     "aessoft.aessoft-class-autocomplete",
     "angular.ng-template",
     "davidbabel.vscode-simpler-icons",
