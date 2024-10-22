@@ -1,7 +1,7 @@
 // === App level constants === //
 
 /** Contains constants for the app */
-export const APP_SETTINGS: AppInfo = {
+export const APP_INFO: AppInfo = {
   app: {
     name: 'factoriocheatsheet.com',
     url: 'https://factoriocheatsheet.com',

@@ -8,7 +8,7 @@ import { DataService } from 'app/services/data.service';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 
 // Constants
-import { APP_SETTINGS } from 'app/shared/app-settings';
+import { APP_INFO } from 'app/shared/app-settings';
 const cheatSheet = {
   title: 'Combat',
   icon: 'Artillery_turret',
@@ -22,7 +22,7 @@ const cheatSheet = {
 export class CombatComponent implements OnInit {
   public cheatSheet?: CheatSheet;
 
-  APP_SETTINGS = APP_SETTINGS;
+  APP_INFO = APP_INFO;
 
   constructor(public dataService: DataService) {}
 

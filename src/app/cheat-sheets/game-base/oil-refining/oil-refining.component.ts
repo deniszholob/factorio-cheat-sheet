@@ -10,7 +10,7 @@ import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 import { OilRefiningData } from 'app/models/OilRefiningData.model';
 
 // Constants
-import { APP_SETTINGS } from 'app/shared/app-settings';
+import { APP_INFO } from 'app/shared/app-settings';
 import { OIL_REFINING_DATA } from './oil-refining.data';
 
 @Component({
@@ -22,7 +22,7 @@ export class OilRefiningComponent implements OnInit {
   cheatSheet?: CheatSheet;
   sheetData?: OilRefiningData;
 
-  APP_SETTINGS = APP_SETTINGS;
+  APP_INFO = APP_INFO;
 
   constructor(public dataService: DataService) {}
 

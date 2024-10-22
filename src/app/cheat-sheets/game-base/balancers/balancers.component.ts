@@ -10,7 +10,7 @@ import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 import { BalancerData } from 'app/models/BalancersData.model';
 
 // Constants
-import { APP_SETTINGS } from 'app/shared/app-settings';
+import { APP_INFO } from 'app/shared/app-settings';
 import { BALANCERS_DATA } from './balancers.data';
 
 @Component({
@@ -21,7 +21,7 @@ import { BALANCERS_DATA } from './balancers.data';
 export class BalancersComponent implements OnInit {
   public cheatSheet?: CheatSheet;
   public sheetData?: BalancerData;
-  public APP_SETTINGS = APP_SETTINGS;
+  public APP_INFO = APP_INFO;
 
   constructor(private dataService: DataService) {}
 

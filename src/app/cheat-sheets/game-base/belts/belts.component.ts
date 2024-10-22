@@ -9,7 +9,7 @@ import { Data } from 'app/models/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 
 // Constants
-import { APP_SETTINGS } from 'app/shared/app-settings';
+import { APP_INFO } from 'app/shared/app-settings';
 import { BELTS_DATA } from './belts.data';
 import { BeltsData } from 'app/models/BeltsData.model';
 
@@ -22,7 +22,7 @@ export class BeltsComponent implements OnInit {
   public cheatSheet?: CheatSheet;
   public sheetData?: BeltsData;
 
-  public APP_SETTINGS = APP_SETTINGS;
+  public APP_INFO = APP_INFO;
 
   constructor(public dataService: DataService) {}
 

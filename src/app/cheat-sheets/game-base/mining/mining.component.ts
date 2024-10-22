@@ -14,7 +14,7 @@ import { BeltsData } from 'app/models/BeltsData.model';
 import { MiningData, Ore } from 'app/models/MiningData.model';
 
 // Constants
-import { APP_SETTINGS } from 'app/shared/app-settings';
+import { APP_INFO } from 'app/shared/app-settings';
 import { MINING_DATA } from './mining.data';
 import { BELTS_DATA } from '../belts/belts.data';
 
@@ -38,7 +38,7 @@ interface MiningRate {
   styleUrls: ['./mining.component.scss'], // Enable as needed
 })
 export class MiningComponent implements OnInit {
-  public APP_SETTINGS = APP_SETTINGS;
+  public APP_INFO = APP_INFO;
   public cheatSheet?: CheatSheet;
   public sheetData?: MiningData;
   public beltData?: BeltsData;

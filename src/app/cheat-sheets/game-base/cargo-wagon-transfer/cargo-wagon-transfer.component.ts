@@ -10,7 +10,7 @@ import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 import { CargoWagonTransferData } from 'app/models/CargoWagonTransferData.model';
 
 // Constants
-import { APP_SETTINGS } from 'app/shared/app-settings';
+import { APP_INFO } from 'app/shared/app-settings';
 import { CARGO_WAGON_TRANSFER_DATA } from './cargo-wagon-transfer.data';
 
 interface CargoTransferTimeModel {
@@ -44,7 +44,7 @@ export class CargoWagonTransferComponent implements OnInit {
   cheatSheet?: CheatSheet;
   sheetData?: CargoWagonTransferData;
 
-  APP_SETTINGS = APP_SETTINGS;
+  APP_INFO = APP_INFO;
 
   tableCargoTransferTime: CargoTransferTimeModel[] = [];
   tableChestFill: CargoChestFill[] = [];
