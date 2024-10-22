@@ -11,7 +11,7 @@ import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 import { FactorioIcon } from 'app/shared/factorio-icon/factorio-icon.model';
 
 // Constants
-import { APP_SETTINGS } from 'app/shared/app-settings';
+import { APP_INFO } from 'app/shared/app-settings';
 export const BASE_URL = './assets/data/';
 
 @Injectable()
@@ -79,14 +79,14 @@ export class DataService {
       throw new Error('No Icon Defined');
     }
     if (iconId.includes('Assembling_machine_combined')) {
-      return APP_SETTINGS.links.getLocalImagePath(
+      return APP_INFO.links.getLocalImagePath(
         'Assembling_machine_combined.png'
       );
     }
     if (iconId.includes('research')) {
       // iconId = iconId.replace(/_/g, '-');
       return (
-        APP_SETTINGS.links.wikiImagesBase +
+        APP_INFO.links.wikiImagesBase +
         'thumb/' +
         iconId +
         '.png/32px-' +
@@ -94,6 +94,6 @@ export class DataService {
         '.png'
       );
     }
-    return APP_SETTINGS.links.wikiImagesBase + iconId + '.png';
+    return APP_INFO.links.wikiImagesBase + iconId + '.png';
   }
 }

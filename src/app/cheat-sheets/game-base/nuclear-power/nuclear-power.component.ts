@@ -10,7 +10,7 @@ import { NuclearPowerData } from 'app/models/NuclearPowerData.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 
 // Constants
-import { APP_SETTINGS } from 'app/shared/app-settings';
+import { APP_INFO } from 'app/shared/app-settings';
 import { NUCLEAR_POWER_DATA } from './nuclear-power.data';
 
 @Component({
@@ -22,7 +22,7 @@ export class NuclearPowerComponent implements OnInit {
   cheatSheet?: CheatSheet;
   sheetData?: NuclearPowerData;
 
-  APP_SETTINGS = APP_SETTINGS;
+  APP_INFO = APP_INFO;
 
   // Base nuke data
   nuclearData: NuclearData = <NuclearData>{};

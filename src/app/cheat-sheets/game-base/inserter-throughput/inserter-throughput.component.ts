@@ -13,7 +13,7 @@ import {
 } from 'app/models/InserterThroughputData.model';
 
 // Constants
-import { APP_SETTINGS } from 'app/shared/app-settings';
+import { APP_INFO } from 'app/shared/app-settings';
 import { INSERTER_THROUGHPUT_DATA } from './inserter-throughput.data';
 
 @Component({
@@ -25,7 +25,7 @@ export class InserterThroughputComponent implements OnInit {
   cheatSheet?: CheatSheet;
   sheetData?: InserterThroughputData;
 
-  APP_SETTINGS = APP_SETTINGS;
+  APP_INFO = APP_INFO;
 
   bonusLevel: number = 7;
   bonusLevels: number[] = [7, 2, 0];

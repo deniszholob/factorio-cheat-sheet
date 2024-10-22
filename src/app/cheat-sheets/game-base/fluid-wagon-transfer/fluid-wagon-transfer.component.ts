@@ -10,7 +10,7 @@ import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 import { FluidWagonTransferData } from 'app/models/FluidWagonTransferData.model';
 
 // Constants
-import { APP_SETTINGS } from 'app/shared/app-settings';
+import { APP_INFO } from 'app/shared/app-settings';
 import { FLUID_WAGON_TRANSFER_DATA } from './fluid-wagon-transfer.data';
 
 @Component({
@@ -22,7 +22,7 @@ export class FluidWagonTransferComponent implements OnInit {
   cheatSheet?: CheatSheet;
   sheetData?: FluidWagonTransferData;
 
-  APP_SETTINGS = APP_SETTINGS;
+  APP_INFO = APP_INFO;
 
   theoreticalTransferTimes = [];
 

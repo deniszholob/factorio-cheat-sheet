@@ -5,7 +5,7 @@
     <div class="col-12 col-sm-6">
       <h5 id="Old_Cheat_Sheets">Old Cheat Sheets</h5>
       <ul class="list-unstyled">
-        <li *ngFor="let ref of APP_SETTINGS.old_cheat_sheets">
+        <li *ngFor="let ref of APP_INFO.old_cheat_sheets">
           <a href="{{ ref.url }}" title="{{ ref.name }}" target="_blank" rel="noopener">{{ ref.name }}</a>
         </li>
       </ul>
@@ -13,7 +13,7 @@
     <div class="col-12 col-sm-6">
       <h5 id="PDF">PDF Downloads</h5>
       <ul class="list-unstyled">
-        <li *ngFor="let pdf of APP_SETTINGS.pdfs">
+        <li *ngFor="let pdf of APP_INFO.pdfs">
           <a href="{{ pdf.url }}" title="{{ pdf.name }}" target="_blank" rel="noopener">{{ pdf.name }}</a>
         </li>
       </ul>
