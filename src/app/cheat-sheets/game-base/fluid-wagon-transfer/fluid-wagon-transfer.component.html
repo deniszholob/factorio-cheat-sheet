@@ -1,4 +1,9 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
+  <p>
+    <i class="fa fa-exclamation"  aria-hidden="true"></i>
+     Section roughly updated for 2.0, but needs validation
+    </p>
+  <br>
   <div class="row">
     <div class="col-12 col-lg-8">
       <ul>
@@ -15,14 +20,14 @@
           {{ sheetData?.pumpRate | number }}
           fluids/s.
         </li>
-        <li>
+        <li class="line-through">
           To keep
           {{ sheetData?.offshorePumpRate | number }}
           <a href="https://forums.factorio.com/viewtopic.php?f=18&t=19851" target="_blank" rel="noopener">fluid/second</a>
           (offshore pump rate), place
           <a href="https://forums.factorio.com/viewtopic.php?f=5&t=46030">18 pipes between pumps</a>.
         </li>
-        <li>Using underground pipes counts as less entities then if straight pipe for same distance.</li>
+        <li class="line-through">Using underground pipes counts as less entities then if straight pipe for same distance.</li>
         <li>
           Fluid wagons can hold
           {{ sheetData?.storageTankSize | number }}
@@ -36,13 +41,13 @@
                 [icon]="dataService.getFactorioIcon('Storage_tank', sheetData ? sheetData.fluidWagonSize / sheetData.storageTankSize : '')"
               ></app-factorio-icon>
             </div>
-            <div class="col-6 text-center">
+            <!-- <div class="col-6 text-center">
               <app-factorio-icon [icon]="dataService.getFactorioIcon('Offshore_pump', 1)"></app-factorio-icon>
               <app-factorio-icon [icon]="dataService.getFactorioIcon('Pipe', 18)"></app-factorio-icon>
-            </div>
+            </div> -->
           </div>
         </li>
-        <li>
+        <li class="line-through">
           It is recommended that a fluid wagon's pump is connected directly to a tank. Otherwise due to pipe pressure, the loading and
           unloading times may
           <a href="https://www.reddit.com/r/factorio/comments/69kop6/pumppipe_throughput_tests_for_015/" target="_blank" rel="noopener"
@@ -63,13 +68,12 @@
               <app-factorio-icon [icon]="dataService.getFactorioIcon('Pump')"></app-factorio-icon>
             </th>
             <th>
-              <a href="https://wiki.factorio.com/Fluid_wagon#Load_and_unload_times" target="_blank" rel="noopener">Measured</a>
-              Loading &amp; Unloading Times
+              Loading &amp; Unloading Times for {{ sheetData?.fluidWagonSize | number }} fluid
             </th>
           </tr>
         </thead>
         <tbody class="text-center">
-          <tr *ngFor="let item of sheetData?.measuredTransferTimes">
+          <tr *ngFor="let item of theoreticalTransferTimes">
             <td>
               {{ item?.pumps }}
             </td>
@@ -129,7 +133,7 @@
 
   <hr class="print-page-break" />
 
-  <div class="row justify-content-around">
+  <div class="row justify-content-around line-through">
     <div class="col-12 col-lg-8">
       <h4 class="card-title" id="fluid-flow-and-pipe-length">Fluid Flow and Pipe Length</h4>
       <ul>

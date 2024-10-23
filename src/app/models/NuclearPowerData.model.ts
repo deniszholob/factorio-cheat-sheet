@@ -2,7 +2,9 @@ export interface NuclearPowerData {
   reactorPowerMW: number;
   heatExchangerPowerMW: number;
   turbinePowerMW: number;
-  waterPerTurbine: number;
+  heatExchangerWater: number;
+  heatExchangerSteam: number;
+  turbineSteam: number;
   simpleRatioPower: string;
   storageTanksPerReactor: number;
   simpleRatio: Ratio[];

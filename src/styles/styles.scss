@@ -41,10 +41,11 @@ footer,
   bottom: 0;
   // width: 100%;
   /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: $c-pallette-transp-heavy;
+  height: 40px;
+  background-color: black;
   display: flex;
   align-items: center;
+  position: sticky;
 }
 
 a {
@@ -167,6 +168,10 @@ img {
 
 .hide {
   display: none;
+}
+
+.line-through {
+  text-decoration-line: line-through;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the side-nav (less padding and a smaller font size) */

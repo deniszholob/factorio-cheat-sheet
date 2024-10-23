@@ -70,14 +70,14 @@
       experience a 100% increase in energy output when placed directly next to another reactor.
     </li>
     <li>
-      One Offshore pump can fully supply 12 (11.64)
+      One Offshore pump can fully supply {{sheetData?.pumpRatio?.[1]?.count ?? '???'}}
       <a href="https://wiki.factorio.com/Heat_exchanger" target="_blank" rel="noopener">Heat Exchangers</a>
-      driving 20
+      driving {{sheetData?.pumpRatio?.[2]?.count ?? '???'}}
       <a href="https://wiki.factorio.com/Steam_turbine" target="_blank" rel="noopener">Steam Turbines</a>
       producing
-      <a href="https://www.reddit.com/r/factorio/comments/761o4u/the_factorio_cheat_sheet_v015/doboeb4/" target="_blank" rel="noopener"
-        >116.4 MW</a
-      >.
+      <a href="https://www.reddit.com/r/factorio/comments/761o4u/the_factorio_cheat_sheet_v015/doboeb4/" target="_blank" rel="noopener">
+        {{sheetData?.pumpRatioPower}}
+      </a>.
     </li>
   </ul>
 
