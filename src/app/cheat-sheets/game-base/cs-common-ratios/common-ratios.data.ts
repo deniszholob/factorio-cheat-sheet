@@ -15,7 +15,7 @@ export interface RatioSection {
 const _SCIENCE_RATIOS: Ratio[] = [
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&min=4&items=automation-science-pack:r:5/2',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=4&items=automation-science-pack:r:5/2',
     name: '',
     ratio: [
       {
@@ -33,7 +33,7 @@ const _SCIENCE_RATIOS: Ratio[] = [
   },
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&min=4&items=logistic-science-pack:r:5/2',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=4&items=logistic-science-pack:r:5/2',
     name: '',
     ratio: [
       {
@@ -61,7 +61,7 @@ const _SCIENCE_RATIOS: Ratio[] = [
   },
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&min=4&items=military-science-pack:r:5/2',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=4&items=military-science-pack:r:5/2',
     name: '',
     ratio: [
       {
@@ -89,7 +89,7 @@ const _SCIENCE_RATIOS: Ratio[] = [
   },
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&min=4&items=chemical-science-pack:r:5/2',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=4&items=chemical-science-pack:r:5/2',
     name: '',
     ratio: [
       {
@@ -117,7 +117,7 @@ const _SCIENCE_RATIOS: Ratio[] = [
   },
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&min=4&items=production-science-pack:r:5/2',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=4&items=production-science-pack:r:5/2',
     name: '',
     ratio: [
       {
@@ -145,7 +145,7 @@ const _SCIENCE_RATIOS: Ratio[] = [
   },
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&min=4&items=utility-science-pack:r:5/2',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=4&items=utility-science-pack:r:5/2',
     name: '',
     ratio: [
       {
@@ -167,13 +167,13 @@ const _SCIENCE_RATIOS: Ratio[] = [
       {
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Low_density_structure',
-        count: 40,
+        count: 30,
       },
     ],
   },
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-60&rate=s&min=4&items=space-science-pack:r:5/2',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&buildings=assembling-machine-3&items=space-science-pack:r:5/2',
     name: '',
     ratio: [
       {
@@ -184,18 +184,18 @@ const _SCIENCE_RATIOS: Ratio[] = [
       },
       {
         machineIconId: 'Assembling_machine_3',
-        productIconId: 'Rocket_control_unit',
-        count: 60,
+        productIconId: 'Processing_unit',
+        count: 22,
       },
       {
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Rocket_fuel',
-        count: 63,
+        count: 31.5,
       },
       {
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Low_density_structure',
-        count: 44,
+        count: 33,
       },
       {
         machineIconId: 'Assembling_machine_3',
@@ -207,18 +207,13 @@ const _SCIENCE_RATIOS: Ratio[] = [
         productIconId: 'Accumulator',
         count: 2,
       },
-      {
-        machineIconId: 'Assembling_machine_3',
-        productIconId: 'Processing_unit',
-        count: 2,
-      },
     ],
   },
 ];
 const _ELECTRONICS_RATIOS: Ratio[] = [
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&min=4&items=electronic-circuit:f:2',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=4&items=electronic-circuit:f:2',
     name: '',
     ratio: [
       {
@@ -236,7 +231,7 @@ const _ELECTRONICS_RATIOS: Ratio[] = [
   },
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&min=4&items=advanced-circuit:f:6',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=4&items=advanced-circuit:f:6',
     name: '',
     description: "Doesn't take into account Wire for GC",
     ratio: [
@@ -265,7 +260,7 @@ const _ELECTRONICS_RATIOS: Ratio[] = [
   },
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&min=4&items=processing-unit:f:5',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=4&items=processing-unit:f:5',
     name: '',
     description: "Doesn't take into account GC for RC",
     ratio: [
@@ -289,7 +284,7 @@ const _ELECTRONICS_RATIOS: Ratio[] = [
   },
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-60&rate=s&min=4&items=speed-module:f:2',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=4&items=speed-module:f:2',
     name: '',
     ratio: [
       {
@@ -312,7 +307,7 @@ const _ELECTRONICS_RATIOS: Ratio[] = [
   },
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&min=4&items=speed-module-3:f:2',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=4&items=speed-module-3:f:2',
     name: '',
     description: 'Same for Other Modules',
     ratio: [
@@ -325,18 +320,18 @@ const _ELECTRONICS_RATIOS: Ratio[] = [
       {
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Speed_module_2',
-        count: 5,
+        count: 4,
       },
       {
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Speed_module',
-        count: 10,
+        count: 8,
       },
     ],
   },
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&min=4&items=speed-module-3:f:2',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=4&items=speed-module-3:f:2',
     name: '',
     ratio: [
       {
@@ -348,22 +343,22 @@ const _ELECTRONICS_RATIOS: Ratio[] = [
       {
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Processing_unit',
-        count: 10,
+        count: 8.4,
       },
       {
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Advanced_circuit',
-        count: 38,
+        count: 31,
       },
       {
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Electronic_circuit',
-        count: 18,
+        count: 15,
       },
       {
         machineIconId: 'Chemical_plant',
         productIconId: 'Plastic_bar',
-        count: 8,
+        count: 6.5,
       },
     ],
   },
@@ -371,7 +366,7 @@ const _ELECTRONICS_RATIOS: Ratio[] = [
 const _PRODUCTION_RATIOS: Ratio[] = [
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&min=4&items=uranium-rounds-magazine:f:10',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=4&items=uranium-rounds-magazine:f:10',
     name: '',
     ratio: [
       {
@@ -394,7 +389,7 @@ const _PRODUCTION_RATIOS: Ratio[] = [
   },
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&min=4&items=rail:f:2',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=4&items=rail:f:2',
     name: '',
     ratio: [
       {
@@ -418,7 +413,7 @@ const _PRODUCTION_RATIOS: Ratio[] = [
   },
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&min=4&items=flying-robot-frame:f:20',
+      'https://kirkmcdonald.github.io/calc.html#min=4&items=flying-robot-frame:f:20',
     name: '',
     ratio: [
       {
@@ -456,7 +451,7 @@ const _PRODUCTION_RATIOS: Ratio[] = [
   },
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&min=4&items=rocket-fuel:f:6',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=4&items=rocket-fuel:f:6',
     name: 'SF*1*1/2 = RF*1.25*10/30',
     ratio: [
       {
@@ -474,7 +469,7 @@ const _PRODUCTION_RATIOS: Ratio[] = [
   },
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&min=4&items=battery:f:20',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=4&items=battery:f:20',
     name: '',
     ratio: [
       {
@@ -497,7 +492,7 @@ const _PRODUCTION_RATIOS: Ratio[] = [
   },
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&min=4&items=processing-unit:f:75',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=4&items=processing-unit:f:75',
     name: '',
     ratio: [
       {
@@ -517,7 +512,7 @@ const _PRODUCTION_RATIOS: Ratio[] = [
 const _MISC_RATIOS: Ratio[] = [
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&min=4&items=transport-belt:f:1',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=4&items=transport-belt:f:1',
     name: '',
     ratio: [
       {
@@ -535,7 +530,7 @@ const _MISC_RATIOS: Ratio[] = [
   },
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&min=4&items=inserter:f:1',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=4&items=inserter:f:1',
     name: '',
     ratio: [
       {
@@ -558,7 +553,7 @@ const _MISC_RATIOS: Ratio[] = [
   },
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&min=4&items=electric-engine-unit:f:16',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=4&items=electric-engine-unit:f:16',
     name: '',
     ratio: [
       {
@@ -576,7 +571,7 @@ const _MISC_RATIOS: Ratio[] = [
   },
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&min=4&furnace=stone-furnace&items=stone-wall:f:1',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=4&furnace=stone-furnace&items=stone-wall:f:1',
     name: '',
     ratio: [
       {
@@ -595,7 +590,7 @@ const _MISC_RATIOS: Ratio[] = [
   },
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&furnace=stone-furnace&items=iron-gear-wheel:f:1',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&furnace=stone-furnace&items=iron-gear-wheel:f:1',
     name: '',
     ratio: [
       {
@@ -614,7 +609,7 @@ const _MISC_RATIOS: Ratio[] = [
   },
   {
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&rate=s&min=2&furnace=stone-furnace&items=iron-gear-wheel:f:1',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&min=2&furnace=stone-furnace&items=iron-gear-wheel:f:1',
     name: '',
     ratio: [
       {

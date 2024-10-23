@@ -14,8 +14,24 @@ export const APP_INFO: AppInfo = {
   github: {
     name: 'Github Source',
     url: 'https://github.com/deniszholob/factorio-cheat-sheet',
+    icon: 'fab fa-github',
   },
-  data_version: '1.0',
+  discord: {
+    name: 'Discord',
+    url: 'https://discord.gg/PkyzXzz',
+    icon: 'fab fa-discord',
+  },
+  kofi: {
+    name: 'Ko-Fi',
+    url: 'https://ko-fi.com/deniszholob',
+    icon: 'fa fa-coffee',
+  },
+  patreon: {
+    name: 'Patreon',
+    url: 'https://www.patreon.com/deniszholob',
+    icon: 'fab fa-patreon',
+  },
+  data_version: '2.0.7',
   // languages: ['en-US'],
   links: {
     getLocalImagePath(imageName) {
@@ -23,67 +39,23 @@ export const APP_INFO: AppInfo = {
     },
     wikiImagesBase: 'https://wiki.factorio.com/images/',
   },
-  old_cheat_sheets: [
-    // {
-    //     name: 'Factorio 0.16 Cheat Sheet',
-    //     url: 'https://v016.factoriocheatsheet.com/',
-    // },
-    {
-      name: 'Factorio 0.15 Cheat Sheet',
-      url: 'https://docs.google.com/presentation/d/1kQRwD9y92yeEInJaDrTzwc3qvk16UzA8GJ-n_RUgxu8/',
-    },
-    {
-      name: 'Factorio 0.14 Cheat Sheet',
-      url: 'https://docs.google.com/presentation/d/1wIexilsTFKRbMIWc1MOY5XaAOPwNEU0AGMbSTAwqa3Q/',
-    },
-    {
-      name: 'Factorio 0.12 Cheat Sheet',
-      url: 'https://forums.factorio.com/viewtopic.php?f=134&t=18162',
-    },
-  ],
-  pdfs: [
-    {
-      name: 'Cheat Sheet v1.0 pdf',
-      url: 'https://www.dropbox.com/s/jzcgv09655b8mqy/Factorio_Cheat_Sheet_v1.0.pdf',
-    },
-    {
-      name: 'Cheat Sheet v1.0 pdf light',
-      url: 'https://www.dropbox.com/s/yx6rdsf0lebiw4b/Factorio_Cheat_Sheet_v1.0_light.pdf',
-    },
-    {
-      name: 'Cheat Sheet v0.17/v0.18 pdf',
-      url: 'https://www.dropbox.com/sh/sq14ydb7hs59trn/AAA1MUghu5gTy9gJeFX3v0RYa/Factorio_Cheat_Sheet_v0.17.pdf',
-    },
-    {
-      name: 'Cheat Sheet v0.17/v0.18 pdf light',
-      url: 'https://www.dropbox.com/sh/sq14ydb7hs59trn/AAB7bfGnNHWyMcdk3Jv7PWDfa/Factorio_Cheat_Sheet_v0.17_light.pdf',
-    },
-    {
-      name: 'Cheat Sheet v0.16 pdf',
-      url: 'https://www.dropbox.com/sh/sq14ydb7hs59trn/AACHIdw9vZae1zlh8kCh3HJta/Factorio_Cheat_Sheet_v0.16.pdf',
-    },
-    {
-      name: 'Cheat Sheet v0.16 pdf light',
-      url: 'https://www.dropbox.com/sh/sq14ydb7hs59trn/AAD_4cZlVFlGkd2EByGF5ocNa/Factorio_Cheat_Sheet_v0.16_light.pdf',
-    },
-  ],
 };
 
 /** App level constants */
 export interface AppInfo {
-  /** App link */
   app: Hyperlink;
-  /** Author of this app */
   author: Hyperlink;
-  /** Github link */
   github: Hyperlink;
+  discord: Hyperlink;
+  kofi: Hyperlink;
+  patreon: Hyperlink;
   /** Factorio Version */
   data_version: string;
   /** Languages supported by this app */
   // languages: string[];
   links: ImageLinks;
-  old_cheat_sheets: Hyperlink[];
-  pdfs: Hyperlink[];
+  // old_cheat_sheets: Hyperlink[];
+  // pdfs: Hyperlink[];
 }
 
 /** Hyperlink data */
@@ -91,6 +63,8 @@ export interface Hyperlink {
   name: string;
   url: string;
   title?: string;
+  /** Font Awesome icon class */
+  icon?: string;
 }
 
 /** Easy image access */

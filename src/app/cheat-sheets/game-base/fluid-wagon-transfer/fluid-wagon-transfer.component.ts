@@ -19,12 +19,12 @@ import { FLUID_WAGON_TRANSFER_DATA } from './fluid-wagon-transfer.data';
   // styleUrls: ['./fluid-wagon-transfer.component.scss'] // Enable as needed
 })
 export class FluidWagonTransferComponent implements OnInit {
-  cheatSheet?: CheatSheet;
-  sheetData?: FluidWagonTransferData;
+  protected readonly APP_INFO = APP_INFO;
 
-  APP_INFO = APP_INFO;
+  protected cheatSheet?: CheatSheet;
+  protected sheetData?: FluidWagonTransferData;
 
-  theoreticalTransferTimes = [];
+  protected theoreticalTransferTimes:{pumps: number, transferTime: number}[] = [];
 
   constructor(public dataService: DataService) {}
 
@@ -35,7 +35,7 @@ export class FluidWagonTransferComponent implements OnInit {
         (result: Data<FluidWagonTransferData>) => {
           this.cheatSheet = result.cheatSheet;
           this.sheetData = result.data;
-          // this.calcLoadingTimes();
+          this.calcLoadingTimes();
         },
         (error) => {
           console.log(error);
@@ -43,18 +43,18 @@ export class FluidWagonTransferComponent implements OnInit {
       );
   }
 
-  // private calcLoadingTimes() {
-  //     const pumpRate = this.sheetData?.pumpRate ?? 1;
-  //     const fluidWagonSize = this.sheetData?.fluidWagonSize ?? 1;
-  //     this.theoreticalTransferTimes.length = 0; // Clear the array
-  //     for (let i = 1; i <= 3; i++) {
-  //         const transferTime = fluidWagonSize / (pumpRate * i);
-  //         this.theoreticalTransferTimes.push(
-  //             {
-  //                 'pumps': i,
-  //                 'transferTime': transferTime
-  //             }
-  //         );
-  //     }
-  // }
+  private calcLoadingTimes() {
+      const pumpRate = this.sheetData?.pumpRate ?? 1;
+      const fluidWagonSize = this.sheetData?.fluidWagonSize ?? 1;
+      this.theoreticalTransferTimes.length = 0; // Clear the array
+      for (let i = 1; i <= 3; i++) {
+          const transferTime = fluidWagonSize / (pumpRate * i);
+          this.theoreticalTransferTimes.push(
+              {
+                  'pumps': i,
+                  'transferTime': transferTime
+              }
+          );
+      }
+  }
 }

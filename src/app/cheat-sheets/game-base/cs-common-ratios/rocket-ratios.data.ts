@@ -5,7 +5,7 @@ export const ROCKET_RATIO_DATA: Ratio[] = [
     description: 'Rocket Components Ratio With No Satellite',
     name: 'Rocket Comp. Ratio',
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&min=4&items=rocket-part:r:15',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&buildings=assembling-machine-3&items=rocket-part:r:1/4',
     ratio: [
       {
         machineIconId: 'Rocket_silo',
@@ -14,18 +14,18 @@ export const ROCKET_RATIO_DATA: Ratio[] = [
       },
       {
         machineIconId: 'Assembling_machine_3',
-        productIconId: 'Rocket_control_unit',
-        count: 60,
+        productIconId: 'Processing_unit',
+        count: 20,
       },
       {
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Rocket_fuel',
-        count: 60,
+        count: 30,
       },
       {
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Low_density_structure',
-        count: 40,
+        count: 30,
       },
     ],
   },
@@ -33,7 +33,7 @@ export const ROCKET_RATIO_DATA: Ratio[] = [
     description: 'Rocket Components Ratio With Satellite',
     name: 'Rocket Comp. Ratio w/ Sat',
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-1&min=4&items=space-science-pack:r:150',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&buildings=assembling-machine-3&items=space-science-pack:r:5/2',
     ratio: [
       {
         machineIconId: 'Rocket_silo',
@@ -42,18 +42,18 @@ export const ROCKET_RATIO_DATA: Ratio[] = [
       },
       {
         machineIconId: 'Assembling_machine_3',
-        productIconId: 'Rocket_control_unit',
-        count: 60,
+        productIconId: 'Processing_unit',
+        count: 22,
       },
       {
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Rocket_fuel',
-        count: 63,
+        count: 31.5,
       },
       {
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Low_density_structure',
-        count: 44,
+        count: 33,
       },
     ],
   },
@@ -61,7 +61,7 @@ export const ROCKET_RATIO_DATA: Ratio[] = [
     description: 'Rocket Components Moduled Ratio With Satellite',
     name: 'Rocket Comp. Module Ratio w/ Sat',
     source:
-      'https://kirkmcdonald.github.io/calc.html#data=0-17-60&rate=s&min=4&items=space-science-pack:r:5/2&modules=rocket-part:p3:p3:p3:p3;se:2',
+      'https://kirkmcdonald.github.io/calc.html#rate=s&buildings=assembling-machine-3&items=space-science-pack:r:5/2&modules=rocket-part:p3:p3:p3:p3;se:se:1',
 
     ratio: [
       {
@@ -71,18 +71,18 @@ export const ROCKET_RATIO_DATA: Ratio[] = [
       },
       {
         machineIconId: 'Assembling_machine_3',
-        productIconId: 'Rocket_control_unit',
-        count: 43,
+        productIconId: 'Processing_unit',
+        count: 16.3,
       },
       {
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Rocket_fuel',
-        count: 46,
+        count: 23,
       },
       {
         machineIconId: 'Assembling_machine_3',
         productIconId: 'Low_density_structure',
-        count: 33,
+        count: 24.5,
       },
     ],
   },

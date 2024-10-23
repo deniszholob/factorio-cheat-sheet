@@ -58,8 +58,10 @@
       A
       <a href="https://wiki.factorio.com/Boiler" target="_blank" rel="noopener">steam boiler</a>
       can convert up to
-      {{ sheetData?.steam_boiler_fluid }}
-      units of water into steam per second, providing
+      {{ sheetData?.steam_boiler_water }}
+      units of water into 
+      {{ sheetData?.steam_boiler_steam }}
+      units of steam per second, providing
       {{ sheetData?.steam_boiler_energy }}
       of steam (at 165 °C).
     </li>
@@ -72,7 +74,7 @@
       A
       <a href="https://wiki.factorio.com/Steam_engine" target="_blank" rel="noopener">steam engine</a>
       can convert
-      {{ sheetData?.steam_engine_fluid }}
+      {{ sheetData?.steam_engine_steam }}
       units of steam (at 165 °C) per second into
       {{ sheetData?.steam_engine_power }}
       of electric power.

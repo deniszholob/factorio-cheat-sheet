@@ -7,7 +7,7 @@ export const BASIC_POWER_DATA: RawData<BasicPowerData> = {
     icon: 'Accumulator',
   },
   data: {
-    steamRatioPower: '36MW',
+    steamRatioPower: '360MW',
     steamRatio: [
       {
         iconId: 'Offshore_pump',
@@ -15,15 +15,19 @@ export const BASIC_POWER_DATA: RawData<BasicPowerData> = {
       },
       {
         iconId: 'Boiler',
-        count: 20,
+        count: 200,
       },
       {
         iconId: 'Steam_engine',
-        count: 40,
+        count: 400,
       },
       {
         iconId: 'Electric_mining_drill',
-        count: 18,
+        count: 180,
+      },
+      {
+        iconId: 'Transport_belt',
+        count: 6,
       },
     ],
     solarRatioPower: '1MW',
@@ -38,9 +42,10 @@ export const BASIC_POWER_DATA: RawData<BasicPowerData> = {
       },
     ],
     offshore_pump_water: 1200,
-    steam_boiler_fluid: 60,
+    steam_boiler_water: 6,
+    steam_boiler_steam: 60,
     steam_boiler_energy: '1.8MJ',
-    steam_engine_fluid: 30,
+    steam_engine_steam: 30,
     steam_engine_power: '0.9MW',
     solar_energy_max: 60,
     solar_energy_avg: 42,

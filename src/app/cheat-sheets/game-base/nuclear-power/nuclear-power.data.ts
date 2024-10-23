@@ -10,7 +10,9 @@ export const NUCLEAR_POWER_DATA: RawData<NuclearPowerData> = {
     reactorPowerMW: 40,
     heatExchangerPowerMW: 10,
     turbinePowerMW: 5.82,
-    waterPerTurbine: 60,
+    heatExchangerWater: 10.3,
+    heatExchangerSteam: 103,
+    turbineSteam: 60,
     simpleRatioPower: '40 MW',
     storageTanksPerReactor: 3.299,
     simpleRatio: [
@@ -39,7 +41,7 @@ export const NUCLEAR_POWER_DATA: RawData<NuclearPowerData> = {
       },
       {
         iconId: 'Offshore_pump',
-        count: 4,
+        count: 1,
       },
       {
         iconId: 'Heat_exchanger',
@@ -50,7 +52,7 @@ export const NUCLEAR_POWER_DATA: RawData<NuclearPowerData> = {
         count: 84,
       },
     ],
-    pumpRatioPower: '120 MW',
+    pumpRatioPower: '1160 MW',
     pumpRatio: [
       {
         iconId: 'Offshore_pump',
@@ -58,11 +60,11 @@ export const NUCLEAR_POWER_DATA: RawData<NuclearPowerData> = {
       },
       {
         iconId: 'Heat_exchanger',
-        count: 12,
+        count: 116.5,
       },
       {
         iconId: 'Steam_turbine',
-        count: 20,
+        count: 200,
       },
     ],
   },
