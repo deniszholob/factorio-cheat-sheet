@@ -189,13 +189,13 @@ const _SCIENCE_RATIOS: Ratio[] = [
       },
       {
         machineIconId: 'Assembling_machine_3',
-        productIconId: 'Low_density_structure',
-        count: 44,
+        productIconId: 'Rocket_fuel',
+        count: 63,
       },
       {
         machineIconId: 'Assembling_machine_3',
-        productIconId: 'Rocket_fuel',
-        count: 63,
+        productIconId: 'Low_density_structure',
+        count: 44,
       },
       {
         machineIconId: 'Assembling_machine_3',

@@ -41,7 +41,7 @@
     visibility: hidden;
   }
 
-  .cheat-sheet-pages > *:not(:first-child) {
+  app-game-base > *:not(:first-child) {
     page-break-before: always;
   }
 
