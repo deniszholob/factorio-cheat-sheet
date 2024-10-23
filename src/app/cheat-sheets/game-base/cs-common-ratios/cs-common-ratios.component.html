@@ -39,7 +39,7 @@
   <small class="text-muted">Note: Rates are rounded to 2 decimal points</small>
 
   <hr class="print-page-break" />
-  <h3 id="rocket">Rocket Components</h3>
+  <h4 id="rocket">Rocket Components</h4>
   <div class="row align-items-center">
     <p class="col-12 col-sm-4 text-center" *ngFor="let item of ROCKET_RATIO_DATA">
       <a [title]="item.description" [href]="item.source" target="_blank" rel="noopener">
@@ -63,8 +63,8 @@
       a rocket needs 1000 of each component of the rocket part + the requirements for the
       <a href="https://wiki.factorio.com/Satellite">satellite</a>.
     </li>
-    <li>This is a ratio of (1100 * 20) : (1050 * 30) : (1000 * 30) or simplified of 44 : 63 : 60.</li>
-    <li>Where 20 and 30 are the respective crafting speeds.</li>
+    <li>This is a ratio of (1000 * 30s) : (1050 * 30s) : (1100 * 20s) or simplified of 60 : 63 : 44.</li>
+    <li>Where 20s and 30s are the respective crafting speeds.</li>
     <li>Module ratio is approximate with lvl 3 productivity modules</li>
   </ul>
 </app-cheat-sheet-template>
