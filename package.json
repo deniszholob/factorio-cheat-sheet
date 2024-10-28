@@ -22,8 +22,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "echo 'No tests'",
     "lint": "ng lint",
-    "format": "prettier --write --ignore-unknown  .",
-    "format:check": "prettier --check  --ignore-unknown .",
+    "format": "prettier --cache --write --ignore-unknown  .",
+    "format:check": "prettier --cache --check  --ignore-unknown .",
     "prepare": "husky install",
     "pre-commit": "npx lint-staged",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
@@ -36,7 +36,7 @@
       "eslint --fix"
     ],
     "**/*": [
-      "prettier --write --ignore-unknown"
+      "prettier --cache --write --ignore-unknown"
     ]
   },
   "dependencies": {
