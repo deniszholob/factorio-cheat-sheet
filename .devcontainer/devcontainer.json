@@ -12,10 +12,32 @@
   // "forwardPorts": [],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "npm run i && npm run start"
+  "postCreateCommand": "npm run i && npm run start",
 
   // Configure tool-specific properties.
-  // "customizations": {},
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "aessoft.aessoft-class-autocomplete",
+        "angular.ng-template",
+        "davidbabel.vscode-simpler-icons",
+        "dbaeumer.vscode-eslint",
+        "editorconfig.editorconfig",
+        "esbenp.prettier-vscode",
+        "formulahendry.auto-close-tag",
+        "formulahendry.auto-rename-tag",
+        "ghaschel.vscode-angular-html",
+        "medzhidov.font-awesome-codes-html",
+        "michelemelluso.code-beautifier",
+        "mikael.angular-beastcode",
+        "samverschueren.final-newline",
+        "streetsidesoftware.code-spell-checker",
+        "stylelint.vscode-stylelint",
+        "adrianwilczynski.toggle-hidden",
+        "deniszholob.angular-files-generator"
+      ]
+    }
+  }
 
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"
