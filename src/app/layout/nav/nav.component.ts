@@ -26,9 +26,8 @@ export class NavComponent implements OnInit, OnDestroy {
 
   constructor(
     public dataService: DataService,
-    private sheetCollapseToggleService: SheetCollapseToggleService
-  ) // router: Router
-  {
+    private sheetCollapseToggleService: SheetCollapseToggleService // router: Router
+  ) {
     // Uncomment if using mods pages
     // navMatchFilter(router)
     //   .pipe(takeUntil(this.clearSub$))

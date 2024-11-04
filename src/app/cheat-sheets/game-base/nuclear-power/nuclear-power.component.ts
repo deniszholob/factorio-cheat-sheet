@@ -54,7 +54,9 @@ export class NuclearPowerComponent implements OnInit {
           this.nuclearData.heatExchangerPower =
             this.sheetData.heatExchangerPowerMW;
           this.nuclearData.turbinePower = this.sheetData.turbinePowerMW;
-          this.nuclearData.waterPerTurbine = (this.sheetData.turbineSteam/this.sheetData.heatExchangerSteam)* this.sheetData.heatExchangerWater
+          this.nuclearData.waterPerTurbine =
+            (this.sheetData.turbineSteam / this.sheetData.heatExchangerSteam) *
+            this.sheetData.heatExchangerWater;
           this.nuclearData.storageTanksPerReactor =
             this.sheetData.storageTanksPerReactor;
           this.getNukeRatios();
