@@ -134,7 +134,8 @@ export const LINKS_DATA: RawData<LinksData> = {
           {
             url: 'https://m45sci.xyz/',
             text: 'M45',
-            caption: 'Multiplayer community with weekly and monthly map resets.',
+            caption:
+              'Multiplayer community with weekly and monthly map resets.',
           },
         ],
       },

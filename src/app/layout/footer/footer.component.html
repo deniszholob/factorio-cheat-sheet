@@ -10,25 +10,25 @@
       <br class="d-md-none" />
     </div>
 
-    <div class="col text-center" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 0.5rem ">
+    <div class="col text-center" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 0.5rem">
       <!-- <a href="{{ APP_INFO.github.url }}" title="{{ APP_INFO.github.name }}" target="_blank" rel="noopener">
         {{ APP_INFO.github.name }}
       </a> -->
       <a
-        *ngFor="let link of SOCIAL_LINKS"
         class="p-1"
+        *ngFor="let link of SOCIAL_LINKS"
         [title]="link.name"
         href="{{ link.url }}"
         title="{{ link.title ?? link.name }}"
         target="_blank"
         rel="noopener"
       >
-      <div *ngIf="link.icon">
-        <i class="fa-lg {{ link.icon }}"></i>
-      </div>
-      <div *ngIf="!link.icon">
-        <span> {{ link.name }} </span>
-      </div>
+        <div *ngIf="link.icon">
+          <i class="fa-lg {{ link.icon }}"></i>
+        </div>
+        <div *ngIf="!link.icon">
+          <span> {{ link.name }} </span>
+        </div>
       </a>
     </div>
 

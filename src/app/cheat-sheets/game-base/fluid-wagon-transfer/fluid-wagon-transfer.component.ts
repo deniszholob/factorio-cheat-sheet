@@ -24,7 +24,10 @@ export class FluidWagonTransferComponent implements OnInit {
   protected cheatSheet?: CheatSheet;
   protected sheetData?: FluidWagonTransferData;
 
-  protected theoreticalTransferTimes:{pumps: number, transferTime: number}[] = [];
+  protected theoreticalTransferTimes: {
+    pumps: number;
+    transferTime: number;
+  }[] = [];
 
   constructor(public dataService: DataService) {}
 
@@ -44,17 +47,15 @@ export class FluidWagonTransferComponent implements OnInit {
   }
 
   private calcLoadingTimes() {
-      const pumpRate = this.sheetData?.pumpRate ?? 1;
-      const fluidWagonSize = this.sheetData?.fluidWagonSize ?? 1;
-      this.theoreticalTransferTimes.length = 0; // Clear the array
-      for (let i = 1; i <= 3; i++) {
-          const transferTime = fluidWagonSize / (pumpRate * i);
-          this.theoreticalTransferTimes.push(
-              {
-                  'pumps': i,
-                  'transferTime': transferTime
-              }
-          );
-      }
+    const pumpRate = this.sheetData?.pumpRate ?? 1;
+    const fluidWagonSize = this.sheetData?.fluidWagonSize ?? 1;
+    this.theoreticalTransferTimes.length = 0; // Clear the array
+    for (let i = 1; i <= 3; i++) {
+      const transferTime = fluidWagonSize / (pumpRate * i);
+      this.theoreticalTransferTimes.push({
+        pumps: i,
+        transferTime: transferTime,
+      });
+    }
   }
 }
