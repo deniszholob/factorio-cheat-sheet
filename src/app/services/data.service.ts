@@ -83,6 +83,9 @@ export class DataService {
         'Assembling_machine_combined.png'
       );
     }
+    if (iconId.includes('Space_Age')) {
+      return APP_INFO.links.getLocalImagePath('Space_Age.png');
+    }
     if (iconId.includes('research')) {
       // iconId = iconId.replace(/_/g, '-');
       return (
