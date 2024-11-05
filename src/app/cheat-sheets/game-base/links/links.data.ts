@@ -218,6 +218,10 @@ export const LINKS_DATA: RawData<LinksData> = {
             url: 'https://www.reddit.com/r/factorio/comments/4f38sk/factorio_train_automation_complete_parts_23_and/',
             text: 'Train Automation',
           },
+          {
+            url: 'https://wiki.factorio.com/Tutorial:Circuit_network_cookbook',
+            text: 'Circuit Network Cookbook',
+          },
         ],
       },
       {
