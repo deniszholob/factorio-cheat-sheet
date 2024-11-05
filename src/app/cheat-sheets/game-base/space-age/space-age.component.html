@@ -1,3 +1,97 @@
 <app-cheat-sheet-template [iconId]="cheatSheetIconId" [title]="cheatSheetTitle">
-  <p>Space Age content WIP</p>
+  <p class="lead">
+    This section is a Work in progress, if you would like, you can add/recommend suggestions on
+    <a href="https://github.com/deniszholob/factorio-cheat-sheet/issues" target="_blank" rel="noopener"> GitHub </a> or
+    <a href="https://discord.gg/PkyzXzz" target="_blank" rel="noopener">Discord</a>.
+  </p>
+
+  <p>
+    You can start on any planet with the
+    <a href="https://mods.factorio.com/mod/any-planet-start" target="_blank" rel="noopener noreferrer"> Any Planet Start Mod </a>
+  </p>
+  <div>
+    <h4 class="card-title" id="space-plpatforms">Space Platforms</h4>
+    <ul>
+      <li>Starting planet (Nauvis) has no asteroids to worry about, so orbital platforms do not need defenses</li>
+      <li>You can connect asteroid collectors to circuit network to set filters on what they can grab so you don't overflow on material</li>
+      <li>The inner planet space has medium asteroids that needs shooting apart.</li>
+    </ul>
+
+    <p class="col-12 col-sm-4 text-center">
+      <a
+        href="{{ SPACE_AGE_DATA.yellowAmmoRatio.source }}"
+        title="{{ SPACE_AGE_DATA.yellowAmmoRatio.name }}"
+        target="_blank"
+        rel="noopener"
+      >
+        <app-ratio [ratios]="SPACE_AGE_DATA.yellowAmmoRatio.ratio"></app-ratio>
+        <small class="text-muted" *ngIf="SPACE_AGE_DATA.yellowAmmoRatio.description">
+          <br />*{{ SPACE_AGE_DATA.yellowAmmoRatio?.description }}
+        </small>
+      </a>
+    </p>
+  </div>
+
+  <div>
+    <h4 class="card-title" id="vulcanus">Vulcanus</h4>
+
+    <div class="row align-items-center">
+      <p class="col-12 col-sm-4 text-center">
+        <span class="text-muted"> Vulcanus Solar Ratio </span>
+        <br />
+
+        <ng-container *ngFor="let item of SPACE_AGE_DATA.vulcanusSolarRatio">
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
+        </ng-container>
+
+        <span>
+          <i class="fas fa-long-arrow-alt-right text-muted"></i>
+          <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+          <sub style="vertical-align: baseline">
+            <strong>
+              {{ SPACE_AGE_DATA.vulcanusSolarRatioPower }}
+              {{ SPACE_AGE_DATA.solarEnergyUnit }}
+            </strong>
+          </sub>
+        </span>
+      </p>
+    </div>
+
+    <ul>
+      <li>
+        Rush the Foundry asap and set it as the building to build more Foundries; because it includes built in productivity, you will get a
+        free Foundry for every 2 crafts!
+      </li>
+    </ul>
+
+    <div>
+      <p class="lead">Tips:</p>
+      While you cannot bring anything in your inventory, you can definitely load up the space platform with starter items
+      <br />
+      Recommended items to Vulcanus bring for faster bootstrapping:
+      <ul>
+        <li>Construction Robots(25-50): Make it very easy to gather Rocks to get tungsten ore</li>
+        <li>Solar/Accumulators(>20)</li>
+        <li>
+          Mining Drills(>2), Pumpjacks(>1), Refineries(>1), Chemical Plants(>10), Furnaces(10), Assemblers(>10), Pipes(>50), Belts(>100),
+          Inserters(>50), Powerpoles(>50)
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div>
+    <h4 class="card-title" id="quality">Quality</h4>
+    <ul>
+      <li>
+        <a href="https://wiki.factorio.com/Quality" target="_blank" rel="noopener noreferrer">Quality Wiki</a>
+      </li>
+      <li>
+        <a href="https://www.factorio.com/blog/post/fff-375" target="_blank" rel="noopener noreferrer">FFF-375</a>
+      </li>
+      <li>
+        <a href="https://www.factorio.com/blog/post/fff-376" target="_blank" rel="noopener noreferrer">FFF-376</a>
+      </li>
+    </ul>
+  </div>
 </app-cheat-sheet-template>
