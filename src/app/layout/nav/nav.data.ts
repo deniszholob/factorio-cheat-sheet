@@ -18,6 +18,7 @@ export const NAV_BASE: string[] = [
   'productivity-module-payoffs',
   'vehicle-fuel-bonus',
   'train-colors',
+  'space-age',
   'tips',
   'links',
 ];
