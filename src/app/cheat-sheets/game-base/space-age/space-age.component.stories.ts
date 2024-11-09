@@ -3,7 +3,7 @@ import { StoryFnAngularReturnType } from '@storybook/angular/dist/client/types';
 
 import { SpaceAgeComponent } from './space-age.component';
 
-type ComponentWithCustomControls = SpaceAgeComponent & {};
+type ComponentWithCustomControls = SpaceAgeComponent;
 
 const meta: Meta<ComponentWithCustomControls> = {
   // TODO: Make sure this title path is correct, uncomment tile, then remove this comment. OR remove both comment and title

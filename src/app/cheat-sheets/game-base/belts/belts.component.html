@@ -31,21 +31,22 @@
             <th>
               Underground
               <br />
-              Distance
+              Spacing
             </th>
           </tr>
         </thead>
         <tbody class="text-center">
           <tr *ngFor="let item of sheetData?.belt_info">
             <td>
-              <app-factorio-icon *ngFor="let iconId of item.icons" [icon]="dataService.getFactorioIcon(iconId)"> </app-factorio-icon>
+              <app-factorio-icon *ngFor="let iconId of item.icons" [icon]="dataService.getFactorioIcon(iconId)" [spaceAge]="item.spaceAge">
+              </app-factorio-icon>
             </td>
             <td>
               {{ item.throughput | number : '1.0-3' }}
               i/s
             </td>
             <td>
-              {{ item.underground_distance }}
+              {{ item.underground_spacing }}
               tiles
             </td>
           </tr>

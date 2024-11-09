@@ -88,7 +88,7 @@ interface RocketCalcData {
 }
 
 interface LabsCalc {
-  labsRequired: any;
+  labsRequired: number | string;
   packsPerMinute: number;
   researchCycleTime: number;
   labSpeedBonus: number;

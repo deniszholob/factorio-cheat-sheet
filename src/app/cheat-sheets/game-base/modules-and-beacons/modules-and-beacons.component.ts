@@ -56,7 +56,7 @@ export class ModulesAndBeaconsComponent implements OnInit {
 }
 
 interface ThroughputCalc {
-  machinesToFillBelt: any;
+  machinesToFillBelt: number | string;
   itemProductionRate: number;
   recipeBaseCraftTime: number;
   itemsPerCraft: number;

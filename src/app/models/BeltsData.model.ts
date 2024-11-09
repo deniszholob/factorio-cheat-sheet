@@ -7,5 +7,6 @@ export interface BeltInfo {
   tier: number;
   icons: string[];
   throughput: number;
-  underground_distance: number;
+  underground_spacing: number;
+  spaceAge?: boolean;
 }

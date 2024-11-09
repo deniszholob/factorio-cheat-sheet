@@ -1,39 +1,102 @@
 <app-cheat-sheet-template [iconId]="cheatSheetIconId" [title]="cheatSheetTitle">
-  <p class="lead">
-    This section is a Work in progress, if you would like, you can add/recommend suggestions on
-    <a href="https://github.com/deniszholob/factorio-cheat-sheet/issues" target="_blank" rel="noopener"> GitHub </a> or
-    <a href="https://discord.gg/PkyzXzz" target="_blank" rel="noopener">Discord</a>.
-  </p>
-
-  <p>
-    You can start on any planet with the
-    <a href="https://mods.factorio.com/mod/any-planet-start" target="_blank" rel="noopener noreferrer"> Any Planet Start Mod </a>
-  </p>
   <div>
-    <h4 class="card-title" id="space-plpatforms">Space Platforms</h4>
-    <ul>
-      <li>Starting planet (Nauvis) has no asteroids to worry about, so orbital platforms do not need defenses</li>
-      <li>You can connect asteroid collectors to circuit network to set filters on what they can grab so you don't overflow on material</li>
-      <li>The inner planet space has medium asteroids that needs shooting apart.</li>
-    </ul>
+    <!-- TODO: Remove Disclaimer when section is complete -->
+    <p class="lead">
+      This section is a work in progress, if you would like, you can add/recommend suggestions on
+      <a href="https://github.com/deniszholob/factorio-cheat-sheet/issues" target="_blank" rel="noopener"> GitHub </a> or
+      <a href="https://discord.gg/PkyzXzz" target="_blank" rel="noopener">Discord</a>.
+    </p>
+    <p>Everything including data and layout is subject to change, so be mindful when deep linking.</p>
+  </div>
 
-    <p class="col-12 col-sm-4 text-center">
-      <a
-        href="{{ SPACE_AGE_DATA.yellowAmmoRatio.source }}"
-        title="{{ SPACE_AGE_DATA.yellowAmmoRatio.name }}"
-        target="_blank"
-        rel="noopener"
-      >
-        <app-ratio [ratios]="SPACE_AGE_DATA.yellowAmmoRatio.ratio"></app-ratio>
-        <small class="text-muted" *ngIf="SPACE_AGE_DATA.yellowAmmoRatio.description">
-          <br />*{{ SPACE_AGE_DATA.yellowAmmoRatio?.description }}
-        </small>
-      </a>
+  <hr />
+  <div>
+    <!-- General Notes -->
+    <p>
+      You can start on any planet with the
+      <a href="https://mods.factorio.com/mod/any-planet-start" target="_blank" rel="noopener noreferrer"> Any Planet Start Mod </a>
     </p>
   </div>
 
+  <hr />
   <div>
-    <h4 class="card-title" id="vulcanus">Vulcanus</h4>
+    <h4 class="card-title" id="quality">Quality</h4>
+
+    <ul>
+      <li>
+        <a href="https://wiki.factorio.com/Quality" target="_blank" rel="noopener noreferrer">Quality Wiki</a>
+      </li>
+      <li>
+        <a href="https://www.factorio.com/blog/post/fff-375" target="_blank" rel="noopener noreferrer">FFF-375</a>
+      </li>
+      <li>
+        <a href="https://www.factorio.com/blog/post/fff-376" target="_blank" rel="noopener noreferrer">FFF-376</a>
+      </li>
+    </ul>
+  </div>
+
+  <hr />
+  <div>
+    <h4 class="card-title" id="space-platforms">
+      <a href="https://wiki.factorio.com/Space_platform" target="_blank" rel="noopener noreferrer">Space Platforms</a>
+    </h4>
+
+    <ul>
+      <li>Starting planet (Nauvis) has no asteroids to worry about, so orbital platforms do not need defenses</li>
+      <li>You can connect asteroid collectors to circuit network to set filters on what they can grab so you don't overflow on material</li>
+      <li>
+        The inner planet space has medium asteroids that needs shooting apart.
+        <br />
+
+        <p class="col-12 col-sm-4 text-center">
+          <a
+            href="{{ SPACE_AGE_DATA.yellowAmmoRatio.source }}"
+            title="{{ SPACE_AGE_DATA.yellowAmmoRatio.name }}"
+            target="_blank"
+            rel="noopener"
+          >
+            <app-ratio [ratios]="SPACE_AGE_DATA.yellowAmmoRatio.ratio"></app-ratio>
+            <small class="text-muted" *ngIf="SPACE_AGE_DATA.yellowAmmoRatio.description">
+              <br />*{{ SPACE_AGE_DATA.yellowAmmoRatio?.description }}
+            </small>
+          </a>
+        </p>
+      </li>
+      <li>
+        While you cannot bring anything in your inventory, you can definitely load up the space platform with starter items for next planet
+      </li>
+      <li>
+        Recommended items (base on Vulcanus only right now) bring for faster bootstrapping:
+        <ul>
+          <li>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Construction_robot', '20-50')"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Solar_panel', '>20')"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Accumulator', '>20')"></app-factorio-icon>
+          </li>
+          <li>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Electric_mining_drill', '>2')"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Pumpjack', '>1')"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Oil_refinery', '>1')"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Chemical_plant', '>10')"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Electric_furnace', '10')"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Assembling_machine_2', '>10')"></app-factorio-icon>
+          </li>
+          <li>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Pipe', '>50')"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt', '>50')"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Inserter', '>50')"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Medium_electric_pole', '>50')"></app-factorio-icon>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <hr />
+  <div>
+    <h4 class="card-title" id="vulcanus">
+      <a href="https://wiki.factorio.com/Vulcanus" target="_blank" rel="noopener noreferrer">Vulcanus</a>
+    </h4>
 
     <div class="row align-items-center">
       <p class="col-12 col-sm-4 text-center">
@@ -58,40 +121,98 @@
     </div>
 
     <ul>
+      <li>Use robots (vs mining by hand) to gather rocks to get tungsten ore easily before getting access to patches</li>
       <li>
         Rush the Foundry asap and set it as the building to build more Foundries; because it includes built in productivity, you will get a
         free Foundry for every 2 crafts!
       </li>
+      <li>You can use inserters to dump (destroy) items into lava (like excess stone).</li>
+      <li>1 ore = 15 molten fluid</li>
     </ul>
-
-    <div>
-      <p class="lead">Tips:</p>
-      While you cannot bring anything in your inventory, you can definitely load up the space platform with starter items
-      <br />
-      Recommended items to Vulcanus bring for faster bootstrapping:
-      <ul>
-        <li>Construction Robots(25-50): Make it very easy to gather Rocks to get tungsten ore</li>
-        <li>Solar/Accumulators(>20)</li>
-        <li>
-          Mining Drills(>2), Pumpjacks(>1), Refineries(>1), Chemical Plants(>10), Furnaces(10), Assemblers(>10), Pipes(>50), Belts(>100),
-          Inserters(>50), Powerpoles(>50)
-        </li>
-      </ul>
-    </div>
   </div>
 
+  <hr />
   <div>
-    <h4 class="card-title" id="quality">Quality</h4>
+    <h4 class="card-title" id="fulgora">
+      <a href="https://wiki.factorio.com/Fulgora" target="_blank" rel="noopener noreferrer">Fulgora</a>
+    </h4>
+
+    <p>
+      <a href="https://wiki.factorio.com/Recycler" target="_blank" rel="noopener noreferrer"> Recycling </a>
+    </p>
     <ul>
+      <li>Items that have no recipe (ores, etc..) cannot be recycled</li>
+      <li>Items that have irreversible recipe (smelted, etc..) will have a 75% chance of being destroyed</li>
       <li>
-        <a href="https://wiki.factorio.com/Quality" target="_blank" rel="noopener noreferrer">Quality Wiki</a>
+        The time it takes to recycle an item is 1/16th (0.0625) of the time it takes to craft that item multiplied by recycler crafting
+        speed.
       </li>
-      <li>
-        <a href="https://www.factorio.com/blog/post/fff-375" target="_blank" rel="noopener noreferrer">FFF-375</a>
-      </li>
-      <li>
-        <a href="https://www.factorio.com/blog/post/fff-376" target="_blank" rel="noopener noreferrer">FFF-376</a>
-      </li>
+      <li>Recycler (non moduled) takes in 2.5 scrap/s and spits out 1.47 items/s</li>
     </ul>
+
+    <table class="table table-sm fixed-width">
+      <caption class="text-center">
+        How many Recyclers are needed to work with belts of scrap and its outputs
+      </caption>
+      <thead class="text-center">
+        <tr>
+          <th>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Recycler')"></app-factorio-icon>
+          </th>
+          <th>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt')"></app-factorio-icon>
+          </th>
+          <th>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_transport_belt')"></app-factorio-icon>
+          </th>
+          <th>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon>
+          </th>
+          <th>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon('Turbo_transport_belt')"></app-factorio-icon>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr>
+          <td>Consume Scrap</td>
+          <td>6</td>
+          <td>12</td>
+          <td>18</td>
+          <td>24</td>
+          <!-- <td *ngFor="let count of sheetData?.recycler_scrap">
+            {{ count }}
+          </td> -->
+        </tr>
+        <tr>
+          <td>Produce Items</td>
+          <td>10</td>
+          <td>20</td>
+          <td>30</td>
+          <td>40</td>
+          <!-- <td *ngFor="let count of sheetData?.recycler_items">
+            {{ count }}
+          </td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr />
+  <div>
+    <h4 class="card-title" id="gleba">
+      <a href="https://wiki.factorio.com/Gleba" target="_blank" rel="noopener noreferrer">Gleba</a>
+    </h4>
+
+    <p>WIP...</p>
+  </div>
+
+  <hr />
+  <div>
+    <h4 class="card-title" id="aquilo">
+      <a href="https://wiki.factorio.com/Aquilo" target="_blank" rel="noopener noreferrer">Aquilo</a>
+    </h4>
+
+    <p>WIP...</p>
   </div>
 </app-cheat-sheet-template>

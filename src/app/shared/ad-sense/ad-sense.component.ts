@@ -26,7 +26,7 @@ export class AdSenseComponent implements AfterViewInit, OnDestroy {
   constructor(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     @Inject(PLATFORM_ID)
-    private platform: any
+    private platform: object
   ) {}
 
   ngOnDestroy(): void {

@@ -13,7 +13,7 @@ export const BELTS_DATA: RawData<BeltsData> = {
         tier: 1,
         icons: ['Transport_belt', 'Underground_belt', 'Splitter'],
         throughput: 15,
-        underground_distance: 4,
+        underground_spacing: 4,
       },
       {
         tier: 2,
@@ -23,7 +23,7 @@ export const BELTS_DATA: RawData<BeltsData> = {
           'Fast_splitter',
         ],
         throughput: 30,
-        underground_distance: 6,
+        underground_spacing: 6,
       },
       {
         tier: 3,
@@ -33,7 +33,18 @@ export const BELTS_DATA: RawData<BeltsData> = {
           'Express_splitter',
         ],
         throughput: 45,
-        underground_distance: 8,
+        underground_spacing: 8,
+      },
+      {
+        tier: 4,
+        icons: [
+          'Turbo_transport_belt',
+          'Turbo_underground_belt',
+          'Turbo_splitter',
+        ],
+        throughput: 60,
+        underground_spacing: 10,
+        spaceAge: true,
       },
     ],
   },

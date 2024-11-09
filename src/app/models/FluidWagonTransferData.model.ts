@@ -3,6 +3,7 @@ export interface FluidWagonTransferData {
   offshorePumpRate: number;
   storageTankSize: number;
   fluidWagonSize: number;
+  pipelineLimit: number;
 }
 
 export interface MeasuredTransferTime {

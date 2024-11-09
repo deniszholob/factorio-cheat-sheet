@@ -11,5 +11,6 @@ export const FLUID_WAGON_TRANSFER_DATA: RawData<FluidWagonTransferData> = {
     offshorePumpRate: 1200,
     storageTankSize: 25000,
     fluidWagonSize: 50000,
+    pipelineLimit: 320,
   },
 };

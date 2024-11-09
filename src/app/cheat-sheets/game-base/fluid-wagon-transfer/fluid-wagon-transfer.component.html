@@ -1,9 +1,4 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
-  <p>
-    <i class="fa fa-exclamation" aria-hidden="true"></i>
-    Section roughly updated for 2.0, but needs validation
-  </p>
-  <br />
   <div class="row">
     <div class="col-12 col-lg-8">
       <ul>
@@ -20,7 +15,7 @@
           {{ sheetData?.pumpRate | number }}
           fluid/s.
         </li>
-        <li>Pipelines are limited to a 250x250 area before needing a pump</li>
+        <li>Pipelines are limited to a {{ sheetData?.pipelineLimit }}x{{ sheetData?.pipelineLimit }} area before needing a pump</li>
         <li class="line-through">Using underground pipes counts as less entities then if straight pipe for same distance.</li>
         <li>
           Fluid wagons can hold
@@ -37,7 +32,9 @@
               ></app-factorio-icon>
             </div>
             <div class="col-6 text-center">
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Pipe', '250x250')"></app-factorio-icon>
+              <app-factorio-icon
+                [icon]="dataService.getFactorioIcon('Pipe', sheetData?.pipelineLimit + 'x' + sheetData?.pipelineLimit)"
+              ></app-factorio-icon>
               <app-factorio-icon [icon]="dataService.getFactorioIcon('Pump', 1)"></app-factorio-icon>
             </div>
           </div>
@@ -87,22 +84,9 @@
         alt="Tanker-Pump Alignment"
         title="Tanker-Pump Alignment"
       ></video>
+      <p id="note-alignment">*Trains snap into position when placed at train stations.</p>
     </div>
-    <br />
-    <div class="col text-center col-print-3">
-      <span><strong>Example Fast Transfer Build</strong></span
-      ><br />
-      <img
-        class="img-fluid rounded"
-        loading="lazy"
-        src="{{ APP_INFO.links.getLocalImagePath('fluid-wagon-fastest-transfer.webp') }}"
-        alt="Example Fast Transfer Build"
-        title="Example Fast Transfer Build"
-      />
-    </div>
-    <br />
   </div>
-  <p id="note-alignment">*Trains snap into position when placed at train stations.</p>
 
   <hr class="print-page-break" />
 </app-cheat-sheet>
