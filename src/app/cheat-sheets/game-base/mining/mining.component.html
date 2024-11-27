@@ -6,7 +6,7 @@
           <a href="https://wiki.factorio.com/Mining" target="_blank" rel="noopener">Mining rate</a>
           relies on drill
           <i>mining speed</i>
-          and ore
+          divided by ore
           <i>mining time</i>.
         </li>
         <li>
@@ -44,6 +44,7 @@
         <app-factorio-icon [icon]="dataService.getFactorioIcon('Sulfuric_acid', 10)"></app-factorio-icon>
       </p>
     </div>
+
     <div class="col-12 col-lg-6">
       <table class="table table-sm table-hover fixed-width">
         <caption class="text-center">
@@ -57,9 +58,9 @@
             <input
               class="form-control"
               [(ngModel)]="prodBonusLevel"
-              (change)="inputChange()"
-              (keyup)="inputChange()"
-              (mouseup)="inputChange()"
+              (change)="onInputChange()"
+              (keyup)="onInputChange()"
+              (mouseup)="onInputChange()"
               type="number"
               min="{{ inputMin }}"
               step="{{ inputStep }}"
@@ -68,49 +69,58 @@
           </div>
         </caption>
 
-        <thead class="text-center">
+        <thead>
           <tr>
-            <th>Ore</th>
-            <th>Miner</th>
-            <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt')"></app-factorio-icon>
-            </th>
-            <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_transport_belt')"></app-factorio-icon>
-            </th>
-            <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon>
-            </th>
-            <th class="text-right">Mine Rate</th>
+            <ng-container *ngFor="let col of miningTableColumns; let i = index">
+              <th [ngStyle]="{ width: i === 0 ? '128px' : null }">
+                <ng-container *ngIf="col.type === 'Text'">
+                  {{ col.name }}
+                </ng-container>
+                <ng-container *ngIf="col.type === 'FactorioIcon' || col.type === 'FactorioSaIcon'">
+                  <app-factorio-icon
+                    [icon]="dataService.getFactorioIcon(col.name)"
+                    [spaceAge]="col.type === 'FactorioSaIcon'"
+                  ></app-factorio-icon>
+                </ng-container>
+              </th>
+            </ng-container>
           </tr>
         </thead>
-        <tbody class="text-center">
-          <tr *ngFor="let item of miningRateTable; let idx = index">
-            <!-- <td *ngIf="idx%2 == 0" rowspan="2"> -->
-            <td *ngIf="item.rowspan !== 0" [attr.rowspan]="item.rowspan">
-              <app-factorio-icon *ngFor="let iconId of item.materials" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
-            </td>
-            <td>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.miningRate?.miner)"></app-factorio-icon>
-            </td>
-            <td>
-              {{ item?.beltYellow | ceiling }}
-            </td>
-            <td>
-              {{ item?.beltRed | ceiling }}
-            </td>
-            <td>
-              {{ item?.beltBlue | ceiling }}
-            </td>
-            <td class="text-right">
-              {{ item?.miningRate?.rate | number : '1.2-2' }}
-              i/s
-            </td>
-          </tr>
+
+        <tbody>
+          <ng-container *ngFor="let group of mineTableRowGroups | keyvalue">
+            <!-- Ore group -->
+            <tr>
+              <td [attr.rowspan]="1 + group.value.mineData.length">
+                <div>
+                  <ng-container *ngFor="let ore of group.value.ores">
+                    <app-factorio-icon
+                      [icon]="dataService.getFactorioIcon(ore.name, ore.miningTime + 's')"
+                      [spaceAge]="ore.spaceAge"
+                    ></app-factorio-icon>
+                  </ng-container>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Drill data for ores -->
+            <tr *ngFor="let row of group.value.mineData">
+              <td>
+                <div>
+                  <app-factorio-icon [icon]="dataService.getFactorioIcon(row.miner)" [spaceAge]="row.spaceAge"></app-factorio-icon>
+                </div>
+              </td>
+              <td *ngFor="let beltRate of row.beltRates">
+                {{ beltRate | ceiling | number : '1.0-0' }}
+              </td>
+              <td>{{ row.rate | number : '1.2-2' }} i/s</td>
+            </tr>
+          </ng-container>
         </tbody>
       </table>
+
       <p class="text-center">
-        <kbd>Miners = Belt Throughput / Mining Rate * Productivity</kbd>
+        <kbd>Miners = Belt Throughput / (Mining Rate * Productivity)</kbd>
         <br />
         <span class="text-muted small d-inline-not-print">* Assuming no mining productivity bonus</span>
       </p>

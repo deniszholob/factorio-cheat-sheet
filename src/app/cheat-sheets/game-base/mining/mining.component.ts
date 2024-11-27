@@ -10,27 +10,33 @@ import { DataService } from 'app/services/data.service';
 // Models
 import { Data } from 'app/models/Data.model';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
-import { BeltsData } from 'app/models/BeltsData.model';
-import { MiningData, Ore } from 'app/models/MiningData.model';
 
 // Constants
 import { APP_INFO } from 'app/shared/app-settings';
 import { MINING_DATA } from './mining.data';
 import { BELTS_DATA } from '../belts/belts.data';
+import { ORE_DATA, OreData } from './ore.data';
+import { DRILL_DATA, DrillData } from './drill.data';
+import { BELT_DATA, BeltData } from './belt.data';
 
-interface MiningRateTable {
-  materials: string[];
-  rowspan: number;
-  miningRate: MiningRate;
-  beltYellow: number;
-  beltRed: number;
-  beltBlue: number;
+interface MineTableColumn {
+  name: string;
+  type: 'Text' | 'FactorioIcon' | 'FactorioSaIcon';
 }
 
-interface MiningRate {
+interface MineTableRowGroup {
+  ores: OreData[];
+  mineData: MineTableRow[];
+}
+
+interface MineTableRow {
+  spaceAge?: boolean;
   miner: string;
   rate: number;
+  beltRates: number[];
 }
+
+const prodBonusPercent = 10;
 
 @Component({
   selector: 'app-mining',
@@ -38,160 +44,98 @@ interface MiningRate {
   styleUrls: ['./mining.component.scss'], // Enable as needed
 })
 export class MiningComponent implements OnInit {
-  public APP_INFO = APP_INFO;
-  public cheatSheet?: CheatSheet;
-  public sheetData?: MiningData;
-  public beltData?: BeltsData;
+  protected readonly APP_INFO = APP_INFO;
+  protected readonly BELT_DATA = BELT_DATA;
 
-  public miningRateTable: MiningRateTable[] = [];
+  protected cheatSheet?: CheatSheet;
 
-  public inputMin = 0;
-  public inputStep = 1;
-  public prodBonusLevelChanged = 0;
-  public prodBonusLevel = this.prodBonusLevelChanged;
-  public productivityPercent = 0;
+  protected miningTableColumns: MineTableColumn[] = [
+    { name: 'Ore', type: 'Text' },
+    { name: 'Drill', type: 'Text' },
+    ...BELTS_DATA.data.belt_info.map(
+      (belt): MineTableColumn => ({
+        name: belt.icons[0],
+        type: belt.spaceAge ? 'FactorioSaIcon' : 'FactorioIcon',
+      })
+    ),
+    { name: 'Mine Rate', type: 'Text' },
+  ];
+  protected mineTableRowGroups: Map<string, MineTableRowGroup> = new Map();
 
-  constructor(public dataService: DataService) {}
+  protected inputMin = 0;
+  protected inputStep = 1;
+  protected prodBonusLevelChanged = 0;
+  protected prodBonusLevel = this.prodBonusLevelChanged;
+  protected productivityPercent = 0;
+
+  constructor(protected dataService: DataService) {
+    ORE_DATA.forEach((ore: OreData) => {
+      const oreKey = `${ore.miningTime}_${ore.minedWith.length}`;
+      if (this.mineTableRowGroups.has(oreKey)) {
+        this.mineTableRowGroups.get(oreKey)?.ores.push(ore);
+      } else {
+        this.mineTableRowGroups.set(oreKey, {
+          ores: [ore],
+          mineData: DRILL_DATA.filter((drill) =>
+            ore.minedWith.includes(drill.name)
+          ).map((drillData: DrillData): MineTableRow => {
+            const rate = drillData.miningSpeed / ore.miningTime;
+            return {
+              spaceAge: drillData.spaceAge,
+              miner: drillData.name,
+              rate,
+              beltRates: BELT_DATA.map(
+                (beltData: BeltData): number => beltData.throughput / rate
+              ),
+            };
+          }),
+        });
+      }
+    });
+  }
 
   /** Get Data for the Cheat Sheet from the DataService */
   ngOnInit() {
     combineLatest([
-      this.dataService.getLocalCheatSheetData<MiningData>(MINING_DATA),
-      this.dataService.getLocalCheatSheetData<BeltsData>(BELTS_DATA),
-    ]).subscribe(
-      ([result, result2]: [Data<MiningData>, Data<BeltsData>]) => {
+      this.dataService.getLocalCheatSheetData<undefined>(MINING_DATA),
+    ]).subscribe({
+      next: ([result]: [Data<undefined>]) => {
         this.cheatSheet = result.cheatSheet;
-        this.sheetData = result.data;
-        this.beltData = result2.data;
         this.updateTable();
       },
-      (error) => {
-        console.log(error);
-      }
-    );
+      error: (error) => {
+        console.error(error);
+      },
+    });
   }
 
   /** Makes sure the value changes before running calculations
    *  Mostly for the mouse click event, since the change event is not registering the tick change until mouse moves.
    */
-  inputChange() {
+  protected onInputChange() {
     if (this.prodBonusLevel !== this.prodBonusLevelChanged) {
       this.prodBonusLevelChanged = this.prodBonusLevel;
       this.updateTable();
     }
   }
 
-  public getMiningRateTableEntry = (): MiningRateTable => {
-    return {
-      materials: [],
-      rowspan: 1,
-      miningRate: {
-        miner: '',
-        rate: 1,
-      },
-      beltYellow: 1,
-      beltRed: 1,
-      beltBlue: 1,
-    };
-  };
-
-  private groupOres(): Ore[][] {
-    const groupedOres: Ore[][] = [];
-    // Sort, in case json file changes.
-    this.sheetData?.ores.sort((a, b) => {
-      return a.miningTime - b.miningTime;
-    });
-    let compareMiningTime = this.sheetData?.ores[0].miningTime;
-    groupedOres.push([]);
-
-    this.sheetData?.ores.forEach((ore) => {
-      if (ore.miningTime === compareMiningTime) {
-        groupedOres[groupedOres.length - 1].push(ore);
-      } else {
-        compareMiningTime = ore.miningTime;
-        groupedOres.push([ore]);
-      }
-    });
-    return groupedOres;
-  }
-
-  public calcProductivityPercent(): number {
-    return (this.sheetData?.prodBonusPercent ?? 1) * this.prodBonusLevel;
-  }
-
-  // Way too complicated for this small data set, that is unlikely to change,
-  // but nevertheless can be extended out to various miners and ores.
-  // Didn't code in more belt support however, so limited to the 3 vanilla ones.
-  public updateTable(): void {
+  private updateTable() {
     if (this.prodBonusLevel < this.inputMin) {
       this.prodBonusLevel = this.inputMin;
     }
     this.productivityPercent = this.calcProductivityPercent();
-    let nextRowSpan = 0;
+    const productivity = 1 + this.productivityPercent / 100;
 
-    this.miningRateTable = [];
-    this.groupOres().forEach((oreGroup) => {
-      this.sheetData?.drills.forEach((drill) => {
-        const miningRateTableEntry = this.getMiningRateTableEntry();
-
-        // Check if drill can be used
-        const canUseBurner =
-          oreGroup.findIndex((ore) => {
-            return !ore.burnerMiningDrill;
-          }) === -1
-            ? true
-            : false;
-        const isBurner = drill.id.startsWith('Burner');
-        const displayEntry = !(!canUseBurner && isBurner);
-
-        if (displayEntry) {
-          // Combine like rows together
-          if (isBurner) {
-            miningRateTableEntry.rowspan = 2;
-            nextRowSpan = 0;
-          } else {
-            miningRateTableEntry.rowspan = nextRowSpan;
-          }
-          // Get ore list to display
-          oreGroup.forEach((ore) => {
-            miningRateTableEntry.materials.push(ore.id);
-          });
-
-          // Calc stuff
-          const miningTime = oreGroup[0].miningTime;
-
-          const productivity = 1 + this.productivityPercent / 100;
-          const miningRate = (drill.miningSpeed / miningTime) * productivity;
-
-          miningRateTableEntry.miningRate.miner = drill.id;
-          miningRateTableEntry.miningRate.rate = miningRate;
-          this.beltData?.belt_info.forEach((belt) => {
-            // Not ideal, get rid of switch and modified view to accept array of belts to display.
-            switch (belt.tier) {
-              case 1:
-                miningRateTableEntry.beltYellow = belt.throughput / miningRate;
-                break;
-              case 2:
-                miningRateTableEntry.beltRed = belt.throughput / miningRate;
-                break;
-              case 3:
-                miningRateTableEntry.beltBlue = belt.throughput / miningRate;
-                break;
-              default:
-                break;
-            }
-          });
-          this.miningRateTable.push(miningRateTableEntry);
-        } else {
-          // This entry is single, instead of combining two
-          if (isBurner) {
-            miningRateTableEntry.rowspan = 0;
-            nextRowSpan = 1;
-          } else {
-            miningRateTableEntry.rowspan = nextRowSpan;
-          }
-        }
+    this.mineTableRowGroups.forEach((value: MineTableRowGroup) => {
+      value.mineData.forEach((row: MineTableRow) => {
+        row.beltRates = BELT_DATA.map(
+          (beltData: BeltData): number =>
+            beltData.throughput / (row.rate * productivity)
+        );
       });
     });
+  }
+  private calcProductivityPercent(): number {
+    return (prodBonusPercent ?? 1) * this.prodBonusLevel;
   }
 }
