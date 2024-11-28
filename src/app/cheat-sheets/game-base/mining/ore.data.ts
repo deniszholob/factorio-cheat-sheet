@@ -9,16 +9,6 @@ export interface OreData {
 
 export const ORE_DATA: OreData[] = [
   {
-    name: 'Scrap',
-    miningTime: 0.5,
-    minedWith: [
-      DrillTypes.Burner_mining_drill,
-      DrillTypes.Electric_mining_drill,
-      DrillTypes.Big_mining_drill,
-    ],
-    spaceAge: true,
-  },
-  {
     name: 'Copper_ore',
     miningTime: 1,
     minedWith: [
@@ -55,8 +45,13 @@ export const ORE_DATA: OreData[] = [
     ],
   },
   {
-    name: 'Calcite',
-    miningTime: 1,
+    name: 'Uranium_ore',
+    miningTime: 2,
+    minedWith: [DrillTypes.Electric_mining_drill, DrillTypes.Big_mining_drill],
+  },
+  {
+    name: 'Scrap',
+    miningTime: 0.5,
     minedWith: [
       DrillTypes.Burner_mining_drill,
       DrillTypes.Electric_mining_drill,
@@ -65,9 +60,14 @@ export const ORE_DATA: OreData[] = [
     spaceAge: true,
   },
   {
-    name: 'Uranium_ore',
-    miningTime: 2,
-    minedWith: [DrillTypes.Electric_mining_drill, DrillTypes.Big_mining_drill],
+    name: 'Calcite',
+    miningTime: 1,
+    minedWith: [
+      DrillTypes.Burner_mining_drill,
+      DrillTypes.Electric_mining_drill,
+      DrillTypes.Big_mining_drill,
+    ],
+    spaceAge: true,
   },
   {
     name: 'Tungsten_ore',

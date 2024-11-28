@@ -1,3 +1,9 @@
+export interface FactorioIconData {
+  name: string;
+  text?: string;
+  spaceAge?: boolean;
+}
+
 export class FactorioIcon {
   src: string;
   text?: string;
@@ -36,7 +42,7 @@ export enum FactorioIconIds {
   'Electric_engine_unit' = 'Electric_engine_unit',
   'Electric_furnace' = 'Electric_furnace',
   'Electronic_circuit' = 'Electronic_circuit',
-  'Empty_barrel' = 'Empty_barrel',
+  'Barrel' = 'Barrel',
   'Engine_unit' = 'Engine_unit',
   'Express_transport_belt' = 'Express_transport_belt',
   'Fast_inserter' = 'Fast_inserter',

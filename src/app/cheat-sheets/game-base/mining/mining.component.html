@@ -1,6 +1,6 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
   <div class="row align-items-center">
-    <div class="col-12 col-lg-6">
+    <div class="col-12 col-lg-4">
       <ul>
         <li>
           <a href="https://wiki.factorio.com/Mining" target="_blank" rel="noopener">Mining rate</a>
@@ -45,7 +45,7 @@
       </p>
     </div>
 
-    <div class="col-12 col-lg-6">
+    <div class="col-12 col-lg-8">
       <table class="table table-sm table-hover fixed-width">
         <caption class="text-center">
           Miners needed to fill a belt
@@ -88,12 +88,12 @@
         </thead>
 
         <tbody>
-          <ng-container *ngFor="let group of mineTableRowGroups | keyvalue">
+          <ng-container *ngFor="let group of mineTableRowGroups">
             <!-- Ore group -->
             <tr>
-              <td [attr.rowspan]="1 + group.value.mineData.length">
+              <td [attr.rowspan]="1 + group.mineData.length">
                 <div>
-                  <ng-container *ngFor="let ore of group.value.ores">
+                  <ng-container *ngFor="let ore of group.ores">
                     <app-factorio-icon
                       [icon]="dataService.getFactorioIcon(ore.name, ore.miningTime + 's')"
                       [spaceAge]="ore.spaceAge"
@@ -104,7 +104,7 @@
             </tr>
 
             <!-- Drill data for ores -->
-            <tr *ngFor="let row of group.value.mineData">
+            <tr *ngFor="let row of group.mineData">
               <td>
                 <div>
                   <app-factorio-icon [icon]="dataService.getFactorioIcon(row.miner)" [spaceAge]="row.spaceAge"></app-factorio-icon>

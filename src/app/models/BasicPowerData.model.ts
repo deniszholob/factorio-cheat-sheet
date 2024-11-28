@@ -12,7 +12,6 @@ export interface BasicPowerData {
   solar_energy_max: number;
   solar_energy_avg: number;
   solar_energy_unit: string;
-  boilerSupport: BoilerSupport[];
 }
 
 export interface SteamRatio {
@@ -23,12 +22,4 @@ export interface SteamRatio {
 export interface SolarRatio {
   iconId: string;
   count: number;
-}
-
-export interface BoilerSupport {
-  fuel: string;
-  fuelEnergy: string;
-  beltYellow: number;
-  beltRed: number;
-  beltBlue: number;
 }

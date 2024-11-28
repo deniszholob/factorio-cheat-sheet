@@ -89,51 +89,46 @@
 
   <table class="table table-sm table-hover fixed-width">
     <caption class="text-center">
+      <app-factorio-icon [icon]="dataService.getFactorioIcon('Boiler')"> </app-factorio-icon>
       Boilers supported by a full belt of fuel
       <br />
       (Rounded up to nearest whole number)
     </caption>
+
     <thead class="text-center">
       <tr>
-        <th></th>
-        <th *ngFor="let item of sheetData?.boilerSupport">
-          <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.fuel, item?.fuelEnergy)"> </app-factorio-icon>
-        </th>
+        <ng-container *ngFor="let col of boilerTableColumns">
+          <th>
+            <ng-container *ngIf="col.type === 'Text'">
+              {{ col.name }}
+            </ng-container>
+            <ng-container *ngIf="col.type === 'FactorioIcon'">
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(col.name, col.text)" [spaceAge]="col.spaceAge"> </app-factorio-icon>
+            </ng-container>
+          </th>
+        </ng-container>
       </tr>
     </thead>
+
     <tbody class="text-center">
-      <tr>
-        <th>
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt')"></app-factorio-icon>
-        </th>
-        <td *ngFor="let item of sheetData?.boilerSupport">
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Boiler', item?.beltYellow)"> </app-factorio-icon>
-        </td>
-      </tr>
-      <tr>
-        <th>
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_transport_belt')"></app-factorio-icon>
-        </th>
-        <td *ngFor="let item of sheetData?.boilerSupport">
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Boiler', item?.beltRed)"> </app-factorio-icon>
-        </td>
-      </tr>
-      <tr>
-        <th>
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon>
-        </th>
-        <td *ngFor="let item of sheetData?.boilerSupport">
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Boiler', item?.beltBlue)"> </app-factorio-icon>
-        </td>
-      </tr>
+      <ng-container *ngFor="let row of boilerTableRows">
+        <tr>
+          <td>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(row.name, row.text)" [spaceAge]="row.spaceAge"> </app-factorio-icon>
+          </td>
+          <ng-container *ngFor="let boilerCount of row.boilerCounts">
+            <td>{{ boilerCount }}</td>
+          </ng-container>
+        </tr>
+      </ng-container>
     </tbody>
   </table>
 
   <p class="text-center">
-    <kbd>Boilers supported by belt of fuel = Belt Throughput(i/s) * Fuel Energy(MJ) / {{ sheetData?.steam_boiler_energy }}</kbd>
+    <kbd>Boilers supported by belt of fuel = Belt Throughput(i/s) * [Fuel Energy(MJ) / Boiler Energy({{ STEAM_BOILER_ENERGY_MJ }}MJ)]</kbd>
   </p>
 
-  <h4 class="card-title" id="solar-power">Solar Power</h4>
+  <h4 class="card-title" id="solar-power">Solar Power (Nauvis)</h4>
 
   <div class="row align-items-center">
     <div class="col-12 col-xl-8">

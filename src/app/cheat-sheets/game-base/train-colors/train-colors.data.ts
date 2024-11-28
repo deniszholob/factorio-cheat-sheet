@@ -202,7 +202,7 @@ export const TRAIN_COLOR_DATA: RawData<TrainColorsData> = {
         rgb: [73, 123, 21],
       },
       {
-        icon: 'Empty_barrel',
+        icon: 'Barrel',
         rgb: [118, 122, 127],
       },
       {

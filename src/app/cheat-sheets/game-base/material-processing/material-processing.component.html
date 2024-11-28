@@ -115,34 +115,33 @@
     <div class="col-12 col-lg-5 col-print-5">
       <table class="table table-sm fixed-width">
         <caption class="text-center">
-          Furnaces supplied by coal belt
+          Furnaces supplied by a belt of Coal
         </caption>
+
         <thead class="text-center">
           <tr>
-            <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Coal')"></app-factorio-icon>
-            </th>
-            <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt')"></app-factorio-icon>
-            </th>
-            <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_transport_belt')"></app-factorio-icon>
-            </th>
-            <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon>
-            </th>
+            <ng-container *ngFor="let col of coalFurnaceTableColumns">
+              <th>
+                <app-factorio-icon [icon]="dataService.getFactorioIcon(col.icon?.name)" [spaceAge]="col.icon?.spaceAge"></app-factorio-icon>
+              </th>
+            </ng-container>
           </tr>
         </thead>
+
         <tbody class="text-center">
-          <tr>
-            <td>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Stone_furnace')"></app-factorio-icon>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Steel_furnace')"></app-factorio-icon>
-            </td>
-            <td *ngFor="let item of sheetData?.coalConsumption">
-              {{ item?.furnacesSupplied }}
-            </td>
-          </tr>
+          <ng-container *ngFor="let row of coalFurnaceTableRows">
+            <tr>
+              <td>
+                <ng-container *ngFor="let furnace of row.furnaceTypes">
+                  <app-factorio-icon [icon]="dataService.getFactorioIcon(furnace.name)" [spaceAge]="furnace.spaceAge"></app-factorio-icon>
+                </ng-container>
+              </td>
+
+              <ng-container *ngFor="let furnaceCount of row.furnaceCounts">
+                <td>{{ furnaceCount | number }}</td>
+              </ng-container>
+            </tr>
+          </ng-container>
         </tbody>
       </table>
     </div>

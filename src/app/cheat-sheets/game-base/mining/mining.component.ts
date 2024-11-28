@@ -38,6 +38,46 @@ interface MineTableRow {
 
 const prodBonusPercent = 10;
 
+const miningTableColumns: MineTableColumn[] = [
+  { name: 'Ore', type: 'Text' },
+  { name: 'Drill', type: 'Text' },
+  ...BELTS_DATA.data.belt_info.map(
+    (belt): MineTableColumn => ({
+      name: belt.icons[0],
+      type: belt.spaceAge ? 'FactorioSaIcon' : 'FactorioIcon',
+    })
+  ),
+  { name: 'Mine Rate', type: 'Text' },
+];
+
+const mineTableRowGroups: Map<string, MineTableRowGroup> = new Map();
+const sortedDrillData = DRILL_DATA.sort(
+  (a, b) => b.miningSpeed - a.miningSpeed
+);
+ORE_DATA.forEach((ore: OreData) => {
+  const oreKey = `${ore.miningTime}_${ore.minedWith.length}`;
+  if (mineTableRowGroups.has(oreKey)) {
+    mineTableRowGroups.get(oreKey)?.ores.push(ore);
+  } else {
+    mineTableRowGroups.set(oreKey, {
+      ores: [ore],
+      mineData: sortedDrillData
+        .filter((drill) => ore.minedWith.includes(drill.name))
+        .map((drillData: DrillData): MineTableRow => {
+          const rate = drillData.miningSpeed / ore.miningTime;
+          return {
+            spaceAge: drillData.spaceAge,
+            miner: drillData.name,
+            rate,
+            beltRates: BELT_DATA.map(
+              (beltData: BeltData): number => beltData.throughput / rate
+            ),
+          };
+        }),
+    });
+  }
+});
+
 @Component({
   selector: 'app-mining',
   templateUrl: './mining.component.html',
@@ -49,18 +89,10 @@ export class MiningComponent implements OnInit {
 
   protected cheatSheet?: CheatSheet;
 
-  protected miningTableColumns: MineTableColumn[] = [
-    { name: 'Ore', type: 'Text' },
-    { name: 'Drill', type: 'Text' },
-    ...BELTS_DATA.data.belt_info.map(
-      (belt): MineTableColumn => ({
-        name: belt.icons[0],
-        type: belt.spaceAge ? 'FactorioSaIcon' : 'FactorioIcon',
-      })
-    ),
-    { name: 'Mine Rate', type: 'Text' },
+  protected miningTableColumns: MineTableColumn[] = miningTableColumns;
+  protected mineTableRowGroups: MineTableRowGroup[] = [
+    ...mineTableRowGroups.values(),
   ];
-  protected mineTableRowGroups: Map<string, MineTableRowGroup> = new Map();
 
   protected inputMin = 0;
   protected inputStep = 1;
@@ -68,31 +100,7 @@ export class MiningComponent implements OnInit {
   protected prodBonusLevel = this.prodBonusLevelChanged;
   protected productivityPercent = 0;
 
-  constructor(protected dataService: DataService) {
-    ORE_DATA.forEach((ore: OreData) => {
-      const oreKey = `${ore.miningTime}_${ore.minedWith.length}`;
-      if (this.mineTableRowGroups.has(oreKey)) {
-        this.mineTableRowGroups.get(oreKey)?.ores.push(ore);
-      } else {
-        this.mineTableRowGroups.set(oreKey, {
-          ores: [ore],
-          mineData: DRILL_DATA.filter((drill) =>
-            ore.minedWith.includes(drill.name)
-          ).map((drillData: DrillData): MineTableRow => {
-            const rate = drillData.miningSpeed / ore.miningTime;
-            return {
-              spaceAge: drillData.spaceAge,
-              miner: drillData.name,
-              rate,
-              beltRates: BELT_DATA.map(
-                (beltData: BeltData): number => beltData.throughput / rate
-              ),
-            };
-          }),
-        });
-      }
-    });
-  }
+  constructor(protected dataService: DataService) {}
 
   /** Get Data for the Cheat Sheet from the DataService */
   ngOnInit() {

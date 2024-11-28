@@ -7,20 +7,6 @@ export const MATERIAL_PROCESSING_DATA: RawData<MaterialProcessingData> = {
     icon: 'Item-group_intermediate_products',
   },
   data: {
-    coalConsumption: [
-      {
-        belt: 'Transport_belt',
-        furnacesSupplied: 666,
-      },
-      {
-        belt: 'Fast_transport_belt',
-        furnacesSupplied: 1333,
-      },
-      {
-        belt: 'Express_transport_belt',
-        furnacesSupplied: 2000,
-      },
-    ],
     beltEmpty: [
       {
         processor: ['Stone_furnace'],

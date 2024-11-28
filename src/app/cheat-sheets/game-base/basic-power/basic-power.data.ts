@@ -50,42 +50,5 @@ export const BASIC_POWER_DATA: RawData<BasicPowerData> = {
     solar_energy_max: 60,
     solar_energy_avg: 42,
     solar_energy_unit: 'kW',
-    boilerSupport: [
-      {
-        fuel: 'Wood',
-        fuelEnergy: '2MJ',
-        beltYellow: 17,
-        beltRed: 34,
-        beltBlue: 50,
-      },
-      {
-        fuel: 'Coal',
-        fuelEnergy: '4MJ',
-        beltYellow: 34,
-        beltRed: 67,
-        beltBlue: 100,
-      },
-      {
-        fuel: 'Solid_fuel',
-        fuelEnergy: '12MJ',
-        beltYellow: 100,
-        beltRed: 200,
-        beltBlue: 300,
-      },
-      {
-        fuel: 'Rocket_fuel',
-        fuelEnergy: '100MJ',
-        beltYellow: 834,
-        beltRed: 1667,
-        beltBlue: 2500,
-      },
-      {
-        fuel: 'Nuclear_fuel',
-        fuelEnergy: '1.21GJ',
-        beltYellow: 10084,
-        beltRed: 20167,
-        beltBlue: 30250,
-      },
-    ],
   },
 };
