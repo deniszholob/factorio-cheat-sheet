@@ -26,6 +26,7 @@ const meta: Meta<ComponentWithCustomControls> = {
     name: 'name',
     text: '0',
     src: FactorioIconIds.Advanced_circuit,
+    spaceAge: true,
     icon: new Icon(''),
   },
   render(args) {

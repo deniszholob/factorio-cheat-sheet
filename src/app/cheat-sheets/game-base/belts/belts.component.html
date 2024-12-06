@@ -1,4 +1,4 @@
-<app-cheat-sheet [cheatSheet]="cheatSheet">
+<app-cheat-sheet-template [iconId]="cheatSheetIconId" [title]="cheatSheetTitle">
   <div class="row align-items-center">
     <div class="col-12 col-md-7">
       <p>
@@ -15,7 +15,7 @@
         <br />
         <strong>Transport Belt Density</strong>
         - Maximum items that fit in one tile:
-        <strong>{{ sheetData?.belt_density }} items</strong>
+        <strong>{{ BELT_DATA.beltDensity }} items</strong>
         for all belts.
       </p>
 
@@ -36,7 +36,7 @@
           </tr>
         </thead>
         <tbody class="text-center">
-          <tr *ngFor="let item of sheetData?.belt_info">
+          <tr *ngFor="let item of BELT_DATA.beltInfo">
             <td>
               <app-factorio-icon *ngFor="let iconId of item.icons" [icon]="dataService.getFactorioIcon(iconId)" [spaceAge]="item.spaceAge">
               </app-factorio-icon>
@@ -46,7 +46,7 @@
               i/s
             </td>
             <td>
-              {{ item.underground_spacing }}
+              {{ item.undergroundSpacing }}
               tiles
             </td>
           </tr>
@@ -57,7 +57,7 @@
     <div class="col-12 col-md-5 text-center">
       <p>
         All belts can hold up to
-        <strong>{{ sheetData?.belt_density }} items</strong>
+        <strong>{{ BELT_DATA.beltDensity }} items</strong>
         on each tile.
       </p>
       <img
@@ -136,4 +136,4 @@
       />
     </div>
   </div>
-</app-cheat-sheet>
+</app-cheat-sheet-template>

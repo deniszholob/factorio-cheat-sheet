@@ -1,5 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { DataService } from 'app/services';
+import { FactorioIconModule } from 'app/shared';
+
+import { POWER_SOLAR_DATA } from '../power-solar.data';
 
 interface SolarCalcData {
   solarPanels: number;
@@ -10,24 +15,27 @@ interface SolarCalcData {
 @Component({
   selector: 'app-calculator-solar',
   templateUrl: './calculator-solar.component.html',
+  standalone: true,
+  imports: [CommonModule, FormsModule, FactorioIconModule],
 })
 export class CalculatorSolarComponent {
   @Input()
-  public solarPowerRatio = 0.7;
+  public solarPowerEffectiveness: number =
+    POWER_SOLAR_DATA.solarPowerEffectiveness;
   @Input()
-  public solarAvgMw: number = 42 / 1000; // MW
+  public solarAvgMw: number = POWER_SOLAR_DATA.solarEnergyAvgKw / 1000; // MW
 
-  constructor(public dataService: DataService) {
+  constructor(protected dataService: DataService) {
     this.onCalcFromSolar();
   }
 
-  public solarCalcData: SolarCalcData = {
+  protected solarCalcData: SolarCalcData = {
     solarPanels: 850,
     accumulators: 21,
     usablePower: 0.7,
   };
 
-  public onCalcFromSolar(): void {
+  protected onCalcFromSolar(): void {
     this.solarCalcData.accumulators = this.getAccumulatorsFromSolar(
       this.solarCalcData.solarPanels
     );
@@ -36,7 +44,7 @@ export class CalculatorSolarComponent {
     );
   }
 
-  public onCalcFromPower(): void {
+  protected onCalcFromPower(): void {
     this.solarCalcData.solarPanels = this.getSolarFromPower(
       this.solarCalcData.usablePower
     );
@@ -45,7 +53,7 @@ export class CalculatorSolarComponent {
     );
   }
 
-  public onCalcFromAccumulators(): void {
+  protected onCalcFromAccumulators(): void {
     this.solarCalcData.solarPanels = this.getSolarFromAccumulators(
       this.solarCalcData.accumulators
     );

@@ -1,5 +1,13 @@
 // Angular Imports
 import { Component, OnInit } from '@angular/core';
+import {
+  BELT_DATA,
+  BeltInfo,
+  DRILL_DATA,
+  DrillData,
+  ORE_DATA,
+  OreData,
+} from 'app/data';
 // Models
 import { Data } from 'app/models/Data.model';
 // Services
@@ -10,11 +18,7 @@ import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 // RXJS
 import { combineLatest } from 'rxjs';
 
-import { BELTS_DATA } from '../belts/belts.data';
-import { BELT_DATA, BeltData } from './belt.data';
-import { DRILL_DATA, DrillData } from './drill.data';
 import { MINING_DATA } from './mining.data';
-import { ORE_DATA, OreData } from './ore.data';
 
 interface MineTableColumn {
   name: string;
@@ -38,7 +42,7 @@ const prodBonusPercent = 10;
 const miningTableColumns: MineTableColumn[] = [
   { name: 'Ore', type: 'Text' },
   { name: 'Drill', type: 'Text' },
-  ...BELTS_DATA.data.belt_info.map(
+  ...BELT_DATA.beltInfo.map(
     (belt): MineTableColumn => ({
       name: belt.icons[0],
       type: belt.spaceAge ? 'FactorioSaIcon' : 'FactorioIcon',
@@ -66,8 +70,8 @@ ORE_DATA.forEach((ore: OreData) => {
             spaceAge: drillData.spaceAge,
             miner: drillData.name,
             rate,
-            beltRates: BELT_DATA.map(
-              (beltData: BeltData): number => beltData.throughput / rate
+            beltRates: BELT_DATA.beltInfo.map(
+              (beltData: BeltInfo): number => beltData.throughput / rate
             ),
           };
         }),
@@ -133,8 +137,8 @@ export class MiningComponent implements OnInit {
 
     this.mineTableRowGroups.forEach((value: MineTableRowGroup) => {
       value.mineData.forEach((row: MineTableRow) => {
-        row.beltRates = BELT_DATA.map(
-          (beltData: BeltData): number =>
+        row.beltRates = BELT_DATA.beltInfo.map(
+          (beltData: BeltInfo): number =>
             beltData.throughput / (row.rate * productivity)
         );
       });

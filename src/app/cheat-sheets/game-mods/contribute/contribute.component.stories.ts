@@ -2,7 +2,6 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { StorybookCsModule } from 'app/shared/storybook-cs.module';
 
 import { ContributeComponent } from './contribute.component';
-import { ContributeModule } from './contribute.module';
 
 type ComponentWithCustomControls = ContributeComponent;
 
@@ -11,7 +10,7 @@ const meta: Meta<ComponentWithCustomControls> = {
   component: ContributeComponent,
   decorators: [
     moduleMetadata({
-      imports: [ContributeModule, StorybookCsModule],
+      imports: [StorybookCsModule],
     }),
   ],
   parameters: {

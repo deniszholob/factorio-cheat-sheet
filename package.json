@@ -11,27 +11,27 @@
     "npm": ">= 8.19.2"
   },
   "scripts": {
-    "ng": "ng",
     "i": "npm i",
     "start": "ng serve --port 9009",
+    "storybook:docs": "npm run docs:json && npm run storybook",
+    "storybook": "ng run factorio-cheat-sheet:storybook --port 6006",
+    "lint": "ng lint --fix",
+    "format": "prettier --cache --write --ignore-unknown  .",
+    "lint:check": "ng lint",
+    "format:check": "prettier --cache --check  --ignore-unknown .",
+    "test": "echo 'No tests'",
     "start:prod": "http-server -p 8080 -c-1 public",
     "build": "npm run build:prod",
     "build:sh": "sh ./build/build.sh",
     "build:dev": "ng --configuration development",
     "build:prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
-    "test": "echo 'No tests'",
-    "lint": "ng lint --fix",
-    "lint:check": "ng lint",
-    "format": "prettier --cache --write --ignore-unknown  .",
-    "format:check": "prettier --cache --check  --ignore-unknown .",
+    "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
+    "build-storybook": "npm run docs:json && storybook build",
     "prepare": "husky install",
     "pre-commit": "npm run update-devcontainer-extensions && npx lint-staged",
     "update-devcontainer-extensions": "node .devcontainer/dev-container-update-extensions.js ",
-    "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
-    "storybook": "ng run factorio-cheat-sheet:storybook --port 6006",
-    "storybook:docs": "npm run docs:json && npm run storybook",
-    "build-storybook": "npm run docs:json && storybook build"
+    "ng": "ng"
   },
   "lint-staged": {
     "**/*.{ts,tsx,js,jsx}": [

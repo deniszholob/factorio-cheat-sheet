@@ -2,19 +2,19 @@ import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 import { StoryFnAngularReturnType } from '@storybook/angular/dist/client/types';
 import { StorybookCsModule } from 'app/shared/storybook-cs.module';
 
-import { SpaceAgeComponent } from './space-age.component';
+import { PowerSteamComponent } from './power-steam.component';
 
-type ComponentWithCustomControls = SpaceAgeComponent;
+type ComponentWithCustomControls = PowerSteamComponent;
 
 const meta: Meta<ComponentWithCustomControls> = {
-  title: 'Cheat Sheets/Game Base/Space Age',
-  component: SpaceAgeComponent,
+  title: 'Cheat Sheets/Game Base/Power Steam',
+  component: PowerSteamComponent,
   decorators: [
     moduleMetadata({ imports: [StorybookCsModule] }),
     // applicationConfig({ providers: [importProvidersFrom()] }),
   ],
   parameters: {
-    docs: { description: { component: `SpaceAge` } },
+    docs: { description: { component: `PowerSteam` } },
     // layout: 'fullscreen',
   },
   argTypes: {
@@ -31,7 +31,7 @@ const meta: Meta<ComponentWithCustomControls> = {
 };
 export default meta;
 
-export const SpaceAge: StoryObj<ComponentWithCustomControls> = {
+export const PowerSteam: StoryObj<ComponentWithCustomControls> = {
   args: {}, // Overrides args from default
   render: (args): StoryFnAngularReturnType => ({ props: args }),
 };

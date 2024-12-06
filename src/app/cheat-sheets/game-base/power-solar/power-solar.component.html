@@ -1,0 +1,80 @@
+<app-cheat-sheet-template [iconId]="cheatSheetIconId" [title]="cheatSheetTitle">
+  <div class="row align-items-center">
+    <p class="col-12 col-sm-4 text-center">
+      <span class="text-muted">
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Nauvis')"></app-factorio-icon> Solar Power (Usable)
+        <a href="https://wiki.factorio.com/Power_production#Solar_panels_and_accumulators" target="_blank" rel="noopener"> Build Ratio </a>
+      </span>
+      <br />
+      <ng-container *ngFor="let item of POWER_SOLAR_DATA.solarBuildRatio.solarRatio">
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
+      </ng-container>
+      <i class="fas fa-long-arrow-alt-right text-muted"></i>
+      <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+      <sub style="vertical-align: baseline">
+        <strong>{{ POWER_SOLAR_DATA.solarBuildRatio.solarRatioPowerMw }}MW</strong>
+      </sub>
+    </p>
+
+    <p class="col-12 col-sm-4 text-center">
+      <span class="text-muted">
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Nauvis')"></app-factorio-icon> Solar Total to Usable
+      </span>
+      <br />
+      <app-factorio-icon [icon]="dataService.getFactorioIcon('Solar_panel', '10MW')"></app-factorio-icon>
+      <i class="fas fa-long-arrow-alt-right text-muted"></i>
+      <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+      <sub style="vertical-align: baseline">
+        <strong>{{ 10 * POWER_SOLAR_DATA.solarPowerEffectiveness }}MW</strong>
+      </sub>
+    </p>
+  </div>
+
+  <hr />
+
+  <div class="row align-items-center">
+    <div class="col-12 col-xl-8">
+      <ul>
+        <li>
+          <a href="https://wiki.factorio.com/Solar_panel" target="_blank" rel="noopener">Solar panels</a>
+          only provide energy during the day. <br />
+          ( {{ POWER_SOLAR_DATA.solarEnergyMaxKw }}KW Max, {{ POWER_SOLAR_DATA.solarEnergyAvgKw }}KW average per solar panel, ratio of
+          {{ POWER_SOLAR_DATA.solarBuildRatio.solarRatioPowerMw | percent }}
+          "usable" to total)
+        </li>
+        <li>
+          10MW worth of solar panels will power a factory of
+          {{ 10 * POWER_SOLAR_DATA.solarPowerEffectiveness }}MW on Nauvis.
+        </li>
+        <li>
+          During the day, excess power generated is stored in
+          <a href="https://wiki.factorio.com/Accumulator" target="_blank" rel="noopener">accumulators</a>, during the night, accumulators
+          release their charge to power your factory.
+        </li>
+        <li>Place accumulators until they can keep your factory powered through the night.</li>
+        <li>Add some extra accumulators to account for burst consumption, such as firing a lot of lasers.</li>
+        <li>Then place solar panels until those accumulators are fully charged by the end of the day.</li>
+        <li>
+          User
+          <a href="https://forums.factorio.com/viewtopic.php?f=5&t=5594" target="_blank" rel="noopener"><i>Cilya</i> on the forums</a>
+          did the
+          <a
+            href="https://www.wolframalpha.com/input/?i=(+(0.5+%2B+0.2)+*+(0.1+%2B+0.2+*+(0.5+%2B+0.2)+%2F+1.0)+%2F+1.0)+*+(25000+%2F+60)+*+(60+%2F+5000)"
+            target="_blank"
+            rel="noopener"
+          >
+            math
+          </a>
+          to figure out exactly how many solar panels we need per accumulator.
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-12 col-xl-4">
+      <app-calculator-solar
+        [solarPowerEffectiveness]="POWER_SOLAR_DATA.solarBuildRatio.solarRatioPowerMw"
+        [solarAvgMw]="POWER_SOLAR_DATA.solarEnergyAvgKw / 1000"
+      ></app-calculator-solar>
+    </div>
+  </div>
+</app-cheat-sheet-template>

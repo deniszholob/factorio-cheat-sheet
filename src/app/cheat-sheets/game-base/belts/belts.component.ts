@@ -1,38 +1,27 @@
-// Angular Imports
-import { Component, OnInit } from '@angular/core';
-import { BeltsData } from 'app/models/BeltsData.model';
-// Models
-import { Data } from 'app/models/Data.model';
-// Services
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { BELT_DATA, BeltData } from 'app/data';
 import { DataService } from 'app/services/data.service';
-// Constants
-import { APP_INFO } from 'app/shared/app-settings';
-import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { FactorioIconModule } from 'app/shared';
+import { APP_INFO, AppInfo } from 'app/shared/app-settings';
+import { CheatSheetTemplateComponent } from 'app/shared/cheat-sheet-template/cheat-sheet-template.component';
 
-import { BELTS_DATA } from './belts.data';
+export const BELTS_SHEET_ICON = 'Transport_belt';
+export const BELTS_SHEET_TITLE = 'Belts';
 
 @Component({
   selector: 'app-belts',
   templateUrl: './belts.component.html',
-  // styleUrls: ['./belts.component.scss'] // Enable as needed
+  styles: [':host{display:contents}'], // Makes component host as if it was not there, can offer less css headaches. Use @HostBinding class approach for easier overrides.
+  standalone: true,
+  imports: [CommonModule, CheatSheetTemplateComponent, FactorioIconModule],
 })
-export class BeltsComponent implements OnInit {
-  public cheatSheet?: CheatSheet;
-  public sheetData?: BeltsData;
+export class BeltsComponent {
+  protected readonly cheatSheetIconId: string = BELTS_SHEET_ICON;
+  protected readonly cheatSheetTitle: string = BELTS_SHEET_TITLE;
 
-  public APP_INFO = APP_INFO;
+  protected readonly APP_INFO: AppInfo = APP_INFO;
+  protected readonly BELT_DATA: BeltData = BELT_DATA;
 
-  constructor(public dataService: DataService) {}
-
-  ngOnInit() {
-    this.dataService.getLocalCheatSheetData<BeltsData>(BELTS_DATA).subscribe(
-      (result: Data<BeltsData>) => {
-        this.cheatSheet = result.cheatSheet;
-        this.sheetData = result.data;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
+  constructor(protected dataService: DataService) {}
 }

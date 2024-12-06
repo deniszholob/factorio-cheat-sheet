@@ -1,3 +1,5 @@
+import { SimpleRatio } from 'app/data';
+
 import { Ratio } from '../cs-common-ratios/ratio.model';
 
 export interface SpaceAgeData {
@@ -9,9 +11,4 @@ export interface SpaceAgeData {
   bootstrapItemsFulgora: SimpleRatio[][];
   recyclerScrapRatio: SimpleRatio[];
   baseResources: string[][][];
-}
-
-export interface SimpleRatio {
-  iconId: string;
-  count: number;
 }

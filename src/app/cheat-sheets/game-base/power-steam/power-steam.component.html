@@ -1,0 +1,102 @@
+<app-cheat-sheet-template [iconId]="cheatSheetIconId" [title]="cheatSheetTitle">
+  <div class="row align-items-center">
+    <p class="col-12 col-sm-4 text-center">
+      <span class="text-muted">
+        Steam Power
+        <a href="https://wiki.factorio.com/Power_production#Steam_engine_power" target="_blank" rel="noopener">Build Ratio</a> </span
+      ><br />
+      <ng-container *ngFor="let item of POWER_STEAM_DATA.steamBuildRatio.steamRatio">
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"> </app-factorio-icon>
+      </ng-container>
+      <i class="fas fa-long-arrow-alt-right text-muted"></i>
+      <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+      <sub style="vertical-align: baseline"
+        ><strong>{{ POWER_STEAM_DATA.steamBuildRatio.steamRatioPowerMw }}MW</strong></sub
+      >
+    </p>
+  </div>
+
+  <hr />
+
+  <ul>
+    <li>
+      An
+      <a href="https://wiki.factorio.com/Offshore_pump" target="_blank" rel="noopener">offshore pump</a>
+      provides
+      {{ POWER_STEAM_DATA.offshorePumpWater }}
+      units of water per second.
+    </li>
+    <li>
+      A
+      <a href="https://wiki.factorio.com/Boiler" target="_blank" rel="noopener">steam boiler</a>
+      can convert up to
+      {{ POWER_STEAM_DATA.steamBoilerWater }}
+      units of water into
+      {{ POWER_STEAM_DATA.steamBoilerSteam }}
+      units of steam per second, providing
+      {{ POWER_STEAM_DATA.steamBoilerEnergyMj }}MJ of steam (at 165 °C).
+    </li>
+    <li>
+      A steam boiler consumes
+      {{ POWER_STEAM_DATA.steamBoilerEnergyMj }}MJ of fuel per second.
+    </li>
+    <li>
+      A
+      <a href="https://wiki.factorio.com/Steam_engine" target="_blank" rel="noopener">steam engine</a>
+      can convert
+      {{ POWER_STEAM_DATA.steamEngineSteam }}
+      units of steam (at 165 °C) per second into
+      {{ POWER_STEAM_DATA.steamEnginePowerMw }}MW of electric power.
+    </li>
+    <li>
+      {{ POWER_STEAM_DATA.steamBuildRatio.steamRatio[2].count }}
+      steam engines will provide
+      {{ POWER_STEAM_DATA.steamBuildRatio.steamRatioPowerMw }}MW of power.
+    </li>
+  </ul>
+
+  <table class="table table-sm table-hover fixed-width">
+    <caption class="text-center">
+      <app-factorio-icon [icon]="dataService.getFactorioIcon('Boiler')"> </app-factorio-icon>
+      Boilers supported by a full belt of fuel
+      <br />
+      (Rounded up to nearest whole number)
+    </caption>
+
+    <thead class="text-center">
+      <tr>
+        <ng-container *ngFor="let col of boilerTableColumns">
+          <th>
+            <ng-container *ngIf="col.type === 'Text'">
+              {{ col.name }}
+            </ng-container>
+            <ng-container *ngIf="col.type === 'FactorioIcon'">
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(col.name, col.text)" [spaceAge]="col.spaceAge"> </app-factorio-icon>
+            </ng-container>
+          </th>
+        </ng-container>
+      </tr>
+    </thead>
+
+    <tbody class="text-center">
+      <ng-container *ngFor="let row of boilerTableRows">
+        <tr>
+          <td>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(row.name, row.text)" [spaceAge]="row.spaceAge"> </app-factorio-icon>
+          </td>
+          <ng-container *ngFor="let boilerCount of row.boilerCounts">
+            <td>{{ boilerCount }}</td>
+          </ng-container>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+
+  <p class="text-center">
+    <kbd
+      >Boilers supported by belt of fuel = Belt Throughput(i/s) * [Fuel Energy(MJ) / Boiler Energy({{
+        POWER_STEAM_DATA.steamBoilerEnergyMj
+      }}MJ)]</kbd
+    >
+  </p>
+</app-cheat-sheet-template>

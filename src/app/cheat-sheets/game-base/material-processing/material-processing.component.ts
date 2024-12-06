@@ -1,5 +1,12 @@
 // Angular Imports
 import { Component, OnInit } from '@angular/core';
+import {
+  BELT_DATA,
+  BeltInfo,
+  BURNABLES_DATA,
+  FurnaceData,
+  FURNACES_DATA,
+} from 'app/data';
 // Models
 import { Data } from 'app/models/Data.model';
 import { MaterialProcessingData } from 'app/models/MaterialProcessingData.model';
@@ -9,9 +16,6 @@ import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 // Constants
 import { FactorioIconData } from 'app/shared/factorio-icon/factorio-icon.model';
 
-import { BURNABLES_DATA } from '../basic-power/burnables.data';
-import { BELT_DATA, BeltData } from '../mining/belt.data';
-import { FurnaceData, FURNACES_DATA } from './furnaces.data';
 import { MATERIAL_PROCESSING_DATA } from './material-processing.data';
 
 interface CoalFurnaceTableColumn {
@@ -26,8 +30,8 @@ interface CoalFurnaceTableRow {
 
 const coalFurnaceTableColumns: CoalFurnaceTableColumn[] = [
   { icon: { name: 'Coal' } },
-  ...BELT_DATA.map(
-    (belt: BeltData): CoalFurnaceTableColumn => ({
+  ...BELT_DATA.beltInfo.map(
+    (belt: BeltInfo): CoalFurnaceTableColumn => ({
       icon: { name: belt.name, spaceAge: belt.spaceAge },
     })
   ),
@@ -38,7 +42,7 @@ FURNACES_DATA.forEach((furnace: FurnaceData) => {
   if (!groupedCoalFurnaceTableRows.has(furnace.energyConsumptionKw)) {
     groupedCoalFurnaceTableRows.set(furnace.energyConsumptionKw, {
       furnaceTypes: [],
-      furnaceCounts: BELT_DATA.map((belt: BeltData): number =>
+      furnaceCounts: BELT_DATA.beltInfo.map((belt: BeltInfo): number =>
         calcFurnaceCount(belt.throughput, furnace.energyConsumptionKw)
       ),
     });

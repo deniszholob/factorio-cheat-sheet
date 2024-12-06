@@ -1,7 +1,7 @@
 <div class="card cheat-sheet" id="{{ id }}">
   <div class="card-header" (click)="toggleCollapse()">
     <a [routerLink]="[]" [fragment]="id">
-      <app-factorio-icon [icon]="factorioIcon"></app-factorio-icon>
+      <app-factorio-icon [icon]="factorioIcon" [spaceAge]="spaceAge"></app-factorio-icon>
       <h3 class="card-title">
         {{ title }}
       </h3>
@@ -15,7 +15,7 @@
     </button>
   </div>
 
-  <div class="card-body" [ngbCollapse]="!!isCollapsed" [animation]="false">
+  <div class="card-body" [ngbCollapse]="!!isCollapsed" [animation]="animation">
     <ng-content></ng-content>
 
     <app-ad-sense *ngIf="!isCollapsed">

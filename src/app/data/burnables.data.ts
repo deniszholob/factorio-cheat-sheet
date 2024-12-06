@@ -3,6 +3,7 @@ export interface BurnablesData {
   name: string;
   fuelEnergyMj: number;
 }
+
 export const BURNABLES_DATA: BurnablesData[] = [
   { name: 'Wood', fuelEnergyMj: 2 },
   { name: 'Coal', fuelEnergyMj: 4 },

@@ -1,24 +1,26 @@
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 import { DataService } from 'app/services';
 
+import { POWER_SOLAR_DATA } from '../power-solar.data';
 import { CalculatorSolarComponent } from './calculator-solar.component';
-import { CalculatorSolarModule } from './calculator-solar.module';
 
 type ComponentWithCustomControls = CalculatorSolarComponent;
 
 // More on how to set up stories at: https://storybook.js.org/docs/7.0/angular/writing-stories/introduction
 const meta: Meta<ComponentWithCustomControls> = {
-  title: 'Cheat Sheets/Game Base/Basic Power/Calculator Solar',
+  title: 'Cheat Sheets/Game Base/Power Solar/Calculator Solar',
   component: CalculatorSolarComponent,
   decorators: [
-    moduleMetadata({
-      imports: [CalculatorSolarModule],
-      providers: [DataService],
-    }),
+    moduleMetadata({ imports: [], providers: [DataService] }),
+    // applicationConfig({ providers: [importProvidersFrom()] }),
   ],
+  parameters: {
+    docs: { description: { component: `PowerSolar` } },
+    // layout: 'fullscreen',
+  },
   args: {
-    solarPowerRatio: 0.7,
-    solarAvgMw: 42 / 1000, // MW
+    solarPowerEffectiveness: POWER_SOLAR_DATA.solarPowerEffectiveness,
+    solarAvgMw: POWER_SOLAR_DATA.solarEnergyAvgKw / 1000, // MW
   },
 };
 

@@ -3,10 +3,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { BalancersModule } from './balancers/balancers.module';
-import { BasicPowerModule } from './basic-power/basic-power.module';
-import { BeltsModule } from './belts/belts.module';
+import { BeltsComponent } from './belts/belts.component';
 import { CargoWagonTransferModule } from './cargo-wagon-transfer/cargo-wagon-transfer.module';
-import { CsCommonRatiosModule } from './cs-common-ratios/cs-common-ratios.module';
+import { CsCommonRatiosComponent } from './cs-common-ratios/cs-common-ratios.component';
 import { FluidWagonTransferModule } from './fluid-wagon-transfer/fluid-wagon-transfer.module';
 import { GameBaseComponent } from './game-base.component';
 import { ROUTES_GAME_BASE } from './game-base.routes';
@@ -18,6 +17,8 @@ import { MiningModule } from './mining/mining.module';
 import { ModulesAndBeaconsModule } from './modules-and-beacons/modules-and-beacons.module';
 import { NuclearPowerModule } from './nuclear-power/nuclear-power.module';
 import { OilRefiningModule } from './oil-refining/oil-refining.module';
+import { PowerSolarComponent } from './power-solar/power-solar.component';
+import { PowerSteamComponent } from './power-steam/power-steam.component';
 import { ProductivityModulePayoffsModule } from './productivity-module-payoffs/productivity-module-payoffs.module';
 import { ScienceModule } from './science/science.module';
 import { SpaceAgeComponent } from './space-age/space-age.component';
@@ -32,11 +33,10 @@ import { VehicleFuelBonusModule } from './vehicle-fuel-bonus/vehicle-fuel-bonus.
 
     // Sheets
     BalancersModule,
-    BasicPowerModule,
-    BeltsModule,
+    BeltsComponent,
     CargoWagonTransferModule,
     // CombatModule,
-    CsCommonRatiosModule,
+    CsCommonRatiosComponent,
     FluidWagonTransferModule,
     InserterCapacityBonusModule,
     InserterThroughputModule,
@@ -46,6 +46,8 @@ import { VehicleFuelBonusModule } from './vehicle-fuel-bonus/vehicle-fuel-bonus.
     ModulesAndBeaconsModule,
     NuclearPowerModule,
     OilRefiningModule,
+    PowerSolarComponent,
+    PowerSteamComponent,
     ProductivityModulePayoffsModule,
     ScienceModule,
     TipsModule,

@@ -2,7 +2,6 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { StorybookCsModule } from 'app/shared/storybook-cs.module';
 
 import { PopularModsComponent } from './popular-mods.component';
-import { PopularModsModule } from './popular-mods.module';
 
 type ComponentWithCustomControls = PopularModsComponent;
 
@@ -11,7 +10,7 @@ const meta: Meta<ComponentWithCustomControls> = {
   component: PopularModsComponent,
   decorators: [
     moduleMetadata({
-      imports: [PopularModsModule, StorybookCsModule],
+      imports: [StorybookCsModule],
     }),
   ],
   parameters: {

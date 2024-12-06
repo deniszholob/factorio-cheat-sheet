@@ -8,6 +8,7 @@ import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 // RXJX Observables
 import { Subscription } from 'rxjs';
 
+/** @deprecated Use CheatSheetTemplateComponent instead */
 @Component({
   selector: 'app-cheat-sheet',
   templateUrl: './cheat-sheet.component.html',

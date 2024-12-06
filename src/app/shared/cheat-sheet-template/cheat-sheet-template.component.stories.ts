@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
-import { SheetCollapseToggleService } from 'app/services';
+import { DataService, SheetCollapseToggleService } from 'app/services';
 
 import { FactorioIconIds } from '../factorio-icon/factorio-icon.model';
 import {
@@ -9,7 +9,6 @@ import {
   CHT_DEFAULT_ICON_ID,
   CHT_DEFAULT_TITLE,
 } from './cheat-sheet-template.component';
-import { CheatSheetTemplateModule } from './cheat-sheet-template.module';
 
 type ComponentWithCustomControls = CheatSheetTemplateComponent & {
   content: string;
@@ -21,9 +20,9 @@ const meta: Meta<ComponentWithCustomControls> = {
   component: CheatSheetTemplateComponent,
   decorators: [
     moduleMetadata({
-      imports: [CommonModule, CheatSheetTemplateModule, RouterTestingModule],
+      imports: [CommonModule, RouterTestingModule],
       // declarations: [],
-      providers: [SheetCollapseToggleService],
+      providers: [SheetCollapseToggleService, DataService],
     }),
   ],
   argTypes: {
@@ -35,6 +34,8 @@ const meta: Meta<ComponentWithCustomControls> = {
   args: {
     iconId: CHT_DEFAULT_ICON_ID,
     title: CHT_DEFAULT_TITLE,
+    spaceAge: true,
+    animation: true,
     content: 'Cheat Sheet Contents',
   },
   render(args) {
@@ -43,6 +44,7 @@ const meta: Meta<ComponentWithCustomControls> = {
       template: `<app-cheat-sheet-template
         [iconId]="iconId"
         [title]="title"
+        [spaceAge]="spaceAge"
       >${args.content}</app-cheat-sheet-template>`,
     };
   },

@@ -2,7 +2,6 @@ import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 import { StorybookCsModule } from 'app/shared/storybook-cs.module';
 
 import { CsCommonRatiosComponent } from './cs-common-ratios.component';
-import { CsCommonRatiosModule } from './cs-common-ratios.module';
 type ComponentWithCustomControls = CsCommonRatiosComponent & {
   content: string;
 };
@@ -13,7 +12,7 @@ const meta: Meta<ComponentWithCustomControls> = {
   component: CsCommonRatiosComponent,
   decorators: [
     moduleMetadata({
-      imports: [CsCommonRatiosModule, StorybookCsModule],
+      imports: [StorybookCsModule],
     }),
   ],
 };

@@ -2,10 +2,10 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { ContributeModule } from './contribute/contribute.module';
+import { ContributeComponent } from './contribute/contribute.component';
 import { GameModsComponent } from './game-mods.component';
 import { ROUTES_GAME_MODS } from './game-mods.routes';
-import { PopularModsModule } from './popular-mods/popular-mods.module';
+import { PopularModsComponent } from './popular-mods/popular-mods.component';
 
 @NgModule({
   imports: [
@@ -13,8 +13,8 @@ import { PopularModsModule } from './popular-mods/popular-mods.module';
     RouterModule.forChild(ROUTES_GAME_MODS),
 
     // Sheets
-    ContributeModule,
-    PopularModsModule,
+    ContributeComponent,
+    PopularModsComponent,
   ],
   declarations: [GameModsComponent],
   exports: [GameModsComponent, RouterModule],

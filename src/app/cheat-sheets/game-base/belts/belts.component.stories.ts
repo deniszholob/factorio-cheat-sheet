@@ -2,7 +2,6 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { StorybookCsModule } from 'app/shared/storybook-cs.module';
 
 import { BeltsComponent } from './belts.component';
-import { BeltsModule } from './belts.module';
 
 type ComponentWithCustomControls = BeltsComponent;
 
@@ -11,7 +10,7 @@ const meta: Meta<ComponentWithCustomControls> = {
   component: BeltsComponent,
   decorators: [
     moduleMetadata({
-      imports: [BeltsModule, StorybookCsModule],
+      imports: [StorybookCsModule],
     }),
   ],
   parameters: {
