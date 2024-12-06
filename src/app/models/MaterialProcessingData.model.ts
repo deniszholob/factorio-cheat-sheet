@@ -9,4 +9,5 @@ export interface Belt {
   beltYellow: number;
   beltRed: number;
   beltBlue: number;
+  beltGreen: number;
 }

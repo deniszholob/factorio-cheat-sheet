@@ -9,7 +9,7 @@
         <thead class="text-center">
           <tr>
             <th colspan="2">Machines needed<a [routerLink]="[]" fragment="note_building_processing">^</a> to</th>
-            <th colspan="3">Empty input belt</th>
+            <th colspan="4">Empty input belt</th>
           </tr>
           <tr>
             <th>With</th>
@@ -22,6 +22,9 @@
             </th>
             <th>
               <app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon>
+            </th>
+            <th>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Turbo_transport_belt')"></app-factorio-icon>
             </th>
           </tr>
         </thead>
@@ -36,6 +39,7 @@
             <td class="bg-input" title="Machines">{{ item?.beltYellow }}</td>
             <td class="bg-input" title="Machines">{{ item?.beltRed }}</td>
             <td class="bg-input" title="Machines">{{ item?.beltBlue }}</td>
+            <td class="bg-input" title="Machines">{{ item?.beltGreen }}</td>
           </tr>
         </tbody>
       </table>
@@ -46,7 +50,7 @@
         <thead class="text-center">
           <tr>
             <th colspan="2">Machines needed<a [routerLink]="[]" fragment="note_building_processing">^</a> to</th>
-            <th colspan="3">Fill output belt</th>
+            <th colspan="4">Fill output belt</th>
           </tr>
           <tr>
             <th>With</th>
@@ -59,6 +63,9 @@
             </th>
             <th>
               <app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon>
+            </th>
+            <th>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon('Turbo_transport_belt')"></app-factorio-icon>
             </th>
           </tr>
         </thead>
@@ -73,6 +80,7 @@
             <td class="bg-output" title="Machines">{{ item?.beltYellow }}</td>
             <td class="bg-output" title="Machines">{{ item?.beltRed }}</td>
             <td class="bg-output" title="Machines">{{ item?.beltBlue }}</td>
+            <td class="bg-output" title="Machines">{{ item?.beltGreen }}</td>
           </tr>
         </tbody>
       </table>
