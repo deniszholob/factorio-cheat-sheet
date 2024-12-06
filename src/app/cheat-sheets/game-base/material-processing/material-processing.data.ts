@@ -14,6 +14,7 @@ export const MATERIAL_PROCESSING_DATA: RawData<MaterialProcessingData> = {
         beltYellow: 48,
         beltRed: 96,
         beltBlue: 144,
+        beltGreen: 192,
       },
       {
         processor: ['Steel_furnace', 'Electric_furnace'],
@@ -21,6 +22,7 @@ export const MATERIAL_PROCESSING_DATA: RawData<MaterialProcessingData> = {
         beltYellow: 24,
         beltRed: 48,
         beltBlue: 72,
+        beltGreen: 96,
       },
       {
         processor: ['Stone_furnace'],
@@ -28,6 +30,7 @@ export const MATERIAL_PROCESSING_DATA: RawData<MaterialProcessingData> = {
         beltYellow: 24,
         beltRed: 48,
         beltBlue: 72,
+        beltGreen: 96,
       },
       {
         processor: ['Steel_furnace', 'Electric_furnace'],
@@ -35,6 +38,7 @@ export const MATERIAL_PROCESSING_DATA: RawData<MaterialProcessingData> = {
         beltYellow: 12,
         beltRed: 24,
         beltBlue: 36,
+        beltGreen: 48,
       },
       {
         processor: ['Centrifuge'],
@@ -42,6 +46,7 @@ export const MATERIAL_PROCESSING_DATA: RawData<MaterialProcessingData> = {
         beltYellow: 18,
         beltRed: 36,
         beltBlue: 54,
+        beltGreen: 72,
       },
     ],
     beltFill: [
@@ -51,6 +56,7 @@ export const MATERIAL_PROCESSING_DATA: RawData<MaterialProcessingData> = {
         beltYellow: 48,
         beltRed: 96,
         beltBlue: 144,
+        beltGreen: 192,
       },
       {
         processor: ['Steel_furnace', 'Electric_furnace'],
@@ -58,6 +64,7 @@ export const MATERIAL_PROCESSING_DATA: RawData<MaterialProcessingData> = {
         beltYellow: 24,
         beltRed: 48,
         beltBlue: 72,
+        beltGreen: 96,
       },
       {
         processor: ['Stone_furnace'],
@@ -65,6 +72,7 @@ export const MATERIAL_PROCESSING_DATA: RawData<MaterialProcessingData> = {
         beltYellow: 240,
         beltRed: 480,
         beltBlue: 720,
+        beltGreen: 960,
       },
       {
         processor: ['Steel_furnace', 'Electric_furnace'],
@@ -72,6 +80,7 @@ export const MATERIAL_PROCESSING_DATA: RawData<MaterialProcessingData> = {
         beltYellow: 120,
         beltRed: 240,
         beltBlue: 360,
+        beltGreen: 480,
       },
       {
         processor: ['Centrifuge'],
@@ -79,6 +88,7 @@ export const MATERIAL_PROCESSING_DATA: RawData<MaterialProcessingData> = {
         beltYellow: 180,
         beltRed: 360,
         beltBlue: 540,
+        beltGreen: 720,
       },
     ],
   },

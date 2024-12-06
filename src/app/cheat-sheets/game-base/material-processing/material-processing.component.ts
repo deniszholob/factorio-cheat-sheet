@@ -6,15 +6,15 @@ import { DataService } from 'app/services/data.service';
 
 // Models
 import { Data } from 'app/models/Data.model';
-import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 import { MaterialProcessingData } from 'app/models/MaterialProcessingData.model';
+import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 
 // Constants
-import { MATERIAL_PROCESSING_DATA } from './material-processing.data';
 import { FactorioIconData } from 'app/shared/factorio-icon/factorio-icon.model';
-import { BELT_DATA, BeltData } from '../mining/belt.data';
-import { FurnaceData, FURNACES_DATA } from './furnaces.data';
 import { BURNABLES_DATA } from '../basic-power/burnables.data';
+import { BeltData, BELT_DATA } from '../mining/belt.data';
+import { FurnaceData, FURNACES_DATA } from './furnaces.data';
+import { MATERIAL_PROCESSING_DATA } from './material-processing.data';
 
 interface CoalFurnaceTableColumn {
   text?: string;
@@ -83,14 +83,14 @@ export class MaterialProcessingComponent implements OnInit {
   ngOnInit() {
     this.dataService
       .getLocalCheatSheetData<MaterialProcessingData>(MATERIAL_PROCESSING_DATA)
-      .subscribe(
-        (result: Data<MaterialProcessingData>) => {
+      .subscribe({
+        next: (result: Data<MaterialProcessingData>) => {
           this.cheatSheet = result.cheatSheet;
           this.sheetData = result.data;
         },
-        (error) => {
+        error: (error) => {
           console.log(error);
-        }
-      );
+        },
+      });
   }
 }
