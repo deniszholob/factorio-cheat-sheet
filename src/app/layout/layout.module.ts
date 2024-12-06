@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+
 import { FooterModule } from './footer/footer.module';
 import { IntroModule } from './intro/intro.module';
 import { MainModule } from './main/main.module';

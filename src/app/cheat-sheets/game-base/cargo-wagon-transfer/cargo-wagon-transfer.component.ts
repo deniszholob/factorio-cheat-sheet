@@ -1,16 +1,14 @@
 // Angular Imports
 import { Component, OnInit } from '@angular/core';
-
-// Services
-import { DataService } from 'app/services/data.service';
-
+import { CargoWagonTransferData } from 'app/models/CargoWagonTransferData.model';
 // Models
 import { Data } from 'app/models/Data.model';
-import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
-import { CargoWagonTransferData } from 'app/models/CargoWagonTransferData.model';
-
+// Services
+import { DataService } from 'app/services/data.service';
 // Constants
 import { APP_INFO } from 'app/shared/app-settings';
+import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+
 import { CARGO_WAGON_TRANSFER_DATA } from './cargo-wagon-transfer.data';
 
 interface CargoTransferTimeModel {

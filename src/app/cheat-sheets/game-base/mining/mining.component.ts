@@ -1,23 +1,20 @@
 // Angular Imports
 import { Component, OnInit } from '@angular/core';
-
+// Models
+import { Data } from 'app/models/Data.model';
+// Services
+import { DataService } from 'app/services/data.service';
+// Constants
+import { APP_INFO } from 'app/shared/app-settings';
+import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 // RXJS
 import { combineLatest } from 'rxjs';
 
-// Services
-import { DataService } from 'app/services/data.service';
-
-// Models
-import { Data } from 'app/models/Data.model';
-import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
-
-// Constants
-import { APP_INFO } from 'app/shared/app-settings';
-import { MINING_DATA } from './mining.data';
 import { BELTS_DATA } from '../belts/belts.data';
-import { ORE_DATA, OreData } from './ore.data';
-import { DRILL_DATA, DrillData } from './drill.data';
 import { BELT_DATA, BeltData } from './belt.data';
+import { DRILL_DATA, DrillData } from './drill.data';
+import { MINING_DATA } from './mining.data';
+import { ORE_DATA, OreData } from './ore.data';
 
 interface MineTableColumn {
   name: string;

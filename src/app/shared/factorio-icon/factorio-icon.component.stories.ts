@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { DataService } from 'app/services';
+
 import { FactorioIconComponent } from './factorio-icon.component';
 import { FactorioIcon as Icon, FactorioIconIds } from './factorio-icon.model';
 

@@ -1,14 +1,11 @@
 // Angular Imports
 import { Component, OnInit } from '@angular/core';
-
 // Services
 import { DataService } from 'app/services/data.service';
-
-// Models
-import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
-
 // Constants
 import { APP_INFO } from 'app/shared/app-settings';
+// Models
+import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 const cheatSheet = {
   title: 'Modules and Beacons',
   icon: 'Beacon',

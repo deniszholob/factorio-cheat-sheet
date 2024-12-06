@@ -1,16 +1,14 @@
 // Angular Imports
 import { Component, OnInit } from '@angular/core';
-
-// Services
-import { DataService } from 'app/services/index';
-
+import { BalancerData } from 'app/models/BalancersData.model';
 // Models
 import { Data } from 'app/models/Data.model';
-import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
-import { BalancerData } from 'app/models/BalancersData.model';
-
+// Services
+import { DataService } from 'app/services/index';
 // Constants
 import { APP_INFO } from 'app/shared/app-settings';
+import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+
 import { BALANCERS_DATA } from './balancers.data';
 
 @Component({

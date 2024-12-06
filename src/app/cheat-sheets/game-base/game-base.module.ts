@@ -20,10 +20,10 @@ import { NuclearPowerModule } from './nuclear-power/nuclear-power.module';
 import { OilRefiningModule } from './oil-refining/oil-refining.module';
 import { ProductivityModulePayoffsModule } from './productivity-module-payoffs/productivity-module-payoffs.module';
 import { ScienceModule } from './science/science.module';
+import { SpaceAgeComponent } from './space-age/space-age.component';
 import { TipsModule } from './tips/tips.module';
 import { TrainColorsModule } from './train-colors/train-colors.module';
 import { VehicleFuelBonusModule } from './vehicle-fuel-bonus/vehicle-fuel-bonus.module';
-import { SpaceAgeComponent } from './space-age/space-age.component';
 
 @NgModule({
   imports: [

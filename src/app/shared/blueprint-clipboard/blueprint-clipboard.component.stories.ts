@@ -3,6 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 import { ClipboardService } from 'app/services';
+
 import { BlueprintClipboardComponent } from './blueprint-clipboard.component';
 
 type ComponentWithCustomControls = BlueprintClipboardComponent;

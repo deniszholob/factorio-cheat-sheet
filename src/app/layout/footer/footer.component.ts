@@ -1,9 +1,8 @@
 // Angular Imports
 import { Component } from '@angular/core';
-
 // Constants
 import { APP_UPDATE_DATE } from 'app/app-update';
-import { AppInfo, APP_INFO, Hyperlink } from 'app/shared/app-settings';
+import { APP_INFO, AppInfo, Hyperlink } from 'app/shared/app-settings';
 
 @Component({
   selector: 'app-footer',

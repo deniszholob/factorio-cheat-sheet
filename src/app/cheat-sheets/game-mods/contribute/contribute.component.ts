@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { MOD_REQUESTS, Links } from './contribute.data';
+
+import { Links, MOD_REQUESTS } from './contribute.data';
 
 @Component({
   selector: 'app-contribute',

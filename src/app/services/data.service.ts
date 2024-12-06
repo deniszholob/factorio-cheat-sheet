@@ -1,17 +1,14 @@
 // Angular
 import { Injectable } from '@angular/core';
-
+// Models
+import { Data as IData, RawCheatSheet, RawData } from 'app/models/Data.model';
+// Constants
+import { APP_INFO } from 'app/shared/app-settings';
+import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { FactorioIcon } from 'app/shared/factorio-icon/factorio-icon.model';
 // RXJX
 import { Observable, of } from 'rxjs';
 import { take } from 'rxjs/operators';
-
-// Models
-import { Data as IData, RawCheatSheet, RawData } from 'app/models/Data.model';
-import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
-import { FactorioIcon } from 'app/shared/factorio-icon/factorio-icon.model';
-
-// Constants
-import { APP_INFO } from 'app/shared/app-settings';
 export const BASE_URL = './assets/data/';
 
 @Injectable()

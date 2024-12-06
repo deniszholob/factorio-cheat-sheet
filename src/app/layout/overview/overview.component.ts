@@ -1,8 +1,7 @@
 // Angular Imports
 import { Component } from '@angular/core';
-
 // Constants
-import { AppInfo, APP_INFO } from 'app/shared/app-settings';
+import { APP_INFO, AppInfo } from 'app/shared/app-settings';
 
 @Component({
   selector: 'app-overview',

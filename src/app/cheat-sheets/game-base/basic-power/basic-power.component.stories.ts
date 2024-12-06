@@ -1,5 +1,6 @@
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 import { StorybookCsModule } from 'app/shared/storybook-cs.module';
+
 import { BasicPowerComponent } from './basic-power.component';
 import { BasicPowerModule } from './basic-power.module';
 

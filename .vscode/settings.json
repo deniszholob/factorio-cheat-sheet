@@ -1,11 +1,24 @@
 {
-  "explorer.autoRevealExclude": {
-    "**/node_modules": true
-  },
-  "editor.renderWhitespace": "all",
-  "editor.rulers": [80, 140],
+  "editor.bracketPairColorization.enabled": true,
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": "always" },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.linkedEditing": true,
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [80, 100],
   "explorer.sortOrderLexicographicOptions": "lower", // Case sensitive file ordering in tree
+  "explorer.autoRevealExclude": { "**/node_modules": true },
+  // Enable the inline display if inferred types for ts
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
+  // Enable the inline display if inferred types for ts
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.variableTypes.enabled": true,
+  // Editor Icon Theme
   "workbench.iconTheme": "material-icon-theme",
   "material-icon-theme.activeIconPack": "angular_ngrx",
   "material-icon-theme.folders.associations": {
@@ -14,48 +27,44 @@
     "models": "mjml"
   },
   "material-icon-theme.files.associations": {
+    "*.interceptor.ts": "angular-guard",
+    "*.events.ts": "tcl",
     "*.data.ts": "database",
-    "*.model.ts": "mjml",
-    "model.ts": "mjml",
-    "index.ts": "url"
+    "*.const.ts": "database",
+    "index.ts": "url",
+    "public-api.ts": "url",
+    "models.ts": "url",
+    "services.ts": "url"
   },
-  "cSpell.words": [
-    "Zuri's",
-    "browserconfig",
-    "codelyzer",
-    "combinators",
-    "deniszholob",
-    "devkit",
-    "factorio",
-    "factoriocheatsheet",
-    "mstile",
-    "ngsw",
-    "readonly",
-    "rowspan",
-    "stylelint",
-    "tslib"
+  "material-icon-theme.files.customClones": [
+    {
+      "name": "typescript-model",
+      "fileExtensions": ["model.ts"],
+      "base": "typescript",
+      "color": "red-400"
+    },
+    {
+      "name": "typescript-enum",
+      "fileExtensions": ["enum.ts"],
+      "base": "typescript",
+      "color": "teal-400"
+    },
+    {
+      "name": "typescript-util",
+      "fileExtensions": ["util.ts"],
+      "base": "typescript",
+      "color": "light-green-600"
+    },
+    {
+      "name": "typescript-mock",
+      "fileExtensions": ["mock.ts"],
+      "base": "typescript",
+      "color": "brown-400"
+    }
   ],
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[xml]": {
-    "editor.defaultFormatter": "redhat.vscode-xml"
-  },
+  "workbench.editor.pinnedTabsOnSeparateRow": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
   "files.exclude": {
     ".angular": true,
     ".firebase": true,
@@ -94,5 +103,42 @@
     "coverage": true,
     "src/*.{png,xml,ico,webmanifest,json,svg,txt}": true,
     "src/CNAME": true
+  },
+  "cSpell.words": [
+    "Zuri's",
+    "browserconfig",
+    "codelyzer",
+    "combinators",
+    "deniszholob",
+    "devkit",
+    "factorio",
+    "factoriocheatsheet",
+    "mstile",
+    "ngsw",
+    "readonly",
+    "rowspan",
+    "stylelint",
+    "tslib"
+  ],
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
   }
 }

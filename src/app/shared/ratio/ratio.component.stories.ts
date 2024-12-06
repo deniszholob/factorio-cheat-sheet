@@ -1,5 +1,6 @@
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 import { DataService } from 'app/services';
+
 import { RatioComponent } from './ratio.component';
 import { RatioModule } from './ratio.module';
 

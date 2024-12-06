@@ -1,6 +1,6 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-
 import { StorybookCsModule } from 'app/shared/storybook-cs.module';
+
 import { BalancersComponent } from './balancers.component';
 import { BalancersModule } from './balancers.module';
 

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+
 import { createSREMatrix, sumMatrix } from '../sre-matrix/matrix-generator';
 import { getMatrixValueSum } from './sre-formula';
 

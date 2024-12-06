@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 import { DataService } from 'app/services';
-import { createSREMatrix } from './matrix-generator';
 
+import { createSREMatrix } from './matrix-generator';
 import { SreMatrixComponent } from './sre-matrix.component';
 import { SreMatrixModule } from './sre-matrix.module';
 

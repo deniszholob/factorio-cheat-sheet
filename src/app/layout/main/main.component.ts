@@ -2,10 +2,11 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import {
-  CheatSheetCategory,
   CHEAT_SHEET_CATEGORIES,
+  CheatSheetCategory,
 } from 'app/cheat-sheets/cheat-sheets.module';
 import { Subject, takeUntil } from 'rxjs';
+
 import { navMatchFilter } from '../util';
 
 @Component({

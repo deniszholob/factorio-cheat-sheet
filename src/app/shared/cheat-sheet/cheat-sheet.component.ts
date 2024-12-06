@@ -1,15 +1,12 @@
 // Angular Imports
 import { Component, Input } from '@angular/core';
-
-// RXJX Observables
-import { Subscription } from 'rxjs';
-
-// Services
-import { SheetCollapseToggleService } from 'app/services/sheet-collapse-toggle.service';
-
 // Models
 import { Collapse } from 'app/services/collapse.model';
+// Services
+import { SheetCollapseToggleService } from 'app/services/sheet-collapse-toggle.service';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+// RXJX Observables
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-cheat-sheet',

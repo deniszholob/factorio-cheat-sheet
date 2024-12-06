@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { DataService } from 'app/services';
 
 import { COMMON_RATIO_DATA, RatioSection } from './common-ratios.data';
-import { MachineSpeeds, MACHINE_SPEEDS } from './machine-speeds.data';
+import { MACHINE_SPEEDS, MachineSpeeds } from './machine-speeds.data';
 import { Ratio } from './ratio.model';
 import { ROCKET_RATIO_DATA } from './rocket-ratios.data';
 

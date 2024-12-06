@@ -5,6 +5,7 @@ import {
   SheetCollapseToggleService,
 } from 'app/services';
 import { Subject, takeUntil } from 'rxjs';
+
 import { FactorioIcon } from '../factorio-icon/factorio-icon.model';
 
 const CHT_BREAKPOINT_RESOLUTION = 767; // pixels

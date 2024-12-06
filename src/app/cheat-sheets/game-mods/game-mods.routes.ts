@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+
 import { GameModsComponent } from './game-mods.component';
 
 export const ROOT_GAME_MODS = 'mods';

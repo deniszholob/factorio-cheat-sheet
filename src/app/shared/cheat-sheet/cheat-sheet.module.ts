@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { CheatSheetComponent, FactorioIconModule } from 'app/shared';
+
 import { AdSenseModule } from '../ad-sense/ad-sense.module';
 
 @NgModule({

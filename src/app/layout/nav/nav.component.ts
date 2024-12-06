@@ -1,13 +1,12 @@
 // Angular Imports
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 // import { Router } from '@angular/router';
-
 // Services
 import { DataService } from 'app/services/data.service';
 import { SheetCollapseToggleService } from 'app/services/sheet-collapse-toggle.service';
 import { Subject } from 'rxjs';
-// import { Subject, takeUntil } from 'rxjs';
 
+// import { Subject, takeUntil } from 'rxjs';
 // Constants
 // import { navMatchFilter } from '../util';
 import { NAV_ANCHOR_TAGS } from './nav.data';

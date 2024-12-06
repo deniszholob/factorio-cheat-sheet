@@ -1,10 +1,8 @@
 // Angular Imports
 import { HttpClient } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
-
 // UI
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
-
 // Services
 import { Placement } from '@ng-bootstrap/ng-bootstrap/util/positioning';
 import { ClipboardService } from 'app/services/index';

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ModGroup, MOD_LIST } from './popular-mods.data';
+
+import { MOD_LIST, ModGroup } from './popular-mods.data';
 
 @Component({
   selector: 'app-popular-mods',

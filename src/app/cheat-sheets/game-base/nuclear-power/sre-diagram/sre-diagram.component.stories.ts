@@ -1,5 +1,6 @@
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 import { DataService } from 'app/services';
+
 import { SreDiagramComponent } from './sre-diagram.component';
 import { SreDiagramModule } from './sre-diagram.module';
 

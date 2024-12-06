@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 import { SheetCollapseToggleService } from 'app/services';
+
 import { FactorioIconIds } from '../factorio-icon/factorio-icon.model';
 import {
   CheatSheetTemplateComponent,

@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+
 import { GameBaseComponent } from './game-base.component';
 
 export const ROOT_GAME_BASE = 'base';

@@ -1,19 +1,16 @@
 // Angular Imports
 import { Component, OnInit } from '@angular/core';
-
-// RXJS
-import { BehaviorSubject, combineLatest } from 'rxjs';
-
-// Services
-import { DataService } from 'app/services/data.service';
-
 // Models
 import { Data } from 'app/models/Data.model';
-import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 import {
   Payoff,
   ProductivityModulePayoffsData,
 } from 'app/models/ProductivityModulePayoffsData.model';
+// Services
+import { DataService } from 'app/services/data.service';
+import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+// RXJS
+import { BehaviorSubject, combineLatest } from 'rxjs';
 
 // Constants
 import { PRODUCTIVITY_MODULE_PAYOFFS_DATA } from './productivity-module-payoffs.data';

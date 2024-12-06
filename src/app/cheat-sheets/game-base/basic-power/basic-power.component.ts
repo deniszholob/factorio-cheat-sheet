@@ -1,19 +1,17 @@
 // Angular Imports
 import { Component, OnInit } from '@angular/core';
-
-// Services
-import { DataService } from 'app/services/data.service';
-
+import { BasicPowerData } from 'app/models/BasicPowerData.model';
 // Models
 import { Data } from 'app/models/Data.model';
+// Services
+import { DataService } from 'app/services/data.service';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
-import { BasicPowerData } from 'app/models/BasicPowerData.model';
+import { FactorioIconData } from 'app/shared/factorio-icon/factorio-icon.model';
 
+import { BELT_DATA, BeltData } from '../mining/belt.data';
 // Constants
 import { BASIC_POWER_DATA } from './basic-power.data';
 import { BURNABLES_DATA, BurnablesData } from './burnables.data';
-import { BELT_DATA, BeltData } from '../mining/belt.data';
-import { FactorioIconData } from 'app/shared/factorio-icon/factorio-icon.model';
 
 interface BoilerTableColumn extends FactorioIconData {
   type: 'Text' | 'FactorioIcon';

@@ -1,6 +1,5 @@
 // Angular
 import { Component, OnDestroy } from '@angular/core';
-
 // PWA
 import {
   SwUpdate,

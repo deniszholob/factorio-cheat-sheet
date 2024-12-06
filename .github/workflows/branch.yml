@@ -54,28 +54,29 @@ jobs:
           name: public
           path: public # Directory to push to GitHub Pages
 
+
   # Ref: https://github.com/firebase/firebase-tools
-  deploy-firebase:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+  # deploy-firebase:
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v3
 
-      - name: Download build
-        uses: actions/download-artifact@v3
-        with:
-          name: public
-          path: public
+  #     - name: Download build
+  #       uses: actions/download-artifact@v3
+  #       with:
+  #         name: public
+  #         path: public
 
-      - name: Display structure of downloaded files
-        run: ls -R
-        working-directory: public
+  #     - name: Display structure of downloaded files
+  #       run: ls -R
+  #       working-directory: public
 
-      - name: Deploy to Firebase
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FACTORIO_CHEAT_SHEET }}'
-          projectId: factorio-cheat-sheet
-          channelId: preview
+  #     - name: Deploy to Firebase
+  #       uses: FirebaseExtended/action-hosting-deploy@v0
+  #       with:
+  #         repoToken: '${{ secrets.GITHUB_TOKEN }}'
+  #         firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FACTORIO_CHEAT_SHEET }}'
+  #         projectId: factorio-cheat-sheet
+  #         channelId: preview

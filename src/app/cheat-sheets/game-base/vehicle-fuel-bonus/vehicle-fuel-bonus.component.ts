@@ -1,13 +1,11 @@
 // Angular Imports
 import { Component, OnInit } from '@angular/core';
-
-// Services
-import { DataService } from 'app/services/data.service';
-
 // Models
 import { Data } from 'app/models/Data.model';
-import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 import { VehicleFuelBonusData } from 'app/models/VehicleFuelBonusData.model';
+// Services
+import { DataService } from 'app/services/data.service';
+import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 
 // Constants
 import { VEHICLE_FUEL_BONUS_DATA } from './vehicle-fuel-bonus.data';

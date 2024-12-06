@@ -1,6 +1,5 @@
 // Angular
 import { Injectable } from '@angular/core';
-
 // RXJX Observables
 import { Observable, Subject } from 'rxjs';
 

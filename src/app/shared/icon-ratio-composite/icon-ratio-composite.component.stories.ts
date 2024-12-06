@@ -1,5 +1,6 @@
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 import { DataService, SheetCollapseToggleService } from 'app/services';
+
 import { FactorioIconIds } from '../factorio-icon/factorio-icon.model';
 import { IconRatioCompositeComponent } from './icon-ratio-composite.component';
 import { IconRatioCompositeModule } from './icon-ratio-composite.module';
