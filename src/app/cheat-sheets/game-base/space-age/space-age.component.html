@@ -65,30 +65,6 @@
       <li>
         While you cannot bring anything in your inventory, you can definitely load up the space platform with starter items for next planet
       </li>
-      <li>
-        Recommended items (base on Vulcanus only right now) bring for faster bootstrapping:
-        <ul>
-          <li>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Construction_robot', '20-50')"></app-factorio-icon>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Solar_panel', '>20')"></app-factorio-icon>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Accumulator', '>20')"></app-factorio-icon>
-          </li>
-          <li>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Electric_mining_drill', '>2')"></app-factorio-icon>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Pumpjack', '>1')"></app-factorio-icon>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Oil_refinery', '>1')"></app-factorio-icon>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Chemical_plant', '>10')"></app-factorio-icon>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Electric_furnace', '10')"></app-factorio-icon>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Assembling_machine_2', '>10')"></app-factorio-icon>
-          </li>
-          <li>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Pipe', '>50')"></app-factorio-icon>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt', '>50')"></app-factorio-icon>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Inserter', '>50')"></app-factorio-icon>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Medium_electric_pole', '>50')"></app-factorio-icon>
-          </li>
-        </ul>
-      </li>
     </ul>
   </div>
 
@@ -97,6 +73,28 @@
     <h4 class="card-title" id="vulcanus">
       <a href="https://wiki.factorio.com/Vulcanus" target="_blank" rel="noopener noreferrer">Vulcanus</a>
     </h4>
+
+    <h5>Planet Start</h5>
+    <ul>
+      <li>
+        Recommended items to bring to Vulcanus for faster bootstrapping:
+
+        <ul>
+          <li *ngFor="let itemGroup of SPACE_AGE_DATA.bootstrapItemsVulcanus">
+            <ng-container *ngFor="let item of itemGroup">
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(item.iconId, '>' + item.count)"></app-factorio-icon>
+            </ng-container>
+          </li>
+        </ul>
+      </li>
+      <li>Use robots (vs mining by hand) to gather rocks to get tungsten ore easily before getting access to patches</li>
+      <li>
+        Rush the Foundry asap and set it as the building to build more Foundries; because it includes built in productivity, you will get a
+        free Foundry for every 2 crafts!
+      </li>
+      <li>You can use inserters to dump (destroy) items into lava (like excess stone).</li>
+      <li>1 ore = 15 molten fluid</li>
+    </ul>
 
     <div class="row align-items-center">
       <p class="col-12 col-sm-4 text-center">
@@ -119,16 +117,6 @@
         </span>
       </p>
     </div>
-
-    <ul>
-      <li>Use robots (vs mining by hand) to gather rocks to get tungsten ore easily before getting access to patches</li>
-      <li>
-        Rush the Foundry asap and set it as the building to build more Foundries; because it includes built in productivity, you will get a
-        free Foundry for every 2 crafts!
-      </li>
-      <li>You can use inserters to dump (destroy) items into lava (like excess stone).</li>
-      <li>1 ore = 15 molten fluid</li>
-    </ul>
   </div>
 
   <hr />
@@ -137,9 +125,58 @@
       <a href="https://wiki.factorio.com/Fulgora" target="_blank" rel="noopener noreferrer">Fulgora</a>
     </h4>
 
-    <p>
+    <h5>Planet Start</h5>
+    <ul>
+      <li>
+        Recommended items to bring to Fulgora for faster bootstrapping:
+
+        <ul>
+          <li *ngFor="let itemGroup of SPACE_AGE_DATA.bootstrapItemsFulgora">
+            <ng-container *ngFor="let item of itemGroup">
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(item.iconId, '>' + item.count)"></app-factorio-icon>
+            </ng-container>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        Space is can be limited, and scrap recycling yield a lot of products, thus using robots can be very convenient to sort everything
+        out, and craft starter items
+      </li>
+
+      <li>
+        Setup filters on <app-factorio-icon [icon]="dataService.getFactorioIcon('Storage_chest', 12)"></app-factorio-icon> (12 recycled
+        items from scrap) + 1 generic storage to start
+      </li>
+      <li>
+        Use
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Active_provider_chest')"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Recycler')"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_inserter')"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Requester_chest')"></app-factorio-icon>
+        to process recycling
+      </li>
+    </ul>
+
+    <h5>
       <a href="https://wiki.factorio.com/Recycler" target="_blank" rel="noopener noreferrer"> Recycling </a>
-    </p>
+    </h5>
+
+    <div class="text-center">
+      <div class="d-flex flex flex-row justify-content-center align-items-center">
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Scrap')"></app-factorio-icon>
+        Recycler Scrap Percent Chance Ratios
+      </div>
+
+      <div class="d-flex flex flex-row justify-content-center">
+        <ng-container *ngFor="let item of SPACE_AGE_DATA.recyclerScrapRatio">
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(item.iconId, item.count + '%')"></app-factorio-icon>
+        </ng-container>
+      </div>
+    </div>
+
+    <br />
+
     <ul>
       <li>Items that have no recipe (ores, etc..) cannot be recycled</li>
       <li>Items that have irreversible recipe (smelted, etc..) will have a 75% chance of being destroyed</li>
@@ -149,6 +186,23 @@
       </li>
       <li>Recycler (non moduled) takes in 2.5 scrap/s and spits out 1.47 items/s</li>
     </ul>
+
+    <br />
+    <div class="text-left">
+      Base Resources Conversion
+      <div class="d-flex flex flex-row align-items-center" *ngFor="let resource of SPACE_AGE_DATA.baseResources">
+        <ng-container *ngFor="let items of resource; let last = last">
+          <ng-container *ngFor="let item of items; let last = last">
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(item)"></app-factorio-icon>
+          </ng-container>
+          <ng-container *ngIf="!last">
+            <i class="fas fa-long-arrow-alt-left text-muted"></i>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+
+    <br />
 
     <table class="table table-sm fixed-width">
       <caption class="text-center">

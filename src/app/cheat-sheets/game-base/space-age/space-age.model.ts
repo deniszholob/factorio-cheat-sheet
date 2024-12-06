@@ -5,6 +5,10 @@ export interface SpaceAgeData {
   vulcanusSolarRatioPower: number;
   vulcanusSolarRatio: SimpleRatio[];
   yellowAmmoRatio: Ratio;
+  bootstrapItemsVulcanus: SimpleRatio[][];
+  bootstrapItemsFulgora: SimpleRatio[][];
+  recyclerScrapRatio: SimpleRatio[];
+  baseResources: string[][][];
 }
 
 export interface SimpleRatio {
