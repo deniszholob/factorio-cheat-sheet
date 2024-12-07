@@ -1,0 +1,30 @@
+export enum {{upperCamelCaseName}} {
+  'option1'= 'option1',
+}
+
+export const {{constantCaseName}}_OPTIONS: {{upperCamelCaseName}}[] = Object.values({{upperCamelCaseName}});
+
+export function is{{upperCamelCaseName}}(value: string): value is {{upperCamelCaseName}} {
+  return {{constantCaseName}}_OPTIONS.includes(value as {{upperCamelCaseName}});
+}
+
+export const {{constantCaseName}}_DISPLAY: Record<{{upperCamelCaseName}}, string> = {
+  [{{upperCamelCaseName}}.option1]: 'Option 1',
+};
+
+// export interface {{upperCamelCaseName}}Info {
+//   id: {{upperCamelCaseName}};
+//   display: string;
+// }
+
+// export const {{constantCaseName}}_INFO: Record<{{upperCamelCaseName}}, {{upperCamelCaseName}}Info> = {
+//   [{{upperCamelCaseName}}.OptionId1]: {
+//     id: {{upperCamelCaseName}}.OptionId1,
+//     display: 'Option Id 1',
+//   },
+// } as const;
+
+// export const {{constantCaseName}}_INFO_OPTIONS: {{upperCamelCaseName}}Info[] = 
+//   {{constantCaseName}}_OPTIONS.map(
+//     (o: {{upperCamelCaseName}}): {{upperCamelCaseName}}Info => {{constantCaseName}}_INFO[o],
+//   );

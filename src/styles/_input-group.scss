@@ -43,6 +43,10 @@
   background-color: $c-pallette-neutral;
   border-color: $c-pallette-transp-light;
 
+  & > * {
+    color: $c-pallette-text;
+  }
+
   &:focus {
     color: $c-pallette-text;
     background-color: $c-pallette-neutral;

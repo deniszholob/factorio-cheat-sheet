@@ -1,4 +1,8 @@
 {
+  "angular-files-generator.customTemplateFolder": ".vscode/ngfg-templates",
+  "angular-files-generator.useOnlyCustomTemplates": false,
+  "angular-files-generator.generateSpec": 1,
+  "angular-files-generator.generateStories": 3,
   "editor.bracketPairColorization.enabled": true,
   "editor.codeActionsOnSave": { "source.fixAll.eslint": "always" },
   "editor.defaultFormatter": "esbenp.prettier-vscode",

@@ -27,7 +27,6 @@ export const NAV_BASE: string[] = [
   'productivity-module-payoffs',
   'vehicle-fuel-bonus',
   'train-colors',
-  getIdFromTitle(POWER_STEAM_SHEET_TITLE),
   getIdFromTitle(SPACE_AGE_SHEET_TITLE),
   'tips',
   'links',

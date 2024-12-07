@@ -1,0 +1,17 @@
+import { Provider } from '@angular/core';
+import { Observable, of } from 'rxjs';
+
+import { {{upperCamelCaseName}}Service } from './{{dashCaseName}}.service';
+
+// export const MOCK_ExampleReturnType: ExampleReturnType = {};
+
+export const MOCK_{{upperCamelCaseName}}Service: {{upperCamelCaseName}}Service = {
+  // method(): Observable<ExampleReturnType> {
+  //  return of(MOCK_ExampleReturnType);
+  // },
+};
+
+export const MOCK_{{upperCamelCaseName}}ServiceProvider: Provider = {
+  provide: {{upperCamelCaseName}}Service,
+  useValue: MOCK_{{upperCamelCaseName}}Service,
+};

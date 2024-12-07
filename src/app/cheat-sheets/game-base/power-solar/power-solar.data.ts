@@ -15,7 +15,7 @@ interface SolarBuildRatio {
 
 export const POWER_SOLAR_DATA: PowerSolarData = {
   solarBuildRatio: {
-    solarRatioPowerMw: 1,
+    solarRatioPowerMw: 1.05,
     solarRatio: [
       {
         iconId: 'Solar_panel',

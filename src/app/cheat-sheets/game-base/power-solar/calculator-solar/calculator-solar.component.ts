@@ -22,8 +22,15 @@ export class CalculatorSolarComponent {
   @Input()
   public solarPowerEffectiveness: number =
     POWER_SOLAR_DATA.solarPowerEffectiveness;
+  public _solarAvgMw: number = POWER_SOLAR_DATA.solarEnergyAvgKw / 1000; // MW
   @Input()
-  public solarAvgMw: number = POWER_SOLAR_DATA.solarEnergyAvgKw / 1000; // MW
+  public set solarAvgMw(solarAvgMw: number) {
+    this._solarAvgMw = solarAvgMw;
+    this.onCalcFromSolar();
+  }
+  public get solarAvgMw(): number {
+    return this._solarAvgMw;
+  }
 
   constructor(protected dataService: DataService) {
     this.onCalcFromSolar();

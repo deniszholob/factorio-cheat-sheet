@@ -1,0 +1,31 @@
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { DataService } from 'app/services';
+import { FactorioIconModule } from 'app/shared';
+import { CheatSheetTemplateComponent } from 'app/shared/cheat-sheet-template/cheat-sheet-template.component';
+
+import { {{constantCaseName}}_DATA, {{upperCamelCaseName}}Data } from './{{dashCaseName}}.data';
+
+export const {{constantCaseName}}_SHEET_ICON = 'Solar_panel';
+export const {{constantCaseName}}_SHEET_TITLE = 'Solar Power';
+
+@Component({
+  selector: '{{componentPrefix}}-{{dashCaseName}}',
+  templateUrl: './{{dashCaseName}}.component.html',
+  styles: [':host{display:contents}'], // Makes component host as if it was not there, can offer less css headaches. Use @HostBinding class approach for easier overrides.
+  // host: { class: 'contents' },
+  standalone: true,
+  imports: [
+    CommonModule,
+    CheatSheetTemplateComponent,
+    FactorioIconModule,
+  ],
+})
+export class {{upperCamelCaseName}}Component {
+  protected readonly cheatSheetIconId: string = {{constantCaseName}}_SHEET_ICON;
+  protected readonly cheatSheetTitle: string = {{constantCaseName}}_SHEET_TITLE;
+
+  protected readonly {{constantCaseName}}_DATA: PowerSolarData = {{constantCaseName}}_DATA;
+
+  constructor(protected dataService: DataService) {}
+}

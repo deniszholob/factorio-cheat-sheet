@@ -2,13 +2,24 @@
   <div class="row align-items-center">
     <p class="col-12 col-sm-4 text-center">
       <span class="text-muted">
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Nauvis')"></app-factorio-icon> Solar Power (Usable)
-        <a href="https://wiki.factorio.com/Power_production#Solar_panels_and_accumulators" target="_blank" rel="noopener"> Build Ratio </a>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Nauvis')"></app-factorio-icon>
+        <a href="https://wiki.factorio.com/Power_production#Solar_panels_and_accumulators" target="_blank" rel="noopener"> Solar Power </a>
+        (Usable)
+        <a
+          href="https://www.wolframalpha.com/input/?i=(+(0.5+%2B+0.2)+*+(0.1+%2B+0.2+*+(0.5+%2B+0.2)+%2F+1.0)+%2F+1.0)+*+(25000+%2F+60)+*+(60+%2F+5000)"
+          target="_blank"
+          rel="noopener"
+        >
+          Build Ratio
+        </a>
       </span>
+
       <br />
+
       <ng-container *ngFor="let item of POWER_SOLAR_DATA.solarBuildRatio.solarRatio">
         <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
       </ng-container>
+
       <i class="fas fa-long-arrow-alt-right text-muted"></i>
       <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
       <sub style="vertical-align: baseline">
@@ -17,9 +28,7 @@
     </p>
 
     <p class="col-12 col-sm-4 text-center">
-      <span class="text-muted">
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Nauvis')"></app-factorio-icon> Solar Total to Usable
-      </span>
+      <span class="text-muted"> Solar Total to Usable (Planet Surface) </span>
       <br />
       <app-factorio-icon [icon]="dataService.getFactorioIcon('Solar_panel', '10MW')"></app-factorio-icon>
       <i class="fas fa-long-arrow-alt-right text-muted"></i>
@@ -39,42 +48,161 @@
           <a href="https://wiki.factorio.com/Solar_panel" target="_blank" rel="noopener">Solar panels</a>
           only provide energy during the day. <br />
           ( {{ POWER_SOLAR_DATA.solarEnergyMaxKw }}KW Max, {{ POWER_SOLAR_DATA.solarEnergyAvgKw }}KW average per solar panel, ratio of
-          {{ POWER_SOLAR_DATA.solarBuildRatio.solarRatioPowerMw | percent }}
+          {{ POWER_SOLAR_DATA.solarPowerEffectiveness | percent }}
           "usable" to total)
         </li>
         <li>
           10MW worth of solar panels will power a factory of
-          {{ 10 * POWER_SOLAR_DATA.solarPowerEffectiveness }}MW on Nauvis.
+          {{ 10 * POWER_SOLAR_DATA.solarPowerEffectiveness }}MW on the planet surface (50% day and 10% night).
         </li>
         <li>
           During the day, excess power generated is stored in
           <a href="https://wiki.factorio.com/Accumulator" target="_blank" rel="noopener">accumulators</a>, during the night, accumulators
           release their charge to power your factory.
         </li>
-        <li>Place accumulators until they can keep your factory powered through the night.</li>
-        <li>Add some extra accumulators to account for burst consumption, such as firing a lot of lasers.</li>
-        <li>Then place solar panels until those accumulators are fully charged by the end of the day.</li>
         <li>
-          User
-          <a href="https://forums.factorio.com/viewtopic.php?f=5&t=5594" target="_blank" rel="noopener"><i>Cilya</i> on the forums</a>
-          did the
-          <a
-            href="https://www.wolframalpha.com/input/?i=(+(0.5+%2B+0.2)+*+(0.1+%2B+0.2+*+(0.5+%2B+0.2)+%2F+1.0)+%2F+1.0)+*+(25000+%2F+60)+*+(60+%2F+5000)"
-            target="_blank"
-            rel="noopener"
-          >
-            math
-          </a>
-          to figure out exactly how many solar panels we need per accumulator.
+          As Needed a.k.a YOLO placement:
+          <ul>
+            <li>Place accumulators until they can keep your factory powered through the night.</li>
+            <li>Add some extra accumulators to account for burst consumption, such as firing a lot of lasers.</li>
+            <li>Then place solar panels until those accumulators are fully charged by the end of the day.</li>
+          </ul>
         </li>
       </ul>
     </div>
 
     <div class="col-12 col-xl-4">
-      <app-calculator-solar
-        [solarPowerEffectiveness]="POWER_SOLAR_DATA.solarBuildRatio.solarRatioPowerMw"
-        [solarAvgMw]="POWER_SOLAR_DATA.solarEnergyAvgKw / 1000"
-      ></app-calculator-solar>
+      <div class="justify-content-center d-flex flex-column" *ngIf="selectedPlanetRatio.planetRatioData.effectiveSolarPowerGroundKw">
+        <!--TODO: Mod Calculator to use Planet Ratios [solarAvgMw]="selectedPlanetRatio.planetRatioData.effectiveSolarPowerGroundKw / 1000" -->
+        <span class="text-muted text-center">
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Nauvis')"></app-factorio-icon>
+          Nauvis Solar Calculator
+        </span>
+        <app-calculator-solar
+          [solarPowerEffectiveness]="POWER_SOLAR_DATA.solarBuildRatio.solarRatioPowerMw"
+          [solarAvgMw]="POWER_SOLAR_DATA.solarEnergyAvgKw / 1000"
+        ></app-calculator-solar>
+      </div>
     </div>
   </div>
+
+  <hr />
+
+  <div class="d-flex flex-row align-items-center justify-content-center">
+    <div class="input-group d-none-print" [style.width]="'auto'">
+      <span class="input-group-addon">Planet</span>
+      <div class="form-select" ngbDropdown>
+        <!-- Dropdown Button -->
+        <button class="btn" id="dropdownBasic1" type="button" ngbDropdownToggle>
+          <app-factorio-icon *ngIf="selectedPlanet?.icon" [icon]="dataService.getFactorioIcon(selectedPlanet.icon)"></app-factorio-icon>
+          {{ selectedPlanet.display || 'Select a Planet' }}
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div class="form-select" [style.width]="'auto'" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button *ngFor="let planetInfo of PLANETS_INFO_OPTIONS" (click)="selectPlanet(planetInfo)" ngbDropdownItem>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(planetInfo.icon)"></app-factorio-icon>
+            {{ planetInfo.display }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="input-group d-none-print fixed-width">
+        <span class="input-group-addon">Solar Panel Quality</span>
+        <select class="form-select">
+          <option *ngFor="let quality of QUALITY_OPTIONS">
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(quality.icon)"></app-factorio-icon>
+            {{ quality.display }}
+          </option>
+        </select>
+      </div> -->
+  </div>
+
+  <br />
+
+  <div>
+    <div class="row align-items-center">
+      <p class="col-12 col-sm-4 text-center" *ngIf="selectedPlanetRatio.planetRatioData.effectiveSolarPowerGroundKw">
+        <span class="text-muted">Effective Ground Power</span>
+        <br />
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Solar_panel', 1)"></app-factorio-icon>
+
+        <i class="fas fa-long-arrow-alt-right text-muted"></i>
+        <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+        <sub style="vertical-align: baseline">
+          <strong>{{ selectedPlanetRatio.planetRatioData.effectiveSolarPowerGroundKw | number : '1.0-2' }}KW</strong>
+        </sub>
+      </p>
+
+      <p class="col-12 col-sm-4 text-center" *ngIf="selectedPlanetRatio.mwRatioGround">
+        <span class="text-muted">Ground Build Ratio</span>
+        <br />
+        <ng-container *ngFor="let item of selectedPlanetRatio.mwRatioGround">
+          <app-factorio-icon
+            [icon]="dataService.getFactorioIcon(item?.iconId, (item?.count | number : '1.0-2') ?? '-')"
+          ></app-factorio-icon>
+        </ng-container>
+
+        <i class="fas fa-long-arrow-alt-right text-muted"></i>
+        <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+        <sub style="vertical-align: baseline">
+          <strong>{{ selectedPlanetRatio.mwRatioPower }}MW</strong>
+        </sub>
+      </p>
+
+      <p class="col-12 col-sm-4 text-center" *ngIf="selectedPlanetRatio.onePanelRatio">
+        <span class="text-muted">Ground Sol/Acc Ratio</span>
+        <br />
+        <ng-container *ngFor="let item of selectedPlanetRatio.onePanelRatio">
+          <app-factorio-icon
+            [icon]="dataService.getFactorioIcon(item?.iconId, (item?.count | number : '1.0-2') ?? '-')"
+          ></app-factorio-icon>
+        </ng-container>
+      </p>
+
+      <p class="col-12 col-sm-4 text-center" *ngIf="selectedPlanetRatio.planetRatioData.effectiveSolarPowerSpaceKw">
+        <span class="text-muted">Effective Space Power</span>
+        <br />
+        <app-factorio-icon [icon]="dataService.getFactorioIcon('Solar_panel', 1)"></app-factorio-icon>
+
+        <i class="fas fa-long-arrow-alt-right text-muted"></i>
+        <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+        <sub style="vertical-align: baseline">
+          <strong>{{ selectedPlanetRatio.planetRatioData.effectiveSolarPowerSpaceKw | number : '1.0-2' }}KW</strong>
+        </sub>
+      </p>
+
+      <p class="col-12 col-sm-4 text-center" *ngIf="selectedPlanetRatio.mwRatioSpace">
+        <span class="text-muted">Space Build Ratio</span>
+        <br />
+        <ng-container *ngFor="let item of selectedPlanetRatio.mwRatioSpace">
+          <app-factorio-icon
+            [icon]="dataService.getFactorioIcon(item?.iconId, (item?.count | number : '1.0-2') ?? '-')"
+          ></app-factorio-icon>
+        </ng-container>
+
+        <i class="fas fa-long-arrow-alt-right text-muted"></i>
+        <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+        <sub style="vertical-align: baseline">
+          <strong>{{ selectedPlanetRatio.mwRatioPower }}MW</strong>
+        </sub>
+      </p>
+    </div>
+  </div>
+
+  <!-- <div>
+      <pre>{{ SOLAR_ACCUMULATOR_PLANET_RATIOS | json }}</pre>
+    </div> -->
+
+  <hr />
+
+  <small>
+    References:
+    <ul class="row">
+      <li class="col col-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let ref of REFERENCES">
+        <a [href]="ref.url" target="_blank" rel="noopener noreferrer">{{ ref.text }}</a>
+      </li>
+    </ul>
+  </small>
 </app-cheat-sheet-template>
