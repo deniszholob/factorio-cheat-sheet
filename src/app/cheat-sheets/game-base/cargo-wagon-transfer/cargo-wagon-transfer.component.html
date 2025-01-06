@@ -1,20 +1,18 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
   <p>
-    The following table shows the time (in seconds) it takes to load or unload a
-    <a href="https://wiki.factorio.com/Cargo_wagon" target="_blank" rel="noopener">Cargo Wagon</a>
-    assuming you are using 6 fast or stack inserters. <br />
-    With seven optional inserter capacity research bonuses, there are a lot of different loading and unloading rates.
-  </p>
-
-  <p>
-    If you use 12 fast or stack inserters (6 on each side of the wagon), divide the time listed by 2 to get the approximate transfer time.
+    The table shows how long it takes to load, or unload, chests to a
+    <a href="https://wiki.factorio.com/Cargo_wagon" target="_blank" rel="noopener">Cargo Wagon</a>. The transfer times shown are for 6 fast
+    (or stack inserters) to 1 wagon. If you use 12 fast (or stack inserters), the transfer time is halved. The table ignores
+    <a href="https://wiki.factorio.com/Inserter_capacity_bonus_(research)" target="_blank" rel="noopener"
+      >Inserter capacity bonus (research)</a
+    >.
   </p>
 
   <div class="row align-items-center">
     <div class="col-12 col-md-7 text-center">
       <table class="table table-sm table-hover fixed-width">
         <caption class="text-center">
-          Time to transfer inventory between wagon and chests (theoretical)
+          Time to transfer items between wagon and chests (theoretical)
         </caption>
         <thead class="text-center">
           <tr>
@@ -110,14 +108,12 @@
   <span class="text-muted">Notes:</span>
   <ul class="text-muted">
     <li>
-      The times are slightly off as inserters ready themselves after the wagon leaves, thus the first swing to load/unload is skipped.
+      The transfer times listed are worse than the real transfer times! This is because inserters grab the next item(s) from the chest after
+      a wagon leaves. When the next wagon arrives, the inserter already did the first swing (to load, or unload).
     </li>
-    <li>
-      These times are for unloading/loading using chests. If inserters are directly fed by or directly feeding belts, transfer times will be
-      higher.
-    </li>
+    <li>The times shown are for wagon to chest, or chest to wagon. Transferring from belt to wagon, or wagon to belt is slower.</li>
     <li id="note_wagon_transfer_barrel">
-      * The barrel transfer rate doesn't increase when unlocking 12 items per swing because inserters only move a full stack (10).
+      * The barrel transfer rate does not increase when you unlock 12 items per swing, because inserters can only move a full stack (10).
     </li>
   </ul>
 
