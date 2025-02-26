@@ -3,14 +3,14 @@
   <hr />
   <p class="lead">
     <span>
-      This is a compendium of the most common
-      <a href="https://www.factorio.com/" target="_blank" rel="noopener"> Factorio </a> facts as of v{{ APP_INFO.data_version }}
-      release.
+      A summary of common
+      <a href="https://www.factorio.com/" target="_blank" rel="noopener">Factorio</a> facts, based on Factorio version
+      {{ APP_INFO.data_version }}.
     </span>
     <br />
     <small class="text-muted">
-      Please report any errors/suggestions on
-      <a href="https://github.com/deniszholob/factorio-cheat-sheet/issues" target="_blank" rel="noopener"> GitHub </a> or
+      Please report any errors or suggestions on
+      <a href="https://github.com/deniszholob/factorio-cheat-sheet/issues" target="_blank" rel="noopener"> GitHub</a> or
       <a href="https://discord.gg/PkyzXzz" target="_blank" rel="noopener">Discord</a>.
     </small>
   </p>
@@ -19,48 +19,46 @@
     <div class="col-12">
       <ul>
         <li>
-          <strong>New Players</strong>
-          make sure to check the
+          New Players should check the
           <a [routerLink]="[]" fragment="links">Links</a>
           and
           <a [routerLink]="[]" fragment="tips">Tips</a>
-          Sections
+          Sections.
         </li>
         <li>
           The
-          <a href="https://wiki.factorio.com/" target="_blank" rel="noopener">Wiki</a>
-          has the latest updates, if there is a discrepancy in the data, please
-          <a href="https://github.com/deniszholob/factorio-cheat-sheet/issues" target="_blank" rel="noopener"> open a issue on GitHub </a>
-          so I can sync up with the Wiki.
-        </li>
-        <li>Any section that deals with ratios assumes no modules are used, and consistent assembly machines.</li>
-        <li>
-          The ratio sections are a starting point only, for advanced ratios use a
-          <a [routerLink]="[]" fragment="CommunityLinks">calculator</a>.
+          <a href="https://wiki.factorio.com/" target="_blank" rel="noopener">Factorio Wiki</a>
+          has the latest data. If the cheat sheet shows different data than the Wiki, please
+          <a href="https://github.com/deniszholob/factorio-cheat-sheet/issues" target="_blank" rel="noopener"> open a issue on GitHub</a>.
         </li>
         <li>Any of the sections can be collapsed/expanded by toggling the top right corner (-/+).</li>
-        <li style="font-weight: bold">
-          Space Age only content is marked with
+        <li>
+          Space Age-only content is marked with this icon:
           <img
             src="https://wiki.factorio.com/images/thumb/Space_age_icon.png/16px-Space_age_icon.png"
             alt="Space Age Icon"
             style="width: 16px; height: 16px"
-          />
+          />.
         </li>
         <li>
-          <a href="https://github.com/deniszholob/factorio-cheat-sheet/issues" target="_blank" rel="noopener"> List of known Issues </a>
+          <a href="https://github.com/deniszholob/factorio-cheat-sheet/issues" target="_blank" rel="noopener"> List of known Issues</a>.
         </li>
         <li>
           Also check out the
-          <a href="https://deniszholob.github.io/satisfactory-cheat-sheet/" target="_blank" rel="noopener"> Satisfactory Cheat Sheet </a>
-          <br />
+          <a href="https://deniszholob.github.io/satisfactory-cheat-sheet/" target="_blank" rel="noopener"> Satisfactory Cheat Sheet</a>,
           and the
           <a href="https://deniszholob.github.io/dyson-sphere-program-cheat-sheet/" target="_blank" rel="noopener">
-            Dyson Sphere Program Cheat Sheet
-          </a>
+            Dyson Sphere Program Cheat Sheet</a
+          >.
         </li>
       </ul>
 
+      The ratios on this site assume:
+      <ul>
+        <li>Plain assemblers. No modules in the assemblers or in beacons affecting your assemblers.</li>
+        <li>The assemblers are crafting continuously.</li>
+      </ul>
+      The ratios are a baseline. For precise ratios, please use a <a [routerLink]="[]" fragment="CommunityLinks">calculator</a>.
       <hr />
 
       <div class="text-center">
@@ -68,14 +66,14 @@
           Old Cheat Sheets and PDF downloads
         </a>
 
-        <p class="text-muted">If you find the cheat sheet useful, you can</p>
+        <p class="text-muted">If you find the cheat sheet useful, you can:</p>
         <div class="support-buttons">
           <a class="btn btn-outline-primary" href="https://ko-fi.com/deniszholob" target="_blank" rel="noopener">
             Buy me Ko-fi
             <i class="{{ APP_INFO.kofi.icon }}"></i>
           </a>
           <a class="btn btn-outline-primary" href="https://patreon.com/deniszholob" target="_blank" rel="noopener">
-            Support on Patreon
+            Support me on Patreon
             <i class="{{ APP_INFO.patreon.icon }}"></i>
           </a>
         </div>
@@ -85,19 +83,22 @@
 
   <hr />
 
-  <p>
-    Also want to say a huge thanks to all the
-    <a href="https://github.com/deniszholob/factorio-cheat-sheet/graphs/contributors" target="_blank" rel="noopener">contributors</a>
-    on
-    <a href="https://github.com/deniszholob/factorio-cheat-sheet/" target="_blank" rel="noopener">GitHub</a>, as well as the community who
-    made the
-    <a href="https://github.com/deniszholob/factorio-cheat-sheet/releases">previous cheat sheets</a>
-    and other resources; such as the
-    <a href="https://wiki.factorio.com/" target="_blank" rel="noopener">Wiki</a>,
-    <a href="https://www.reddit.com/r/factorio" target="_blank" rel="noopener">Reddit</a>, and
-    <a href="https://discordapp.com/invite/factorio" target="_blank" rel="noopener">Factorio Discord</a>
-    from which this is all based on.
-    <br />
-    This is only a sliver of the info available, for more in depth information please visit those resources.
-  </p>
+  <p>A huge thank you to:</p>
+
+  <ul>
+    <li>
+      <a href="https://github.com/deniszholob/factorio-cheat-sheet/graphs/contributors" target="_blank" rel="noopener"
+        >all the contributors on GitHub</a
+      >,
+    </li>
+    <li>
+      <a href="https://github.com/deniszholob/factorio-cheat-sheet/releases">the community that helped create the older cheat sheets</a>,
+    </li>
+    <li><a href="https://wiki.factorio.com/" target="_blank" rel="noopener">the Factorio Wiki</a>,</li>
+    <li><a href="https://www.reddit.com/r/factorio" target="_blank" rel="noopener">the Factorio subreddit</a>,</li>
+    <li><a href="https://discordapp.com/invite/factorio" target="_blank" rel="noopener">our Factorio Discord</a>.</li>
+  </ul>
+
+  This cheat sheet summarizes the important info about Factorio. For more details, please use the sources listed above.
+  <hr />
 </div>
