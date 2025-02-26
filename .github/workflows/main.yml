@@ -47,7 +47,7 @@ jobs:
       # https://docs.github.com/en/actions/learn-github-actions/essential-features-of-github-actions#sharing-data-between-jobs
       - name: Archive web demo build
         if: success()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: public
           path: public # Directory to push to GitHub Pages
@@ -61,7 +61,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Download build
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: public
           path: public
@@ -85,7 +85,7 @@ jobs:
   #       uses: actions/checkout@v3
 
   #     - name: Download build
-  #       uses: actions/download-artifact@v3
+  #       uses: actions/download-artifact@v4
   #       with:
   #         name: public
   #         path: public
