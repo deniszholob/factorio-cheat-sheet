@@ -26,11 +26,12 @@
           <app-factorio-icon [icon]="dataService.getFactorioIcon('Inserter')"></app-factorio-icon>
           <app-factorio-icon [icon]="dataService.getFactorioIcon('Long-handed_inserter')"></app-factorio-icon>
           <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_inserter')"></app-factorio-icon>
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Filter_inserter')"></app-factorio-icon>
         </th>
         <th>
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Stack_inserter')"></app-factorio-icon>
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Stack_filter_inserter')"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Bulk_inserter')"></app-factorio-icon>
+        </th>
+        <th>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon('Stack_inserter')" [spaceAge]="true"></app-factorio-icon>
         </th>
       </tr>
     </thead>
@@ -51,6 +52,10 @@
         <td>
           <strong>{{ item?.nonStackItems }} </strong>
           <span *ngIf="item.nonStackBonus">({{ item.nonStackBonus }})</span>
+        </td>
+        <td>
+          <strong>{{ item?.bulkItems }} </strong>
+          <span *ngIf="item.bulkBonus">({{ item.bulkBonus }})</span>
         </td>
         <td>
           <strong>{{ item?.stackItems }} </strong>
