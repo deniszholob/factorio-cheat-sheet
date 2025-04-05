@@ -42,10 +42,10 @@
     </h4>
 
     <ul>
-      <li>Starting planet (Nauvis) has no asteroids to worry about, so orbital platforms do not need defenses</li>
-      <li>You can connect asteroid collectors to circuit network to set filters on what they can grab so you don't overflow on material</li>
+      <li>Starting planet (Nauvis) has no asteroids to worry about, so stationary platforms there do not need defenses.</li>
+      <li>You can connect asteroid collectors to a circuit network to set filters for what they can grab so that your platform doesn't overflow on material.</li>
       <li>
-        The inner planet space has medium asteroids that needs shooting apart.
+        The connections between inner planets (Nauvis, Vulcanus, Gleba and Fulgora) have medium asteroids that needs shooting apart.
         <br />
 
         <p class="col-12 col-sm-4 text-center">
@@ -63,7 +63,12 @@
         </p>
       </li>
       <li>
-        While you cannot bring anything in your inventory, you can definitely load up the space platform with starter items for next planet
+        While you cannot bring anything in your inventory directly, you can load up space platforms with items which can be dropped on your planet of choice - you do not need a landing pad.
+        <ul>
+          <li>
+            Additionally, you can also craft items in space like you can on the ground - for instance, while you cannot launch a rocket silo inside a rocket, you can launch the required resources for one.
+          </li>
+        </ul>
       </li>
     </ul>
   </div>
@@ -140,8 +145,8 @@
       </li>
 
       <li>
-        Space is can be limited, and scrap recycling yield a lot of products, thus using robots can be very convenient to sort everything
-        out, and craft starter items
+        Space is almost always limited and scrap recycling yields a lot of products, thus using robots can be very convenient to sort everything
+        out and craft starter items.
       </li>
 
       <li>
@@ -149,12 +154,12 @@
         items from scrap) + 1 generic storage to start
       </li>
       <li>
-        Use
+        Use 1 each of
         <app-factorio-icon [icon]="dataService.getFactorioIcon('Active_provider_chest')"></app-factorio-icon>
         <app-factorio-icon [icon]="dataService.getFactorioIcon('Recycler')"></app-factorio-icon>
         <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_inserter')"></app-factorio-icon>
         <app-factorio-icon [icon]="dataService.getFactorioIcon('Requester_chest')"></app-factorio-icon>
-        to process recycling
+        to process recycling when using a logistics network.
       </li>
     </ul>
 
@@ -178,10 +183,11 @@
     <br />
 
     <ul>
-      <li>Items that have no recipe (ores, etc..) cannot be recycled</li>
-      <li>Items that have irreversible recipe (smelted, etc..) will have a 75% chance of being destroyed</li>
+      <li>When recycled, items return 25% of their normal ingredients.</li>
+      <li>Items that have no recipe (ores, etc..) cannot be recycled.</li>
+      <li>Items that are made using an irreversible recipe (smelting, etc..) will have a 25% chance of being returned, otherwise destroying the item.</li>
       <li>
-        The time it takes to recycle an item is 1/16th (0.0625) of the time it takes to craft that item multiplied by recycler crafting
+        The time it takes to recycle an item is 1/16th (0.0625) of the time it takes to craft that item, multiplied by recycler crafting
         speed.
       </li>
       <li>Recycler (non moduled) takes in 2.5 scrap/s and spits out 1.47 items/s</li>
