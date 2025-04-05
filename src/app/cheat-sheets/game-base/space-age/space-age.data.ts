@@ -114,4 +114,29 @@ export const SPACE_AGE_DATA: SpaceAgeData = {
     [['Stone_brick'], ['Concrete'], ['Scrap']],
     [['Iron_ore'], ['Concrete'], ['Scrap']],
   ],
+  bootstrapItemsGleba: [
+    [
+      { iconId: 'Construction_robot', count: 15 },
+      { iconId: 'Logistic_robot', count: 75 },
+      { iconId: 'Roboport', count: 10 },
+      { iconId: 'Storage_chest', count: 20 },
+      { iconId: 'Requester_chest', count: 30 },
+      { iconId: 'Passive_provider_chest', count: 20 },
+      { iconId: 'Active_provider_chest', count: 35 },
+    ],
+    [
+      { iconId: 'Chemical_plant', count: 5 },
+      { iconId: 'Steel_furnace', count: 15 },
+      { iconId: 'Assembling_machine_3', count: 10 },
+    ],
+    [
+      { iconId: 'Fast_inserter', count: 50 },
+      { iconId: 'Productivity_module', count: 50 },
+      { iconId: 'Speed_module', count: 50 },
+    ],
+    [
+      { iconId: 'Landfill', count: 200 },
+      { iconId: 'Iron_plate', count: 200 },
+      { iconId: 'Copper_plate', count: 200 },
+  ],
 };

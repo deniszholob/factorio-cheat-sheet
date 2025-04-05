@@ -262,8 +262,19 @@
     <h4 class="card-title" id="gleba">
       <a href="https://wiki.factorio.com/Gleba" target="_blank" rel="noopener noreferrer">Gleba</a>
     </h4>
-
-    <p>WIP...</p>
+    <h5>Planet Start</h5>
+    <ul>
+      <li>
+        Recommended items to bring to Gleba for faster bootstrapping:
+        <ul>
+          <li *ngFor="let itemGroup of SPACE_AGE_DATA.bootstrapItemsGleba">
+            <ng-container *ngFor="let item of itemGroup">
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(item.iconId, '>' + item.count)"></app-factorio-icon>
+            </ng-container>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </div>
 
   <hr />
