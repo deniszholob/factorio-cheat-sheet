@@ -138,5 +138,6 @@ export const SPACE_AGE_DATA: SpaceAgeData = {
       { iconId: 'Landfill', count: 200 },
       { iconId: 'Iron_plate', count: 200 },
       { iconId: 'Copper_plate', count: 200 },
+    ],
   ],
 };
