@@ -9,6 +9,7 @@ export interface SpaceAgeData {
   yellowAmmoRatio: Ratio;
   bootstrapItemsVulcanus: SimpleRatio[][];
   bootstrapItemsFulgora: SimpleRatio[][];
+  bootstrapItemsGleba: SimpleRatio[][];
   recyclerScrapRatio: SimpleRatio[];
   baseResources: string[][][];
 }
