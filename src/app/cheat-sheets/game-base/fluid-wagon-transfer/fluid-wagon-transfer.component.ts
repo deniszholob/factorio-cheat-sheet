@@ -8,6 +8,7 @@ import { DataService } from 'app/services/data.service';
 // Constants
 import { APP_INFO } from 'app/shared/app-settings';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 import { FLUID_WAGON_TRANSFER_DATA } from './fluid-wagon-transfer.data';
 
@@ -18,6 +19,7 @@ import { FLUID_WAGON_TRANSFER_DATA } from './fluid-wagon-transfer.data';
 })
 export class FluidWagonTransferComponent implements OnInit {
   protected readonly APP_INFO = APP_INFO;
+  protected readonly FactorioIcons = FactorioIcons;
 
   protected cheatSheet?: CheatSheet;
   protected sheetData?: FluidWagonTransferData;

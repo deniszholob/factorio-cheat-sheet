@@ -22,7 +22,7 @@
           <i>faster</i>
           machines with
           <a href="https://wiki.factorio.com/Speed_module_3" target="_blank" rel="noopener">
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Speed_module_3')"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SpeedModule3)"></app-factorio-icon>
             Speed Modules
           </a>
           means you'll need less to fill a belt than you did before.
@@ -37,7 +37,7 @@
         <li>
           Putting
           <a href="https://wiki.factorio.com/Productivity_module_3" target="_blank" rel="noopener">
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Productivity_module_3')"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_ProductivityModule3)"></app-factorio-icon>
             Productivity Modules
           </a>
           in your machines means you'll use less raw resources.
@@ -50,7 +50,7 @@
 
         <li>
           <a href="https://wiki.factorio.com/Efficiency_module_3" target="_blank" rel="noopener">
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Efficiency_module_3')"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_EfficiencyModule3)"></app-factorio-icon>
             Efficiency Modules
           </a>
           reduce power usage.
@@ -63,7 +63,10 @@
 
         <li>
           <a href="https://wiki.factorio.com/Quality_module_3" target="_blank" rel="noopener">
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Quality_module_3')" [spaceAge]="true"></app-factorio-icon>
+            <app-factorio-icon
+              [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_QualityModule3)"
+              [spaceAge]="true"
+            ></app-factorio-icon>
             Quality Modules
           </a>
           increase the change to get higher quality items (SA only).

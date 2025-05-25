@@ -6,6 +6,7 @@ import { VehicleFuelBonusData } from 'app/models/VehicleFuelBonusData.model';
 // Services
 import { DataService } from 'app/services/data.service';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 // Constants
 import { VEHICLE_FUEL_BONUS_DATA } from './vehicle-fuel-bonus.data';
@@ -16,6 +17,7 @@ import { VEHICLE_FUEL_BONUS_DATA } from './vehicle-fuel-bonus.data';
   // styleUrls: ['./vehicle-fuel-bonus.component.scss'] // Enable as needed
 })
 export class VehicleFuelBonusComponent implements OnInit {
+  protected readonly FactorioIcons = FactorioIcons;
   cheatSheet?: CheatSheet;
   sheetData?: any;
 

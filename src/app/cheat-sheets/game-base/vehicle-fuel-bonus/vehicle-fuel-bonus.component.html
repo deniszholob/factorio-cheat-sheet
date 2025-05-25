@@ -112,18 +112,26 @@
         <thead class="text-center">
           <tr>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Cargo_wagon')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_CargoWagon)"></app-factorio-icon>
+            </th>
+
+            <!-- TODO: Group fuels by speed bonus -->
+            <!-- <ng-container *ngFor="let fuelData of sheetData?.fuelData">
+              <th>
+                <app-factorio-icon [icon]="dataService.getFactorioIcon(fuelData.icon)"> </app-factorio-icon>
+              </th>
+            </ng-container> -->
+
+            <th>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Wood)"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Coal)"></app-factorio-icon>
             </th>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Wood')"></app-factorio-icon>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Coal')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SolidFuel)"></app-factorio-icon>
             </th>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Solid_fuel')"></app-factorio-icon>
-            </th>
-            <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Rocket_fuel')"></app-factorio-icon>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Nuclear_fuel')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_RocketFuel)"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_NuclearFuel)"></app-factorio-icon>
             </th>
           </tr>
         </thead>

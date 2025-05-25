@@ -6,10 +6,10 @@ import { DataService } from 'app/services/data.service';
 import { APP_INFO } from 'app/shared/app-settings';
 // Models
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
-const cheatSheet = {
-  title: 'Tips',
-  icon: 'Steel_axe',
-};
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+
+export const SHEET_TITLE = 'Tips';
+export const SHEET_ICON_ID = FactorioIcons.Technology_SteelAxe;
 
 @Component({
   selector: 'app-tips',
@@ -25,8 +25,8 @@ export class TipsComponent implements OnInit {
 
   ngOnInit() {
     this.cheatSheet = new CheatSheet(
-      this.dataService.getFactorioIcon(cheatSheet.icon),
-      cheatSheet.title
+      this.dataService.getFactorioIcon(SHEET_ICON_ID),
+      SHEET_TITLE
     );
   }
 }

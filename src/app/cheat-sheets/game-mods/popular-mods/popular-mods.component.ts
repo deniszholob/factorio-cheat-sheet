@@ -3,10 +3,11 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FactorioIconModule } from 'app/shared';
 import { CheatSheetTemplateComponent } from 'app/shared/cheat-sheet-template/cheat-sheet-template.component';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 import { MOD_LIST, ModGroup } from './popular-mods.data';
 
-export const POPULAR_MODS_SHEET_ICON = 'Repair_pack';
+export const POPULAR_MODS_SHEET_ICON = FactorioIcons.Icons_RepairPack;
 export const POPULAR_MODS_SHEET_TITLE = 'Popular Mod List';
 
 @Component({
@@ -22,7 +23,7 @@ export const POPULAR_MODS_SHEET_TITLE = 'Popular Mod List';
   ],
 })
 export class PopularModsComponent {
-  protected readonly cheatSheetIconId: string = POPULAR_MODS_SHEET_ICON;
+  protected readonly cheatSheetIconId: FactorioIcons = POPULAR_MODS_SHEET_ICON;
   protected readonly cheatSheetTitle: string = POPULAR_MODS_SHEET_TITLE;
 
   public readonly MOD_LIST: ModGroup[] = MOD_LIST;

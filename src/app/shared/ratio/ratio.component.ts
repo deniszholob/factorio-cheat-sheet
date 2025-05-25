@@ -1,8 +1,10 @@
 import { Component, Input } from '@angular/core';
 
+import { FactorioIcons } from '../factorio-icons.enum';
+
 export interface RatioItem {
-  machineIconId: string;
-  productIconId: string;
+  machineIconId: FactorioIcons;
+  productIconId: FactorioIcons;
   count?: number;
   rateSeconds?: number;
 }
@@ -15,14 +17,14 @@ export class RatioComponent {
   @Input()
   public ratios: RatioItem[] = [
     {
-      machineIconId: 'Assembling_machine_3',
-      productIconId: 'Automation_science_pack',
+      machineIconId: FactorioIcons.Icons_AssemblingMachine3,
+      productIconId: FactorioIcons.Icons_AutomationSciencePack,
       count: 10,
       rateSeconds: 2.5,
     },
     {
-      machineIconId: 'Assembling_machine_3',
-      productIconId: 'Iron_gear_wheel',
+      machineIconId: FactorioIcons.Icons_AssemblingMachine3,
+      productIconId: FactorioIcons.Icons_IronGearWheel,
       count: 1,
     },
   ];

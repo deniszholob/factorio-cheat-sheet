@@ -26,6 +26,7 @@
     "build:dev": "ng --configuration development",
     "build:prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
+    "download-icons-enum": "npx tsx ./scripts/download-icons-enum.ts",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "build-storybook": "npm run docs:json && storybook build",
     "prepare": "husky install",

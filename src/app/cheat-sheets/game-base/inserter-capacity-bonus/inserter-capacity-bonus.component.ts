@@ -6,6 +6,7 @@ import { InserterCapacityBonusData } from 'app/models/InserterCapacityBonusData.
 // Services
 import { DataService } from 'app/services/data.service';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 // Constants
 import { INSERTER_CAPACITY_BONUS_DATA } from './inserter-capacity-bonus.data';
@@ -18,6 +19,7 @@ import { INSERTER_CAPACITY_BONUS_DATA } from './inserter-capacity-bonus.data';
 export class InserterCapacityBonusComponent implements OnInit {
   cheatSheet?: CheatSheet;
   sheetData?: InserterCapacityBonusData;
+  protected readonly FactorioIcons = FactorioIcons;
 
   constructor(public dataService: DataService) {}
 

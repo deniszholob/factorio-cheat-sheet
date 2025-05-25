@@ -5,8 +5,9 @@ import { DataService } from 'app/services/data.service';
 import { FactorioIconModule } from 'app/shared';
 import { APP_INFO, AppInfo } from 'app/shared/app-settings';
 import { CheatSheetTemplateComponent } from 'app/shared/cheat-sheet-template/cheat-sheet-template.component';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
-export const BELTS_SHEET_ICON = 'Transport_belt';
+export const BELTS_SHEET_ICON = FactorioIcons.Icons_TransportBelt;
 export const BELTS_SHEET_TITLE = 'Belts';
 
 @Component({
@@ -17,7 +18,7 @@ export const BELTS_SHEET_TITLE = 'Belts';
   imports: [CommonModule, CheatSheetTemplateComponent, FactorioIconModule],
 })
 export class BeltsComponent {
-  protected readonly cheatSheetIconId: string = BELTS_SHEET_ICON;
+  protected readonly cheatSheetIconId: FactorioIcons = BELTS_SHEET_ICON;
   protected readonly cheatSheetTitle: string = BELTS_SHEET_TITLE;
 
   protected readonly APP_INFO: AppInfo = APP_INFO;

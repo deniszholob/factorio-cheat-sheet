@@ -15,15 +15,23 @@ import { DataService } from 'app/services/data.service';
 // Constants
 import { APP_INFO } from 'app/shared/app-settings';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 // RXJS
 import { combineLatest } from 'rxjs';
 
 import { MINING_DATA } from './mining.data';
 
-interface MineTableColumn {
-  name: string;
-  type: 'Text' | 'FactorioIcon' | 'FactorioSaIcon';
+interface MineTableColumnText {
+  name: FactorioIcons;
+  type: typeof FactorioIcons | 'FactorioSaIcon';
 }
+
+interface MineTableColumnIcon {
+  name: string;
+  type: 'Text';
+}
+
+type MineTableColumn = MineTableColumnText | MineTableColumnIcon;
 
 interface MineTableRowGroup {
   ores: OreData[];
@@ -32,7 +40,7 @@ interface MineTableRowGroup {
 
 interface MineTableRow {
   spaceAge?: boolean;
-  miner: string;
+  minerIconId: FactorioIcons;
   rate: number;
   beltRates: number[];
 }
@@ -45,7 +53,7 @@ const miningTableColumns: MineTableColumn[] = [
   ...BELT_DATA.beltInfo.map(
     (belt): MineTableColumn => ({
       name: belt.icons[0],
-      type: belt.spaceAge ? 'FactorioSaIcon' : 'FactorioIcon',
+      type: belt.spaceAge ? 'FactorioSaIcon' : FactorioIcons,
     })
   ),
   { name: 'Mine Rate', type: 'Text' },
@@ -68,7 +76,7 @@ ORE_DATA.forEach((ore: OreData) => {
           const rate = drillData.miningSpeed / ore.miningTime;
           return {
             spaceAge: drillData.spaceAge,
-            miner: drillData.name,
+            minerIconId: drillData.name,
             rate,
             beltRates: BELT_DATA.beltInfo.map(
               (beltData: BeltInfo): number => beltData.throughput / rate
@@ -87,6 +95,7 @@ ORE_DATA.forEach((ore: OreData) => {
 export class MiningComponent implements OnInit {
   protected readonly APP_INFO = APP_INFO;
   protected readonly BELT_DATA = BELT_DATA;
+  protected readonly FactorioIcons = FactorioIcons;
 
   protected cheatSheet?: CheatSheet;
 

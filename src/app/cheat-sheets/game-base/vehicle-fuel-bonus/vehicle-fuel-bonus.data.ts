@@ -1,16 +1,17 @@
 import { RawData } from 'app/models/Data.model';
 import { VehicleFuelBonusData } from 'app/models/VehicleFuelBonusData.model';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 export const VEHICLE_FUEL_BONUS_DATA: RawData<VehicleFuelBonusData> = {
   cheatSheet: {
     title: 'Vehicle Fuel Bonus',
-    icon: 'Locomotive',
+    iconId: FactorioIcons.Icons_Locomotive,
   },
   data: {
     fuelData: [
       {
         title: 'Wood',
-        icon: 'Wood',
+        icon: FactorioIcons.Icons_Wood,
         energy: '2MJ',
         stackEnergy: '200MJ',
         accelerationBonus: '+0%',
@@ -19,7 +20,7 @@ export const VEHICLE_FUEL_BONUS_DATA: RawData<VehicleFuelBonusData> = {
       },
       {
         title: 'Coal',
-        icon: 'Coal',
+        icon: FactorioIcons.Icons_Coal,
         energy: '4MJ',
         stackEnergy: '200MJ',
         accelerationBonus: '+0%',
@@ -28,7 +29,7 @@ export const VEHICLE_FUEL_BONUS_DATA: RawData<VehicleFuelBonusData> = {
       },
       {
         title: 'Solid Fuel',
-        icon: 'Solid_fuel',
+        icon: FactorioIcons.Icons_SolidFuel,
         energy: '12MJ',
         stackEnergy: '600MJ',
         accelerationBonus: '+20%',
@@ -37,7 +38,7 @@ export const VEHICLE_FUEL_BONUS_DATA: RawData<VehicleFuelBonusData> = {
       },
       {
         title: 'Rocket Fuel',
-        icon: 'Rocket_fuel',
+        icon: FactorioIcons.Icons_RocketFuel,
         energy: '100MJ',
         stackEnergy: '1GJ',
         accelerationBonus: '+80%',
@@ -46,7 +47,7 @@ export const VEHICLE_FUEL_BONUS_DATA: RawData<VehicleFuelBonusData> = {
       },
       {
         title: 'Nuclear Fuel',
-        icon: 'Nuclear_fuel',
+        icon: FactorioIcons.Icons_NuclearFuel,
         energy: '1.21GJ',
         stackEnergy: '1.21GJ',
         accelerationBonus: '+150%',

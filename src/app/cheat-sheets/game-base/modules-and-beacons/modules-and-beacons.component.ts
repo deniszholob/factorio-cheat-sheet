@@ -6,10 +6,10 @@ import { DataService } from 'app/services/data.service';
 import { APP_INFO } from 'app/shared/app-settings';
 // Models
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
-const cheatSheet = {
-  title: 'Modules and Beacons',
-  icon: 'Beacon',
-};
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+
+const SHEET_ICON: FactorioIcons = FactorioIcons.Icons_Beacon;
+const SHEET_NAME = 'Modules and Beacons';
 
 @Component({
   selector: 'app-modules-and-beacons',
@@ -19,7 +19,8 @@ const cheatSheet = {
 export class ModulesAndBeaconsComponent implements OnInit {
   cheatSheet?: CheatSheet;
 
-  APP_INFO = APP_INFO;
+  protected readonly APP_INFO = APP_INFO;
+  protected readonly FactorioIcons = FactorioIcons;
 
   calcMachines: ThroughputCalc = {
     machinesToFillBelt: 1,
@@ -34,8 +35,8 @@ export class ModulesAndBeaconsComponent implements OnInit {
 
   ngOnInit() {
     this.cheatSheet = new CheatSheet(
-      this.dataService.getFactorioIcon(cheatSheet.icon),
-      cheatSheet.title
+      this.dataService.getFactorioIcon(SHEET_ICON),
+      SHEET_NAME
     );
     this.calcMachinesToFillBelt();
   }

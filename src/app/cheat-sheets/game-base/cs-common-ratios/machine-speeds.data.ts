@@ -1,27 +1,29 @@
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+
 export interface MachineSpeeds {
-  iconId: string;
+  iconId: FactorioIcons;
   speed: string;
 }
 
 export const MACHINE_SPEEDS: MachineSpeeds[] = [
   {
-    iconId: 'Assembling_machine_1',
+    iconId: FactorioIcons.Icons_AssemblingMachine1,
     speed: '0.5/s',
   },
   {
-    iconId: 'Assembling_machine_2',
+    iconId: FactorioIcons.Icons_AssemblingMachine2,
     speed: '0.75/s',
   },
   {
-    iconId: 'Assembling_machine_3',
+    iconId: FactorioIcons.Icons_AssemblingMachine3,
     speed: '1.25/s',
   },
   {
-    iconId: 'Chemical_plant',
+    iconId: FactorioIcons.Icons_ChemicalPlant,
     speed: '1/s',
   },
   {
-    iconId: 'Oil_refinery',
+    iconId: FactorioIcons.Icons_OilRefinery,
     speed: '1/s',
   },
 ];

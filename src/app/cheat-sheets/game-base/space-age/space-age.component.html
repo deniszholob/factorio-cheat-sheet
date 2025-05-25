@@ -186,15 +186,16 @@
       </li>
 
       <li>
-        Setup filters on <app-factorio-icon [icon]="dataService.getFactorioIcon('Storage_chest', 12)"></app-factorio-icon> (12 recycled
+        Setup filters on
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_StorageChest, 12)"></app-factorio-icon> (12 recycled
         items from scrap) + 1 generic storage to start
       </li>
       <li>
         Use
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Active_provider_chest')"></app-factorio-icon>
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Recycler')"></app-factorio-icon>
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_inserter')"></app-factorio-icon>
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Requester_chest')"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_ActiveProviderChest)"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Recycler)"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_FastInserter)"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_RequesterChest)"></app-factorio-icon>
         to process recycling when using a logistics network.
       </li>
     </ul>
@@ -205,7 +206,7 @@
 
     <div class="text-center">
       <div class="d-flex flex flex-row justify-content-center align-items-center">
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Scrap')"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Scrap)"></app-factorio-icon>
         Recycler Scrap Percent Chance Ratios
       </div>
 
@@ -234,7 +235,7 @@
     <br />
     <div class="text-left">
       Base Resources Conversion
-      <div class="d-flex flex flex-row align-items-center" *ngFor="let resource of SPACE_AGE_DATA.baseResources">
+      <div class="d-flex flex flex-row align-items-center" *ngFor="let resource of SPACE_AGE_DATA.basicResourceConversionIcons">
         <ng-container *ngFor="let items of resource; let last = last">
           <ng-container *ngFor="let item of items; let last = last">
             <app-factorio-icon [icon]="dataService.getFactorioIcon(item)"></app-factorio-icon>
@@ -255,19 +256,19 @@
       <thead class="text-center">
         <tr>
           <th>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Recycler')"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Recycler)"></app-factorio-icon>
           </th>
           <th>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt')"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_TransportBelt)"></app-factorio-icon>
           </th>
           <th>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_transport_belt')"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_FastTransportBelt)"></app-factorio-icon>
           </th>
           <th>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_ExpressTransportBelt)"></app-factorio-icon>
           </th>
           <th>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon('Turbo_transport_belt')"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_TurboTransportBelt)"></app-factorio-icon>
           </th>
         </tr>
       </thead>

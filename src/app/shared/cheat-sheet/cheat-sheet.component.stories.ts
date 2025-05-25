@@ -57,7 +57,7 @@ const meta: Meta<ComponentWithCustomControls> = {
   render(args) {
     args.cheatSheet = dataService.getCheatSheet({
       title: args.title,
-      icon: args.iconId,
+      iconId: args.iconId,
     });
     return {
       props: args,

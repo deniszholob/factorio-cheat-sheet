@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DataService } from 'app/services';
 import { FactorioIconModule } from 'app/shared';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 import { POWER_SOLAR_DATA } from '../power-solar.data';
 
@@ -19,6 +20,7 @@ interface SolarCalcData {
   imports: [CommonModule, FormsModule, FactorioIconModule],
 })
 export class CalculatorSolarComponent {
+  protected readonly FactorioIcons = FactorioIcons;
   @Input()
   public solarPowerEffectiveness: number =
     POWER_SOLAR_DATA.solarPowerEffectiveness;

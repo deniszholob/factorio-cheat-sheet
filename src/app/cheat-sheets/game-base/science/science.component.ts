@@ -6,6 +6,7 @@ import { ScienceData } from 'app/models/ScienceData.model';
 // Services
 import { DataService } from 'app/services/data.service';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 // Constants
 import { SCIENCE_DATA } from './science.data';
@@ -16,6 +17,7 @@ import { SCIENCE_DATA } from './science.data';
   styleUrls: ['./science.component.scss'], // Enable as needed
 })
 export class ScienceComponent implements OnInit {
+  protected readonly FactorioIcons = FactorioIcons;
   public cheatSheet?: CheatSheet;
   public sheetData?: ScienceData;
 

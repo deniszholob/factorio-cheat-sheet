@@ -1,3 +1,5 @@
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+
 export interface ScienceData {
   packs: Pack[];
   assembler2: Rate;
@@ -7,11 +9,11 @@ export interface ScienceData {
 }
 
 export interface Pack {
-  iconId: string;
+  iconId: FactorioIcons;
   count: number;
 }
 
 export interface Rate {
-  iconId: string;
+  iconId: FactorioIcons;
   speed: string;
 }

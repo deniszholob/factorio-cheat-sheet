@@ -15,6 +15,7 @@ import { DataService } from 'app/services/data.service';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 // Constants
 import { FactorioIconData } from 'app/shared/factorio-icon/factorio-icon.model';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 import { MATERIAL_PROCESSING_DATA } from './material-processing.data';
 
@@ -29,10 +30,10 @@ interface CoalFurnaceTableRow {
 }
 
 const coalFurnaceTableColumns: CoalFurnaceTableColumn[] = [
-  { icon: { name: 'Coal' } },
+  { icon: { iconId: FactorioIcons.Icons_Coal } },
   ...BELT_DATA.beltInfo.map(
     (belt: BeltInfo): CoalFurnaceTableColumn => ({
-      icon: { name: belt.name, spaceAge: belt.spaceAge },
+      icon: { iconId: belt.iconId, spaceAge: belt.spaceAge },
     })
   ),
 ];
@@ -50,7 +51,7 @@ FURNACES_DATA.forEach((furnace: FurnaceData) => {
   groupedCoalFurnaceTableRows
     .get(furnace.energyConsumptionKw)
     ?.furnaceTypes.push({
-      name: furnace.name,
+      iconId: furnace.iconId,
       spaceAge: furnace.spaceAge,
     });
 });
@@ -58,8 +59,9 @@ FURNACES_DATA.forEach((furnace: FurnaceData) => {
 function calcFurnaceCount(beltThroughput: number, energyConsumptionKw: number) {
   const energyConsumptionMw = energyConsumptionKw / 1000;
   const coalFuelEnergyMj =
-    BURNABLES_DATA.find((burnable) => burnable.name === 'Coal')?.fuelEnergyMj ||
-    0;
+    BURNABLES_DATA.find(
+      (burnable) => burnable.iconId === FactorioIcons.Icons_Coal
+    )?.fuelEnergyMj || 0;
 
   return Math.ceil(beltThroughput / (energyConsumptionMw / coalFuelEnergyMj));
 }
@@ -72,6 +74,7 @@ function calcFurnaceCount(beltThroughput: number, energyConsumptionKw: number) {
 export class MaterialProcessingComponent implements OnInit {
   protected cheatSheet?: CheatSheet;
   protected sheetData?: MaterialProcessingData;
+  protected readonly FactorioIcons = FactorioIcons;
 
   protected coalFurnaceTableColumns: CoalFurnaceTableColumn[] =
     coalFurnaceTableColumns;

@@ -1,3 +1,5 @@
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+
 export interface TrainColorsData {
   blueprint: string;
   trainColors: TrainColor[];
@@ -5,7 +7,7 @@ export interface TrainColorsData {
 }
 
 export interface TrainColor {
-  icon: string;
+  icon: FactorioIcons;
   rgb: number[];
   type?: string;
 }

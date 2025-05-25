@@ -8,6 +8,7 @@ import { DataService } from 'app/services/data.service';
 // Constants
 import { APP_INFO } from 'app/shared/app-settings';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 import { CARGO_WAGON_TRANSFER_DATA } from './cargo-wagon-transfer.data';
 
@@ -42,7 +43,8 @@ export class CargoWagonTransferComponent implements OnInit {
   cheatSheet?: CheatSheet;
   sheetData?: CargoWagonTransferData;
 
-  APP_INFO = APP_INFO;
+  protected readonly APP_INFO = APP_INFO;
+  protected readonly FactorioIcons = FactorioIcons;
 
   tableCargoTransferTime: CargoTransferTimeModel[] = [];
   tableChestFill: CargoChestFill[] = [];

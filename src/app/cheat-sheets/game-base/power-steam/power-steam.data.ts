@@ -1,4 +1,5 @@
 import { SimpleRatio } from 'app/data';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 export interface PowerSteamData {
   steamBuildRatio: SteamBuildRatio;
@@ -21,23 +22,23 @@ export const POWER_STEAM_DATA: PowerSteamData = {
     steamRatioPowerMw: 360,
     steamRatio: [
       {
-        iconId: 'Offshore_pump',
+        iconId: FactorioIcons.Icons_OffshorePump,
         count: 1,
       },
       {
-        iconId: 'Boiler',
+        iconId: FactorioIcons.Icons_Boiler,
         count: 200,
       },
       {
-        iconId: 'Steam_engine',
+        iconId: FactorioIcons.Icons_SteamEngine,
         count: 400,
       },
       {
-        iconId: 'Electric_mining_drill',
+        iconId: FactorioIcons.Icons_ElectricMiningDrill,
         count: 180,
       },
       {
-        iconId: 'Transport_belt',
+        iconId: FactorioIcons.Icons_TransportBelt,
         count: 6,
       },
     ],

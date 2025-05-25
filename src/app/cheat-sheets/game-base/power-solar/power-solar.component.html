@@ -2,7 +2,7 @@
   <div class="row align-items-center">
     <p class="col-12 col-sm-4 text-center">
       <span class="text-muted">
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Nauvis')"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Nauvis)"></app-factorio-icon>
         <a href="https://wiki.factorio.com/Power_production#Solar_panels_and_accumulators" target="_blank" rel="noopener"> Solar Power </a>
         (Usable)
         <a
@@ -30,7 +30,7 @@
     <p class="col-12 col-sm-4 text-center">
       <span class="text-muted"> Solar Total to Usable (Planet Surface) </span>
       <br />
-      <app-factorio-icon [icon]="dataService.getFactorioIcon('Solar_panel', '10MW')"></app-factorio-icon>
+      <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SolarPanel, '10MW')"></app-factorio-icon>
       <i class="fas fa-long-arrow-alt-right text-muted"></i>
       <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
       <sub style="vertical-align: baseline">
@@ -75,7 +75,7 @@
       <div class="justify-content-center d-flex flex-column" *ngIf="selectedPlanetRatio.planetRatioData.effectiveSolarPowerGroundKw">
         <!--TODO: Mod Calculator to use Planet Ratios [solarAvgMw]="selectedPlanetRatio.planetRatioData.effectiveSolarPowerGroundKw / 1000" -->
         <span class="text-muted text-center">
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Nauvis')"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Nauvis)"></app-factorio-icon>
           Nauvis Solar Calculator
         </span>
         <app-calculator-solar
@@ -94,14 +94,14 @@
       <div class="form-select" ngbDropdown>
         <!-- Dropdown Button -->
         <button class="btn" id="dropdownBasic1" type="button" ngbDropdownToggle>
-          <app-factorio-icon *ngIf="selectedPlanet?.icon" [icon]="dataService.getFactorioIcon(selectedPlanet.icon)"></app-factorio-icon>
+          <app-factorio-icon *ngIf="selectedPlanet?.iconId" [icon]="dataService.getFactorioIcon(selectedPlanet.iconId)"></app-factorio-icon>
           {{ selectedPlanet.display || 'Select a Planet' }}
         </button>
 
         <!-- Dropdown Menu -->
         <div class="form-select" [style.width]="'auto'" ngbDropdownMenu aria-labelledby="dropdownBasic1">
           <button *ngFor="let planetInfo of PLANETS_INFO_OPTIONS" (click)="selectPlanet(planetInfo)" ngbDropdownItem>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon(planetInfo.icon)"></app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(planetInfo.iconId)"></app-factorio-icon>
             {{ planetInfo.display }}
           </button>
         </div>
@@ -126,7 +126,7 @@
       <p class="col-12 col-sm-4 text-center" *ngIf="selectedPlanetRatio.planetRatioData.effectiveSolarPowerGroundKw">
         <span class="text-muted">Effective Ground Power</span>
         <br />
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Solar_panel', 1)"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SolarPanel, 1)"></app-factorio-icon>
 
         <i class="fas fa-long-arrow-alt-right text-muted"></i>
         <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
@@ -164,7 +164,7 @@
       <p class="col-12 col-sm-4 text-center" *ngIf="selectedPlanetRatio.planetRatioData.effectiveSolarPowerSpaceKw">
         <span class="text-muted">Effective Space Power</span>
         <br />
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Solar_panel', 1)"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SolarPanel, 1)"></app-factorio-icon>
 
         <i class="fas fa-long-arrow-alt-right text-muted"></i>
         <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>

@@ -1,3 +1,5 @@
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+
 export interface NuclearPowerData {
   reactorPowerMW: number;
   heatExchangerPowerMW: number;
@@ -15,6 +17,6 @@ export interface NuclearPowerData {
 }
 
 export interface Ratio {
-  iconId: string;
+  iconId: FactorioIcons;
   count: number;
 }

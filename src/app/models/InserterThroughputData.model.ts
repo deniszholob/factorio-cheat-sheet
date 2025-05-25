@@ -1,3 +1,5 @@
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+
 export interface InserterThroughputData {
   throughputNoBonus: ThroughputBonus[];
   throughputBonus2: ThroughputBonus[];
@@ -5,7 +7,7 @@ export interface InserterThroughputData {
 }
 
 export interface ThroughputBonus {
-  icons: string[];
+  icons: FactorioIcons[];
   stackSize: number;
   chestToChest: number;
   chestToYellowBelt: number;

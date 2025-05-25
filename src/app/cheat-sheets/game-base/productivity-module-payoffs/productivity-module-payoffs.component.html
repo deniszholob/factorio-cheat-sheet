@@ -26,7 +26,7 @@
     <ng-container cdkColumnDef="product">
       <th *cdkHeaderCellDef cdk-header-cell>Product</th>
       <td *cdkCellDef="let data" cdk-cell>
-        <app-factorio-icon [icon]="dataService.getFactorioIcon(data.product)"> </app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(data.productIconId)"> </app-factorio-icon>
       </td>
     </ng-container>
 
@@ -37,8 +37,8 @@
           <i class="fas fa-sort-up" *ngIf="sortDirection$.value === 'asc'"></i>
           <i class="fas fa-sort-down" *ngIf="sortDirection$.value !== 'asc'"></i>
         </span>
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Speed_module_3', 1)"> </app-factorio-icon>
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Productivity_module_3', 3)"> </app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SpeedModule3, 1)"> </app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_ProductivityModule3, 3)"> </app-factorio-icon>
       </th>
       <td *cdkCellDef="let data" cdk-cell>
         {{ data.payoff_speed_prod | time }}
@@ -52,7 +52,7 @@
           <i class="fas fa-sort-up" *ngIf="sortDirection$.value === 'asc'"></i>
           <i class="fas fa-sort-down" *ngIf="sortDirection$.value !== 'asc'"></i>
         </span>
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Productivity_module_3', 4)"> </app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_ProductivityModule3, 4)"> </app-factorio-icon>
       </th>
       <td *cdkCellDef="let data" cdk-cell>
         {{ data.payoff_prod | time }}
@@ -66,7 +66,10 @@
           <i class="fas fa-sort-up" *ngIf="sortDirection$.value === 'asc'"></i>
           <i class="fas fa-sort-down" *ngIf="sortDirection$.value !== 'asc'"></i>
         </span>
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Beacon', '4||4')" title="4x4 beacon 'sandwich' around a machine">
+        <app-factorio-icon
+          [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Beacon, '4||4')"
+          title="4x4 beacon 'sandwich' around a machine"
+        >
         </app-factorio-icon>
       </th>
       <td *cdkCellDef="let data" cdk-cell>
@@ -81,7 +84,10 @@
           <i class="fas fa-sort-up" *ngIf="sortDirection$.value === 'asc'"></i>
           <i class="fas fa-sort-down" *ngIf="sortDirection$.value !== 'asc'"></i>
         </span>
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Beacon', '(12)')" title="12 beacon 'circle' around a machine">
+        <app-factorio-icon
+          [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Beacon, '(12)')"
+          title="12 beacon 'circle' around a machine"
+        >
         </app-factorio-icon>
       </th>
       <td *cdkCellDef="let data" cdk-cell>

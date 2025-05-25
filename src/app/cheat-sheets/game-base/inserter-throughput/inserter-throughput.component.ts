@@ -11,6 +11,7 @@ import { DataService } from 'app/services/data.service';
 // Constants
 import { APP_INFO } from 'app/shared/app-settings';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 import { INSERTER_THROUGHPUT_DATA } from './inserter-throughput.data';
 
@@ -23,7 +24,8 @@ export class InserterThroughputComponent implements OnInit {
   cheatSheet?: CheatSheet;
   sheetData?: InserterThroughputData;
 
-  APP_INFO = APP_INFO;
+  protected readonly APP_INFO = APP_INFO;
+  protected readonly FactorioIcons = FactorioIcons;
 
   bonusLevel: number = 7;
   bonusLevels: number[] = [7, 2, 0];

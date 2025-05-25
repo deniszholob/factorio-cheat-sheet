@@ -1,78 +1,83 @@
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+
 import { DrillTypes } from './drill.data';
 
 export interface OreData {
   spaceAge?: boolean;
-  name: string;
+  iconId: FactorioIcons;
   miningTime: number;
   minedWith: DrillTypes[];
 }
 
 export const ORE_DATA: OreData[] = [
   {
-    name: 'Copper_ore',
+    iconId: FactorioIcons.Icons_CopperOre,
     miningTime: 1,
     minedWith: [
-      DrillTypes.Burner_mining_drill,
-      DrillTypes.Electric_mining_drill,
-      DrillTypes.Big_mining_drill,
+      FactorioIcons.Icons_BurnerMiningDrill,
+      FactorioIcons.Icons_ElectricMiningDrill,
+      FactorioIcons.Icons_BigMiningDrill,
     ],
   },
   {
-    name: 'Iron_ore',
+    iconId: FactorioIcons.Icons_IronOre,
     miningTime: 1,
     minedWith: [
-      DrillTypes.Burner_mining_drill,
-      DrillTypes.Electric_mining_drill,
-      DrillTypes.Big_mining_drill,
+      FactorioIcons.Icons_BurnerMiningDrill,
+      FactorioIcons.Icons_ElectricMiningDrill,
+      FactorioIcons.Icons_BigMiningDrill,
     ],
   },
   {
-    name: 'Coal',
+    iconId: FactorioIcons.Icons_Coal,
     miningTime: 1,
     minedWith: [
-      DrillTypes.Burner_mining_drill,
-      DrillTypes.Electric_mining_drill,
-      DrillTypes.Big_mining_drill,
+      FactorioIcons.Icons_BurnerMiningDrill,
+      FactorioIcons.Icons_ElectricMiningDrill,
+      FactorioIcons.Icons_BigMiningDrill,
     ],
   },
   {
-    name: 'Stone',
+    iconId: FactorioIcons.Icons_Stone,
     miningTime: 1,
     minedWith: [
-      DrillTypes.Burner_mining_drill,
-      DrillTypes.Electric_mining_drill,
-      DrillTypes.Big_mining_drill,
+      FactorioIcons.Icons_BurnerMiningDrill,
+      FactorioIcons.Icons_ElectricMiningDrill,
+      FactorioIcons.Icons_BigMiningDrill,
     ],
   },
   {
-    name: 'Uranium_ore',
+    iconId: FactorioIcons.Icons_UraniumOre,
     miningTime: 2,
-    minedWith: [DrillTypes.Electric_mining_drill, DrillTypes.Big_mining_drill],
+    minedWith: [
+      FactorioIcons.Icons_ElectricMiningDrill,
+      FactorioIcons.Icons_BigMiningDrill,
+    ],
   },
   {
-    name: 'Scrap',
+    iconId: FactorioIcons.Icons_Scrap,
     miningTime: 0.5,
     minedWith: [
-      DrillTypes.Burner_mining_drill,
-      DrillTypes.Electric_mining_drill,
-      DrillTypes.Big_mining_drill,
+      FactorioIcons.Icons_BurnerMiningDrill,
+      FactorioIcons.Icons_ElectricMiningDrill,
+      FactorioIcons.Icons_BigMiningDrill,
     ],
     spaceAge: true,
   },
   {
-    name: 'Calcite',
+    iconId: FactorioIcons.Icons_Calcite,
     miningTime: 1,
     minedWith: [
-      DrillTypes.Burner_mining_drill,
-      DrillTypes.Electric_mining_drill,
-      DrillTypes.Big_mining_drill,
+      FactorioIcons.Icons_BurnerMiningDrill,
+      FactorioIcons.Icons_ElectricMiningDrill,
+      FactorioIcons.Icons_BigMiningDrill,
     ],
     spaceAge: true,
   },
   {
-    name: 'Tungsten_ore',
+    iconId: FactorioIcons.Icons_TungstenOre,
     miningTime: 5,
-    minedWith: [DrillTypes.Big_mining_drill],
+    minedWith: [FactorioIcons.Icons_BigMiningDrill],
     spaceAge: true,
   },
 ];

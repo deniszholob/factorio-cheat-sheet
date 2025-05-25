@@ -1,3 +1,4 @@
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 import { RatioItem } from 'app/shared/ratio/ratio.component';
 
 export interface OilRefiningData {
@@ -14,15 +15,15 @@ export interface OilRefiningData {
 }
 
 export interface Ratio {
-  iconId: string;
+  iconId: FactorioIcons;
   count: number;
 }
 
 export interface RushAdvancedOil {
-  Sulfur: number;
-  Plastic_bar: number;
-  Petroleum_gas: number;
-  Crude_oil: number;
+  [FactorioIcons.Icons_Sulfur]: number;
+  [FactorioIcons.Icons_PlasticBar]: number;
+  [FactorioIcons.Fluid_PetroleumGas]: number;
+  [FactorioIcons.Fluid_CrudeOil]: number;
 }
 
 export interface Production {

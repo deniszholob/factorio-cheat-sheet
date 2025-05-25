@@ -1,4 +1,5 @@
 import { SimpleRatio } from 'app/data';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 export interface PowerSolarData {
   solarBuildRatio: SolarBuildRatio;
@@ -18,11 +19,11 @@ export const POWER_SOLAR_DATA: PowerSolarData = {
     solarRatioPowerMw: 1.05,
     solarRatio: [
       {
-        iconId: 'Solar_panel',
+        iconId: FactorioIcons.Icons_SolarPanel,
         count: 25,
       },
       {
-        iconId: 'Accumulator',
+        iconId: FactorioIcons.Icons_Accumulator,
         count: 21,
       },
     ],

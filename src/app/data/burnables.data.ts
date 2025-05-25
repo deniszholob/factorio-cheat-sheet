@@ -1,13 +1,15 @@
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+
 export interface BurnablesData {
   spaceAge?: boolean;
-  name: string;
+  iconId: FactorioIcons;
   fuelEnergyMj: number;
 }
 
 export const BURNABLES_DATA: BurnablesData[] = [
-  { name: 'Wood', fuelEnergyMj: 2 },
-  { name: 'Coal', fuelEnergyMj: 4 },
-  { name: 'Solid_fuel', fuelEnergyMj: 12 },
-  { name: 'Rocket_fuel', fuelEnergyMj: 100 },
-  { name: 'Nuclear_fuel', fuelEnergyMj: 1210 },
+  { iconId: FactorioIcons.Icons_Wood, fuelEnergyMj: 2 },
+  { iconId: FactorioIcons.Icons_Coal, fuelEnergyMj: 4 },
+  { iconId: FactorioIcons.Icons_SolidFuel, fuelEnergyMj: 12 },
+  { iconId: FactorioIcons.Icons_RocketFuel, fuelEnergyMj: 100 },
+  { iconId: FactorioIcons.Icons_NuclearFuel, fuelEnergyMj: 1210 },
 ];

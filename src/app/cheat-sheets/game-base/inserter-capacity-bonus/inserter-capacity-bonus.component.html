@@ -19,19 +19,19 @@
     <thead class="text-center">
       <tr>
         <th>
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Lab')"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Lab)"></app-factorio-icon>
         </th>
         <th>
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Burner_inserter')"></app-factorio-icon>
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Inserter')"></app-factorio-icon>
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Long-handed_inserter')"></app-factorio-icon>
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_inserter')"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_BurnerInserter)"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Inserter)"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_LongHandedInserter)"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_FastInserter)"></app-factorio-icon>
         </th>
         <th>
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Bulk_inserter')"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_BulkInserter)"></app-factorio-icon>
         </th>
         <th>
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Stack_inserter')" [spaceAge]="true"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_StackInserter)" [spaceAge]="true"></app-factorio-icon>
         </th>
       </tr>
     </thead>
@@ -41,12 +41,12 @@
           <app-factorio-icon
             class="bg-factorio-red-muted"
             *ngIf="idx === 0"
-            [icon]="dataService.getFactorioIcon('Inserter_capacity_bonus_(research)')"
+            [icon]="dataService.getFactorioIcon(FactorioIcons.Technology_InserterCapacity)"
           ></app-factorio-icon>
           <app-factorio-icon
             class="bg-factorio-green"
             *ngIf="idx > 0"
-            [icon]="dataService.getFactorioIcon('Inserter_capacity_bonus_(research)', item?.tech)"
+            [icon]="dataService.getFactorioIcon(FactorioIcons.Technology_InserterCapacity, item?.tech)"
           ></app-factorio-icon>
         </td>
         <td>

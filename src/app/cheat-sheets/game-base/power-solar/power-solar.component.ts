@@ -12,6 +12,7 @@ import { Link } from 'app/models/LinksData.model';
 import { DataService } from 'app/services';
 import { FactorioIconModule } from 'app/shared';
 import { CheatSheetTemplateComponent } from 'app/shared/cheat-sheet-template/cheat-sheet-template.component';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 import { CalculatorSolarComponent } from './calculator-solar/calculator-solar.component';
 import { POWER_SOLAR_DATA, PowerSolarData } from './power-solar.data';
@@ -28,7 +29,7 @@ export interface PlanetRatioUIInfo {
   mwRatioSpace: SimpleRatio[] | undefined;
 }
 
-export const POWER_SOLAR_SHEET_ICON = 'Solar_panel';
+export const POWER_SOLAR_SHEET_ICON = FactorioIcons.Icons_SolarPanel;
 export const POWER_SOLAR_SHEET_TITLE = 'Solar Power';
 
 @Component({
@@ -45,8 +46,9 @@ export const POWER_SOLAR_SHEET_TITLE = 'Solar Power';
   ],
 })
 export class PowerSolarComponent {
-  protected readonly cheatSheetIconId: string = POWER_SOLAR_SHEET_ICON;
+  protected readonly cheatSheetIconId: FactorioIcons = POWER_SOLAR_SHEET_ICON;
   protected readonly cheatSheetTitle: string = POWER_SOLAR_SHEET_TITLE;
+  protected readonly FactorioIcons = FactorioIcons;
 
   // protected QUALITY_OPTIONS = ['low', 'medium', 'high'];
   protected readonly PLANETS_INFO_OPTIONS = PLANETS_INFO_OPTIONS;
@@ -113,9 +115,9 @@ export class PowerSolarComponent {
       planetRatioData,
       onePanelRatio: solarPanelGroundCount
         ? [
-            { iconId: 'Solar_panel', count: 1 },
+            { iconId: FactorioIcons.Icons_SolarPanel, count: 1 },
             {
-              iconId: 'Accumulator',
+              iconId: FactorioIcons.Icons_Accumulator,
               count: planetRatioData.solarAccumulatorRatioGround,
             },
           ]
@@ -123,11 +125,19 @@ export class PowerSolarComponent {
       mwRatioPower: powerMw,
       mwRatioGround: solarPanelGroundCount
         ? [
-            { iconId: 'Solar_panel', count: solarPanelGroundCount },
-            { iconId: 'Accumulator', count: accumulatorGroundCount },
+            {
+              iconId: FactorioIcons.Icons_SolarPanel,
+              count: solarPanelGroundCount,
+            },
+            {
+              iconId: FactorioIcons.Icons_Accumulator,
+              count: accumulatorGroundCount,
+            },
           ]
         : undefined,
-      mwRatioSpace: [{ iconId: 'Solar_panel', count: solarPanelSpaceCount }],
+      mwRatioSpace: [
+        { iconId: FactorioIcons.Icons_SolarPanel, count: solarPanelSpaceCount },
+      ],
     };
   }
 

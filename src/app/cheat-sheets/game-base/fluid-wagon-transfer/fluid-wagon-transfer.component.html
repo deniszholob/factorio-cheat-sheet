@@ -26,16 +26,21 @@
 
           <div class="row">
             <div class="col-6 text-center">
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Fluid_wagon', 1)"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_FluidWagon, 1)"></app-factorio-icon>
               <app-factorio-icon
-                [icon]="dataService.getFactorioIcon('Storage_tank', sheetData ? sheetData.fluidWagonSize / sheetData.storageTankSize : '')"
+                [icon]="
+                  dataService.getFactorioIcon(
+                    FactorioIcons.Icons_StorageTank,
+                    sheetData ? sheetData.fluidWagonSize / sheetData.storageTankSize : ''
+                  )
+                "
               ></app-factorio-icon>
             </div>
             <div class="col-6 text-center">
               <app-factorio-icon
-                [icon]="dataService.getFactorioIcon('Pipe', sheetData?.pipelineLimit + 'x' + sheetData?.pipelineLimit)"
+                [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Pipe, sheetData?.pipelineLimit + 'x' + sheetData?.pipelineLimit)"
               ></app-factorio-icon>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Pump', 1)"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Pump, 1)"></app-factorio-icon>
             </div>
           </div>
         </li>
@@ -50,7 +55,7 @@
         <thead class="text-center">
           <tr>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Pump')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Pump)"></app-factorio-icon>
             </th>
             <th>Loading &amp; Unloading Times for {{ sheetData?.fluidWagonSize | number }} fluid</th>
           </tr>

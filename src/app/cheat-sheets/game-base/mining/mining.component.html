@@ -39,9 +39,9 @@
 
       <p class="text-center text-muted">
         Per 10 uranium ore mined, 10 sulfuric acid are consumed.<br />
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium_ore', 10)"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_UraniumOre, 10)"></app-factorio-icon>
         <i class="fas fa-arrows-alt-h text-muted"></i>
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Sulfuric_acid', 10)"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Fluid_SulfuricAcid, 10)"></app-factorio-icon>
       </p>
     </div>
 
@@ -52,7 +52,9 @@
           <span class="d-inline-not-print">*</span>
           <div class="input-group d-none-print fixed-width">
             <span class="input-group-addon">
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Mining_productivity_(research)', prodBonusLevel)"></app-factorio-icon>
+              <app-factorio-icon
+                [icon]="dataService.getFactorioIcon(FactorioIcons.Technology_MiningProductivity, prodBonusLevel)"
+              ></app-factorio-icon>
               Prod lvl
             </span>
             <input
@@ -76,7 +78,7 @@
                 <ng-container *ngIf="col.type === 'Text'">
                   {{ col.name }}
                 </ng-container>
-                <ng-container *ngIf="col.type === 'FactorioIcon' || col.type === 'FactorioSaIcon'">
+                <ng-container *ngIf="col.type === FactorioIcons || col.type === 'FactorioSaIcon'">
                   <app-factorio-icon
                     [icon]="dataService.getFactorioIcon(col.name)"
                     [spaceAge]="col.type === 'FactorioSaIcon'"
@@ -95,7 +97,7 @@
                 <div>
                   <ng-container *ngFor="let ore of group.ores">
                     <app-factorio-icon
-                      [icon]="dataService.getFactorioIcon(ore.name, ore.miningTime + 's')"
+                      [icon]="dataService.getFactorioIcon(ore.iconId, ore.miningTime + 's')"
                       [spaceAge]="ore.spaceAge"
                     ></app-factorio-icon>
                   </ng-container>
@@ -107,7 +109,7 @@
             <tr *ngFor="let row of group.mineData">
               <td>
                 <div>
-                  <app-factorio-icon [icon]="dataService.getFactorioIcon(row.miner)" [spaceAge]="row.spaceAge"></app-factorio-icon>
+                  <app-factorio-icon [icon]="dataService.getFactorioIcon(row.minerIconId)" [spaceAge]="row.spaceAge"></app-factorio-icon>
                 </div>
               </td>
               <td *ngFor="let beltRate of row.beltRates">

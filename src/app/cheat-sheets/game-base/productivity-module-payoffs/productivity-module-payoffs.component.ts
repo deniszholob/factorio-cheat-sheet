@@ -9,6 +9,7 @@ import {
 // Services
 import { DataService } from 'app/services/data.service';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 // RXJS
 import { BehaviorSubject, combineLatest } from 'rxjs';
 
@@ -25,6 +26,8 @@ import { PRODUCTIVITY_MODULE_PAYOFFS_DATA } from './productivity-module-payoffs.
   //   styleUrls: ['./productivity-module-payoffs.component.scss'] // Enable as needed
 })
 export class ProductivityModulePayoffsComponent implements OnInit {
+  protected readonly FactorioIcons = FactorioIcons;
+
   public cheatSheet?: CheatSheet;
 
   public displayedColumns = [

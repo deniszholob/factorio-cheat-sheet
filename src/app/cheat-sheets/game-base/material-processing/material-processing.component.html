@@ -15,26 +15,35 @@
             <th>With</th>
             <th>Input</th>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_TransportBelt)"></app-factorio-icon>
             </th>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_transport_belt')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_FastTransportBelt)"></app-factorio-icon>
             </th>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_ExpressTransportBelt)"></app-factorio-icon>
             </th>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Turbo_transport_belt')" [spaceAge]="true"></app-factorio-icon>
+              <app-factorio-icon
+                [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_TurboTransportBelt)"
+                [spaceAge]="true"
+              ></app-factorio-icon>
             </th>
           </tr>
         </thead>
         <tbody class="text-center">
           <tr *ngFor="let item of sheetData?.beltEmpty; let idx = index">
             <td>
-              <app-factorio-icon *ngFor="let iconId of item?.processor" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
+              <app-factorio-icon
+                *ngFor="let iconId of item?.processorIconId"
+                [icon]="dataService.getFactorioIcon(iconId)"
+              ></app-factorio-icon>
             </td>
             <td *ngIf="idx % 2 === 0" rowspan="2">
-              <app-factorio-icon *ngFor="let iconId of item?.material" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
+              <app-factorio-icon
+                *ngFor="let iconId of item?.materialIconId"
+                [icon]="dataService.getFactorioIcon(iconId)"
+              ></app-factorio-icon>
             </td>
             <td class="bg-input" title="Machines">{{ item?.beltYellow }}</td>
             <td class="bg-input" title="Machines">{{ item?.beltRed }}</td>
@@ -56,26 +65,35 @@
             <th>With</th>
             <th>Output</th>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Transport_belt')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_TransportBelt)"></app-factorio-icon>
             </th>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_transport_belt')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_FastTransportBelt)"></app-factorio-icon>
             </th>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Express_transport_belt')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_ExpressTransportBelt)"></app-factorio-icon>
             </th>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Turbo_transport_belt')" [spaceAge]="true"></app-factorio-icon>
+              <app-factorio-icon
+                [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_TurboTransportBelt)"
+                [spaceAge]="true"
+              ></app-factorio-icon>
             </th>
           </tr>
         </thead>
         <tbody class="text-center">
           <tr *ngFor="let item of sheetData?.beltFill; let idx = index">
             <td>
-              <app-factorio-icon *ngFor="let iconId of item?.processor" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
+              <app-factorio-icon
+                *ngFor="let iconId of item?.processorIconId"
+                [icon]="dataService.getFactorioIcon(iconId)"
+              ></app-factorio-icon>
             </td>
             <td *ngIf="idx % 2 === 0" rowspan="2">
-              <app-factorio-icon *ngFor="let iconId of item?.material" [icon]="dataService.getFactorioIcon(iconId)"></app-factorio-icon>
+              <app-factorio-icon
+                *ngFor="let iconId of item?.materialIconId"
+                [icon]="dataService.getFactorioIcon(iconId)"
+              ></app-factorio-icon>
             </td>
             <td class="bg-output" title="Machines">{{ item?.beltYellow }}</td>
             <td class="bg-output" title="Machines">{{ item?.beltRed }}</td>
@@ -130,7 +148,10 @@
           <tr>
             <ng-container *ngFor="let col of coalFurnaceTableColumns">
               <th>
-                <app-factorio-icon [icon]="dataService.getFactorioIcon(col.icon?.name)" [spaceAge]="col.icon?.spaceAge"></app-factorio-icon>
+                <app-factorio-icon
+                  [icon]="dataService.getFactorioIcon(col.icon?.iconId)"
+                  [spaceAge]="col.icon?.spaceAge"
+                ></app-factorio-icon>
               </th>
             </ng-container>
           </tr>
@@ -141,7 +162,7 @@
             <tr>
               <td>
                 <ng-container *ngFor="let furnace of row.furnaceTypes">
-                  <app-factorio-icon [icon]="dataService.getFactorioIcon(furnace.name)" [spaceAge]="furnace.spaceAge"></app-factorio-icon>
+                  <app-factorio-icon [icon]="dataService.getFactorioIcon(furnace.iconId)" [spaceAge]="furnace.spaceAge"></app-factorio-icon>
                 </ng-container>
               </td>
 
@@ -173,18 +194,18 @@
 
     <div class="col-12 col-lg-5 col-print-5">
       <p class="text-center">
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium_ore', 10000)"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_UraniumOre, 10000)"></app-factorio-icon>
         <i class="fas fa-long-arrow-alt-right text-muted"></i>
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-235', 7)"></app-factorio-icon>
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-238', 993)"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Uranium235, 7)"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Uranium238, 993)"></app-factorio-icon>
         <a [routerLink]="[]" fragment="note_uranium_processing_ratio">**</a>
       </p>
       <p class="text-center">
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-235', 40)"></app-factorio-icon>
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-238', 5)"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Uranium235, 40)"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Uranium238, 5)"></app-factorio-icon>
         <i class="fas fa-long-arrow-alt-right text-muted"></i>
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-235', 41)"></app-factorio-icon>
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-238', 2)"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Uranium235, 41)"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Uranium238, 2)"></app-factorio-icon>
       </p>
     </div>
   </div>

@@ -1,4 +1,5 @@
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 export interface Data<T> {
   cheatSheet: CheatSheet;
@@ -12,5 +13,5 @@ export interface RawData<T> {
 
 export interface RawCheatSheet {
   title: string;
-  icon: string;
+  iconId: FactorioIcons;
 }

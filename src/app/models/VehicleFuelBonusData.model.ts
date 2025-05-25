@@ -1,3 +1,5 @@
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+
 export interface VehicleFuelBonusData {
   fuelData: FuelData[];
   speedWithWagons: SpeedWithWagon[];
@@ -6,7 +8,7 @@ export interface VehicleFuelBonusData {
 
 export interface FuelData {
   title: string;
-  icon: string;
+  icon: FactorioIcons;
   energy: string;
   stackEnergy: string;
   accelerationBonus: string;

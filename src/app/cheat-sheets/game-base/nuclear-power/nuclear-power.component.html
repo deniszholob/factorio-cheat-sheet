@@ -109,17 +109,17 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Nuclear_reactor', 1)"></app-factorio-icon>
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Centrifuge', 1)"></app-factorio-icon>
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Electric_mining_drill', 3)"></app-factorio-icon>
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Chemical_plant', 0.1)"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_NuclearReactor, 1)"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Centrifuge, 1)"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_ElectricMiningDrill, 3)"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_ChemicalPlant, 0.1)"></app-factorio-icon>
         </a>
       </p>
       <p class="text-center">
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium_fuel_cell', 10)"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_UraniumFuelCell, 10)"></app-factorio-icon>
         <i class="fas fa-long-arrow-alt-left text-muted" aria-hidden="true"></i>
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-235', 1)"></app-factorio-icon>
-        <app-factorio-icon [icon]="dataService.getFactorioIcon('Uranium-238', 13)"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Uranium235, 1)"></app-factorio-icon>
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Uranium238, 13)"></app-factorio-icon>
       </p>
     </div>
   </div>
@@ -201,28 +201,30 @@
           </tr>
           <tr>
             <th class="d-none d-lg-table-cell">
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Nuclear_reactor', 'Count')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_NuclearReactor, 'Count')"></app-factorio-icon>
             </th>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Nuclear_reactor', 'Config')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_NuclearReactor, 'Config')"></app-factorio-icon>
             </th>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Offshore_pump')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_OffshorePump)"></app-factorio-icon>
             </th>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Heat_exchanger')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_HeatBoiler)"></app-factorio-icon>
             </th>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Steam_turbine')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SteamTurbine)"></app-factorio-icon>
             </th>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Steam', '^Tanks')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Fluid_Steam, '^Tanks')"></app-factorio-icon>
             </th>
             <th>
               <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
             </th>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Efficiency_module_3', 'Efficiency')"></app-factorio-icon>
+              <app-factorio-icon
+                [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_EfficiencyModule3, 'Efficiency')"
+              ></app-factorio-icon>
             </th>
           </tr>
         </thead>

@@ -1,3 +1,5 @@
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+
 import { Ratio } from './ratio.model';
 
 export const ROCKET_RATIO_DATA: Ratio[] = [
@@ -8,23 +10,23 @@ export const ROCKET_RATIO_DATA: Ratio[] = [
       'https://kirkmcdonald.github.io/calc.html#rate=s&buildings=assembling-machine-3&items=rocket-part:r:1/4',
     ratio: [
       {
-        machineIconId: 'Rocket_silo',
-        productIconId: 'Rocket_part',
+        machineIconId: FactorioIcons.Icons_RocketSilo,
+        productIconId: FactorioIcons.Icons_RocketPart,
         count: 1,
       },
       {
-        machineIconId: 'Assembling_machine_3',
-        productIconId: 'Processing_unit',
+        machineIconId: FactorioIcons.Icons_AssemblingMachine3,
+        productIconId: FactorioIcons.Icons_ProcessingUnit,
         count: 20,
       },
       {
-        machineIconId: 'Assembling_machine_3',
-        productIconId: 'Rocket_fuel',
+        machineIconId: FactorioIcons.Icons_AssemblingMachine3,
+        productIconId: FactorioIcons.Icons_RocketFuel,
         count: 30,
       },
       {
-        machineIconId: 'Assembling_machine_3',
-        productIconId: 'Low_density_structure',
+        machineIconId: FactorioIcons.Icons_AssemblingMachine3,
+        productIconId: FactorioIcons.Icons_LowDensityStructure,
         count: 30,
       },
     ],
@@ -36,23 +38,23 @@ export const ROCKET_RATIO_DATA: Ratio[] = [
       'https://kirkmcdonald.github.io/calc.html#rate=s&buildings=assembling-machine-3&items=space-science-pack:r:5/2',
     ratio: [
       {
-        machineIconId: 'Rocket_silo',
-        productIconId: 'Rocket_part',
+        machineIconId: FactorioIcons.Icons_RocketSilo,
+        productIconId: FactorioIcons.Icons_RocketPart,
         count: 1,
       },
       {
-        machineIconId: 'Assembling_machine_3',
-        productIconId: 'Processing_unit',
+        machineIconId: FactorioIcons.Icons_AssemblingMachine3,
+        productIconId: FactorioIcons.Icons_ProcessingUnit,
         count: 22,
       },
       {
-        machineIconId: 'Assembling_machine_3',
-        productIconId: 'Rocket_fuel',
+        machineIconId: FactorioIcons.Icons_AssemblingMachine3,
+        productIconId: FactorioIcons.Icons_RocketFuel,
         count: 31.5,
       },
       {
-        machineIconId: 'Assembling_machine_3',
-        productIconId: 'Low_density_structure',
+        machineIconId: FactorioIcons.Icons_AssemblingMachine3,
+        productIconId: FactorioIcons.Icons_LowDensityStructure,
         count: 33,
       },
     ],
@@ -65,23 +67,23 @@ export const ROCKET_RATIO_DATA: Ratio[] = [
 
     ratio: [
       {
-        machineIconId: 'Rocket_silo',
-        productIconId: 'Rocket_part',
+        machineIconId: FactorioIcons.Icons_RocketSilo,
+        productIconId: FactorioIcons.Icons_RocketPart,
         count: 1,
       },
       {
-        machineIconId: 'Assembling_machine_3',
-        productIconId: 'Processing_unit',
+        machineIconId: FactorioIcons.Icons_AssemblingMachine3,
+        productIconId: FactorioIcons.Icons_ProcessingUnit,
         count: 16.3,
       },
       {
-        machineIconId: 'Assembling_machine_3',
-        productIconId: 'Rocket_fuel',
+        machineIconId: FactorioIcons.Icons_AssemblingMachine3,
+        productIconId: FactorioIcons.Icons_RocketFuel,
         count: 23,
       },
       {
-        machineIconId: 'Assembling_machine_3',
-        productIconId: 'Low_density_structure',
+        machineIconId: FactorioIcons.Icons_AssemblingMachine3,
+        productIconId: FactorioIcons.Icons_LowDensityStructure,
         count: 24.5,
       },
     ],

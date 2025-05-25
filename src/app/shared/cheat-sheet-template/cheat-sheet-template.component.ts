@@ -12,10 +12,11 @@ import { Subject, takeUntil } from 'rxjs';
 import { AdSenseModule } from '../ad-sense/ad-sense.module';
 import { FactorioIcon } from '../factorio-icon/factorio-icon.model';
 import { FactorioIconModule } from '../factorio-icon/factorio-icon.module';
+import { FactorioIcons } from '../factorio-icons.enum';
 
 const CHT_BREAKPOINT_RESOLUTION = 767; // pixels
 export const CHT_DEFAULT_TITLE = 'Cheat Sheet';
-export const CHT_DEFAULT_ICON_ID = 'Blueprint';
+export const CHT_DEFAULT_ICON_ID = FactorioIcons.Icons_Blueprint;
 
 @Component({
   selector: 'app-cheat-sheet-template',
@@ -32,7 +33,7 @@ export const CHT_DEFAULT_ICON_ID = 'Blueprint';
 })
 export class CheatSheetTemplateComponent implements OnDestroy {
   @Input()
-  public set iconId(iconId: string) {
+  public set iconId(iconId: FactorioIcons) {
     this.factorioIcon = this.dataService.getFactorioIcon(iconId);
   }
 

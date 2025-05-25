@@ -1,4 +1,6 @@
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+
 export interface SimpleRatio {
-  iconId: string;
+  iconId: FactorioIcons;
   count: number;
 }

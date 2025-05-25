@@ -17,16 +17,16 @@
         <thead class="text-center">
           <tr>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Fast_inserter')"></app-factorio-icon>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Stack_inserter')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_FastInserter)"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_StackInserter)"></app-factorio-icon>
               <br />
               Items
               <br />
               per swing
             </th>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Barrel')"></app-factorio-icon>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Crude_oil_barrel')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Barreling_BarrelEmpty)"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Barreling_BarrelCrudeOil)"></app-factorio-icon>
               <br />
               <span
                 ><a [routerLink]="[]" fragment="note_wagon_transfer_barrel">*</a>
@@ -36,8 +36,8 @@
               >
             </th>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Copper_ore')"></app-factorio-icon>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Iron_ore')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_CopperOre)"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_IronOre)"></app-factorio-icon>
               <br />
               <span
                 >50 items
@@ -46,8 +46,8 @@
               >
             </th>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Copper_plate')"></app-factorio-icon>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Iron_plate')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_CopperPlate)"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_IronPlate)"></app-factorio-icon>
               <br />
               <span
                 >100 items
@@ -56,8 +56,8 @@
               >
             </th>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Electronic_circuit')"></app-factorio-icon>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon('Advanced_circuit')"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_ElectronicCircuit)"></app-factorio-icon>
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_AdvancedCircuit)"></app-factorio-icon>
               <br />
               <span
                 >200 items
@@ -132,21 +132,24 @@
     <thead class="text-center">
       <tr>
         <th>
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Steel_chest')"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SteelChest)"></app-factorio-icon>
           <br />
           Chests
           <br />
           per wagon
         </th>
         <th>
-          <app-factorio-icon class="bg-factorio-blue" [icon]="dataService.getFactorioIcon('Steel_chest')"></app-factorio-icon>
+          <app-factorio-icon
+            class="bg-factorio-blue"
+            [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SteelChest)"
+          ></app-factorio-icon>
           <br />
           Slots
           <br />
           per chest
         </th>
         <th>
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Barrel')"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Barreling_BarrelEmpty)"></app-factorio-icon>
           <br />
           <span>
             10 items
@@ -155,7 +158,7 @@
           >
         </th>
         <th>
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Iron_ore')"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_IronOre)"></app-factorio-icon>
           <br />
           <span
             >50 items
@@ -164,7 +167,7 @@
           >
         </th>
         <th>
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Iron_plate')"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_IronPlate)"></app-factorio-icon>
           <br />
           <span
             >100 items
@@ -173,7 +176,7 @@
           >
         </th>
         <th>
-          <app-factorio-icon [icon]="dataService.getFactorioIcon('Electronic_circuit')"></app-factorio-icon>
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_ElectronicCircuit)"></app-factorio-icon>
           <br />
           <span
             >200 items

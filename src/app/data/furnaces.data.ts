@@ -1,16 +1,18 @@
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+
 export interface FurnaceData {
   spaceAge?: boolean;
-  name: string;
+  iconId: FactorioIcons;
   energyConsumptionKw: number;
 }
 
 export const FURNACES_DATA: FurnaceData[] = [
   {
-    name: 'Stone_furnace',
+    iconId: FactorioIcons.Icons_StoneFurnace,
     energyConsumptionKw: 90,
   },
   {
-    name: 'Steel_furnace',
+    iconId: FactorioIcons.Icons_SteelFurnace,
     energyConsumptionKw: 90,
   },
 ];

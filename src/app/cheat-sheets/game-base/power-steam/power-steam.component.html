@@ -57,7 +57,7 @@
 
   <table class="table table-sm table-hover fixed-width">
     <caption class="text-center">
-      <app-factorio-icon [icon]="dataService.getFactorioIcon('Boiler')"> </app-factorio-icon>
+      <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Boiler)"> </app-factorio-icon>
       Boilers supported by a full belt of fuel
       <br />
       (Rounded up to nearest whole number)
@@ -67,11 +67,8 @@
       <tr>
         <ng-container *ngFor="let col of boilerTableColumns">
           <th>
-            <ng-container *ngIf="col.type === 'Text'">
-              {{ col.name }}
-            </ng-container>
-            <ng-container *ngIf="col.type === 'FactorioIcon'">
-              <app-factorio-icon [icon]="dataService.getFactorioIcon(col.name, col.text)" [spaceAge]="col.spaceAge"> </app-factorio-icon>
+            <ng-container *ngIf="col">
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(col.iconId, col.text)" [spaceAge]="col.spaceAge"> </app-factorio-icon>
             </ng-container>
           </th>
         </ng-container>
@@ -82,7 +79,7 @@
       <ng-container *ngFor="let row of boilerTableRows">
         <tr>
           <td>
-            <app-factorio-icon [icon]="dataService.getFactorioIcon(row.name, row.text)" [spaceAge]="row.spaceAge"> </app-factorio-icon>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(row.iconId, row.text)" [spaceAge]="row.spaceAge"> </app-factorio-icon>
           </td>
           <ng-container *ngFor="let boilerCount of row.boilerCounts">
             <td>{{ boilerCount }}</td>

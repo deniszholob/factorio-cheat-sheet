@@ -1,10 +1,11 @@
 import { RawData } from 'app/models/Data.model';
 import { LinksData } from 'app/models/LinksData.model';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 export const LINKS_DATA: RawData<LinksData> = {
   cheatSheet: {
     title: 'Links',
-    icon: 'Copper_cable',
+    iconId: FactorioIcons.Icons_CopperCable,
   },
   data: {
     mainLinks: [

@@ -4,13 +4,14 @@ import { RouterModule } from '@angular/router';
 import { DataService } from 'app/services';
 import { FactorioIconModule, RatioModule } from 'app/shared';
 import { CheatSheetTemplateComponent } from 'app/shared/cheat-sheet-template/cheat-sheet-template.component';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 import { COMMON_RATIO_DATA, RatioSection } from './common-ratios.data';
 import { MACHINE_SPEEDS, MachineSpeeds } from './machine-speeds.data';
 import { Ratio } from './ratio.model';
 import { ROCKET_RATIO_DATA } from './rocket-ratios.data';
 
-export const CS_COMMON_RATIOS_SHEET_ICON = 'Repair_pack';
+export const CS_COMMON_RATIOS_SHEET_ICON = FactorioIcons.Icons_RepairPack;
 export const CS_COMMON_RATIOS_SHEET_TITLE = 'Common Ratios';
 
 @Component({
@@ -27,7 +28,7 @@ export const CS_COMMON_RATIOS_SHEET_TITLE = 'Common Ratios';
   ],
 })
 export class CsCommonRatiosComponent {
-  public readonly cheatSheetIconId: string = CS_COMMON_RATIOS_SHEET_ICON;
+  public readonly cheatSheetIconId: FactorioIcons = CS_COMMON_RATIOS_SHEET_ICON;
   public readonly cheatSheetTitle: string = CS_COMMON_RATIOS_SHEET_TITLE;
 
   public ROCKET_RATIO_DATA: Ratio[] = ROCKET_RATIO_DATA;

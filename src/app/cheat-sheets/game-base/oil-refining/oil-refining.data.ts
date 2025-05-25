@@ -1,174 +1,175 @@
 import { RawData } from 'app/models/Data.model';
 import { OilRefiningData } from 'app/models/OilRefiningData.model';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 export const OIL_REFINING_DATA: RawData<OilRefiningData> = {
   cheatSheet: {
     title: 'Oil Refining',
-    icon: 'Oil_refinery',
+    iconId: FactorioIcons.Icons_OilRefinery,
   },
   data: {
     basicOil: [
       {
-        iconId: 'Pumpjack',
+        iconId: FactorioIcons.Icons_Pumpjack,
         count: 6,
       },
       {
-        iconId: 'Basic_oil_processing',
+        iconId: FactorioIcons.Fluid_BasicOilProcessing,
         count: 4.5,
       },
       {
-        iconId: 'Plastic_bar',
+        iconId: FactorioIcons.Icons_PlasticBar,
         count: 2,
       },
     ],
     rushAdvancedOil: {
-      Sulfur: 38,
-      Plastic_bar: 225,
-      Petroleum_gas: 2813,
-      Crude_oil: 6250,
+      [FactorioIcons.Icons_Sulfur]: 38,
+      [FactorioIcons.Icons_PlasticBar]: 225,
+      [FactorioIcons.Fluid_PetroleumGas]: 2813,
+      [FactorioIcons.Fluid_CrudeOil]: 6250,
     },
     simpleCrackingRatio: [
       {
-        machineIconId: 'Oil_refinery',
-        productIconId: 'Advanced_oil_processing',
+        machineIconId: FactorioIcons.Icons_OilRefinery,
+        productIconId: FactorioIcons.Fluid_AdvancedOilProcessing,
         count: 8,
       },
       {
-        machineIconId: 'Chemical_plant',
-        productIconId: 'Heavy_oil_cracking',
+        machineIconId: FactorioIcons.Icons_ChemicalPlant,
+        productIconId: FactorioIcons.Fluid_HeavyOilCracking,
         count: 2,
       },
       {
-        machineIconId: 'Chemical_plant',
-        productIconId: 'Light_oil_cracking',
+        machineIconId: FactorioIcons.Icons_ChemicalPlant,
+        productIconId: FactorioIcons.Fluid_LightOilCracking,
         count: 7,
       },
     ],
     perfectCrackingRatio: [
       {
-        machineIconId: 'Oil_refinery',
-        productIconId: 'Advanced_oil_processing',
+        machineIconId: FactorioIcons.Icons_OilRefinery,
+        productIconId: FactorioIcons.Fluid_AdvancedOilProcessing,
         count: 20,
       },
       {
-        machineIconId: 'Chemical_plant',
-        productIconId: 'Heavy_oil_cracking',
+        machineIconId: FactorioIcons.Icons_ChemicalPlant,
+        productIconId: FactorioIcons.Fluid_HeavyOilCracking,
         count: 5,
       },
       {
-        machineIconId: 'Chemical_plant',
-        productIconId: 'Light_oil_cracking',
+        machineIconId: FactorioIcons.Icons_ChemicalPlant,
+        productIconId: FactorioIcons.Fluid_LightOilCracking,
         count: 17,
       },
     ],
     moduledCrackingRatio: [
       {
-        machineIconId: 'Oil_refinery',
-        productIconId: 'Advanced_oil_processing',
+        machineIconId: FactorioIcons.Icons_OilRefinery,
+        productIconId: FactorioIcons.Fluid_AdvancedOilProcessing,
         count: 15,
       },
       {
-        machineIconId: 'Chemical_plant',
-        productIconId: 'Heavy_oil_cracking',
+        machineIconId: FactorioIcons.Icons_ChemicalPlant,
+        productIconId: FactorioIcons.Fluid_HeavyOilCracking,
         count: 6,
       },
       {
-        machineIconId: 'Chemical_plant',
-        productIconId: 'Light_oil_cracking',
+        machineIconId: FactorioIcons.Icons_ChemicalPlant,
+        productIconId: FactorioIcons.Fluid_LightOilCracking,
         count: 22,
       },
     ],
     simpleLiquefactionCrackingRatio: [
       {
-        machineIconId: 'Oil_refinery',
-        productIconId: 'Coal_liquefaction',
+        machineIconId: FactorioIcons.Icons_OilRefinery,
+        productIconId: FactorioIcons.Fluid_CoalLiquefaction,
         count: 12,
       },
       {
-        machineIconId: 'Chemical_plant',
-        productIconId: 'Heavy_oil_cracking',
+        machineIconId: FactorioIcons.Icons_ChemicalPlant,
+        productIconId: FactorioIcons.Fluid_HeavyOilCracking,
         count: 8,
       },
       {
-        machineIconId: 'Chemical_plant',
-        productIconId: 'Light_oil_cracking',
+        machineIconId: FactorioIcons.Icons_ChemicalPlant,
+        productIconId: FactorioIcons.Fluid_LightOilCracking,
         count: 11,
       },
     ],
     perfectLiquefactionCrackingRatio: [
       {
-        machineIconId: 'Oil_refinery',
-        productIconId: 'Coal_liquefaction',
+        machineIconId: FactorioIcons.Icons_OilRefinery,
+        productIconId: FactorioIcons.Fluid_CoalLiquefaction,
         count: 60,
       },
       {
-        machineIconId: 'Chemical_plant',
-        productIconId: 'Heavy_oil_cracking',
+        machineIconId: FactorioIcons.Icons_ChemicalPlant,
+        productIconId: FactorioIcons.Fluid_HeavyOilCracking,
         count: 39,
       },
       {
-        machineIconId: 'Chemical_plant',
-        productIconId: 'Light_oil_cracking',
+        machineIconId: FactorioIcons.Icons_ChemicalPlant,
+        productIconId: FactorioIcons.Fluid_LightOilCracking,
         count: 55,
       },
     ],
     moduledLiquefactionCrackingRatio: [
       {
-        machineIconId: 'Oil_refinery',
-        productIconId: 'Coal_liquefaction',
+        machineIconId: FactorioIcons.Icons_OilRefinery,
+        productIconId: FactorioIcons.Fluid_CoalLiquefaction,
         count: 8,
       },
       {
-        machineIconId: 'Chemical_plant',
-        productIconId: 'Heavy_oil_cracking',
+        machineIconId: FactorioIcons.Icons_ChemicalPlant,
+        productIconId: FactorioIcons.Fluid_HeavyOilCracking,
         count: 9,
       },
       {
-        machineIconId: 'Chemical_plant',
-        productIconId: 'Light_oil_cracking',
+        machineIconId: FactorioIcons.Icons_ChemicalPlant,
+        productIconId: FactorioIcons.Fluid_LightOilCracking,
         count: 15,
       },
     ],
     solidFuel: [
       [
         {
-          iconId: 'Heavy_oil',
+          iconId: FactorioIcons.Fluid_HeavyOil,
           count: 40,
         },
         {
-          iconId: 'Light_oil',
+          iconId: FactorioIcons.Fluid_LightOil,
           count: 30,
         },
         {
-          iconId: 'Solid_fuel',
+          iconId: FactorioIcons.Icons_SolidFuel,
           count: 3,
         },
       ],
       [
         {
-          iconId: 'Heavy_oil',
+          iconId: FactorioIcons.Fluid_HeavyOil,
           count: 40,
         },
         {
-          iconId: 'Solid_fuel',
+          iconId: FactorioIcons.Icons_SolidFuel,
           count: 2,
         },
       ],
       [
         {
-          iconId: 'Heavy_oil',
+          iconId: FactorioIcons.Fluid_HeavyOil,
           count: 40,
         },
         {
-          iconId: 'Light_oil',
+          iconId: FactorioIcons.Fluid_LightOil,
           count: 30,
         },
         {
-          iconId: 'Petroleum_gas',
+          iconId: FactorioIcons.Fluid_PetroleumGas,
           count: 20,
         },
         {
-          iconId: 'Solid_fuel',
+          iconId: FactorioIcons.Icons_SolidFuel,
           count: 1,
         },
       ],
@@ -177,8 +178,8 @@ export const OIL_REFINING_DATA: RawData<OilRefiningData> = {
       {
         processes: [
           {
-            machineIconId: 'Oil_refinery',
-            productIconId: 'Basic_oil_processing',
+            machineIconId: FactorioIcons.Icons_OilRefinery,
+            productIconId: FactorioIcons.Fluid_BasicOilProcessing,
             count: 1,
           },
         ],
@@ -191,8 +192,8 @@ export const OIL_REFINING_DATA: RawData<OilRefiningData> = {
       {
         processes: [
           {
-            machineIconId: 'Oil_refinery',
-            productIconId: 'Advanced_oil_processing',
+            machineIconId: FactorioIcons.Icons_OilRefinery,
+            productIconId: FactorioIcons.Fluid_AdvancedOilProcessing,
             count: 1,
           },
         ],
@@ -205,13 +206,13 @@ export const OIL_REFINING_DATA: RawData<OilRefiningData> = {
       {
         processes: [
           {
-            machineIconId: 'Oil_refinery',
-            productIconId: 'Advanced_oil_processing',
+            machineIconId: FactorioIcons.Icons_OilRefinery,
+            productIconId: FactorioIcons.Fluid_AdvancedOilProcessing,
             count: 1,
           },
           {
-            machineIconId: 'Chemical_plant',
-            productIconId: 'Light_oil_cracking',
+            machineIconId: FactorioIcons.Icons_ChemicalPlant,
+            productIconId: FactorioIcons.Fluid_LightOilCracking,
             count: 0.6,
           },
         ],
@@ -224,13 +225,13 @@ export const OIL_REFINING_DATA: RawData<OilRefiningData> = {
       {
         processes: [
           {
-            machineIconId: 'Oil_refinery',
-            productIconId: 'Advanced_oil_processing',
+            machineIconId: FactorioIcons.Icons_OilRefinery,
+            productIconId: FactorioIcons.Fluid_AdvancedOilProcessing,
             count: 1,
           },
           {
-            machineIconId: 'Chemical_plant',
-            productIconId: 'Heavy_oil_cracking',
+            machineIconId: FactorioIcons.Icons_ChemicalPlant,
+            productIconId: FactorioIcons.Fluid_HeavyOilCracking,
             count: 0.25,
           },
         ],
@@ -243,18 +244,18 @@ export const OIL_REFINING_DATA: RawData<OilRefiningData> = {
       {
         processes: [
           {
-            machineIconId: 'Oil_refinery',
-            productIconId: 'Advanced_oil_processing',
+            machineIconId: FactorioIcons.Icons_OilRefinery,
+            productIconId: FactorioIcons.Fluid_AdvancedOilProcessing,
             count: 1,
           },
           {
-            machineIconId: 'Chemical_plant',
-            productIconId: 'Heavy_oil_cracking',
+            machineIconId: FactorioIcons.Icons_ChemicalPlant,
+            productIconId: FactorioIcons.Fluid_HeavyOilCracking,
             count: 0.25,
           },
           {
-            machineIconId: 'Chemical_plant',
-            productIconId: 'Light_oil_cracking',
+            machineIconId: FactorioIcons.Icons_ChemicalPlant,
+            productIconId: FactorioIcons.Fluid_LightOilCracking,
             count: 0.85,
           },
         ],
@@ -267,8 +268,8 @@ export const OIL_REFINING_DATA: RawData<OilRefiningData> = {
       {
         processes: [
           {
-            machineIconId: 'Chemical_plant',
-            productIconId: 'Heavy_oil_cracking',
+            machineIconId: FactorioIcons.Icons_ChemicalPlant,
+            productIconId: FactorioIcons.Fluid_HeavyOilCracking,
             count: 1,
           },
         ],
@@ -281,8 +282,8 @@ export const OIL_REFINING_DATA: RawData<OilRefiningData> = {
       {
         processes: [
           {
-            machineIconId: 'Chemical_plant',
-            productIconId: 'Light_oil_cracking',
+            machineIconId: FactorioIcons.Icons_ChemicalPlant,
+            productIconId: FactorioIcons.Fluid_LightOilCracking,
             count: 1,
           },
         ],

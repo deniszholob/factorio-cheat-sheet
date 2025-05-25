@@ -8,6 +8,7 @@ import { DataService } from 'app/services/data.service';
 // Constants
 import { APP_INFO } from 'app/shared/app-settings';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 import { NUCLEAR_POWER_DATA } from './nuclear-power.data';
 
@@ -19,8 +20,8 @@ import { NUCLEAR_POWER_DATA } from './nuclear-power.data';
 export class NuclearPowerComponent implements OnInit {
   cheatSheet?: CheatSheet;
   sheetData?: NuclearPowerData;
-
-  APP_INFO = APP_INFO;
+  protected readonly APP_INFO = APP_INFO;
+  protected readonly FactorioIcons = FactorioIcons;
 
   // Base nuke data
   nuclearData: NuclearData = <NuclearData>{};

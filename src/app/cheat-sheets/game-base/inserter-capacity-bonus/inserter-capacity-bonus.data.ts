@@ -1,11 +1,12 @@
 import { RawData } from 'app/models/Data.model';
 import { InserterCapacityBonusData } from 'app/models/InserterCapacityBonusData.model';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 export const INSERTER_CAPACITY_BONUS_DATA: RawData<InserterCapacityBonusData> =
   {
     cheatSheet: {
       title: 'Inserter Capacity Bonus',
-      icon: 'Inserter_capacity_bonus_(research)',
+      iconId: FactorioIcons.Technology_InserterCapacity,
     },
     data: {
       bonuses: [

@@ -15,8 +15,8 @@
     <div>
       <app-icon-ratio-composite
         class="d-none d-sm-inline-block"
-        [machineIconId]="'Rocket_silo'"
-        [productIconId]="'Space_science_pack'"
+        [machineIconId]="FactorioIcons.Icons_RocketSilo"
+        [productIconId]="FactorioIcons.Icons_SpaceSciencePack"
         [count]="sheetData?.space3?.speed ?? ''"
       ></app-icon-ratio-composite>
       <i class="fas fa-long-arrow-alt-left text-muted d-none d-sm-inline-block" aria-hidden="true"></i>
@@ -28,8 +28,8 @@
 
       <app-icon-ratio-composite
         *ngFor="let pack of sheetData?.packs"
-        [machineIconId]="'Assembling_machine_combined'"
-        [productIconId]="pack?.iconId ?? ''"
+        [machineIconId]="'AssemblingMachineCombined'"
+        [productIconId]="pack.iconId"
         [count]="pack?.count"
       ></app-icon-ratio-composite>
 
@@ -41,8 +41,8 @@
       <i class="fas fa-long-arrow-alt-right text-muted d-none d-sm-inline-block" aria-hidden="true"></i>
       <app-icon-ratio-composite
         class="d-none d-sm-inline-block"
-        [machineIconId]="'Rocket_silo'"
-        [productIconId]="'Space_science_pack'"
+        [machineIconId]="FactorioIcons.Icons_RocketSilo"
+        [productIconId]="FactorioIcons.Icons_SpaceSciencePack"
         [count]="sheetData?.space2?.speed ?? ''"
       ></app-icon-ratio-composite>
     </div>

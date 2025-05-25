@@ -1,9 +1,11 @@
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+
 export interface ProductivityModulePayoffsData {
   payoffs: Payoff[];
 }
 
 export interface Payoff {
-  product: string;
+  productIconId: FactorioIcons;
   description: string;
   payoff_speed_prod: string;
   payoff_prod: string;

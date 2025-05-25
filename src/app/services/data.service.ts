@@ -2,10 +2,14 @@
 import { Injectable } from '@angular/core';
 // Models
 import { Data as IData, RawCheatSheet, RawData } from 'app/models/Data.model';
-// Constants
 import { APP_INFO } from 'app/shared/app-settings';
+// Constants
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 import { FactorioIcon } from 'app/shared/factorio-icon/factorio-icon.model';
+import {
+  FACTORIO_ICONS_INFO,
+  FactorioIcons,
+} from 'app/shared/factorio-icons.enum';
 // RXJX
 import { Observable, of } from 'rxjs';
 import { take } from 'rxjs/operators';
@@ -46,7 +50,7 @@ export class DataService {
   }
 
   public getFactorioIcon(
-    iconId?: string,
+    iconId?: FactorioIcons | 'AssemblingMachineCombined',
     text?: string | number,
     name?: string
   ): FactorioIcon {
@@ -55,8 +59,16 @@ export class DataService {
       if (typeof iconId !== 'string') {
         throw new Error('Icon ID: "' + iconId + '" is not a string.');
       }
-      const src = this.getFactorioIconSrc(iconId);
-      name = name || this.toTitleCase(iconId.replace(/_/g, ' ')); // If custom name is passed use it, otherwise generate from id
+      // const src = this.getFactorioIconSrc(iconId);
+      // name = name || this.toTitleCase(iconId.replace(/_/g, ' ')); // If custom name is passed use it, otherwise generate from id
+      const src =
+        iconId === 'AssemblingMachineCombined'
+          ? APP_INFO.links.getLocalImagePath('Assembling_machine_combined.png')
+          : FACTORIO_ICONS_INFO[iconId].url;
+      name =
+        name || iconId === 'AssemblingMachineCombined'
+          ? 'Any Assembling Machine'
+          : FACTORIO_ICONS_INFO[iconId].display; // or id?
       text = typeof text == 'number' ? String(text) : text;
       return new FactorioIcon(src, text, name);
     }
@@ -66,34 +78,34 @@ export class DataService {
   /** Returns CheatSheet Object with icon and title */
   public getCheatSheet(cheatSheet: RawCheatSheet): CheatSheet {
     return new CheatSheet(
-      this.getFactorioIcon(cheatSheet.icon),
+      this.getFactorioIcon(cheatSheet.iconId),
       cheatSheet.title
     );
   }
 
-  private getFactorioIconSrc(iconId?: string): string {
-    if (!iconId) {
-      throw new Error('No Icon Defined');
-    }
-    if (iconId.includes('Assembling_machine_combined')) {
-      return APP_INFO.links.getLocalImagePath(
-        'Assembling_machine_combined.png'
-      );
-    }
-    if (iconId.includes('Space_Age')) {
-      return APP_INFO.links.getLocalImagePath('Space_Age.png');
-    }
-    if (iconId.includes('research')) {
-      // iconId = iconId.replace(/_/g, '-');
-      return (
-        APP_INFO.links.wikiImagesBase +
-        'thumb/' +
-        iconId +
-        '.png/32px-' +
-        iconId +
-        '.png'
-      );
-    }
-    return APP_INFO.links.wikiImagesBase + iconId + '.png';
-  }
+  // private getFactorioIconSrc(iconId?: string): string {
+  //   if (!iconId) {
+  //     throw new Error('No Icon Defined');
+  //   }
+  //   if (iconId.includes('Assembling_machine_combined')) {
+  //     return APP_INFO.links.getLocalImagePath(
+  //       'Assembling_machine_combined.png'
+  //     );
+  //   }
+  //   if (iconId.includes('Space_Age')) {
+  //     return APP_INFO.links.getLocalImagePath('Space_Age.png');
+  //   }
+  //   if (iconId.includes('research')) {
+  //     // iconId = iconId.replace(/_/g, '-');
+  //     return (
+  //       APP_INFO.links.wikiImagesBase +
+  //       'thumb/' +
+  //       iconId +
+  //       '.png/32px-' +
+  //       iconId +
+  //       '.png'
+  //     );
+  //   }
+  //   return APP_INFO.links.wikiImagesBase + iconId + '.png';
+  // }
 }

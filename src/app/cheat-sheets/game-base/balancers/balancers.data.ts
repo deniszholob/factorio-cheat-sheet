@@ -1,10 +1,11 @@
 import { BalancerData } from 'app/models/BalancersData.model';
 import { RawData } from 'app/models/Data.model';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 export const BALANCERS_DATA: RawData<BalancerData> = {
   cheatSheet: {
     title: 'Balancers',
-    icon: 'Fast_splitter',
+    iconId: FactorioIcons.Icons_FastSplitter,
   },
   data: {
     commonBalancers: [
