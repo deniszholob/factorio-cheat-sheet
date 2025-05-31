@@ -1,0 +1,106 @@
+<app-cheat-sheet-template [iconId]="cheatSheetIconId" [title]="cheatSheetTitle">
+  There are 2 systems for trains/stations:
+  <ul>
+    <li>
+      Pass through stations with single headed trains - stations are built in the middle of the track such that after the train has stopped
+      it continues forward
+    </li>
+    <li>
+      Terminal stations with double headed trains - stations are built at the end of the track such that after the train has stopped it
+      reverses
+    </li>
+  </ul>
+
+  Stations and interrupts can be composed with the following identifiers:
+  <ul>
+    <li>
+      <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Signal_SignalL)"></app-factorio-icon>
+      or
+      <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Signal_SignalU)"></app-factorio-icon>
+      (load/unload)
+    </li>
+    <li>
+      <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_CargoWagon)"></app-factorio-icon>
+      or
+      <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_FluidWagon)"></app-factorio-icon>
+      (fluid/cargo wagon)
+    </li>
+    <li>[#locomotives in front]-[#wagons]-[#locomotives behind]</li>
+  </ul>
+  Generally can use the following configurations for trains for an average game (remove the locos behind if not using terminal stations):
+  <ul>
+    <li>2-4-2 trains for ore</li>
+    <li>1-2-1 train for oil</li>
+    <li>1-1-1 train for acid (uranium mine)</li>
+  </ul>
+
+  <h4 id="signals">
+    Signals
+    <small>
+      <a href="https://www.youtube.com/watch?v=oDgzDW26spc" target="_blank" rel="noopener noreferrer">tutorial</a>
+    </small>
+  </h4>
+  <span> When building rails the general rule is: </span>
+  <ul>
+    <li>"Use chain signal before intersection, block signal after" - chain in block out</li>
+    <li>Space signals to account for the longest train. to prevent deadlocks</li>
+  </ul>
+
+  <hr />
+  <h4 id="schedules">
+    Schedules
+    <small>
+      <a href="https://youtu.be/ks9dP8YuyOY?si=-LwPz1NM5Nne2B7g&t=96" target="_blank" rel="noopener noreferrer">tutorial</a>
+    </small>
+  </h4>
+
+  Here is an example of how to set up a train schedule with interrupts and parameters:
+  <br />
+  this allows to use the same schedule for all trains and same naming for outposts. Trains dynamically go to outposts and
+
+  <br />
+  There must be at least one of each station with a train limit of 1 (unless using a staker before each station):
+  <ul>
+    <li>Load Station - typically at mining outposts</li>
+    <li>Unload Station - typically at main base</li>
+    <li>Fuel Station - typically at main base next to oil/rocket fuel production</li>
+    <li>Stacker/Depot Station - typically large array to support multiple trains</li>
+  </ul>
+  <div class="col align-items-center">
+    <img
+      class="img-fluid rounded"
+      loading="lazy"
+      src="{{ APP_INFO.links.getLocalImagePath('train-schedule_1-1-1.png') }}"
+      alt=""
+      title=""
+    />
+
+    <img
+      class="img-fluid rounded"
+      loading="lazy"
+      src="{{ APP_INFO.links.getLocalImagePath('train-interrupt-fuel_1-1-1.png') }}"
+      alt=""
+      title=""
+    />
+
+    <img
+      class="img-fluid rounded"
+      loading="lazy"
+      src="{{ APP_INFO.links.getLocalImagePath('train-interrupt-stacker_1-1-1.png') }}"
+      alt=""
+      title=""
+    />
+
+    <img
+      class="img-fluid rounded"
+      loading="lazy"
+      src="{{ APP_INFO.links.getLocalImagePath('train-interrupt-unload_1-1-1.png') }}"
+      alt=""
+      title=""
+    />
+  </div>
+
+  <hr />
+
+  <div class="row align-items-center"></div>
+</app-cheat-sheet-template>

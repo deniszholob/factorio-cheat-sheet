@@ -4,6 +4,7 @@ import { CS_COMMON_RATIOS_SHEET_TITLE } from 'app/cheat-sheets/game-base/cs-comm
 import { POWER_SOLAR_SHEET_TITLE } from 'app/cheat-sheets/game-base/power-solar/power-solar.component';
 import { POWER_STEAM_SHEET_TITLE } from 'app/cheat-sheets/game-base/power-steam/power-steam.component';
 import { SPACE_AGE_SHEET_TITLE } from 'app/cheat-sheets/game-base/space-age/space-age.component';
+import { TRAINS_SHEET_TITLE } from 'app/cheat-sheets/game-base/trains/trains.component';
 import { CONTRIBUTE_SHEET_TITLE } from 'app/cheat-sheets/game-mods/contribute/contribute.component';
 import { POPULAR_MODS_SHEET_TITLE } from 'app/cheat-sheets/game-mods/popular-mods/popular-mods.component';
 import { getIdFromTitle } from 'app/shared/cheat-sheet-template/cheat-sheet-template.component';
@@ -19,6 +20,7 @@ export const NAV_BASE: string[] = [
   getIdFromTitle(POWER_SOLAR_SHEET_TITLE),
   'nuclear-power',
   'oil-refining',
+  getIdFromTitle(TRAINS_SHEET_TITLE),
   'fluid-wagon-transfer',
   'cargo-wagon-transfer',
   'inserter-throughput',

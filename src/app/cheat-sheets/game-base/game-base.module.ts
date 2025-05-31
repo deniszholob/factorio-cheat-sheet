@@ -24,13 +24,13 @@ import { ScienceModule } from './science/science.module';
 import { SpaceAgeComponent } from './space-age/space-age.component';
 import { TipsModule } from './tips/tips.module';
 import { TrainColorsModule } from './train-colors/train-colors.module';
+import { TrainsComponent } from './trains/trains.component';
 import { VehicleFuelBonusModule } from './vehicle-fuel-bonus/vehicle-fuel-bonus.module';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(ROUTES_GAME_BASE),
-
     // Sheets
     BalancersModule,
     BeltsComponent,
@@ -54,6 +54,7 @@ import { VehicleFuelBonusModule } from './vehicle-fuel-bonus/vehicle-fuel-bonus.
     TrainColorsModule,
     VehicleFuelBonusModule,
     SpaceAgeComponent,
+    TrainsComponent,
   ],
   declarations: [GameBaseComponent],
   exports: [GameBaseComponent],
