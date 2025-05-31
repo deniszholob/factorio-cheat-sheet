@@ -1,0 +1,30 @@
+<app-cheat-sheet-template [iconId]="cheatSheetIconId" [title]="cheatSheetTitle">
+  <h4 id="section">
+    Section
+  </h4>
+
+  <span>Text</span>
+  <ul>
+    <li>Item1</li>
+    <li>Item2</li>
+  </ul>
+
+  <div class="row align-items-center">
+    <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_{{upperCamelCaseName}}, 0)"></app-factorio-icon>
+
+    <img
+      class="img-fluid rounded"
+      loading="lazy"
+      src="{{ APP_INFO.links.getLocalImagePath('{{dashCaseName}}.webp') }}"
+      alt="{{upperReadableName}}"
+      title="{{upperReadableName}}"
+    />
+  </div>
+
+  <hr />
+
+  <div class="row align-items-center">
+
+  </div>
+
+</app-cheat-sheet-template>

@@ -2,12 +2,14 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { DataService } from 'app/services';
 import { FactorioIconModule } from 'app/shared';
+import { APP_INFO } from 'app/shared/app-settings';
 import { CheatSheetTemplateComponent } from 'app/shared/cheat-sheet-template/cheat-sheet-template.component';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
-import { {{constantCaseName}}_DATA, {{upperCamelCaseName}}Data } from './{{dashCaseName}}.data';
+// import { {{constantCaseName}}_DATA, {{upperCamelCaseName}}Data } from './{{dashCaseName}}.data';
 
-export const {{constantCaseName}}_SHEET_ICON = 'Solar_panel';
-export const {{constantCaseName}}_SHEET_TITLE = 'Solar Power';
+export const {{constantCaseName}}_SHEET_ICON = FactorioIcons.Icons_{{upperCamelCaseName}};
+export const {{constantCaseName}}_SHEET_TITLE = '{{upperReadableName}}';
 
 @Component({
   selector: '{{componentPrefix}}-{{dashCaseName}}',
@@ -22,10 +24,12 @@ export const {{constantCaseName}}_SHEET_TITLE = 'Solar Power';
   ],
 })
 export class {{upperCamelCaseName}}Component {
-  protected readonly cheatSheetIconId: string = {{constantCaseName}}_SHEET_ICON;
+  protected readonly FactorioIcons = FactorioIcons;
+  protected readonly cheatSheetIconId: FactorioIcons = {{constantCaseName}}_SHEET_ICON;
   protected readonly cheatSheetTitle: string = {{constantCaseName}}_SHEET_TITLE;
 
-  protected readonly {{constantCaseName}}_DATA: PowerSolarData = {{constantCaseName}}_DATA;
+  protected readonly APP_INFO = APP_INFO;
+  // protected readonly {{constantCaseName}}_DATA: {{upperCamelCaseName}}Data = {{constantCaseName}}_DATA;
 
   constructor(protected dataService: DataService) {}
 }
