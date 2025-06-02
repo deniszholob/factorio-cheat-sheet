@@ -2,26 +2,34 @@
 
 Cheat Sheet for [Factorio](https://www.factorio.com/): _"A compendium of the most common Factorio game facts, such as build ratios, tips/tricks, and links to further information"._
 
-If you would like to contribute to the cheat sheet code/content, see `contributing.md`
+Before you start contributing, please read [`contributing.md`](https://github.com/deniszholob/factorio-cheat-sheet/blob/master/CONTRIBUTING.md).
+
+For anyone doing development work with Angular, I hope this project helps you to structure your code.
 
 ![Factorio Cheat Sheet](src/assets/icons/factorio-cheat-sheet-splash.webp)
 
 ## Deployments [![Build Status](https://github.com/deniszholob/factorio-cheat-sheet/actions/workflows/main.yml/badge.svg)](https://github.com/deniszholob/factorio-cheat-sheet/actions/workflows/main.yml)
 
 - [Master Deployment](https://factoriocheatsheet.com/)
-- Master branch is for the source code that's hosted on
+- The `master` branch holds the source code, and is also published on:
   - [GhPages](https://deniszholob.github.io/factorio-cheat-sheet/)
   - [Firebase](https://factorio-cheat-sheet.web.app//)
 
-This cheat sheet would not be possible without the Factorio community, big thanks to everyone on Reddit, previous cheat sheets, and the Wiki, which all of the data used here is based on.
-For anyone who is doing development work with Angular, I hope this project helps you out with the code structure and whatnot.
+## Thank you Factorio community
+
+This cheat sheet is made possible by:
+
+- the Factorio community,
+- everyone on the Factorio subreddit,
+- previous cheat sheets,
+- the Factorio Wiki (most of the cheat cheat uses data from the Wiki)
 
 # Support Me
 
 If you find the cheat sheet or the source code useful, consider:
 
-- Donating Ko-fi: https://ko-fi.com/deniszholob
-- Supporting on Patreon: https://www.patreon.com/deniszholob
+- [Donating via Ko-fi](https://ko-fi.com/deniszholob)
+- [Supporting me on Patreon](https://www.patreon.com/deniszholob)
 
 # Screenshots
 
