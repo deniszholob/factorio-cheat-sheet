@@ -1,28 +1,17 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
   <p>
-    <strong><a href="https://wiki.factorio.com/Balancer_mechanics">Balancers</a></strong>
-    are used to evenly distribute items over multiple belts, they are commonly used at ore patches or the
-    <a href="https://wiki.factorio.com/Tutorial:Main_bus#Split-off">Main Bus</a>.
+    Use <strong><a href="https://wiki.factorio.com/Balancer_mechanics">balancers</a></strong>
+    to evenly distribute items over multiple belts. Balancers are often used at ore patches or on the
+    <a href="https://wiki.factorio.com/Tutorial:Main_bus#Split-off">main bus</a>.
   </p>
+  <p>There are four kinds of balancers:</p>
   <ul>
+    <li>Input balanced: take evenly from input belts.</li>
+    <li>Output balanced: distribute evenly to output belts.</li>
+    <li>Output balanced under back pressure: keeps even distribution, even if any output belt is blocked.</li>
     <li>
-      Balancers that are
-      <strong>input balanced</strong>
-      take evenly from input belts.
-    </li>
-    <li>
-      Balancers that are
-      <strong>output balanced</strong>
-      distribute evenly to output belts.
-    </li>
-    <li>
-      Balancers that are
-      <strong>output balanced under back pressure</strong>, keep an even distribution even if one or more output belts are blocked.
-    </li>
-    <li>
-      Balancers that are
-      <a href="https://wiki.factorio.com/Balancer_mechanics#Throughput" target="_blank" rel="noopener">throughput limited</a>
-      may not provide the maximum throughput due to bottlenecks.
+      <a href="https://wiki.factorio.com/Balancer_mechanics#Throughput" target="_blank" rel="noopener">Throughput limited</a>: may have
+      bottlenecks.
     </li>
   </ul>
 
@@ -45,7 +34,7 @@
     <div class="col-12 col-md-5">
       <strong class="d-block text-center">Tips</strong>
       <ul>
-        <li>Don't overuse balancers, use them when needed.</li>
+        <li>Only use balancers when needed.</li>
         <li>Make a build that's inherently balanced, by letting the assembly machines consume a full belt of items.</li>
         <li>
           Balancers can still be useful regardless; most common are the
