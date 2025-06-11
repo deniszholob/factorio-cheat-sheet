@@ -4,7 +4,7 @@
     to distribute items over multiple belts, like at ore patches or on the
     <a href="https://wiki.factorio.com/Tutorial:Main_bus#Split-off">main bus</a>.
   </p>
-  <p>There are four kinds of balancers:</p>
+  <p>Balancers can have these properties:</p>
   <ul>
     <li>Input balanced, take evenly from input belts.</li>
     <li>Output balanced, distribute evenly to output belts.</li>
@@ -35,7 +35,16 @@
       <strong class="d-block text-center">Tips</strong>
       <ul>
         <li>Only use balancers when needed.</li>
-        <li>If your assembly machines consume a full belt you don't need a balancer.</li>
+        <li>If your assembling machines consume a full belt you don't need a balancer.</li>
+        <li>Try making balanced builds, for example:</li>
+        <ul>
+          <li>A small build: 3 copper cable to 2 electronic circuits.</li>
+          <li>A medium build: 2 belts of iron plate to 1 belt of iron gear wheels.</li>
+          <li>
+            A large build: part of the base uses exactly 4 belts of iron plates. This helps you to scale the base to the available input.
+          </li>
+          <li>A train build: uses 1 train of iron plates and 1 train of copper plates.</li>
+        </ul>
         <li>
           These throughput unlimited balancers cover most cases:
           <app-blueprint-clipboard [url]="sheetData?.commonBalancers?.[0]?.raw"></app-blueprint-clipboard>
