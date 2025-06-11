@@ -1,17 +1,11 @@
 <app-cheat-sheet-template [iconId]="cheatSheetIconId" [title]="cheatSheetTitle">
-  There are 2 systems for trains/stations:
+  There are two systems for trains/stations:
   <ul>
-    <li>
-      Pass through stations with single headed trains - stations are built in the middle of the track such that after the train has stopped
-      it continues forward
-    </li>
-    <li>
-      Terminal stations with double headed trains - stations are built at the end of the track such that after the train has stopped it
-      reverses
-    </li>
+    <li>Locomotive(s) on one end of the train. The train stops and leaves the station in the same direction.</li>
+    <li>Locomotive(s) on both ends of the train. The train stops and leaves the station in the opposite direction.</li>
   </ul>
 
-  Stations and interrupts can be composed with the following identifiers:
+  Station names and interrupts may use these identifiers:
   <ul>
     <li>
       <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Signal_SignalL)"></app-factorio-icon>
@@ -27,11 +21,11 @@
     </li>
     <li>[#locomotives in front]-[#wagons]-[#locomotives behind]</li>
   </ul>
-  Generally can use the following configurations for trains for an average game (remove the locos behind if not using terminal stations):
+  Example train consists for an average game (locos on both ends of the train):
   <ul>
-    <li>2-4-2 trains for ore</li>
-    <li>1-2-1 train for oil</li>
-    <li>1-1-1 train for acid (uranium mine)</li>
+    <li>2-4-2 trains, for ore.</li>
+    <li>1-2-1 trains, for oil.</li>
+    <li>1-1-1-1 trains, for uranium (1 cargo wagon for the uranium ore, 1 fluid wagon with sulfuric acid for the mining drills).</li>
   </ul>
 
   <h4 id="signals">
@@ -40,10 +34,10 @@
       <a href="https://www.youtube.com/watch?v=oDgzDW26spc" target="_blank" rel="noopener noreferrer">tutorial</a>
     </small>
   </h4>
-  <span> When building rails the general rule is: </span>
+  <span>The main rules for signalling are:</span>
   <ul>
-    <li>"Use chain signal before intersection, block signal after" - chain in block out</li>
-    <li>Space signals to account for the longest train. to prevent deadlocks</li>
+    <li>Chain signal before the intersection, but block signal after the intersection. "Chain in, block out."</li>
+    <li>Your longest train must fit between the signals after the intersection. This prevents deadlocks.</li>
   </ul>
 
   <hr />
@@ -54,17 +48,19 @@
     </small>
   </h4>
 
-  Here is an example of how to set up a train schedule with interrupts and parameters:
+  An example of a train schedule with interrupts and parameters.
   <br />
-  this allows to use the same schedule for all trains and same naming for outposts. Trains dynamically go to outposts and
+  This way you can use the same schedule for all trains and use the same names for outposts. Trains go to outposts, refuel and wait at the
+  depot automatically.
 
   <br />
-  There must be at least one of each station with a train limit of 1 (unless using a staker before each station):
+  You must have at least one of each of these stations. Set the train limit to 1, or to the number of trains that fit in a stacker before
+  that station.
   <ul>
-    <li>Load Station - typically at mining outposts</li>
-    <li>Unload Station - typically at main base</li>
-    <li>Fuel Station - typically at main base next to oil/rocket fuel production</li>
-    <li>Stacker/Depot Station - typically large array to support multiple trains</li>
+    <li>Load Station, for mining outposts or parts production.</li>
+    <li>Unload Station, for the main base or final assembly of parts.</li>
+    <li>Fuel Station. Put this near your rocket fuel production.</li>
+    <li>Stacker/Depot Station. Typically a large row of stations for many trains.</li>
   </ul>
   <div class="col align-items-center">
     <img
