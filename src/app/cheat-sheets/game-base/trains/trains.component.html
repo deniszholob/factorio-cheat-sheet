@@ -1,11 +1,11 @@
 <app-cheat-sheet-template [iconId]="cheatSheetIconId" [title]="cheatSheetTitle">
   There are two systems for trains/stations:
   <ul>
-    <li>Locomotive(s) on one end of the train. The train stops and leaves the station in the same direction.</li>
-    <li>Locomotive(s) on both ends of the train. The train stops and leaves the station in the opposite direction.</li>
+    <li>Locomotive(s) on one end of the train. The train stops and leaves the station in the same direction. (Pass Through Station)</li>
+    <li>Locomotive(s) on both ends of the train. The train stops and leaves the station in the opposite direction. (Terminal Station)</li>
   </ul>
 
-  Station names and interrupts may use these identifiers:
+  Example station names and interrupts patterns:
   <ul>
     <li>
       <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Signal_SignalL)"></app-factorio-icon>
@@ -21,11 +21,11 @@
     </li>
     <li>[#locomotives in front]-[#wagons]-[#locomotives behind]</li>
   </ul>
-  Example train consists for an average game (locos on both ends of the train):
+  Example train configurations for an average game (locos on both ends of the train):
   <ul>
     <li>2-4-2 trains, for ore.</li>
     <li>1-2-1 trains, for oil.</li>
-    <li>1-1-1-1 trains, for uranium (1 cargo wagon for the uranium ore, 1 fluid wagon with sulfuric acid for the mining drills).</li>
+    <li>1-1-1 trains, sulfuric acid for uranium ore mines.</li>
   </ul>
 
   <h4 id="signals">
