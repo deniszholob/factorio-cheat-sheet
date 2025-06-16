@@ -1,9 +1,11 @@
 <app-cheat-sheet-template [iconId]="cheatSheetIconId" [title]="cheatSheetTitle">
   <p>
-    List of common ratios between machines to produce various products optimally (without stalling)<br />
-    <strong>For example:</strong> To make "rails", the right ratio is 1 "iron stick" assembler feeding 2 "rail" assemblers. <br />
-    If there is no machine mixing (assemblers/chemical plants/furnaces) then ratios stay the same between assembly tiers. <br />
+    List of common ratios between machines to produce items optimally, without stalling.<br />
+    For example: when making "Rail", the right ratio is 1 "Iron Stick" assembler feeding 2 "Rail" assemblers.<br />
+    If there is no machine mixing (assemblers/chemical plants/furnaces) then ratios stay the same between assembler tiers.<br />
   </p>
+
+  <p>Go to the <a [routerLink]="[]" fragment="links">links</a> section of this page, for blueprints and calculators.</p>
 
   <p class="text-center">
     <span class="text-muted d-inline-block">Machine speeds</span>
@@ -14,8 +16,6 @@
       </ng-container>
     </span>
   </p>
-
-  <p>Go to the <a [routerLink]="[]" fragment="links">links</a> section of this page, for blueprints and calculators.</p>
 
   <div class="row">
     <div class="col-12 col-md-6 mb-10" *ngFor="let item of COMMON_RATIO_DATA">
@@ -36,7 +36,7 @@
     </div>
   </div>
 
-  <small class="text-muted">Note: Rates are rounded to 2 decimal points</small>
+  <small class="text-muted">Note: rates are rounded to 2 decimal points.</small>
 
   <hr class="print-page-break" />
   <h4 id="rocket">Rocket Components</h4>
@@ -60,18 +60,18 @@
       <a href="https://wiki.factorio.com/Space_science_pack" target="_blank" rel="noopener">Space Science</a>
       (no productivity modules in the silo);
       <br />
-      a rocket needs 1000 (100*10) of each component of the rocket part + the requirements for the
+      you need 1000 (100*10) of each Rocket component plus the items for the
       <a href="https://wiki.factorio.com/Satellite">satellite</a>.
     </li>
+    <ul>
+      <li>This is a ratio of (1100i * 10s) : (1050i * 15s) : (1100i * 15s) = 11000 : 15750 : 11000.</li>
+      <li>The simplified ratio is: 44 : 63 : 44 (dividing the ratio above by 250).</li>
+      <li>Where 20s and 30s are the respective crafting speeds of recipes.</li>
+    </ul>
+    <li>The ratio given above produces 2.5 science/min, but the silo can produce 2.9 science/min.</li>
     <li>
-      This is a ratio of (1100i * 10s) : (1050i * 15s) : (1100i * 15s) = 11000 : 15750 : 11000 or if divided by 250 then simplified to 44 :
-      63 : 44.
-    </li>
-    <li>Where 20s and 30s are the respective crafting speeds of recipes.</li>
-    <li><strong>Note:</strong> This produces 2.5 science/min, however the silo is capable of 2.9 science/min</li>
-    <li>
-      <strong>Module Ratio</strong> is approximate with lvl 3 productivity modules and lvl 1 speed modules in 1 beacon then silo is capable
-      of 3.9 science/min
+      The above ratio is approximate: with level 3 productivity modules plus level 1 speed modules in 1 beacon the silo is capable of 3.9
+      science/min.
     </li>
   </ul>
 </app-cheat-sheet-template>
