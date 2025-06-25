@@ -13,7 +13,8 @@
       </caption>
       <thead>
         <tr>
-          <th scope="col">Module type</th>
+          <th scope="col">Name</th>
+          <th scope="col">Icon</th>
           <th scope="col">Pros</th>
           <th scope="col">Cons</th>
         </tr>
@@ -21,21 +22,30 @@
       <tbody>
         <tr>
           <th scope="row">Speed</th>
+          <td><app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SpeedModule3)"></app-factorio-icon></td>
           <td>Faster crafting.</td>
           <td>Uses more power.</td>
         </tr>
         <tr>
           <th scope="row">Productivity</th>
+          <td><app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_ProductivityModule3)"></app-factorio-icon></td>
           <td>Bonus items.</td>
           <td>Uses more power, slows crafting/mining.</td>
         </tr>
         <tr>
           <th scope="row">Efficiency</th>
+          <td><app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_EfficiencyModule3)"></app-factorio-icon></td>
           <td>Use less power, thus create less pollution.</td>
           <td>None.</td>
         </tr>
         <tr>
           <th scope="row">Quality (SA-only)</th>
+          <td>
+            <app-factorio-icon
+              [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_QualityModule3)"
+              [spaceAge]="true"
+            ></app-factorio-icon>
+          </td>
           <td>Chance to get quality output.</td>
           <td>Slows crafting/mining.</td>
         </tr>
@@ -71,7 +81,7 @@
 
     <h4>Tips for Quality modules (Space Age only)</h4>
 
-    <p>Speed modules reduce the quality of the output, so:</p>
+    <p>Speed modules <em>reduce</em> the quality of the output, so:</p>
     <ul>
       <li>Don't put Quality and Speed modules in the same machine!</li>
       <li>Don't put Beacons with Speed modules near machines with Quality modules!</li>
