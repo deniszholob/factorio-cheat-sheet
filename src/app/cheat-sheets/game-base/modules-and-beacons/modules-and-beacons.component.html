@@ -1,97 +1,114 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
-  <div class="row align-items-center">
-    <div class="col-12 col-lg-6">
-      <ul>
-        <li>Modules allow to change how fast, efficient, or productive your machines are working.</li>
-        <li>
-          Beware of Diminishing Returns
-          <a href="https://factorio.com/blog/post/fff-409" target="_blank" rel="noopener">with beacons</a> and
-          <a href="https://forums.factorio.com/viewtopic.php?f=5&t=5705" target="_blank" rel="noopener">with productivity</a>.
-        </li>
-        <li>
-          Also see
-          <a
-            href="https://www.reddit.com/r/factorio/comments/4phc78/math_energy_efficiency_of_productivity3/"
-            target="_blank"
-            rel="noopener"
-            >Beacon Arrangement Power Efficiency</a
-          >.
-        </li>
-        <li>
-          Having
-          <i>faster</i>
-          machines with
-          <a href="https://wiki.factorio.com/Speed_module_3" target="_blank" rel="noopener">
-            <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SpeedModule3)"></app-factorio-icon>
-            Speed Modules
-          </a>
-          means you'll need less to fill a belt than you did before.
-          <ul>
-            <li>While generally space is infinite, this becomes very useful in bot networks to minimize flight distance.</li>
-            <li>
-              You can also speed up Pumpjacks to counteract the diminishing yields on patches, or Mining Drills to speed up patch depletion.
-            </li>
-            <li>Speed Modules increase the energy consumption especially with beacons so be wary.</li>
-          </ul>
-        </li>
-        <li>
-          Putting
-          <a href="https://wiki.factorio.com/Productivity_module_3" target="_blank" rel="noopener">
-            <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_ProductivityModule3)"></app-factorio-icon>
-            Productivity Modules
-          </a>
-          in your machines means you'll use less raw resources.
-          <ul>
-            <li>This is absolutely critical for late game with big factories, especially when doing infinite research.</li>
-            <li>Be wary, Productivity Modules increase the energy consumption and pollution, while decreasing machine speed.</li>
-            <li>Use speed moduled beacons to compensate for the speed penalty.</li>
-          </ul>
-        </li>
+  <div>
+    <p>Use modules to increase the speed, productivity or efficiency of your machines.</p>
 
-        <li>
-          <a href="https://wiki.factorio.com/Efficiency_module_3" target="_blank" rel="noopener">
-            <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_EfficiencyModule3)"></app-factorio-icon>
-            Efficiency Modules
-          </a>
-          reduce power usage.
-          <ul>
-            <li>Best to put in energy hogs.</li>
-            <li>Reducing Energy = Reducing pollution</li>
-            <li>Tier 1 are superb in mining drills. Because you'll have lots of mining drills, you can save a lot of energy.</li>
-          </ul>
-        </li>
+    <p>
+      If you play with the Space Age expansion, you can use Quality modules to get higher quality output from your mining drills and
+      machines.
+    </p>
 
-        <li>
-          <a href="https://wiki.factorio.com/Quality_module_3" target="_blank" rel="noopener">
-            <app-factorio-icon
-              [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_QualityModule3)"
-              [spaceAge]="true"
-            ></app-factorio-icon>
-            Quality Modules
-          </a>
-          increase the chance to get higher quality items (SA only).
-          <ul>
-            <li>Speed modules counteract this effect so do no mix or use "speed beacons"</li>
-            <li>Use quality machines to save on space esp useful on space platforms</li>
-            <li>
-              <a href="https://wiki.factorio.com/Quality" target="_blank" rel="noopener noreferrer">Quality Wiki</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div class="col-12 col-lg-6 text-center">
-      <img
-        class="img-fluid rounded"
-        loading="lazy"
-        src="{{ APP_INFO.links.getLocalImagePath('formula-diagram.webp') }}"
-        alt="Formula Diagram"
-        title="Formula Diagram"
-      />
-    </div>
+    <table>
+      <caption>
+        Summary of the modules in Factorio.
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Module type</th>
+          <th scope="col">Pros</th>
+          <th scope="col">Cons</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Speed</th>
+          <td>Faster crafting.</td>
+          <td>Uses more power.</td>
+        </tr>
+        <tr>
+          <th scope="row">Productivity</th>
+          <td>Bonus items.</td>
+          <td>Uses more power, slower crafting/mining.</td>
+        </tr>
+        <tr>
+          <th scope="row">Efficiency</th>
+          <td>Use less power.</td>
+          <td>None.</td>
+        </tr>
+        <tr>
+          <th scope="row">Quality (SA-only)</th>
+          <td>Chance to get quality output.</td>
+          <td>Slower crafting/mining.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Speed modules</h4>
+
+    <p>Speed modules speed up crafting, but use more power.</p>
+
+    <p>Beacons filled with Speed Modules need a lot of power!</p>
+
+    <p>Tips:</p>
+    <ul>
+      <li>Put Speed modules in Pumpjacks or Mining drills to increase their output.</li>
+      <li>
+        Speed modules help you design compact builds, because you need less machines.
+        <ul>
+          <li>Compact builds reduce the travel distance of your bots, increasing their efficiency and throughput.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h4>Productivity modules</h4>
+    <p>With Productivity modules you get bonus items, this means you need less raw resources overall.</p>
+
+    <p>Tips:</p>
+    <ul>
+      <li>Use Beacons with Speed modules to compensate for the Productivity module's crafting speed penalty.</li>
+      <li>Productivity modules are crucial for big late-game factories, especially when doing infinity research.</li>
+    </ul>
+
+    <h4>Efficiency modules</h4>
+    <p>Efficiency Modules reduce power usage. Less power used means less pollution.</p>
+
+    <p>Tips:</p>
+    <ul>
+      <li>Save a lot of power by putting tier 1 Efficiency modules in all your mining drills.</li>
+      <li>Put Efficiency modules in your Electric furnaces and Assemblers on your Space platform (Space Age-only).</li>
+    </ul>
+
+    <h4>Quality modules (Space Age only)</h4>
+    <p>Quality Modules increase the chance to craft higher quality items, but reduce crafting speed by 5 percent each.</p>
+
+    <p>Speed modules reduce the quality of the output, so:</p>
+    <ul>
+      <li>Don't put Quality and Speed modules in the same machine!</li>
+      <li>Don't put Beacons with Speed modules near machines with Quality modules!</li>
+    </ul>
+
+    <p>
+      For more information see the
+      <a href="https://wiki.factorio.com/Quality" target="_blank" rel="noopener noreferrer">Factorio Wiki, Quality</a>.
+    </p>
   </div>
 
-  <hr />
+  <h4>Diminishing returns</h4>
+
+  <p>
+    Beware of Diminishing Returns <a href="https://factorio.com/blog/post/fff-409" target="_blank" rel="noopener">with beacons</a> and
+    <a href="https://forums.factorio.com/viewtopic.php?f=5&t=5705" target="_blank" rel="noopener">with productivity</a>.
+  </p>
+
+  <p>
+    Also see
+    <a href="https://www.reddit.com/r/factorio/comments/4phc78/math_energy_efficiency_of_productivity3/" target="_blank" rel="noopener"
+      >Beacon Arrangement Power Efficiency</a
+    >.
+  </p>
+
+  <h4>Calculator</h4>
+
+  <p>This calculator shows how many machines you need to get your wanted output.</p>
 
   <div class="row align-items-center">
     <div class="col-12 col-lg-3">
@@ -170,5 +187,13 @@
     </div>
   </div>
 
-  <p class="text-muted text-center">Calculates how many machines satisfy a target production rate of items.</p>
+  <div class="col-12 col-lg-6 text-center">
+    <img
+      class="img-fluid rounded"
+      loading="lazy"
+      src="{{ APP_INFO.links.getLocalImagePath('formula-diagram.webp') }}"
+      alt="Formula Diagram"
+      title="Formula Diagram"
+    />
+  </div>
 </app-cheat-sheet>
