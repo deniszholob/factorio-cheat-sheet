@@ -9,7 +9,7 @@
 
     <table class="table table-hover fixed-width">
       <caption>
-        Summary of the modules in Factorio.
+        Modules in Factorio.
       </caption>
       <thead>
         <tr>
@@ -52,7 +52,9 @@
       </tbody>
     </table>
 
-    <h4>Tips for Speed modules</h4>
+    <h4>
+      Tips for Speed modules <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SpeedModule3)"></app-factorio-icon>
+    </h4>
 
     <ul>
       <li>Put Speed modules in Pumpjacks or Mining drills to increase their output.</li>
@@ -65,26 +67,35 @@
       <li>Beacons filled with Speed Modules need a lot of power!</li>
     </ul>
 
-    <h4>Tips for Productivity modules</h4>
+    <h4>
+      Tips for Productivity modules
+      <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_ProductivityModule3)"></app-factorio-icon>
+    </h4>
 
     <ul>
       <li>Use Beacons with Speed modules to compensate for the Productivity module's crafting speed penalty.</li>
       <li>Productivity modules are crucial for big late-game factories, especially when doing infinity research.</li>
     </ul>
 
-    <h4>Tips for Efficiency modules</h4>
+    <h4>
+      Tips for Efficiency modules
+      <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_EfficiencyModule3)"></app-factorio-icon>
+    </h4>
 
     <ul>
       <li>Save a lot of power by putting tier 1 Efficiency modules in all your mining drills.</li>
       <li>Put Efficiency modules in your Electric furnaces and Assemblers on your Space platform (Space Age-only).</li>
     </ul>
 
-    <h4>Tips for Quality modules (Space Age only)</h4>
+    <h4>
+      Tips for Quality modules
+      <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_QualityModule3)" [spaceAge]="true"></app-factorio-icon>
+    </h4>
 
-    <p>Speed modules <em>reduce</em> the quality of the output, so:</p>
+    <p>Speed modules <em>lower</em> the quality of the output, so:</p>
     <ul>
-      <li>Don't put Quality and Speed modules in the same machine!</li>
-      <li>Don't put Beacons with Speed modules near machines with Quality modules!</li>
+      <li>Don't put Quality and Speed modules in the same machine.</li>
+      <li>Don't place Beacons with Speed modules near machines with Quality modules.</li>
     </ul>
 
     <p>
