@@ -278,8 +278,12 @@ export const LINKS_DATA: RawData<LinksData> = {
         url: 'https://deniszholob.github.io/factorio-blueprints/',
       },
       {
-        url: 'https://forums.factorio.com/viewtopic.php?f=194&t=46855',
         text: 'Train Intersections',
+        url: 'https://forums.factorio.com/viewtopic.php?f=194&t=46855',
+      },
+      {
+        text: 'ElderAxe',
+        url: 'https://www.patreon.com/ElderAxe',
       },
     ],
   },
