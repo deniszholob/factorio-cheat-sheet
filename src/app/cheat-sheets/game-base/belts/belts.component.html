@@ -1,38 +1,15 @@
 <app-cheat-sheet-template [iconId]="cheatSheetIconId" [title]="cheatSheetTitle">
   <div class="row align-items-center">
     <div class="col-12 col-md-7">
-      <p>
-        See
-        <a href="https://wiki.factorio.com/Belt_transport_system" target="_blank" rel="noopener"> Belt Transport System </a>
-        for all relevant belt information.
-      </p>
-      <p>
-        <strong>
-          <a href="https://wiki.factorio.com/Transport_belt" target="_blank" rel="noopener"> Transport Belt </a>
-          Throughput
-        </strong>
-        - Items per second (i/s) passed over one belt tile.
-        <br />
-        <strong>Transport Belt Density</strong>
-        - Maximum items that fit in one tile:
-        <strong>{{ BELT_DATA.beltDensity }} items</strong>
-        for all belts.
-      </p>
-
       <table class="table table-sm table-hover fixed-width">
+        <caption>
+          Belt throughput (both sides) and maximum distance covered by underground belts.
+        </caption>
         <thead class="text-center">
           <tr>
-            <th></th>
-            <th>
-              Throughput
-              <br />
-              (Both Sides)
-            </th>
-            <th>
-              Underground
-              <br />
-              Spacing
-            </th>
+            <th>Belt type</th>
+            <th>Throughput</th>
+            <th>Distance</th>
           </tr>
         </thead>
         <tbody class="text-center">
@@ -43,7 +20,7 @@
             </td>
             <td>
               {{ item.throughput | number : '1.0-3' }}
-              i/s
+              items/sec
             </td>
             <td>
               {{ item.undergroundSpacing }}
@@ -54,12 +31,7 @@
       </table>
     </div>
 
-    <div class="col-12 col-md-5 text-center">
-      <p>
-        All belts can hold up to
-        <strong>{{ BELT_DATA.beltDensity }} items</strong>
-        on each tile.
-      </p>
+    <figure class="col-12 col-md-5 text-center">
       <img
         class="img-fluid rounded"
         loading="lazy"
@@ -67,14 +39,23 @@
         alt="Transport Belt Signal"
         title="Transport Belt Signal"
       />
-    </div>
+      <figcaption>All belts can hold {{ BELT_DATA.beltDensity }} items per tile.</figcaption>
+    </figure>
   </div>
 
   <br />
+
+  <p>
+    Read the
+    <a href="https://wiki.factorio.com/Belt_transport_system" target="_blank" rel="noopener">Factorio wiki, Belt transport system </a>
+    to learn all about belts.
+  </p>
+
+  <h4>Main bus</h4>
   <p id="bus">
-    Its common to stack belts to form a
-    <a href="https://wiki.factorio.com/Tutorial:Main_bus" target="_blank" rel="noopener">Main Bus</a>. <br />
-    To learn more about the main bus concept, you can watch these playlists:
+    Grouping your belts into a
+    <a href="https://wiki.factorio.com/Tutorial:Main_bus" target="_blank" rel="noopener">Main Bus</a> can help you to expand your factory.
+    To learn more about the main bus, watch any of these YouTube playlists:
     <a href="https://www.youtube.com/watch?v=e9LSMqCRsd0&list=PLwehwVVQirAep2XwjX1IoJR4XIqU4eUCH&index=2" target="_blank" rel="noopener"
       >Xterminator</a
     >,
@@ -84,29 +65,25 @@
     and
     <a href="https://www.youtube.com/watch?v=ErdHbEgJG58&list=PLV3rF--heRVu2xlDGZiRbdb7nbwzM9Vyz&index=2" target="_blank" rel="noopener"
       >Nilaus</a
-    >
-    .
+    >.
   </p>
   <div class="row align-items-center">
-    <div class="col-12 align-items-center text-center">
-      <!-- <strong>Main Bus</strong> <br> -->
-      <a href="{{ APP_INFO.links.getLocalImagePath('bus.webp') }}" target="_blank" rel="noopener">
-        <img
-          class="img-fluid rounded limit-img-height"
-          loading="lazy"
-          src="{{ APP_INFO.links.getLocalImagePath('bus.webp') }}"
-          alt="Main Bus"
-          title="Main Bus"
-        />
-      </a>
-    </div>
+    <figure class="col-12 align-items-center text-center">
+      <img
+        class="img-fluid rounded limit-img-height"
+        loading="lazy"
+        src="{{ APP_INFO.links.getLocalImagePath('bus.webp') }}"
+        alt="Main Bus"
+        title="Main Bus"
+      />
+      <figcaption>Example of a main bus.</figcaption>
+    </figure>
   </div>
 
-  <br />
+  <h3>Advanced belt mechanics</h3>
 
   <div class="row align-items-center justify-content-around">
-    <div class="col-12 col-sm-6 col-lg-4 col-print-4 text-center">
-      <strong>Underground belts can be side loaded</strong><br />
+    <figure class="col-12 col-sm-6 col-lg-4 col-print-4 text-center">
       <img
         class="img-fluid rounded limit-img-height"
         loading="lazy"
@@ -114,9 +91,9 @@
         alt="Side Load Underground"
         title="Side Load Underground"
       />
-    </div>
-    <div class="col-12 col-sm-6 col-lg-4 col-print-4 text-center">
-      <strong>Splitters can filter items</strong><br />
+      <figcaption>Underground belts can be side loaded.</figcaption>
+    </figure>
+    <figure class="col-12 col-sm-6 col-lg-4 col-print-4 text-center">
       <img
         class="img-fluid rounded limit-img-height"
         loading="lazy"
@@ -124,9 +101,10 @@
         alt="Splitter Filter"
         title="Splitter Filter"
       />
-    </div>
-    <div class="col-12 col-sm-6 col-lg-4 col-print-4 text-center">
-      <strong>Belts can be woven</strong><br />
+      <figcaption>Splitters can filter items.</figcaption>
+    </figure>
+
+    <figure class="col-12 col-sm-6 col-lg-4 col-print-4 text-center">
       <img
         class="img-fluid rounded limit-img-height"
         loading="lazy"
@@ -134,6 +112,7 @@
         alt="Woven Belts"
         title="Woven Belts"
       />
-    </div>
+      <figcaption>Belts can be woven.</figcaption>
+    </figure>
   </div>
 </app-cheat-sheet-template>
