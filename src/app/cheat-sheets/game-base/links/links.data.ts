@@ -283,7 +283,7 @@ export const LINKS_DATA: RawData<LinksData> = {
       },
       {
         text: 'ElderAxe',
-        url: 'https://www.patreon.com/ElderAxe',
+        url: 'https://www.patreon.com/ElderAxe/collections',
       },
     ],
   },
