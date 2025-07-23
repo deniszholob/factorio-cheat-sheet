@@ -46,7 +46,7 @@
       <tr *ngFor="let item of displayedData">
         <td>
           <app-factorio-icon [icon]="dataService.getFactorioIcon(item.icon)"></app-factorio-icon>
-          {{ item.type ? item.type : (item.icon | replace) }}
+          {{ item.type ? item.type : (FACTORIO_ICONS_INFO[item.icon].display | replace) }}
         </td>
         <td>
           {{ item.rgb[0] }}, {{ item.rgb[1] }},

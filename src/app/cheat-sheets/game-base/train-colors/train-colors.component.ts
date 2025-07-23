@@ -1,13 +1,10 @@
-// Angular Imports
 import { Component, OnInit } from '@angular/core';
-// Models
 import { Data } from 'app/models/Data.model';
 import { TrainColor, TrainColorsData } from 'app/models/TrainColorsData.model';
-// Services
 import { DataService } from 'app/services/data.service';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { FACTORIO_ICONS_INFO } from 'app/shared/factorio-icons.enum';
 
-// Constants
 import { TRAIN_COLOR_DATA } from './train-colors.data';
 
 @Component({
@@ -16,6 +13,8 @@ import { TRAIN_COLOR_DATA } from './train-colors.data';
   // styleUrls: ['./train-colors.component.scss'] // Enable as needed
 })
 export class TrainColorsComponent implements OnInit {
+  protected readonly FACTORIO_ICONS_INFO = FACTORIO_ICONS_INFO;
+
   public cheatSheet?: CheatSheet;
   public sheetData?: TrainColorsData;
   public displayedData: TrainColor[] = [];
