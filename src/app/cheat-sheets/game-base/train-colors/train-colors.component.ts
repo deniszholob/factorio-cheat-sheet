@@ -6,6 +6,7 @@ import { TrainColor, TrainColorsData } from 'app/models/TrainColorsData.model';
 // Services
 import { DataService } from 'app/services/data.service';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { FACTORIO_ICONS_INFO } from 'app/shared/factorio-icons.enum';
 
 // Constants
 import { TRAIN_COLOR_DATA } from './train-colors.data';
@@ -21,6 +22,8 @@ export class TrainColorsComponent implements OnInit {
   public displayedData: TrainColor[] = [];
   public generated = false;
   public filterString = '';
+
+  protected readonly FACTORIO_ICONS_INFO = FACTORIO_ICONS_INFO;
 
   constructor(public dataService: DataService) {}
 
