@@ -13,3 +13,10 @@ export class ReplacePipe implements PipeTransform {
       .replace(/(^\w|\s\w)/g, (m) => m.toUpperCase());
   }
 }
+
+// TODO: Modify replace function to split on the : symbol and take the second half.
+//
+// const split = value.split(":")
+// const display = split.pop();
+// const result = display ? display.trim() ?? value;
+// return result;
