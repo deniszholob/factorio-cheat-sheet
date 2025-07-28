@@ -4,12 +4,15 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({ name: 'replace' })
 export class ReplacePipe implements PipeTransform {
   /**
-   * Takes _ and replaces with space, Capitalizes each letter.
+   * Used on FACTORIO_ICONS_INFO[entry].display
+   * Display has format of "Category: Name"
+   * Return only the name part
    * @param value any string
    */
-  transform(value: string): string {
-    return value
-      .replace(/_/g, ' ')
-      .replace(/(^\w|\s\w)/g, (m) => m.toUpperCase());
+  public transform(value: string): string {
+    const split: string[] = value.split(':');
+    const display: string | undefined = split.pop();
+    const result: string = display ? display.trim() : value;
+    return result;
   }
 }

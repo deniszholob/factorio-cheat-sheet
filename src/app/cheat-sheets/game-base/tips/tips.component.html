@@ -1,107 +1,172 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
   <h4 id="tips-shortcuts">
-    <a href="https://wiki.factorio.com/Tutorial:Keyboard_shortcuts" target="_blank" rel="noopener"> Shortcuts </a>
-    <small class="text-muted">(Most used)</small>
+    <a href="https://wiki.factorio.com/Tutorial:Keyboard_shortcuts" target="_blank" rel="noopener">Common shortcuts </a>
   </h4>
+
+  <table class="table table-hover">
+    <caption>
+      Common Factorio shortcuts. Table only lists different macOS shortcuts.
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Windows/Linux</th>
+        <th scope="col">macOS</th>
+        <th scope="col">Description and tips</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <kbd>Alt</kbd>
+        </td>
+        <td></td>
+        <td>
+          Show detailed information on entities. Or click the ALT button in the
+          <a href="https://wiki.factorio.com/Shortcut_bar" target="_blank" rel="noopener">shortcut bar</a>.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <kbd>M</kbd>
+        </td>
+        <td></td>
+        <td>Open or close the map view.</td>
+      </tr>
+      <tr>
+        <td>
+          <kbd>O</kbd>
+        </td>
+        <td></td>
+        <td>Open or close the train view.</td>
+      </tr>
+      <tr>
+        <td>
+          <kbd>P</kbd>
+        </td>
+        <td></td>
+        <td>Open or close the production view.</td>
+      </tr>
+      <tr>
+        <td><kbd>MMB</kbd></td>
+        <td><kbd>CMD + RMB</kbd></td>
+        <td>
+          Clear the item in the <a href="https://wiki.factorio.com/Quickbar" target="_blank" rel="noopener">quick bar</a>. Or set filters in
+          cargo wagons and your inventory.
+        </td>
+      </tr>
+      <tr>
+        <td><kbd>R</kbd></td>
+        <td></td>
+        <td>Rotate ghosts (or built entities) clockwise.</td>
+      </tr>
+      <tr>
+        <td><kbd>Shift + R</kbd></td>
+        <td></td>
+        <td>Rotate ghosts (or built entities) counterclockwise.</td>
+      </tr>
+      <tr>
+        <td><kbd>CTRL + LMB</kbd></td>
+        <td></td>
+        <td>Put or take all items.</td>
+      </tr>
+      <tr>
+        <td><kbd>CTRL + RMB</kbd></td>
+        <td></td>
+        <td>Put or take a half stack of items.</td>
+      </tr>
+      <tr>
+        <td><kbd>Z</kbd></td>
+        <td></td>
+        <td>Drop 1 item over the cursor. You can feed one item into a Assembly machine or chest.</td>
+      </tr>
+      <tr>
+        <td><kbd>F</kbd></td>
+        <td></td>
+        <td>Pick up items from the ground or belt.</td>
+      </tr>
+      <tr>
+        <td><kbd>Shift + LMB</kbd></td>
+        <td></td>
+        <td>Build a ghost of the item.</td>
+      </tr>
+      <tr>
+        <td><kbd>Shift + RMB</kbd></td>
+        <td></td>
+        <td>Copy entity configuration.</td>
+      </tr>
+      <tr>
+        <td><kbd>Shift + LMB</kbd></td>
+        <td></td>
+        <td>Paste entity configuration.</td>
+      </tr>
+      <tr>
+        <td><kbd>Q</kbd></td>
+        <td></td>
+        <td>Selects what you're hovering over from your inventory. If hovering over ores: selects the best miner in your inventory.</td>
+      </tr>
+      <tr>
+        <td><kbd>CTRL + X</kbd></td>
+        <td><kbd>CMD + X</kbd></td>
+        <td>Cut.</td>
+      </tr>
+      <tr>
+        <td><kbd>CTRL + C </kbd></td>
+        <td><kbd>CMD + C</kbd></td>
+        <td>Copy.</td>
+      </tr>
+      <tr>
+        <td><kbd>CTRL + V</kbd></td>
+        <td><kbd>CMD + V</kbd></td>
+        <td>Paste.</td>
+      </tr>
+      <tr>
+        <td><kbd>CTRL + Z</kbd></td>
+        <td><kbd>CMD + Z</kbd></td>
+        <td>Undo.</td>
+      </tr>
+      <tr>
+        <td><kbd>CTRL + Y</kbd></td>
+        <td><kbd>CMD + Y</kbd></td>
+        <td>Redo.</td>
+      </tr>
+      <tr>
+        <td><kbd>Numpad +</kbd></td>
+        <td></td>
+        <td>Increase size of buildable tiles like landfill, concrete, etc.</td>
+      </tr>
+      <tr>
+        <td><kbd>Numpad -</kbd></td>
+        <td></td>
+        <td>Decrease size of buildable tiles like landfill, concrete, etc.</td>
+      </tr>
+      <tr>
+        <td><kbd>Shift + RMB</kbd></td>
+        <td></td>
+        <td>Clear Blueprint or Deconstruction planner filter.</td>
+      </tr>
+      <tr>
+        <td><kbd>Shift + LMB</kbd></td>
+        <td></td>
+        <td>Ping the ground and map.</td>
+      </tr>
+      <tr>
+        <td><kbd>~</kbd></td>
+        <td></td>
+        <td>Open the chat/command line.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h5>About copy/pasting</h5>
+
   <ul>
+    <li>Copy/pasting the configuration works on inserters, assemblers, requester chests, combinators, etc.</li>
     <li>
-      <kbd>Alt</kbd>
-      Show detailed information on entities. Or click the ALT button in the
-      <a href="https://wiki.factorio.com/Shortcut_bar" target="_blank" rel="noopener">shortcut bar</a>.
+      Set up requester chests by copy/pasting the assembler config to the requester chest. This requests enough items for 30 seconds of
+      production.
     </li>
-    <li>
-      <kbd>M</kbd>
-      Open or close the map view.
-    </li>
-    <li>
-      <kbd>O</kbd>
-      Open or close the train view.
-    </li>
-    <li>
-      <kbd>P</kbd>
-      Open or close the production view.
-    </li>
-    <li>
-      <kbd>MMB</kbd>
-      Clear the item in the <a href="https://wiki.factorio.com/Quickbar" target="_blank" rel="noopener">quick bar</a>. Or set filters in
-      cargo wagons and your inventory. (<kbd>CMD+RMB</kbd> on macOS)
-    </li>
-    <li>
-      <kbd>R</kbd>
-      Rotate ghosts (or built entities) clockwise.
-    </li>
-    <li>
-      <kbd>Shift + R</kbd>
-      Rotate ghosts (or built entities) counterclockwise.
-    </li>
-    <li>
-      <kbd>CTRL + LMB</kbd>
-      Put or take all items.
-    </li>
-    <li>
-      <kbd>CTRL + RMB</kbd>
-      Put or take a half stack of items.
-    </li>
-    <li>
-      <kbd>Z</kbd>
-      Drop 1 item over the cursor. You can feed one item into a Assembly machine or chest.
-    </li>
-    <li>
-      <kbd>F</kbd>
-      Pick up items from the ground or belt.
-    </li>
-    <li><kbd>Shift + LMB</kbd> Build a ghost of the item.</li>
-    <li>
-      <kbd>Shift + RMB</kbd>
-      Copy entity configuration.
-      <kbd>Shift + LMB</kbd>
-      Paste entity configuration.
-      <ul>
-        <li>Copy/pasting the configuration works on inserters, assemblers, requester chests, combinators, etc.</li>
-        <li>
-          Set up requester chests by copy/pasting the assembler config to the requester chest. This requests enough items for 30 seconds of
-          production.
-        </li>
-        <li>Copy/paste the config to multiple entities by dragging the mouse.</li>
-        <li>Copy individual slots (inventory, cargo wagon).</li>
-      </ul>
-    </li>
-    <li>
-      Use <kbd>Q</kbd>
-      while hovering over anything to select it from your inventory.
-      <ul>
-        <li>
-          Use
-          <kbd>Q</kbd>
-          on ores to select miners.
-        </li>
-      </ul>
-    </li>
-    <li>
-      <kbd>CTRL + C</kbd>, <kbd>CTRL + V</kbd>, <kbd>CTRL + X</kbd>, <kbd>CTRL + Z</kbd>, <kbd>CTRL + Y</kbd>
-      Copy, paste, cut, undo and redo your builds.
-      <small
-        >(<kbd>CMD</kbd>
-        vs
-        <kbd>CTRL</kbd>
-        on macOS.)</small
-      >
-    </li>
-    <li>
-      <kbd>Numpad -</kbd>
-      or
-      <kbd>Numpad +</kbd>
-      Increase or decrease the size of buildable tiles, like landfill, concrete, etc.
-    </li>
-    <li>
-      <kbd>Shift + RMB</kbd>
-      Clear Blueprint or Deconstruction planner filter.
-    </li>
-    <li>
-      <kbd>Shift + LMB</kbd>
-      Ping the ground and the map.
-    </li>
-    <li><kbd>~</kbd> Open the chat/command line.</li>
+    <li>Copy/paste the config to multiple entities by dragging the mouse.</li>
+    <li>Copy individual slots (inventory, cargo wagon).</li>
   </ul>
 
   <h4 id="tips-cmd">
