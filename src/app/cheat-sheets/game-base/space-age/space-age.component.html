@@ -180,7 +180,7 @@
         </ul>
       </li>
 
-      <!-- TODO: It would be nice to have a proper explanation of how to sort the items with bots, and how to recycle unwanted items (things you have too much of!). -->
+      <!-- TODO: Explain how to sort the items with bots, and how to recycle unwanted items (things you have too much of!). -->
       <li>
         Most islands on Fulgora are small, and recycling scrap gives you a lot of different items. You can use robots to sort the output.
         Use the items you get from recycling to craft starter items.
@@ -189,7 +189,7 @@
       <li>
         Setup filters on
         <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_StorageChest, 12)"></app-factorio-icon> (12 recycled
-        items from scrap) + 1 generic storage to start
+        items from scrap <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Scrap)"></app-factorio-icon>) + 1 generic storage to start
       </li>
       <li>
         Use
@@ -208,7 +208,7 @@
     <div class="text-center">
       <div class="d-flex flex flex-row justify-content-center align-items-center">
         <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Scrap)"></app-factorio-icon>
-        Recycler Scrap Percent Chance Ratios
+        Scrap recycling item chances
       </div>
 
       <div class="d-flex flex flex-row justify-content-center">
@@ -230,12 +230,12 @@
         The time it takes to recycle an item is 1/16th (0.0625) of the time it takes to craft that item, multiplied by the recycler crafting
         speed.
       </li>
-      <li>Recycler (non moduled) takes in 2.5 scrap/s and spits out 1.47 items/s</li>
+      <li>A recycler without modules consumes 2.5 scrap/s and returns 1.47 items/s.</li>
     </ul>
 
     <br />
     <div class="text-left">
-      Base Resources Conversion
+      Getting basic items on Fulgora.
       <div class="d-flex flex flex-row align-items-center" *ngFor="let resource of SPACE_AGE_DATA.basicResourceConversionIcons">
         <ng-container *ngFor="let items of resource; let last = last">
           <ng-container *ngFor="let item of items; let last = last">
@@ -275,7 +275,7 @@
       </thead>
       <tbody class="text-center">
         <tr>
-          <td>Consume Scrap</td>
+          <td>Consume scrap</td>
           <td>6</td>
           <td>12</td>
           <td>18</td>
@@ -285,7 +285,7 @@
           </td> -->
         </tr>
         <tr>
-          <td>Produce Items</td>
+          <td>Produce items</td>
           <td>10</td>
           <td>20</td>
           <td>30</td>
