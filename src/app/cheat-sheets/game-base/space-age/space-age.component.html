@@ -159,6 +159,11 @@
         </span>
       </p>
     </div>
+
+    <hr />
+    <a href="https://files.catbox.moe/j9vp1h.png" target="_blank" rel="noopener noreferrer">
+      <img src="https://files.catbox.moe/j9vp1h.png" alt="Vulcanus Guide" title="Vulcanus Guide" />
+    </a>
   </div>
 
   <hr />
@@ -289,26 +294,30 @@
         </tr>
       </tbody>
     </table>
-  </div>
 
-  <br />
+    <br />
 
-  <div class="text-left">
-    <h5 class="h5">Getting basic items on Fulgora</h5>
-    <div class="d-flex flex flex-row align-items-center" *ngFor="let resource of SPACE_AGE_DATA.basicResourceConversionIcons">
-      <ng-container *ngFor="let items of resource; let last = last">
-        <ng-container *ngFor="let item of items; let last = last">
-          <app-factorio-icon [icon]="dataService.getFactorioIcon(item)"></app-factorio-icon>
+    <div class="text-left">
+      <h5 class="h5">Getting basic items on Fulgora</h5>
+      <div class="d-flex flex flex-row align-items-center" *ngFor="let resource of SPACE_AGE_DATA.basicResourceConversionIcons">
+        <ng-container *ngFor="let items of resource; let last = last">
+          <ng-container *ngFor="let item of items; let last = last">
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(item)"></app-factorio-icon>
+          </ng-container>
+          <ng-container *ngIf="!last">
+            <i class="fas fa-long-arrow-alt-left text-muted"></i>
+          </ng-container>
         </ng-container>
-        <ng-container *ngIf="!last">
-          <i class="fas fa-long-arrow-alt-left text-muted"></i>
-        </ng-container>
-      </ng-container>
+      </div>
     </div>
+
+    <hr />
+    <a href="https://files.catbox.moe/cwxfbx.png" target="_blank" rel="noopener noreferrer">
+      <img src="https://files.catbox.moe/cwxfbx.png" alt="Fulgora Guide" title="Fulgora Guide" />
+    </a>
   </div>
 
   <hr />
-
   <div>
     <h4 class="card-title" id="gleba">
       <a href="https://wiki.factorio.com/Gleba" target="_blank" rel="noopener noreferrer">Gleba</a>
@@ -330,6 +339,11 @@
         </ul>
       </li>
     </ul>
+
+    <hr />
+    <a href="https://files.catbox.moe/h5jm94.png" target="_blank" rel="noopener noreferrer">
+      <img src="https://files.catbox.moe/h5jm94.png" alt="Gelba Guide" title="Gelba Guide" />
+    </a>
   </div>
 
   <hr />
@@ -337,6 +351,21 @@
     <h4 class="card-title" id="aquilo">
       <a href="https://wiki.factorio.com/Aquilo" target="_blank" rel="noopener noreferrer">Aquilo</a>
     </h4>
+
+    <h5>Planet Start</h5>
+    <ul>
+      <li>
+        Recommended items to bring to Aquilo for faster bootstrapping:
+
+        <ul>
+          <li *ngFor="let itemGroup of SPACE_AGE_DATA.bootstrapItemsAquilo">
+            <ng-container *ngFor="let item of itemGroup">
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(item.iconId, '>' + item.count)"></app-factorio-icon>
+            </ng-container>
+          </li>
+        </ul>
+      </li>
+    </ul>
 
     <p>WIP...</p>
   </div>

@@ -169,4 +169,7 @@ export const SPACE_AGE_DATA: SpaceAgeData = {
       { iconId: FactorioIcons.Icons_CopperPlate, count: 200 },
     ],
   ],
+  bootstrapItemsAquilo: [
+    // TODO
+  ],
 };

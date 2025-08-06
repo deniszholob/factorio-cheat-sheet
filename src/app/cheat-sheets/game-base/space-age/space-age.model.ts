@@ -11,6 +11,7 @@ export interface SpaceAgeData {
   bootstrapItemsVulcanus: SimpleRatio[][];
   bootstrapItemsFulgora: SimpleRatio[][];
   bootstrapItemsGleba: SimpleRatio[][];
+  bootstrapItemsAquilo: SimpleRatio[][];
   recyclerScrapRatio: SimpleRatio[];
   basicResourceConversionIcons: FactorioIcons[][][];
 }
