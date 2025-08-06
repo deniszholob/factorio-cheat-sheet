@@ -1,6 +1,6 @@
 # Factorio [Cheat Sheet](https://factoriocheatsheet.com/)
 
-Cheat Sheet for [Factorio](https://www.factorio.com/): _"A summary of common Factorio facts, build ratios, tips/tricks, and links to more information"._
+Cheat Sheet for [Factorio](https://www.factorio.com/): _"A summary of common facts for a game called Factorio, build ratios, tips/tricks, and links to more information"._
 
 Before you start contributing, please read [`contributing.md`](https://github.com/deniszholob/factorio-cheat-sheet/blob/master/CONTRIBUTING.md).
 
