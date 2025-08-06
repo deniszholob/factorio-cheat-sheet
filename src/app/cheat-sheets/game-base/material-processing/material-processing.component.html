@@ -128,7 +128,10 @@
           <a href="https://wiki.factorio.com/Electric_furnace" target="_blank" rel="noopener">Electric</a>
           Furnaces have a crafting speed of 2.
         </li>
-        <li>One furnace making iron can support one furnace making steel.</li>
+        <li>
+          While the ratio of iron to steel furnaces is 1:1, steel takes longer to make thus many more furnaces are required to saturate a
+          belt
+        </li>
         <li>Stone and Steel Furnaces consume 0.0225 coal/second.</li>
         <li>
           Common
@@ -139,6 +142,35 @@
     </div>
 
     <div class="col-12 col-lg-5 col-print-5">
+      <div class="text-center">
+        <a
+          class="text-center"
+          href="https://kirkmcdonald.github.io/calc.html#data=2-0-55&rate=s&buildings=stone-furnace&items=steel-plate:f:1"
+          target="_blank"
+          rel="noopener"
+        >
+          <app-ratio
+            [ratios]="[
+              {
+                machineIconId: FactorioIcons.Icons_StoneFurnace,
+                productIconId: FactorioIcons.Icons_SteelPlate,
+                count: 1,
+                rateSeconds: 0.063
+              },
+              {
+                machineIconId: FactorioIcons.Icons_StoneFurnace,
+                productIconId: FactorioIcons.Icons_IronPlate,
+                count: 1,
+                rateSeconds: 0.313
+              }
+            ]"
+          ></app-ratio>
+        </a>
+      </div>
+
+      <br />
+      <br />
+
       <table class="table table-sm fixed-width">
         <caption class="text-center">
           Furnaces supplied by a belt of Coal

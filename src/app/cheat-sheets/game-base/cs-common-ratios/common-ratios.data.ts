@@ -627,6 +627,31 @@ const _MISC_RATIOS: Ratio[] = [
       },
     ],
   },
+  {
+    source:
+      'https://kirkmcdonald.github.io/calc.html#data=2-0-55&rate=s&buildings=stone-furnace&items=steel-plate:f:8',
+    name: '',
+    ratio: [
+      {
+        machineIconId: FactorioIcons.Icons_StoneFurnace,
+        productIconId: FactorioIcons.Icons_SteelPlate,
+        count: 8,
+        rateSeconds: 0.5,
+      },
+      {
+        machineIconId: FactorioIcons.Icons_StoneFurnace,
+        productIconId: FactorioIcons.Icons_IronPlate,
+        count: 8,
+        rateSeconds: 2.5,
+      },
+      {
+        machineIconId: FactorioIcons.Icons_ElectricMiningDrill,
+        productIconId: FactorioIcons.Icons_IronOre,
+        count: 5,
+        rateSeconds: 2.5,
+      },
+    ],
+  },
 ];
 
 export const COMMON_RATIO_DATA: RatioSection[] = [

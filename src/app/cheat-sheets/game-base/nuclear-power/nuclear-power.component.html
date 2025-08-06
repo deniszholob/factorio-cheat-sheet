@@ -38,12 +38,51 @@
       >
     </p>
   </div>
-
   <p class="text-muted text-center" id="note_build_ratios">
     <strong>^Note:</strong> Pumps, Steam Turbines and Power are approximate for easier build ratios. See
     <a [routerLink]="[]" fragment="nuclear-table">table below</a>
     for precise numbers.
   </p>
+
+  <div class="row align-items-center">
+    <p class="col-12 col-sm-6 text-center">
+      <app-ratio
+        [ratios]="[
+          {
+            machineIconId: FactorioIcons.Icons_Centrifuge,
+            productIconId: FactorioIcons.Icons_UraniumProcessing,
+            count: 1
+          },
+          {
+            machineIconId: FactorioIcons.Icons_NuclearReactor,
+            productIconId: FactorioIcons.Icons_UraniumFuelCell,
+            count: 1
+          }
+        ]"
+      ></app-ratio>
+    </p>
+    <p class="col-12 col-sm-6 text-center">
+      <app-ratio
+        [ratios]="[
+          {
+            machineIconId: FactorioIcons.Icons_Centrifuge,
+            productIconId: FactorioIcons.Icons_UraniumProcessing,
+            count: 5.2
+          },
+          {
+            machineIconId: FactorioIcons.Icons_Centrifuge,
+            productIconId: FactorioIcons.Icons_KovarexEnrichmentProcess,
+            count: 1
+          },
+          {
+            machineIconId: FactorioIcons.Icons_NuclearReactor,
+            productIconId: FactorioIcons.Icons_UraniumFuelCell,
+            count: 33
+          }
+        ]"
+      ></app-ratio>
+    </p>
+  </div>
 
   <hr />
   <h4 class="card-title">Summary</h4>
@@ -216,7 +255,11 @@
               <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SteamTurbine)"></app-factorio-icon>
             </th>
             <th>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Fluid_Steam, '^Tanks')"></app-factorio-icon>
+              <app-icon-ratio-composite
+                [machineIconId]="FactorioIcons.Icons_StorageTank"
+                [productIconId]="FactorioIcons.Fluid_Steam"
+                [count]="'^Note'"
+              ></app-icon-ratio-composite>
             </th>
             <th>
               <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
@@ -259,10 +302,29 @@
     </div>
   </div>
 
-  <p class="text-muted">
-    <strong>^Note:</strong> This is steam tanks per 1 effective (neighbor bonus) nuclear reactor using 1 fuel rod not including the reactor
-    warmup, or heat stored in the reactor or pipes (both heat and steam).
-  </p>
+  <div class="text-muted">
+    <strong>
+      ^Steam Tanks
+      <app-icon-ratio-composite
+        [machineIconId]="FactorioIcons.Icons_StorageTank"
+        [productIconId]="FactorioIcons.Fluid_Steam"
+        [count]="''"
+      ></app-icon-ratio-composite>
+      Note:</strong
+    >
+    <ul>
+      <li>
+        This is steam tanks per 1 effective (neighbor bonus) nuclear reactor using 1 fuel rod not including the reactor warmup, or heat
+        stored in the reactor or pipes (both heat and steam).
+      </li>
+      <li>
+        The tanks are used for hyper efficient "pulse reactors", which produce a bunch of steam at once, since you can't turn off a reactor
+        mid-fuel cell.
+      </li>
+      <li>The amount is how many tanks you'd need to store all the steam produced in one cycle</li>
+      <li>Only use this for "pulse" builds, otherwise can ignore if don't care about being hyper efficient</li>
+    </ul>
+  </div>
 
   <hr class="print-page-break" />
   <h4 class="card-title" id="nuclear-formulas">Formulas</h4>

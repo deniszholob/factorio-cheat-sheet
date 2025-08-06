@@ -35,6 +35,7 @@
           Common ingredients on every planet
         </a>
       </li>
+      <li>You should equip best armor you can afford with shields and guns</li>
     </ul>
   </div>
 
@@ -317,6 +318,10 @@
       <li>
         Recommended items to bring to Gleba for faster bootstrapping:
         <ul>
+          <li>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SubmachineGun, '∞')"></app-factorio-icon>
+            Guns, lots of guns.
+          </li>
           <li *ngFor="let itemGroup of SPACE_AGE_DATA.bootstrapItemsGleba">
             <ng-container *ngFor="let item of itemGroup">
               <app-factorio-icon [icon]="dataService.getFactorioIcon(item.iconId, '>' + item.count)"></app-factorio-icon>
