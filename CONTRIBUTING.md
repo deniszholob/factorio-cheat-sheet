@@ -1,91 +1,128 @@
-# To contribute
+# Contributing guide
 
-**If you are working on an existing issue, please claim it with your comment, so there is no duplicate work.**
+This page explains how to start contributing to this project.
 
-## What you will need before you begin:
+We use [Angular](https://angular.dev/) as the framework for the site.
 
-1. Ensure [NodeJS](https://nodejs.org/) version 18.12.1 LTS or later is installed on your system.
-2. Install [VSCode](https://code.visualstudio.com/) v1.74 or later
-3. Clone the repository using git cli or ui like github desktop/sourcetree/gitkraken etc...
-4. Open the cloned folder using VSCode and **install recommended extensions**
-5. Run `npm run i` in the folder that you've just cloned to ensure you have all dependencies that are needed for development.
-6. Run `npm run start` to start the dev server for the app
+## Let us assign the issue to you
 
-## Hidden Files in VSCode
+Before you start working on an issue, please comment in the issue to let us know you're going to work on it.
+This way we avoid duplicate work.
 
-Some files are hidden in vscode by default, see the `files.exclude` option in the [settings file](.vscode/settings.json)
+## Local development
 
-There is a [recommended extension](.vscode/extensions.json) `adrianwilczynski.toggle-hidden` that allows to easily toggle hidden files on and off
+If you want to develop on your own machine, follow these steps:
+
+1. Install [NodeJS](https://nodejs.org/) `18.12.1` LTS (or newer).
+2. Install [VSCode](https://code.visualstudio.com/) `v1.74` (or newer).
+3. Clone the repository with the Git CLI, or with a Git UI like GitHub Desktop, Sourcetree, GitKraken etc.
+4. Open the cloned folder with VSCode.
+5. Install the [recommended extensions](.vscode/extensions.json) when prompted by VSCode.
+6. Run `npm run i` to install the dependencies.
+7. Start the development server for the app with `npm run start`.
+
+## Hidden files in VSCode
+
+We've configured VSCode to hide some files.
+The `adrianwilczynski.toggle-hidden` extension adds a toggle to show or hide, the hidden files.
+
+The list of hidden files is in the `files.exclude` section of our [VS Code `settings.json` file](.vscode/settings.json).
 
 ## Storybook
 
-You can reference any of the existing components in the storybook instance
+Reference any components in the Storybook instance by:
 
-- Run storybook via `npm run storybook` command
-- You can then browse the list of components and use the docs to help you use them
+1. Running Storybook with the `npm run storybook` command.
+2. Browsing the list of components.
 
-## Where to find stuff/Project Structure
+Read the [Storybook docs](https://storybook.js.org/docs) to learn how to use the components.
 
-- This project uses [Angular](https://angular.dev/)
-- All source code is in the [src](./src/) folder, most of other files/folders in the top level of the repo are just various configs for different tools (linting, formatting, testing etc...)
-- The **MAIN CODE** is in the [app folder](./src/app/).
-  - Most of the time any of the internal folders like [components](./src/app/cheat-sheets/) will be the place to edit and create new code
-  - Here the [app.component.ts](./src/app/app.component.ts) is the main entry point for the angular app along with the other app.xxx.ts.
-- The [assets](./src/assets/) folder contains images/icons.
-- The [styles](./src/styles/) folder contains css stylesheets.
-- The rest of the [src](./src/) folder contains the main [index.html](./src/index.html) which is where all the angular code gets generated to and is what is hosted. It also contains some basic resources like favicons and metadata for SEO.
+## Where to find stuff
+
+This project uses [Angular](https://angular.dev/).
+
+### Source code
+
+All source code is in the [`src` folder](./src/).
+
+The code you'll need most is in the [`src/app/` folder](./src/app/).
+You'll often work in the internal folders, like [components](./src/app/cheat-sheets/), to create or edit code.
+
+The [`app.component.ts` file](./src/app/app.component.ts) is the main entry point for the Angular app, along with other `app.xxx.ts` files.
+
+The rest of the [`src` folder](./src/) holds the main [`index.html`](./src/index.html) where all the Angular code gets generated to, and is what is hosted.
+The `src` folder also has basic resources like favicons and metadata for SEO.
+
+### Assets and stylesheets
+
+The [`assets` folder](./src/assets/) holds the images and icons.
+
+The [`styles` folder](./src/styles/) holds the CSS stylesheets.
+
+### Config files for linting, formatting, testing
+
+Many files and folders in the top level of the repository are config files for our linting, formatting or testing tools.
 
 ## Writing code
 
-When creating new components, services, utilities, etc...:  
-Make sure to install and use the [Angular Files Generator Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=deniszholob.angular-files-generator) (already enabled if you installed the recommended extensions)  
-This will generate new files conforming to the project style: Depending on type selection; this will generate starter ts, html as well as storybook and jest test files making it easier to develop well documented and tested code.
+When creating new components, services, utilities, and so on:
 
-Make sure all the typescript code is strongly typed everywhere. This makes it not only more robust but also documents the code better, and allows to quickly know what data types are used in any given place.
+1. Install, and use, the [Angular Files Generator Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=deniszholob.angular-files-generator). This extension is already enabled if you installed the recommended extensions.
+2. The extension can generate new files matching our project's style. Depending on the type you select the extension generates starter TypeScript, HTML, Storybook and Jest test files. This helps you develop well-documented and tested code.
 
-## Guide on making new cheat sheets:
+### Strongly type all TypeScript code
 
-### If you're making a new cheat-sheet; follow the [cs-common-ratios](./src/app/cheat-sheets/game-base/cs-common-ratios/) example:
+Make sure _all_ the TypeScript code is _strongly typed_.
+This makes your code more robust and documents the code.
+This lets us know the data types used in any given place.
 
-- In the [cheat-sheets](./src/app/cheat-sheets/) folder look for the category you want to add to/modify.
-- Use the `deniszholob.angular-files-generator` extension to generate a new `Module Component` in one of those categories
-- Add the newly generated component module to the corresponding category module imports
-- In the .component file add
-  ```ts
-  public readonly cheatSheetIconId: string = 'Repair_pack';
-  public readonly cheatSheetTitle: string = 'Title';
-  ```
-- In the .html file add the `<app-cheat-sheet-template [iconId]="cheatSheetIconId" [title]="cheatSheetTitle">Your Content Here</app-cheat-sheet-template>`
+## Tips
 
-### If you're making a new cheat sheet category (mods, expansions, etc)
+### Making a new cheat sheet
 
-- In the [cheat-sheets](./src/app/cheat-sheets/) folder add a new category folder using the `deniszholob.angular-files-generator` extension to generate a new `Module Component`
-- Follow the other category examples to create new routes, update the html etc..
-- Update the [cheat-sheets.module](./src/app/cheat-sheets/cheat-sheets.module.ts)
-- Update the [dav.data](./src/app/layout/nav/nav.data.ts)
-- Add new route to the [sitemap.xml](./src/sitemap.xml)
-- Add cheat sheets as needed following the guide above
+Look at the [cs-common-ratios](./src/app/cheat-sheets/game-base/cs-common-ratios/) example first.
+Then follow these steps:
 
-## Steps to follow when your work is ready:
+1. In the [cheat-sheets](./src/app/cheat-sheets/) folder look for the category you want to add to/modify.
+2. Use the `deniszholob.angular-files-generator` extension to generate a new `Module Component` in one of those categories
+3. Add the newly generated component module to the matching category's module `imports`.
+4. In the `.component` file add:
 
-When your work is done:
+   ```ts
+   public readonly cheatSheetIconId: string = 'Repair_pack';
+   public readonly cheatSheetTitle: string = 'Title';
+   ```
 
-1. Run `npm run build`.
-2. After a successful build, make a commit and push your changes. If you're fixing a existing issue: be sure to link to that issue in the git commit message, like so: `Closes #issueNumberThatGetsFixed`.
-3. Create a new Pull Request.
-4. Write a good description of the changes this pull-request will make.
-5. You must provide screenshots if there is a visual change.
+5. In the `.html` file add the `<app-cheat-sheet-template [iconId]="cheatSheetIconId" [title]="cheatSheetTitle">Your Content Here</app-cheat-sheet-template>`.
+
+### Making a new cheat sheet category (mods, expansions, etc)
+
+Follow these steps:
+
+1. In the [`cheat-sheets` folder](./src/app/cheat-sheets/) use the `deniszholob.angular-files-generator` extension to generate a new `Module Component`.
+2. Follow the other category examples to create new routes, update the HTML and so on.
+3. Update the [`cheat-sheets.module.ts`](./src/app/cheat-sheets/cheat-sheets.module.ts) file.
+4. Update the [`nav.data.ts`](./src/app/layout/nav/nav.data.ts) file.
+5. Add new route to the [`sitemap.xml`](./src/sitemap.xml) file.
+6. Add cheat sheets, if needed, by following the steps listed in the _Making a new cheat sheet_ section above.
+
+## Before opening a Pull Request
+
+When your work is done, please:
+
+1. If you're making visual changes to the cheatsheets: run the preview server with `npm run start` and make screenshots of your changes.
+2. Run `npm run build`.
+3. After a successful build, commit and then push your changes to your fork. If you're fixing an Issue on GitHub: link to that issue in your Git commit message, for example: `Closes #issueNumberThatGetsFixed`.
+4. Create a new Pull Request, and follow the steps in the Pull Request template.
 
 ## Debug
 
-- If you get an error with precommit hooks (Mac/Linux), see: https://stackoverflow.com/a/72279243
+If you get an error with precommit hooks on Mac/Linux, see this [discussion on Stack Overflow](https://stackoverflow.com/a/72279243).
 
-## Generating PDF
+## Generating a PDF
 
-- Use Firefox print
-- Remove
-  - margins
-  - headers/footers
-- Keep backgrounds
-- Scale to 90%
-- Remove last page as its empty
+1. Use Firefox, to "print" the page to PDF.
+2. Remove the margins, headers and footers.
+3. But keep the backgrounds.
+4. Scale to `90%`.
+5. Remove the last page, because it's empty.
