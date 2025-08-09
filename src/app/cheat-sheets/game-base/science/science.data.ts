@@ -147,7 +147,7 @@ export const SCIENCE_PACK_DATA_SA: SciencePackData[] = [
     factory: {
       iconId: FactorioIcons.Icons_Foundry,
       speed: 4,
-      // productivity: 1.5,
+      productivity: 0.5,
     },
   },
   {
@@ -157,7 +157,7 @@ export const SCIENCE_PACK_DATA_SA: SciencePackData[] = [
     factory: {
       iconId: FactorioIcons.Icons_Biochamber,
       speed: 2,
-      // productivity: 1.5,
+      productivity: 0.5,
     },
   },
   {
@@ -167,7 +167,7 @@ export const SCIENCE_PACK_DATA_SA: SciencePackData[] = [
     factory: {
       iconId: FactorioIcons.Icons_ElectromagneticPlant,
       speed: 2,
-      // productivity: 1.5,
+      productivity: 0.5,
     },
   },
   {
@@ -208,7 +208,9 @@ export interface SciencePackFactoryRequirement {
 function getRatePerFactory(data: SciencePackData): number {
   // return (data.outputCount / data.craftTimeSec) * data.factory.speed;
   return (
-    (data.outputCount * data.factory.speed * (data.factory.productivity ?? 1)) /
+    (data.outputCount *
+      data.factory.speed *
+      (1 + (data.factory.productivity ?? 0))) /
     data.craftTimeSec
   );
 }
