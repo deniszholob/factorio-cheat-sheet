@@ -54,6 +54,43 @@
         <a href="https://www.factorio.com/blog/post/fff-376" target="_blank" rel="noopener noreferrer">FFF-376</a>
       </li>
     </ul>
+
+    <table class="table table-hover fixed-width">
+      <caption>
+        Quality Quality Modules Comparison
+      </caption>
+      <thead>
+        <tr>
+          <th></th>
+          <th>
+            <app-factorio-icon
+              [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_QualityModule)"
+              [spaceAge]="true"
+            ></app-factorio-icon>
+          </th>
+          <th>
+            <app-factorio-icon
+              [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_QualityModule2)"
+              [spaceAge]="true"
+            ></app-factorio-icon>
+          </th>
+          <th>
+            <app-factorio-icon
+              [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_QualityModule3)"
+              [spaceAge]="true"
+            ></app-factorio-icon>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let quality of QUALITY_OPTIONS">
+          <td>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(QUALITY_DISPLAY[quality])" [spaceAge]="true"></app-factorio-icon>
+          </td>
+          <td *ngFor="let item of QUALITY_QUALITY_TABLE">{{ item[quality] }}%</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <hr />
