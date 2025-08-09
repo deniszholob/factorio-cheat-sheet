@@ -1,6 +1,17 @@
 <div class="icon-composite">
-  <app-factorio-icon class="icon icon-bg" [icon]="machineIcon"></app-factorio-icon>
+  <!-- TODO: Temporary space age in bg but its blurry, se below todo for refactor -->
+  <app-factorio-icon class="icon icon-bg" [icon]="machineIcon" [spaceAge]="spaceAge"></app-factorio-icon>
   <app-factorio-icon class="icon icon-fg" *ngIf="productIcon" [icon]="productIcon"></app-factorio-icon>
+
+  <!--
+  TODO: Doesnt work since the class is encapsulated in factorio-icon component,
+    need to refactor to make it global
+    or better yet, make an new component that can have its 4 corners accept custom content
+  -->
+  <!-- <ng-container *ngIf="spaceAge">
+    <img class="factorio-icon-space-age" [src]="SPACE_AGE_ICON_URL" [alt]="SPACE_AGE_TEXT" [title]="SPACE_AGE_TEXT" loading="lazy" />
+  </ng-container> -->
+
   <span class="rate-text" *ngIf="rateSeconds">{{ rateSeconds | number : '0.0-2' }}/s</span>
   <span class="count-text" *ngIf="count !== undefined"> {{ count }} </span>
 </div>
