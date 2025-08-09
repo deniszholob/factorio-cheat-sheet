@@ -17,7 +17,11 @@
 
   <!-- Use any element to open the side-nav -->
   <div class="nav-opener" [class.closed]="isNavOpen" [class.d-none]="doKeepOpen()" (click)="toggleNav()">
-    <i class="fas fa-angle-right" [class.d-none]="!isNavOpen"></i>
-    <i class="fas fa-angle-left" [class.d-none]="isNavOpen"></i>
+    <div [class.d-none]="!isNavOpen">
+      <i class="fas fa-lg fa-angle-right"></i>
+    </div>
+    <div [class.d-none]="isNavOpen">
+      <i class="fas fa-xl fa-angle-left"></i>
+    </div>
   </div>
 </div>
