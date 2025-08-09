@@ -13,7 +13,7 @@ import {
   calculateMinimalMachines,
   SCIENCE_DATA,
   SCIENCE_PACK_DATA_ALL,
-  SCIENCE_PACK_DATA_VANILLA_NO_SPACE,
+  SciencePackData,
   SciencePackFactoryRequirement,
 } from './science.data';
 
@@ -43,15 +43,19 @@ export class ScienceComponent implements OnInit {
     labsRequired: 1,
     packsPerMinute: 150,
     researchCycleTime: 60,
-    labSpeedBonus: 2245,
+    labSpeedBonus: 250,
   };
-  protected readonly SCIENCE_PACK_FACTORY_RATIOS_VANILLA: SciencePackFactoryRequirement[] =
-    calculateMinimalMachines(SCIENCE_PACK_DATA_VANILLA_NO_SPACE);
-  protected readonly SCIENCE_PACK_FACTORY_RATIOS_SA: SciencePackFactoryRequirement[] =
-    calculateMinimalMachines(SCIENCE_PACK_DATA_ALL);
-
+  // protected readonly SCIENCE_PACK_FACTORY_RATIOS_VANILLA: SciencePackFactoryRequirement[] =
+  //   calculateMinimalMachines(SCIENCE_PACK_DATA_VANILLA_NO_SPACE);
+  protected sciencePackData: SciencePackData[] = SCIENCE_PACK_DATA_ALL.map(
+    (d: SciencePackData): SciencePackData => ({
+      ...d,
+      factory: { ...d.factory, productivity: d.factory.productivity ?? 0 },
+    })
+  );
+  protected sciencePackRatios = calculateMinimalMachines(this.sciencePackData);
   protected SCIENCE_PACK_FACTORY_RATIOS_TARGET_RATE: SciencePackFactoryRequirement[] =
-    this.SCIENCE_PACK_FACTORY_RATIOS_SA.map((d) => ({
+    this.sciencePackRatios.map((d) => ({
       ...d,
     }));
 
@@ -59,6 +63,18 @@ export class ScienceComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     this.scienceRequirementsLink =
       'https://kirkmcdonald.github.io/calc.html#zip=bY1BCsMwDAR/k5MMdWhqMPgxQlFbUcsOtnzo79Mem/S27LCzKxqmi/PB+UmlpHkSY+0Jh1VFk1pcJ+FC7DakV7zHBXJ9SDehI7mBShbD9j5v6MkqhPlI/Axbq+ugf1cBhn2NJ1+A/kn8W7d4XXY=';
+  }
+
+  protected onUpdateSciencePackFactory() {
+    console.log(`onUpdateSciencePackFactory`);
+    this.sciencePackRatios = calculateMinimalMachines(this.sciencePackData);
+    this.SCIENCE_PACK_FACTORY_RATIOS_TARGET_RATE = this.sciencePackRatios.map(
+      (d) => ({
+        ...d,
+      })
+    );
+
+    this.calcScienceNumberOfLabs();
   }
 
   /** Get Data for the Cheat Sheet from the DataService */
