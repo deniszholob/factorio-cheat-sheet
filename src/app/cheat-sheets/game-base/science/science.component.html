@@ -11,7 +11,7 @@
   </ul>
 
   <div class="text-center">
-    <span class="text-muted">Number of assemblers needed to produce science equally</span>
+    <span class="text-muted">Number of assemblers needed to produce science equally (Base Game)</span>
     <div>
       <app-icon-ratio-composite
         class="d-none d-sm-inline-block"
@@ -48,6 +48,27 @@
     </div>
   </div>
 
+  <br />
+  <div class="text-center">
+    <span class="text-muted">Effective rate for each science pack in 1 of its top tier factory (Space Age)</span>
+    <div>
+      <ng-container *ngFor="let ratioItem of SCIENCE_PACK_FACTORY_RATIOS_SA">
+        <app-icon-ratio-composite
+          class="d-none d-sm-inline-block"
+          [machineIconId]="ratioItem.factoryIconId"
+          [productIconId]="ratioItem.scienceIconId"
+          [count]="''"
+          [rateSeconds]="ratioItem.effectiveRate"
+          [spaceAge]="
+            ratioItem.factoryIconId !== FactorioIcons.Icons_AssemblingMachine3 ||
+            ratioItem.scienceIconId === FactorioIcons.Icons_SpaceSciencePack
+          "
+        ></app-icon-ratio-composite>
+      </ng-container>
+    </div>
+  </div>
+
+  <br />
   <ul>
     <li>
       Check the
@@ -72,7 +93,7 @@
   <div class="row align-items-center">
     <div class="col-12 col-lg-6">
       <p class="text-center">
-        <strong>Space science</strong>
+        <strong>Space science (Base Game)</strong>
       </p>
       <p>For 1 space science pack per second you must launch a rocket with a satellite every 16.67 minutes.<br /></p>
       <p class="text-center">
@@ -123,11 +144,12 @@
       </div>
     </div>
   </div>
+
   <hr />
   <div class="row align-items-center">
     <div class="col-12 col-lg-12">
       <p class="text-center">
-        <strong>Number of Labs required</strong>
+        <strong>Calculator for number of labs required and science ratios</strong>
       </p>
     </div>
   </div>
@@ -208,5 +230,58 @@
     <b>Lab Speed Bonus</b> - Speed bonus as reported by the lab, including modules and beacons.<br />
     Default numbers assume a 12 beacon setup, which is researching a 60 second infinite tech.
   </p>
+
+  <div class="text-center">
+    <span class="text-muted">Some packs/min rate presets to try for ratios</span>
+    <br />
+    <div class="flex gap-2 items-center justify-center">
+      <ng-container *ngFor="let rate of SCIENCE_PACK_RATES_TO_TRY">
+        <button class="btn btn-primary" (click)="onChangePacksPerMinute(rate)">{{ rate }}</button>
+      </ng-container>
+    </div>
+  </div>
+
   <br />
+  <div class="text-center">
+    <!-- <span class="text-muted">Number of factories needed to produce science equally (Least Common Factor)</span>
+    <div>
+      <ng-container *ngFor="let ratioItem of SCIENCE_PACK_FACTORY_RATIOS_SA">
+        <app-icon-ratio-composite
+          class="d-none d-sm-inline-block"
+          [machineIconId]="ratioItem.factoryIconId"
+          [productIconId]="ratioItem.scienceIconId"
+          [count]="(ratioItem.machinesNeeded | number : '1.0-2') ?? 0"
+          [spaceAge]="ratioItem.factoryIconId !== FactorioIcons.Icons_AssemblingMachine3"
+        ></app-icon-ratio-composite>
+      </ng-container>
+    </div> -->
+
+    <span class="text-muted">
+      Number of factories needed to produce science equally for target rate of
+      {{ calcScience.packsPerMinute }} packs/min ({{ calcScience.packsPerMinute / 60 | number : '1.0-2' }} packs/sec )
+      <br />
+      This does not account for any speed or prod effects
+    </span>
+
+    <div>
+      <app-icon-ratio-composite
+        class="d-none d-sm-inline-block"
+        [machineIconId]="FactorioIcons.Icons_Lab"
+        [count]="'~' + (calcScience.labsRequired | number : '1.0-2')"
+      ></app-icon-ratio-composite>
+
+      <ng-container *ngFor="let ratioItem of SCIENCE_PACK_FACTORY_RATIOS_TARGET_RATE">
+        <app-icon-ratio-composite
+          class="d-none d-sm-inline-block"
+          [machineIconId]="ratioItem.factoryIconId"
+          [productIconId]="ratioItem.scienceIconId"
+          [count]="(ratioItem.machinesNeeded | number : '1.0-2') ?? 0"
+          [spaceAge]="
+            ratioItem.factoryIconId !== FactorioIcons.Icons_AssemblingMachine3 ||
+            ratioItem.scienceIconId === FactorioIcons.Icons_SpaceSciencePack
+          "
+        ></app-icon-ratio-composite>
+      </ng-container>
+    </div>
+  </div>
 </app-cheat-sheet>
