@@ -60,7 +60,7 @@ export interface SciencePackData {
   factory: {
     iconId: FactorioIcons;
     speed: number;
-    productivity?: number;
+    productivityBonusPercent?: number;
   };
 }
 
@@ -147,7 +147,7 @@ export const SCIENCE_PACK_DATA_SA: SciencePackData[] = [
     factory: {
       iconId: FactorioIcons.Icons_Foundry,
       speed: 4,
-      productivity: 0.5,
+      productivityBonusPercent: 50,
     },
   },
   {
@@ -157,7 +157,7 @@ export const SCIENCE_PACK_DATA_SA: SciencePackData[] = [
     factory: {
       iconId: FactorioIcons.Icons_Biochamber,
       speed: 2,
-      productivity: 0.5,
+      productivityBonusPercent: 50,
     },
   },
   {
@@ -167,7 +167,7 @@ export const SCIENCE_PACK_DATA_SA: SciencePackData[] = [
     factory: {
       iconId: FactorioIcons.Icons_ElectromagneticPlant,
       speed: 2,
-      productivity: 0.5,
+      productivityBonusPercent: 50,
     },
   },
   {
@@ -207,12 +207,12 @@ export interface SciencePackFactoryRequirement {
 
 function getRatePerFactory(data: SciencePackData): number {
   // return (data.outputCount / data.craftTimeSec) * data.factory.speed;
-  return (
-    (data.outputCount *
-      data.factory.speed *
-      (1 + (data.factory.productivity ?? 0))) /
-    data.craftTimeSec
-  );
+
+  const prodMultiplier = 1 + (data.factory.productivityBonusPercent ?? 0) / 100;
+  const speedMultiplier = data.factory.speed;
+  const effectiveSpeed = speedMultiplier * prodMultiplier;
+
+  return (data.outputCount * effectiveSpeed) / data.craftTimeSec;
 }
 
 function calculateBalancedFactories(

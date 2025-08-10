@@ -24,11 +24,11 @@ export class ModulesAndBeaconsComponent implements OnInit {
 
   calcMachines: ThroughputCalc = {
     machinesToFillBelt: 1,
-    itemProductionRate: 45,
-    recipeBaseCraftTime: 1,
+    itemProductionRate: 15,
+    recipeBaseCraftTime: 3.2,
     itemsPerCraft: 1,
-    machineCraftSpeed: 0.75,
-    machineProductivity: 1,
+    machineCraftSpeed: 9.4,
+    machineProductivityBonusPercent: 20,
   };
 
   constructor(public dataService: DataService) {}
@@ -41,13 +41,17 @@ export class ModulesAndBeaconsComponent implements OnInit {
     this.calcMachinesToFillBelt();
   }
 
-  calcMachinesToFillBelt() {
+  protected calcMachinesToFillBelt(): void {
+    const prodMultiplier =
+      1 + this.calcMachines.machineProductivityBonusPercent / 100;
+    const speedMultiplier = this.calcMachines.machineCraftSpeed;
+    const effectiveSpeed = speedMultiplier * prodMultiplier;
+
     this.calcMachines.machinesToFillBelt =
       (this.calcMachines.itemProductionRate *
         this.calcMachines.recipeBaseCraftTime) /
-      (this.calcMachines.itemsPerCraft *
-        this.calcMachines.machineCraftSpeed *
-        this.calcMachines.machineProductivity);
+      (this.calcMachines.itemsPerCraft * effectiveSpeed);
+
     this.calcMachines.machinesToFillBelt =
       this.calcMachines.machinesToFillBelt.toFixed(2);
   }
@@ -59,5 +63,5 @@ interface ThroughputCalc {
   recipeBaseCraftTime: number;
   itemsPerCraft: number;
   machineCraftSpeed: number;
-  machineProductivity: number;
+  machineProductivityBonusPercent: number;
 }

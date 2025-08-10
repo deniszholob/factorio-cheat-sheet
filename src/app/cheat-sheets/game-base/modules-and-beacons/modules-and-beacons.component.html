@@ -199,15 +199,17 @@
         </div>
         <div class="eq-operator">*</div>
         <div class="eq-field bg-factorio-red">
-          <span class="eq-label">Machine Productivity</span>
+          <span class="eq-label">1 + </span>
+          <span class="eq-label">(Machine Productivity Bonus %</span>
           <input
             class="eq-input"
-            [(ngModel)]="calcMachines.machineProductivity"
+            [(ngModel)]="calcMachines.machineProductivityBonusPercent"
             (keyup)="calcMachinesToFillBelt()"
             (change)="calcMachinesToFillBelt()"
             type="number"
             step="0.1"
           />
+          <span class="eq-label"> / 100)</span>
         </div>
       </div>
     </div>
