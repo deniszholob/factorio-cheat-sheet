@@ -43,14 +43,18 @@ export class ScienceComponent implements OnInit {
     labsRequired: 1,
     packsPerMinute: 150,
     researchCycleTime: 60,
-    labSpeedBonus: 250,
+    labSpeed: 3.5,
+    labProductivityBonusPercent: 8,
   };
   // protected readonly SCIENCE_PACK_FACTORY_RATIOS_VANILLA: SciencePackFactoryRequirement[] =
   //   calculateMinimalMachines(SCIENCE_PACK_DATA_VANILLA_NO_SPACE);
   protected sciencePackData: SciencePackData[] = SCIENCE_PACK_DATA_ALL.map(
     (d: SciencePackData): SciencePackData => ({
       ...d,
-      factory: { ...d.factory, productivity: d.factory.productivity ?? 0 },
+      factory: {
+        ...d.factory,
+        productivityBonusPercent: d.factory.productivityBonusPercent ?? 0,
+      },
     })
   );
   protected sciencePackRatios = calculateMinimalMachines(this.sciencePackData);
@@ -111,10 +115,17 @@ export class ScienceComponent implements OnInit {
 
   protected calcScienceNumberOfLabs() {
     const packsPerSecond = this.calcScience.packsPerMinute / 60;
+    const prodMultiplier =
+      1 + this.calcScience.labProductivityBonusPercent / 100;
+    const speedMultiplier = this.calcScience.labSpeed;
+    const effectiveSpeed = speedMultiplier * prodMultiplier;
     this.calcScience.labsRequired =
-      packsPerSecond *
-      (this.calcScience.researchCycleTime /
-        (1 + this.calcScience.labSpeedBonus / 100));
+      packsPerSecond * (this.calcScience.researchCycleTime / effectiveSpeed);
+
+    // this.calcScience.labsRequired =
+    //   packsPerSecond *
+    //   (this.calcScience.researchCycleTime /
+    //     (1 + this.calcScience.labSpeed / 100));
     this.calcScience.labsRequired = this.calcScience.labsRequired.toFixed(2);
 
     this.SCIENCE_PACK_FACTORY_RATIOS_TARGET_RATE =
@@ -137,5 +148,6 @@ interface LabsCalc {
   labsRequired: number | string;
   packsPerMinute: number;
   researchCycleTime: number;
-  labSpeedBonus: number;
+  labSpeed: number;
+  labProductivityBonusPercent: number;
 }
