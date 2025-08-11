@@ -1,11 +1,17 @@
 import { CargoWagonTransferData } from 'app/models/CargoWagonTransferData.model';
 import { RawData } from 'app/models/Data.model';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
+
+export const CARGO_WAGON_TRANSFER_SHEET_NAV: NavData = newNavData(
+  'Cargo Wagon Transfer',
+  FactorioIcons.Icons_CargoWagon
+);
 
 export const CARGO_WAGON_TRANSFER_DATA: RawData<CargoWagonTransferData> = {
   cheatSheet: {
-    title: 'Cargo Wagon Transfer',
-    iconId: FactorioIcons.Icons_CargoWagon,
+    title: CARGO_WAGON_TRANSFER_SHEET_NAV.title,
+    iconId: CARGO_WAGON_TRANSFER_SHEET_NAV.sheetIconId,
   },
   data: {
     cargoSlots: 40,

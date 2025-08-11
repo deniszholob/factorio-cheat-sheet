@@ -22,4 +22,7 @@ export class FactorioIconComponent {
 
   @Input()
   public spaceAge?: boolean = false;
+
+  @Input()
+  public size?: 'sm';
 }

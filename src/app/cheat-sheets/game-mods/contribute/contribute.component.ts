@@ -2,11 +2,14 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { CheatSheetTemplateComponent } from 'app/shared/cheat-sheet-template/cheat-sheet-template.component';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
 
 import { Links, MOD_REQUESTS } from './contribute.data';
 
-export const CONTRIBUTE_SHEET_ICON = FactorioIcons.Icons_SteamEngine;
-export const CONTRIBUTE_SHEET_TITLE = 'Steam Power';
+export const CONTRIBUTE_SHEET_NAV: NavData = newNavData(
+  'Contribute',
+  FactorioIcons.Core_RenameIcon
+);
 
 @Component({
   selector: 'app-contribute',
@@ -16,8 +19,9 @@ export const CONTRIBUTE_SHEET_TITLE = 'Steam Power';
   imports: [CommonModule, CheatSheetTemplateComponent],
 })
 export class ContributeComponent {
-  protected readonly cheatSheetIconId: FactorioIcons = CONTRIBUTE_SHEET_ICON;
-  protected readonly cheatSheetTitle: string = CONTRIBUTE_SHEET_TITLE;
+  protected readonly cheatSheetIconId: FactorioIcons =
+    CONTRIBUTE_SHEET_NAV.sheetIconId;
+  protected readonly cheatSheetTitle: string = CONTRIBUTE_SHEET_NAV.title;
 
   public readonly MOD_REQUESTS: Links[] = MOD_REQUESTS;
 }

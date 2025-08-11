@@ -1,11 +1,17 @@
 import { RawData } from 'app/models/Data.model';
 import { LinksData } from 'app/models/LinksData.model';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
+
+export const LINKS_SHEET_NAV: NavData = newNavData(
+  'Links',
+  FactorioIcons.Icons_CopperCable
+);
 
 export const LINKS_DATA: RawData<LinksData> = {
   cheatSheet: {
-    title: 'Links',
-    iconId: FactorioIcons.Icons_CopperCable,
+    title: LINKS_SHEET_NAV.title,
+    iconId: LINKS_SHEET_NAV.sheetIconId,
   },
   data: {
     mainLinks: [

@@ -1,12 +1,18 @@
 import { RawData } from 'app/models/Data.model';
 import { ProductivityModulePayoffsData } from 'app/models/ProductivityModulePayoffsData.model';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
+
+export const PRODUCTIVITY_MODULE_PAYOFFS_SHEET_NAV: NavData = newNavData(
+  'Productivity Module Payoffs',
+  FactorioIcons.Icons_ProductivityModule3
+);
 
 export const PRODUCTIVITY_MODULE_PAYOFFS_DATA: RawData<ProductivityModulePayoffsData> =
   {
     cheatSheet: {
-      title: 'Productivity Module Payoffs',
-      iconId: FactorioIcons.Icons_ProductivityModule3,
+      title: PRODUCTIVITY_MODULE_PAYOFFS_SHEET_NAV.title,
+      iconId: PRODUCTIVITY_MODULE_PAYOFFS_SHEET_NAV.sheetIconId,
     },
     data: {
       payoffs: [

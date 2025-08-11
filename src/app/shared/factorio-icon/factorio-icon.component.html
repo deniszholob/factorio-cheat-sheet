@@ -1,4 +1,11 @@
-<img class="factorio-icon" loading="lazy" src="{{ icon?.src }}" alt="{{ icon?.name }}" title="{{ icon?.name }}" />
+<img
+  class="factorio-icon"
+  [ngClass]="{ 'factorio-icon-sm': size === 'sm' }"
+  loading="lazy"
+  src="{{ icon?.src }}"
+  alt="{{ icon?.name }}"
+  title="{{ icon?.name }}"
+/>
 <div class="factorio-icon-text" *ngIf="icon?.text">{{ icon?.text }}</div>
 <ng-container *ngIf="spaceAge">
   <img class="factorio-icon-space-age" [src]="SPACE_AGE_ICON_URL" [alt]="SPACE_AGE_TEXT" [title]="SPACE_AGE_TEXT" loading="lazy" />

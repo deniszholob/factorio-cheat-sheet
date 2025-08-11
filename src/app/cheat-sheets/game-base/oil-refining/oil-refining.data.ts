@@ -1,11 +1,17 @@
 import { RawData } from 'app/models/Data.model';
 import { OilRefiningData } from 'app/models/OilRefiningData.model';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
+
+export const OIL_REFINING_SHEET_NAV: NavData = newNavData(
+  'Oil Refining',
+  FactorioIcons.Icons_OilRefinery
+);
 
 export const OIL_REFINING_DATA: RawData<OilRefiningData> = {
   cheatSheet: {
-    title: 'Oil Refining',
-    iconId: FactorioIcons.Icons_OilRefinery,
+    title: OIL_REFINING_SHEET_NAV.title,
+    iconId: OIL_REFINING_SHEET_NAV.sheetIconId,
   },
   data: {
     basicOil: [

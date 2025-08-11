@@ -10,9 +10,16 @@
       </div>
     </div>
   </div>
+
   <div class="nav-contents">
-    <a [routerLink]="[]" [fragment]="'Top'" (click)="closeNav()">Top</a>
-    <a *ngFor="let sheet of sheetIds" [routerLink]="[]" [fragment]="sheet" (click)="clickedLink(sheet)">{{ sheetName(sheet) }}</a>
+    <a [routerLink]="[]" [fragment]="'Top'" (click)="closeNav()">
+      <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Arrows_UpArrow)" [size]="'sm'"></app-factorio-icon>
+      <span>Top</span>
+    </a>
+    <a *ngFor="let nav of navSheetData" [routerLink]="[]" [fragment]="nav.sheetId" (click)="clickedLink(nav.sheetId)">
+      <app-factorio-icon [icon]="dataService.getFactorioIcon(nav.sheetIconId)" [size]="'sm'"></app-factorio-icon>
+      <span>{{ nav.title }}</span>
+    </a>
   </div>
 
   <!-- Use any element to open the side-nav -->

@@ -1,6 +1,12 @@
 import { RawData } from 'app/models/Data.model';
 import { InserterThroughputData } from 'app/models/InserterThroughputData.model';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
+
+export const INSERTER_THROUGHPUT_SHEET_NAV: NavData = newNavData(
+  'Inserter Throughput',
+  FactorioIcons.Icons_Inserter
+);
 
 export const INSERTER_THROUGHPUT_DATA: RawData<InserterThroughputData> = {
   cheatSheet: {

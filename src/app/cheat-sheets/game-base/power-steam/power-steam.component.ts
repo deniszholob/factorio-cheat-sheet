@@ -6,8 +6,14 @@ import { FactorioIconModule } from 'app/shared';
 import { CheatSheetTemplateComponent } from 'app/shared/cheat-sheet-template/cheat-sheet-template.component';
 import { FactorioIconData } from 'app/shared/factorio-icon/factorio-icon.model';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
 
 import { POWER_STEAM_DATA, PowerSteamData } from './power-steam.data';
+
+export const POWER_STEAM_SHEET_NAV: NavData = newNavData(
+  'Steam Power',
+  FactorioIcons.Icons_SteamEngine
+);
 
 interface BoilerTableColumn extends FactorioIconData {
   iconId: FactorioIcons;
@@ -17,9 +23,6 @@ interface BoilerTableRow extends FactorioIconData {
   iconId: FactorioIcons;
   boilerCounts: number[];
 }
-
-export const POWER_STEAM_SHEET_ICON = FactorioIcons.Icons_SteamEngine;
-export const POWER_STEAM_SHEET_TITLE = 'Steam Power';
 
 @Component({
   selector: 'app-power-steam',
@@ -31,8 +34,9 @@ export const POWER_STEAM_SHEET_TITLE = 'Steam Power';
 })
 export class PowerSteamComponent {
   protected readonly FactorioIcons = FactorioIcons;
-  protected readonly cheatSheetIconId: FactorioIcons = POWER_STEAM_SHEET_ICON;
-  protected readonly cheatSheetTitle: string = POWER_STEAM_SHEET_TITLE;
+  protected readonly cheatSheetIconId: FactorioIcons =
+    POWER_STEAM_SHEET_NAV.sheetIconId;
+  protected readonly cheatSheetTitle: string = POWER_STEAM_SHEET_NAV.title;
 
   protected readonly POWER_STEAM_DATA: PowerSteamData = POWER_STEAM_DATA;
 

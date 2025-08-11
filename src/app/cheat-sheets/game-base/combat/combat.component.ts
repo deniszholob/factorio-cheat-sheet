@@ -6,9 +6,17 @@ import { DataService } from 'app/services/data.service';
 import { APP_INFO } from 'app/shared/app-settings';
 // Models
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
+
+export const COMBAT_SHEET_NAV: NavData = newNavData(
+  'Combat',
+  FactorioIcons.Icons_ArtilleryTurret
+);
+
 const cheatSheet = {
-  title: 'Combat',
-  icon: 'Artillery_turret',
+  title: COMBAT_SHEET_NAV.title,
+  icon: COMBAT_SHEET_NAV.sheetIconId,
 };
 
 @Component({

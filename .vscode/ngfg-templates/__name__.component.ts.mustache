@@ -5,11 +5,14 @@ import { FactorioIconModule } from 'app/shared';
 import { APP_INFO } from 'app/shared/app-settings';
 import { CheatSheetTemplateComponent } from 'app/shared/cheat-sheet-template/cheat-sheet-template.component';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
 
 // import { {{constantCaseName}}_DATA, {{upperCamelCaseName}}Data } from './{{dashCaseName}}.data';
 
-export const {{constantCaseName}}_SHEET_ICON = FactorioIcons.Icons_{{upperCamelCaseName}};
-export const {{constantCaseName}}_SHEET_TITLE = '{{upperReadableName}}';
+export const {{constantCaseName}}_SHEET_NAV: NavData = newNavData(
+  '{{upperReadableName}}',
+  FactorioIcons.Icons_{{upperCamelCaseName}}
+);
 
 @Component({
   selector: '{{componentPrefix}}-{{dashCaseName}}',
@@ -25,8 +28,8 @@ export const {{constantCaseName}}_SHEET_TITLE = '{{upperReadableName}}';
 })
 export class {{upperCamelCaseName}}Component {
   protected readonly FactorioIcons = FactorioIcons;
-  protected readonly cheatSheetIconId: FactorioIcons = {{constantCaseName}}_SHEET_ICON;
-  protected readonly cheatSheetTitle: string = {{constantCaseName}}_SHEET_TITLE;
+  protected readonly cheatSheetIconId: FactorioIcons = {{constantCaseName}}_SHEET_NAV.sheetIcon;
+  protected readonly cheatSheetTitle: string = {{constantCaseName}}_SHEET_NAV.title;
 
   protected readonly APP_INFO = APP_INFO;
   // protected readonly {{constantCaseName}}_DATA: {{upperCamelCaseName}}Data = {{constantCaseName}}_DATA;

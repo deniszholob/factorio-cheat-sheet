@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import { PopularModsComponent } from '../game-mods/popular-mods/popular-mods.component';
 import { BalancersModule } from './balancers/balancers.module';
 import { BeltsComponent } from './belts/belts.component';
 import { CargoWagonTransferModule } from './cargo-wagon-transfer/cargo-wagon-transfer.module';
@@ -55,6 +56,7 @@ import { VehicleFuelBonusModule } from './vehicle-fuel-bonus/vehicle-fuel-bonus.
     VehicleFuelBonusModule,
     SpaceAgeComponent,
     TrainsComponent,
+    PopularModsComponent,
   ],
   declarations: [GameBaseComponent],
   exports: [GameBaseComponent],

@@ -6,9 +6,12 @@ import { FactorioIconModule } from 'app/shared';
 import { APP_INFO, AppInfo } from 'app/shared/app-settings';
 import { CheatSheetTemplateComponent } from 'app/shared/cheat-sheet-template/cheat-sheet-template.component';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
 
-export const BELTS_SHEET_ICON = FactorioIcons.Icons_TransportBelt;
-export const BELTS_SHEET_TITLE = 'Belts';
+export const BELTS_SHEET_NAV: NavData = newNavData(
+  'Belts',
+  FactorioIcons.Icons_TransportBelt
+);
 
 @Component({
   selector: 'app-belts',
@@ -18,8 +21,9 @@ export const BELTS_SHEET_TITLE = 'Belts';
   imports: [CommonModule, CheatSheetTemplateComponent, FactorioIconModule],
 })
 export class BeltsComponent {
-  protected readonly cheatSheetIconId: FactorioIcons = BELTS_SHEET_ICON;
-  protected readonly cheatSheetTitle: string = BELTS_SHEET_TITLE;
+  protected readonly cheatSheetIconId: FactorioIcons =
+    BELTS_SHEET_NAV.sheetIconId;
+  protected readonly cheatSheetTitle: string = BELTS_SHEET_NAV.title;
 
   protected readonly APP_INFO: AppInfo = APP_INFO;
   protected readonly BELT_DATA: BeltData = BELT_DATA;

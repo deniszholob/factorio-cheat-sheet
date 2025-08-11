@@ -1,11 +1,17 @@
 import { RawData } from 'app/models/Data.model';
 import { NuclearPowerData } from 'app/models/NuclearPowerData.model';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
+
+export const NUCLEAR_POWER_SHEET_NAV: NavData = newNavData(
+  'Nuclear Power',
+  FactorioIcons.Icons_NuclearReactor
+);
 
 export const NUCLEAR_POWER_DATA: RawData<NuclearPowerData> = {
   cheatSheet: {
-    title: 'Nuclear Power',
-    iconId: FactorioIcons.Icons_NuclearReactor,
+    title: NUCLEAR_POWER_SHEET_NAV.title,
+    iconId: NUCLEAR_POWER_SHEET_NAV.sheetIconId,
   },
   data: {
     reactorPowerMW: 40,

@@ -21,11 +21,14 @@
 
   /* The navigation menu links */
   a {
-    padding: 7px 8px 7px 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
     text-decoration: none;
     font-size: 18px;
     color: $c-pallette-text-muted;
-    display: block;
+    border-bottom: 1px solid #161616;
   }
 
   button {
