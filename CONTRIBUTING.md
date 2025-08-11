@@ -86,11 +86,11 @@ Then follow these steps:
 1. In the [cheat-sheets](./src/app/cheat-sheets/) folder look for the category you want to add to/modify.
 2. Use the `deniszholob.angular-files-generator` extension to generate a new `Standalone Component` in one of those categories
 3. Add the newly generated component module to the matching category's module (e.g. game-base.module.ts) `imports` array.
-4. In the `.component` file add the following if not already generated:
+4. In the `.component` file add the following (if not already generated):
 
    ```ts
-  export const YOUR_NEW_SHEET_ICON = FactorioIcons.Icons_RepairPack;
-  export const YOUR_NEW_SHEET_TITLE = 'Your Title';
+   export const YOUR_NEW_SHEET_ICON = FactorioIcons.Icons_RepairPack;
+   export const YOUR_NEW_SHEET_TITLE = 'Your Title';
    ...
    public readonly cheatSheetIconId: FactorioIcons = YOUR_NEW_SHEET_ICON;
    public readonly cheatSheetTitle: string = YOUR_NEW_SHEET_TITLE;
@@ -98,6 +98,14 @@ Then follow these steps:
    ```
 
 5. In the `.html` file add the `<app-cheat-sheet-template [iconId]="cheatSheetIconId" [title]="cheatSheetTitle">Your Content Here</app-cheat-sheet-template>`.
+6. In the [`nav.data.ts`](https://github.com/deniszholob/factorio-cheat-sheet/src/app/layout/nav/nav.data.ts) add to the nav array like `NAV_BASE`:
+   ```ts
+   export const NAV_BASE: string[] = [
+   getIdFromTitle(YOUR_NEW_SHEET_TITLE),
+   ...
+   ]
+   ```
+7. In the module `component.html` (e.g. `game.base.component.html`) add in the component tag (e.g. `<app-cs-common-ratios></app-cs-common-ratios>`).
 
 ### Making a new cheat sheet category (mods, expansions, etc)
 
