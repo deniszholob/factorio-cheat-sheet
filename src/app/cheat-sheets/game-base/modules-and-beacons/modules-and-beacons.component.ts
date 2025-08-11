@@ -7,9 +7,12 @@ import { APP_INFO } from 'app/shared/app-settings';
 // Models
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
 
-const SHEET_ICON: FactorioIcons = FactorioIcons.Icons_Beacon;
-const SHEET_NAME = 'Modules and Beacons';
+export const MODULE_AND_BEACONS_SHEET_NAV: NavData = newNavData(
+  'Modules and Beacons',
+  FactorioIcons.Icons_Beacon
+);
 
 @Component({
   selector: 'app-modules-and-beacons',
@@ -35,8 +38,10 @@ export class ModulesAndBeaconsComponent implements OnInit {
 
   ngOnInit() {
     this.cheatSheet = new CheatSheet(
-      this.dataService.getFactorioIcon(SHEET_ICON),
-      SHEET_NAME
+      this.dataService.getFactorioIcon(
+        MODULE_AND_BEACONS_SHEET_NAV.sheetIconId
+      ),
+      MODULE_AND_BEACONS_SHEET_NAV.title
     );
     this.calcMachinesToFillBelt();
   }

@@ -5,11 +5,13 @@ import { FactorioIconModule } from 'app/shared';
 import { APP_INFO } from 'app/shared/app-settings';
 import { CheatSheetTemplateComponent } from 'app/shared/cheat-sheet-template/cheat-sheet-template.component';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
-
 // import { TRAINS_DATA, TrainsData } from './trains.data';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
 
-export const TRAINS_SHEET_ICON = FactorioIcons.Icons_Locomotive;
-export const TRAINS_SHEET_TITLE = 'Trains';
+export const TRAINS_SHEET_NAV: NavData = newNavData(
+  'Trains',
+  FactorioIcons.Icons_Locomotive
+);
 
 @Component({
   selector: 'app-trains',
@@ -21,8 +23,9 @@ export const TRAINS_SHEET_TITLE = 'Trains';
 })
 export class TrainsComponent {
   protected readonly FactorioIcons = FactorioIcons;
-  protected readonly cheatSheetIconId: FactorioIcons = TRAINS_SHEET_ICON;
-  protected readonly cheatSheetTitle: string = TRAINS_SHEET_TITLE;
+  protected readonly cheatSheetIconId: FactorioIcons =
+    TRAINS_SHEET_NAV.sheetIconId;
+  protected readonly cheatSheetTitle: string = TRAINS_SHEET_NAV.title;
 
   protected readonly APP_INFO = APP_INFO;
   // protected readonly TRAINS_DATA: PowerSolarData = TRAINS_DATA;

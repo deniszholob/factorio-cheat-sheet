@@ -1,12 +1,18 @@
 import { RawData } from 'app/models/Data.model';
 import { InserterCapacityBonusData } from 'app/models/InserterCapacityBonusData.model';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
+
+export const INSERTER_CAPACITY_BONUS_SHEET_NAV: NavData = newNavData(
+  'Inserter Capacity Bonus',
+  FactorioIcons.Technology_InserterCapacity
+);
 
 export const INSERTER_CAPACITY_BONUS_DATA: RawData<InserterCapacityBonusData> =
   {
     cheatSheet: {
-      title: 'Inserter Capacity Bonus',
-      iconId: FactorioIcons.Technology_InserterCapacity,
+      title: INSERTER_CAPACITY_BONUS_SHEET_NAV.title,
+      iconId: INSERTER_CAPACITY_BONUS_SHEET_NAV.sheetIconId,
     },
     data: {
       bonuses: [

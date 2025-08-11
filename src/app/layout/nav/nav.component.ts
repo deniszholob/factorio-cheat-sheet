@@ -4,12 +4,14 @@ import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 // Services
 import { DataService } from 'app/services/data.service';
 import { SheetCollapseToggleService } from 'app/services/sheet-collapse-toggle.service';
+import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData } from 'app/shared/nav-data/nav-data.model';
 import { Subject } from 'rxjs';
 
 // import { Subject, takeUntil } from 'rxjs';
 // Constants
 // import { navMatchFilter } from '../util';
-import { NAV_ANCHOR_TAGS } from './nav.data';
+import { NAV_SHEET_DATA } from './nav.data';
 
 @Component({
   selector: 'app-nav',
@@ -17,9 +19,10 @@ import { NAV_ANCHOR_TAGS } from './nav.data';
   styleUrls: ['./nav.component.scss'], // Enable as needed
 })
 export class NavComponent implements OnInit, OnDestroy {
+  protected readonly FactorioIcons = FactorioIcons;
   private readonly clearSub$ = new Subject<void>();
   public isNavOpen: boolean = false;
-  public sheetIds: string[] = [];
+  public navSheetData: NavData[] = [];
   private isUserOpen: boolean = false;
   private maxWidthToKeepOpen = 1366; // In pixels, keep the same as breakpoint in styles.scss
 
@@ -35,7 +38,7 @@ export class NavComponent implements OnInit, OnDestroy {
     //     this.sheetIds = NAV_ANCHOR_TAGS[key];
     //   });
 
-    this.sheetIds = NAV_ANCHOR_TAGS.base;
+    this.navSheetData = NAV_SHEET_DATA.base;
   }
 
   /** Get Nav Data: sheet id's to anchor link to */

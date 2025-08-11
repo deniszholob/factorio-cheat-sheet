@@ -5,14 +5,17 @@ import { DataService } from 'app/services';
 import { FactorioIconModule, RatioModule } from 'app/shared';
 import { CheatSheetTemplateComponent } from 'app/shared/cheat-sheet-template/cheat-sheet-template.component';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
 
 import { COMMON_RATIO_DATA, RatioSection } from './common-ratios.data';
 import { MACHINE_SPEEDS, MachineSpeeds } from './machine-speeds.data';
 import { Ratio } from './ratio.model';
 import { ROCKET_RATIO_DATA } from './rocket-ratios.data';
 
-export const CS_COMMON_RATIOS_SHEET_ICON = FactorioIcons.Icons_RepairPack;
-export const CS_COMMON_RATIOS_SHEET_TITLE = 'Common Ratios';
+export const COMMON_RATIOS_SHEET_NAV: NavData = newNavData(
+  'Common Ratios',
+  FactorioIcons.Icons_RepairPack
+);
 
 @Component({
   selector: 'app-cs-common-ratios',
@@ -28,8 +31,9 @@ export const CS_COMMON_RATIOS_SHEET_TITLE = 'Common Ratios';
   ],
 })
 export class CsCommonRatiosComponent {
-  public readonly cheatSheetIconId: FactorioIcons = CS_COMMON_RATIOS_SHEET_ICON;
-  public readonly cheatSheetTitle: string = CS_COMMON_RATIOS_SHEET_TITLE;
+  public readonly cheatSheetIconId: FactorioIcons =
+    COMMON_RATIOS_SHEET_NAV.sheetIconId;
+  public readonly cheatSheetTitle: string = COMMON_RATIOS_SHEET_NAV.title;
 
   public ROCKET_RATIO_DATA: Ratio[] = ROCKET_RATIO_DATA;
   public COMMON_RATIO_DATA: RatioSection[] = COMMON_RATIO_DATA;

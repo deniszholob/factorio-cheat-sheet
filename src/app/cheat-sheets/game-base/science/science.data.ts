@@ -1,11 +1,17 @@
 import { RawData } from 'app/models/Data.model';
 import { ScienceData } from 'app/models/ScienceData.model';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
+
+export const SCIENCE_SHEET_NAV: NavData = newNavData(
+  'Science',
+  FactorioIcons.Icons_Lab
+);
 
 export const SCIENCE_DATA: RawData<ScienceData> = {
   cheatSheet: {
-    title: 'Science',
-    iconId: FactorioIcons.Icons_Lab,
+    title: SCIENCE_SHEET_NAV.title,
+    iconId: SCIENCE_SHEET_NAV.sheetIconId,
   },
   data: {
     packs: [
@@ -311,10 +317,10 @@ export const SCIENCE_PACK_FACTORY_REQUIREMENTS: SciencePackFactoryRequirement[] 
 export const SCIENCE_PACK_FACTORY_REQUIREMENTS_RATIOS: SciencePackFactoryRequirement[] =
   calculateMinimalMachines(packsForCalculations);
 
-console.log(
-  `SCIENCE_PACK_FACTORY_REQUIREMENTS`,
-  SCIENCE_PACK_FACTORY_REQUIREMENTS
-);
+// console.log(
+//   `SCIENCE_PACK_FACTORY_REQUIREMENTS`,
+//   SCIENCE_PACK_FACTORY_REQUIREMENTS
+// );
 // console.log(
 //   `SCIENCE_PACK_FACTORY_REQUIREMENTs *12`,
 //   SCIENCE_PACK_FACTORY_REQUIREMENTS.map((r) => ({
@@ -326,7 +332,7 @@ console.log(
 //   `SCIENCE_PACK_FACTORY_REQUIREMENTS_WHOLE_NUMBERS`,
 //   SCIENCE_PACK_FACTORY_REQUIREMENTS_WHOLE_NUMBERS
 // );
-console.log(
-  `SCIENCE_PACK_FACTORY_REQUIREMENTS_RATIOS`,
-  SCIENCE_PACK_FACTORY_REQUIREMENTS_RATIOS
-);
+// console.log(
+//   `SCIENCE_PACK_FACTORY_REQUIREMENTS_RATIOS`,
+//   SCIENCE_PACK_FACTORY_REQUIREMENTS_RATIOS
+// );

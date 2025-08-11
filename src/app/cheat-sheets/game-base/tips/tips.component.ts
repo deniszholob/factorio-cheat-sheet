@@ -7,9 +7,12 @@ import { APP_INFO } from 'app/shared/app-settings';
 // Models
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
 
-export const SHEET_TITLE = 'Tips';
-export const SHEET_ICON_ID = FactorioIcons.Technology_SteelAxe;
+export const TIPS_PAYOFFS_SHEET_NAV: NavData = newNavData(
+  'Tips',
+  FactorioIcons.Technology_SteelAxe
+);
 
 @Component({
   selector: 'app-tips',
@@ -25,8 +28,8 @@ export class TipsComponent implements OnInit {
 
   ngOnInit() {
     this.cheatSheet = new CheatSheet(
-      this.dataService.getFactorioIcon(SHEET_ICON_ID),
-      SHEET_TITLE
+      this.dataService.getFactorioIcon(TIPS_PAYOFFS_SHEET_NAV.sheetIconId),
+      TIPS_PAYOFFS_SHEET_NAV.title
     );
   }
 }
