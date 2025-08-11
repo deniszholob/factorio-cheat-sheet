@@ -2,7 +2,7 @@
 
 This page explains how to start contributing to this project.
 
-We use [Angular](https://angular.dev/) as the framework for the site.
+This project uses [Angular](https://angular.dev/) as the framework for the site.
 
 ## Let us assign the issue to you
 
@@ -46,7 +46,7 @@ This project uses [Angular](https://angular.dev/).
 All source code is in the [`src` folder](./src/).
 
 The code you'll need most is in the [`src/app/` folder](./src/app/).
-You'll often work in the internal folders, like [components](./src/app/cheat-sheets/), to create or edit code.
+You'll often work in the internal folders, like [cheat sheet components](./src/app/cheat-sheets/), to create or edit code.
 
 The [`app.component.ts` file](./src/app/app.component.ts) is the main entry point for the Angular app, along with other `app.xxx.ts` files.
 
@@ -84,12 +84,16 @@ Look at the [cs-common-ratios](./src/app/cheat-sheets/game-base/cs-common-ratios
 Then follow these steps:
 
 1. In the [cheat-sheets](./src/app/cheat-sheets/) folder look for the category you want to add to/modify.
-2. Use the `deniszholob.angular-files-generator` extension to generate a new `Module Component` in one of those categories
-3. Add the newly generated component module to the matching category's module `imports`.
-4. In the `.component` file add:
+2. Use the `deniszholob.angular-files-generator` extension to generate a new `Standalone Component` in one of those categories
+3. Add the newly generated component module to the matching category's module (e.g. game-base.module.ts) `imports` array.
+4. In the `.component` file add the following if not already generated:
 
    ```ts
-   public readonly cheatSheetIconId: string = 'Repair_pack';
+  export const YOUR_NEW_SHEET_ICON = FactorioIcons.Icons_RepairPack;
+  export const YOUR_NEW_SHEET_TITLE = 'Your Title';
+   ...
+   public readonly cheatSheetIconId: FactorioIcons = YOUR_NEW_SHEET_ICON;
+   public readonly cheatSheetTitle: string = YOUR_NEW_SHEET_TITLE;
    public readonly cheatSheetTitle: string = 'Title';
    ```
 
