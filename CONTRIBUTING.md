@@ -129,4 +129,4 @@ If you get an error with precommit hooks on Mac/Linux, see this [discussion on S
 2. Remove the margins, headers and footers.
 3. But keep the backgrounds.
 4. Scale to `90%`.
-5. Remove the last page, because it's empty.
+5. Remove the last page if it's empty.
