@@ -18,6 +18,10 @@
         <a href="https://mods.factorio.com/mod/any-planet-start" target="_blank" rel="noopener noreferrer">Any Planet Start mod</a>
       </li>
       <li>
+        You can display the planet in the background when in orbit with the
+        <a href="https://mods.factorio.com/mod/visible-planets" target="_blank" rel="noopener noreferrer">Visible Planets mod</a>
+      </li>
+      <li>
         <a
           href="https://www.reddit.com/r/factorio/comments/1h7v9km/fulgora_beginners_guide_vulcanus_and_gleba_guides/"
           target="_blank"
@@ -35,6 +39,7 @@
           Common ingredients on every planet
         </a>
       </li>
+      <li>You should equip best armor you can afford with shields and guns</li>
     </ul>
   </div>
 
@@ -53,6 +58,43 @@
         <a href="https://www.factorio.com/blog/post/fff-376" target="_blank" rel="noopener noreferrer">FFF-376</a>
       </li>
     </ul>
+
+    <table class="table table-hover fixed-width">
+      <caption>
+        Quality Quality Modules Comparison
+      </caption>
+      <thead>
+        <tr>
+          <th></th>
+          <th>
+            <app-factorio-icon
+              [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_QualityModule)"
+              [spaceAge]="true"
+            ></app-factorio-icon>
+          </th>
+          <th>
+            <app-factorio-icon
+              [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_QualityModule2)"
+              [spaceAge]="true"
+            ></app-factorio-icon>
+          </th>
+          <th>
+            <app-factorio-icon
+              [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_QualityModule3)"
+              [spaceAge]="true"
+            ></app-factorio-icon>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let quality of QUALITY_OPTIONS">
+          <td>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(QUALITY_DISPLAY[quality])" [spaceAge]="true"></app-factorio-icon>
+          </td>
+          <td *ngFor="let item of QUALITY_QUALITY_TABLE">{{ item[quality] }}%</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <hr />
@@ -158,6 +200,11 @@
         </span>
       </p>
     </div>
+
+    <hr />
+    <a href="https://files.catbox.moe/j9vp1h.png" target="_blank" rel="noopener noreferrer">
+      <img src="https://files.catbox.moe/j9vp1h.png" alt="Vulcanus Guide" title="Vulcanus Guide" />
+    </a>
   </div>
 
   <hr />
@@ -180,16 +227,19 @@
         </ul>
       </li>
 
-      <!-- TODO: It would be nice to have a proper explanation of how to sort the items with bots, and how to recycle unwanted items (things you have too much of!). -->
+      <!-- TODO: Explain how to sort the items with bots, and how to recycle unwanted items (things you have too much of!). Also see Issue 430 on GitHub. -->
+      <li>The small islands on Fulgora have the richest scrap deposits.</li>
       <li>
-        Most islands on Fulgora are small, and recycling scrap gives you a lot of different items. You can use robots to sort the output.
-        Use the items you get from recycling to craft starter items.
+        Recycling scrap <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Scrap)"></app-factorio-icon> returns a
+        lot of different items. You can use robots to sort the output.
       </li>
+
+      <li>Use the items you get from recycling to craft starter items.</li>
 
       <li>
         Setup filters on
         <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_StorageChest, 12)"></app-factorio-icon> (12 recycled
-        items from scrap) + 1 generic storage to start
+        items from scrap) + 1 generic storage to start.
       </li>
       <li>
         Use
@@ -199,17 +249,36 @@
         <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_RequesterChest)"></app-factorio-icon>
         to process recycling when using a logistics network.
       </li>
+      <li>
+        Use your first Electromagnetic plant
+        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_ElectromagneticPlant)"></app-factorio-icon> to craft more
+        Electromagnetic plants. Because of the EM plant's 50% productivity bonus you'll get a free EM plant after each second craft.
+      </li>
     </ul>
 
     <h5>
       <a href="https://wiki.factorio.com/Recycler" target="_blank" rel="noopener noreferrer"> Recycling </a>
     </h5>
 
+    <ul>
+      <li>Recycled items return 25% of the ingredients used to crafted the item.</li>
+      <li>
+        Items made with an irreversible recipe (smelting, etc..), or items without a recipe (like ores, etc.), have a 25% chance of being
+        returned. 75% of the time, the item will be <em>destroyed</em>.
+      </li>
+      <li>
+        The time it takes to recycle an item is 1/16th (0.0625) of the time it takes to craft that item, multiplied by the recycler crafting
+        speed.
+      </li>
+      <li>A recycler <em>without modules</em> consumes 2.5 scrap/s and returns 1.47 items/s.</li>
+    </ul>
+
+    <h5 class="h5">Recycling scrap</h5>
+
+    <p>Scrap is the primary resource on Fulgora. Start by recycling scrap manually. Use Recyclers to automate this process later.</p>
+
     <div class="text-center">
-      <div class="d-flex flex flex-row justify-content-center align-items-center">
-        <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Scrap)"></app-factorio-icon>
-        Recycler Scrap Percent Chance Ratios
-      </div>
+      <div class="d-flex flex flex-row justify-content-center align-items-center">Scrap recycling outputs.</div>
 
       <div class="d-flex flex flex-row justify-content-center">
         <ng-container *ngFor="let item of SPACE_AGE_DATA.recyclerScrapRatio">
@@ -220,39 +289,9 @@
 
     <br />
 
-    <ul>
-      <li>When recycled, items return 25% of their normal ingredients.</li>
-      <li>
-        Items that are made using an irreversible recipe (smelting, etc..) or have no recipe at all, (ores, etc..) will have a 25% chance of
-        being returned, otherwise destroying the item.
-      </li>
-      <li>
-        The time it takes to recycle an item is 1/16th (0.0625) of the time it takes to craft that item, multiplied by the recycler crafting
-        speed.
-      </li>
-      <li>Recycler (non moduled) takes in 2.5 scrap/s and spits out 1.47 items/s</li>
-    </ul>
-
-    <br />
-    <div class="text-left">
-      Base Resources Conversion
-      <div class="d-flex flex flex-row align-items-center" *ngFor="let resource of SPACE_AGE_DATA.basicResourceConversionIcons">
-        <ng-container *ngFor="let items of resource; let last = last">
-          <ng-container *ngFor="let item of items; let last = last">
-            <app-factorio-icon [icon]="dataService.getFactorioIcon(item)"></app-factorio-icon>
-          </ng-container>
-          <ng-container *ngIf="!last">
-            <i class="fas fa-long-arrow-alt-left text-muted"></i>
-          </ng-container>
-        </ng-container>
-      </div>
-    </div>
-
-    <br />
-
-    <table class="table table-sm fixed-width">
+    <table class="table table-sm fixed-width table-hover">
       <caption class="text-center">
-        How many Recyclers are needed to work with belts of scrap and its outputs
+        Recyclers needed to work with belts of scrap and its outputs.
       </caption>
       <thead class="text-center">
         <tr>
@@ -275,7 +314,7 @@
       </thead>
       <tbody class="text-center">
         <tr>
-          <td>Consume Scrap</td>
+          <td>Consume scrap</td>
           <td>6</td>
           <td>12</td>
           <td>18</td>
@@ -285,7 +324,7 @@
           </td> -->
         </tr>
         <tr>
-          <td>Produce Items</td>
+          <td>Produce items</td>
           <td>10</td>
           <td>20</td>
           <td>30</td>
@@ -296,6 +335,27 @@
         </tr>
       </tbody>
     </table>
+
+    <br />
+
+    <div class="text-left">
+      <h5 class="h5">Getting basic items on Fulgora</h5>
+      <div class="d-flex flex flex-row align-items-center" *ngFor="let resource of SPACE_AGE_DATA.basicResourceConversionIcons">
+        <ng-container *ngFor="let items of resource; let last = last">
+          <ng-container *ngFor="let item of items; let last = last">
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(item)"></app-factorio-icon>
+          </ng-container>
+          <ng-container *ngIf="!last">
+            <i class="fas fa-long-arrow-alt-left text-muted"></i>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+
+    <hr />
+    <a href="https://files.catbox.moe/cwxfbx.png" target="_blank" rel="noopener noreferrer">
+      <img src="https://files.catbox.moe/cwxfbx.png" alt="Fulgora Guide" title="Fulgora Guide" />
+    </a>
   </div>
 
   <hr />
@@ -308,6 +368,10 @@
       <li>
         Recommended items to bring to Gleba for faster bootstrapping:
         <ul>
+          <li>
+            <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SubmachineGun, '∞')"></app-factorio-icon>
+            Guns, lots of guns.
+          </li>
           <li *ngFor="let itemGroup of SPACE_AGE_DATA.bootstrapItemsGleba">
             <ng-container *ngFor="let item of itemGroup">
               <app-factorio-icon [icon]="dataService.getFactorioIcon(item.iconId, '>' + item.count)"></app-factorio-icon>
@@ -316,6 +380,11 @@
         </ul>
       </li>
     </ul>
+
+    <hr />
+    <a href="https://files.catbox.moe/h5jm94.png" target="_blank" rel="noopener noreferrer">
+      <img src="https://files.catbox.moe/h5jm94.png" alt="Gelba Guide" title="Gelba Guide" />
+    </a>
   </div>
 
   <hr />
@@ -323,6 +392,21 @@
     <h4 class="card-title" id="aquilo">
       <a href="https://wiki.factorio.com/Aquilo" target="_blank" rel="noopener noreferrer">Aquilo</a>
     </h4>
+
+    <h5>Planet Start</h5>
+    <ul>
+      <li>
+        Recommended items to bring to Aquilo for faster bootstrapping:
+
+        <ul>
+          <li *ngFor="let itemGroup of SPACE_AGE_DATA.bootstrapItemsAquilo">
+            <ng-container *ngFor="let item of itemGroup">
+              <app-factorio-icon [icon]="dataService.getFactorioIcon(item.iconId, '>' + item.count)"></app-factorio-icon>
+            </ng-container>
+          </li>
+        </ul>
+      </li>
+    </ul>
 
     <p>WIP...</p>
   </div>

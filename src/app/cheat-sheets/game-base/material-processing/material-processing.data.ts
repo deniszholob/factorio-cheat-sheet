@@ -1,11 +1,17 @@
 import { RawData } from 'app/models/Data.model';
 import { MaterialProcessingData } from 'app/models/MaterialProcessingData.model';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
+
+export const MATERIAL_PROCESSING_SHEET_NAV: NavData = newNavData(
+  'Material Processing',
+  FactorioIcons.ItemGroup_IntermediateProducts
+);
 
 export const MATERIAL_PROCESSING_DATA: RawData<MaterialProcessingData> = {
   cheatSheet: {
-    title: 'Material Processing',
-    iconId: FactorioIcons.ItemGroup_IntermediateProducts,
+    title: MATERIAL_PROCESSING_SHEET_NAV.title,
+    iconId: MATERIAL_PROCESSING_SHEET_NAV.sheetIconId,
   },
   data: {
     beltEmpty: [

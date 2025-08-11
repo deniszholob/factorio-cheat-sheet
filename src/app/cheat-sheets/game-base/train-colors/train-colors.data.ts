@@ -1,11 +1,17 @@
 import { RawData } from 'app/models/Data.model';
 import { TrainColorsData } from 'app/models/TrainColorsData.model';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
+
+export const TRAIN_COLOR_SHEET_NAV: NavData = newNavData(
+  'Train Colors',
+  FactorioIcons.Icons_TrainStop
+);
 
 export const TRAIN_COLOR_DATA: RawData<TrainColorsData> = {
   cheatSheet: {
-    title: 'Train Colors',
-    iconId: FactorioIcons.Icons_TrainStop,
+    title: TRAIN_COLOR_SHEET_NAV.title,
+    iconId: TRAIN_COLOR_SHEET_NAV.sheetIconId,
   },
   data: {
     blueprint:

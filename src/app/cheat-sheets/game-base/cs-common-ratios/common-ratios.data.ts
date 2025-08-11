@@ -210,7 +210,54 @@ const _SCIENCE_RATIOS: Ratio[] = [
       },
     ],
   },
+
+  //  ===================== SA Science Ratios =====================
+
+  // {
+  //   source:
+  //     'https://kirkmcdonald.github.io/calc.html#zip=fVRLktwgDL3NrELVJFW9manezUVkrMZKY0QEdI9z+gjbuH+ubGz0JNDnSeohwzFFsGjAofll3s3h8EYZx3REjzYLj+ACZrImWcKghmp9/pCPw1sUYqE8HWEcORBY8CaxL5k4HH++/xgQLpNh8lW4QkapBw8X0P+nldJj05580acCmguGPFtRHqiMpqtoBVLxpyIaBljqjcMpLc+pU6vx6lHPDH49xIhiWBachMMmJCsQl1PmsGC5BJcy3oyKQKjum/wbvZ/UYpylqYxwZpMFZ+3nl1lqpdFhQHGToaDZnrSss/2X8RTO2Bs7YMorFIW/J2M5ZNAUpRmCFiFFTT/fsOVyh77d1bjNFSZzAX9pLviiHj1fH8DM0ZT4AHW+oDIX2ls9agwpS7GVNxM1gls4m7HpmM8rSOFEQXk3FsSxBuJmvtekRlyYAy2XMNWkS2hXE43Ro1Yp1/tXJdmcWLYy7aj5ehdNERWUfP1C5gZbpuYfx6gXR+6LPpM8tyTX3l0lcEpV8VlZ9g9t3fyQM6OmGJzphbzfYLYDjB3eHM9t1oHVVAkaKhNriNoMtZb5Bd1x+Dxq9xf/N4aryYlL6GVqUkmVyOcqrbCgRruB82Q8xe/JDXlO3rKvzlleNML9iind4H0Rtx9a7UonfFUm5xkKJeuOoFZSkEwnsqQ87Knvbq8zt3/3VRm1hyByb9C5197cCfRP0ZKrSq0sprTlLGgn6zfKB/bj/WLQ1pq3586LeZBSZ0Arj/4Z42/q6e/2rLZix89zv4BZV1GKLPl+ASwqZX2uj/7vlW2Zbqw9rtJlHtoSrG89LT8t7e5CX/bTpfVJI2wVFw6q8A8=',
+  //   name: 'Purple Science',
+  //   ratio: [
+  //     {
+  //       machineIconId: FactorioIcons.Icons_ElectromagneticPlant,
+  //       productIconId: FactorioIcons.Icons_ElectromagneticSciencePack,
+  //       count: 10,
+  //       rateSeconds: 2,
+  //     },
+  //     {
+  //       machineIconId: FactorioIcons.Icons_ElectromagneticPlant,
+  //       productIconId: FactorioIcons.Icons_Supercapacitor,
+  //       count: 10,
+  //     },
+  //     {
+  //       machineIconId: FactorioIcons.Icons_ElectromagneticPlant,
+  //       productIconId: FactorioIcons.Icons_Accumulator,
+  //       count: 10,
+  //     },
+  //     {
+  //       machineIconId: FactorioIcons.Icons_ElectromagneticPlant,
+  //       productIconId: FactorioIcons.Icons_Superconductor,
+  //       count: 5,
+  //     },
+  //     {
+  //       machineIconId: FactorioIcons.Icons_ElectromagneticPlant,
+  //       productIconId: FactorioIcons.Fluid_Electrolyte,
+  //       count: 12.5,
+  //     },
+  //     {
+  //       machineIconId: FactorioIcons.Icons_ChemicalPlant,
+  //       productIconId: FactorioIcons.Fluid_HolmiumSolution,
+  //       count: 22,
+  //     },
+  //     {
+  //       machineIconId: FactorioIcons.Icons_AssemblingMachine3,
+  //       productIconId: FactorioIcons.Icons_HolmiumPlate,
+  //       count: 4.8,
+  //     },
+  //   ],
+  // },
 ];
+
 const _ELECTRONICS_RATIOS: Ratio[] = [
   {
     source:
@@ -364,6 +411,7 @@ const _ELECTRONICS_RATIOS: Ratio[] = [
     ],
   },
 ];
+
 const _PRODUCTION_RATIOS: Ratio[] = [
   {
     source:
@@ -510,6 +558,7 @@ const _PRODUCTION_RATIOS: Ratio[] = [
     ],
   },
 ];
+
 const _MISC_RATIOS: Ratio[] = [
   {
     source:
@@ -624,6 +673,31 @@ const _MISC_RATIOS: Ratio[] = [
         productIconId: FactorioIcons.Icons_IronPlate,
         rateSeconds: 3,
         count: 10,
+      },
+    ],
+  },
+  {
+    source:
+      'https://kirkmcdonald.github.io/calc.html#data=2-0-55&rate=s&buildings=stone-furnace&items=steel-plate:f:8',
+    name: '',
+    ratio: [
+      {
+        machineIconId: FactorioIcons.Icons_StoneFurnace,
+        productIconId: FactorioIcons.Icons_SteelPlate,
+        count: 8,
+        rateSeconds: 0.5,
+      },
+      {
+        machineIconId: FactorioIcons.Icons_StoneFurnace,
+        productIconId: FactorioIcons.Icons_IronPlate,
+        count: 8,
+        rateSeconds: 2.5,
+      },
+      {
+        machineIconId: FactorioIcons.Icons_ElectricMiningDrill,
+        productIconId: FactorioIcons.Icons_IronOre,
+        count: 5,
+        rateSeconds: 2.5,
       },
     ],
   },

@@ -6,7 +6,7 @@
   // }
   $bigger: $size * $multiplier;
   $smaller: $bigger * 0.75;
-  $offset: $bigger/2.5 - $smaller/2;
+  $offset: $bigger/4 - $smaller/2;
   font-size: 0.8em;
 
   height: $bigger;
@@ -32,7 +32,7 @@
     width: $smaller;
     position: absolute;
     left: $offset;
-    top: 0;
+    top: $offset;
     filter: drop-shadow(0 0 1px #000) drop-shadow(0 0 1px #111)
       drop-shadow(0 0 2px #111) brightness(1.1);
   }
@@ -51,7 +51,8 @@
     left: 0;
     color: $c-pallette-text-muted;
     font-size: 0.8em;
-    text-shadow: 0 0 1px #000;
+    text-shadow: 0 1px 1px #000, 0 -1px 1px #000, 1px 0 1px #000,
+      -1px 0 1px #000;
   }
 
   .count-text {

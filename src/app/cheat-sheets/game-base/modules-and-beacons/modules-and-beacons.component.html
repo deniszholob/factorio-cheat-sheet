@@ -9,7 +9,8 @@
 
     <table class="table table-hover fixed-width">
       <caption>
-        Modules in Factorio.
+        <a href="https://wiki.factorio.com/Module" target="_blank" rel="noopener noreferrer">Modules</a>
+        in Factorio.
       </caption>
       <thead>
         <tr>
@@ -21,25 +22,34 @@
       </thead>
       <tbody>
         <tr>
-          <td scope="row">Speed</td>
+          <td scope="row">
+            <a href="https://wiki.factorio.com/Speed_module" target="_blank" rel="noopener noreferrer"> Speed </a>
+          </td>
           <td><app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SpeedModule3)"></app-factorio-icon></td>
           <td>Faster crafting.</td>
           <td>Uses more power.</td>
         </tr>
         <tr>
-          <td scope="row">Productivity</td>
+          <td scope="row">
+            <a href="https://wiki.factorio.com/Productivity_module" target="_blank" rel="noopener noreferrer"> Productivity </a>
+          </td>
           <td><app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_ProductivityModule3)"></app-factorio-icon></td>
           <td>Bonus items.</td>
           <td>Uses more power, slows crafting/mining.</td>
         </tr>
         <tr>
-          <td scope="row">Efficiency</td>
+          <td scope="row">
+            <a href="https://wiki.factorio.com/Efficiency_module" target="_blank" rel="noopener noreferrer"> Efficiency </a>
+          </td>
           <td><app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_EfficiencyModule3)"></app-factorio-icon></td>
           <td>Use less power, thus create less pollution.</td>
           <td>None.</td>
         </tr>
+        <tr></tr>
         <tr>
-          <td scope="row">Quality</td>
+          <td scope="row">
+            <a href="https://wiki.factorio.com/Quality_module" target="_blank" rel="noopener noreferrer"> Quality </a>
+          </td>
           <td>
             <app-factorio-icon
               [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_QualityModule3)"
@@ -55,7 +65,8 @@
     <br />
 
     <h4>
-      Tips for Speed modules <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SpeedModule3)"></app-factorio-icon>
+      <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SpeedModule3)"></app-factorio-icon>
+      Tips for Speed modules
     </h4>
 
     <ul>
@@ -70,8 +81,8 @@
     </ul>
 
     <h4>
-      Tips for Productivity modules
       <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_ProductivityModule3)"></app-factorio-icon>
+      Tips for Productivity modules
     </h4>
 
     <ul>
@@ -80,8 +91,8 @@
     </ul>
 
     <h4>
-      Tips for Efficiency modules
       <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_EfficiencyModule3)"></app-factorio-icon>
+      Tips for Efficiency modules
     </h4>
 
     <ul>
@@ -90,8 +101,8 @@
     </ul>
 
     <h4>
-      Tips for Quality modules
       <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_QualityModule3)" [spaceAge]="true"></app-factorio-icon>
+      Tips for Quality modules
     </h4>
 
     <p>Speed modules <em>lower</em> the quality of the output, so:</p>
@@ -120,6 +131,7 @@
     >.
   </p>
 
+  <hr />
   <h4>Calculator</h4>
 
   <p>This calculator shows how many machines you need to get your wanted output.</p>
@@ -187,15 +199,17 @@
         </div>
         <div class="eq-operator">*</div>
         <div class="eq-field bg-factorio-red">
-          <span class="eq-label">Machine Productivity</span>
+          <span class="eq-label">1 + </span>
+          <span class="eq-label">(Machine Productivity Bonus %</span>
           <input
             class="eq-input"
-            [(ngModel)]="calcMachines.machineProductivity"
+            [(ngModel)]="calcMachines.machineProductivityBonusPercent"
             (keyup)="calcMachinesToFillBelt()"
             (change)="calcMachinesToFillBelt()"
             type="number"
             step="0.1"
           />
+          <span class="eq-label"> / 100)</span>
         </div>
       </div>
     </div>

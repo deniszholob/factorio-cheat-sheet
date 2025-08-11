@@ -9,7 +9,13 @@ import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 // Constants
-import { SCIENCE_DATA } from './science.data';
+import {
+  calculateMinimalMachines,
+  SCIENCE_DATA,
+  SCIENCE_PACK_DATA_ALL,
+  SciencePackData,
+  SciencePackFactoryRequirement,
+} from './science.data';
 
 @Component({
   selector: 'app-science',
@@ -18,24 +24,44 @@ import { SCIENCE_DATA } from './science.data';
 })
 export class ScienceComponent implements OnInit {
   protected readonly FactorioIcons = FactorioIcons;
-  public cheatSheet?: CheatSheet;
-  public sheetData?: ScienceData;
+  protected cheatSheet?: CheatSheet;
+  protected sheetData?: ScienceData;
 
-  public scienceRequirementsLink: string;
+  protected scienceRequirementsLink: string;
 
-  rocketCalcData: RocketCalcData = {
+  protected rocketCalcData: RocketCalcData = {
     rocketRate: 0, // This is calculated
     sciencePerLaunch: 1000, // As of v0.15 you get 1000 space science per rocket launch
     assemblerSpeed: 0.75, // The speed at which the other sciences are being made
     ratioMultiplier: 1, // Multiplier for the science ratio (incase you have more science set up)
   };
 
-  calcScience: LabsCalc = {
+  protected SCIENCE_PACK_RATES_TO_TRY: number[] = [
+    75, 150, 60, 120, 240, 600, 1200, 1000,
+  ];
+  protected calcScience: LabsCalc = {
     labsRequired: 1,
-    packsPerMinute: 1000,
+    packsPerMinute: 150,
     researchCycleTime: 60,
-    labSpeedBonus: 2245,
+    labSpeed: 3.5,
+    labProductivityBonusPercent: 8,
   };
+  // protected readonly SCIENCE_PACK_FACTORY_RATIOS_VANILLA: SciencePackFactoryRequirement[] =
+  //   calculateMinimalMachines(SCIENCE_PACK_DATA_VANILLA_NO_SPACE);
+  protected sciencePackData: SciencePackData[] = SCIENCE_PACK_DATA_ALL.map(
+    (d: SciencePackData): SciencePackData => ({
+      ...d,
+      factory: {
+        ...d.factory,
+        productivityBonusPercent: d.factory.productivityBonusPercent ?? 0,
+      },
+    })
+  );
+  protected sciencePackRatios = calculateMinimalMachines(this.sciencePackData);
+  protected SCIENCE_PACK_FACTORY_RATIOS_TARGET_RATE: SciencePackFactoryRequirement[] =
+    this.sciencePackRatios.map((d) => ({
+      ...d,
+    }));
 
   constructor(public dataService: DataService) {
     // tslint:disable-next-line:max-line-length
@@ -43,8 +69,20 @@ export class ScienceComponent implements OnInit {
       'https://kirkmcdonald.github.io/calc.html#zip=bY1BCsMwDAR/k5MMdWhqMPgxQlFbUcsOtnzo79Mem/S27LCzKxqmi/PB+UmlpHkSY+0Jh1VFk1pcJ+FC7DakV7zHBXJ9SDehI7mBShbD9j5v6MkqhPlI/Axbq+ugf1cBhn2NJ1+A/kn8W7d4XXY=';
   }
 
+  protected onUpdateSciencePackFactory() {
+    console.log(`onUpdateSciencePackFactory`);
+    this.sciencePackRatios = calculateMinimalMachines(this.sciencePackData);
+    this.SCIENCE_PACK_FACTORY_RATIOS_TARGET_RATE = this.sciencePackRatios.map(
+      (d) => ({
+        ...d,
+      })
+    );
+
+    this.calcScienceNumberOfLabs();
+  }
+
   /** Get Data for the Cheat Sheet from the DataService */
-  ngOnInit() {
+  public ngOnInit() {
     this.dataService
       .getLocalCheatSheetData<ScienceData>(SCIENCE_DATA)
       .subscribe(
@@ -60,8 +98,13 @@ export class ScienceComponent implements OnInit {
     this.calcScienceNumberOfLabs();
   }
 
+  protected onChangePacksPerMinute(value: number): void {
+    this.calcScience.packsPerMinute = value;
+    this.calcScienceNumberOfLabs();
+  }
+
   /** Calculates the rocket launch rate (in minutes) to keep up with other science */
-  onCalcRocketRate() {
+  protected onCalcRocketRate() {
     this.rocketCalcData.rocketRate =
       this.rocketCalcData.sciencePerLaunch /
       (this.rocketCalcData.assemblerSpeed *
@@ -70,12 +113,26 @@ export class ScienceComponent implements OnInit {
     this.rocketCalcData.rocketRate = this.rocketCalcData.rocketRate / 60; // Convert to minutes
   }
 
-  calcScienceNumberOfLabs() {
+  protected calcScienceNumberOfLabs() {
+    const packsPerSecond = this.calcScience.packsPerMinute / 60;
+    const prodMultiplier =
+      1 + this.calcScience.labProductivityBonusPercent / 100;
+    const speedMultiplier = this.calcScience.labSpeed;
+    const effectiveSpeed = speedMultiplier * prodMultiplier;
     this.calcScience.labsRequired =
-      (this.calcScience.packsPerMinute / 60) *
-      (this.calcScience.researchCycleTime /
-        (1 + this.calcScience.labSpeedBonus / 100));
+      packsPerSecond * (this.calcScience.researchCycleTime / effectiveSpeed);
+
+    // this.calcScience.labsRequired =
+    //   packsPerSecond *
+    //   (this.calcScience.researchCycleTime /
+    //     (1 + this.calcScience.labSpeed / 100));
     this.calcScience.labsRequired = this.calcScience.labsRequired.toFixed(2);
+
+    this.SCIENCE_PACK_FACTORY_RATIOS_TARGET_RATE =
+      this.SCIENCE_PACK_FACTORY_RATIOS_TARGET_RATE.map((d) => ({
+        ...d,
+        machinesNeeded: packsPerSecond / d.effectiveRate,
+      }));
   }
 }
 
@@ -91,5 +148,6 @@ interface LabsCalc {
   labsRequired: number | string;
   packsPerMinute: number;
   researchCycleTime: number;
-  labSpeedBonus: number;
+  labSpeed: number;
+  labProductivityBonusPercent: number;
 }

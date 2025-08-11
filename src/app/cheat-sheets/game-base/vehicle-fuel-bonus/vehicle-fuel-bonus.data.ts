@@ -1,11 +1,17 @@
 import { RawData } from 'app/models/Data.model';
 import { VehicleFuelBonusData } from 'app/models/VehicleFuelBonusData.model';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
+
+export const VEHICLE_FUEL_BONUS_SHEET_NAV: NavData = newNavData(
+  'Vehicle Fuel Bonus',
+  FactorioIcons.Icons_Locomotive
+);
 
 export const VEHICLE_FUEL_BONUS_DATA: RawData<VehicleFuelBonusData> = {
   cheatSheet: {
-    title: 'Vehicle Fuel Bonus',
-    iconId: FactorioIcons.Icons_Locomotive,
+    title: VEHICLE_FUEL_BONUS_SHEET_NAV.title,
+    iconId: VEHICLE_FUEL_BONUS_SHEET_NAV.sheetIconId,
   },
   data: {
     fuelData: [

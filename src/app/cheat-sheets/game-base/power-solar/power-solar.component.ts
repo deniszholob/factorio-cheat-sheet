@@ -29,8 +29,12 @@ export interface PlanetRatioUIInfo {
   mwRatioSpace: SimpleRatio[] | undefined;
 }
 
-export const POWER_SOLAR_SHEET_ICON = FactorioIcons.Icons_SolarPanel;
-export const POWER_SOLAR_SHEET_TITLE = 'Solar Power';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
+
+export const POWER_SOLAR_SHEET_NAV: NavData = newNavData(
+  'Solar Power',
+  FactorioIcons.Icons_SolarPanel
+);
 
 @Component({
   selector: 'app-power-solar',
@@ -46,8 +50,9 @@ export const POWER_SOLAR_SHEET_TITLE = 'Solar Power';
   ],
 })
 export class PowerSolarComponent {
-  protected readonly cheatSheetIconId: FactorioIcons = POWER_SOLAR_SHEET_ICON;
-  protected readonly cheatSheetTitle: string = POWER_SOLAR_SHEET_TITLE;
+  protected readonly cheatSheetIconId: FactorioIcons =
+    POWER_SOLAR_SHEET_NAV.sheetIconId;
+  protected readonly cheatSheetTitle: string = POWER_SOLAR_SHEET_NAV.title;
   protected readonly FactorioIcons = FactorioIcons;
 
   // protected QUALITY_OPTIONS = ['low', 'medium', 'high'];

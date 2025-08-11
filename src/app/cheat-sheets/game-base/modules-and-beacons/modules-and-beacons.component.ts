@@ -7,9 +7,12 @@ import { APP_INFO } from 'app/shared/app-settings';
 // Models
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
 
-const SHEET_ICON: FactorioIcons = FactorioIcons.Icons_Beacon;
-const SHEET_NAME = 'Modules and Beacons';
+export const MODULE_AND_BEACONS_SHEET_NAV: NavData = newNavData(
+  'Modules and Beacons',
+  FactorioIcons.Icons_Beacon
+);
 
 @Component({
   selector: 'app-modules-and-beacons',
@@ -24,30 +27,36 @@ export class ModulesAndBeaconsComponent implements OnInit {
 
   calcMachines: ThroughputCalc = {
     machinesToFillBelt: 1,
-    itemProductionRate: 45,
-    recipeBaseCraftTime: 1,
+    itemProductionRate: 15,
+    recipeBaseCraftTime: 3.2,
     itemsPerCraft: 1,
-    machineCraftSpeed: 0.75,
-    machineProductivity: 1,
+    machineCraftSpeed: 9.4,
+    machineProductivityBonusPercent: 20,
   };
 
   constructor(public dataService: DataService) {}
 
   ngOnInit() {
     this.cheatSheet = new CheatSheet(
-      this.dataService.getFactorioIcon(SHEET_ICON),
-      SHEET_NAME
+      this.dataService.getFactorioIcon(
+        MODULE_AND_BEACONS_SHEET_NAV.sheetIconId
+      ),
+      MODULE_AND_BEACONS_SHEET_NAV.title
     );
     this.calcMachinesToFillBelt();
   }
 
-  calcMachinesToFillBelt() {
+  protected calcMachinesToFillBelt(): void {
+    const prodMultiplier =
+      1 + this.calcMachines.machineProductivityBonusPercent / 100;
+    const speedMultiplier = this.calcMachines.machineCraftSpeed;
+    const effectiveSpeed = speedMultiplier * prodMultiplier;
+
     this.calcMachines.machinesToFillBelt =
       (this.calcMachines.itemProductionRate *
         this.calcMachines.recipeBaseCraftTime) /
-      (this.calcMachines.itemsPerCraft *
-        this.calcMachines.machineCraftSpeed *
-        this.calcMachines.machineProductivity);
+      (this.calcMachines.itemsPerCraft * effectiveSpeed);
+
     this.calcMachines.machinesToFillBelt =
       this.calcMachines.machinesToFillBelt.toFixed(2);
   }
@@ -59,5 +68,5 @@ interface ThroughputCalc {
   recipeBaseCraftTime: number;
   itemsPerCraft: number;
   machineCraftSpeed: number;
-  machineProductivity: number;
+  machineProductivityBonusPercent: number;
 }

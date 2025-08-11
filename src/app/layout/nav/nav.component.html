@@ -10,14 +10,25 @@
       </div>
     </div>
   </div>
+
   <div class="nav-contents">
-    <a [routerLink]="[]" [fragment]="'Top'" (click)="closeNav()">Top</a>
-    <a *ngFor="let sheet of sheetIds" [routerLink]="[]" [fragment]="sheet" (click)="clickedLink(sheet)">{{ sheetName(sheet) }}</a>
+    <a [routerLink]="[]" [fragment]="'Top'" (click)="closeNav()">
+      <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Arrows_UpArrow)" [size]="'sm'"></app-factorio-icon>
+      <span>Top</span>
+    </a>
+    <a *ngFor="let nav of navSheetData" [routerLink]="[]" [fragment]="nav.sheetId" (click)="clickedLink(nav.sheetId)">
+      <app-factorio-icon [icon]="dataService.getFactorioIcon(nav.sheetIconId)" [size]="'sm'"></app-factorio-icon>
+      <span>{{ nav.title }}</span>
+    </a>
   </div>
 
   <!-- Use any element to open the side-nav -->
   <div class="nav-opener" [class.closed]="isNavOpen" [class.d-none]="doKeepOpen()" (click)="toggleNav()">
-    <i class="fas fa-angle-right" [class.d-none]="!isNavOpen"></i>
-    <i class="fas fa-angle-left" [class.d-none]="isNavOpen"></i>
+    <div [class.d-none]="!isNavOpen">
+      <i class="fas fa-lg fa-angle-right"></i>
+    </div>
+    <div [class.d-none]="isNavOpen">
+      <i class="fas fa-xl fa-angle-left"></i>
+    </div>
   </div>
 </div>

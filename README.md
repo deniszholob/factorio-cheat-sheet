@@ -1,6 +1,6 @@
-# Factorio [Cheat Sheet App](https://factoriocheatsheet.com/)
+# Factorio [Cheat Sheet](https://factoriocheatsheet.com/)
 
-Cheat Sheet for [Factorio](https://www.factorio.com/): _"A compendium of the most common Factorio game facts, such as build ratios, tips/tricks, and links to further information"._
+Cheat Sheet for [Factorio](https://www.factorio.com/): _"A summary of common facts for a game called Factorio, build ratios, tips/tricks, and links to more information"._
 
 Before you start contributing, please read [`contributing.md`](https://github.com/deniszholob/factorio-cheat-sheet/blob/master/CONTRIBUTING.md).
 
@@ -24,7 +24,7 @@ This cheat sheet is made possible by:
 - previous cheat sheets,
 - the Factorio Wiki (most of the cheat cheat uses data from the Wiki)
 
-# Support Me
+# Support me
 
 If you find the cheat sheet or the source code useful, consider:
 

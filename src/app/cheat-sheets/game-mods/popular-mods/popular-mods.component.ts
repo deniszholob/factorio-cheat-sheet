@@ -4,11 +4,15 @@ import { RouterModule } from '@angular/router';
 import { FactorioIconModule } from 'app/shared';
 import { CheatSheetTemplateComponent } from 'app/shared/cheat-sheet-template/cheat-sheet-template.component';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
 
 import { MOD_LIST, ModGroup } from './popular-mods.data';
 
-export const POPULAR_MODS_SHEET_ICON = FactorioIcons.Icons_RepairPack;
-export const POPULAR_MODS_SHEET_TITLE = 'Popular Mod List';
+export const POPULAR_MODS_SHEET_NAV: NavData = newNavData(
+  'Popular Mod List',
+  FactorioIcons.Icons_Parametrise
+  //FactorioIcons.ModManager_Cubes
+);
 
 @Component({
   selector: 'app-popular-mods',
@@ -23,8 +27,9 @@ export const POPULAR_MODS_SHEET_TITLE = 'Popular Mod List';
   ],
 })
 export class PopularModsComponent {
-  protected readonly cheatSheetIconId: FactorioIcons = POPULAR_MODS_SHEET_ICON;
-  protected readonly cheatSheetTitle: string = POPULAR_MODS_SHEET_TITLE;
+  protected readonly cheatSheetIconId: FactorioIcons =
+    POPULAR_MODS_SHEET_NAV.sheetIconId;
+  protected readonly cheatSheetTitle: string = POPULAR_MODS_SHEET_NAV.title;
 
   public readonly MOD_LIST: ModGroup[] = MOD_LIST;
 
