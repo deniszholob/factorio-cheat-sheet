@@ -37,7 +37,7 @@ export class ScienceComponent implements OnInit {
   };
 
   protected SCIENCE_PACK_RATES_TO_TRY: number[] = [
-    75, 150, 60, 120, 240, 600, 1000, 1200,
+    60, 75, 120, 150, 240, 600, 1000, 1200,
   ];
   protected calcScience: LabsCalc = {
     labsRequired: 1,
