@@ -3,44 +3,22 @@
     <div class="col-12 col-lg-8">
       <ul>
         <li>
-          To transfer fluids from/to a <a href="https://wiki.factorio.com/Fluid_wagon" target="_blank" rel="noopener">Fluid wagon</a>
-          you need at least one pump.
+          Pumps transfer fluids to/from a
+          <a href="https://wiki.factorio.com/Fluid_wagon" target="_blank" rel="noopener">Fluid wagon</a>.
         </li>
-        <li>Three pumps can connect to one fluid wagon. Having more than three pumps per fluid wagon is useless.</li>
+        <li>Three pumps can connect to one fluid wagon. Any extra pumps won't connect.</li>
+        <li>
+          You need
+          {{ sheetData ? sheetData.fluidWagonSize / sheetData.storageTankSize : '???' }}
+          <a href="https://wiki.factorio.com/Storage_tank" target="_blank" rel="noopener">Storage tanks</a> to empty one Fluid wagon.
+        </li>
         <li>
           <a href="https://wiki.factorio.com/Pump#Throughput" target="_blank" rel="noopener">Pumps</a>
-          and Storage Tanks have a maximum throughput of
+          and Storage tanks can transfer
           {{ sheetData?.pumpRate | number }}
           fluid per second.
         </li>
-        <li>Pipelines are limited to a {{ sheetData?.pipelineLimit }}x{{ sheetData?.pipelineLimit }} area before needing a Pump.</li>
-        <li>
-          Fluid wagons can hold
-          {{ sheetData?.fluidWagonSize | number }}
-          units of fluids which is the same as
-          {{ sheetData ? sheetData.fluidWagonSize / sheetData.storageTankSize : '???' }}
-          <a href="https://wiki.factorio.com/Storage_tank" target="_blank" rel="noopener">Storage Tanks</a>.
-
-          <div class="row">
-            <div class="col-6 text-center">
-              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_FluidWagon, 1)"></app-factorio-icon>
-              <app-factorio-icon
-                [icon]="
-                  dataService.getFactorioIcon(
-                    FactorioIcons.Icons_StorageTank,
-                    sheetData ? sheetData.fluidWagonSize / sheetData.storageTankSize : ''
-                  )
-                "
-              ></app-factorio-icon>
-            </div>
-            <div class="col-6 text-center">
-              <app-factorio-icon
-                [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Pipe, sheetData?.pipelineLimit + 'x' + sheetData?.pipelineLimit)"
-              ></app-factorio-icon>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Pump, 1)"></app-factorio-icon>
-            </div>
-          </div>
-        </li>
+        <li>Pipelines beyond a {{ sheetData?.pipelineLimit }}x{{ sheetData?.pipelineLimit }} area need a Pump.</li>
       </ul>
     </div>
 
@@ -62,7 +40,7 @@
             <td>
               {{ item?.pumps }}
             </td>
-            <td>{{ item?.transferTime | number }}s</td>
+            <td>{{ item?.transferTime | number }} s</td>
           </tr>
         </tbody>
       </table>
@@ -74,11 +52,8 @@
 
   <div class="row align-items-center justify-content-around">
     <div class="col text-center col-print-3">
-      <span
-        ><strong
-          >Pumps connect when the fluid wagon is in the correct location. <a [routerLink]="[]" fragment="note-alignment">*</a></strong
-        ></span
-      ><br />
+      <span><strong>Pumps connect when the fluid wagon is in the right spot.</strong> </span>
+      <p>Trains "snap" into place when placed near a Train stop.</p>
       <video
         class="img-fluid rounded"
         autoplay
@@ -88,7 +63,6 @@
         alt="Tanker-Pump Alignment"
         title="Tanker-Pump Alignment"
       ></video>
-      <p id="note-alignment">Trains "snaps" into place when put close to a Train stop.</p>
     </div>
   </div>
 </app-cheat-sheet>
