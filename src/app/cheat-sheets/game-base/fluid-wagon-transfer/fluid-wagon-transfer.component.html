@@ -50,14 +50,14 @@
     <div class="col-12 col-lg-4 text-center">
       <table class="table table-sm table-hover fixed-width" style="max-width: 300px">
         <caption class="text-center">
-          Direct connection (no pipes)
+          Direct connection (no pipes).
         </caption>
         <thead class="text-center">
           <tr>
             <th>
               <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Pump)"></app-factorio-icon>
             </th>
-            <th>Loading &amp; Unloading Times for {{ sheetData?.fluidWagonSize | number }} fluid</th>
+            <th>Time to load/unload {{ sheetData?.fluidWagonSize | number }} units of fluid.</th>
           </tr>
         </thead>
         <tbody class="text-center">
@@ -78,7 +78,7 @@
   <div class="row align-items-center justify-content-around">
     <div class="col text-center col-print-3">
       <span
-        ><strong>Tanker-Pump Alignment <a [routerLink]="[]" fragment="note-alignment">*</a></strong></span
+        ><strong>Pumps connect when the fluid wagon is in the correct location. <a [routerLink]="[]" fragment="note-alignment">*</a></strong></span
       ><br />
       <video
         class="img-fluid rounded"
@@ -89,9 +89,8 @@
         alt="Tanker-Pump Alignment"
         title="Tanker-Pump Alignment"
       ></video>
-      <p id="note-alignment">*Trains snap into position when placed at train stations.</p>
+      <p id="note-alignment">Trains "snaps" into place when put close to a Train stop.</p>
     </div>
   </div>
 
-  <hr class="print-page-break" />
 </app-cheat-sheet>
