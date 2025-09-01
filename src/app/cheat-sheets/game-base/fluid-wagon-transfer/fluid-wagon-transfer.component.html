@@ -3,24 +3,21 @@
     <div class="col-12 col-lg-8">
       <ul>
         <li>
-          <a href="https://wiki.factorio.com/Fluid_wagon" target="_blank" rel="noopener">Fluid wagons</a>
-          require at least one pump and at most 3 pumps per fluid wagon.
+          To transfer fluids from/to a <a href="https://wiki.factorio.com/Fluid_wagon" target="_blank" rel="noopener">Fluid wagon</a>
+          you need at least one pump.
         </li>
-        <li>
-          If more than 3 pumps can be active on the fluid wagon, only 3 will “latch on” and be in use with the remaining pumps inactive.
-        </li>
+        <li>Three pumps can connect to one fluid wagon. Having more than three pumps per fluid wagon is useless.</li>
         <li>
           <a href="https://wiki.factorio.com/Pump#Throughput" target="_blank" rel="noopener">Pumps</a>
           and Storage Tanks have a maximum throughput of
           {{ sheetData?.pumpRate | number }}
-          fluid/s.
+          fluid per second.
         </li>
-        <li>Pipelines are limited to a {{ sheetData?.pipelineLimit }}x{{ sheetData?.pipelineLimit }} area before needing a pump</li>
-        <li class="line-through">Using underground pipes counts as less entities then if straight pipe for same distance.</li>
+        <li>Pipelines are limited to a {{ sheetData?.pipelineLimit }}x{{ sheetData?.pipelineLimit }} area before needing a Pump.</li>
         <li>
           Fluid wagons can hold
           {{ sheetData?.fluidWagonSize | number }}
-          units of fluids which is equal to
+          units of fluids which is the same as
           {{ sheetData ? sheetData.fluidWagonSize / sheetData.storageTankSize : '???' }}
           <a href="https://wiki.factorio.com/Storage_tank" target="_blank" rel="noopener">Storage Tanks</a>.
 
@@ -78,7 +75,9 @@
   <div class="row align-items-center justify-content-around">
     <div class="col text-center col-print-3">
       <span
-        ><strong>Pumps connect when the fluid wagon is in the correct location. <a [routerLink]="[]" fragment="note-alignment">*</a></strong></span
+        ><strong
+          >Pumps connect when the fluid wagon is in the correct location. <a [routerLink]="[]" fragment="note-alignment">*</a></strong
+        ></span
       ><br />
       <video
         class="img-fluid rounded"
@@ -92,5 +91,4 @@
       <p id="note-alignment">Trains "snaps" into place when put close to a Train stop.</p>
     </div>
   </div>
-
 </app-cheat-sheet>
