@@ -8,12 +8,15 @@ import {
 } from '@angular/service-worker';
 import { filter, map, Subject, takeUntil } from 'rxjs';
 
+import { APP_INFO } from './shared/app-settings';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnDestroy {
   private readonly clearSub$ = new Subject<void>();
+  protected readonly APP_INFO = APP_INFO;
 
   constructor(private swUpdate: SwUpdate) {
     this.subToUpdateApp();
