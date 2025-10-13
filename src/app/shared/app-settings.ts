@@ -31,6 +31,12 @@ export const APP_INFO: AppInfo = {
     url: 'https://www.patreon.com/deniszholob',
     icon: 'fab fa-patreon',
   },
+  factoryTime: {
+    name: 'Factory Time Game',
+    url: 'https://deniszholob.github.io/factory-time/',
+    title: 'Factory Time Game',
+    icon: 'fas fa-industry',
+  },
   data_version: '2.0.7',
   // languages: ['en-US'],
   links: {
@@ -56,6 +62,7 @@ export interface AppInfo {
   links: ImageLinks;
   // old_cheat_sheets: Hyperlink[];
   // pdfs: Hyperlink[];
+  factoryTime: Hyperlink;
 }
 
 /** Hyperlink data */

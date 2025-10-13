@@ -65,12 +65,19 @@
         <p class="text-muted">If you find the cheat sheet useful, you can:</p>
         <div class="support-buttons">
           <a class="btn btn-outline-primary" href="https://ko-fi.com/deniszholob" target="_blank" rel="noopener">
-            Buy me Ko-fi
+            Buy me <br />
             <i class="{{ APP_INFO.kofi.icon }}"></i>
+            Ko-fi
           </a>
           <a class="btn btn-outline-primary" href="https://patreon.com/deniszholob" target="_blank" rel="noopener">
-            Support me on Patreon
+            Support me on <br />
             <i class="{{ APP_INFO.patreon.icon }}"></i>
+            Patreon
+          </a>
+          <a class="btn btn-outline-primary" [href]="APP_INFO.factoryTime.url" target="_blank" rel="noopener noreferrer">
+            Play My Game <br />
+            <i class="{{ APP_INFO.factoryTime.icon }}"></i>
+            "Factory Time"
           </a>
         </div>
       </div>
