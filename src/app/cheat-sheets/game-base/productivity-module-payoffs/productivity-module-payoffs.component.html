@@ -34,8 +34,12 @@
     <ng-container cdkColumnDef="payoff_speed_prod">
       <th class="sorted" *cdkHeaderCellDef (click)="adjustSort('payoff_speed_prod')" cdk-header-cell>
         <span *ngIf="sortKey$.value === 'payoff_speed_prod'">
-          <i class="fas fa-sort-up" *ngIf="sortDirection$.value === 'asc'"></i>
-          <i class="fas fa-sort-down" *ngIf="sortDirection$.value !== 'asc'"></i>
+          <span *ngIf="sortDirection$.value === 'asc'">
+            <i class="fas fa-sort-up fa-fw fa-lg"></i>
+          </span>
+          <span *ngIf="sortDirection$.value !== 'asc'">
+            <i class="fas fa-sort-down fa-fw fa-lg"></i>
+          </span>
         </span>
         <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SpeedModule3, 1)"> </app-factorio-icon>
         <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_ProductivityModule3, 3)"> </app-factorio-icon>
@@ -49,8 +53,12 @@
     <ng-container cdkColumnDef="payoff_prod">
       <th class="sorted" *cdkHeaderCellDef (click)="adjustSort('payoff_prod')" cdk-header-cell>
         <span *ngIf="sortKey$.value === 'payoff_prod'">
-          <i class="fas fa-sort-up" *ngIf="sortDirection$.value === 'asc'"></i>
-          <i class="fas fa-sort-down" *ngIf="sortDirection$.value !== 'asc'"></i>
+          <span *ngIf="sortDirection$.value === 'asc'">
+            <i class="fas fa-sort-up fa-fw fa-lg"></i>
+          </span>
+          <span *ngIf="sortDirection$.value !== 'asc'">
+            <i class="fas fa-sort-down fa-fw fa-lg"></i>
+          </span>
         </span>
         <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_ProductivityModule3, 4)"> </app-factorio-icon>
       </th>
@@ -63,8 +71,12 @@
     <ng-container cdkColumnDef="payoff_beacon_4x4">
       <th class="sorted" *cdkHeaderCellDef (click)="adjustSort('payoff_beacon_4x4')" cdk-header-cell>
         <span *ngIf="sortKey$.value === 'payoff_beacon_4x4'">
-          <i class="fas fa-sort-up" *ngIf="sortDirection$.value === 'asc'"></i>
-          <i class="fas fa-sort-down" *ngIf="sortDirection$.value !== 'asc'"></i>
+          <span *ngIf="sortDirection$.value === 'asc'">
+            <i class="fas fa-sort-up fa-fw fa-lg"></i>
+          </span>
+          <span *ngIf="sortDirection$.value !== 'asc'">
+            <i class="fas fa-sort-down fa-fw fa-lg"></i>
+          </span>
         </span>
         <app-factorio-icon
           [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Beacon, '4||4')"
@@ -81,8 +93,12 @@
     <ng-container cdkColumnDef="payoff_beacon_12">
       <th class="sorted" *cdkHeaderCellDef (click)="adjustSort('payoff_beacon_12')" cdk-header-cell>
         <span *ngIf="sortKey$.value === 'payoff_beacon_12'">
-          <i class="fas fa-sort-up" *ngIf="sortDirection$.value === 'asc'"></i>
-          <i class="fas fa-sort-down" *ngIf="sortDirection$.value !== 'asc'"></i>
+          <span *ngIf="sortDirection$.value === 'asc'">
+            <i class="fas fa-sort-up fa-fw fa-lg"></i>
+          </span>
+          <span *ngIf="sortDirection$.value !== 'asc'">
+            <i class="fas fa-sort-down fa-fw fa-lg"></i>
+          </span>
         </span>
         <app-factorio-icon
           [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Beacon, '(12)')"
