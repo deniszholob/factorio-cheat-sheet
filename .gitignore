@@ -3,7 +3,7 @@
 # Dev
 /DEV
 /src/assets/images/dev
-/src/app/app-update.ts
+/src/app/app.modified.ts
 
 # Compiled output
 /public

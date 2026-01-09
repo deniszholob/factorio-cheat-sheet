@@ -2,7 +2,7 @@
 # @author Denis Zholob (deniszholob.com)
 # ====================================== #
 
-name: Build Test Branch
+name: Branch Build
 
 # Controls when the workflow will run
 on:
@@ -11,16 +11,26 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  NODE_VERSION: '18.12.1'
+  PNPM_VERSION: '8'
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Set up pnpm ${{ env.PNPM_VERSION }}
+        uses: pnpm/action-setup@v4
         with:
-          node-version: '18.12.1'
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Set up Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Get npm cache directory
         id: npm-cache-dir
@@ -31,29 +41,26 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{steps.npm-cache-dir.outputs.dir}}
-          key: ${{runner.os}}-node-${{hashFiles('**/package.json')}}
+          key: ${{runner.os}}-node-${{hashFiles('**/pnpm-lock.yaml')}}
           restore-keys: |
             ${{runner.os}}-node-
             ${{runner.os}}-
 
       - name: Install NPM Dependencies
-        run: npm ci
-
-      - name: Check lint
-        run: npm run lint
+        run: pnpm install
 
       - name: Build
-        run: sh ./build/build.sh # Generates the public folder with built angular app
+        run: sh ./.github/ci/build.sh # Generates the public folder with built angular app
 
-      # Save public artifacts for deployment jobs
-      # https://docs.github.com/en/actions/learn-github-actions/essential-features-of-github-actions#sharing-data-between-jobs
-      - name: Archive web demo build
-        if: success()
-        uses: actions/upload-artifact@v4
-        with:
-          name: public
-          path: public # Directory to push to GitHub Pages
 
+      # # Save public artifacts for deployment jobs
+      # # https://docs.github.com/en/actions/learn-github-actions/essential-features-of-github-actions#sharing-data-between-jobs
+      # - name: Archive web demo build
+      #   if: success()
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: public
+      #     path: public # Directory to push to GitHub Pages
 
   # Ref: https://github.com/firebase/firebase-tools
   # deploy-firebase:

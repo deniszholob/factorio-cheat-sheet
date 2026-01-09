@@ -1,7 +1,7 @@
 // Angular Imports
 import { Component } from '@angular/core';
 // Constants
-import { APP_UPDATE_DATE } from 'app/app-update';
+import { APP_MODIFIED_DATE } from 'app/app.modified';
 import { APP_INFO, AppInfo, Hyperlink } from 'app/shared/app-settings';
 
 @Component({
@@ -10,7 +10,7 @@ import { APP_INFO, AppInfo, Hyperlink } from 'app/shared/app-settings';
 })
 export class FooterComponent {
   public readonly APP_INFO: AppInfo = APP_INFO;
-  public readonly APP_UPDATE_DATE: string = APP_UPDATE_DATE;
+  public readonly APP_MODIFIED_DATE: number = APP_MODIFIED_DATE;
   protected readonly SOCIAL_LINKS: Hyperlink[] = [
     APP_INFO.github,
     APP_INFO.discord,

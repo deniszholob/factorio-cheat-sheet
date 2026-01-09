@@ -16,29 +16,46 @@ on:
 permissions:
   contents: read
 
+env:
+  NODE_VERSION: '18.12.1'
+  PNPM_VERSION: '8'
+
 jobs:
   lint:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [22.x]
-
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js ${{ matrix.node-version }}
+      - name: Set up pnpm ${{ env.PNPM_VERSION }}
+        uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Setup Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          node-version: ${{ env.NODE_VERSION }}
 
-      - name: Install dependencies with npm
-        run: npm ci
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        run: echo "::set-output name=dir::$(npm config get cache)"
+
+      - name: Cache node modules
+        id: npm-cache
+        uses: actions/cache@v4
+        with:
+          path: ${{steps.npm-cache-dir.outputs.dir}}
+          key: ${{runner.os}}-node-${{hashFiles('**/pnpm-lock.yaml')}}
+          restore-keys: |
+            ${{runner.os}}-node-
+            ${{runner.os}}-
+
+      - name: Install NPM Dependencies
+        run: pnpm install
 
       - name: Run linter
-        run: npm run lint:check
+        run: pnpm run lint:check
 
       - name: Run Formatter
-        run: npm run format:check
+        run: pnpm run format:check
