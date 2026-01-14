@@ -49,13 +49,13 @@
         </h5>
         <ul>
           <li *ngFor="let mod of modSubGroup.mods">
-            <ng-container *ngIf="getModSearchLink(mod) as link; else modName">
-              <a href="{{ link }}" target="_blank" rel="noopener noreferrer">{{ mod }}</a>
+            <ng-container *ngIf="mod">
+              <a href="{{ mod.url }}" target="_blank" rel="noopener noreferrer">{{ mod.text }}</a>
             </ng-container>
             <ng-template #modName>
               <span>{{ mod }}</span>
             </ng-template>
-            <small class="text-muted" *ngIf="modSubGroup.modNotes && modSubGroup.modNotes[mod]"> — {{ modSubGroup.modNotes[mod] }}</small>
+            <small class="text-muted" *ngIf="mod.caption"> — {{ mod.caption }}</small>
           </li>
         </ul>
       </li>
