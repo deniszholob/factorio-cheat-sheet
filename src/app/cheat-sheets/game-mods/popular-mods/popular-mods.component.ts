@@ -4,9 +4,9 @@ import { RouterModule } from '@angular/router';
 import { FactorioIconModule } from 'app/shared';
 import { CheatSheetTemplateComponent } from 'app/shared/cheat-sheet-template/cheat-sheet-template.component';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
-import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
+import { type NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
 
-import { MOD_LIST, ModGroup } from './popular-mods.data';
+import { MOD_LIST, type ModGroup } from './popular-mods.data';
 
 export const POPULAR_MODS_SHEET_NAV: NavData = newNavData(
   'Popular Mod List',
@@ -32,11 +32,4 @@ export class PopularModsComponent {
   protected readonly cheatSheetTitle: string = POPULAR_MODS_SHEET_NAV.title;
 
   public readonly MOD_LIST: ModGroup[] = MOD_LIST;
-
-  public getModSearchLink(modName: string): string | undefined {
-    if (modName.includes(' + ')) {
-      return undefined;
-    }
-    return `https://mods.factorio.com/?query=${modName}`;
-  }
 }
