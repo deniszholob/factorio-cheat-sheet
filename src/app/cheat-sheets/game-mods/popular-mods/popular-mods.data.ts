@@ -12,11 +12,9 @@ type ModSubGroup = {
   note?: string;
 };
 
-const MOD_PREFIX = 'https://mods.factorio.com/mod';
-
-function modSearchLink(modName: string): string {
-  return `https://mods.factorio.com/?query=${modName}`;
-}
+const MOD_PORTAL = 'https://mods.factorio.com';
+const MOD_PREFIX = `${MOD_PORTAL}/mod`;
+const USER_PREFIX = `${MOD_PORTAL}/user`;
 
 // https://discord.com/channels/139677590393716737/231518135231053825/1021919222609219614
 const MODS_QOL: ModGroup = {
@@ -215,7 +213,7 @@ const MODS_QOL: ModGroup = {
         { text: 'Shortcuts for 2.0', url: `${MOD_PREFIX}/Shortcuts-ick` },
         {
           text: 'Various Picker mods',
-          url: modSearchLink('Various Picker mods'),
+          url: `${MOD_PREFIX}/kry-picker-complete`,
         },
         { text: 'Squeak Through', url: `${MOD_PREFIX}/Squeak Through` },
         { text: 'Queue to Front', url: `${MOD_PREFIX}/QueueToFrontNG` },
@@ -586,15 +584,15 @@ const MODS_OVERHAUL: ModGroup = {
         },
         { text: 'Yuoki Industries', url: `${MOD_PREFIX}/Yuoki` },
         { text: 'ModMash', url: `${MOD_PREFIX}/modmash` },
-        { text: "5Dim's", url: modSearchLink("5Dim's") },
-        { text: 'Omni', url: modSearchLink('Omni') },
-        { text: "Bob's", url: modSearchLink("Bob's") },
+        { text: "5Dim's", url: `${USER_PREFIX}/McGuten` },
+        { text: 'Omni', url: `${USER_PREFIX}/OmnissiahZelos` },
+        { text: "Bob's", url: `${USER_PREFIX}/Bobingabout` },
         {
           text: "Angel's",
-          url: modSearchLink("Angel's"),
+          url: `${USER_PREFIX}/Arch666Angel`,
           caption: '(without Industries)',
         },
-        { text: "MadClown01's", url: modSearchLink("MadClown01's") },
+        { text: "MadClown01's", url: `${USER_PREFIX}/MadClown01` },
       ],
     },
     {
@@ -602,12 +600,12 @@ const MODS_OVERHAUL: ModGroup = {
       mods: [
         {
           text: 'Industrial Revolution 3',
-          url: modSearchLink('Industrial Revolution 3'),
+          url: `${MOD_PREFIX}/IndustrialRevolution3`,
           caption: '(IR3)',
         },
         {
           text: "Angel's",
-          url: modSearchLink("Angel's"),
+          url: `${USER_PREFIX}/Arch666Angel`,
           caption:
             '(with Industries) Many additions, in particular lots of chemistry. Enable both options for a Large game.',
         },
@@ -648,7 +646,7 @@ const MODS_OVERHAUL: ModGroup = {
         },
         {
           text: 'Pyanodons',
-          url: modSearchLink('Pyanodons'),
+          url: `${MOD_PREFIX}/pymodpack`,
           caption:
             'Medium Py (All Pyanodons mods except AlienLife and Alternative Energy).',
         },
@@ -659,7 +657,7 @@ const MODS_OVERHAUL: ModGroup = {
       mods: [
         {
           text: 'Pyanodons',
-          url: modSearchLink('Pyanodons'),
+          url: `${MOD_PREFIX}/pymodpack`,
           caption: 'Full Py, Extremely hard (>1000 hours).',
         },
       ],
