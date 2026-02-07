@@ -24,5 +24,5 @@ export class FactorioIconComponent {
   public spaceAge?: boolean = false;
 
   @Input()
-  public size?: 'sm';
+  public size?: 'sm' | 'xs';
 }

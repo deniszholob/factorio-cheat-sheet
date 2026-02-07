@@ -136,16 +136,21 @@
 
   <p class="">
     <b>Packs Per Minute</b> - Target science production rate. <br />
+    <b>Pack Drain Multiplier</b> - Adjusts science pack consumption (1 = normal, 0.5 = biolab).<br />
     <b>Research Cycle Time</b> - Time in seconds to complete one research cycle, this is usually 60 seconds for all infinite tech.<br />
     <b>Lab Speed</b> - Total Speed as reported by the lab, including modules and beacons. -
     <small>Default numbers assume a 12 beacon setup, which is researching a 60 second infinite tech.</small><br />
     <b>Lab Productivity Bonus %</b> - Lab productivity +xx% bonus as reported by the lab.<br />
+    <span class="text-muted small">
+      Space Age tip: if you rely on platforms delivering Agricultural science, consider keeping extra labs preloaded with the other packs so
+      you can burn the fresh science quickly and avoid spoilage bottlenecks.
+    </span>
   </p>
 
   <br />
   <p class="text-muted text-center">Calculates how many labs satisfy a target production rate of science packs per minute.</p>
   <div class="row align-items-center">
-    <div class="col-12 col-lg-3">
+    <div class="col-12 col-lg-2">
       <div class="eq-container">
         <div class="eq-field bg-neutral">
           <span class="eq-label">Labs Needed</span>
@@ -154,10 +159,10 @@
         <div class="eq-operator">=</div>
       </div>
     </div>
-    <div class="col-12 col-lg-3">
-      <div class="eq-container">
+    <div class="col-12 col-lg-4">
+      <div class="eq-container flex flex-row flex-wrap gap-2 items-center">
         <div class="eq-field bg-factorio-yellow-muted">
-          <span class="eq-label">Packs Per Minute</span>
+          <span class="eq-label">Packs/min</span>
           <input
             class="eq-input"
             [(ngModel)]="calcScience.packsPerMinute"
@@ -165,6 +170,19 @@
             (change)="calcScienceNumberOfLabs()"
             type="number"
             min="0"
+          />
+        </div>
+        <div class="eq-operator">*</div>
+        <div class="eq-field bg-factorio-purple-muted">
+          <span class="eq-label">Drain</span>
+          <input
+            class="eq-input"
+            [(ngModel)]="calcScience.drainMultiplier"
+            (keyup)="calcScienceNumberOfLabs()"
+            (change)="calcScienceNumberOfLabs()"
+            type="number"
+            min="0"
+            step="0.05"
           />
         </div>
       </div>
@@ -232,13 +250,28 @@
 
   <br />
   <br />
-  <div class="text-center">
-    <span class="text-muted">Some packs/min rate presets to try for ratios</span>
-    <br />
-    <div class="flex gap-2 items-center justify-center">
-      <ng-container *ngFor="let rate of SCIENCE_PACK_RATES_TO_TRY">
-        <button class="btn btn-outline-primary" (click)="onChangePacksPerMinute(rate)">{{ rate }}</button>
-      </ng-container>
+  <div class="flex flex-row gap-2 flex-wrap justify-around">
+    <div class="flex flex-col items-center">
+      <span class="text-muted">Some packs/min rate presets to try for ratios</span>
+      <div class="flex gap-2 items-center justify-center">
+        <ng-container *ngFor="let rate of SCIENCE_PACK_RATES_TO_TRY">
+          <button class="btn btn-outline-primary" (click)="onChangePacksPerMinute(rate)">{{ rate }}</button>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <span class="text-muted">Lab presets</span>
+      <div class="flex flex-wrap gap-2 items-center justify-center">
+        <button class="btn btn-outline-primary inline-flex gap-1 items-center" (click)="onSetLabPreset(sheetData?.lab)">
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(sheetData?.lab?.iconId)" [size]="'sm'"></app-factorio-icon>
+          <span>Lab</span>
+        </button>
+        <button class="btn btn-outline-primary inline-flex gap-1 items-center" (click)="onSetLabPreset(sheetData?.bioLab)">
+          <app-factorio-icon [icon]="dataService.getFactorioIcon(sheetData?.bioLab?.iconId)" [size]="'sm'"></app-factorio-icon>
+          <span>Biolab</span>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -260,9 +293,10 @@
 
     <span class="text-muted">
       Number of factories needed to produce science equally for target rate of
-      {{ calcScience.packsPerMinute }} packs/min ({{ calcScience.packsPerMinute / 60 | number : '1.0-2' }} packs/sec )
+      {{ calcScience.packsPerMinute }} packs/min ({{ (calcScience.packsPerMinute * calcScience.drainMultiplier) / 60 | number : '1.0-2' }}
+      packs/sec )
       <br />
-      Change packs/minute, speed, and productivity to update results
+      Change packs/minute, drain, speed, and productivity to update results
     </span>
     <br />
     <br />

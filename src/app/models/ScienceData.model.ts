@@ -6,6 +6,8 @@ export interface ScienceData {
   assembler3: Rate;
   space2: Rate;
   space3: Rate;
+  lab: Factory;
+  bioLab: Factory;
 }
 
 export interface Pack {
@@ -16,4 +18,11 @@ export interface Pack {
 export interface Rate {
   iconId: FactorioIcons;
   speed: string;
+}
+
+export interface Factory {
+  iconId: FactorioIcons;
+  speed: number;
+  prodBonusPercent: number;
+  drainMultiplier: number;
 }

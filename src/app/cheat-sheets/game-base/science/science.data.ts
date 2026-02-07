@@ -56,6 +56,18 @@ export const SCIENCE_DATA: RawData<ScienceData> = {
       iconId: FactorioIcons.Icons_SpaceSciencePack,
       speed: '1R/13m',
     },
+    lab: {
+      iconId: FactorioIcons.Icons_Lab,
+      speed: 1,
+      prodBonusPercent: 0,
+      drainMultiplier: 1,
+    },
+    bioLab: {
+      iconId: FactorioIcons.Icons_Biolab,
+      speed: 2,
+      prodBonusPercent: 0,
+      drainMultiplier: 0.5,
+    },
   },
 };
 

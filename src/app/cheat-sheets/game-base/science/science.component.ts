@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 // Models
 import { Data } from 'app/models/Data.model';
-import { ScienceData } from 'app/models/ScienceData.model';
+import { Factory, ScienceData } from 'app/models/ScienceData.model';
 // Services
 import { DataService } from 'app/services/data.service';
 import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
@@ -45,6 +45,7 @@ export class ScienceComponent implements OnInit {
     researchCycleTime: 60,
     labSpeed: 3.5,
     labProductivityBonusPercent: 8,
+    drainMultiplier: 1,
   };
   // protected readonly SCIENCE_PACK_FACTORY_RATIOS_VANILLA: SciencePackFactoryRequirement[] =
   //   calculateMinimalMachines(SCIENCE_PACK_DATA_VANILLA_NO_SPACE);
@@ -103,6 +104,15 @@ export class ScienceComponent implements OnInit {
     this.calcScienceNumberOfLabs();
   }
 
+  /** TODO: remove undefined */
+  protected onSetLabPreset(lab: Factory | undefined): void {
+    if (!lab) throw new Error(`No lab data provided`);
+    this.calcScience.labSpeed = lab.speed;
+    this.calcScience.labProductivityBonusPercent = lab.prodBonusPercent;
+    this.calcScience.drainMultiplier = lab.drainMultiplier;
+    this.calcScienceNumberOfLabs();
+  }
+
   /** Calculates the rocket launch rate (in minutes) to keep up with other science */
   protected onCalcRocketRate() {
     this.rocketCalcData.rocketRate =
@@ -114,7 +124,8 @@ export class ScienceComponent implements OnInit {
   }
 
   protected calcScienceNumberOfLabs() {
-    const packsPerSecond = this.calcScience.packsPerMinute / 60;
+    const packsPerSecond =
+      (this.calcScience.packsPerMinute * this.calcScience.drainMultiplier) / 60;
     const prodMultiplier =
       1 + this.calcScience.labProductivityBonusPercent / 100;
     const speedMultiplier = this.calcScience.labSpeed;
@@ -150,4 +161,5 @@ interface LabsCalc {
   researchCycleTime: number;
   labSpeed: number;
   labProductivityBonusPercent: number;
+  drainMultiplier: number;
 }

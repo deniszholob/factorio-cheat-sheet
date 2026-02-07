@@ -1,6 +1,9 @@
 <img
   class="factorio-icon"
-  [ngClass]="{ 'factorio-icon-sm': size === 'sm' }"
+  [ngClass]="{
+    'factorio-icon-sm': size === 'sm',
+    'factorio-icon-xs': size === 'xs'
+  }"
   loading="lazy"
   src="{{ icon?.src }}"
   alt="{{ icon?.name }}"
