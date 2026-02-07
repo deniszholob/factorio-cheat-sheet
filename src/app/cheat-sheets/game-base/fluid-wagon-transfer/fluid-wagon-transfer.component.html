@@ -3,61 +3,37 @@
     <div class="col-12 col-lg-8">
       <ul>
         <li>
-          <a href="https://wiki.factorio.com/Fluid_wagon" target="_blank" rel="noopener">Fluid wagons</a>
-          require at least one pump and at most 3 pumps per fluid wagon.
+          Pumps transfer fluids to/from a
+          <a href="https://wiki.factorio.com/Fluid_wagon" target="_blank" rel="noopener">Fluid wagon</a>.
         </li>
+        <li>Three pumps can connect to one fluid wagon. Any extra pumps won't connect.</li>
         <li>
-          If more than 3 pumps can be active on the fluid wagon, only 3 will “latch on” and be in use with the remaining pumps inactive.
+          You need
+          {{ sheetData ? sheetData.fluidWagonSize / sheetData.storageTankSize : '???' }}
+          <a href="https://wiki.factorio.com/Storage_tank" target="_blank" rel="noopener">Storage tanks</a> to empty one Fluid wagon (50,000
+          units of fluids).
         </li>
         <li>
           <a href="https://wiki.factorio.com/Pump#Throughput" target="_blank" rel="noopener">Pumps</a>
-          and Storage Tanks have a maximum throughput of
+          and Storage tanks can transfer
           {{ sheetData?.pumpRate | number }}
-          fluid/s.
+          fluid per second.
         </li>
-        <li>Pipelines are limited to a {{ sheetData?.pipelineLimit }}x{{ sheetData?.pipelineLimit }} area before needing a pump</li>
-        <li class="line-through">Using underground pipes counts as less entities then if straight pipe for same distance.</li>
-        <li>
-          Fluid wagons can hold
-          {{ sheetData?.fluidWagonSize | number }}
-          units of fluids which is equal to
-          {{ sheetData ? sheetData.fluidWagonSize / sheetData.storageTankSize : '???' }}
-          <a href="https://wiki.factorio.com/Storage_tank" target="_blank" rel="noopener">Storage Tanks</a>.
-
-          <div class="row">
-            <div class="col-6 text-center">
-              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_FluidWagon, 1)"></app-factorio-icon>
-              <app-factorio-icon
-                [icon]="
-                  dataService.getFactorioIcon(
-                    FactorioIcons.Icons_StorageTank,
-                    sheetData ? sheetData.fluidWagonSize / sheetData.storageTankSize : ''
-                  )
-                "
-              ></app-factorio-icon>
-            </div>
-            <div class="col-6 text-center">
-              <app-factorio-icon
-                [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Pipe, sheetData?.pipelineLimit + 'x' + sheetData?.pipelineLimit)"
-              ></app-factorio-icon>
-              <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Pump, 1)"></app-factorio-icon>
-            </div>
-          </div>
-        </li>
+        <li>Pipelines beyond a {{ sheetData?.pipelineLimit }}x{{ sheetData?.pipelineLimit }} area need a Pump.</li>
       </ul>
     </div>
 
     <div class="col-12 col-lg-4 text-center">
       <table class="table table-sm table-hover fixed-width" style="max-width: 300px">
         <caption class="text-center">
-          Direct connection (no pipes)
+          Direct connection (no pipes).
         </caption>
         <thead class="text-center">
           <tr>
             <th>
               <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Pump)"></app-factorio-icon>
             </th>
-            <th>Loading &amp; Unloading Times for {{ sheetData?.fluidWagonSize | number }} fluid</th>
+            <th>Time to load/unload {{ sheetData?.fluidWagonSize | number }} units of fluid.</th>
           </tr>
         </thead>
         <tbody class="text-center">
@@ -65,7 +41,7 @@
             <td>
               {{ item?.pumps }}
             </td>
-            <td>{{ item?.transferTime | number }}s</td>
+            <td>{{ item?.transferTime | number }} s</td>
           </tr>
         </tbody>
       </table>
@@ -77,9 +53,8 @@
 
   <div class="row align-items-center justify-content-around">
     <div class="col text-center col-print-3">
-      <span
-        ><strong>Tanker-Pump Alignment <a [routerLink]="[]" fragment="note-alignment">*</a></strong></span
-      ><br />
+      <span><strong>Pumps connect when the fluid wagon is in the right spot.</strong> </span>
+      <p>Trains "snap" into place when placed near a Train stop.</p>
       <video
         class="img-fluid rounded"
         autoplay
@@ -89,9 +64,6 @@
         alt="Tanker-Pump Alignment"
         title="Tanker-Pump Alignment"
       ></video>
-      <p id="note-alignment">*Trains snap into position when placed at train stations.</p>
     </div>
   </div>
-
-  <hr class="print-page-break" />
 </app-cheat-sheet>
