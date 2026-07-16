@@ -16,7 +16,7 @@
           fluid/s.
         </li>
         <li>Pipelines are limited to a {{ sheetData?.pipelineLimit }}x{{ sheetData?.pipelineLimit }} area before needing a pump</li>
-        <li class="line-through">Using underground pipes counts as less entities then if straight pipe for same distance.</li>
+        <!-- <li class="line-through">Using underground pipes counts as less entities then if straight pipe for same distance.</li> -->
         <li>
           Fluid wagons can hold
           {{ sheetData?.fluidWagonSize | number }}
@@ -71,11 +71,11 @@
       </table>
     </div>
   </div>
-
+  <!--
   <br />
   <hr />
 
-  <div class="row align-items-center justify-content-around">
+<div class="row align-items-center justify-content-around">
     <div class="col text-center col-print-3">
       <span
         ><strong>Tanker-Pump Alignment <a [routerLink]="[]" fragment="note-alignment">*</a></strong></span
@@ -92,6 +92,6 @@
       <p id="note-alignment">*Trains snap into position when placed at train stations.</p>
     </div>
   </div>
-
+ -->
   <hr class="print-page-break" />
 </app-cheat-sheet>
