@@ -3,6 +3,7 @@ import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
 export interface PowerSteamData {
   steamBuildRatio: SteamBuildRatio;
+  vulcanusBuildRatio: VulcanusBuildRatio;
   offshorePumpWater: number;
   steamBoilerWater: number;
   steamBoilerSteam: number;
@@ -14,6 +15,12 @@ export interface PowerSteamData {
 interface SteamBuildRatio {
   steamRatioPowerMw: number;
   steamRatio: SimpleRatio[];
+}
+
+interface VulcanusBuildRatio {
+  vulcanusRatioPowerMw: number;
+  vulcanusChemicalPlants: number;
+  vulcanusSteamTurbines: number;
 }
 
 export const POWER_STEAM_DATA: PowerSteamData = {
@@ -42,6 +49,11 @@ export const POWER_STEAM_DATA: PowerSteamData = {
         count: 6,
       },
     ],
+  },
+  vulcanusBuildRatio: {
+    vulcanusRatioPowerMw: 580,
+    vulcanusChemicalPlants: 3,
+    vulcanusSteamTurbines: 100,
   },
   offshorePumpWater: 1200,
   steamBoilerWater: 6,

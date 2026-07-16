@@ -6,6 +6,7 @@ import { FactorioIconModule } from 'app/shared';
 import { CheatSheetTemplateComponent } from 'app/shared/cheat-sheet-template/cheat-sheet-template.component';
 import { FactorioIconData } from 'app/shared/factorio-icon/factorio-icon.model';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
+import { IconRatioCompositeModule } from 'app/shared/icon-ratio-composite/icon-ratio-composite.module';
 import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
 
 import { POWER_STEAM_DATA, PowerSteamData } from './power-steam.data';
@@ -30,7 +31,12 @@ interface BoilerTableRow extends FactorioIconData {
   styles: [':host{display:contents}'], // Makes component host as if it was not there, can offer less css headaches. Use @HostBinding class approach for easier overrides.
   // host: { class: 'contents' },
   standalone: true,
-  imports: [CommonModule, FactorioIconModule, CheatSheetTemplateComponent],
+  imports: [
+    CommonModule,
+    FactorioIconModule,
+    IconRatioCompositeModule,
+    CheatSheetTemplateComponent,
+  ],
 })
 export class PowerSteamComponent {
   protected readonly FactorioIcons = FactorioIcons;
