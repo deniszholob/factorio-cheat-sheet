@@ -1,6 +1,6 @@
 <app-cheat-sheet [cheatSheet]="cheatSheet">
   <div class="row align-items-center">
-    <p class="col-12 col-sm-4 text-center">
+    <span class="col-12 col-sm-4 text-center">
       <span class="text-muted">Simple Build Ratio</span><br />
       <ng-container *ngFor="let item of sheetData?.simpleRatio">
         <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
@@ -10,9 +10,9 @@
       <sub style="vertical-align: baseline"
         ><strong>{{ sheetData?.simpleRatioPower }}</strong></sub
       >
-    </p>
+    </span>
 
-    <p class="col-12 col-sm-4 text-center">
+    <span class="col-12 col-sm-4 text-center">
       <span class="text-muted">Common Build Ratio <a [routerLink]="[]" fragment="note_build_ratios">^</a></span
       ><br />
       <ng-container *ngFor="let item of sheetData?.commonRatio">
@@ -23,9 +23,9 @@
       <sub style="vertical-align: baseline"
         ><strong>{{ sheetData?.commonRatioPower }}</strong></sub
       >
-    </p>
+    </span>
 
-    <p class="col-12 col-sm-4 text-center">
+    <span class="col-12 col-sm-4 text-center">
       <span class="text-muted">Pump Ratio <a [routerLink]="[]" fragment="note_build_ratios">^</a></span
       ><br />
       <ng-container *ngFor="let item of sheetData?.pumpRatio">
@@ -36,7 +36,7 @@
       <sub style="vertical-align: baseline"
         ><strong>{{ sheetData?.pumpRatioPower }}</strong></sub
       >
-    </p>
+    </span>
   </div>
   <p class="text-muted text-center" id="note_build_ratios">
     <strong>^Note:</strong> Pumps, Steam Turbines and Power are approximate for easier build ratios. See

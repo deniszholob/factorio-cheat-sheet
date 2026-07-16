@@ -1,6 +1,6 @@
 <app-cheat-sheet-template [iconId]="cheatSheetIconId" [title]="cheatSheetTitle">
   <div class="row align-items-center">
-    <p class="col-12 col-sm-4 text-center">
+    <span class="col-12 col-sm-4 text-center">
       <span class="text-muted">
         <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Nauvis)"></app-factorio-icon>
         <a href="https://wiki.factorio.com/Power_production#Solar_panels_and_accumulators" target="_blank" rel="noopener"> Solar Power </a>
@@ -25,9 +25,9 @@
       <sub style="vertical-align: baseline">
         <strong>{{ POWER_SOLAR_DATA.solarBuildRatio.solarRatioPowerMw }}MW</strong>
       </sub>
-    </p>
+    </span>
 
-    <p class="col-12 col-sm-4 text-center">
+    <span class="col-12 col-sm-4 text-center">
       <span class="text-muted"> Solar Total to Usable (Planet Surface) </span>
       <br />
       <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SolarPanel, '10MW')"></app-factorio-icon>
@@ -36,7 +36,7 @@
       <sub style="vertical-align: baseline">
         <strong>{{ 10 * POWER_SOLAR_DATA.solarPowerEffectiveness }}MW</strong>
       </sub>
-    </p>
+    </span>
   </div>
 
   <hr />
