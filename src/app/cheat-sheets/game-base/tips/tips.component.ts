@@ -9,6 +9,8 @@ import { CheatSheet } from 'app/shared/cheat-sheet/cheat-sheet.model';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
 
+import { TIPS_DATA } from './tips.data';
+
 export const TIPS_PAYOFFS_SHEET_NAV: NavData = newNavData(
   'Tips',
   FactorioIcons.Technology_SteelAxe
@@ -23,6 +25,7 @@ export class TipsComponent implements OnInit {
   cheatSheet?: CheatSheet;
 
   APP_INFO = APP_INFO;
+  protected readonly TIPS_DATA = TIPS_DATA;
 
   constructor(public dataService: DataService) {}
 

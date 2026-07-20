@@ -217,33 +217,12 @@
   </h4>
   <p>Some useful options to enable:</p>
   <ul>
-    <li>
-      <kbd>show-fps</kbd>
-      - FPS/UPS
-    </li>
-    <li>
-      <kbd>show-multiplayer-statistics</kbd>
-      - Latency
-    </li>
-    <li>
-      <kbd>show-tile-grid</kbd>,
-      <kbd>show-raw-tile-transitions</kbd>
-      - Precision construction
-    </li>
-    <li>
-      <kbd>show-rail-paths</kbd>
-      - Less likely to get run over
-    </li>
-    <li>
-      <kbd>show-transport-line-gaps</kbd>
-      - Identify unsaturated belts
-    </li>
-    <li>
-      <kbd>show-player-robots</kbd>
-      - Makes it clear if there are stragglers
-    </li>
-    <li>
-      <kbd>allow-increased-zoom</kbd>
+    <li *ngFor="let debugTip of TIPS_DATA.debug">
+      <ng-container *ngFor="let option of debugTip.options; let isLast = last">
+        <kbd>{{ option }}</kbd
+        ><span *ngIf="!isLast">, </span>
+      </ng-container>
+      <span *ngIf="debugTip.description"> - {{ debugTip.description }}</span>
     </li>
   </ul>
 
