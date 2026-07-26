@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { BELT_DATA, BeltInfo, BURNABLES_DATA, BurnablesData } from 'app/data';
 import { DataService } from 'app/services';
-import { FactorioIconModule } from 'app/shared';
+import { FactorioIconModule, RatioModule } from 'app/shared';
 import { CheatSheetTemplateComponent } from 'app/shared/cheat-sheet-template/cheat-sheet-template.component';
 import { FactorioIconData } from 'app/shared/factorio-icon/factorio-icon.model';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
-import { IconRatioCompositeModule } from 'app/shared/icon-ratio-composite/icon-ratio-composite.module';
 import { NavData, newNavData } from 'app/shared/nav-data/nav-data.model';
 
 import { POWER_STEAM_DATA, PowerSteamData } from './power-steam.data';
@@ -34,7 +33,7 @@ interface BoilerTableRow extends FactorioIconData {
   imports: [
     CommonModule,
     FactorioIconModule,
-    IconRatioCompositeModule,
+    RatioModule,
     CheatSheetTemplateComponent,
   ],
 })

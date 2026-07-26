@@ -23,8 +23,10 @@ export class IconRatioCompositeComponent {
     this.machineIcon = this.dataService.getFactorioIcon(machineIconId);
   }
   @Input()
-  public set productIconId(productIconId: FactorioIcons) {
-    this.productIcon = this.dataService.getFactorioIcon(productIconId);
+  public set productIconId(productIconId: FactorioIcons | undefined) {
+    this.productIcon = productIconId
+      ? this.dataService.getFactorioIcon(productIconId)
+      : undefined;
   }
   @Input()
   public count?: number | string = 0;

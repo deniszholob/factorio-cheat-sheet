@@ -4,7 +4,7 @@ import { FactorioIcons } from '../factorio-icons.enum';
 
 export interface RatioItem {
   machineIconId: FactorioIcons;
-  productIconId: FactorioIcons;
+  productIconId?: FactorioIcons;
   count?: number;
   rateSeconds?: number;
 }

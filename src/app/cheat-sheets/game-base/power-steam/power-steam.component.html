@@ -18,26 +18,16 @@
     <span class="col-12 col-sm-4 text-center">
       <span class="text-muted">
         <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_Vulcanus)"></app-factorio-icon>
-        Vulcanus
-        <a href="https://wiki.factorio.com/Steam_turbine" target="_blank" rel="noopener">Steam Turbine</a> Build Ratio
+        <a href="https://wiki.factorio.com/Steam_turbine" target="_blank" rel="noopener">Steam Turbine Build Ratio</a>
       </span>
       <br />
 
-      <app-icon-ratio-composite
-        [machineIconId]="FactorioIcons.Icons_ChemicalPlant"
-        [productIconId]="FactorioIcons.Fluid_AcidNeutralisation"
-        [count]="POWER_STEAM_DATA.vulcanusBuildRatio.vulcanusChemicalPlants"
-        [spaceAge]="true"
-      ></app-icon-ratio-composite>
+      <app-ratio [ratios]="POWER_STEAM_DATA.vulcanusBuildRatio.ratio"></app-ratio>
 
-      <i class="fas fa-long-arrow-alt-right text-muted"></i>
-      <app-factorio-icon
-        [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SteamTurbine, POWER_STEAM_DATA.vulcanusBuildRatio.vulcanusSteamTurbines)"
-      ></app-factorio-icon>
       <i class="fas fa-long-arrow-alt-right text-muted"></i>
       <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
       <sub style="vertical-align: baseline">
-        <strong>{{ POWER_STEAM_DATA.vulcanusBuildRatio.vulcanusRatioPowerMw }}MW</strong>
+        <strong>{{ POWER_STEAM_DATA.vulcanusBuildRatio.powerMw }}MW</strong>
       </sub>
     </span>
   </div>

@@ -17,10 +17,10 @@
         You can start on Vulcanus, Fulgora or Gleba with the
         <a href="https://mods.factorio.com/mod/any-planet-start" target="_blank" rel="noopener noreferrer">Any Planet Start mod</a>
       </li>
-      <li>
+      <!-- <li>
         You can display the planet in the background when in orbit with the
         <a href="https://mods.factorio.com/mod/visible-planets" target="_blank" rel="noopener noreferrer">Visible Planets mod</a>
-      </li>
+      </li> -->
       <li>
         <a
           href="https://www.reddit.com/r/factorio/comments/1h7v9km/fulgora_beginners_guide_vulcanus_and_gleba_guides/"
@@ -112,31 +112,48 @@
       <li>
         Connect asteroid collectors to a circuit network and set limits on the type and number of asteroid chunks to grab. This prevents
         your space platform from overflowing on unwanted chunks.
-        <ul>
-          <li>
-            Or you can dump unwanted asteroid chunks into space with a inserter. Long inserters can be placed one tile away from the edge of
-            the platform, for instance to carry items beyond a wall.
-          </li>
-        </ul>
+      </li>
+      <li>
+        You can dump unwanted asteroid chunks into space with a inserter. Long inserters can be placed one tile away from the edge of the
+        platform, for instance to carry items beyond a wall.
       </li>
       <li>
         Routes between the inner planets (Nauvis, Vulcanus, Gleba and Fulgora) have medium asteroids which damage your space platform. Build
         (and supply) defenses to break the asteroids into safe asteroid chunks.
         <br />
 
-        <p class="col-12 col-sm-4 text-center">
-          <a
-            href="{{ SPACE_AGE_DATA.yellowAmmoRatio.source }}"
-            title="{{ SPACE_AGE_DATA.yellowAmmoRatio.name }}"
-            target="_blank"
-            rel="noopener"
-          >
-            <app-ratio [ratios]="SPACE_AGE_DATA.yellowAmmoRatio.ratio"></app-ratio>
-            <small class="text-muted" *ngIf="SPACE_AGE_DATA.yellowAmmoRatio.description">
-              <br />*{{ SPACE_AGE_DATA.yellowAmmoRatio.description }}
-            </small>
-          </a>
-        </p>
+        <div class="row">
+          <p class="col-12 col-sm-6 text-center" *ngFor="let ammoRatio of SPACE_AGE_DATA.spacePlatformData.ammoRatios">
+            <a [href]="ammoRatio.source" [title]="ammoRatio.name" target="_blank" rel="noopener">
+              <strong>{{ ammoRatio.name }}</strong>
+              <br />
+              <app-ratio [ratios]="ammoRatio.ratio"></app-ratio>
+              <small class="text-muted" *ngIf="ammoRatio.description"> <br />*{{ ammoRatio.description }} </small>
+            </a>
+          </p>
+        </div>
+      </li>
+      <li>
+        You can buffer fuel/oxidizer in storage tanks to reduce the amount of fuel/oxidizer production needed.
+        <br />
+
+        <div class="row">
+          <p class="col-12 text-center">
+            <a
+              [href]="SPACE_AGE_DATA.spacePlatformData.thrusterRatio.source"
+              [title]="SPACE_AGE_DATA.spacePlatformData.thrusterRatio.name"
+              target="_blank"
+              rel="noopener"
+            >
+              <strong>{{ SPACE_AGE_DATA.spacePlatformData.thrusterRatio.name }}</strong>
+              <br />
+              <app-ratio [ratios]="SPACE_AGE_DATA.spacePlatformData.thrusterRatio.ratio"></app-ratio>
+              <small class="text-muted" *ngIf="SPACE_AGE_DATA.spacePlatformData.thrusterRatio.description">
+                <br />*{{ SPACE_AGE_DATA.spacePlatformData.thrusterRatio.description }}
+              </small>
+            </a>
+          </p>
+        </div>
       </li>
       <li>
         You cannot bring anything in your inventory directly. Instead, you can send rockets up to space platforms with items which can be
@@ -160,10 +177,10 @@
     <h5>Planet Start</h5>
     <ul>
       <li>
-        Recommended items to bring to Vulcanus for faster bootstrapping:
+        Recommended minimum items to bring to Vulcanus for faster bootstrapping:
 
         <ul>
-          <li *ngFor="let itemGroup of SPACE_AGE_DATA.bootstrapItemsVulcanus">
+          <li *ngFor="let itemGroup of SPACE_AGE_DATA.vulcanus.bootstrapItems">
             <ng-container *ngFor="let item of itemGroup">
               <app-factorio-icon [icon]="dataService.getFactorioIcon(item.iconId, '>' + item.count)"></app-factorio-icon>
             </ng-container>
@@ -176,29 +193,55 @@
         free Foundry for every 2 crafts!
       </li>
       <li>You can use inserters to dump (destroy) items into lava (like excess stone).</li>
-      <li>1 ore = 15 molten fluid</li>
+      <li>1 ore = 10 molten fluid</li>
     </ul>
 
     <div class="row align-items-center">
-      <p class="col-12 col-sm-4 text-center">
-        <span class="text-muted"> Vulcanus Solar Ratio </span>
+      <p class="col-12 col-sm-6 text-center">
+        <span class="text-muted"> Vulcanus {{ SPACE_AGE_DATA.vulcanus.solarPowerRatio.name }} </span>
         <br />
 
-        <ng-container *ngFor="let item of SPACE_AGE_DATA.vulcanusSolarRatio">
-          <app-factorio-icon [icon]="dataService.getFactorioIcon(item?.iconId, item?.count)"></app-factorio-icon>
-        </ng-container>
+        <app-ratio [ratios]="SPACE_AGE_DATA.vulcanus.solarPowerRatio.ratio"></app-ratio>
 
         <span>
           <i class="fas fa-long-arrow-alt-right text-muted"></i>
           <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
           <sub style="vertical-align: baseline">
             <strong>
-              {{ SPACE_AGE_DATA.vulcanusSolarRatioPower }}
+              {{ SPACE_AGE_DATA.vulcanus.solarPowerRatio.powerMw }}
               {{ SPACE_AGE_DATA.solarEnergyUnit }}
             </strong>
           </sub>
         </span>
       </p>
+
+      <p class="col-12 col-sm-6 text-center">
+        <span class="text-muted">
+          <a
+            [href]="SPACE_AGE_DATA.vulcanus.steamTurbinePowerRatio.source"
+            [title]="SPACE_AGE_DATA.vulcanus.steamTurbinePowerRatio.name"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Vulcanus {{ SPACE_AGE_DATA.vulcanus.steamTurbinePowerRatio.name }}
+          </a>
+        </span>
+        <br />
+        <app-ratio [ratios]="SPACE_AGE_DATA.vulcanus.steamTurbinePowerRatio.ratio"></app-ratio>
+        <i class="fas fa-long-arrow-alt-right text-muted"></i>
+        <i class="fa fa-bolt fa-2x txt-accent" style="vertical-align: middle" aria-hidden="true"></i>
+        <sub style="vertical-align: baseline">
+          <strong>{{ SPACE_AGE_DATA.vulcanus.steamTurbinePowerRatio.powerMw }}MW</strong>
+        </sub>
+      </p>
+    </div>
+
+    <div class="row align-items-center">
+      <ng-container *ngFor="let cr of SPACE_AGE_DATA.vulcanus.commonRatios">
+        <p class="col-12 col-sm-4 text-center">
+          <app-ratio [ratios]="cr.ratio"></app-ratio>
+        </p>
+      </ng-container>
     </div>
 
     <hr />
@@ -219,7 +262,7 @@
         Recommended items to bring to Fulgora for faster bootstrapping:
 
         <ul>
-          <li *ngFor="let itemGroup of SPACE_AGE_DATA.bootstrapItemsFulgora">
+          <li *ngFor="let itemGroup of SPACE_AGE_DATA.fulgora.bootstrapItems">
             <ng-container *ngFor="let item of itemGroup">
               <app-factorio-icon [icon]="dataService.getFactorioIcon(item.iconId, '>' + item.count)"></app-factorio-icon>
             </ng-container>
@@ -281,7 +324,7 @@
       <div class="d-flex flex flex-row justify-content-center align-items-center">Scrap recycling outputs.</div>
 
       <div class="d-flex flex flex-row justify-content-center">
-        <ng-container *ngFor="let item of SPACE_AGE_DATA.recyclerScrapRatio">
+        <ng-container *ngFor="let item of SPACE_AGE_DATA.fulgora.recyclerScrapRatio">
           <app-factorio-icon [icon]="dataService.getFactorioIcon(item.iconId, item.count + '%')"></app-factorio-icon>
         </ng-container>
       </div>
@@ -340,7 +383,7 @@
 
     <div class="text-left">
       <h5 class="h5">Getting basic items on Fulgora</h5>
-      <div class="d-flex flex flex-row align-items-center" *ngFor="let resource of SPACE_AGE_DATA.basicResourceConversionIcons">
+      <div class="d-flex flex flex-row align-items-center" *ngFor="let resource of SPACE_AGE_DATA.fulgora.basicResourceConversionIcons">
         <ng-container *ngFor="let items of resource; let last = last">
           <ng-container *ngFor="let item of items; let last = last">
             <app-factorio-icon [icon]="dataService.getFactorioIcon(item)"></app-factorio-icon>
@@ -372,7 +415,7 @@
             <app-factorio-icon [icon]="dataService.getFactorioIcon(FactorioIcons.Icons_SubmachineGun, '∞')"></app-factorio-icon>
             Guns, lots of guns.
           </li>
-          <li *ngFor="let itemGroup of SPACE_AGE_DATA.bootstrapItemsGleba">
+          <li *ngFor="let itemGroup of SPACE_AGE_DATA.gleba.bootstrapItems">
             <ng-container *ngFor="let item of itemGroup">
               <app-factorio-icon [icon]="dataService.getFactorioIcon(item.iconId, '>' + item.count)"></app-factorio-icon>
             </ng-container>
@@ -399,7 +442,7 @@
         Recommended items to bring to Aquilo for faster bootstrapping:
 
         <ul>
-          <li *ngFor="let itemGroup of SPACE_AGE_DATA.bootstrapItemsAquilo">
+          <li *ngFor="let itemGroup of SPACE_AGE_DATA.aquilo.bootstrapItems">
             <ng-container *ngFor="let item of itemGroup">
               <app-factorio-icon [icon]="dataService.getFactorioIcon(item.iconId, '>' + item.count)"></app-factorio-icon>
             </ng-container>

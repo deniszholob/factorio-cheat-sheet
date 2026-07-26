@@ -6,3 +6,7 @@ export interface Ratio {
   source: string;
   ratio: RatioItem[];
 }
+
+export interface PowerRatio extends Ratio {
+  powerMw: number;
+}

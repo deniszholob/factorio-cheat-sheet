@@ -1,9 +1,12 @@
 import { SimpleRatio } from 'app/data';
 import { FactorioIcons } from 'app/shared/factorio-icons.enum';
 
+import { PowerRatio } from '../cs-common-ratios/ratio.model';
+import { VULCANUS_DATA } from '../space-age/surfaces/vulcanus.data';
+
 export interface PowerSteamData {
   steamBuildRatio: SteamBuildRatio;
-  vulcanusBuildRatio: VulcanusBuildRatio;
+  vulcanusBuildRatio: PowerRatio;
   offshorePumpWater: number;
   steamBoilerWater: number;
   steamBoilerSteam: number;
@@ -15,12 +18,6 @@ export interface PowerSteamData {
 interface SteamBuildRatio {
   steamRatioPowerMw: number;
   steamRatio: SimpleRatio[];
-}
-
-interface VulcanusBuildRatio {
-  vulcanusRatioPowerMw: number;
-  vulcanusChemicalPlants: number;
-  vulcanusSteamTurbines: number;
 }
 
 export const POWER_STEAM_DATA: PowerSteamData = {
@@ -50,11 +47,7 @@ export const POWER_STEAM_DATA: PowerSteamData = {
       },
     ],
   },
-  vulcanusBuildRatio: {
-    vulcanusRatioPowerMw: 580,
-    vulcanusChemicalPlants: 3,
-    vulcanusSteamTurbines: 100,
-  },
+  vulcanusBuildRatio: VULCANUS_DATA.steamTurbinePowerRatio,
   offshorePumpWater: 1200,
   steamBoilerWater: 6,
   steamBoilerSteam: 60,

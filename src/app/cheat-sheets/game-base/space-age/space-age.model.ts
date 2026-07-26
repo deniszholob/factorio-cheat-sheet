@@ -1,17 +1,14 @@
-import { SimpleRatio } from 'app/data';
-import { FactorioIcons } from 'app/shared/factorio-icons.enum';
-
-import { Ratio } from '../cs-common-ratios/ratio.model';
+import { AquiloData } from './surfaces/aquilo.data';
+import { FulgoraData } from './surfaces/fulgora.data';
+import { GlebaData } from './surfaces/gleba.data';
+import { SpacePlatformData } from './surfaces/space-platform.data';
+import { VulcanusData } from './surfaces/vulcanus.data';
 
 export interface SpaceAgeData {
   solarEnergyUnit: string;
-  vulcanusSolarRatioPower: number;
-  vulcanusSolarRatio: SimpleRatio[];
-  yellowAmmoRatio: Ratio;
-  bootstrapItemsVulcanus: SimpleRatio[][];
-  bootstrapItemsFulgora: SimpleRatio[][];
-  bootstrapItemsGleba: SimpleRatio[][];
-  bootstrapItemsAquilo: SimpleRatio[][];
-  recyclerScrapRatio: SimpleRatio[];
-  basicResourceConversionIcons: FactorioIcons[][][];
+  spacePlatformData: SpacePlatformData;
+  vulcanus: VulcanusData;
+  fulgora: FulgoraData;
+  gleba: GlebaData;
+  aquilo: AquiloData;
 }
